@@ -3,6 +3,7 @@ This repository contains a set of Jupyter notebooks to accomplish
 the processing pipeline for my Master thesis at Potsdam Institute
 for Climate Impact Research (PIK). 
 ### Prerequisites
-- Jupyter notebook version 5 or later
-- Python version 3.5 or later
-- several additional Python libraries specified in the first notebook
+In order to execute the notebooks in this repository, you need 
+*Jupyter* notebook in versions 5 or later and *Python* 3.5 or later.
+Further, requirements are explained in the first notebook named
+Introduction.
