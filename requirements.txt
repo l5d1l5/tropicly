@@ -1,0 +1,13 @@
+rasterio==1.0a10
+fiona==1.7.9
+shapely
+numpy
+matplotlib
+jupyter
+ipython
+jupyter_contrib_nbextensions
+geopandas
+pandas
+pyproj
+gdal
+ipyleaflet
