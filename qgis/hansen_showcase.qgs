@@ -3,33 +3,33 @@
   <title></title>
   <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="">
     <customproperties/>
-    <layer-tree-group expanded="0" checked="Qt::Unchecked" name="main">
+    <layer-tree-group expanded="0" checked="Qt::Checked" name="main">
       <customproperties/>
-      <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="Hansen_GFC2013_lossyear_00N_040W20171018130046037" name="Hansen_GFC2013_lossyear_00N_040W">
+      <layer-tree-layer expanded="1" checked="Qt::Checked" id="Hansen_GFC2013_lossyear_00N_040W20171018130046037" name="Hansen_GFC2013_lossyear_00N_040W">
         <customproperties>
           <property key="expandedLegendNodes"/>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="Hansen_GFC2013_gain_00N_040W20171018125741273" name="Hansen_GFC2013_gain_00N_040W">
+      <layer-tree-layer expanded="1" checked="Qt::Checked" id="Hansen_GFC2013_gain_00N_040W20171018125741273" name="Hansen_GFC2013_gain_00N_040W">
         <customproperties>
           <property key="expandedLegendNodes"/>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="Hansen_GFC2013_treecover2000_00N_040W20171018123922346" name="Hansen_GFC2013_treecover2000_00N_040W">
+      <layer-tree-layer expanded="1" checked="Qt::Checked" id="Hansen_GFC2013_treecover2000_00N_040W20171018123922346" name="Hansen_GFC2013_treecover2000_00N_040W">
         <customproperties>
           <property key="expandedLegendNodes"/>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="Hansen_GFC2013_datamask_00N_040W20171018132414885" name="Hansen_GFC2013_datamask_00N_040W">
+      <layer-tree-layer expanded="1" checked="Qt::Checked" id="Hansen_GFC2013_datamask_00N_040W20171018132414885" name="Hansen_GFC2013_datamask_00N_040W">
         <customproperties/>
       </layer-tree-layer>
     </layer-tree-group>
-    <layer-tree-group expanded="1" checked="Qt::Checked" name="inset">
+    <layer-tree-group expanded="0" checked="Qt::Unchecked" name="inset">
       <customproperties/>
-      <layer-tree-layer expanded="1" checked="Qt::Checked" id="ne_10m_populated_places20171020155825642" name="ne_10m_populated_places">
+      <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="ne_10m_populated_places20171020155825642" name="ne_10m_populated_places">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="1" checked="Qt::Checked" id="gadm28_adm020171020155411310" name="gadm28_adm0">
+      <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="gadm28_adm020171020155411310" name="gadm28_adm0">
         <customproperties/>
       </layer-tree-layer>
     </layer-tree-group>
@@ -38,10 +38,10 @@
   <mapcanvas>
     <units>degrees</units>
     <extent>
-      <xmin>-38.69671547280426438</xmin>
-      <ymin>-4.09912236646798878</ymin>
-      <xmax>-38.1445146717658119</xmax>
-      <ymax>-3.66963285454919275</ymax>
+      <xmin>-38.4073519135088759</xmin>
+      <ymin>-3.92467109607780973</ymin>
+      <xmax>-38.34496821855380233</xmax>
+      <ymax>-3.87646551361252545</ymax>
     </extent>
     <rotation>0</rotation>
     <projections>0</projections>
@@ -86,42 +86,42 @@
     </custom-order>
   </layer-tree-canvas>
   <legend updateDrawingOrder="true">
-    <legendgroup open="false" checked="Qt::Unchecked" name="main">
-      <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="Hansen_GFC2013_lossyear_00N_040W" showFeatureCount="0">
+    <legendgroup open="false" checked="Qt::Checked" name="main">
+      <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="Hansen_GFC2013_lossyear_00N_040W" showFeatureCount="0">
         <filegroup open="true" hidden="false">
-          <legendlayerfile isInOverview="0" layerid="Hansen_GFC2013_lossyear_00N_040W20171018130046037" visible="0"/>
+          <legendlayerfile isInOverview="0" layerid="Hansen_GFC2013_lossyear_00N_040W20171018130046037" visible="1"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="Hansen_GFC2013_gain_00N_040W" showFeatureCount="0">
+      <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="Hansen_GFC2013_gain_00N_040W" showFeatureCount="0">
         <filegroup open="true" hidden="false">
-          <legendlayerfile isInOverview="0" layerid="Hansen_GFC2013_gain_00N_040W20171018125741273" visible="0"/>
+          <legendlayerfile isInOverview="0" layerid="Hansen_GFC2013_gain_00N_040W20171018125741273" visible="1"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="Hansen_GFC2013_treecover2000_00N_040W" showFeatureCount="0">
+      <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="Hansen_GFC2013_treecover2000_00N_040W" showFeatureCount="0">
         <filegroup open="true" hidden="false">
-          <legendlayerfile isInOverview="0" layerid="Hansen_GFC2013_treecover2000_00N_040W20171018123922346" visible="0"/>
+          <legendlayerfile isInOverview="0" layerid="Hansen_GFC2013_treecover2000_00N_040W20171018123922346" visible="1"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="Hansen_GFC2013_datamask_00N_040W" showFeatureCount="0">
+      <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="Hansen_GFC2013_datamask_00N_040W" showFeatureCount="0">
         <filegroup open="true" hidden="false">
-          <legendlayerfile isInOverview="0" layerid="Hansen_GFC2013_datamask_00N_040W20171018132414885" visible="0"/>
+          <legendlayerfile isInOverview="0" layerid="Hansen_GFC2013_datamask_00N_040W20171018132414885" visible="1"/>
         </filegroup>
       </legendlayer>
     </legendgroup>
-    <legendgroup open="true" checked="Qt::Checked" name="inset">
-      <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="ne_10m_populated_places" showFeatureCount="0">
+    <legendgroup open="false" checked="Qt::Unchecked" name="inset">
+      <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="ne_10m_populated_places" showFeatureCount="0">
         <filegroup open="true" hidden="false">
-          <legendlayerfile isInOverview="0" layerid="ne_10m_populated_places20171020155825642" visible="1"/>
+          <legendlayerfile isInOverview="0" layerid="ne_10m_populated_places20171020155825642" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="gadm28_adm0" showFeatureCount="0">
+      <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="gadm28_adm0" showFeatureCount="0">
         <filegroup open="true" hidden="false">
-          <legendlayerfile isInOverview="0" layerid="gadm28_adm020171020155411310" visible="1"/>
+          <legendlayerfile isInOverview="0" layerid="gadm28_adm020171020155411310" visible="0"/>
         </filegroup>
       </legendlayer>
     </legendgroup>
   </legend>
-  <Composer title="hansen_showcase" visible="1">
+  <Composer title="hansen_showcase" visible="0">
     <Composition resizeToContentsMarginLeft="0" snapping="1" showPages="1" guidesVisible="1" resizeToContentsMarginTop="0" alignmentSnap="1" printResolution="300" paperWidth="297" gridVisible="0" snapGridOffsetX="0" smartGuides="1" snapGridOffsetY="0" resizeToContentsMarginRight="0" snapTolerancePixels="5" printAsRaster="0" generateWorldFile="0" paperHeight="210" numPages="1" snapGridResolution="10" resizeToContentsMarginBottom="0">
       <symbol alpha="1" clip_to_extent="1" type="fill" name="">
         <layer pass="0" class="SimpleFill" locked="0">
@@ -141,7 +141,7 @@
       <ComposerLabel valign="32" marginX="1" marginY="1" labelText="Sources: &#xa;&#xa;Hansen/UMD/Google/USGS/&#xa;NASA&#xa;&#xa;Natural Earth&#xa;www.naturalearthdata.com&#xa;&#xa;Global Administrative Areas&#xa;(GADM)&#xa;www.gadm.org" htmlState="0" halign="1">
         <LabelFont description="Ubuntu,10,-1,5,50,0,0,0,0,0" style=""/>
         <FontColor red="0" blue="0" green="0"/>
-        <ComposerItem pagey="134.594" page="1" id="Sources" lastValidViewScaleFactor="-1" positionMode="0" positionLock="true" x="236.131" y="134.594" visibility="1" zValue="11" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="53.0726" outlineWidth="0.3" excludeFromExports="0" uuid="{a592af43-1864-4e82-9dc8-98aa85425293}" height="51.0646" itemRotation="0" frame="false" pagex="236.131">
+        <ComposerItem pagey="134.594" page="1" id="Sources" lastValidViewScaleFactor="-1" positionMode="0" positionLock="true" x="236.131" y="134.594" visibility="1" zValue="10" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="53.0726" outlineWidth="0.3" excludeFromExports="0" uuid="{a592af43-1864-4e82-9dc8-98aa85425293}" height="51.0646" itemRotation="0" frame="false" pagex="236.131">
           <FrameColor alpha="255" red="0" blue="0" green="0"/>
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
           <customproperties/>
@@ -150,7 +150,7 @@
       <ComposerLabel valign="32" marginX="1" marginY="1" labelText="Coordinate system: WGS 84" htmlState="0" halign="1">
         <LabelFont description="Ubuntu,10,-1,5,50,0,0,0,0,0" style=""/>
         <FontColor red="0" blue="0" green="0"/>
-        <ComposerItem pagey="128.244" page="1" id="Coor sys" lastValidViewScaleFactor="-1" positionMode="0" positionLock="true" x="236.25" y="128.244" visibility="1" zValue="10" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="54.6146" outlineWidth="0.3" excludeFromExports="0" uuid="{2366d9b2-0e77-49cd-b3a7-db8b84c4d8ca}" height="6.35" itemRotation="0" frame="false" pagex="236.25">
+        <ComposerItem pagey="128.244" page="1" id="Coor sys" lastValidViewScaleFactor="-1" positionMode="0" positionLock="true" x="236.25" y="128.244" visibility="1" zValue="9" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="54.6146" outlineWidth="0.3" excludeFromExports="0" uuid="{2366d9b2-0e77-49cd-b3a7-db8b84c4d8ca}" height="6.35" itemRotation="0" frame="false" pagex="236.25">
           <FrameColor alpha="255" red="0" blue="0" green="0"/>
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
           <customproperties/>
@@ -194,10 +194,10 @@
           <customproperties/>
         </ComposerItem>
       </ComposerLabel>
-      <ComposerLabel valign="32" marginX="1" marginY="1" labelText="Composition of tree cover, lossyear and gain" htmlState="0" halign="1">
+      <ComposerLabel valign="32" marginX="1" marginY="1" labelText="Composition of tree cover, lossyear and gain from GFC 2000 - 2012" htmlState="0" halign="1">
         <LabelFont description="Ubuntu,14,-1,5,25,0,0,0,0,0" style=""/>
         <FontColor red="0" blue="0" green="0"/>
-        <ComposerItem pagey="20.5921" page="1" id="Descriptive line" lastValidViewScaleFactor="-1" positionMode="0" positionLock="true" x="15.75" y="20.5921" visibility="1" zValue="4" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="104.25" outlineWidth="0.3" excludeFromExports="0" uuid="{c9d76a18-d8c6-4d54-8745-2ee2d6704d81}" height="15.0576" itemRotation="0" frame="false" pagex="15.75">
+        <ComposerItem pagey="20.5921" page="1" id="Descriptive line" lastValidViewScaleFactor="-1" positionMode="0" positionLock="true" x="15.75" y="20.5921" visibility="1" zValue="4" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="150.93" outlineWidth="0.3" excludeFromExports="0" uuid="{c9d76a18-d8c6-4d54-8745-2ee2d6704d81}" height="15.0576" itemRotation="0" frame="false" pagex="15.75">
           <FrameColor alpha="255" red="0" blue="0" green="0"/>
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
           <customproperties/>
@@ -1233,7 +1233,7 @@ def my_form_open(dialog, layer, feature):
           </symbol>
         </ComposerMapOverview>
         <AtlasMap scalingMode="2" atlasDriven="0" margin="0.10000000000000001"/>
-        <ComposerItem pagey="10" page="1" id="Map: inset" lastValidViewScaleFactor="3.77953" positionMode="0" positionLock="true" x="200" y="10" visibility="1" zValue="3" background="true" transparency="0" frameJoinStyle="round" blendMode="0" width="90" outlineWidth="0.5" excludeFromExports="0" uuid="{b75c17af-444f-430e-bc47-072d5a0ae975}" height="70" itemRotation="0" frame="true" pagex="200">
+        <ComposerItem pagey="10" page="1" id="Map: inset" lastValidViewScaleFactor="1.27003" positionMode="0" positionLock="true" x="200" y="10" visibility="1" zValue="3" background="true" transparency="0" frameJoinStyle="round" blendMode="0" width="90" outlineWidth="0.5" excludeFromExports="0" uuid="{b75c17af-444f-430e-bc47-072d5a0ae975}" height="70" itemRotation="0" frame="true" pagex="200">
           <FrameColor alpha="255" red="0" blue="0" green="0"/>
           <BackgroundColor alpha="255" red="43" blue="186" green="131"/>
           <customproperties/>
@@ -1427,13 +1427,18 @@ def my_form_open(dialog, layer, feature):
           <annotationFontProperties description="Ubuntu,11,-1,5,50,0,0,0,0,0" style=""/>
         </ComposerMapGrid>
         <AtlasMap scalingMode="2" atlasDriven="0" margin="0.10000000000000001"/>
-        <ComposerItem pagey="31" page="1" id="Map: hansen dataset overview" lastValidViewScaleFactor="3.77953" positionMode="0" positionLock="true" x="16" y="31" visibility="1" zValue="1" background="true" transparency="0" frameJoinStyle="round" blendMode="0" width="220" outlineWidth="0.5" excludeFromExports="0" uuid="{5fdcfc57-ef4b-4a8a-a140-ccd10da70917}" height="170" itemRotation="0" frame="true" pagex="16">
+        <ComposerItem pagey="31" page="1" id="Map: hansen dataset overview" lastValidViewScaleFactor="1.27003" positionMode="0" positionLock="true" x="16" y="31" visibility="1" zValue="1" background="true" transparency="0" frameJoinStyle="round" blendMode="0" width="220" outlineWidth="0.5" excludeFromExports="0" uuid="{5fdcfc57-ef4b-4a8a-a140-ccd10da70917}" height="170" itemRotation="0" frame="true" pagex="16">
           <FrameColor alpha="255" red="0" blue="0" green="0"/>
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
           <customproperties/>
         </ComposerItem>
       </ComposerMap>
       <customproperties>
+        <property key="imageCropMarginBottom" value="0"/>
+        <property key="imageCropMarginLeft" value="0"/>
+        <property key="imageCropMarginRight" value="0"/>
+        <property key="imageCropMarginTop" value="0"/>
+        <property key="imageCropToContents" value="false"/>
         <property key="svgCropMarginBottom" value="0"/>
         <property key="svgCropMarginLeft" value="0"/>
         <property key="svgCropMarginRight" value="0"/>
