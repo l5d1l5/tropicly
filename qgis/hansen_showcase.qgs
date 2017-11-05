@@ -1457,7 +1457,7 @@ def my_form_open(dialog, layer, feature):
         <ymax>0.00013888888888403</ymax>
       </extent>
       <id>Hansen_GFC2013_datamask_00N_040W20171018132414885</id>
-      <datasource>../data/auxiliary/Hansen_GFC2013_datamask_00N_040W.tif</datasource>
+      <datasource>../data/auxiliary/masks/Hansen_GFC2013_datamask_00N_040W.tif</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -1666,7 +1666,7 @@ def my_form_open(dialog, layer, feature):
         <ymax>5.2648777961730957</ymax>
       </extent>
       <id>gadm28_adm020171020155411310</id>
-      <datasource>../data/auxiliary/gadm28_adm0.shp|layerid=0|subset="NAME_ENGLI" = 'Brazil'</datasource>
+      <datasource>../data/auxiliary/masks/gadm28_adm0.shp|layerid=0|subset="NAME_ENGLI" = 'Brazil'</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -2138,7 +2138,7 @@ def my_form_open(dialog, layer, feature):
         <ymax>3.2166628203417531</ymax>
       </extent>
       <id>ne_10m_populated_places20171020155825642</id>
-      <datasource>../data/auxiliary/ne_10m_populated_places.shp|layerid=0|subset="ADM0NAME" = 'Brazil'</datasource>
+      <datasource>../data/auxiliary/masks/ne_10m_populated_places.shp|layerid=0|subset="ADM0NAME" = 'Brazil'</datasource>
       <keywordList>
         <value></value>
       </keywordList>

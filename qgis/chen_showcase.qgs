@@ -3,18 +3,18 @@
   <title></title>
   <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="">
     <customproperties/>
-    <layer-tree-group expanded="1" checked="Qt::Checked" name="inset">
+    <layer-tree-group expanded="1" checked="Qt::Unchecked" name="inset">
       <customproperties/>
-      <layer-tree-layer expanded="1" checked="Qt::Checked" id="ne_10m_populated_places20171020210543010" name="ne_10m_populated_places">
+      <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="ne_10m_populated_places20171020210543010" name="ne_10m_populated_places">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="1" checked="Qt::Checked" id="gadm28_adm020171020210341587" name="gadm28_adm0">
+      <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="gadm28_adm020171020210341587" name="gadm28_adm0">
         <customproperties/>
       </layer-tree-layer>
     </layer-tree-group>
-    <layer-tree-group expanded="1" checked="Qt::Unchecked" name="main">
+    <layer-tree-group expanded="1" checked="Qt::Checked" name="main">
       <customproperties/>
-      <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="s24_00_2010lc03020171020190028595" name="s24_00_2010lc030">
+      <layer-tree-layer expanded="0" checked="Qt::Checked" id="s24_00_2010lc03020171020190028595" name="s24_00_2010lc030">
         <customproperties/>
       </layer-tree-layer>
     </layer-tree-group>
@@ -23,10 +23,10 @@
   <mapcanvas>
     <units>degrees</units>
     <extent>
-      <xmin>-38.63818565815392958</xmin>
-      <ymin>-4.07427638315856022</ymin>
-      <xmax>-38.12955822415904095</xmax>
-      <ymax>-3.6886317234362842</ymax>
+      <xmin>-38.40794928065601965</xmin>
+      <ymin>-3.92467109607780973</ymin>
+      <xmax>-38.34437085140665857</xmax>
+      <ymax>-3.87646551361252545</ymax>
     </extent>
     <rotation>0</rotation>
     <projections>1</projections>
@@ -58,22 +58,22 @@
     </custom-order>
   </layer-tree-canvas>
   <legend updateDrawingOrder="true">
-    <legendgroup open="true" checked="Qt::Checked" name="inset">
-      <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="ne_10m_populated_places" showFeatureCount="0">
+    <legendgroup open="true" checked="Qt::Unchecked" name="inset">
+      <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="ne_10m_populated_places" showFeatureCount="0">
         <filegroup open="true" hidden="false">
-          <legendlayerfile isInOverview="0" layerid="ne_10m_populated_places20171020210543010" visible="1"/>
+          <legendlayerfile isInOverview="0" layerid="ne_10m_populated_places20171020210543010" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="gadm28_adm0" showFeatureCount="0">
+      <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="gadm28_adm0" showFeatureCount="0">
         <filegroup open="true" hidden="false">
-          <legendlayerfile isInOverview="0" layerid="gadm28_adm020171020210341587" visible="1"/>
+          <legendlayerfile isInOverview="0" layerid="gadm28_adm020171020210341587" visible="0"/>
         </filegroup>
       </legendlayer>
     </legendgroup>
-    <legendgroup open="true" checked="Qt::Unchecked" name="main">
-      <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="s24_00_2010lc030" showFeatureCount="0">
+    <legendgroup open="true" checked="Qt::Checked" name="main">
+      <legendlayer drawingOrder="-1" open="false" checked="Qt::Checked" name="s24_00_2010lc030" showFeatureCount="0">
         <filegroup open="false" hidden="false">
-          <legendlayerfile isInOverview="0" layerid="s24_00_2010lc03020171020190028595" visible="0"/>
+          <legendlayerfile isInOverview="0" layerid="s24_00_2010lc03020171020190028595" visible="1"/>
         </filegroup>
       </legendlayer>
     </legendgroup>
@@ -161,7 +161,7 @@
         </ComposerItem>
       </ComposerLabel>
       <ComposerMap mapRotation="0" keepLayerSet="false" id="1" previewMode="Cache" drawCanvasItems="true">
-        <Extent ymin="-4.10074234161200213" xmin="-38.75341460284468553" ymax="-3.67125282969320521" xmax="-38.20121380180623305"/>
+        <Extent ymin="-4.10074234161200213" xmin="-38.75341460284468553" ymax="-3.67125282969320565" xmax="-38.20121380180623305"/>
         <LayerSet/>
         <Grid/>
         <ComposerMapGrid rightAnnotationDirection="0" gridFramePenColor="0,0,0,255" show="0" bottomAnnotationPosition="1" annotationPrecision="3" showAnnotation="0" topFrameDivisions="0" uuid="{34569487-17b7-4b00-8de7-060bb8ce5186}" leftAnnotationDirection="0" topAnnotationPosition="1" rightAnnotationDisplay="0" offsetX="0" offsetY="0" rightFrameDivisions="0" gridStyle="0" annotationFontColor="0,0,0,255" intervalX="0" gridFrameSideFlags="15" intervalY="0" bottomAnnotationDirection="0" leftAnnotationDisplay="0" leftFrameDivisions="0" frameFillColor1="255,255,255,255" annotationExpression="" frameFillColor2="0,0,0,255" crossLength="3" gridFramePenThickness="0.5" bottomAnnotationDisplay="0" unit="0" topAnnotationDisplay="0" leftAnnotationPosition="1" blendMode="0" gridFrameStyle="0" rightAnnotationPosition="1" gridFrameWidth="2" name="Grid 1" annotationFormat="0" bottomFrameDivisions="0" topAnnotationDirection="0" frameAnnotationDistance="1">
@@ -229,7 +229,7 @@
           </symbol>
         </ComposerMapOverview>
         <AtlasMap scalingMode="2" atlasDriven="0" margin="0.10000000000000001"/>
-        <ComposerItem pagey="10" page="1" id="Map: inset" lastValidViewScaleFactor="3.78744" positionMode="0" positionLock="true" x="200" y="10" visibility="1" zValue="3" background="true" transparency="0" frameJoinStyle="round" blendMode="0" width="90" outlineWidth="0.5" excludeFromExports="0" uuid="{20ed1000-632c-4413-a447-68c4dbadac56}" height="70" itemRotation="0" frame="true" pagex="200">
+        <ComposerItem pagey="10" page="1" id="Map: inset" lastValidViewScaleFactor="1.27003" positionMode="0" positionLock="true" x="200" y="10" visibility="1" zValue="3" background="true" transparency="0" frameJoinStyle="round" blendMode="0" width="90" outlineWidth="0.5" excludeFromExports="0" uuid="{20ed1000-632c-4413-a447-68c4dbadac56}" height="70" itemRotation="0" frame="true" pagex="200">
           <FrameColor alpha="255" red="0" blue="0" green="0"/>
           <BackgroundColor alpha="255" red="0" blue="255" green="198"/>
           <customproperties/>
@@ -611,7 +611,7 @@
           <annotationFontProperties description="Ubuntu,11,-1,5,50,0,0,0,0,0" style=""/>
         </ComposerMapGrid>
         <AtlasMap scalingMode="2" atlasDriven="0" margin="0.10000000000000001"/>
-        <ComposerItem pagey="31" page="1" id="Map: hansen dataset overview" lastValidViewScaleFactor="3.78744" positionMode="0" positionLock="true" x="16" y="31" visibility="1" zValue="1" background="true" transparency="0" frameJoinStyle="round" blendMode="0" width="220" outlineWidth="0.5" excludeFromExports="0" uuid="{2228cf3c-982d-4f5e-8c47-f67263b4e95d}" height="170" itemRotation="0" frame="true" pagex="16">
+        <ComposerItem pagey="31" page="1" id="Map: hansen dataset overview" lastValidViewScaleFactor="1.27003" positionMode="0" positionLock="true" x="16" y="31" visibility="1" zValue="1" background="true" transparency="0" frameJoinStyle="round" blendMode="0" width="220" outlineWidth="0.5" excludeFromExports="0" uuid="{2228cf3c-982d-4f5e-8c47-f67263b4e95d}" height="170" itemRotation="0" frame="true" pagex="16">
           <FrameColor alpha="255" red="0" blue="0" green="0"/>
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
           <customproperties/>
@@ -635,7 +635,7 @@
         <ymax>5.2648777961730957</ymax>
       </extent>
       <id>gadm28_adm020171020210341587</id>
-      <datasource>../data/auxiliary/gadm28_adm0.shp|layerid=0|subset="NAME_ENGLI" = 'Brazil'</datasource>
+      <datasource>../data/auxiliary/masks/gadm28_adm0.shp|layerid=0|subset="NAME_ENGLI" = 'Brazil'</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -1062,17 +1062,18 @@
       <SingleCategoryDiagramRenderer diagramType="Pie">
         <DiagramCategory penColor="#000000" labelPlacementMethod="XHeight" penWidth="0" diagramOrientation="Up" minimumSize="0" barWidth="5" penAlpha="255" maxScaleDenominator="1e+08" backgroundColor="#ffffff" transparency="0" width="15" scaleDependency="Area" backgroundAlpha="255" angleOffset="1440" scaleBasedVisibility="0" enabled="0" height="15" sizeType="MM" minScaleDenominator="0">
           <fontProperties description="Ubuntu,11,-1,5,50,0,0,0,0,0" style=""/>
+          <attribute field="" color="#000000" label=""/>
         </DiagramCategory>
       </SingleCategoryDiagramRenderer>
       <DiagramLayerSettings yPosColumn="-1" linePlacementFlags="10" placement="0" dist="0" xPosColumn="-1" priority="0" obstacle="0" zIndex="0" showAll="1"/>
-      <annotationform></annotationform>
+      <annotationform>.</annotationform>
       <excludeAttributesWMS/>
       <excludeAttributesWFS/>
       <attributeactions/>
-      <editform></editform>
+      <editform>.</editform>
       <editforminit/>
       <editforminitcodesource>0</editforminitcodesource>
-      <editforminitfilepath></editforminitfilepath>
+      <editforminitfilepath>.</editforminitfilepath>
       <editforminitcode><![CDATA[# -*- coding: utf-8 -*-
 """
 QGIS forms can have a Python function that is called when the form is
@@ -1106,7 +1107,7 @@ def my_form_open(dialog, layer, feature):
         <ymax>82.48332318035943445</ymax>
       </extent>
       <id>ne_10m_populated_places20171020210543010</id>
-      <datasource>../data/auxiliary/ne_10m_populated_places.shp|layerid=0|subset="ADM0NAME" = 'Brazil'</datasource>
+      <datasource>../data/auxiliary/masks/ne_10m_populated_places.shp|layerid=0|subset="ADM0NAME" = 'Brazil'</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -1605,17 +1606,18 @@ def my_form_open(dialog, layer, feature):
       <SingleCategoryDiagramRenderer diagramType="Pie">
         <DiagramCategory penColor="#000000" labelPlacementMethod="XHeight" penWidth="0" diagramOrientation="Up" minimumSize="0" barWidth="5" penAlpha="255" maxScaleDenominator="1e+08" backgroundColor="#ffffff" transparency="0" width="15" scaleDependency="Area" backgroundAlpha="255" angleOffset="1440" scaleBasedVisibility="0" enabled="0" height="15" sizeType="MM" minScaleDenominator="-4.65661e-10">
           <fontProperties description="Ubuntu,11,-1,5,50,0,0,0,0,0" style=""/>
+          <attribute field="" color="#000000" label=""/>
         </DiagramCategory>
       </SingleCategoryDiagramRenderer>
       <DiagramLayerSettings yPosColumn="-1" linePlacementFlags="10" placement="0" dist="0" xPosColumn="-1" priority="0" obstacle="0" zIndex="0" showAll="1"/>
-      <annotationform></annotationform>
+      <annotationform>.</annotationform>
       <excludeAttributesWMS/>
       <excludeAttributesWFS/>
       <attributeactions/>
-      <editform></editform>
+      <editform>.</editform>
       <editforminit/>
       <editforminitcodesource>0</editforminitcodesource>
-      <editforminitfilepath></editforminitfilepath>
+      <editforminitfilepath>.</editforminitfilepath>
       <editforminitcode><![CDATA[# -*- coding: utf-8 -*-
 """
 QGIS forms can have a Python function that is called when the form is
@@ -1649,7 +1651,7 @@ def my_form_open(dialog, layer, feature):
         <ymax>0.00556409792285255</ymax>
       </extent>
       <id>s24_00_2010lc03020171020190028595</id>
-      <datasource>../data/auxiliary/s24_00_2010lc030.tif</datasource>
+      <datasource>../data/auxiliary/masks/s24_00_2010lc030.tif</datasource>
       <keywordList>
         <value></value>
       </keywordList>
