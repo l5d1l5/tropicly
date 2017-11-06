@@ -1,6 +1,6 @@
 # Description
 This repository represents the processing pipeline as well as the data and methodology, results and analysis
-chapter of my Master thesis ***Evaluating the direct deforestation drivers, estimating the carbon emissions
+chapter of my Master thesis: ***Evaluating the direct deforestation drivers, estimating the carbon emissions
 trough deforestation and evaluating the ecosystem service value of land cover change in the tropical zone
 between 23.43N and 23.43S***. The project take place at the Potsdam Institute for Climate Impact Research
 (PIK) in the Research Domain II - Climate Impacts & Vulnerabilities (RDII) as a part of the project group
