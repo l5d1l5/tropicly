@@ -1,4 +1,4 @@
-# Master
+# Master thesis - Tobias Seydewitz
 This repository represents the processing pipeline as well as the data and methodology, results and analysis
 chapter of my Master thesis ***Evaluating the direct deforestation drivers, estimating the carbon emissions
 trough deforestation and evaluating the ecosystem service value of land cover change in the tropical zone
