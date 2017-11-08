@@ -12,7 +12,7 @@ from pathlib import Path
 from collections import namedtuple
 
 
-def get_data_dir(path):
+def get_data_dir(path: str) -> namedtuple:
     dir_structure = {
         os.path.split(root)[-1]: Path(root)
         for root, *_ in os.walk(path)
