@@ -8,8 +8,10 @@ Mail: tobi.seyde@gmail.com
 Description:
 """
 import os
+import time
 from pathlib import Path
 from collections import namedtuple
+from contextlib import contextmanager
 
 
 def get_data_dir(path: str) -> namedtuple:
@@ -19,6 +21,15 @@ def get_data_dir(path: str) -> namedtuple:
     }
     Directories = namedtuple('Directories', dir_structure.keys())
     return Directories(**dir_structure)
+
+
+@contextmanager
+def benchmark_context():
+    start = time.time()
+    try:
+        yield None
+    finally:
+        print(time.time() - start)
 
 
 if __name__ == '__main__':
