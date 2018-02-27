@@ -27,7 +27,3 @@ def benchmark(func):
         print('{}: {}'.format(func.__name__, end))
         return result
     return wrapper
-
-
-if __name__ == '__main__':
-    pass
