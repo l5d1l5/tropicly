@@ -10,6 +10,7 @@ Description:
 import os
 import re
 import time
+import copy
 import pyproj
 import logging
 import urllib.request
@@ -54,6 +55,59 @@ def benchmark_context():
 # TODO prepare logger def
 def setup_logger(handler, formatter, level):
     pass
+
+
+def ratio(numerator, denominator):
+    """
+    Compute ratio of scaled to 100.
+
+    :param numerator: numeric
+    :param denominator: numeric
+    :return: float
+        Ratio rounded to tenth and scaled to 100
+    """
+    return round((numerator / denominator) * 100, 1)
+
+
+def default(*args):
+    """
+    Default callback for execute_threads. A custom callback must accept two
+    parameters, message and ratio.
+    """
+    pass
+
+
+def execute_threads(to_execute, max_threads, msg='{} of 100 %', callback=default):
+    """
+
+    :param to_execute: list or iterable
+        An iterable of thread objects.
+    :param max_threads: int
+        Maximum number of threads to start respectively run.
+    :param msg: str
+        Message
+    :param callback: func
+    """
+    exe = copy.copy(to_execute)
+    current = []
+
+    if len(exe) % max_threads != 0:
+        reminder = len(exe) % max_threads
+        execute_threads(exe[-reminder:], reminder, msg=msg, callback=callback)
+        exe = exe[:-reminder]
+
+    while True:
+        if not exe:
+            break
+
+        thread = exe.pop()
+        thread.start()
+        current.append(thread)
+
+        if len(current) == max_threads:
+            [thread.join() for thread in current]
+            callback(msg, ratio((len(to_execute) - len(exe)), len(to_execute)))
+            current = []
 
 
 # Download
