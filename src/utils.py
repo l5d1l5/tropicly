@@ -20,12 +20,24 @@ import numpy as np
 import pandas as pd
 import rasterio as rio
 import geopandas as gpd
-
 from pathlib import Path
+
 from collections import namedtuple
 from contextlib import contextmanager
 from rasterio import warp, merge, coords
 
+
+__all__ = [
+    'LOGGER',
+    'get_data_dir',
+    'execute_threads',
+    'download',
+    'write_binary',
+    'clip_worker',
+    'download_worker',
+    'alignment_worker',
+    'harmonization_worker',
+]
 
 LOGGER = logging.getLogger(__name__)
 LOGGER.addHandler(logging.NullHandler())
@@ -50,11 +62,6 @@ def benchmark_context():
         yield None
     finally:
         print(time.time() - start)
-
-
-# TODO prepare logger def
-def setup_logger(handler, formatter, level):
-    pass
 
 
 def ratio(numerator, denominator):
@@ -88,25 +95,22 @@ def execute_threads(to_execute, max_threads, msg='{} of 100 %', callback=default
         Message
     :param callback: func
     """
-    exe = copy.copy(to_execute)
+    stack = copy.copy(to_execute)
     current = []
 
-    if len(exe) % max_threads != 0:
-        reminder = len(exe) % max_threads
-        execute_threads(exe[-reminder:], reminder, msg=msg, callback=callback)
-        exe = exe[:-reminder]
+    if len(stack) % max_threads != 0:
+        reminder = len(stack) % max_threads
+        execute_threads(stack[-reminder:], reminder, msg='', callback=default)
+        stack = stack[:-reminder]
 
-    while True:
-        if not exe:
-            break
-
-        thread = exe.pop()
+    while stack:
+        thread = stack.pop()
         thread.start()
         current.append(thread)
 
         if len(current) == max_threads:
             [thread.join() for thread in current]
-            callback(msg, ratio((len(to_execute) - len(exe)), len(to_execute)))
+            callback(msg, ratio((len(to_execute) - len(stack)), len(to_execute)))
             current = []
 
 
@@ -560,6 +564,7 @@ def binary_jaccard(arr1, arr2, return_matrix=False):
     # Total number of attributes where a == 0 and b == 1
     m01 = np.sum(b == -1)
 
+    # TODO prevent division by zero error
     jaccard = m11 / (m10 + m01 + m11)
 
     if return_matrix:
@@ -673,7 +678,7 @@ def clip_worker(to_clip, bounds, profile, out_path):
 
 
 def harmonization_worker(gl30, cover, queue, *args):
-    # TODO doc
+    # TODO doc, refactor
     r1 = read_raster(gl30)
     r2 = read_raster(cover)
 
