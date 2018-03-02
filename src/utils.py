@@ -33,6 +33,7 @@ __all__ = [
     'execute_threads',
     'download',
     'write_binary',
+    'tile_index',
     'clip_worker',
     'download_worker',
     'alignment_worker',
@@ -55,8 +56,17 @@ def get_data_dir(path: str) -> namedtuple:
 
 
 @contextmanager
-def benchmark_context():
-    # TODO doc
+def benchmark():
+    """
+    Benchmark functions or else with a
+    context manager e.g.
+
+    with benchmark():
+        do()
+        foo()
+
+    >> 2
+    """
     start = time.time()
     try:
         yield None
@@ -87,13 +97,18 @@ def default(*args):
 def execute_threads(to_execute, max_threads, msg='{} of 100 %', callback=default):
     """
 
+
     :param to_execute: list or iterable
         An iterable of thread objects.
     :param max_threads: int
         Maximum number of threads to start respectively run.
     :param msg: str
-        Message
+        Message to emit after a set of threads finished.
     :param callback: func
+        Function to call after a set of threads is finished.
+        Must accept a message (str) and a numeric (float) as
+        parameter. Numeric is ratio of finished threads in
+        percent.
     """
     stack = copy.copy(to_execute)
     current = []
