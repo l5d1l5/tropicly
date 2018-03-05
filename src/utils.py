@@ -9,6 +9,7 @@ Description:
 """
 import os
 import re
+import math
 import time
 import copy
 import pyproj
@@ -542,7 +543,7 @@ def round_bounds(bounds):
     return BoundingBox(*coors)
 
 
-# Statistic
+# Statistic/Compute
 def binary_jaccard(arr1, arr2, return_matrix=False):
     """
     Calculates the Jaccard Index (JI) of two equal sized binary arrays or vectors.
@@ -620,6 +621,48 @@ def simple_matching_coefficient(arr1, arr2, return_matrix=False):
         matrix = matrix._replace(m00=m00)
         return smc, matrix
     return smc
+
+
+def square_mask(mask_size, center, side_length):
+    # TODO doc
+    pass
+
+
+def circle_mask(mask_size, center, radius):
+    # TODO doc
+    cx, cy = center
+    sx, sy = mask_size
+
+    y, x = np.ogrid[:sx, :sy]
+
+    mask = (x-cx)**2 + (y-cy)**2 <= radius**2
+
+    return mask
+
+
+def haversine(coordinate1, coordinate2, scale='m'):
+    # TODO doc
+    scales = {
+        'cm': lambda d: d * 100,
+        'km': lambda d: d * 0.001,
+    }
+    earth_radius = 6378137  # meter
+
+    px, py = map(math.radians, coordinate1)
+    qx, qy = map(math.radians, coordinate2)
+
+    term1 = (py - qy) * 0.5
+    term2 = (px - qx) * 0.5
+    term3 = math.sin(term1)**2 + math.cos(py) * math.cos(qy) * math.sin(term2)**2
+
+    haversine_dist = 2 * earth_radius * math.asin(math.sqrt(term3))
+
+    return scales.get(scale, haversine_dist)(haversine_dist)
+
+
+def euclidean(coordinate1, coordinate2):
+    # TODO doc
+    pass
 
 
 # Worker
