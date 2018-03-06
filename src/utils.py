@@ -34,6 +34,7 @@ __all__ = [
     'execute_threads',
     'download',
     'write_binary',
+    'write',
     'tile_index',
     'clip_worker',
     'download_worker',
@@ -735,29 +736,76 @@ def clip_worker(to_clip, bounds, profile, out_path):
         write(data, str(opath), **profile)
 
 
-def harmonization_worker(gl30, cover, queue, *args):
+def harmonization_worker(landcover, treecover, queue, *args):
     # TODO doc, refactor
-    r1 = read_raster(gl30)
-    r2 = read_raster(cover)
+    handler = [
+        read_raster(item)
+        for item in [landcover, treecover]
+    ]
 
-    d1 = r1.read(1)
-    d2 = r2.read(1)
+    cover_arr, tree_arr = [
+        item.read(1)
+        for item in handler
+    ]
 
-    r1.close()
-    r2.close()
+    [item.close() for item in handler]
 
-    d1[d1 == 20] = 1
-    d1[d1 == 50] = 1
-    d1[d1 != 1] = 0
+    cover_arr[cover_arr == 20] = 1
+    cover_arr[cover_arr != 1] = 0
 
-    tmp = d2.copy()
+    tmp = tree_arr.copy()
 
     args = list(args)
     for i in [0, 10, 20, 30]:
         tmp[d2 <= i] = 0
         tmp[d2 > i] = 1
 
-        args.append(binary_jaccard(d1, tmp))
-        args.append(simple_matching_coefficient(d1, tmp))
+        args.append(binary_jaccard(cover_arr, tmp))
+        args.append(simple_matching_coefficient(cover_arr, tmp))
 
     queue.put(args)
+
+
+def assignment_worker(treecover, loss, gain, landcover, year, target_cover):
+    # TODO doc
+    handler = [
+        read_raster(item)
+        for item in [treecover, loss, gain, landcover]
+    ]
+
+    tree_arr, loss_arr, gain_arr, cover_arr = [
+        item.read(1)
+        for item in handler
+    ]
+
+    profile = handler[0].profile
+
+    [item.close() for item in handler]
+
+    # prepare annual tree cover loss within a selected
+    # tree cover class in a selected temporal resolution
+    annual_loss = np.copy(loss_arr)
+    np.place(annual_loss, annual_loss > year, 0)
+    annual_loss[tree_arr < target_cover] = 0
+
+    # binary loss layer from annual tree cover loss
+    binary_loss = np.zeros(annual_loss.shape, dtype=np.uint8)
+    binary_loss[annual_loss != 0] = 1
+
+    # tree cover gain within annual loss
+    loss_gain = np.copy(gain_arr)
+    loss_gain[annual_loss == 0] = 0
+
+    # deforestation driver from 1 till year
+    driver = binary_loss * cover_arr
+    driver_gain = np.copy(driver)
+    driver_gain[loss_gain == 1] = 25
+
+    # annual driver
+    for y_idx in range(1, year+1):
+        annual = np.zeros(annual_loss.shape)
+        annual[annual_loss == y_idx] = 1
+        annual = annual * driver
+
+    return driver, driver_gain
+
