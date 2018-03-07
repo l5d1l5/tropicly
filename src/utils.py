@@ -39,6 +39,7 @@ __all__ = [
     'clip_worker',
     'download_worker',
     'alignment_worker',
+    'assignment_worker',
     'harmonization_worker',
 ]
 
@@ -757,8 +758,8 @@ def harmonization_worker(landcover, treecover, queue, *args):
 
     args = list(args)
     for i in [0, 10, 20, 30]:
-        tmp[d2 <= i] = 0
-        tmp[d2 > i] = 1
+        tmp[cover_arr <= i] = 0
+        tmp[cover_arr > i] = 1
 
         args.append(binary_jaccard(cover_arr, tmp))
         args.append(simple_matching_coefficient(cover_arr, tmp))
@@ -766,7 +767,7 @@ def harmonization_worker(landcover, treecover, queue, *args):
     queue.put(args)
 
 
-def assignment_worker(treecover, loss, gain, landcover, year, target_cover):
+def assignment_worker(treecover, loss, gain, landcover, key, out_path, year=10, target_cover=10):
     # TODO doc
     handler = [
         read_raster(item)
@@ -778,7 +779,7 @@ def assignment_worker(treecover, loss, gain, landcover, year, target_cover):
         for item in handler
     ]
 
-    profile = handler[0].profile
+    profile = fetch_metadata(handler[0], 'transform', 'crs', 'driver')
 
     [item.close() for item in handler]
 
@@ -801,11 +802,23 @@ def assignment_worker(treecover, loss, gain, landcover, year, target_cover):
     driver_gain = np.copy(driver)
     driver_gain[loss_gain == 1] = 25
 
+    name = 'driver_{}.tif'.format(key)
+    write(driver, str(out_path/name), driver=profile.driver,
+          crs=profile.crs, compress='lzw', transform=profile.transform)
+
+    name = 'driver_gain_{}.tif'.format(key)
+    write(driver_gain, str(out_path/name), driver=profile.driver,
+          crs=profile.crs, compress='lzw', transform=profile.transform)
+
     # annual driver
     for y_idx in range(1, year+1):
-        annual = np.zeros(annual_loss.shape)
+        annual = np.zeros(annual_loss.shape, dtype=np.uint8)
         annual[annual_loss == y_idx] = 1
         annual = annual * driver
 
-    return driver, driver_gain
+        name = 'annual_{:02}_{}.tif'.format(y_idx, key)
+
+        write(annual, str(out_path/name), driver=profile.driver,
+              crs=profile.crs, compress='lzw', transform=profile.transform)
+
 
