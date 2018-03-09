@@ -23,9 +23,11 @@ import rasterio as rio
 import geopandas as gpd
 from pathlib import Path
 
-from collections import namedtuple
+from rasterio import features
+from shapely.geometry import Polygon
 from contextlib import contextmanager
 from rasterio import warp, merge, coords
+from collections import namedtuple, Counter
 
 
 __all__ = [
@@ -41,6 +43,7 @@ __all__ = [
     'alignment_worker',
     'assignment_worker',
     'harmonization_worker',
+    'reclassification_worker',
 ]
 
 LOGGER = logging.getLogger(__name__)
@@ -768,7 +771,7 @@ def harmonization_worker(landcover, treecover, queue, *args):
 
 
 def assignment_worker(treecover, loss, gain, landcover, key, out_path, year=10, target_cover=10):
-    # TODO doc
+    # TODO doc, refactor
     handler = [
         read_raster(item)
         for item in [treecover, loss, gain, landcover]
@@ -822,3 +825,56 @@ def assignment_worker(treecover, loss, gain, landcover, key, out_path, year=10, 
               crs=profile.crs, compress='lzw', transform=profile.transform)
 
 
+def reclassification_worker(driver, out_path):
+    # TODO doc, refactor
+    handle = read_raster(driver)
+
+    src_data = handle.read(1)
+    transform = handle.transform
+
+    mask = src_data == 20
+    reclassified = src_data.copy()
+
+    max_r, max_c = src_data.shape
+    gen = rio.features.shapes(src_data, mask, transform=transform)
+
+    reclass = []
+    for geometry, _ in gen:
+        polygon = Polygon(geometry['coordinates'][0])
+        centroid = polygon.centroid
+        row, col = handle.index(centroid.x, centroid.y)
+
+        row_start = 0 if row - 8 < 0 else row - 8
+        row_end = max_r if row + 9 > max_r else row + 9
+        col_start = 0 if col - 8 < 0 else col - 8
+        col_end = max_c if col + 9 > max_c else col + 9
+
+        buffer = src_data[row_start:row_end, col_start:col_end]
+
+        mc = most_common_class(buffer)
+
+        if mc != 20:
+            reclass.append((geometry, mc))
+
+    if len(reclass) > 0:
+        _ = rio.features.rasterize(reclass, out_shape=reclassified.shape,
+                                   out=reclassified, transform=transform)
+
+    handle.close()
+
+    write(reclassified, str(out_path), transform=transform, driver='GTiff', compress='lzw',
+          crs={'init': 'epsg:4326'})
+
+
+def most_common_class(arr, default=20):
+    # TODO doc, reactor
+    flatten = arr.reshape(arr.shape[0] * arr.shape[1])
+
+    c = Counter(flatten)
+
+    for item in c.most_common():
+        key, count = item
+        if key != 0:
+            return key
+
+    return default
