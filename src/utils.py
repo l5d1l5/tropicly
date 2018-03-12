@@ -50,6 +50,7 @@ LOGGER = logging.getLogger(__name__)
 LOGGER.addHandler(logging.NullHandler())
 
 
+# TODO generalize a function for file naming and out path
 # Common
 def get_data_dir(path: str) -> namedtuple:
     # TODO doc
@@ -790,7 +791,7 @@ def assignment_worker(treecover, loss, gain, landcover, key, out_path, year=10, 
     # tree cover class in a selected temporal resolution
     annual_loss = np.copy(loss_arr)
     np.place(annual_loss, annual_loss > year, 0)
-    annual_loss[tree_arr < target_cover] = 0
+    annual_loss[tree_arr <= target_cover] = 0
 
     # binary loss layer from annual tree cover loss
     binary_loss = np.zeros(annual_loss.shape, dtype=np.uint8)
@@ -874,7 +875,7 @@ def most_common_class(arr, default=20):
 
     for item in c.most_common():
         key, count = item
-        if key != 0:
+        if key != 0 and key != 20:
             return key
 
     return default
