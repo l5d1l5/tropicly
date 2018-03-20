@@ -629,9 +629,19 @@ def simple_matching_coefficient(arr1, arr2, return_matrix=False):
     return smc
 
 
-def square_mask(mask_size, center, side_length):
+def square_buffer(data, center, size):
     # TODO doc
-    pass
+    row, col = center
+    max_row, max_col = data.shape
+
+    row_start = 0 if row - 8 < 0 else row - 8
+    row_end = max_row if row + 9 > max_row else row + 9
+    col_start = 0 if col - 8 < 0 else col - 8
+    col_end = max_col if col + 9 > max_col else col + 9
+
+    buffer = data[row_start:row_end, col_start:col_end]
+
+    return buffer
 
 
 def circle_mask(mask_size, center, radius):
@@ -666,12 +676,34 @@ def haversine(coordinate1, coordinate2, scale='m'):
     return scales.get(scale, haversine_dist)(haversine_dist)
 
 
-def euclidean(coordinate1, coordinate2):
-    # TODO doc
-    pass
-
-
 # Worker
+def class_frequency(data, exclude, default=20):
+    """
+    Returns the most common class in a numpy array. Omits
+    all classes in exclude
+
+    :param data: 2D numpy.ndarray
+        A numpy 2 dimensional numpy array
+    :param exclude: list
+        Values to exclude from counting.
+    :param default: numeric
+        Value to return if no most common class is found.
+    :return: numeric
+        Most common class in array.
+    """
+    flat = data.reshape(data.shape[0] * data.shape[1])
+
+    class_count = Counter(flat)
+
+    for item in class_count.most_common():
+        key, count = item
+
+        if key in exclude and key != default:
+            return key
+
+    return default
+
+
 def dispatch_name(val, key, idx):
     # TODO doc
     return {
@@ -755,6 +787,7 @@ def harmonization_worker(landcover, treecover, queue, *args):
 
     [item.close() for item in handler]
 
+    # TODO use class selection list
     cover_arr[cover_arr == 20] = 1
     cover_arr[cover_arr != 1] = 0
 
@@ -814,17 +847,6 @@ def assignment_worker(treecover, loss, gain, landcover, key, out_path, year=10, 
     write(driver_gain, str(out_path/name), driver=profile.driver,
           crs=profile.crs, compress='lzw', transform=profile.transform)
 
-    # annual driver
-    for y_idx in range(1, year+1):
-        annual = np.zeros(annual_loss.shape, dtype=np.uint8)
-        annual[annual_loss == y_idx] = 1
-        annual = annual * driver
-
-        name = 'annual_{:02}_{}.tif'.format(y_idx, key)
-
-        write(annual, str(out_path/name), driver=profile.driver,
-              crs=profile.crs, compress='lzw', transform=profile.transform)
-
 
 def reclassification_worker(driver, out_path):
     # TODO doc, refactor
@@ -833,10 +855,9 @@ def reclassification_worker(driver, out_path):
     src_data = handle.read(1)
     transform = handle.transform
 
-    mask = src_data == 20
     reclassified = src_data.copy()
 
-    max_r, max_c = src_data.shape
+    mask = src_data == 20
     gen = rio.features.shapes(src_data, mask, transform=transform)
 
     reclass = []
@@ -845,17 +866,12 @@ def reclassification_worker(driver, out_path):
         centroid = polygon.centroid
         row, col = handle.index(centroid.x, centroid.y)
 
-        row_start = 0 if row - 8 < 0 else row - 8
-        row_end = max_r if row + 9 > max_r else row + 9
-        col_start = 0 if col - 8 < 0 else col - 8
-        col_end = max_c if col + 9 > max_c else col + 9
+        buffer = square_buffer(src_data, (row, col), 8)
 
-        buffer = src_data[row_start:row_end, col_start:col_end]
+        most_common = class_frequency(buffer, [0], default=20)
 
-        mc = most_common_class(buffer)
-
-        if mc != 20:
-            reclass.append((geometry, mc))
+        if most_common != 20:
+            reclass.append((geometry, most_common))
 
     if len(reclass) > 0:
         _ = rio.features.rasterize(reclass, out_shape=reclassified.shape,
@@ -865,17 +881,3 @@ def reclassification_worker(driver, out_path):
 
     write(reclassified, str(out_path), transform=transform, driver='GTiff', compress='lzw',
           crs={'init': 'epsg:4326'})
-
-
-def most_common_class(arr, default=20):
-    # TODO doc, reactor
-    flatten = arr.reshape(arr.shape[0] * arr.shape[1])
-
-    c = Counter(flatten)
-
-    for item in c.most_common():
-        key, count = item
-        if key != 0 and key != 20:
-            return key
-
-    return default
