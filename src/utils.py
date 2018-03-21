@@ -634,10 +634,12 @@ def square_buffer(data, center, size):
     row, col = center
     max_row, max_col = data.shape
 
-    row_start = 0 if row - 8 < 0 else row - 8
-    row_end = max_row if row + 9 > max_row else row + 9
-    col_start = 0 if col - 8 < 0 else col - 8
-    col_end = max_col if col + 9 > max_col else col + 9
+    half = int(size / 2)
+
+    row_start = 0 if row - half < 0 else row - half
+    row_end = max_row if row + half > max_row else row + half + 1
+    col_start = 0 if col - half < 0 else col - half
+    col_end = max_col if col + half > max_col else col + half + 1
 
     buffer = data[row_start:row_end, col_start:col_end]
 
