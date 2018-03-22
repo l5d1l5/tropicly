@@ -22,6 +22,7 @@ import pandas as pd
 import rasterio as rio
 import geopandas as gpd
 from pathlib import Path
+from functools import wraps
 
 from rasterio import features
 from shapely.geometry import Polygon
@@ -33,7 +34,7 @@ from collections import namedtuple, Counter
 __all__ = [
     'LOGGER',
     'get_data_dir',
-    'execute_threads',
+    'execute_concurrent',
     'download',
     'write_binary',
     'write',
@@ -50,7 +51,6 @@ LOGGER = logging.getLogger(__name__)
 LOGGER.addHandler(logging.NullHandler())
 
 
-# TODO generalize a function for file naming and out path
 # Common
 def get_data_dir(path: str) -> namedtuple:
     # TODO doc
@@ -63,7 +63,7 @@ def get_data_dir(path: str) -> namedtuple:
 
 
 @contextmanager
-def benchmark():
+def benchmark_context():
     """
     Benchmark functions or else with a
     context manager e.g.
@@ -79,6 +79,24 @@ def benchmark():
         yield None
     finally:
         print(time.time() - start)
+
+
+def benchmark_decorator(func):
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        """
+        A decorator for benchmark methods. It prints the duration
+        the provided function needed to stdout.
+        :param args: func arguments
+        :param kwargs: func key arguments
+        :return: func result
+        """
+        start = time.time()
+        result = func(*args, **kwargs)
+        end = time.time() - start
+        print('{}: {}'.format(func.__name__, end))
+        return result
+    return wrapper
 
 
 def ratio(numerator, denominator):
@@ -101,10 +119,9 @@ def default(*args):
     pass
 
 
-def execute_threads(to_execute, max_threads, msg='{} of 100 %', callback=default):
+def execute_concurrent(to_execute, max_threads, msg='{} of 100 %', callback=default, init_len=None):
+    # TODO fix ratio compute bug
     """
-
-
     :param to_execute: list or iterable
         An iterable of thread objects.
     :param max_threads: int
@@ -116,13 +133,19 @@ def execute_threads(to_execute, max_threads, msg='{} of 100 %', callback=default
         Must accept a message (str) and a numeric (float) as
         parameter. Numeric is ratio of finished threads in
         percent.
+    :param init_len: int
+        Total number of concurrent objects to execute if not provided
+        will be derived from to_execute.
     """
     stack = copy.copy(to_execute)
     current = []
 
+    if init_len is None:
+        init_len = len(to_execute)
+
     if len(stack) % max_threads != 0:
         reminder = len(stack) % max_threads
-        execute_threads(stack[-reminder:], reminder, msg='', callback=default)
+        execute_concurrent(stack[-reminder:], reminder, msg=msg, callback=default, init_len=init_len)
         stack = stack[:-reminder]
 
     while stack:
@@ -132,7 +155,7 @@ def execute_threads(to_execute, max_threads, msg='{} of 100 %', callback=default
 
         if len(current) == max_threads:
             [thread.join() for thread in current]
-            callback(msg, ratio((len(to_execute) - len(stack)), len(to_execute)))
+            callback(msg, ratio((init_len - len(stack)), init_len))
             current = []
 
 
@@ -700,7 +723,7 @@ def class_frequency(data, exclude, default=20):
     for item in class_count.most_common():
         key, count = item
 
-        if key in exclude and key != default:
+        if key not in exclude and key != default:
             return key
 
     return default
@@ -883,3 +906,7 @@ def reclassification_worker(driver, out_path):
 
     write(reclassified, str(out_path), transform=transform, driver='GTiff', compress='lzw',
           crs={'init': 'epsg:4326'})
+
+
+if __name__ == "__main__":
+    pass
