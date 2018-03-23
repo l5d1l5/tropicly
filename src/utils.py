@@ -19,6 +19,7 @@ import shapely.geometry
 
 import numpy as np
 import pandas as pd
+from cell import Cell
 import rasterio as rio
 import geopandas as gpd
 from pathlib import Path
@@ -701,7 +702,6 @@ def haversine(coordinate1, coordinate2, scale='m'):
     return scales.get(scale, haversine_dist)(haversine_dist)
 
 
-# Worker
 def class_frequency(data, exclude, default=20):
     """
     Returns the most common class in a numpy array. Omits
@@ -729,6 +729,7 @@ def class_frequency(data, exclude, default=20):
     return default
 
 
+# Worker
 def dispatch_name(val, key, idx):
     # TODO doc
     return {
@@ -908,5 +909,19 @@ def reclassification_worker(driver, out_path):
           crs={'init': 'epsg:4326'})
 
 
-if __name__ == "__main__":
+def find_occupied(data):
+    row, col = np.nonzero(data)
+
+    for x, y in zip(col, row):
+        yield Cell(x, y, data[y][x])
+
+
+def sample_occupied(data, samples=100, affine=None):
     pass
+
+
+if __name__ == "__main__":
+    arr = np.random.randint(0,11,(10,10))
+    print(arr)
+    for i in find_occupied(arr):
+        print(i)

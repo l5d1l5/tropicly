@@ -8,7 +8,7 @@ Mail: tobi.seyde@gmail.com
 
 
 class Cell:
-    __slots__ = 'x y value'
+    __slots__ = 'x', 'y', 'value'
 
     def __init__(self, x, y, value):
         self.x = x
@@ -22,3 +22,6 @@ class Cell:
     @property
     def col(self):
         return self.x
+
+    def __repr__(self):
+        return '<Cell({}, {}, {}) at {}>'.format(self.x, self.y, self.value, hex(id(self)))
