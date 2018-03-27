@@ -19,7 +19,6 @@ import shapely.geometry
 
 import numpy as np
 import pandas as pd
-from cell import Cell
 import rasterio as rio
 import geopandas as gpd
 from pathlib import Path
@@ -40,6 +39,7 @@ __all__ = [
     'write_binary',
     'write',
     'tile_index',
+    'sample_occupied',
     'clip_worker',
     'download_worker',
     'alignment_worker',
@@ -50,6 +50,8 @@ __all__ = [
 
 LOGGER = logging.getLogger(__name__)
 LOGGER.addHandler(logging.NullHandler())
+
+RANDOM_STATE = np.random.RandomState(42)
 
 
 # Common
@@ -729,6 +731,31 @@ def class_frequency(data, exclude, default=20):
     return default
 
 
+def sample_occupied(data, samples=100, affine=None):
+    cells = list(zip(*np.nonzero(data)))
+    cell_sample_idx = RANDOM_STATE.randint(len(cells), size=samples)
+
+    records = []
+    for idx in cell_sample_idx:
+        row, col = cells[idx]
+
+        if affine:
+            x, y = (col, row) * affine
+            record = [data[row][col], row, col, x, y]
+
+        else:
+            record = [data[row][col], row, col]
+
+        records.append(record)
+
+    columns = 'label row col x y'.split()
+
+    if affine:
+        return pd.DataFrame.from_records(records, columns=columns)
+
+    return pd.DataFrame.from_records(records, columns=columns[:3])
+
+
 # Worker
 def dispatch_name(val, key, idx):
     # TODO doc
@@ -799,7 +826,7 @@ def clip_worker(to_clip, bounds, profile, out_path):
         write(data, str(opath), **profile)
 
 
-def harmonization_worker(landcover, treecover, queue, *args):
+def harmonization_worker(landcover, treecover, queue, density=(0, 10, 20, 30), *args):
     # TODO doc, refactor
     handler = [
         read_raster(item)
@@ -813,16 +840,16 @@ def harmonization_worker(landcover, treecover, queue, *args):
 
     [item.close() for item in handler]
 
-    # TODO use class selection list
+    # Create binary mask of landcover layer, set selected classes to 1 and reminders to 0
     cover_arr[cover_arr == 20] = 1
     cover_arr[cover_arr != 1] = 0
 
-    tmp = tree_arr.copy()
+    tmp = np.zeros(tree_arr.shape, dtype=np.uint8)
 
     args = list(args)
-    for i in [0, 10, 20, 30]:
-        tmp[cover_arr <= i] = 0
-        tmp[cover_arr > i] = 1
+    for canopy in density:
+        tmp[tree_arr <= canopy] = 0
+        tmp[tree_arr > canopy] = 1
 
         args.append(binary_jaccard(cover_arr, tmp))
         args.append(simple_matching_coefficient(cover_arr, tmp))
@@ -907,21 +934,3 @@ def reclassification_worker(driver, out_path):
 
     write(reclassified, str(out_path), transform=transform, driver='GTiff', compress='lzw',
           crs={'init': 'epsg:4326'})
-
-
-def find_occupied(data):
-    row, col = np.nonzero(data)
-
-    for x, y in zip(col, row):
-        yield Cell(x, y, data[y][x])
-
-
-def sample_occupied(data, samples=100, affine=None):
-    pass
-
-
-if __name__ == "__main__":
-    arr = np.random.randint(0,11,(10,10))
-    print(arr)
-    for i in find_occupied(arr):
-        print(i)
