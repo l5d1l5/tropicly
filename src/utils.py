@@ -826,7 +826,8 @@ def clip_worker(to_clip, bounds, profile, out_path):
         write(data, str(opath), **profile)
 
 
-def harmonization_worker(landcover, treecover, queue, density=(0, 10, 20, 30), *args):
+def harmonization_worker(landcover, treecover, queue, density=(0, 10, 20, 30),
+                         class_selection=(20,), *args):
     # TODO doc, refactor
     handler = [
         read_raster(item)
@@ -841,7 +842,7 @@ def harmonization_worker(landcover, treecover, queue, density=(0, 10, 20, 30), *
     [item.close() for item in handler]
 
     # Create binary mask of landcover layer, set selected classes to 1 and reminders to 0
-    cover_arr[cover_arr == 20] = 1
+    cover_arr[np.isin(cover_arr, class_selection)] = 1
     cover_arr[cover_arr != 1] = 0
 
     tmp = np.zeros(tree_arr.shape, dtype=np.uint8)
