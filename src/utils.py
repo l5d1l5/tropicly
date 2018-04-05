@@ -756,6 +756,29 @@ def sample_occupied(data, samples=100, affine=None):
     return pd.DataFrame.from_records(records, columns=columns[:3])
 
 
+def treecover_similarity(gl30, gfc, cover_class=(20,), canopy_density=(0, 10, 20, 30,), compute_smc=False):
+    # TODO doc, refactor exception
+    if gl30.shape != gfc.shape:
+        raise Exception
+
+    gl30_binary = np.zeros(gl30.shape, dtype=np.uint8)
+    gl30_binary[np.isin(gl30, cover_class)] = 1
+
+    values = {}
+    for density in canopy_density:
+        gfc_binary = np.zeros(gfc.shape, dtype=np.uint8)
+        gfc_binary[gfc > density] = 1
+
+        jc = binary_jaccard(gl30_binary, gfc_binary)
+        values['JC%s' % density] = jc
+
+        if compute_smc:
+            smc = simple_matching_coefficient(gl30_binary, gfc_binary)
+            values['SMC%s' % density] = smc
+
+    return values
+
+
 # Worker
 def dispatch_name(val, key, idx):
     # TODO doc
