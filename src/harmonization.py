@@ -10,18 +10,44 @@ import numpy as np
 from collections import namedtuple
 
 
+# TODO documentation, refactor exceptions
+
+
 LOGGER = logging.getLogger(__name__)
 LOGGER.addHandler(logging.NullHandler())
 
 
 def worker(landcover, treecover, return_stack, **kwargs):
+    """
+    Description
+
+    :param landcover:
+    :param treecover:
+    :param return_stack:
+    :param kwargs:
+    :return:
+    """
     pass
 
 
 def treecover_similarity(gl30, gfc, cover_class=(20,), canopy_density=(0, 10, 20, 30,), compute_smc=False):
-    # TODO doc, refactor exception
+    """
+    Description
+
+    :param gl30: np.ndarray
+    :param gfc: np.ndarray
+        Description
+    :param cover_class: list or tuple of numeric values
+        Description
+    :param canopy_density: list or tuple of numeric values
+        Description
+    :param compute_smc: boolean
+        Description
+    :return: dictionary
+        Description
+    """
     if gl30.shape != gfc.shape:
-        raise Exception
+        raise ValueError('Diverging image shapes.')
 
     gl30_binary = np.zeros(gl30.shape, dtype=np.uint8)
     gl30_binary[np.isin(gl30, cover_class)] = 1
