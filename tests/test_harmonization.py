@@ -5,7 +5,6 @@ Author: Tobias Seydewitz
 Date: 05.04.18
 Mail: tobi.seyde@gmail.com
 """
-import logging
 import numpy as np
 from unittest import TestCase
 from tests.utilities import random_test_data
@@ -38,10 +37,19 @@ class TestHarmonization(TestCase):
         self.assertEqual(expected, actual)
 
     def test_treecover_similarity_with_mock_data(self):
-        gfc, *_, gl30, _ = random_test_data((5,5))
+        gfc, *_, gl30, _ = random_test_data()
 
+        expected = {'SMC0': 0.8521,
+                    'SMC10': 0.9026,
+                    'SMC20': 0.9517,
+                    'SMC30': 1.0,
+                    'JC0': 0.7075,
+                    'JC10': 0.786,
+                    'JC20': 0.881,
+                    'JC30': 1.0}
         actual = treecover_similarity(gl30, gfc, compute_smc=True)
-        print(actual)
+
+        self.assertEqual(expected, actual)
 
     def test_binary_jaccard_with_non_binary_data(self):
         a = np.random.randint(5, size=(10, 10))
