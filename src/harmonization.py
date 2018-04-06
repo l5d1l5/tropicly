@@ -75,7 +75,7 @@ def binary_jaccard(arr1, arr2, return_matrix=False):
     """
     Calculates the Jaccard Index (JI) of two equal sized binary arrays or vectors.
     If return_matrix is set to true the method provides the JI and the necessary
-    calculation matrix as a named tuple. Attention, this method does not work in-place!
+    calculation matrix as a named tuple.
 
     :param arr1: numpy.ndarray, list or tuple
     :param arr2: numpy.ndarray, list or tuple
@@ -110,11 +110,13 @@ def binary_jaccard(arr1, arr2, return_matrix=False):
 
     denominator = (m10 + m01 + m11)
 
+    # prevent division by zero
     if denominator == 0:
         jaccard = 0
 
     else:
         jaccard = m11 / denominator
+        jaccard = np.round_(jaccard, 4)
 
     if return_matrix:
         Matrix = namedtuple('Matrix', 'm11 m10 m01 m00')
@@ -127,7 +129,7 @@ def simple_matching_coefficient(arr1, arr2, return_matrix=False):
     """
     Calculates the Simple Matching Coefficient (SMC) of two equal sized arrays or vectors.
     If return_matrix is set to true the method provides the SMC and the necessary calculation
-    matrix as a named tuple. Attention, this method does not work in-place!
+    matrix as a named tuple.
 
     :param arr1: numpy.ndarray, list, tuple
     :param arr2: numpy.ndarray, list, tuple
@@ -147,10 +149,11 @@ def simple_matching_coefficient(arr1, arr2, return_matrix=False):
     _, matrix = binary_jaccard(arr1, arr2, True)
     a = np.array(arr1, dtype=np.int8)
 
-    # Total number of attributes where a == 0 and b == 0
+    # total number of attributes where a == 0 and b == 0
     m00 = a.size - sum(matrix)
 
     smc = (matrix.m11 + m00) / a.size
+    smc = np.round_(smc, 4)
 
     if return_matrix:
         matrix = matrix._replace(m00=m00)
