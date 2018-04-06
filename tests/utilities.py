@@ -44,10 +44,10 @@ def random_test_data(size=(100, 100)):
     gl30_00[treecover > 30] = 20
 
     # GL30 2010
-    gl30_100 = np.random.choice([i * 10 for i in range(11)], size=size)
+    gl30_10 = np.random.choice([i * 10 for i in range(11)], size=size)
 
     return (treecover.astype(np.uint8),
             loss.astype(np.uint8),
             gain.astype(np.uint8),
             gl30_00.astype(np.uint8),
-            gl30_100.astype(np.uint8))
+            gl30_10.astype(np.uint8))
