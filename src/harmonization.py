@@ -57,12 +57,16 @@ def treecover_similarity(gl30, gfc, cover_class=(20,), canopy_density=(0, 10, 20
         gfc_binary = np.zeros(gfc.shape, dtype=np.uint8)
         gfc_binary[gfc > density] = 1
 
-        jc = binary_jaccard(gl30_binary, gfc_binary)
+        jc, _ = binary_jaccard(gl30_binary, gfc_binary, return_matrix=True)
         values['JC%s' % density] = jc
 
+        LOGGER.debug('JC%s matrix: %s', density, _)
+
         if compute_smc:
-            smc = simple_matching_coefficient(gl30_binary, gfc_binary)
+            smc, _ = simple_matching_coefficient(gl30_binary, gfc_binary, return_matrix=True)
             values['SMC%s' % density] = smc
+
+            LOGGER.debug('SMC%s matrix: %s', density, _)
 
     return values
 
@@ -93,16 +97,16 @@ def binary_jaccard(arr1, arr2, return_matrix=False):
     if np.sum(np.logical_or(a < 0, a > 1)) != 0 or np.sum(np.logical_or(b < 0, b > 1)) != 0:
         raise ValueError('Attributes should contain only binary values')
 
-    c = a + b
-    a = (b - c) + b  # a = (a - C) + a, m10 = a == 1
-    b = (a - c) + a  # b = (b - C) + b, m01 = b == 1
+    C = a + b
+    A = (b - C) + b  # a = (a - C) + a, m10 = a == 1
+    B = (a - C) + a  # b = (b - C) + b, m01 = b == 1
 
     # Total number of attributes where a == 1 and b == 1
-    m11 = np.sum(c == 2)
+    m11 = np.sum(C == 2)
     # Total number of attributes where a == 1 and b == 0
-    m10 = np.sum(a == -1)
+    m10 = np.sum(A == -1)
     # Total number of attributes where a == 0 and b == 1
-    m01 = np.sum(b == -1)
+    m01 = np.sum(B == -1)
 
     denominator = (m10 + m01 + m11)
 
