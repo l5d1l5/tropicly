@@ -7,6 +7,7 @@ Mail: tobi.seyde@gmail.com
 """
 import logging
 import numpy as np
+import rasterio as rio
 from collections import namedtuple
 
 
@@ -17,17 +18,27 @@ LOGGER = logging.getLogger(__name__)
 LOGGER.addHandler(logging.NullHandler())
 
 
-def worker(landcover, treecover, return_stack, **kwargs):
+def worker(landcover, treecover, return_stack, *args, **kwargs):
     """
     Description
 
     :param landcover:
     :param treecover:
     :param return_stack:
+    :param args:
     :param kwargs:
     :return:
     """
-    pass
+    with rio.open(landcover, 'r') as handle1, rio.open(treecover, 'r') as handle2:
+        gl30 = handle1.read(1)
+        gfc = handle2.read(1)
+
+    result = treecover_similarity(gl30, gfc, **kwargs)
+
+    for idx, val in enumerate(args):
+        result['arg%s' % idx] = val
+
+    return_stack.put(result)
 
 
 def treecover_similarity(gl30, gfc, cover_class=(20,), canopy_density=(0, 10, 20, 30,), compute_smc=False):
