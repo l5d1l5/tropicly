@@ -13,8 +13,10 @@ def random_test_data(size=(100, 100), seed=42):
     Creates random test data sets, data properties meet Hansen et al. and
     Chen et al..
 
-    :param size: numeric tuple
+    :param size: int tuple
         Shape of test data, default is a 100x100 2D array.
+    :param seed: int
+        Seed for random number generator.
     :return: treecover, loss, gain, gl30_00, gl30_10
         The returned data has the dtype uint8 and dimensionality of size.
         Treecover, value range 0 to 100. Loss, value range 0-12, values between 1 to 12
