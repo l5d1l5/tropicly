@@ -44,7 +44,6 @@ __all__ = [
     'download_worker',
     'alignment_worker',
     'assignment_worker',
-    'harmonization_worker',
     'reclassification_worker',
 ]
 
@@ -576,85 +575,6 @@ def round_bounds(bounds):
 
 
 # Statistic/Compute
-def binary_jaccard(arr1, arr2, return_matrix=False):
-    """
-    Calculates the Jaccard Index (JI) of two equal sized binary arrays or vectors.
-    If return_matrix is set to true the method provides the JI and the necessary
-    calculation matrix as a named tuple. Attention, this method does not work in-place!
-
-    :param arr1, arr2: numpy.ndarray, list or tuple
-        Both array alike objects sized in equal dimensions should contain exclusively
-        binary data (1,0).
-    :param return_matrix: boolean
-        Optional, a boolean value determining the return of the calculation matrix.
-    :return: float OR (float, namedtuple(m11, m01, m10, m00))
-        Default, the method returns only the JI if, return_matrix is set to true the
-        method returns the JI and the computation matrix.
-        The Matrix contains the following attributes:
-        m11 = total number of attributes where arr1 == 1 and arr2 == 1
-        m10 = total number of attributes where arr1 == 1 and arr2 == 0
-        m01 = total number of attributes where arr1 == 0 and arr2 == 1
-        m00 = not required, set to 0
-    """
-    a, b = np.array(arr1, dtype=np.int8), np.array(arr2, dtype=np.int8)
-
-    if np.sum(np.logical_or(a < 0, a > 1)) != 0 or np.sum(np.logical_or(b < 0, b > 1)) != 0:
-        raise ValueError('Attributes should contain only binary values')
-
-    c = a + b
-    a = (b - c) + b  # a = (a - C) + a, m10 = a == 1
-    b = (a - c) + a  # b = (b - C) + b, m01 = b == 1
-
-    # Total number of attributes where a == 1 and b == 1
-    m11 = np.sum(c == 2)
-    # Total number of attributes where a == 1 and b == 0
-    m10 = np.sum(a == -1)
-    # Total number of attributes where a == 0 and b == 1
-    m01 = np.sum(b == -1)
-
-    # TODO prevent division by zero error
-    jaccard = m11 / (m10 + m01 + m11)
-
-    if return_matrix:
-        Matrix = namedtuple('Matrix', 'm11 m10 m01 m00')
-        return jaccard, Matrix(m11, m10, m01, 0)
-    return jaccard
-
-
-def simple_matching_coefficient(arr1, arr2, return_matrix=False):
-    """
-    Calculates the Simple Matching Coefficient (SMC) of two equal sized arrays or vectors.
-    If return_matrix is set to true the method provides the SMC and the necessary calculation
-    matrix as a named tuple. Attention, this method does not work in-place!
-
-    :param arr1, arr2: numpy.ndarray, list, tuple
-        Both array alike objects sized in equal dimensions should contain exclusively
-        binary data (1,0).
-    :param return_matrix: boolean
-        Optional, a boolean value determining the return of the calculation matrix.
-    :return: float OR (float, namedtuple(m11, m01, m10, m00))
-        Default, the method returns only the SMC, if return_matrix is
-        set to true the method returns the SMC and the computation matrix.
-        The Matrix contains the following attributes:
-        m11 = total number of attributes where arr1 == 1 and arr2 == 1
-        m10 = total number of attributes where arr1 == 1 and arr2 == 0
-        m01 = total number of attributes where arr1 == 0 and arr2 == 1
-        m00 = total number of attributes where arr1 == 0 and arr2 == 0
-    """
-    _, matrix = binary_jaccard(arr1, arr2, True)
-    a = np.array(arr1, dtype=np.int8)
-
-    # Total number of attributes where a == 0 and B == 0
-    m00 = a.size - sum(matrix)
-
-    smc = (matrix.m11 + m00) / a.size
-
-    if return_matrix:
-        matrix = matrix._replace(m00=m00)
-        return smc, matrix
-    return smc
-
-
 def square_buffer(data, center, size):
     # TODO doc
     row, col = center
@@ -756,29 +676,6 @@ def sample_occupied(data, samples=100, affine=None):
     return pd.DataFrame.from_records(records, columns=columns[:3])
 
 
-def treecover_similarity(gl30, gfc, cover_class=(20,), canopy_density=(0, 10, 20, 30,), compute_smc=False):
-    # TODO doc, refactor exception
-    if gl30.shape != gfc.shape:
-        raise Exception
-
-    gl30_binary = np.zeros(gl30.shape, dtype=np.uint8)
-    gl30_binary[np.isin(gl30, cover_class)] = 1
-
-    values = {}
-    for density in canopy_density:
-        gfc_binary = np.zeros(gfc.shape, dtype=np.uint8)
-        gfc_binary[gfc > density] = 1
-
-        jc = binary_jaccard(gl30_binary, gfc_binary)
-        values['JC%s' % density] = jc
-
-        if compute_smc:
-            smc = simple_matching_coefficient(gl30_binary, gfc_binary)
-            values['SMC%s' % density] = smc
-
-    return values
-
-
 # Worker
 def dispatch_name(val, key, idx):
     # TODO doc
@@ -847,38 +744,6 @@ def clip_worker(to_clip, bounds, profile, out_path):
         opath = path / '{}_{}.tif'.format(idx, key)
         profile.update({'transform': transform})
         write(data, str(opath), **profile)
-
-
-def harmonization_worker(landcover, treecover, queue, density=(0, 10, 20, 30),
-                         class_selection=(20,), *args):
-    # TODO doc, refactor
-    handler = [
-        read_raster(item)
-        for item in [landcover, treecover]
-    ]
-
-    cover_arr, tree_arr = [
-        item.read(1)
-        for item in handler
-    ]
-
-    [item.close() for item in handler]
-
-    # Create binary mask of landcover layer, set selected classes to 1 and reminders to 0
-    cover_arr[np.isin(cover_arr, class_selection)] = 1
-    cover_arr[cover_arr != 1] = 0
-
-    tmp = np.zeros(tree_arr.shape, dtype=np.uint8)
-
-    args = list(args)
-    for canopy in density:
-        tmp[tree_arr <= canopy] = 0
-        tmp[tree_arr > canopy] = 1
-
-        args.append(binary_jaccard(cover_arr, tmp))
-        args.append(simple_matching_coefficient(cover_arr, tmp))
-
-    queue.put(args)
 
 
 def assignment_worker(treecover, loss, gain, landcover, key, out_path, year=10, target_cover=10):
