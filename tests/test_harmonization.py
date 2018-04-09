@@ -8,9 +8,9 @@ Mail: tobi.seyde@gmail.com
 import numpy as np
 from unittest import TestCase
 from tests.utilities import random_test_data
-from src.harmonization import (binary_jaccard,
-                               treecover_similarity,
-                               simple_matching_coefficient,)
+from tropicly.harmonization import (binary_jaccard,
+                                    treecover_similarity,
+                                    simple_matching_coefficient,)
 
 
 class TestHarmonization(TestCase):
