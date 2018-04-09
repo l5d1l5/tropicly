@@ -11,7 +11,7 @@ import rasterio as rio
 from collections import namedtuple
 
 
-# TODO documentation, refactor exceptions
+# TODO refactor exceptions
 
 
 LOGGER = logging.getLogger(__name__)
@@ -20,14 +20,19 @@ LOGGER.addHandler(logging.NullHandler())
 
 def worker(landcover, treecover, return_stack, *args, **kwargs):
     """
-    Description
+    Worker function for parallel execution.
 
-    :param landcover:
-    :param treecover:
-    :param return_stack:
-    :param args:
+    :param landcover: string
+    :param treecover: string
+        Path to landcover and treecover raster files.
+    :param return_stack: container object
+        Result will be added to container object. Should provide
+        a put method.
+    :param args: any
+        Additional parameters, will be added to result record.
     :param kwargs:
-    :return:
+        Parameter for treecover_similarity function. Please consider function
+        doc for detailed info.
     """
     with rio.open(landcover, 'r') as handle1, rio.open(treecover, 'r') as handle2:
         gl30 = handle1.read(1)
@@ -43,19 +48,21 @@ def worker(landcover, treecover, return_stack, *args, **kwargs):
 
 def treecover_similarity(gl30, gfc, cover_class=(20,), canopy_density=(0, 10, 20, 30,), compute_smc=False):
     """
-    Description
+    Determines the tree cover agreement between a GlobaLand30 land cover and a Global Forest
+    Change tree cover raster image.
 
     :param gl30: np.ndarray
     :param gfc: np.ndarray
-        Description
-    :param cover_class: list or tuple of numeric values
-        Description
-    :param canopy_density: list or tuple of numeric values
-        Description
+        GL30 and GFC treecover image data.
+    :param cover_class: list or tuple of integer values
+        GL30 land cover classes to interpret as forest.
+    :param canopy_density: list or tuple of integer values
+        GFC treecover canopy densities to consider for
+        analysis.
     :param compute_smc: boolean
-        Description
+        Compute simple matching coefficient as well. Default is false.
     :return: dictionary
-        Description
+        Computed values stored in a dictionary.
     """
     if gl30.shape != gfc.shape:
         raise ValueError('Diverging image shapes.')
