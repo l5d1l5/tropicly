@@ -20,7 +20,7 @@ def worker():
     pass
 
 
-def sample_occupied(data, samples=100, occupied=None, affine=None, seed=42):
+def sample_occupied(data, samples=100, occupied=None, affine=None, seed=None):
     """
     Description
 
@@ -64,12 +64,20 @@ def sample_occupied(data, samples=100, occupied=None, affine=None, seed=42):
 
 
 def draw_sample(data, samples=100, seed=None):
+    """
+
+    :param data:
+    :param samples:
+    :param seed:
+    :return:
+    """
     random = np.random.RandomState(seed)
 
     for i in range(samples):
-        idx = random.randint(len(data))
-
-        yield data.pop(idx)
-
         if not data:
             return
+
+        idx = random.randint(len(data))
+        yield data.pop(idx)
+
+
