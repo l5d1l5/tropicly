@@ -4,6 +4,7 @@ numpy
 bokeh
 pandas
 pyproj
+affine
 shapely
 jupyter
 rasterio
