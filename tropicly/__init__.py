@@ -9,6 +9,8 @@ from .sampling import worker as sworker
 from .harmonization import worker as hworker
 
 
+__version__ = 0.1
+
 __all__ = [
     'hworker',
     'sworker'
