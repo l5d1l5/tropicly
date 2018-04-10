@@ -39,7 +39,6 @@ __all__ = [
     'write_binary',
     'write',
     'tile_index',
-    'sample_occupied',
     'clip_worker',
     'download_worker',
     'alignment_worker',
@@ -649,31 +648,6 @@ def class_frequency(data, exclude, default=20):
             return key
 
     return default
-
-
-def sample_occupied(data, samples=100, affine=None):
-    cells = list(zip(*np.nonzero(data)))
-    cell_sample_idx = RANDOM_STATE.randint(len(cells), size=samples)
-
-    records = []
-    for idx in cell_sample_idx:
-        row, col = cells[idx]
-
-        if affine:
-            x, y = (col, row) * affine
-            record = [data[row][col], row, col, x, y]
-
-        else:
-            record = [data[row][col], row, col]
-
-        records.append(record)
-
-    columns = 'label row col x y'.split()
-
-    if affine:
-        return pd.DataFrame.from_records(records, columns=columns)
-
-    return pd.DataFrame.from_records(records, columns=columns[:3])
 
 
 # Worker
