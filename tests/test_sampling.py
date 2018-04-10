@@ -69,8 +69,16 @@ class TestSampling(TestCase):
     def test_draw_sample_with_greater_sample_space(self):
         data = [1] * 200
 
-        expected = 100
+        expected = 200
         actual = list(draw_sample(data))
+
+        self.assertEqual(expected, len(actual))
+
+    def test_draw_sample_with_limited_sample_space(self):
+        data = [1] * 200
+
+        expected = 100
+        actual = list(draw_sample(data, samples=100))
 
         self.assertEqual(expected, len(actual))
 
