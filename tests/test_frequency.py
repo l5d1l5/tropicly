@@ -31,6 +31,34 @@ class TestFrequency(TestCase):
 
         self.assertEqual(expected, actual)
 
-    def test_most_common(self):
-        a = np.zeros((10,10),dtype=np.uint8)
-        print(most_common_class(a))
+    def test_most_common_class_with_zeros(self):
+        a = np.zeros((10, 10), dtype=np.uint8)
+
+        expected = 20
+        actual = most_common_class(a)
+
+        self.assertEqual(expected, actual)
+
+    def test_most_common_class_with_valid(self):
+        *_, gl30_10 = random_test_data()
+
+        expected = 50
+        actual = most_common_class(gl30_10)
+
+        self.assertEqual(expected, actual)
+
+    def test_most_common_class_with_default_fallback(self):
+        a = np.array([[20] * 5] * 5, dtype=np.uint8)
+
+        expected = 20
+        actual = most_common_class(a)
+
+        self.assertEqual(expected, actual)
+
+    def test_most_common_class_with_fallback(self):
+        a = np.array([[20, 20, 10] * 5] * 5, dtype=np.uint8)
+
+        expected = 10
+        actual = most_common_class(a)
+
+        self.assertEqual(expected, actual)
