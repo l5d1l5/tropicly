@@ -23,9 +23,9 @@ def worker(image, return_stack, **kwargs):
 
     :param image: string
         Path to raster image.
-    :param return_stack: container object
+    :param return_stack: queue or list
         Result will be added to container object. Should provide
-        a put method.
+        a put or append method.
     :param kwargs: optional
         Parameter for sample_occupied. Please, consider the doc of this function
         for detailed instructions.
@@ -36,7 +36,11 @@ def worker(image, return_stack, **kwargs):
 
     samples = sample_occupied(data, affine=affine, **kwargs)
 
-    return_stack.put(samples)
+    if isinstance(return_stack, list):
+        return_stack.append(samples)
+
+    else:
+        return_stack.put(samples)
 
 
 def sample_occupied(data, samples=100, occupied=None, affine=None, seed=None):

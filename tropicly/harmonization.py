@@ -25,9 +25,9 @@ def worker(landcover, treecover, return_stack, *args, **kwargs):
     :param landcover: string
     :param treecover: string
         Path to landcover and treecover raster files.
-    :param return_stack: container object
-        Result will be added to container object. Should provide
-        a put method.
+    :param return_stack: queue or list
+        Result will be added. Should provide
+        a put or append method.
     :param args: any
         Additional parameters, will be added to result record.
     :param kwargs:
@@ -43,7 +43,11 @@ def worker(landcover, treecover, return_stack, *args, **kwargs):
     for idx, val in enumerate(args):
         result['arg%s' % idx] = val
 
-    return_stack.put(result)
+    if isinstance(return_stack, list):
+        return_stack.append(result)
+
+    else:
+        return_stack.put(result)
 
 
 def treecover_similarity(gl30, gfc, cover_class=(20,), canopy_density=(0, 10, 20, 30,), compute_smc=False):
