@@ -91,6 +91,14 @@ def reclassification_worker(driver, out_path):
           crs={'init': 'epsg:4326'})
 
 
+def extract_square(data, center, block_size=None, side_lenght=None, res=None):
+    if block_size:
+        pass
+
+    elif side_lenght and res:
+        pass
+
+
 # Statistic/Compute
 def square_buffer(data, center, size):
     # TODO doc
