@@ -100,14 +100,20 @@ class Distance:
         """
         self.func = __class__.ALGORITHMS.get(algorithm, None)
 
-        self.__class__.__doc__ = self.func.__doc__
-
         if not self.func:
             raise ValueError
 
+        self.__class__.__doc__ = self.func.__doc__
+
+    def validate_args(self, *args):
+        # TODO implement, two coords, length of coords is two, special case euclidean
+        pass
+
     def __call__(self, *args, **kwargs):
-        # TODO validate args, kwargs
-        return self.func(*args, **kwargs)
+        if self.validate_args(*args):
+            return self.func(*args, **kwargs)
+
+        raise ValueError
 
     def __repr__(self):
         return '<Distance({}) at {}>'.format(self.func.__name__, hex(id(self)))
