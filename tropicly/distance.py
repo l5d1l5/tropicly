@@ -5,6 +5,7 @@ Author: Tobias Seydewitz
 Date: 12.04.18
 Mail: tobi.seyde@gmail.com
 """
+import logging
 from math import (sin,
                   cos,
                   asin,
@@ -12,12 +13,11 @@ from math import (sin,
                   radians,)
 
 
-class Distance:
-    def __init__(self, func):
-        self.func = func
+# TODO refactor exceptions
 
-    def __call__(self, *args, **kwargs):
-        return self.func(*args, **kwargs)
+
+LOGGER = logging.getLogger(__name__)
+LOGGER.addHandler(logging.NullHandler)
 
 
 def haversine(coord1, coord2, scale='m'):
@@ -28,7 +28,7 @@ def haversine(coord1, coord2, scale='m'):
     :param coord1: tuple or list
         X- and Y-coordinate of the first location.
     :param coord2: tuple or list
-        X- and Y-coordinate of
+        X- and Y-coordinate of the second location.
     :param scale: string, optional
         Distance scale default is meter.
         Possible values: cm, km
@@ -54,5 +54,60 @@ def haversine(coord1, coord2, scale='m'):
     return scales.get(scale, haversine_dist)(haversine_dist)
 
 
-def euclidean():
-    pass
+def euclidean(coord1, coord2):
+    """
+    Computes the euclidean distance between two points.
+
+    :param coord1: tuple or list
+        X- and Y-coordinate of the first location.
+    :param coord2: tuple or list
+        X- and Y-coordinate of the first location.
+    :return:
+    """
+    px, py = coord1
+    qx, qy = coord2
+
+    term1 = (px - qx)**2
+    term2 = (py - qy)**2
+
+    euclidean_dist = sqrt(term1 + term2)
+
+    return euclidean_dist
+
+
+class Distance:
+    """
+    Wrapper classes for different distance algorithms.
+    Select at instantiation the required distance algorithm.
+
+    Example:
+    haversine = Distance('haversine')
+    haversine((0, 0), (1, 1))
+    """
+    ALGORITHMS = {
+        'haversine': haversine,
+        'euclidean': euclidean,
+        'hav': haversine,
+        'euc': euclidean,
+    }
+
+    def __init__(self, algorithm):
+        """
+        :param algorithm: string
+            Possible arguments:
+            haversine, hav
+            euclidean, euc
+        """
+        self.func = __class__.ALGORITHMS.get(algorithm, None)
+
+        self.__class__.__doc__ = self.func.__doc__
+
+        if not self.func:
+            raise ValueError
+
+    def __call__(self, *args, **kwargs):
+        # TODO validate args, kwargs
+        return self.func(*args, **kwargs)
+
+    def __repr__(self):
+        return '<Distance({}) at {}>'.format(self.func.__name__, hex(id(self)))
