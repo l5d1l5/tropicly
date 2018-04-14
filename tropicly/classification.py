@@ -111,6 +111,7 @@ def extract_square(data, center, block_size=None, side_length=None, res=None):
     :param res:
     :return:
     """
+    # TODO round might be a better idea
     if block_size:
         x_edge = int(0.5 * (block_size - 1))
         y_edge = int(0.5 * (block_size - 1))
@@ -121,8 +122,12 @@ def extract_square(data, center, block_size=None, side_length=None, res=None):
         else:
             x_res, y_res = res
 
-        x_edge = int(0.5 * (side_length - x_res))
-        y_edge = int(0.5 * (side_length - y_res))
+        # convert real world length to image length
+        x_block_size = int(side_length / x_res)
+        y_block_size = int(side_length / y_res)
+
+        x_edge = int(0.5 * (x_block_size - 1))
+        y_edge = int(0.5 * (y_block_size - 1))
 
     else:
         raise ValueError
