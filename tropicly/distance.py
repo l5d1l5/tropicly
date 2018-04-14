@@ -37,8 +37,9 @@ def haversine(coord1, coord2, scale='m'):
         scaling.
     """
     scales = {
-        'cm': lambda d: d * 100,
-        'km': lambda d: d * 0.001,
+        'cm': lambda: haversine_dist * 100,
+        'm': lambda: haversine_dist,
+        'km': lambda: haversine_dist * 0.001,
     }
     earth_radius = 6378137  # in meter
 
@@ -51,7 +52,7 @@ def haversine(coord1, coord2, scale='m'):
 
     haversine_dist = 2 * earth_radius * asin(sqrt(term3))
 
-    return scales.get(scale, haversine_dist)(haversine_dist)
+    return scales.get(scale, haversine_dist)()
 
 
 def euclidean(coord1, coord2):
