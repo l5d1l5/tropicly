@@ -21,6 +21,28 @@ def worker():
     pass
 
 
+def superimpose(landcover, treecover, gain, loss, years=(1, 2, 3, 4, 5, 6, 7, 8, 9, 10), canopy_density=10):
+    """
+    Des
+
+    :param landcover:
+    :param treecover:
+    :param gain:
+    :param loss:
+    :param years:
+    :param canopy_density:
+    :return:
+    """
+    tree_data = np.zeros(treecover.shape, dtype=np.uint8)
+    tree_data[treecover > canopy_density] = 1
+
+    gain_data = np.zeros(gain.shape, dtype=np.uint8)
+    gain_data[np.logical_and(tree_data == 1, gain == 1)] = 1
+
+    loss_data = np.zeros(loss.hape, dtype=np.uint8)
+    loss_data[np.isin(loss, years)] = 1
+
+
 def assignment_worker(treecover, loss, gain, landcover, key, out_path, year=10, target_cover=10):
     # TODO doc, refactor
     handler = [
