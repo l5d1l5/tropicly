@@ -95,8 +95,8 @@ class Distance:
         """
         :param algorithm: string
             Possible arguments:
-            haversine, hav
-            euclidean, euc
+            haversine or hav
+            euclidean or euc
         """
         self.func = __class__.ALGORITHMS.get(algorithm, None)
 
@@ -105,12 +105,22 @@ class Distance:
 
         self.__class__.__doc__ = self.func.__doc__
 
-    def validate_args(self, *args):
-        # TODO implement, two coords, length of coords is two, special case euclidean
-        pass
+    def _validate_args(self, *args, **kwargs):
+        if len(args) != 2:
+            return False
+
+        elif len(args[0]) != len(args[1]):
+            return False
+
+        elif self.func.__name__ != 'haversine' and len(args[0]) > 2 and len(args[1]) > 2:
+            return False
+
+        # TODO check kwargs with from inspect import Signature
+
+        return True
 
     def __call__(self, *args, **kwargs):
-        if self.validate_args(*args):
+        if self._validate_args(*args):
             return self.func(*args, **kwargs)
 
         raise ValueError
