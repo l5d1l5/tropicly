@@ -5,11 +5,20 @@ Author: Tobias Seydewitz
 Date: 09.04.18
 Mail: tobi.seyde@gmail.com
 """
+import logging
 import numpy as np
 import rasterio as rio
 from rasterio.features import shapes
 from shapely.geometry import Polygon
 from .frequency import most_common_class
+
+
+LOGGER = logging.getLogger(__name__)
+LOGGER.addHandler(logging.NullHandler)
+
+
+def worker():
+    pass
 
 
 def assignment_worker(treecover, loss, gain, landcover, key, out_path, year=10, target_cover=10):
@@ -91,34 +100,54 @@ def reclassification_worker(driver, out_path):
           crs={'init': 'epsg:4326'})
 
 
-def extract_square(data, center, block_size=None, side_lenght=None, res=None):
+def extract_square(data, center, block_size=None, side_length=None, res=None):
+    """
+    Des
+
+    :param data:
+    :param center:
+    :param block_size:
+    :param side_length:
+    :param res:
+    :return:
+    """
     if block_size:
-        pass
+        x_edge = int(0.5 * (block_size - 1))
+        y_edge = int(0.5 * (block_size - 1))
 
-    elif side_lenght and res:
-        pass
+    elif side_length and res:
+        if isinstance(res, (int, float)):
+            x_res, y_res = res, res
+        else:
+            x_res, y_res = res
 
+        x_edge = int(0.5 * (side_length - x_res))
+        y_edge = int(0.5 * (side_length - y_res))
 
-# Statistic/Compute
-def square_buffer(data, center, size):
-    # TODO doc
+    else:
+        raise ValueError
+
     row, col = center
     max_row, max_col = data.shape
 
-    half = int(size / 2)
+    row_start = 0 if row - y_edge < 0 else row - y_edge
+    row_end = max_row if row + y_edge > max_row else row + y_edge + 1
 
-    row_start = 0 if row - half < 0 else row - half
-    row_end = max_row if row + half > max_row else row + half + 1
-    col_start = 0 if col - half < 0 else col - half
-    col_end = max_col if col + half > max_col else col + half + 1
+    col_start = 0 if col - x_edge < 0 else col - x_edge
+    col_end = max_col if col + x_edge > max_col else col + x_edge + 1
 
-    buffer = data[row_start:row_end, col_start:col_end]
-
-    return buffer
+    return data[row_start:row_end, col_start:col_end]
 
 
 def circle_mask(mask_size, center, radius):
-    # TODO doc
+    """
+    Des
+
+    :param mask_size:
+    :param center:
+    :param radius:
+    :return:
+    """
     cx, cy = center
     sx, sy = mask_size
 
