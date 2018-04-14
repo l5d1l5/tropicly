@@ -24,7 +24,30 @@ class TestDistance(TestCase):
 
         self.assertEqual(expected, actual)
 
+    def test_distance_with_args(self):
+        obj = Distance('euc')
+
+        expected = (float, int)
+        actual = obj((4, 5), (1, 1))
+
+        self.assertTrue(isinstance(actual, expected))
+
+    def test_distance_with_wrong_number_of_args(self):
+        obj = Distance('euc')
+
+        with self.assertRaises(ValueError) as err:
+            obj(1)
+
 
 class TestAlgorithms(TestCase):
+    def test_euclidean(self):
+        expected = 5.
+        actual = euclidean((1, 1), (4, 5))
+
+        self.assertEqual(expected, actual)
+
     def test_haversine(self):
-        self.fail()
+        expected = 157425
+        actual = int(haversine((1, 1), (0, 0)))
+
+        self.assertEqual(expected, actual)
