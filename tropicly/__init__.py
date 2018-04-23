@@ -9,6 +9,7 @@ from .distance import Distance
 from .sampling import worker as sworker
 from .frequency import worker as fworker
 from .harmonization import worker as hworker
+from .classification import worker as cworker
 
 
 __version__ = 0.1
@@ -19,4 +20,5 @@ __all__ = [
     'sworker',
     'fworker',
     'hworker',
+    'cworker',
 ]
