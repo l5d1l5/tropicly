@@ -11,6 +11,9 @@ import rasterio as rio
 from collections import OrderedDict
 
 
+# TODO refactor exceptions
+
+
 LOGGER = logging.getLogger(__name__)
 LOGGER.addHandler(logging.NullHandler())
 
