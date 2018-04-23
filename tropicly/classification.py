@@ -10,7 +10,6 @@ import numpy as np
 import rasterio as rio
 from rasterio.features import shapes
 from shapely.geometry import Polygon
-
 from .distance import Distance
 from .frequency import most_common_class
 
@@ -35,12 +34,12 @@ def superimpose(landcover, treecover, gain, loss, years=(1, 2, 3, 4, 5, 6, 7, 8,
     :param canopy_density:
     :return:
     """
-    shapes = [landcover.shape, treecover.shape, gain.shape, loss.shape]
+    shape = [landcover.shape, treecover.shape, gain.shape, loss.shape]
 
-    if len(set(shapes)) > 1:
+    if len(set(shape)) > 1:
         raise ValueError
 
-    shape = shapes[0]
+    shape = shape[0]
 
     tree_data = np.zeros(shape, dtype=np.uint8)
     tree_data[treecover > canopy_density] = 1
@@ -57,43 +56,32 @@ def superimpose(landcover, treecover, gain, loss, years=(1, 2, 3, 4, 5, 6, 7, 8,
     return driver
 
 
-def reclassify(driver, cluster_values=(20,), affine=None, buffer_size=500):
+def reclassify(driver, affine, cluster_values=(20,), buffer_size=500):
     """
 
     :param driver:
-    :param cluster_values:
     :param affine:
+    :param cluster_values:
     :param buffer_size:
     :return:
     """
     mask = np.isin(driver, cluster_values)
     haversine = Distance('hav')
 
-    if affine:
-        # x, y resolution
-        x = haversine((affine.xoff, affine.yoff), (affine.xoff + affine.a, affine.yoff))
-        y = haversine((affine.xoff, affine.yoff), (affine.xoff, affine.yoff + affine.e))
-
-        clusters = rio.features.shapes(driver, mask=mask, transform=affine)
-
-        kwargs = {'side_length': buffer_size, 'res': (x, y)}
-
-    else:
-        clusters = rio.features.shapes(driver, mask=mask)
-
-        kwargs = {'block_size': buffer_size}
+    # x, y resolution
+    x = haversine((affine.xoff, affine.yoff), (affine.xoff + affine.a, affine.yoff))
+    y = haversine((affine.xoff, affine.yoff), (affine.xoff, affine.yoff + affine.e))
 
     to_reclassify = []
-    for cluster, _ in clusters:
+    for cluster, _ in rio.features.shapes(driver, mask=mask, transform=affine):
         polygon = Polygon(cluster['coordinates'][0])
         point = polygon.centroid
-        x, y = point.x, point.y
 
-        if affine:
-            # convert to image coordinates
-            x, y = (x, y) * ~affine
+        # convert to image coordinates
+        col, row = (point.x, point.y) * ~affine
 
-        buffer = extract_square(driver, (int(y), int(x)), **kwargs)
+        buffer = extract_square(driver, center=(int(row), int(col)),
+                                side_length=buffer_size, res=(x, y))
 
         new_class = most_common_class(buffer)
 
@@ -104,7 +92,7 @@ def reclassify(driver, cluster_values=(20,), affine=None, buffer_size=500):
 
     if len(to_reclassify) > 0:
         reclassified = rio.features.rasterize(to_reclassify, out_shape=driver.shape,
-                                              transform=affine)
+                                              transform=affine, dtype=np.uint8)
 
     return reclassified
 
@@ -155,14 +143,6 @@ def extract_square(data, center, block_size=None, side_length=None, res=None):
 
 def circle_mask(mask_size, center, radius):
     # TODO implement properly
-    """
-    Des
-
-    :param mask_size:
-    :param center:
-    :param radius:
-    :return:
-    """
     cx, cy = center
     sx, sy = mask_size
 
