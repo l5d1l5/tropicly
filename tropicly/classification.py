@@ -10,6 +10,8 @@ import numpy as np
 import rasterio as rio
 from rasterio.features import shapes
 from shapely.geometry import Polygon
+
+from .distance import Distance
 from .frequency import most_common_class
 
 
@@ -33,93 +35,78 @@ def superimpose(landcover, treecover, gain, loss, years=(1, 2, 3, 4, 5, 6, 7, 8,
     :param canopy_density:
     :return:
     """
-    tree_data = np.zeros(treecover.shape, dtype=np.uint8)
+    shapes = [landcover.shape, treecover.shape, gain.shape, loss.shape]
+
+    if len(set(shapes)) > 1:
+        raise ValueError
+
+    shape = shapes[0]
+
+    tree_data = np.zeros(shape, dtype=np.uint8)
     tree_data[treecover > canopy_density] = 1
 
-    gain_data = np.zeros(gain.shape, dtype=np.uint8)
+    gain_data = np.zeros(shape, dtype=np.uint8)
     gain_data[np.logical_and(tree_data == 1, gain == 1)] = 1
 
-    loss_data = np.zeros(loss.hape, dtype=np.uint8)
+    loss_data = np.zeros(shape, dtype=np.uint8)
     loss_data[np.isin(loss, years)] = 1
 
+    driver = loss_data * landcover
+    driver[np.logical_and(gain == 1, driver > 0)] = 25
 
-def assignment_worker(treecover, loss, gain, landcover, key, out_path, year=10, target_cover=10):
-    # TODO doc, refactor
-    handler = [
-        read_raster(item)
-        for item in [treecover, loss, gain, landcover]
-    ]
-
-    tree_arr, loss_arr, gain_arr, cover_arr = [
-        item.read(1)
-        for item in handler
-    ]
-
-    profile = fetch_metadata(handler[0], 'transform', 'crs', 'driver')
-
-    [item.close() for item in handler]
-
-    # prepare annual tree cover loss within a selected
-    # tree cover class in a selected temporal resolution
-    annual_loss = np.copy(loss_arr)
-    np.place(annual_loss, annual_loss > year, 0)
-    annual_loss[tree_arr <= target_cover] = 0
-
-    # binary loss layer from annual tree cover loss
-    binary_loss = np.zeros(annual_loss.shape, dtype=np.uint8)
-    binary_loss[annual_loss != 0] = 1
-
-    # tree cover gain within annual loss
-    loss_gain = np.copy(gain_arr)
-    loss_gain[annual_loss == 0] = 0
-
-    # deforestation driver from 1 till year
-    driver = binary_loss * cover_arr
-    driver_gain = np.copy(driver)
-    driver_gain[loss_gain == 1] = 25
-
-    name = 'driver_{}.tif'.format(key)
-    write(driver, str(out_path/name), driver=profile.driver,
-          crs=profile.crs, compress='lzw', transform=profile.transform)
-
-    name = 'driver_gain_{}.tif'.format(key)
-    write(driver_gain, str(out_path/name), driver=profile.driver,
-          crs=profile.crs, compress='lzw', transform=profile.transform)
+    return driver
 
 
-def reclassification_worker(driver, out_path):
-    # TODO doc, refactor
-    handle = read_raster(driver)
+def reclassify(driver, cluster_values=(20,), affine=None, buffer_size=500):
+    """
 
-    src_data = handle.read(1)
-    transform = handle.transform
+    :param driver:
+    :param cluster_values:
+    :param affine:
+    :param buffer_size:
+    :return:
+    """
+    mask = np.isin(driver, cluster_values)
+    haversine = Distance('hav')
 
-    reclassified = src_data.copy()
+    if affine:
+        # x, y resolution
+        x = haversine((affine.xoff, affine.yoff), (affine.xoff + affine.a, affine.yoff))
+        y = haversine((affine.xoff, affine.yoff), (affine.xoff, affine.yoff + affine.e))
 
-    mask = src_data == 20
-    gen = rio.features.shapes(src_data, mask, transform=transform)
+        clusters = rio.features.shapes(driver, mask=mask, transform=affine)
 
-    reclass = []
-    for geometry, _ in gen:
-        polygon = Polygon(geometry['coordinates'][0])
-        centroid = polygon.centroid
-        row, col = handle.index(centroid.x, centroid.y)
+        kwargs = {'side_length': buffer_size, 'res': (x, y)}
 
-        buffer = square_buffer(src_data, (row, col), 8)
+    else:
+        clusters = rio.features.shapes(driver, mask=mask)
 
-        most_common = class_frequency(buffer, [0], default=20)
+        kwargs = {'block_size': buffer_size}
 
-        if most_common != 20:
-            reclass.append((geometry, most_common))
+    to_reclassify = []
+    for cluster, _ in clusters:
+        polygon = Polygon(cluster['coordinates'][0])
+        point = polygon.centroid
+        x, y = point.x, point.y
 
-    if len(reclass) > 0:
-        _ = rio.features.rasterize(reclass, out_shape=reclassified.shape,
-                                   out=reclassified, transform=transform)
+        if affine:
+            # convert to image coordinates
+            x, y = (x, y) * ~affine
 
-    handle.close()
+        buffer = extract_square(driver, (int(y), int(x)), **kwargs)
 
-    write(reclassified, str(out_path), transform=transform, driver='GTiff', compress='lzw',
-          crs={'init': 'epsg:4326'})
+        new_class = most_common_class(buffer)
+
+        if new_class not in cluster_values:
+            to_reclassify.append((cluster, new_class))
+
+    reclassified = None
+
+    if len(to_reclassify) > 0:
+        reclassified = rio.features.rasterize(to_reclassify, out_shape=driver.shape,
+                                              transform=affine)
+
+    return reclassified
 
 
 def extract_square(data, center, block_size=None, side_length=None, res=None):
@@ -167,6 +154,7 @@ def extract_square(data, center, block_size=None, side_length=None, res=None):
 
 
 def circle_mask(mask_size, center, radius):
+    # TODO implement properly
     """
     Des
 
