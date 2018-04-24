@@ -10,16 +10,48 @@ import numpy as np
 import rasterio as rio
 from rasterio.features import shapes
 from shapely.geometry import Polygon
-from .distance import Distance
-from .frequency import most_common_class
+
+from tropicly.distance import Distance
+from tropicly.frequency import most_common_class
+from tropicly.utils import write
+
+
+# TODO refactor exceptions
 
 
 LOGGER = logging.getLogger(__name__)
 LOGGER.addHandler(logging.NullHandler)
 
 
-def worker():
-    pass
+def worker(landcover, treecover, gain, loss, filename, **kwargs):
+    """
+
+    :param landcover:
+    :param treecover:
+    :param gain:
+    :param loss:
+    :param filename:
+    :param kwargs:
+    :return:
+    """
+    # TODO refactor
+    with rio.open(landcover, 'r') as h1, rio.open(treecover, 'r') as h2,\
+            rio.open(gain) as h3, rio.open(loss) as h4:
+        landcover_data = h1.read(1)
+        treecover_data = h2.read(1)
+        gain_data = h3.read(1)
+        loss_data = h4.read(1)
+
+        transform = h1.transform
+        profile = h1.profile
+
+    driver = superimpose(landcover_data, treecover_data, gain_data, loss_data,)
+
+    reclassified = reclassify(driver, transform,)
+
+    np.copyto(driver, reclassified, where=reclassified > 0)
+
+    write(driver, filename, **profile)
 
 
 def superimpose(landcover, treecover, gain, loss, years=(1, 2, 3, 4, 5, 6, 7, 8, 9, 10), canopy_density=10):
@@ -65,12 +97,16 @@ def reclassify(driver, affine, cluster_values=(20,), buffer_size=500):
     :param buffer_size:
     :return:
     """
+    # TODO distance calculation as parameter
+    # TODO refactor algorithm should run with image coords
     mask = np.isin(driver, cluster_values)
     haversine = Distance('hav')
 
     # x, y resolution
     x = haversine((affine.xoff, affine.yoff), (affine.xoff + affine.a, affine.yoff))
     y = haversine((affine.xoff, affine.yoff), (affine.xoff, affine.yoff + affine.e))
+
+    LOGGER.debug('Pixel resolution (%s, %s)', x, y)
 
     to_reclassify = []
     for cluster, _ in rio.features.shapes(driver, mask=mask, transform=affine):
@@ -80,6 +116,8 @@ def reclassify(driver, affine, cluster_values=(20,), buffer_size=500):
         # convert to image coordinates
         col, row = (point.x, point.y) * ~affine
 
+        LOGGER.debug('Cluster centroid at (%s, %s)', col, row)
+
         buffer = extract_square(driver, center=(int(row), int(col)),
                                 side_length=buffer_size, res=(x, y))
 
@@ -88,13 +126,11 @@ def reclassify(driver, affine, cluster_values=(20,), buffer_size=500):
         if new_class not in cluster_values:
             to_reclassify.append((cluster, new_class))
 
-    reclassified = None
-
     if len(to_reclassify) > 0:
-        reclassified = rio.features.rasterize(to_reclassify, out_shape=driver.shape,
-                                              transform=affine, dtype=np.uint8)
+        return rio.features.rasterize(to_reclassify, out_shape=driver.shape,
+                                      transform=affine, dtype=np.uint8)
 
-    return reclassified
+    return np.zeros(shape=driver.shape, dtype=np.uint8)
 
 
 def extract_square(data, center, block_size=None, side_length=None, res=None):
@@ -108,10 +144,10 @@ def extract_square(data, center, block_size=None, side_length=None, res=None):
     :param res:
     :return:
     """
-    # TODO round might be a better idea
+    # TODO refactor to two functions extract square_by_block_size and by_side_length
     if block_size:
-        x_edge = int(0.5 * (block_size - 1))
-        y_edge = int(0.5 * (block_size - 1))
+        x_edge = round(0.5 * (block_size - 1))
+        y_edge = round(0.5 * (block_size - 1))
 
     elif side_length and res:
         if isinstance(res, (int, float)):
@@ -120,14 +156,16 @@ def extract_square(data, center, block_size=None, side_length=None, res=None):
             x_res, y_res = res
 
         # convert real world length to image length
-        x_block_size = int(side_length / x_res)
-        y_block_size = int(side_length / y_res)
+        x_block_size = round(side_length / x_res)
+        y_block_size = round(side_length / y_res)
 
-        x_edge = int(0.5 * (x_block_size - 1))
-        y_edge = int(0.5 * (y_block_size - 1))
+        x_edge = round(0.5 * (x_block_size - 1))
+        y_edge = round(0.5 * (y_block_size - 1))
 
     else:
         raise ValueError
+
+    LOGGER.debug('Edge length (%s, %s)', x_edge, y_edge)
 
     row, col = center
     max_row, max_col = data.shape
