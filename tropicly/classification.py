@@ -23,20 +23,23 @@ LOGGER = logging.getLogger(__name__)
 LOGGER.addHandler(logging.NullHandler)
 
 
-def worker(landcover, treecover, gain, loss, filename, **kwargs):
+def worker(landcover, treecover, gain, loss, filename,
+           superimpose_kwargs=None, reclassify_kwargs=None, write_kwargs=None):
     """
+
 
     :param landcover:
     :param treecover:
     :param gain:
     :param loss:
     :param filename:
-    :param kwargs:
-    :return:
+    :param superimpose_kwargs:
+    :param reclassify_kwargs:
+    :param write_kwargs:
     """
     # TODO refactor
     with rio.open(landcover, 'r') as h1, rio.open(treecover, 'r') as h2,\
-            rio.open(gain) as h3, rio.open(loss) as h4:
+            rio.open(gain, 'r') as h3, rio.open(loss, 'r') as h4:
         landcover_data = h1.read(1)
         treecover_data = h2.read(1)
         gain_data = h3.read(1)
@@ -76,20 +79,21 @@ def superimpose(landcover, treecover, gain, loss, years=(1, 2, 3, 4, 5, 6, 7, 8,
     tree_data = np.zeros(shape, dtype=np.uint8)
     tree_data[treecover > canopy_density] = 1
 
-    gain_data = np.zeros(shape, dtype=np.uint8)
-    gain_data[np.logical_and(tree_data == 1, gain == 1)] = 1
-
     loss_data = np.zeros(shape, dtype=np.uint8)
-    loss_data[np.isin(loss, years)] = 1
+    loss_data[np.logical_and(tree_data == 1, np.isin(loss, years))] = 1
+
+    gain_data = np.zeros(shape, dtype=np.uint8)
+    gain_data[np.logical_and(loss_data == 1, gain == 1)] = 1
 
     driver = loss_data * landcover
-    driver[np.logical_and(gain == 1, driver > 0)] = 25
+    driver[gain_data == 1] = 25
 
     return driver
 
 
 def reclassify(driver, affine, cluster_values=(20,), buffer_size=500):
     """
+
 
     :param driver:
     :param affine:
@@ -98,7 +102,7 @@ def reclassify(driver, affine, cluster_values=(20,), buffer_size=500):
     :return:
     """
     # TODO distance calculation as parameter
-    # TODO refactor algorithm should run with image coords
+    # TODO refactor algorithm should run only image coords provide res
     mask = np.isin(driver, cluster_values)
     haversine = Distance('hav')
 
@@ -121,6 +125,8 @@ def reclassify(driver, affine, cluster_values=(20,), buffer_size=500):
         buffer = extract_square(driver, center=(int(row), int(col)),
                                 side_length=buffer_size, res=(x, y))
 
+        LOGGER.debug('Buffer size (%s, %s)', buffer.shape[0], buffer.shape[1])
+
         new_class = most_common_class(buffer)
 
         if new_class not in cluster_values:
@@ -133,23 +139,30 @@ def reclassify(driver, affine, cluster_values=(20,), buffer_size=500):
     return np.zeros(shape=driver.shape, dtype=np.uint8)
 
 
-def extract_square(data, center, block_size=None, side_length=None, res=None):
-    """
-    Des
+def reclass(driver, cluster=(20,), block_length=500, res=1):
+    pass
 
-    :param data:
-    :param center:
-    :param block_size:
-    :param side_length:
-    :param res:
-    :return:
+
+def extract_square(data, center, side_length=None, res=None):
+    """
+    Extracts a square around a center point from a numpy array.
+
+    :param data: 2D np.array
+        Square is extracted from this array.
+    :param center: 2D tuple of int
+        Center row and column coordinate of the square.
+    :param side_length: int
+        Side length in cell scaling or side length in real world
+        distance.
+    :param res: numeric or 2D tuple of int
+        Real world resolution of the pixels. Must be in the same
+        scaling as block length. Can be a single int or float for
+        square sized pixels or a tuple of x and y length of the pixel.
+    :return: np.array
+        Numpy array in extent of side_length or block_length.
     """
     # TODO refactor to two functions extract square_by_block_size and by_side_length
-    if block_size:
-        x_edge = round(0.5 * (block_size - 1))
-        y_edge = round(0.5 * (block_size - 1))
-
-    elif side_length and res:
+    if side_length and res:
         if isinstance(res, (int, float)):
             x_res, y_res = res, res
         else:
@@ -161,6 +174,10 @@ def extract_square(data, center, block_size=None, side_length=None, res=None):
 
         x_edge = round(0.5 * (x_block_size - 1))
         y_edge = round(0.5 * (y_block_size - 1))
+
+    elif side_length:
+        x_edge = int(0.5 * (side_length - 1))
+        y_edge = int(0.5 * (side_length - 1))
 
     else:
         raise ValueError
