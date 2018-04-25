@@ -132,15 +132,42 @@ def reclassify(driver, affine, cluster_values=(20,), buffer_size=500):
         if new_class not in cluster_values:
             to_reclassify.append((cluster, new_class))
 
-    if len(to_reclassify) > 0:
+    if to_reclassify:
         return rio.features.rasterize(to_reclassify, out_shape=driver.shape,
                                       transform=affine, dtype=np.uint8)
 
     return np.zeros(shape=driver.shape, dtype=np.uint8)
 
 
-def reclass(driver, cluster=(20,), block_length=500, res=1):
-    pass
+def reclass(driver, clustering=(20,), side_length=500, res=1, **kwargs):
+    """
+    Des
+
+    :param driver:
+    :param clustering:
+    :param side_length:
+    :param res:
+    :param kwargs:
+    :return:
+    """
+    mask = np.isin(driver, clustering)
+
+    clusters = []
+    for cluster, _ in rio.features.shapes(driver, mask=mask):
+        polygon = Polygon(cluster['coordinates'][0])
+        point = polygon.centroid
+        center = int(point.y), int(point.x)
+
+        buffer = extract_square(driver, center, side_length, res)
+        cls = most_common_class(buffer, **kwargs)
+
+        if cls not in clustering:
+            clusters.append((cluster, cls))
+
+    if clusters:
+        return rio.features.rasterize(clusters, out_shape=driver.shape, dtype=driver.dtype)
+
+    return np.zeros(shape=driver.shape, dtype=driver.dtype)
 
 
 def extract_square(data, center, side_length=None, res=None):
