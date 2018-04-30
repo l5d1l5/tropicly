@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Validation helper</title>
+    <style>
+        .map {
+            height: 90%;
+        }
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="map" id="map"></div>
+
+    <div>
+      <button id="next">Next sample</button>
+    </div>
+
+    <div>
+      <input type="file" id="files" name="files[]" multiple />
+    </div>
+
+    <script src="app.js" lang="text/javascript"></script>
+    <script src="papaparse.min.js" lang="text/javascript"></script>
+    <script defer async
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-Eh3Agms4djpXHpZNi2NNWxj5DNsClf4&callback=init">
+    </script>
+</body>
+</html>
+
