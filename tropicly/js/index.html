@@ -18,16 +18,33 @@
     <div class="map" id="map"></div>
 
     <div>
-
+        <label>
+            Label:
+            <input id="label" type="number" disabled/>
+        </label>
+        <label>
+            Validation:
+            <input id="valid" type="number" max="100" min="0" step="10"/>
+        </label>
+        <label>
+            Progress:
+            <input id="remain" type="number" disabled/>
+            of
+            <input id="total" type="number" disabled/>
+        </label>
     </div>
 
     <div>
-        <button id="next">Next sample</button>
         <button id="prev">Previous sample</button>
+        <button id="next">Next sample</button>
     </div>
 
     <div>
-        <input type="file" id="files" name="files[]" multiple />
+        <input type="file" id="files" name="files"/>
+    </div>
+    <div>
+        <a href="" id="a">click here to download your file</a>
+        <button id="download">Create csv</button>
     </div>
 
     <script src="app.js" lang="text/javascript"></script>
