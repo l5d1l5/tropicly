@@ -7,7 +7,7 @@ var samples = [];
 var current = -1;
 var name;
 
-// html obj
+// dom obj
 var labelInput;
 var validationInput;
 var remainInput;
@@ -54,7 +54,7 @@ function updateProgress() {
     totalInput.value = samples.length;
 }
 
-function updateSample(event) {
+function updateSample() {
     if(current === -1 || current === samples.length) {
         return;
     }
