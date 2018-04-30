@@ -2,48 +2,84 @@
 var map;
 var marker = null;
 
-// html obj
-var nextButton;
-var openButton;
-
 // samples
-var samples = [[10, 10], [20, 20]];
-var finished = [];
+var samples = [];
+var current = -1;
 
 
-function moveToLocation(event) {
-    if(marker != null){
-        marker.setMap(null)
+function nextSample() {
+    if(current === samples.length - 1) {
+        return;
     }
 
-    var current = samples.pop();
+    if(marker != null) {
+        marker.setMap(null);
+    }
 
-    var center = new google.maps.LatLng(current[0], current[1]);
+    current++;
+    setSample()
+}
+
+function previousSample() {
+    if(current <= 0) {
+        return;
+    }
+
+    if(marker != null) {
+        marker.setMap(null);
+    }
+
+    current--;
+    setSample();
+}
+
+function setSample() {
+    console.log(samples[current]);
+
+    var sample = samples[current];
+    var center = new google.maps.LatLng(sample.y, sample.x);
+
+    updateProgress();
+    userInfo(sample.label);
+
     marker = new google.maps.Marker({position: center, map: map});
-
     map.panTo(center);
 }
 
+function updateProgress() {
+
+}
+
+function userInfo(label) {
+
+}
+
+function loadSamples(results, file) {
+    samples = results.data;
+    current = -1;
+}
+
 function openFile(event) {
-    console.log(event.target.files[0]);
     Papa.parse(event.target.files[0], {
-        complete: function (results) {
-            console.log(results);
-        }
+        header: true,
+        dynamicTyping: true,
+        skipEmptyLines: true,
+        complete: loadSamples
     });
 }
 
 function init() {
-    var mapOptions = {
+    map = new google.maps.Map(document.getElementById("map"), {
         center: {lat: 0, lng: 0},
         zoom: 11,
         mapTypeId: google.maps.MapTypeId.SATELLITE
-    };
-    map = new google.maps.Map(document.getElementById("map"), mapOptions);
+    });
 
-    nextButton = document.getElementById('next');
-    openButton = document.getElementById('files');
+    var nextButton = document.getElementById('next');
+    var previousButton = document.getElementById('prev');
+    var openButton = document.getElementById('files');
 
-    nextButton.addEventListener('click', moveToLocation);
+    nextButton.addEventListener('click', nextSample);
+    previousButton.addEventListener('click', previousSample);
     openButton.addEventListener('change', openFile)
 }
