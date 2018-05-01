@@ -10,6 +10,7 @@ var name;
 // dom obj
 var labelInput;
 var validationInput;
+var assignedInput;
 var remainInput;
 var totalInput;
 
@@ -44,6 +45,7 @@ function setSample() {
 
     updateProgress();
     labelInput.value = sample.label;
+    assignedInput.value = sample.validation;
 
     marker = new google.maps.Marker({position: center, map: map});
     map.panTo(center);
@@ -59,7 +61,7 @@ function updateSample() {
         return;
     }
     samples[current].validation = validationInput.value;
-    console.log(samples[current]);
+    assignedInput.value = validationInput.value;
 }
 
 function keybinds(event) {
@@ -110,6 +112,7 @@ function init() {
     validationInput = document.getElementById('valid');
     remainInput = document.getElementById('remain');
     totalInput = document.getElementById('total');
+    assignedInput = document.getElementById('assign');
 
     var nextButton = document.getElementById('next');
     var downloadButton = document.getElementById('download');
