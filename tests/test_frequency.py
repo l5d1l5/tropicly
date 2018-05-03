@@ -8,7 +8,8 @@ Mail: tobi.seyde@gmail.com
 import numpy as np
 from unittest import TestCase
 from tropicly.frequency import (frequency,
-                                most_common_class)
+                                most_common_class,
+                                confusion_matrix)
 from collections import OrderedDict
 from tests.utilities import random_test_data
 
@@ -62,3 +63,13 @@ class TestFrequency(TestCase):
         actual = most_common_class(a)
 
         self.assertEqual(expected, actual)
+
+    def test_confusion_matrix_with_malicious_data(self):
+        with self.assertRaises(ValueError) as err:
+            confusion_matrix([10, 20, 30], [10,])
+
+    def test_confusion_matrix_with_valid(self):
+        reference = [10] * 5 + [20] * 5 + [30] * 5
+        prediction = [10] * 3 + [20] * 4 + [10] * 3 + [30] * 3 + [10, 20]
+
+        print(confusion_matrix(reference, prediction))

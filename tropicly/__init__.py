@@ -10,6 +10,7 @@ from .sampling import worker as sworker
 from .frequency import worker as fworker
 from .harmonization import worker as hworker
 from .classification import worker as cworker
+from .frequency import confusion_matrix
 
 
 __version__ = 0.1
@@ -21,4 +22,5 @@ __all__ = [
     'fworker',
     'hworker',
     'cworker',
+    'confusion_matrix',
 ]
