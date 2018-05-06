@@ -106,21 +106,3 @@ def most_common_class(data, exclude=(0, 255), default=20):
             return default
 
     return default
-
-
-def confusion_matrix(reference, prediction):
-    if len(reference) != len(prediction):
-        raise ValueError
-
-    labels = sorted(set(reference + prediction))
-    validation = Counter(zip(reference, prediction))
-
-    matrix = []
-    for val in product(labels, repeat=2):
-        ele = validation.get(val, 0)
-        matrix.append(ele)
-
-    matrix = np.reshape(matrix, (len(labels), len(labels)), order='F')
-    return labels, matrix
-
-
