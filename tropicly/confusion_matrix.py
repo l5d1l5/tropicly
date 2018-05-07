@@ -6,33 +6,34 @@ Date: 06.05.18
 Mail: tobi.seyde@gmail.com
 """
 import numpy as np
+import pandas as pd
 
 
-class ConfusionMatrix(object):
-    def __init__(self, labels):
-        self._labels = None
-        self.labels = labels
+class ConfusionMatrix:
+    def __init__(self, label):
+        self._label = None
+        self.label = label
 
-        self.matrix = np.zeros((len(self.labels)+1, len(self.labels)+1), dtype=np.int)
+        self.matrix = np.zeros((len(self.label) + 1, len(self.label) + 1), dtype=np.int)
 
     @property
-    def labels(self):
-        return self._labels
+    def label(self):
+        return self._label
 
-    @labels.setter
-    def labels(self, values):
+    @label.setter
+    def label(self, values):
         unique_labels = sorted(set(values))
 
         if len(unique_labels) < 2:
             raise ValueError
 
-        self._labels = unique_labels
+        self._label = unique_labels
 
     @classmethod
     def from_records(cls, records):
         reference, prediction = list(zip(*records))
 
-        obj = cls(reference + prediction)
+        obj = cls(reference)
 
         for values in records:
             obj.add(*values)
@@ -44,7 +45,7 @@ class ConfusionMatrix(object):
         if len(reference) != len(prediction):
             raise ValueError
 
-        obj = cls(reference + prediction)
+        obj = cls(reference)
 
         for values in zip(reference, prediction):
             obj.add(*values)
@@ -57,8 +58,8 @@ class ConfusionMatrix(object):
 
     def add(self, reference, prediction):
         try:
-            col = self._labels.index(reference)
-            row = self._labels.index(prediction)
+            col = self._label.index(reference)
+            row = self._label.index(prediction)
 
             self.matrix[row][col] += 1
             self.matrix[-1][col] += 1
@@ -67,3 +68,22 @@ class ConfusionMatrix(object):
 
         except ValueError:
             raise
+
+    def normalize(self, method='com'):
+        return _NormalizedConfusionMatrix(self.label, self.matrix)
+
+    def as_dataframe(self):
+        pass
+
+    def __str__(self):
+        return '{}'.format(self.matrix)
+
+    def __repr__(self):
+        return '<{}(label={}) at {}>'.format(self.__class__.__name__, self.label, hex(id(self)))
+
+
+class _NormalizedConfusionMatrix(ConfusionMatrix):
+    def __init__(self, label, matrix):
+        super().__init__(label)
+
+        self.matrix = matrix

@@ -5,11 +5,12 @@ Author: Tobias Seydewitz
 Date: 06.04.18
 Mail: tobi.seyde@gmail.com
 """
-from .distance import Distance
-from .sampling import worker as sworker
-from .frequency import worker as fworker
-from .harmonization import worker as hworker
-from .classification import worker as cworker
+from tropicly.distance import Distance
+from tropicly.sampling import worker as sworker
+from tropicly.frequency import worker as fworker
+from tropicly.harmonization import worker as hworker
+from tropicly.classification import worker as cworker
+from tropicly.confusion_matrix import ConfusionMatrix
 
 
 __version__ = 0.1
@@ -21,4 +22,5 @@ __all__ = [
     'fworker',
     'hworker',
     'cworker',
+    'ConfusionMatrix',
 ]

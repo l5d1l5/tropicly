@@ -8,9 +8,7 @@ Mail: tobi.seyde@gmail.com
 import logging
 import numpy as np
 import rasterio as rio
-from itertools import product
-from collections import (OrderedDict,
-                         Counter)
+from collections import OrderedDict
 
 
 # TODO refactor exceptions
