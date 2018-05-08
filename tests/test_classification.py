@@ -6,12 +6,11 @@ Date: 10.04.18
 Mail: tobi.seyde@gmail.com
 """
 import numpy as np
-from affine import Affine
 from unittest import TestCase
 from tests.utilities import random_test_data
 from tropicly.classification import (extract_square,
                                      superimpose,
-                                     reclassify,)
+                                     reclassify)
 
 
 class TestClassification(TestCase):
@@ -65,11 +64,38 @@ class TestClassification(TestCase):
 
         self.assertTrue(np.array_equal(expected, actual))
 
-    def test_reclassify(self):
-        treecover, loss, gain, _, gl30_10 = random_test_data((15, 15))
-        affine = Affine(0.00027041676761241124, 0.0, 120.0000008, 0.0, -0.00027041676761241124, 4.9999992)
+    def test_reclassify_with_side_length(self):
+        img = np.array([[0, 10, 20, 10, 0], [255, 0, 255, 0, 255]] * 5, dtype=np.uint8)
 
-        driver = superimpose(gl30_10, treecover, gain, loss)
+        expected = np.array([[0, 0, 10, 0, 0], [0] * 5] * 5, dtype=np.uint8)
+        actual = reclassify(img, side_length=3)
 
-        print(driver)
-        print(reclassify(driver, buffer_size=500, affine=affine))
+        self.assertTrue(np.array_equal(expected, actual))
+
+    def test_reclassify_with_clustering(self):
+        img = np.array([[0, 10, 20, 10, 0], [255, 0, 255, 0, 255]] * 5, dtype=np.uint8)
+
+        expected = np.array([[0, 20, 0, 20, 0], [0] * 5] * 5, dtype=np.uint8)
+        actual = reclassify(img, clustering=(10,), reject=(0, 10, 255), side_length=3)
+
+        self.assertTrue(np.array_equal(expected, actual))
+
+    def test_reclassify_with_reject(self):
+        img = np.array([[0, 10, 20, 10, 0], [255, 0, 255, 0, 255]] * 5, dtype=np.uint8)
+
+        expected = np.array([[0, 255, 0, 255, 0], [0] * 5] * 5, dtype=np.uint8)
+        actual = reclassify(img, clustering=(10,), reject=(0, 10, 20), side_length=3)
+
+        self.assertTrue(np.array_equal(expected, actual))
+
+    def test_reclassify_with_resolution(self):
+        *_, gl30_10 = random_test_data((5, 5))
+
+        expected = np.array([[0, 0, 0, 0, 0],
+                             [0, 0, 0, 50, 0],
+                             [0, 0, 0, 0, 0],
+                             [0, 0, 0, 0, 0],
+                             [0, 0, 0, 0, 0]], dtype=np.uint8)
+        actual = reclassify(gl30_10, res=30, side_length=90)
+
+        self.assertTrue(np.array_equal(expected, actual))
