@@ -20,9 +20,13 @@ from tropicly.utils import write
 
 
 LOGGER = logging.getLogger(__name__)
-LOGGER.addHandler(logging.NullHandler)
+LOGGER.addHandler(logging.NullHandler())
 
+#haversine = Distance('hav')
 
+# x, y resolution
+#x = haversine((affine.xoff, affine.yoff), (affine.xoff + affine.a, affine.yoff))
+#y = haversine((affine.xoff, affine.yoff), (affine.xoff, affine.yoff + affine.e))
 def worker(landcover, treecover, gain, loss, filename,
            superimpose_kwargs=None, reclassify_kwargs=None, write_kwargs=None):
     """
@@ -91,63 +95,15 @@ def superimpose(landcover, treecover, gain, loss, years=(1, 2, 3, 4, 5, 6, 7, 8,
     return driver
 
 
-def reclassify(driver, affine, cluster_values=(20,), buffer_size=500):
-    """
-
-
-    :param driver:
-    :param affine:
-    :param cluster_values:
-    :param buffer_size:
-    :return:
-    """
-    # TODO distance calculation as parameter
-    # TODO refactor algorithm should run only image coords provide res
-    mask = np.isin(driver, cluster_values)
-    haversine = Distance('hav')
-
-    # x, y resolution
-    x = haversine((affine.xoff, affine.yoff), (affine.xoff + affine.a, affine.yoff))
-    y = haversine((affine.xoff, affine.yoff), (affine.xoff, affine.yoff + affine.e))
-
-    LOGGER.debug('Pixel resolution (%s, %s)', x, y)
-
-    to_reclassify = []
-    for cluster, _ in rio.features.shapes(driver, mask=mask, transform=affine):
-        polygon = Polygon(cluster['coordinates'][0])
-        point = polygon.centroid
-
-        # convert to image coordinates
-        col, row = (point.x, point.y) * ~affine
-
-        LOGGER.debug('Cluster centroid at (%s, %s)', col, row)
-
-        buffer = extract_square(driver, center=(int(row), int(col)),
-                                side_length=buffer_size, res=(x, y))
-
-        LOGGER.debug('Buffer size (%s, %s)', buffer.shape[0], buffer.shape[1])
-
-        new_class = most_common_class(buffer)
-
-        if new_class not in cluster_values:
-            to_reclassify.append((cluster, new_class))
-
-    if to_reclassify:
-        return rio.features.rasterize(to_reclassify, out_shape=driver.shape,
-                                      transform=affine, dtype=np.uint8)
-
-    return np.zeros(shape=driver.shape, dtype=np.uint8)
-
-
-def reclass(driver, clustering=(20,), side_length=500, res=1, **kwargs):
+def reclassify(driver, clustering=(20,), reject=(0, 20, 255), side_length=500, res=1):
     """
     Des
 
     :param driver:
     :param clustering:
+    :param reject:
     :param side_length:
     :param res:
-    :param kwargs:
     :return:
     """
     mask = np.isin(driver, clustering)
@@ -158,10 +114,16 @@ def reclass(driver, clustering=(20,), side_length=500, res=1, **kwargs):
         point = polygon.centroid
         center = int(point.y), int(point.x)
 
-        buffer = extract_square(driver, center, side_length, res)
-        cls = most_common_class(buffer, **kwargs)
+        LOGGER.debug('Cluster centroid at (%s, %s)', int(point.x), int(point.y))
 
-        if cls not in clustering:
+        buffer = extract_square(driver, center, side_length, res)
+
+        LOGGER.debug('Buffer size (%s, %s)', buffer.shape[0], buffer.shape[1])
+
+        mc = most_common_class(buffer, reject)
+
+        if mc:
+            cls, count = mc
             clusters.append((cluster, cls))
 
     if clusters:
