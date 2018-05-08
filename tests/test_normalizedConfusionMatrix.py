@@ -1,6 +1,6 @@
 from unittest import TestCase
 
 
-class Test_NormalizedConfusionMatrix(TestCase):
+class TestNormalizedConfusionMatrix(TestCase):
     def test_add(self):
         self.fail()
