@@ -88,6 +88,8 @@ def most_common_class(data, exclude=(0, 20, 255)):
         if item[0] not in exclude
     ]
 
+    LOGGER.debug('Classes: %s', freq)
+
     freq = sorted(
         freq,
         key=lambda item: item[1],
