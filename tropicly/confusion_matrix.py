@@ -5,8 +5,21 @@ Author: Tobias Seydewitz
 Date: 06.05.18
 Mail: tobi.seyde@gmail.com
 """
+import logging
 import numpy as np
 import pandas as pd
+
+
+LOGGER = logging.getLogger(__name__)
+LOGGER.addHandler(logging.NullHandler())
+
+
+class ConfusionMatrixBaseError(Exception):
+    """Base class"""
+
+
+class ConfusionMatrixLabelError(ConfusionMatrixBaseError):
+    """Error for malicious label"""
 
 
 class ConfusionMatrix:
@@ -25,7 +38,7 @@ class ConfusionMatrix:
         unique_labels = sorted(set(values))
 
         if len(unique_labels) < 2:
-            raise ValueError
+            raise ConfusionMatrixLabelError('Minimal requirement is 2 labels.')
 
         self._label = unique_labels
 
@@ -52,22 +65,18 @@ class ConfusionMatrix:
 
         return obj
 
-    @classmethod
-    def from_file(cls, filepath):
-        pass
-
     def add(self, reference, prediction):
-        try:
-            col = self._label.index(reference)
-            row = self._label.index(prediction)
+        if reference not in self.label or prediction not in self.label:
+            msg = '{}, {} unknown label for {}.'.format(reference, prediction, self.label)
+            raise ConfusionMatrixLabelError(msg)
 
-            self.matrix[row][col] += 1
-            self.matrix[-1][col] += 1
-            self.matrix[row][-1] += 1
-            self.matrix[-1][-1] += 1
+        col = self._label.index(reference)
+        row = self._label.index(prediction)
 
-        except ValueError:
-            raise
+        self.matrix[row][col] += 1
+        self.matrix[-1][col] += 1
+        self.matrix[row][-1] += 1
+        self.matrix[-1][-1] += 1
 
     def normalize(self, method='commission'):
         if method in ('c', 'co', 'com', 'commission'):
@@ -102,6 +111,7 @@ class _NormalizedConfusionMatrix(ConfusionMatrix):
         self._population = 0
 
     def add(self, values, index):
+        # cache for overall accuracy
         self._positive += values[index]
         self._population += values[-1]
 
@@ -118,6 +128,7 @@ class _NormalizedConfusionMatrix(ConfusionMatrix):
         else:
             self.matrix[index] = rates
 
+        # update overall accuracy
         self.matrix[-1][-1] = round(self._positive / self._population, 2)
 
     def __repr__(self):
