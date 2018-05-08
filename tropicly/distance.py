@@ -17,7 +17,7 @@ from math import (sin,
 
 
 LOGGER = logging.getLogger(__name__)
-LOGGER.addHandler(logging.NullHandler)
+LOGGER.addHandler(logging.NullHandler())
 
 
 def haversine(coord1, coord2, scale='m'):
