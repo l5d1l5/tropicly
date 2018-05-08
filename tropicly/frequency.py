@@ -67,20 +67,18 @@ def frequency(data):
     return OrderedDict(pairs)
 
 
-def most_common_class(data, exclude=(0, 255), default=20):
+def most_common_class(data, exclude=(0, 20, 255)):
     """
     Return the most common element in a numpy array. Omits
-    elements from counting if they are in exclude. Provides
-    a default return if no element is found.
+    elements from counting if they are in exclude. Returns
+    none if no element is found.
 
     :param data: np.ndarray, integer
         A numpy integer array.
     :param exclude: list of integer
         Elements to exclude from counting.
-    :param default: int
-        Default fallback.
-    :return: int
-         Most common value.
+    :return: int, int
+         Most common value and its count.
     """
     freq = frequency(data)
 
@@ -97,10 +95,6 @@ def most_common_class(data, exclude=(0, 255), default=20):
     )
 
     if freq:
-        try:
-            return freq[0][0] if freq[0][0] != default else freq[1][0]
+        return freq[0]
 
-        except IndexError:
-            return default
-
-    return default
+    return None
