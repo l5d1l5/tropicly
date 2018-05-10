@@ -5,6 +5,7 @@ Author: Tobias Seydewitz
 Date: 05.04.18
 Mail: tobi.seyde@gmail.com
 """
+import random
 import numpy as np
 
 
@@ -55,3 +56,11 @@ def random_test_data(size=(100, 100), seed=42):
             gain.astype(np.uint8),
             gl30_00.astype(np.uint8),
             gl30_10.astype(np.uint8))
+
+
+def matrix_sum(n):
+    a = [[random.randint(1, 10) for i in range(n)] for i in range(n)]
+
+    for r_idx, row in enumerate(a):
+        for c_idx, val in enumerate(row):
+            a[r_idx][c_idx] = val + val
