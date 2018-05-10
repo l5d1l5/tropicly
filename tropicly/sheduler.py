@@ -6,90 +6,106 @@ Date: 09.05.18
 Mail: tobi.seyde@gmail.com
 """
 from queue import Queue
+from threading import Thread, Event
 from tropicly.observer import Signal
 from multiprocessing import cpu_count
-from threading import Thread, active_count, TIMEOUT_MAX
-import random
 
 
-class _ParallelJobShedulerBase(Thread):
-    def __init__(self, name, max_threads=None):
+class TaskSheduler(Thread):
+    def __init__(self, name, max_threads):
         super().__init__(name=name)
-
-        if max_threads:
-            self.limit = max_threads
-
-        else:
-            self.limit = cpu_count() - (active_count() + 1)
-
-    def run(self):
-        pass
-
-
-class FiniteJobSheduler(_ParallelJobShedulerBase):
-    def __init__(self, name, max_threads, jobs):
-        super().__init__(name, max_threads)
-
-        if not isinstance(jobs, Queue):
-            raise ValueError
-
-        self.tasks = jobs
-        self.size = jobs.qsize()
 
         self.on_progress = Signal('on progress')
         self.on_finish = Signal('on finish')
         self.on_new_task = Signal('new task')
 
+        self.__limit = max_threads if max_threads <= cpu_count() else cpu_count()
+        self.__tasks = Queue()
+        self.__size = 0
         self.__active_tasks = []
+        self.__internal_state = Event()
+        self.__abort = False
+        self.__quite = False
+        self.__hard_exit = False
+
+        self.start()
+
+    def add_task(self, task):
+        self.__tasks.put(task)
+        self.__size += 1
+        self.__internal_state.set()
+
+    def add_tasks(self, tasks):
+        for task in tasks:
+            self.__tasks.put(task)
+
+        self.__size += len(tasks)
+        self.__internal_state.set()
+
+    def abort(self):
+        self.__abort = True
+
+    def quite(self):
+        self.__quite = True
+        self.__internal_state.set()
+
+    def hard_exit(self):
+        self.__hard_exit = True
+        self.__internal_state.set()
 
     def run(self):
         while True:
-            if self._can_start_new_task():
-                task = self.tasks.get_nowait()
-                task.start()
+            self.__internal_state.wait()
 
-                self.on_new_task.fire(task)
-                self.__active_tasks.append(task)
+            while self.__tasks.unfinished_tasks > 0:
+                if self._start_new():
+                    self._start_new_task()
 
-            self.__active_tasks = [task for task in self.__active_tasks if task.is_alive()]
+                self.__active_tasks = self._get_active_tasks()
 
-            if self._finished():
-                self.on_finish.fire()
+                if self.__abort or self.__hard_exit:
+                    self.__abort = False
+                    break
+
+            self.__size = 0
+            self.__tasks = Queue()
+            self.__internal_state.clear()
+            self.on_finish.fire('Returning to idle')
+
+            if self.__hard_exit or self.__quite:
                 break
 
-    def _finished(self):
-        if not self.__active_tasks and self.tasks.empty():
-            return True
-        return False
+    def _start_new_task(self):
+        task = self.__tasks.get_nowait()
+        task.start()
 
-    def _can_start_new_task(self):
-        if len(self.__active_tasks) <= self.limit and not self.tasks.empty():
+        self.on_new_task.fire(started=task)
+        self.__active_tasks.append(task)
+
+    def _get_active_tasks(self):
+        active = []
+        finished = []
+
+        for task in self.__active_tasks:
+            if task.is_alive():
+                active.append(task)
+            else:
+                finished.append(task)
+                self.__tasks.task_done()
+
+        if finished:
+            self.on_progress.fire(total=self.__size,
+                                  pending=self.__tasks.unfinished_tasks,
+                                  queue_size=self.__tasks.qsize(),
+                                  finished=finished)
+
+        return active
+
+    def _start_new(self):
+        if len(self.__active_tasks) <= self.__limit and not self.__tasks.empty():
             return True
         return False
 
     def __repr__(self):
         return '<{}(name={}, max_threads={}) at {}>'.format(self.__class__.__name__, self.name,
-                                                            self.limit, hex(id(self)))
-
-
-def matrix_sum(n):
-    a = [[random.randint(1, 10) for i in range(n)] for i in range(n)]
-
-    for ridx, row in enumerate(a):
-        for cidx, val in enumerate(row):
-            a[ridx][cidx] = val + val
-
-
-def callback(task):
-    print(task.name)
-
-
-if __name__ == '__main__':
-    q = Queue()
-    for i in range(100):
-        t = Thread(target=matrix_sum, args=(100,))
-        q.put(t)
-
-    s = FiniteJobSheduler('bal', 4, q)
-    s.start()
-
+                                                            self.__limit, hex(id(self)))
