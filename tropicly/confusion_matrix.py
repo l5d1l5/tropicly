@@ -23,27 +23,39 @@ class ConfusionMatrixLabelError(ConfusionMatrixBaseError):
 
 
 class ConfusionMatrix:
+    """
+    A simple class to build a confusion matrix for classification
+    accuracy assessment.
+    """
     def __init__(self, label, dtype=np.int):
-        self._label = None
-        self.label = label
+        """
+        Instance constructor, creates a confusion matrix in dimension of
+        NxN derived from length label.
 
-        self.matrix = np.zeros((len(self.label) + 1, len(self.label) + 1), dtype=dtype)
+        :param label: list of int, char
+            Classification labels/classes.
+        :param dtype: optional, np.dtype
+            You should not change this value.
+        """
+        self._label = sorted(set(label))
 
-    @property
-    def label(self):
-        return self._label
+        if len(self._label) < 2:
+            raise ConfusionMatrixLabelError('Minimal requirement is 2 independent labels.')
 
-    @label.setter
-    def label(self, values):
-        unique_labels = sorted(set(values))
-
-        if len(unique_labels) < 2:
-            raise ConfusionMatrixLabelError('Minimal requirement is 2 labels.')
-
-        self._label = unique_labels
+        self._matrix = np.zeros((len(self._label) + 1, len(self._label) + 1), dtype=dtype)
 
     @classmethod
     def from_records(cls, records):
+        """
+        Alternative class constructor returns a instance from ConfusionMatrix.
+        Creates a instance from a list of reference and prediction tuples.
+        Labels/classes are initialized from a list of all reference values.
+
+        :param records: list of tuple(reference, prediction)
+            Classification label.
+        :return: ConfusionMatrix
+            The instance.
+        """
         reference, prediction = list(zip(*records))
 
         obj = cls(reference)
@@ -55,6 +67,18 @@ class ConfusionMatrix:
 
     @classmethod
     def from_lists(cls, reference, prediction):
+        """
+        Alternative class constructor returns a instance from ConfusionMatrix.
+        Creates a instance from a list of reference values and a list of prediction
+        values. Labels/classes are initialized from the reference values.
+
+        :param reference: list
+            Reference labels.
+        :param prediction: list
+            Predicted labels.
+        :return: ConfusionMatrix
+            The instance.
+        """
         if len(reference) != len(prediction):
             raise ValueError
 
@@ -66,26 +90,37 @@ class ConfusionMatrix:
         return obj
 
     def add(self, reference, prediction):
-        if reference not in self.label or prediction not in self.label:
-            msg = '{}, {} unknown label for {}.'.format(reference, prediction, self.label)
+        """
+
+        :param reference:
+        :param prediction:
+        :return:
+        """
+        if reference not in self._label or prediction not in self._label:
+            msg = '{}, {} unknown label for {}.'.format(reference, prediction, self._label)
             raise ConfusionMatrixLabelError(msg)
 
         col = self._label.index(reference)
         row = self._label.index(prediction)
 
-        self.matrix[row][col] += 1
-        self.matrix[-1][col] += 1
-        self.matrix[row][-1] += 1
-        self.matrix[-1][-1] += 1
+        self._matrix[row][col] += 1
+        self._matrix[-1][col] += 1
+        self._matrix[row][-1] += 1
+        self._matrix[-1][-1] += 1
 
     def normalize(self, method='commission'):
+        """
+
+        :param method:
+        :return:
+        """
         if method in ('c', 'co', 'com', 'commission'):
-            mat = self.matrix.T
-            ncm = _NormalizedConfusionMatrix(self.label, 'commission')
+            mat = self._matrix.T
+            ncm = _NormalizedConfusionMatrix(self._label, 'commission')
 
         else:
-            mat = self.matrix
-            ncm = _NormalizedConfusionMatrix(self.label, 'omission')
+            mat = self._matrix
+            ncm = _NormalizedConfusionMatrix(self._label, 'omission')
 
         for idx, val in enumerate(mat[:-1]):
             ncm.add(val, idx)
@@ -93,17 +128,31 @@ class ConfusionMatrix:
         return ncm
 
     def as_dataframe(self):
+        """
+
+        :return:
+        """
         pass
 
     def __str__(self):
-        return '{}'.format(self.matrix)
+        return '{}'.format(self._matrix)
 
     def __repr__(self):
-        return '<{}(label={}) at {}>'.format(self.__class__.__name__, self.label, hex(id(self)))
+        return '<{}(label={}) at {}>'.format(self.__class__.__name__, self._label, hex(id(self)))
 
 
 class _NormalizedConfusionMatrix(ConfusionMatrix):
+    """
+    Private class, please derive a instance of this class with
+    ConfusionMatrix.normalize.
+    """
     def __init__(self, label, method, dtype=np.float):
+        """
+
+        :param label:
+        :param method:
+        :param dtype:
+        """
         super().__init__(label, dtype)
 
         self._method = method
@@ -111,6 +160,12 @@ class _NormalizedConfusionMatrix(ConfusionMatrix):
         self._population = 0
 
     def add(self, values, index):
+        """
+
+        :param values:
+        :param index:
+        :return:
+        """
         # cache for overall accuracy
         self._positive += values[index]
         self._population += values[-1]
@@ -123,14 +178,14 @@ class _NormalizedConfusionMatrix(ConfusionMatrix):
 
         if self._method == 'commission':
             for idx, val in enumerate(rates):
-                self.matrix[idx][index] = val
+                self._matrix[idx][index] = val
 
         else:
-            self.matrix[index] = rates
+            self._matrix[index] = rates
 
         # update overall accuracy
-        self.matrix[-1][-1] = round(self._positive / self._population, 2)
+        self._matrix[-1][-1] = round(self._positive / self._population, 2)
 
     def __repr__(self):
-        return '<{}(label={}, method={}) at {}>'.format(self.__class__.__name__, self.label,
+        return '<{}(label={}, method={}) at {}>'.format(self.__class__.__name__, self._label,
                                                         self._method, hex(id(self)))
