@@ -1,6 +1,8 @@
 from unittest import TestCase
 import numpy as np
-from tropicly.confusion_matrix import ConfusionMatrix, ConfusionMatrixLabelError
+from tropicly.confusion_matrix import (ConfusionMatrix,
+                                       ConfusionMatrixLabelError,
+                                       _NormalizedConfusionMatrix)
 
 
 class TestConfusionMatrix(TestCase):
@@ -59,7 +61,6 @@ class TestConfusionMatrix(TestCase):
                 self.char_cm.add(*val)
 
     def test_normalize(self):
-        pass
+        obj = self.digi_cm.normalize()
 
-    def test_as_df(self):
-        pass
+        self.assertTrue(isinstance(obj, _NormalizedConfusionMatrix))
