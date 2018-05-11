@@ -6,6 +6,7 @@ Date: 11.05.18
 Mail: tobi.seyde@gmail.com
 """
 from unittest import TestCase
+from tropicly.observer import Signal
 
 
 class TestSignal(TestCase):
