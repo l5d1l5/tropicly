@@ -22,24 +22,21 @@ from tropicly.utils import write
 LOGGER = logging.getLogger(__name__)
 LOGGER.addHandler(logging.NullHandler())
 
-#haversine = Distance('hav')
 
-# x, y resolution
-#x = haversine((affine.xoff, affine.yoff), (affine.xoff + affine.a, affine.yoff))
-#y = haversine((affine.xoff, affine.yoff), (affine.xoff, affine.yoff + affine.e))
-def worker(landcover, treecover, gain, loss, filename,
-           superimpose_kwargs=None, reclassify_kwargs=None, write_kwargs=None):
+def worker(landcover, treecover, gain, loss, filename):
     """
+    Worker function for parallel execution.
 
-
-    :param landcover:
-    :param treecover:
-    :param gain:
-    :param loss:
-    :param filename:
-    :param superimpose_kwargs:
-    :param reclassify_kwargs:
-    :param write_kwargs:
+    :param landcover: str
+        Path to GL30 landcover image.
+    :param treecover: str
+        Path to GFC treecover image.
+    :param gain: str
+        Path to GFC gain image.
+    :param loss: str
+        Path to GFC annual loss image.
+    :param filename: str
+        Out path.
     """
     # TODO refactor
     with rio.open(landcover, 'r') as h1, rio.open(treecover, 'r') as h2,\
@@ -52,9 +49,13 @@ def worker(landcover, treecover, gain, loss, filename,
         transform = h1.transform
         profile = h1.profile
 
-    driver = superimpose(landcover_data, treecover_data, gain_data, loss_data,)
+    haversine = Distance('hav')
+    x = haversine((transform.xoff, transform.yoff), (transform.xoff + transform.a, transform.yoff))
+    y = haversine((transform.xoff, transform.yoff), (transform.xoff, transform.yoff + transform.e))
 
-    reclassified = reclassify(driver, transform,)
+    driver = superimpose(landcover_data, treecover_data, gain_data, loss_data)
+
+    reclassified = reclassify(driver, res=(x, y))
 
     np.copyto(driver, reclassified, where=reclassified > 0)
 
@@ -63,15 +64,23 @@ def worker(landcover, treecover, gain, loss, filename,
 
 def superimpose(landcover, treecover, gain, loss, years=(1, 2, 3, 4, 5, 6, 7, 8, 9, 10), canopy_density=10):
     """
-    Des
+    Determines the direct drivers of deforestation. Superimposes GL30 with
+    filtered GFC annual losses.
 
-    :param landcover:
-    :param treecover:
-    :param gain:
-    :param loss:
-    :param years:
-    :param canopy_density:
-    :return:
+    :param landcover: np.array
+        Gl30 image data.
+    :param treecover: np.array
+        GFC treecover data.
+    :param gain: np.array
+        GFC gain data.
+    :param loss: np.array
+        GFC annual loss data.
+    :param years: list of int
+        Years to consider for superimposing.
+    :param canopy_density: int
+        Canopy density to consider
+    :return: np.array
+        Superimposed image.
     """
     shape = [landcover.shape, treecover.shape, gain.shape, loss.shape]
 
@@ -95,16 +104,26 @@ def superimpose(landcover, treecover, gain, loss, years=(1, 2, 3, 4, 5, 6, 7, 8,
     return driver
 
 
-def reclassify(driver, clustering=(20,), reject=(0, 20, 255), side_length=500, res=1):
+def reclassify(driver, clustering=(20,), reject=(0, 20, 255), side_length=500, res=(1, 1)):
     """
-    Des
+    Reclassify pixels in a raster image. Pixels selected by clustering will be clustered.
+    For each cluster the center point will be determined and a square buffer around centroid
+    is extracted in dimension of side_length and res. Most frequent class in buffer is applied
+    as the new class.
 
-    :param driver:
-    :param clustering:
-    :param reject:
-    :param side_length:
-    :param res:
-    :return:
+    :param driver: np.array
+        A 2-dimensional integer numpy array.
+    :param clustering: tuple, list of int
+        Values to cluster.
+    :param reject: tuple, list of int
+        Values to reject for reclassification.
+    :param side_length: int
+        Square buffer side length.
+    :param res: int or tuple(int, int)
+        Real world pixel resolution.
+    :return: np.array
+        A array of reclassified clusters in
+        dimension of input array.
     """
     mask = np.isin(driver, clustering)
 
@@ -134,7 +153,7 @@ def reclassify(driver, clustering=(20,), reject=(0, 20, 255), side_length=500, r
 
 def extract_square(data, center, side_length=None, res=None):
     """
-    Extracts a square around a center point from a numpy array.
+    Extracts a square from a numpy array around a center point.
 
     :param data: 2D np.array
         Square is extracted from this array.
@@ -150,7 +169,6 @@ def extract_square(data, center, side_length=None, res=None):
     :return: np.array
         Numpy array in extent of side_length or block_length.
     """
-    # TODO refactor to two functions extract square_by_block_size and by_side_length
     if side_length and res:
         if isinstance(res, (int, float)):
             x_res, y_res = res, res

@@ -59,6 +59,13 @@ def random_test_data(size=(100, 100), seed=42):
 
 
 def matrix_sum(n):
+    """
+    Creates a nxn matrix with random values between 1 <= x <= 10 and
+    computes a the matrix sum.
+
+    :param n: int
+        Matrix size.
+    """
     a = [[random.randint(1, 10) for i in range(n)] for i in range(n)]
 
     for r_idx, row in enumerate(a):
