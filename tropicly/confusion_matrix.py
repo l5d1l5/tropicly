@@ -91,10 +91,12 @@ class ConfusionMatrix:
 
     def add(self, reference, prediction):
         """
+        Adds to the confusion matrix a reference prediction value pair.
 
         :param reference:
+            Reference label/class.
         :param prediction:
-        :return:
+            Predicted label/class.
         """
         if reference not in self._label or prediction not in self._label:
             msg = '{}, {} unknown label for {}.'.format(reference, prediction, self._label)
@@ -110,9 +112,17 @@ class ConfusionMatrix:
 
     def normalize(self, method='commission'):
         """
+        Returns a instance of NormalizedConfusion matrix. Parameter
+        method selects the method of normalization. Select commission for
+        a commission error matrix and omission for omission matrix.
+        Default is commission.
 
-        :param method:
-        :return:
+        :param method: optional, str
+            Select the normalization method. Options:
+            commission (c, co, com, commission)
+            or omission.
+        :return: NormalizedConfusionMatrix
+            A instance of NormalizedConfusionMatrix.
         """
         if method in ('c', 'co', 'com', 'commission'):
             mat = self._matrix.T
@@ -129,12 +139,31 @@ class ConfusionMatrix:
 
     def as_dataframe(self):
         """
+        Returns the confusion matrix as a pandas.DataFrame object.
 
-        :return:
+        :return: pandas.DataFrame
+            A pandas data frame.
         """
-        pass
+        return pd.DataFrame.from_records(self._matrix,
+                                         index=self._label + ['cc'],
+                                         columns=self._label + ['rc'])
 
     def __str__(self):
+        # TODO implement
+        """
+        rows/columns/cells = matrix_size + 1
+        cell_size = 2 + max digits
+        line_length = cells*cell_size + cells + 1
+        -----------------------------
+        |      |   10 |   20 |      |
+        -----------------------------
+        |   10 | 1000 |   10 | 1010 |
+        -----------------------------
+        |   20 |   20 | 1000 | 1020 |
+        -----------------------------
+        |      | 1020 | 1010 | 2030 |
+        -----------------------------
+        """
         return '{}'.format(self._matrix)
 
     def __repr__(self):
@@ -148,10 +177,14 @@ class _NormalizedConfusionMatrix(ConfusionMatrix):
     """
     def __init__(self, label, method, dtype=np.float):
         """
+        Not intended for direct instantiation. Please, use ConfusionMatrix.
 
-        :param label:
-        :param method:
+        :param label: list
+            Label/class
+        :param method: str
+            Commission or else
         :param dtype:
+            Don't change cause normalization are type float.
         """
         super().__init__(label, dtype)
 
@@ -160,11 +193,16 @@ class _NormalizedConfusionMatrix(ConfusionMatrix):
         self._population = 0
 
     def add(self, values, index):
+        # TODO prevent division by zero
         """
+        Adds a normalized row to matrix.
 
-        :param values:
-        :param index:
-        :return:
+        :param values: list
+            Row of a confusion matrix,
+            must contain as last value row count.
+        :param index: int
+            Where reference_label == prediction_label or
+            true positive index.
         """
         # cache for overall accuracy
         self._positive += values[index]
