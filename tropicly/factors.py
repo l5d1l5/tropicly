@@ -5,8 +5,6 @@ Author: Tobias Seydewitz
 Date: 16.05.18
 Mail: tobi.seyde@gmail.com
 """
-from enum import Enum
-from collections import namedtuple
 
 
 class Factors:
@@ -24,15 +22,18 @@ class Factors:
 
             self._factors[arg.alias] = arg
 
-    def __getitem__(self, item):
-        if item in self._factors:
-            return self._factors[item]
+    def __getitem__(self, key):
+        if key in self._factors:
+            return self._factors[key]
 
-        raise KeyError('No item {}'.format(item))
+        raise KeyError('No item {}'.format(key))
+
+    def get(self, key, default=None):
+        return self._factors.get(key, default)
 
     @staticmethod
     def factor_factory(*args):
-        if len(args) == 1:
+        if len(args) == 2:
             return Factor(*args)
 
         elif len(args) == 3:
@@ -42,46 +43,29 @@ class Factors:
 
 
 class Factor:
-    def __init__(self, alias):
+    def __init__(self, alias, value):
         self.alias = alias
+        self.value = value
+
+    def __repr__(self):
+        return '<{}(alias={}, value={}) at {}>'.format(self.__class__.__name__, self.alias,
+                                                       self.value, hex(id(self)))
 
 
 class SOCCFactor(Factor):
     def __init__(self, alias, mean, std):
-        super().__init__(alias)
+        super().__init__(alias, mean)
 
-        self.mean = mean
         self.std = std  # standard deviation
 
     @property
     def min(self):
-        return self.mean - self.std
+        return self.value - self.std
 
     @property
     def max(self):
-        return self.mean + self.std
+        return self.value + self.std
 
     def __repr__(self):
-        return '<{}({}, {}, {}) at {}>'.format(self.__class__.__name__, self.alias,
-                                               self.mean, self.std, hex(id(self)))
-
-
-class SOCClasses(Enum):
-    primary_forest = 0
-    secondary_forest = 1
-    grassland = 2
-    perennial_crops = 3
-
-
-ChangeType = namedtuple('ChangeType', 'from_ to')
-
-
-SOCC = [
-    (ChangeType(SOCClasses.primary_forest, SOCClasses.grassland), 0.121, 0.023),
-]
-
-
-if __name__ == '__main__':
-    f = Factors('name', *SOCC)
-    c = ChangeType(SOCClasses.primary_forest, SOCClasses.grassland)
-    print(f[c])
+        return '<{}(alias={}, mean={}, std={}) at {}>'.format(self.__class__.__name__, self.alias,
+                                                              self.value, self.std, hex(id(self)))
