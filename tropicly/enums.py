@@ -14,10 +14,10 @@ class SOCClasses(Enum):
     grassland = 2
     perennial_crops = 3
     cropland = 4
+    no_data = 5
 
 
 class GL30Classes(Enum):
-    no_data = 0
     cropland = 10
     forest = 20
     regrowth = 25
@@ -28,4 +28,5 @@ class GL30Classes(Enum):
     tundra = 70
     artificial = 80
     bareland = 90
-    na = 255
+    snow = 100
+    no_data = 255
