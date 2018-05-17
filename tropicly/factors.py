@@ -41,6 +41,10 @@ class Factors:
 
         raise ValueError
 
+    def __repr__(self):
+        return '<{}(alias={}, value={}) at {}>'.format(self.__class__.__name__, self.name,
+                                                       self._factors, hex(id(self)))
+
 
 class Factor:
     def __init__(self, alias, value):
