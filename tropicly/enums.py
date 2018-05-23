@@ -9,6 +9,9 @@ from enum import Enum
 
 
 class SOCClasses(Enum):
+    """
+    Soil organic carbon change classes. Don et al. (2010)
+    """
     primary_forest = 0
     secondary_forest = 1
     grassland = 2
@@ -18,6 +21,9 @@ class SOCClasses(Enum):
 
 
 class GL30Classes(Enum):
+    """
+    GlobLand30 land cover classes. Chen et al. (2015)
+    """
     cropland = 10
     forest = 20
     regrowth = 25
