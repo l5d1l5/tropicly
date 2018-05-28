@@ -6,6 +6,7 @@ Date: 06.04.18
 Mail: tobi.seyde@gmail.com
 """
 from tropicly.distance import Distance
+from tropicly.sheduler import TaskSheduler
 from tropicly.sampling import worker as sworker
 from tropicly.frequency import worker as fworker
 from tropicly.harmonization import worker as hworker
@@ -18,9 +19,10 @@ __version__ = 0.1
 
 __all__ = [
     'Distance',
+    'TaskSheduler',
+    'ConfusionMatrix',
     'sworker',
     'fworker',
     'hworker',
     'cworker',
-    'ConfusionMatrix',
 ]
