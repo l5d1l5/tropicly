@@ -12,6 +12,9 @@ from multiprocessing import cpu_count
 
 
 class TaskSheduler(Thread):
+    """
+
+    """
     def __init__(self, name, max_threads):
         super().__init__(name=name)
 
