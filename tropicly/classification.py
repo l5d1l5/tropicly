@@ -38,7 +38,6 @@ def worker(landcover, treecover, gain, loss, filename):
     :param filename: str
         Out path.
     """
-    # TODO refactor
     with rio.open(landcover, 'r') as h1, rio.open(treecover, 'r') as h2,\
             rio.open(gain, 'r') as h3, rio.open(loss, 'r') as h4:
         landcover_data = h1.read(1)
@@ -201,15 +200,3 @@ def extract_square(data, center, side_length=None, res=None):
     col_end = max_col if col + x_edge > max_col else col + x_edge + 1
 
     return data[row_start:row_end, col_start:col_end]
-
-
-def circle_mask(mask_size, center, radius):
-    # TODO implement properly
-    cx, cy = center
-    sx, sy = mask_size
-
-    y, x = np.ogrid[:sx, :sy]
-
-    mask = (x-cx)**2 + (y-cy)**2 <= radius**2
-
-    return mask
