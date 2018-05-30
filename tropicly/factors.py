@@ -5,71 +5,51 @@ Author: Tobias Seydewitz
 Date: 16.05.18
 Mail: tobi.seyde@gmail.com
 """
+from tropicly.enums import SOCClasses, GL30Classes
 
 
-class Factors:
-    def __init__(self, name, *args):
-        self.name = name
-        self._factors = {}
-
-        if args:
-            self.add_factors(*args)
-
-    def add_factors(self, *args):
-        for arg in args:
-            if not isinstance(arg, Factor):
-                arg = self.__class__.factor_factory(*arg)
-
-            self._factors[arg.alias] = arg
-
-    def __getitem__(self, key):
-        if key in self._factors:
-            return self._factors[key]
-
-        raise KeyError('No item {}'.format(key))
-
-    def get(self, key, default=None):
-        return self._factors.get(key, default)
-
-    @staticmethod
-    def factor_factory(*args):
-        if len(args) == 2:
-            return Factor(*args)
-
-        elif len(args) == 3:
-            return SOCCFactor(*args)
-
-        raise ValueError
-
-    def __repr__(self):
-        return '<{}(alias={}, value={}) at {}>'.format(self.__class__.__name__, self.name,
-                                                       self._factors, hex(id(self)))
-
-
-class Factor:
-    def __init__(self, alias, value):
-        self.alias = alias
-        self.value = value
-
-    def __repr__(self):
-        return '<{}(alias={}, value={}) at {}>'.format(self.__class__.__name__, self.alias,
-                                                       self.value, hex(id(self)))
-
-
-class SOCCFactor(Factor):
+class SOCCFactor:
     def __init__(self, alias, mean, std):
-        super().__init__(alias, mean)
-
+        self.alias = alias
+        self.mean = mean
         self.std = std  # standard deviation
 
     @property
     def min(self):
-        return self.value - self.std
+        return self.mean - self.std
 
     @property
     def max(self):
-        return self.value + self.std
+        return self.mean + self.std
 
     def __repr__(self):
         return '<{}(alias={}, mean={}, std={}) at {}>'.format(self.__class__.__name__, self.alias,
-                                                              self.value, self.std, hex(id(self)))
+                                                              self.mean, self.std, hex(id(self)))
+
+
+# Full depth soil organic carbon change factors
+# Don et al. (2011) Impact of tropical land-use change on soil organic
+# carbon stocks - a meta-analysis, Global Change Biology
+SOCC_data = [
+    SOCCFactor((SOCClasses.primary_forest, SOCClasses.grassland), .121, .023),
+    SOCCFactor((SOCClasses.primary_forest, SOCClasses.cropland), .252, .033),
+    SOCCFactor((SOCClasses.primary_forest, SOCClasses.perennial_crops), .303, .027),
+    SOCCFactor((SOCClasses.primary_forest, SOCClasses.secondary_forest), .086, .02),
+    SOCCFactor((SOCClasses.secondary_forest, SOCClasses.grassland), .064, .025),
+    SOCCFactor((SOCClasses.secondary_forest, SOCClasses.cropland), .213, .041),
+    SOCCFactor((SOCClasses.secondary_forest, SOCClasses.perennial_crops), .024, .042),
+]
+
+SOCCFactors = {
+    (SOCClasses.primary_forest, GL30Classes.cropland): SOCC_data[1],
+    (SOCClasses.primary_forest, GL30Classes.regrowth): SOCC_data[3],
+    (SOCClasses.primary_forest, GL30Classes.grassland): SOCC_data[0],
+    (SOCClasses.primary_forest, GL30Classes.shrubland): SOCC_data[0],
+    (SOCClasses.primary_forest, GL30Classes.tundra): SOCC_data[0],
+    (SOCClasses.primary_forest, GL30Classes.bareland): SOCC_data[0],
+    (SOCClasses.secondary_forest, GL30Classes.cropland): SOCC_data[-2],
+    (SOCClasses.secondary_forest, GL30Classes.grassland): SOCC_data[-3],
+    (SOCClasses.secondary_forest, GL30Classes.shrubland): SOCC_data[-3],
+    (SOCClasses.secondary_forest, GL30Classes.tundra): SOCC_data[-3],
+    (SOCClasses.secondary_forest, GL30Classes.bareland): SOCC_data[-3],
+}
