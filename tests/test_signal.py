@@ -5,10 +5,11 @@ Author: Tobias Seydewitz
 Date: 11.05.18
 Mail: tobi.seyde@gmail.com
 """
-from unittest import TestCase
+from unittest import TestCase, skip
 from tropicly.observer import Signal
 
 
+@skip
 class TestSignal(TestCase):
     def test_connect(self):
         self.fail()

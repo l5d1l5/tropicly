@@ -38,19 +38,16 @@ def factor_map(driver, intact=None, attr='mean', forest_type=SOCClasses.secondar
     factors = np.zeros(driver.shape, dtype=np.float32)
     zero_factor = SOCCFactor('zero', 0, 0)
 
-    if intact:
-        pass
+    if intact is not None:
+        primary_forest = np.copy(driver)
+
+        primary_forest[intact == 0] = 0
+        driver[intact == 1] = 0
+
+        factors = factor_map(primary_forest, attr=attr, forest_type=SOCClasses.primary_forest)
 
     for member in GL30Classes:
         factor = SOCCFactors.get((forest_type, member), zero_factor)
         factors[driver == member.value] = factor.__getattribute__(attr)
 
     return factors
-
-
-if __name__ == '__main__':
-    intact = np.random.randint(0,2, size=(10,10))
-    driver = np.random.choice([i * 10 for i in range(11)], size=(10,10))
-    print(driver)
-    print(intact)
-    print(factor_map(driver, intact))
