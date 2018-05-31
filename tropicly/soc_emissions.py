@@ -34,6 +34,10 @@ def worker(driver, soc):
     area = round(x * y)
 
 
+def soc_emissions(driver, soc, intact=None, area=900, co2=3.7):
+    pass
+
+
 def factor_map(driver, intact=None, attr='mean', forest_type=SOCClasses.secondary_forest):
     factors = np.zeros(driver.shape, dtype=np.float32)
     zero_factor = SOCCFactor('zero', 0, 0)
