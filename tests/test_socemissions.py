@@ -33,3 +33,25 @@ class TestSOCEmissions(TestCase):
         actual = factor_map(np.concatenate((self.driver, self.driver)), self.intact)
 
         self.assertTrue(np.array_equal(expected, actual))
+
+    def test_soc_emissions_secondary(self):
+        expected = np.round(0.09 * 3.7 * self.soc * self.f1, decimals=2).astype(np.float32)
+        actual = soc_emissions(self.driver, self.soc)
+
+        self.assertTrue(np.array_equal(expected, actual))
+
+    def test_soc_emissions_primary(self):
+        expected = np.round(0.09 * 3.7 * self.soc * self.f2, decimals=2).astype(np.float32)
+        actual = soc_emissions(self.driver, self.soc, intact=np.ones(13))
+
+        self.assertTrue(np.array_equal(expected, actual))
+
+    def test_soc_emissions_intact(self):
+        primary = np.round(0.09 * 3.7 * self.soc * self.f2, decimals=2).astype(np.float32)
+        secondary = np.round(0.09 * 3.7 * self.soc * self.f1, decimals=2).astype(np.float32)
+
+        expected = np.concatenate((primary, secondary))
+        actual = soc_emissions(np.concatenate((self.driver, self.driver)), np.concatenate((self.soc, self.soc)),
+                               intact=self.intact)
+
+        self.assertTrue(np.array_equal(expected, actual))
