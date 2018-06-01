@@ -55,9 +55,7 @@ def agb_emissions(driver, biomass, area=900, co2=3.7, gl30=(10, 25, 30, 40, 50, 
     mask = np.zeros(driver.shape, dtype=np.uint8)
     mask[np.isin(driver, gl30)] = 1
 
-    emissions = mask * biomass
-    emissions = emissions * ha_per_px
-    emissions = emissions * co2
+    emissions = ha_per_px * co2 * mask * biomass
     emissions = np.round(emissions, decimals=2)
 
     return emissions.astype(np.float32)
