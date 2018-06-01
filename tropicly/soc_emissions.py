@@ -20,7 +20,16 @@ LOGGER.addHandler(logging.NullHandler())
 
 # TODO intact convert to raster
 
-def worker(driver, soc):
+def worker(driver, soc, out_name, intact=None, method='mean'):
+    """
+
+    :param driver:
+    :param soc:
+    :param out_name:
+    :param intact:
+    :param method:
+    :return:
+    """
     with rio.open(driver, 'r') as h1, rio.open(soc, 'r') as h2:
         driver_data = h1.read(1)
         soc_data = h2.read(1)
@@ -33,12 +42,42 @@ def worker(driver, soc):
     y = haversine((transform.xoff, transform.yoff), (transform.xoff, transform.yoff + transform.e))
     area = round(x * y)
 
+    emissions = soc_emissions(driver_data, soc_data, intact=intact, method=method, area=area)
 
-def soc_emissions(driver, soc, intact=None, area=900, co2=3.7):
-    pass
+    write(emissions, out_name, **profile)
+
+
+def soc_emissions(driver, soc, intact=None, method='mean', area=900, co2=3.7):
+    """
+    Des
+
+    :param driver:
+    :param soc:
+    :param intact:
+    :param method:
+    :param area:
+    :param co2:
+    :return:
+    """
+    ha_per_px = area * 0.0001
+
+    factors = factor_map(driver, intact=intact, attr=method)
+
+    emissions = ha_per_px * co2 * soc * factors
+    emissions = np.round(emissions, decimals=2)
+
+    return emissions.astype(np.float32)
 
 
 def factor_map(driver, intact=None, attr='mean', forest_type=SOCClasses.secondary_forest):
+    """
+
+    :param driver:
+    :param intact:
+    :param attr:
+    :param forest_type:
+    :return:
+    """
     factors = np.zeros(driver.shape, dtype=np.float32)
     zero_factor = SOCCFactor('zero', 0, 0)
 
