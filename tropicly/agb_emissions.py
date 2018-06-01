@@ -19,9 +19,9 @@ LOGGER.addHandler(logging.NullHandler())
 def worker(driver, biomass, filename):
     """
 
-    :param driver:
-    :param biomass:
-    :param filename:
+    :param driver: str
+    :param biomass: str
+    :param filename: str
     """
     with rio.open(driver, 'r') as h1, rio.open(biomass, 'r') as h2:
         driver_data = h1.read(1)
@@ -43,12 +43,12 @@ def worker(driver, biomass, filename):
 def agb_emissions(driver, biomass, area=900, co2=3.7, gl30=(10, 25, 30, 40, 50, 60, 70, 80, 90, 100)):
     """
 
-    :param driver:
-    :param biomass:
-    :param area:
-    :param co2:
-    :param gl30:
-    :return:
+    :param driver: np.array
+    :param biomass: np.array
+    :param area: numeric
+    :param co2: numeric
+    :param gl30: tuple of int
+    :return: np.array
     """
     ha_per_px = area * 0.0001
 

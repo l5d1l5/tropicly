@@ -22,13 +22,13 @@ LOGGER.addHandler(logging.NullHandler())
 
 def worker(driver, soc, out_name, intact=None, method='mean'):
     """
+    Worker function for parallel execution.
 
-    :param driver:
-    :param soc:
-    :param out_name:
-    :param intact:
-    :param method:
-    :return:
+    :param driver: str
+    :param soc: str
+    :param out_name: str
+    :param intact: str
+    :param method: str
     """
     with rio.open(driver, 'r') as h1, rio.open(soc, 'r') as h2:
         driver_data = h1.read(1)
@@ -51,13 +51,13 @@ def soc_emissions(driver, soc, intact=None, method='mean', area=900, co2=3.7):
     """
     Des
 
-    :param driver:
-    :param soc:
-    :param intact:
-    :param method:
-    :param area:
-    :param co2:
-    :return:
+    :param driver: np.array
+    :param soc: np.array
+    :param intact: np.array
+    :param method: str
+    :param area: numeric
+    :param co2: numeric
+    :return: np.array
     """
     ha_per_px = area * 0.0001
 
@@ -72,11 +72,11 @@ def soc_emissions(driver, soc, intact=None, method='mean', area=900, co2=3.7):
 def factor_map(driver, intact=None, attr='mean', forest_type=SOCClasses.secondary_forest):
     """
 
-    :param driver:
-    :param intact:
-    :param attr:
-    :param forest_type:
-    :return:
+    :param driver: np.array
+    :param intact: np.array
+    :param attr: str
+    :param forest_type: enum.member
+    :return: np.array
     """
     factors = np.zeros(driver.shape, dtype=np.float32)
     zero_factor = SOCCFactor('zero', 0, 0)
