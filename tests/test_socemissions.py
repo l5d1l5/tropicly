@@ -10,7 +10,7 @@ class TestSOCEmissions(TestCase):
         self.driver = np.array([0, 10, 20, 25, 30, 40, 50,
                                 60, 70, 80, 90, 100, 255], dtype=np.uint8)
         self.intact = np.array([1]*13+[0]*13, dtype=np.uint8)
-        self.soc = np.round_(np.random.rand(13) * 100, decimals=2)
+        self.soc = np.round_(np.random.rand(13) * 100, decimals=2).astype(np.float32)
         self.f1 = np.array([0, .213, 0, 0, .064, .064, 0,
                             0, .064, 0, .064, 0, 0], dtype=np.float32)
         self.f2 = np.array([0, .252, 0, .086, .121, .121, 0,
