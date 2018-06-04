@@ -34,8 +34,8 @@ def worker(driver, soc, out_name, intact=None, method='mean'):
         driver_data = h1.read(1)
         soc_data = h2.read(1)
 
-        profile = driver.profile
-        transform = driver.transform
+        profile = h1.profile
+        transform = h1.transform
 
     haversine = Distance('hav')
     x = haversine((transform.xoff, transform.yoff), (transform.xoff + transform.a, transform.yoff))
@@ -60,6 +60,8 @@ def soc_emissions(driver, soc, intact=None, method='mean', area=900, co2=3.7):
     :return: np.array
     """
     ha_per_px = area * 0.0001
+    # prevent overflow
+    soc[soc < 0] = 0
 
     factors = factor_map(driver, intact=intact, attr=method)
 
