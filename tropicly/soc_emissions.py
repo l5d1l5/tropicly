@@ -25,10 +25,15 @@ def worker(driver, soc, out_name, intact=None, method='mean'):
     Worker function for parallel execution.
 
     :param driver: str
+        Path to driver raster image.
     :param soc: str
+        Path to soil organic carbon content image.
     :param out_name: str
-    :param intact: str
-    :param method: str
+        Out path of emission image
+    :param intact: optional, str
+        Mask for intact primary forest.
+    :param method: str, min, mean or max
+        Method to compute soil organic carbon emissions.
     """
     with rio.open(driver, 'r') as h1, rio.open(soc, 'r') as h2:
         driver_data = h1.read(1)
@@ -52,6 +57,7 @@ def soc_emissions(driver, soc, intact=None, method='mean', area=900, co2=3.7):
     Des
 
     :param driver: np.array
+
     :param soc: np.array
     :param intact: np.array
     :param method: str
