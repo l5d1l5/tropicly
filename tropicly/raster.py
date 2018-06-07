@@ -10,48 +10,33 @@ from rasterio import open, band
 from rasterio.merge import merge
 from shapely.geometry import Polygon
 from rasterio.io import DatasetReader
+from rasterio.coords import BoundingBox, disjoint_bounds
 from rasterio.warp import reproject, calculate_default_transform
 
 
-def reproject_from(in_path, to_crs, out_path):
-    """
-    This method re-projects a raster file to a selected coordinate
-    reference system.
-
-    :param in_path: str
-        Path to raster file on drive
-    :param to_crs: dict
-        Target coordinate reference system for re-projection
-    :param out_path: str
-        Path where the reprojected raster file should be stored
-    :return: str
-        Path where the reprojected raster file is stored
-    """
-    with open(in_path, 'r') as src:
+def make_warp_profile(template, crs):
+    with open(template, 'r') as src:
         affine, width, height = calculate_default_transform(
             src_crs=src.crs,
-            dst_crs=to_crs,
+            dst_crs=crs,
             width=src.width,
             height=src.height,
             **src.bounds._asdict(),
         )
-
         kwargs = src.profile.copy()
-        kwargs.update(
-            transform=affine,
-            width=width,
-            height=height,
-            crs=to_crs
-        )
 
-        with open(out_path, 'w', **kwargs) as dst:
-            for idx in src.indexes:
-                reproject(
-                    source=band(src, idx),
-                    destination=band(dst, idx)
-                )
+    kwargs.update(
+        transform=affine,
+        width=width,
+        height=height,
+        compress='lzw',
+        crs=crs,
+        res=(abs(affine[0]), abs(affine[4])),
+        bounds=BoundingBox(affine.xoff, affine.yoff+(height*affine[4]),
+                           affine.xoff+(width*affine[0]), affine.yoff)
+    )
 
-        return out_path
+    return kwargs
 
 
 def reproject_like(in_path, out_path, **kwargs):
@@ -120,6 +105,24 @@ def read_raster(item):
         except:
             msg = 'Attr {}, Type {} is not a valid raster file'.format(item, type(item))
             raise ValueError(msg)
+
+
+def clip_raster(raster, dst_bounds):
+    # TODO doc
+    src = read_raster(raster)
+    src_bounds = src.bounds
+
+    if disjoint_bounds(src_bounds, dst_bounds):
+        msg = 'Raster bounds {} are not covered by clipping bounds {}'.format(src_bounds, dst_bounds)
+        raise ValueError(msg)
+
+    window = src.window(*dst_bounds)
+    window = window.round_lengths(op='ceil')
+    transform = src.window_transform(window)
+    data = src.read(window=window, out_shape=(src.count, window.height, window.width))
+
+    src.close()
+    return data, transform
 
 
 def clip(clipper, geometries):
@@ -201,3 +204,39 @@ def write(data, to_path, **kwargs):
             dst.write(data[i], i + 1)  # rasterio band index start at one, thus we increment by one
 
     return to_path
+
+
+def int_to_orient(x, y):
+    # TODO round method ceil, floor
+    """
+    Converts a x- and y-coordinate to an integer north/south,
+    west/east string representation.
+    Example: (x=-179.3457, y=80.2222) -> 80N_179W
+
+    :param x: float
+        Longitudinal coordinate
+    :param y: float
+        Latitudinal coordinate
+    :return: str
+        Lat/Lon coordinates as a integer string with the according
+        orientation.
+    """
+    x = round(x)
+    y = round(y)
+
+    lng, we = (-1 * x, 'W') if x < 0 else (x, 'E')
+    lat, ns = (-1 * y, 'S') if y < 0 else (y, 'N')
+
+    return '{:02d}{}_{:03d}{}'.format(lat, ns, lng, we)
+
+
+def round_bounds(bounds):
+    # TODO doc, round method ceil, floor
+    attrs = ('left', 'bottom', 'right', 'top')
+
+    coords = []
+    for attr in attrs:
+        coord = bounds.__getattribute__(attr)
+        coords.append(round(coord))
+
+    return BoundingBox(*coords)
