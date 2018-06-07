@@ -5,51 +5,101 @@ Author: Tobias Seydewitz
 Date: 01.06.18
 Mail: tobi.seyde@gmail.com
 """
+import numpy as np
+from rasterio import open
+from rasterio.features import rasterize
+from rasterio.warp import calculate_default_transform
+from tropicly.raster import (write, reproject_like, merge_from, polygon_from, clip, reproject_from)
 
 
+CRS = {'init': 'epsg:4326'}
 
-def alignment_worker(to_reproject, to_crs, to_merge_alike, out_path, generic_name):
-    # TODO refactor get list of raster a tuple in list is a mergeable dataset
-    template = None
-    path = Path(out_path)
 
-    for idx, raster in enumerate(to_reproject):
-        out_path = str(path / 'reproject_{}_{}'.format(idx, generic_name))
+def worker(template, alignments, pathobj):
+    kwargs = trans(template)
+    kwargs['out'] = pathobj
+    print(alignment(alignments, **kwargs))
 
-        if idx == 0:
-            try:
-                template = reproject_from(raster, to_crs, out_path)
-            except Exception as err:
-                LOGGER.error('Fatal no template %s', raster, exc_info=err)
-                raise err
+
+def alignment(alignments, **kwargs):
+    out = {}
+
+    for key, values in alignments.items():
+        values = list(set(values))
+
+        name = '{}{:x}.tif'.format(key, abs(hash(''.join(values))))
+        path = str(kwargs['out']/name)
+
+        if len(values) == 1:
+            out[key] = reproject_like(values[0], path, **kwargs)
+
+        elif len(values) > 1:
+            data, affine = merge_from(values, bounds=kwargs['bounds'], res=kwargs['res'])
+            out[key] = write(data, path, **kwargs)
 
         else:
-            try:
-                reproject_like(template, raster, out_path)
-            except Exception as err:
-                LOGGER.warning('Unable to reproject %s', raster, exc_info=err)
+            continue
 
-    kwargs = fetch_metadata(template, 'profile')
-
-    for idx, rasters in enumerate(to_merge_alike):
-        out_path = str(path / 'merge_{}_{}'.format(idx, generic_name))
-
-        try:
-            data, transform = merge_alike(template, rasters)
-            kwargs.update({'transform': transform})
-            write(data, out_path, **kwargs)
-
-        except Exception as err:
-            LOGGER.warning('Unable to merge %s, cant create %s', rasters, out_path)
+    return out
 
 
-def clip_worker(to_clip, bounds, profile, out_path):
-    # TODO doc
-    key = int_to_orient(bounds.left, bounds.top)
-    path = Path(out_path)
+def trans(template):
+    with open(template, 'r') as src:
+        affine, width, height = calculate_default_transform(
+            src_crs=src.crs,
+            dst_crs=CRS,
+            width=src.width,
+            height=src.height,
+            **src.bounds._asdict(),
+        )
 
-    for idx, raster in enumerate(to_clip):
-        data, transform = clip_raster(raster, bounds)
-        opath = path / '{}_{}.tif'.format(idx, key)
-        profile.update({'transform': transform})
-        write(data, str(opath), **profile)
+        kwargs = src.profile.copy()
+
+    bounds = bounds_from_transform(affine, width, height)
+
+    kwargs.update(
+        transform=affine,
+        width=width,
+        height=height,
+        compress='lzw',
+        crs=CRS,
+        res=(abs(affine[0]), abs(affine[4])),
+        bounds=bounds
+    )
+
+    return kwargs
+
+
+def bounds_from_transform(transform, width, height):
+    return (transform.xoff, transform.yoff+(height*transform[4]),
+            transform.xoff+(width*transform[0]), transform.yoff)
+
+
+def rasterize_vector(transform, bounds, shape, vector):
+    """
+
+    :param transform:
+    :param bounds:
+    :param shape:
+    :param vector:
+    :return:
+    """
+    clipper = polygon_from(bounds)
+    geometries = list(vector.cx[bounds[0]:bounds[2], bounds[1]:bounds[3]].geometry)
+
+    if geometries:
+        clipped = clip(clipper, geometries)
+        raster = rasterize(clipped, out_shape=shape, transform=transform, dtype=np.uint8)
+
+        return raster
+
+    return np.zeros(shape=shape, dtype=np.uint8)
+
+
+if __name__ == '__main__':
+    from pathlib import Path
+    out = {'gain': ['/home/tobi/Documents/Master/code/python/Master/data/core/gfc/Hansen_GFC2013_gain_20S_020E.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/gfc/Hansen_GFC2013_gain_20S_020E.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/gfc/Hansen_GFC2013_gain_20S_020E.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/gfc/Hansen_GFC2013_gain_20S_030E.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/gfc/Hansen_GFC2013_gain_20S_030E.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/gfc/Hansen_GFC2013_gain_20S_030E.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/gfc/Hansen_GFC2013_gain_20S_030E.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/gfc/Hansen_GFC2013_gain_20S_030E.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/gfc/Hansen_GFC2013_gain_10S_030E.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/gfc/Hansen_GFC2013_gain_10S_030E.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/gfc/Hansen_GFC2013_gain_10S_020E.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/gfc/Hansen_GFC2013_gain_10S_030E.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/gfc/Hansen_GFC2013_gain_10S_020E.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/gfc/Hansen_GFC2013_gain_10S_020E.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/gfc/Hansen_GFC2013_gain_10S_020E.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/gfc/Hansen_GFC2013_gain_20S_030E.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/gfc/Hansen_GFC2013_gain_20S_030E.tif'], 'soc': ['/home/tobi/Documents/Master/code/python/Master/data/core/soil/GSOCmapV1.1.tif'], 'gl30_00': ['/home/tobi/Documents/Master/code/python/Master/data/core/gl30/s36_20_2000lc030.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/gl30/s36_20_2000lc030.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/gl30/s36_20_2000lc030.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/gl30/s36_20_2000lc030.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/gl30/s36_20_2000lc030.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/gl30/s36_20_2000lc030.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/gl30/s36_20_2000lc030.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/gl30/s36_20_2000lc030.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/gl30/s36_20_2000lc030.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/gl30/s36_20_2000lc030.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/gl30/s36_20_2000lc030.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/gl30/s36_20_2000lc030.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/gl30/s36_20_2000lc030.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/gl30/s36_20_2000lc030.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/gl30/s36_20_2000lc030.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/gl30/s36_20_2000lc030.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/gl30/s36_20_2000lc030.tif'], 'loss': ['/home/tobi/Documents/Master/code/python/Master/data/core/gfc/Hansen_GFC2013_lossyear_20S_020E.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/gfc/Hansen_GFC2013_lossyear_20S_020E.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/gfc/Hansen_GFC2013_lossyear_20S_020E.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/gfc/Hansen_GFC2013_lossyear_20S_030E.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/gfc/Hansen_GFC2013_lossyear_20S_030E.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/gfc/Hansen_GFC2013_lossyear_20S_030E.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/gfc/Hansen_GFC2013_lossyear_20S_030E.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/gfc/Hansen_GFC2013_lossyear_20S_030E.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/gfc/Hansen_GFC2013_lossyear_10S_030E.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/gfc/Hansen_GFC2013_lossyear_10S_030E.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/gfc/Hansen_GFC2013_lossyear_10S_020E.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/gfc/Hansen_GFC2013_lossyear_10S_030E.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/gfc/Hansen_GFC2013_lossyear_10S_020E.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/gfc/Hansen_GFC2013_lossyear_10S_020E.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/gfc/Hansen_GFC2013_lossyear_10S_020E.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/gfc/Hansen_GFC2013_lossyear_20S_030E.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/gfc/Hansen_GFC2013_lossyear_20S_030E.tif'], 'cover': ['/home/tobi/Documents/Master/code/python/Master/data/core/gfc/Hansen_GFC2013_treecover2000_20S_020E.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/gfc/Hansen_GFC2013_treecover2000_20S_020E.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/gfc/Hansen_GFC2013_treecover2000_20S_020E.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/gfc/Hansen_GFC2013_treecover2000_20S_030E.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/gfc/Hansen_GFC2013_treecover2000_20S_030E.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/gfc/Hansen_GFC2013_treecover2000_20S_030E.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/gfc/Hansen_GFC2013_treecover2000_20S_030E.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/gfc/Hansen_GFC2013_treecover2000_20S_030E.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/gfc/Hansen_GFC2013_treecover2000_10S_030E.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/gfc/Hansen_GFC2013_treecover2000_10S_030E.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/gfc/Hansen_GFC2013_treecover2000_10S_020E.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/gfc/Hansen_GFC2013_treecover2000_10S_030E.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/gfc/Hansen_GFC2013_treecover2000_10S_020E.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/gfc/Hansen_GFC2013_treecover2000_10S_020E.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/gfc/Hansen_GFC2013_treecover2000_10S_020E.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/gfc/Hansen_GFC2013_treecover2000_20S_030E.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/gfc/Hansen_GFC2013_treecover2000_20S_030E.tif'], 'biomass': ['/home/tobi/Documents/Master/code/python/Master/data/core/biomass/s36_20_2000lc030.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/biomass/s36_20_2000lc030.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/biomass/s36_20_2000lc030.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/biomass/s36_20_2000lc030.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/biomass/s36_20_2000lc030.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/biomass/s36_20_2000lc030.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/biomass/s36_20_2000lc030.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/biomass/s36_20_2000lc030.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/biomass/s36_20_2000lc030.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/biomass/s36_20_2000lc030.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/biomass/s36_20_2000lc030.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/biomass/s36_20_2000lc030.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/biomass/s36_20_2000lc030.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/biomass/s36_20_2000lc030.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/biomass/s36_20_2000lc030.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/biomass/s36_20_2000lc030.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/biomass/s36_20_2000lc030.tif'], 'gl30_10': ['/home/tobi/Documents/Master/code/python/Master/data/core/gl30/s36_20_2010lc030.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/gl30/s36_20_2010lc030.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/gl30/s36_20_2010lc030.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/gl30/s36_20_2010lc030.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/gl30/s36_20_2010lc030.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/gl30/s36_20_2010lc030.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/gl30/s36_20_2010lc030.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/gl30/s36_20_2010lc030.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/gl30/s36_20_2010lc030.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/gl30/s36_20_2010lc030.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/gl30/s36_20_2010lc030.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/gl30/s36_20_2010lc030.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/gl30/s36_20_2010lc030.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/gl30/s36_20_2010lc030.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/gl30/s36_20_2010lc030.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/gl30/s36_20_2010lc030.tif', '/home/tobi/Documents/Master/code/python/Master/data/core/gl30/s36_20_2010lc030.tif']}
+    out['biomass'] = []
+
+    worker(out['gl30_10'][0], out, Path('/home/tobi/Documents/'))
+

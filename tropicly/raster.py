@@ -6,31 +6,120 @@ Date: 14.04.18
 Mail: tobi.seyde@gmail.com
 """
 import numpy as np
-import rasterio as rio
-import geopandas as gpd
+from rasterio import open, band
+from rasterio.merge import merge
 from shapely.geometry import Polygon
-from rasterio.features import rasterize
-from tropicly.utils import write
+from rasterio.io import DatasetReader
+from rasterio.warp import reproject, calculate_default_transform
 
 
-def rasterize_vector(transform, bounds, shape, vector):
+def reproject_from(in_path, to_crs, out_path):
     """
+    This method re-projects a raster file to a selected coordinate
+    reference system.
 
-    :param transform:
-    :param bounds:
-    :param vector:
-    :return:
+    :param in_path: str
+        Path to raster file on drive
+    :param to_crs: dict
+        Target coordinate reference system for re-projection
+    :param out_path: str
+        Path where the reprojected raster file should be stored
+    :return: str
+        Path where the reprojected raster file is stored
     """
-    clipper = polygon_from(bounds)
-    geometries = list(vector.cx[bounds[0]:bounds[2], bounds[1]:bounds[3]].geometry)
+    with open(in_path, 'r') as src:
+        affine, width, height = calculate_default_transform(
+            src_crs=src.crs,
+            dst_crs=to_crs,
+            width=src.width,
+            height=src.height,
+            **src.bounds._asdict(),
+        )
 
-    if geometries:
-        clipped = clip(clipper, geometries)
-        raster = rasterize(clipped, out_shape=shape, transform=transform, dtype=np.uint8)
+        kwargs = src.profile.copy()
+        kwargs.update(
+            transform=affine,
+            width=width,
+            height=height,
+            crs=to_crs
+        )
 
-        return raster
+        with open(out_path, 'w', **kwargs) as dst:
+            for idx in src.indexes:
+                reproject(
+                    source=band(src, idx),
+                    destination=band(dst, idx)
+                )
 
-    return np.zeros(shape=shape, dtype=np.uint8)
+        return out_path
+
+
+def reproject_like(in_path, out_path, **kwargs):
+    with open(in_path, 'r') as src:
+        out_kwargs = src.profile.copy()
+        out_kwargs.update({
+            'crs': kwargs['crs'],
+            'transform': kwargs['transform'],
+            'width': kwargs['width'],
+            'height': kwargs['height']
+        })
+
+        with open(out_path, 'w', **out_kwargs) as dst:
+            reproject(source=band(src, list(range(1, src.count + 1))),
+                      destination=band(dst, list(range(1, src.count + 1))))
+
+    return out_path
+
+
+def merge_from(rasters, **kwargs):
+    """
+    Merges a list of raster files to one single raster dataset.
+    This method is wrapped around the rasterio.merge.merge method
+    therefore this method accept keyword arguments as well.
+
+    :param rasters: list
+        A list of strings or pathlib.Path objects where each list element reference a path to a
+        raster file on drive.
+    :param kwargs:
+        Please refer to the rasterio documentation for a full list
+        of possible keyword arguments.
+    :return: namedtuple(data, affine)
+        A namedtuple with the attributes data and affine, where the parameter
+        data contains the merged data of the raster files as a numpy.ndarray
+        and affine an affine transformation matrix.
+    """
+    readers = [read_raster(raster) for raster in rasters]
+
+    dst, affine = merge(readers, **kwargs)
+
+    [reader.close() for reader in readers]
+
+    return dst, affine
+
+
+def read_raster(item):
+    """
+    Helper method to return a raster file as a opened instance of
+    rasterio.io.DatasetReader in read mode.
+
+    :param item: str, pathlib.Path or rasterio.io.DatasetReader
+        Should be the path to the raster file on filesystem as a string
+        or pathlib.Path object. If item is a instance of DatasetReader
+        the function returns immediately.
+    :return: rasterio.io.DatasetReader
+        Returns an instance of rasterio.io.DatasetReader in read mode.
+    """
+    if isinstance(item, DatasetReader):
+        return item
+
+    else:
+        try:
+            path = str(item)  # Cast pathlib.Path to string
+            return open(path, 'r')
+
+        except:
+            msg = 'Attr {}, Type {} is not a valid raster file'.format(item, type(item))
+            raise ValueError(msg)
 
 
 def clip(clipper, geometries):
@@ -42,7 +131,8 @@ def clip(clipper, geometries):
     :param geometries: list of shapely geometries
     :return: list of shapely geometries
     """
-    return [clipper.intersection(geo) for geo in geometries]
+    for geo in geometries:
+        yield clipper.intersection(geo)
 
 
 def polygon_from(bounds):
@@ -67,16 +157,47 @@ def polygon_from(bounds):
     return Polygon(polygon_bounds)
 
 
-if __name__ == '__main__':
-    #mask = gpd.read_file('/home/tobi/Documents/Master/code/python/Master/data/auxiliary/masks/final_region_mask.shp')
-    ifl = gpd.read_file('/home/tobi/Documents/Master/code/python/Master/data/core/ifl/ifl_tropic.shp')
-    handle = rio.open('/home/tobi/Documents/Master/code/python/Master/data/driv/driver_10S_060W.tif')
+def write(data, to_path, **kwargs):
+    """
+    Writes a multi-dimensional numpy.ndarray as a raster dataset to file.
+    This method is wrapped around the rasterio.open method therefore
+    you can modify the methods behavior with kwargs arguments provided
+    by the rasterio documentation.
 
-    transform = handle.transform
-    bounds = handle.bounds
-    shape = handle.height, handle.width
-    profile = handle.profile
+    :param data: numpy.ndarray
+        A multi-dimensional numpy array. If array has three dimensions
+        each dimension depict a raster band. If array has two dimensions
+        the resulting raster file contains a single band.
+    :param to_path: str
+        Path where the new raster file should be stored
+    :param kwargs:
+        Keyword arguments consumed by the rasterio.open function.
+        Please refer to the rasterio documentation for a comprehensive
+        list of possible keyword arguments.
+    :return: str
+        Path where the raster file is stored
+    """
+    if len(data.shape) == 3:
+        idx, height, width = data.shape  # z, y, x
 
-    ra = rasterize_vector(transform, bounds, shape, ifl)
-    print(np.unique(ra, return_counts=True))
-    write(ra, '/home/tobi/Documents/clip.tif', **profile)
+    elif len(data.shape) == 2:
+        idx = 1  # z
+        height, width = data.shape  # y, x
+        data = np.reshape(data.copy(), (idx, height, width))
+
+    else:
+        raise ValueError('Please, provide a valid dataset')
+
+    dtype = data.dtype
+    kwargs.update(
+        count=idx,
+        height=height,
+        width=width,
+        dtype=dtype
+    )
+
+    with open(to_path, 'w', **kwargs) as dst:
+        for i in range(idx):
+            dst.write(data[i], i + 1)  # rasterio band index start at one, thus we increment by one
+
+    return to_path
