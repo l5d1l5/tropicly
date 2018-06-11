@@ -6,6 +6,7 @@ Date: 01.06.18
 Mail: tobi.seyde@gmail.com
 """
 import numpy as np
+from time import time
 from rasterio.features import rasterize
 from tropicly.raster import (clip,
                              write,
@@ -26,11 +27,14 @@ def worker(template, alignments, vector, pathobj):
     kwargs['out'] = pathobj
 
     out = raster_alignment(alignments, **kwargs)
-    data = rasterize_vector(vector, **kwargs)
-    out['ifl'] = write(data, str(pathobj/'test.tif'), **kwargs)
+
+    data = rasterize_vector(vector, kwargs['transform'], kwargs['bounds'], (kwargs['height'], kwargs['width']))
+    name = 'ifl{:x}.tif'.format(id(data))
+    out['ifl'] = write(data, str(pathobj/name), **kwargs)
 
     kwargs['bounds'] = round_bounds(kwargs['bounds'])
-    out2 = raster_clip(out, **kwargs)
+
+    return raster_clip(out, **kwargs)
 
 
 def raster_alignment(alignments, **kwargs):
@@ -39,11 +43,11 @@ def raster_alignment(alignments, **kwargs):
     for key, values in alignments.items():
         values = list(set(values))
 
-        name = '{}{:x}.tif'.format(key, abs(hash(''.join(values))))
+        name = '{}{:x}.tif'.format(key, abs(hash(''.join(values) + str(time()))))
         path = str(kwargs['out']/name)
 
         if len(values) == 1:
-            out[key] = reproject_like(values[0], path, **kwargs)
+            out[key] = reproject_like(*values, path, **kwargs)
 
         elif len(values) > 1:
             data, affine = merge_from(values, bounds=kwargs['bounds'], res=kwargs['res'])
