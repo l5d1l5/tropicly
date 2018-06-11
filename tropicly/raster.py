@@ -40,6 +40,7 @@ def make_warp_profile(template, crs):
 
 
 def reproject_like(in_path, out_path, **kwargs):
+    # TODO reproject should return dataset
     with open(in_path, 'r') as src:
         out_kwargs = src.profile.copy()
         out_kwargs.update({
