@@ -7,7 +7,7 @@ Mail: tobi.seyde@gmail.com
 """
 import logging
 import numpy as np
-from raster import open
+from rasterio import open
 from tropicly.utils import write
 from tropicly.distance import Distance
 from tropicly.factors import SOCCFactors, SOCCFactor
