@@ -7,7 +7,7 @@ Mail: tobi.seyde@gmail.com
 """
 import logging
 import numpy as np
-import rasterio as rio
+from rasterio import open
 from collections import OrderedDict
 
 
@@ -30,7 +30,7 @@ def worker(image, return_stack, *args):
     :param args:
         Additional parameters, will be added to result record.
     """
-    with rio.open(image, 'r') as src:
+    with open(image, 'r') as src:
         data = src.read()
 
     freq = frequency(data)

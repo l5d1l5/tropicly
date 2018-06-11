@@ -7,13 +7,12 @@ Mail: tobi.seyde@gmail.com
 """
 import logging
 import numpy as np
-import rasterio as rio
-from rasterio.features import shapes
+from rasterio import open
+from tropicly.raster import write
 from shapely.geometry import Polygon
-
 from tropicly.distance import Distance
 from tropicly.frequency import most_common_class
-from tropicly.utils import write
+from rasterio.features import shapes, rasterize
 
 
 # TODO refactor exceptions
@@ -38,8 +37,8 @@ def worker(landcover, treecover, gain, loss, filename):
     :param filename: str
         Out path.
     """
-    with rio.open(landcover, 'r') as h1, rio.open(treecover, 'r') as h2,\
-            rio.open(gain, 'r') as h3, rio.open(loss, 'r') as h4:
+    with open(landcover, 'r') as h1, open(treecover, 'r') as h2,\
+            open(gain, 'r') as h3, open(loss, 'r') as h4:
         landcover_data = h1.read(1)
         treecover_data = h2.read(1)
         gain_data = h3.read(1)
@@ -127,7 +126,7 @@ def reclassify(driver, clustering=(20,), reject=(0, 20, 255), side_length=500, r
     mask = np.isin(driver, clustering)
 
     clusters = []
-    for cluster, _ in rio.features.shapes(driver, mask=mask):
+    for cluster, _ in shapes(driver, mask=mask):
         polygon = Polygon(cluster['coordinates'][0])
         point = polygon.centroid
         center = int(point.y), int(point.x)
@@ -145,7 +144,7 @@ def reclassify(driver, clustering=(20,), reject=(0, 20, 255), side_length=500, r
             clusters.append((cluster, cls))
 
     if clusters:
-        return rio.features.rasterize(clusters, out_shape=driver.shape, dtype=driver.dtype)
+        return rasterize(clusters, out_shape=driver.shape, dtype=driver.dtype)
 
     return np.zeros(shape=driver.shape, dtype=driver.dtype)
 

@@ -7,7 +7,7 @@ Mail: tobi.seyde@gmail.com
 """
 import logging
 import numpy as np
-import rasterio as rio
+from rasterio import open
 from tropicly.utils import write
 from tropicly.distance import Distance
 
@@ -27,7 +27,7 @@ def worker(driver, biomass, filename):
     :param filename: str
         Out path.
     """
-    with rio.open(driver, 'r') as h1, rio.open(biomass, 'r') as h2:
+    with open(driver, 'r') as h1, open(biomass, 'r') as h2:
         driver_data = h1.read(1)
         biomass_data = h2.read(1)
 

@@ -7,7 +7,7 @@ Mail: tobi.seyde@gmail.com
 """
 import logging
 import numpy as np
-import rasterio as rio
+from rasterio import open
 from collections import namedtuple
 
 
@@ -34,7 +34,7 @@ def worker(landcover, treecover, return_stack, *args, **kwargs):
         Parameter for treecover_similarity function. Please consider function
         doc for detailed info.
     """
-    with rio.open(landcover, 'r') as handle1, rio.open(treecover, 'r') as handle2:
+    with open(landcover, 'r') as handle1, open(treecover, 'r') as handle2:
         gl30 = handle1.read(1)
         gfc = handle2.read(1)
 

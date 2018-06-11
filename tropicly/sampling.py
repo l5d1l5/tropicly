@@ -7,7 +7,7 @@ Mail: tobi.seyde@gmail.com
 """
 import logging
 import numpy as np
-import rasterio as rio
+from rasterio import open
 
 
 # TODO refactor exceptions
@@ -30,7 +30,7 @@ def worker(image, return_stack, **kwargs):
         Parameter for sample_occupied. Please, consider the doc of this function
         for detailed instructions.
     """
-    with rio.open(image, 'r') as src:
+    with open(image, 'r') as src:
         data = src.read(1)
         affine = src.transform
 
