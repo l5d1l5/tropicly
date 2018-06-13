@@ -46,12 +46,20 @@ def raster_alignment(alignments, **kwargs):
         name = '{}{:x}.tif'.format(key, abs(hash(''.join(values) + str(time()))))
         path = str(kwargs['out']/name)
 
+        err_msg = 'Failed at {} files {}'.format(key, values)
+
         if len(values) == 1:
-            out[key] = reproject_like(*values, path, **kwargs)
+            try:
+                out[key] = reproject_like(*values, path, **kwargs)
+            except Exception:
+                print(err_msg)
 
         elif len(values) > 1:
-            data, affine = merge_from(values, bounds=kwargs['bounds'], res=kwargs['res'])
-            out[key] = write(data, path, **kwargs)
+            try:
+                data, affine = merge_from(values, bounds=kwargs['bounds'], res=kwargs['res'])
+                out[key] = write(data, path, **kwargs)
+            except Exception:
+                print(err_msg)
 
         else:
             continue
