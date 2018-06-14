@@ -23,6 +23,7 @@ CRS = {'init': 'epsg:4326'}
 
 
 def worker(template, alignments, vector, pathobj):
+    # TODO refactor
     kwargs = make_warp_profile(template, CRS)
     kwargs['out'] = pathobj
 
@@ -38,6 +39,7 @@ def worker(template, alignments, vector, pathobj):
 
 
 def raster_alignment(alignments, **kwargs):
+    # TODO refactor
     out = {}
 
     for key, values in alignments.items():
