@@ -20,7 +20,7 @@ LOGGER.addHandler(logging.NullHandler())
 
 # TODO intact convert to raster
 
-def worker(driver, soc, out_name, intact=None, method='mean'):
+def worker(driver, soc, out_name, **kwargs):
     """
     Worker function for parallel execution.
 
@@ -30,10 +30,7 @@ def worker(driver, soc, out_name, intact=None, method='mean'):
         Path to soil organic carbon content image.
     :param out_name: str
         Out path of emission image
-    :param intact: optional, str
-        Mask for intact primary forest.
-    :param method: str, min, mean or max
-        Method to compute soil organic carbon emissions.
+    :param kwargs:
     """
     with open(driver, 'r') as h1, open(soc, 'r') as h2:
         driver_data = h1.read(1)
@@ -47,12 +44,13 @@ def worker(driver, soc, out_name, intact=None, method='mean'):
     y = haversine((transform.xoff, transform.yoff), (transform.xoff, transform.yoff + transform.e))
     area = round(x * y)
 
-    emissions = soc_emissions(driver_data, soc_data, intact=intact, method=method, area=area)
+    emissions = soc_emissions(driver_data, soc_data, area=area, **kwargs)
 
     write(emissions, out_name, **profile)
 
 
-def soc_emissions(driver, soc, intact=None, method='mean', area=900, co2=3.7):
+def soc_emissions(driver, soc, intact=None, method='mean', area=900, co2=3.7,
+                  forest_type=SOCClasses.secondary_forest):
     """
     Des
 
@@ -63,13 +61,14 @@ def soc_emissions(driver, soc, intact=None, method='mean', area=900, co2=3.7):
     :param method: str
     :param area: numeric
     :param co2: numeric
+    :param forest_type:
     :return: np.array
     """
     ha_per_px = area * 0.0001
     # prevent overflow
     soc[soc < 0] = 0
 
-    factors = factor_map(driver, intact=intact, attr=method)
+    factors = factor_map(driver, intact=intact, attr=method, forest_type=forest_type)
 
     emissions = ha_per_px * co2 * soc * factors
     emissions = np.round(emissions, decimals=2)
