@@ -10,7 +10,7 @@ import numpy as np
 from rasterio import open
 from tropicly.utils import write
 from tropicly.distance import Distance
-from tropicly.factors import SOCCFactors, SOCCFactor
+from tropicly.factors import SOCCFactors, SOCCAlternativeFactors, SOCCFactor
 from tropicly.enums import SOCClasses, GL30Classes
 
 
@@ -18,9 +18,11 @@ LOGGER = logging.getLogger(__name__)
 LOGGER.addHandler(logging.NullHandler())
 
 
-# TODO intact convert to raster
+# Inject alternatives SOCAlternativeFactors, SOCCFactors, SOCCAlternativeFactors
+SOCCFACTORS = SOCCAlternativeFactors
 
-def worker(driver, soc, out_name, **kwargs):
+
+def worker(driver, soc, out_name, intact=None, **kwargs):
     """
     Worker function for parallel execution.
 
@@ -30,6 +32,8 @@ def worker(driver, soc, out_name, **kwargs):
         Path to soil organic carbon content image.
     :param out_name: str
         Out path of emission image
+    :param intact: str
+        des
     :param kwargs:
     """
     with open(driver, 'r') as h1, open(soc, 'r') as h2:
@@ -44,7 +48,14 @@ def worker(driver, soc, out_name, **kwargs):
     y = haversine((transform.xoff, transform.yoff), (transform.xoff, transform.yoff + transform.e))
     area = round(x * y)
 
-    emissions = soc_emissions(driver_data, soc_data, area=area, **kwargs)
+    if intact:
+        with open(intact, 'r') as h3:
+            intact_data = h3.read(1)
+
+        emissions = soc_emissions(driver_data, soc_data, intact=intact_data, area=area, **kwargs)
+
+    else:
+        emissions = soc_emissions(driver_data, soc_data, area=area, **kwargs)
 
     write(emissions, out_name, **profile)
 
@@ -65,7 +76,7 @@ def soc_emissions(driver, soc, intact=None, method='mean', area=900, co2=3.7,
     :return: np.array
     """
     ha_per_px = area * 0.0001
-    # prevent overflow
+    # prevent zero overflow (soc raster contain pixel values 0.1e^x and -3.e^x)
     soc[soc < 0] = 0
 
     factors = factor_map(driver, intact=intact, attr=method, forest_type=forest_type)
@@ -97,7 +108,7 @@ def factor_map(driver, intact=None, attr='mean', forest_type=SOCClasses.secondar
         factors = factor_map(primary_forest, attr=attr, forest_type=SOCClasses.primary_forest)
 
     for member in GL30Classes:
-        factor = SOCCFactors.get((forest_type, member), zero_factor)
+        factor = SOCCFACTORS.get((forest_type, member), zero_factor)
         factors[driver == member.value] = factor.__getattribute__(attr)
 
     return factors
