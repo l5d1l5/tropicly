@@ -8,6 +8,36 @@ Mail: tobi.seyde@gmail.com
 from tropicly.enums import SOCClasses, GL30Classes
 
 
+class Coefficient:
+    def __init__(self, name, mean, std=None, med=None, mini=None, maxi=None):
+        self.name = name
+        self.mean = mean
+        self.std = std
+        self.median = med
+        self._min = mini
+        self._max = maxi
+
+    @property
+    def min(self):
+        if self.std and not self._min:
+            return self.mean - self.std
+
+        else:
+            return self._min
+
+    @property
+    def max(self):
+        if self.std and not self._max:
+            return self.mean + self.std
+
+        else:
+            return self._max
+
+    def __repr__(self):
+        return '<{}(name={}, mean={}) at {}>'.format(self.__class__.__name__, self.name,
+                                                     self.mean, hex(id(self)))
+
+
 class SOCCFactor:
     def __init__(self, alias, mean, std):
         self.alias = alias
@@ -53,3 +83,24 @@ SOCCFactors = {
     (SOCClasses.secondary_forest, GL30Classes.tundra): SOCC_data[-3],
     (SOCClasses.secondary_forest, GL30Classes.bareland): SOCC_data[-3],
 }
+
+SOCCAlternativeFactors = {
+    (SOCClasses.primary_forest, GL30Classes.cropland): SOCC_data[1],
+    (SOCClasses.primary_forest, GL30Classes.regrowth): SOCC_data[3],
+    (SOCClasses.primary_forest, GL30Classes.grassland): SOCC_data[0],
+    (SOCClasses.primary_forest, GL30Classes.shrubland): SOCC_data[0],
+    (SOCClasses.primary_forest, GL30Classes.tundra): SOCC_data[0],
+    (SOCClasses.primary_forest, GL30Classes.bareland): SOCC_data[0],
+    (SOCClasses.primary_forest, GL30Classes.artificial): SOCC_data[1],
+    (SOCClasses.secondary_forest, GL30Classes.cropland): SOCC_data[-2],
+    (SOCClasses.secondary_forest, GL30Classes.regrowth): SOCC_data[3],
+    (SOCClasses.secondary_forest, GL30Classes.grassland): SOCC_data[-3],
+    (SOCClasses.secondary_forest, GL30Classes.shrubland): SOCC_data[-3],
+    (SOCClasses.secondary_forest, GL30Classes.tundra): SOCC_data[-3],
+    (SOCClasses.secondary_forest, GL30Classes.bareland): SOCC_data[-3],
+    (SOCClasses.secondary_forest, GL30Classes.artificial): SOCC_data[1],
+}
+
+ESV_costanza = {}
+ESV_deGroot = {}
+ESV_worldbank = {}
