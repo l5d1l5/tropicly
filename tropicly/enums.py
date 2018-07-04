@@ -10,7 +10,7 @@ from enum import Enum
 
 class SOCClasses(Enum):
     """
-    Soil organic carbon change classes. Don et al. (2010)
+    Soil organic carbon change classes. Don et al. (2011)
     """
     primary_forest = 0
     secondary_forest = 1
