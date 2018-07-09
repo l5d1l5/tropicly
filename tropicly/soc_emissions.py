@@ -10,8 +10,8 @@ import numpy as np
 from rasterio import open
 from tropicly.utils import write
 from tropicly.distance import Distance
-from tropicly.factors import SOCCFactors, SOCCAlternativeFactors, SOCCFactor
-from tropicly.enums import SOCClasses, GL30Classes
+from tropicly.factors import Coefficient
+from tropicly.enums import SOCClasses, GL30Classes, SOCCFactors, SOCCAlternativeFactors
 
 
 LOGGER = logging.getLogger(__name__)
@@ -19,7 +19,7 @@ LOGGER.addHandler(logging.NullHandler())
 
 
 # Inject alternatives SOCAlternativeFactors, SOCCFactors, SOCCAlternativeFactors
-SOCCFACTORS = SOCCAlternativeFactors
+SOCCFACTORS = SOCCFactors
 
 
 def worker(driver, soc, out_name, intact=None, **kwargs):
@@ -31,10 +31,13 @@ def worker(driver, soc, out_name, intact=None, **kwargs):
     :param soc: str
         Path to soil organic carbon content image.
     :param out_name: str
-        Out path of emission image
+        Out path of emission image.
     :param intact: str
-        des
+        Path to intact forest raster image.
     :param kwargs:
+        Parameters for soc_emissions function. Please,
+        refer to the function doc for a list of possible
+        parameter.
     """
     with open(driver, 'r') as h1, open(soc, 'r') as h2:
         driver_data = h1.read(1)
@@ -97,7 +100,7 @@ def factor_map(driver, intact=None, attr='mean', forest_type=SOCClasses.secondar
     :return: np.array
     """
     factors = np.zeros(driver.shape, dtype=np.float32)
-    zero_factor = SOCCFactor('zero', 0, 0)
+    zero_factor = Coefficient('zero', 0, 0)
 
     if intact is not None:
         primary_forest = np.copy(driver)
