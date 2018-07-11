@@ -9,7 +9,8 @@ from math import tan, atan, pi
 from shapely.geometry import Polygon
 from shapely.affinity import translate
 
-
+# TODO tests
+# TODO implement iterator protocol
 class PolygonGrid:
     def __init__(self, extent, polygon, fit=False):
         if isinstance(extent, Polygon):
@@ -40,6 +41,12 @@ class PolygonGrid:
 
                 self.grid.append(translated)
                 yield translated
+
+    def __getitem__(self, item):
+        return self.grid[item]
+
+    def __len__(self):
+        return len(self.grid)
 
     @staticmethod
     def ticker(start, stop, step):
