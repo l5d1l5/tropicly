@@ -102,5 +102,7 @@ ENV/
 .idea/
 /data
 /doc
+/img
+/tropicly/js/index.html
 /img/comparision.png
 /img/bar_chart.png
