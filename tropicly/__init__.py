@@ -6,6 +6,7 @@ Date: 06.04.18
 Mail: tobi.seyde@gmail.com
 """
 from tropicly.sheduler import TaskSheduler
+from tropicly.grid import GridPolygon, PolygonGrid
 from tropicly.confusion_matrix import ConfusionMatrix
 from tropicly.sampling import worker as sworker
 from tropicly.frequency import worker as fworker
@@ -20,6 +21,8 @@ __version__ = 0.1
 
 
 __all__ = [
+    'GridPolygon',
+    'PolygonGrid',
     'TaskSheduler',
     'ConfusionMatrix',
     'aworker',
