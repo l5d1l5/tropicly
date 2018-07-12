@@ -9,44 +9,71 @@ from math import tan, atan, pi
 from shapely.geometry import Polygon
 from shapely.affinity import translate
 
+
 # TODO tests
-# TODO implement iterator protocol
 class PolygonGrid:
-    def __init__(self, extent, polygon, fit=False):
-        if isinstance(extent, Polygon):
-            self.left, self.bottom, self.right, self.top = extent.bounds
-            self.extent = extent
+    """
+    Creates a grid with a selected Polygon.
+    """
+    def __init__(self, grid_extent, grid_polygon, fit=False):
+        """
+        Class constructor.
+
+        :param grid_extent: shapely.Polygon or tuple(left, bottom, right, top)
+            Grid extent provided as a polygon will use the polygon bounds
+            as boundaries.
+        :param grid_polygon: GridPolygon
+            A GridPolygon instance.
+        :param fit: boolean, optional
+            Default is false. If set to true grid polygons are clipped to
+            grid extent.
+        """
+        if isinstance(grid_extent, Polygon):
+            self.left, self.bottom, self.right, self.top = grid_extent.bounds
+            self.extent = grid_extent
 
         else:
-            self.left, self.bottom, self.right, self.top = extent
-            self.extent = Polygon.from_bounds(*extent)
-
-        self.poly = polygon
+            self.left, self.bottom, self.right, self.top = grid_extent
+            self.extent = Polygon.from_bounds(*grid_extent)
 
         self.fit = fit
-        self.grid = []
 
-    def get(self):
-        y_start = self.bottom - self.poly.y_shift
+        self._poly = grid_polygon
+        self._grid = []
 
-        for row, y in enumerate(__class__.ticker(y_start, self.top, self.poly.y_spacing)):
-            x_start = self.left - self.poly.x_shift if row % 2 == 0 else self.left
+    def _griddify(self):
+        """
+        Grid generator, yields a grid polygon per call.
+        """
+        y_start = self.bottom - self._poly.y_shift
 
-            for col, x in enumerate(__class__.ticker(x_start, self.right, self.poly.x_spacing)):
-                translated = translate(self.poly, xoff=x, yoff=y)
+        for row, y in enumerate(__class__.ticker(y_start, self.top, self._poly.y_spacing)):
+            x_start = self.left - self._poly.x_shift if row % 2 == 0 else self.left
+
+            for col, x in enumerate(__class__.ticker(x_start, self.right, self._poly.x_spacing)):
+                translated = translate(self._poly, xoff=x, yoff=y)
 
                 if self.fit:
+                    # TODO if disjoint continue elif not within
                     if not translated.within(self.extent):
                         translated = translated.intersection(self.extent)
+                        if translated.is_empty:
+                            continue
 
-                self.grid.append(translated)
+                self._grid.append(translated)
                 yield translated
 
+    def __iter__(self):
+        if self._grid:
+            return self._grid.__iter__()
+        else:
+            return self._griddify()
+
     def __getitem__(self, item):
-        return self.grid[item]
+        return self._grid[item]
 
     def __len__(self):
-        return len(self.grid)
+        return len(self._grid)
 
     @staticmethod
     def ticker(start, stop, step):
@@ -57,8 +84,15 @@ class PolygonGrid:
             coord += step
 
 
+# TODO tests
 class GridPolygon(Polygon):
+    """
+    Class instances are used for griding
+    """
     def __init__(self, shell=None, holes=None, x_spacing=0.0, x_shift=0.0, y_spacing=0.0, y_shift=0.0):
+        """
+        No direct instantiation! Please use the class methods rectangular or hexagonal.
+        """
         super().__init__(shell, holes)
 
         self.x_spacing = x_spacing
@@ -86,6 +120,16 @@ class GridPolygon(Polygon):
 
     @classmethod
     def rectangular(cls, width, height):
+        """
+        Creates a rectangular shaped instance. Can be used for griding.
+
+        :param width: int or float
+            Width of the polygon.
+        :param height: in or float
+            Height of the polygon.
+        :return: GridPolygon
+            A  instance of GridPolygon
+        """
         coords = [(0, 0), (width, 0),
                   (width, height), (0, height)]
 
@@ -93,6 +137,16 @@ class GridPolygon(Polygon):
 
     @classmethod
     def hexagonal(cls, width, height):
+        """
+        Creates a hexagonal shaped instance. Can be used for griding.
+
+        :param width: int or float
+            Width of the hexagon.
+        :param height: in or float
+            Height of the hexagon.
+        :return: GridPolygon
+            A  instance of GridPolygon
+        """
         a = atan(height / width) - pi / 12
 
         if a < 0:
@@ -107,16 +161,3 @@ class GridPolygon(Polygon):
 
         return cls(shell=coords, x_spacing=width, x_shift=rx,
                    y_spacing=rx*tan(a)+ry, y_shift=-rx*tan(pi+a)+ry)
-
-
-if __name__ == '__main__':
-    import geopandas as gpd
-    poly = GridPolygon.hexagonal(1.7, 2)
-    grid = PolygonGrid((-29.9999992, -25.000061138681087, 60.00010940962595, 24.9999992), poly, True)
-    list(grid.get())
-
-    df = gpd.GeoDataFrame(geometry=grid.grid)
-    df.crs = {'init': 'epsg:4326'}
-    df.to_file('/home/tobi/Documents/grid.shp')
-    #poly = HexagonalGridPolygon(20, 20)
-
