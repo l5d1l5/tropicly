@@ -161,3 +161,14 @@ class GridPolygon(Polygon):
 
         return cls(shell=coords, x_spacing=width, x_shift=rx,
                    y_spacing=rx*tan(a)+ry, y_shift=-rx*tan(pi+a)+ry)
+
+
+def factory(polygon_type, width, height):
+    if polygon_type == 'rect':
+        return GridPolygon.rectangular(width, height)
+
+    elif polygon_type == 'hex':
+        return GridPolygon.hexagonal(width, height)
+
+    else:
+        raise ValueError
