@@ -5,21 +5,26 @@ Author: Tobias Seydewitz
 Date: 10.07.18
 Mail: tobi.seyde@gmail.com
 """
+import numpy as np
+import rasterio as rio
+from skimage import draw
 from math import tan, atan, pi
 from shapely.geometry import Polygon
-from shapely.affinity import translate
+from rasterio.windows import from_bounds
+from shapely.affinity import translate, affine_transform
 
 
 # TODO tests
 class PolygonGrid:
     """
-    Creates a grid with a selected Polygon.
+    Creates a grid covering a raster image with a selected Polygon.
     """
     def __init__(self, grid_extent, grid_polygon, fit=False):
         """
         Class constructor.
 
         :param grid_extent: shapely.Polygon or tuple(left, bottom, right, top)
+            Bounding box of the grid should be in crs coordinates.
             Grid extent provided as a polygon will use the polygon bounds
             as boundaries.
         :param grid_polygon: GridPolygon
@@ -124,12 +129,14 @@ class GridPolygon(Polygon):
         Creates a rectangular shaped instance. Can be used for griding.
 
         :param width: int or float
-            Width of the polygon.
+            Width of the polygon as crs units.
         :param height: in or float
-            Height of the polygon.
+            Height of the polygon as crs units.
         :return: GridPolygon
             A  instance of GridPolygon
         """
+        # create rectangular shaped polygon at
+        # crs point of origin (0, 0, width, height)
         coords = [(0, 0), (width, 0),
                   (width, height), (0, height)]
 
@@ -141,9 +148,9 @@ class GridPolygon(Polygon):
         Creates a hexagonal shaped instance. Can be used for griding.
 
         :param width: int or float
-            Width of the hexagon.
+            Width of the hexagon as crs units.
         :param height: in or float
-            Height of the hexagon.
+            Height of the hexagon as crs units.
         :return: GridPolygon
             A  instance of GridPolygon
         """
@@ -155,6 +162,8 @@ class GridPolygon(Polygon):
         rx = width / 2
         ry = height / 2
 
+        # create hexagonal shaped polygon at
+        # crs point of origin (0, 0, width, height)
         coords = [(0, -rx*tan(pi+a)+ry), (rx, 0),
                   (2*rx, rx*tan(2*pi-a)+ry), (2*rx, rx*tan(a)+ry),
                   (rx, 2*ry), (0, -rx*tan(pi-a)+ry)]
@@ -163,8 +172,55 @@ class GridPolygon(Polygon):
                    y_spacing=rx*tan(a)+ry, y_shift=-rx*tan(pi+a)+ry)
 
 
-def factory(polygon_type, width, height):
-    if polygon_type == 'rect':
+# TODO let it work for multi band imgages
+# TODO parallel
+# TODO doc
+# TODO tests
+def gridded_extraction(img, grid_type='rec', width=1., height=1., fit=False):
+    with rio.open(img, 'r') as src:
+        invtransform = ~src.transform
+
+        grid_polygon = _factory(grid_type, width, height)
+        img_polygon = affine_transform(grid_polygon, [invtransform.a, invtransform.b,
+                                                      invtransform.d, abs(invtransform.e),
+                                                      0, 0])
+        grid = PolygonGrid(src.bounds, grid_polygon, fit=fit)
+
+        for polygon in grid:
+            window = from_bounds(*polygon.bounds, transform=src.transform)
+
+            img = src.read(1, window=window)
+            img = _extract(img, img_polygon)
+
+            yield img, polygon
+
+
+# TODO set pixel outside of polygon by parameter
+# TODO doc
+# TODO tests
+def _extract(img, polygon):
+    print(img.shape)
+    col, row = list(zip(*polygon.boundary.coords))
+    fill_row_coords, fill_col_coords = draw.polygon(row, col, img.shape)
+
+    mask = np.ones(img.shape, dtype=np.bool)
+    mask[fill_row_coords, fill_col_coords] = False
+
+    img[mask] = 0
+
+    return img
+
+
+# TODO doc
+def _factory(polygon_type, width, height):
+    """
+
+    :param polygon_type:
+    :param width:
+    :param height:
+    :return:
+    """
+    if polygon_type == 'rec':
         return GridPolygon.rectangular(width, height)
 
     elif polygon_type == 'hex':
