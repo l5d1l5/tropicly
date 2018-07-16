@@ -9,8 +9,45 @@ import numpy as np
 import rasterio as rio
 from skimage import draw
 from rasterio.windows import from_bounds
+from shapely.affinity import affine_transform
 from tropicly.grid import PolygonGrid, factory
-from shapely.affinity import affine_transform, translate
+
+
+# TODO let it work for multi band imgages
+# TODO parallel
+def visualization(img, grid_type='rec', width=1., height=1., fit=False):
+    with rio.open(img, 'r') as src:
+        invtransform = ~src.transform
+
+        grid_polygon = factory(grid_type, width, height)
+        img_polygon = affine_transform(grid_polygon, [invtransform.a, invtransform.b,
+                                                      invtransform.d, invtransform.e,
+                                                      invtransform.xoff, invtransform.yoff])
+
+        grid = PolygonGrid(src.bounds, grid_polygon, fit=fit)
+
+        for polygon in grid:
+            window = from_bounds(*polygon.bounds, transform=src.transform)
+
+            img = src.read(1, window=window)
+            img = extract(img, img_polygon)
+
+            yield img, polygon
+
+
+# TODO set pixel outside of polygon by parameter
+def extract(img, polygon):
+    col, row = list(zip(*polygon.boundary.coords))
+    fill_row_coords, fill_col_coords = draw.polygon(row, col, img.shape)
+
+    mask = np.ones(img.shape, dtype=np.uint8)
+    mask[fill_row_coords, fill_col_coords] = 0
+
+    img[mask == 1] = 0
+
+    return img
+
+
 """
 Visualization
 
@@ -50,40 +87,17 @@ Process:
     - parameters data, polygon
     - return geometry, aggregation as dictionary
 """
-def default(img, polygon):
-    return polygon
-
-
-def visualization(img, grid_type='rect', width=1, height=1, aggregate=default, parallel=False, threads=1, **kwargs):
-    with rio.open(img, 'r') as src:
-        invtransform = ~src.transform
-
-        grid_polygon = factory(grid_type, width, height)
-        # abs(invtransform.e)
-        img_polygon = affine_transform(grid_polygon, [invtransform.a, invtransform.b,
-                                                      invtransform.d, abs(invtransform.e),
-                                                      invtransform.xoff, invtransform.yoff])
-
-        grid = PolygonGrid(src.bounds, grid_polygon, **kwargs)
-
-        for polygon in grid:
-            window = from_bounds(*polygon.bounds, transform=src.transform)
-            # TODO let it work for 3d
-            data = src.read(1, window=window)
-            print(data)
-            data = extract(data, img_polygon)
-            print(data)
-
-
-def extract(img, polygon):
-    col, row = list(zip(*polygon.boundary.coords))
-    fill_row_coords, fill_col_coords = draw.polygon(row, col, img.shape)
-    mask = np.zeros(img.shape, dtype=np.uint8)
-    mask[fill_row_coords, fill_col_coords] = 1
-    return mask
-
-
 if __name__ == '__main__':
+    import geopandas as gpd
+    import pandas as pd
     path = '/home/tobi/Documents/Master/code/python/Master/tests/res/visual.tif'
 
-    visualization(path, width=2, height=2)
+    polys = []
+    rec = []
+    for img, poly in visualization(path, width=2, height=2, grid_type='rec', fit=True):
+        polys.append(poly)
+        ele, count = np.unique(img, return_counts=True)
+        rec.append({str(val): count[idx] for idx, val in enumerate(ele)})
+
+    df = gpd.GeoDataFrame(pd.DataFrame.from_records(rec), geometry=polys)
+    df.to_file('/home/tobi/Documents/Master/code/python/Master/gridded.shp')
