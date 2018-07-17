@@ -198,6 +198,7 @@ def gridded_extraction(img, grid_type='rec', width=1., height=1., fit=False):
 # TODO set pixel outside of polygon by parameter
 # TODO doc
 # TODO tests
+# TODO return count masked pixel
 def _extract(img, polygon):
     col, row = list(zip(*polygon.boundary.coords))
     fill_row_coords, fill_col_coords = draw.polygon(row, col, img.shape)
