@@ -202,7 +202,7 @@ class GridPolygon(Polygon):
 
         assert R is not None
 
-        cx = (R*sqrt(3)) / 2
+        cx = (R*sqrt(3))/2
         cy = R
 
         d = (2*R*sqrt(3))/2
@@ -227,6 +227,7 @@ class GridPolygon(Polygon):
 # TODO parallel
 # TODO doc
 # TODO tests
+# TODO return count
 def gridded_extraction(img, grid_type='rec', fit=False, **kwargs):
     with rio.open(img, 'r') as src:
         invtransform = ~src.transform
@@ -241,9 +242,9 @@ def gridded_extraction(img, grid_type='rec', fit=False, **kwargs):
             window = from_bounds(*polygon.bounds, transform=src.transform)
 
             img = src.read(1, window=window)
-            img = _extract(img, img_polygon)
+            img, c = _extract(img, img_polygon)
 
-            yield img, polygon
+            yield img, c, polygon
 
 
 # TODO set pixel outside of polygon by parameter
@@ -259,7 +260,7 @@ def _extract(img, polygon):
 
     img[mask] = 0
 
-    return img
+    return img, np.ma.masked_equal(mask, True).count()
 
 
 # TODO doc
