@@ -8,9 +8,9 @@ Mail: tobi.seyde@gmail.com
 import numpy as np
 import rasterio as rio
 from skimage import draw
-from math import tan, atan, pi
 from shapely.geometry import Polygon
 from rasterio.windows import from_bounds
+from math import tan, atan, pi, sin, sqrt
 from shapely.affinity import translate, affine_transform
 
 
@@ -143,7 +143,7 @@ class GridPolygon(Polygon):
         return cls(shell=coords, x_spacing=width, y_spacing=height)
 
     @classmethod
-    def hexagonal(cls, width, height):
+    def irregular_hexagon(cls, width, height):
         """
         Creates a hexagonal shaped instance. Can be used for griding.
 
@@ -162,25 +162,76 @@ class GridPolygon(Polygon):
         rx = width / 2
         ry = height / 2
 
-        # create hexagonal shaped polygon at
-        # crs point of origin (0, 0, width, height)
-        coords = [(0, -rx*tan(pi+a)+ry), (rx, 0),
-                  (2*rx, rx*tan(2*pi-a)+ry), (2*rx, rx*tan(a)+ry),
-                  (rx, 2*ry), (0, -rx*tan(pi-a)+ry)]
+        # create a fluent hexagonal shaped polygon at
+        # crs bounds (0, 0, width, height)
+        coords = [
+            (0, -rx*tan(pi+a)+ry),
+            (rx, 0),
+            (2*rx, rx*tan(2*pi-a)+ry),
+            (2*rx, rx*tan(a)+ry),
+            (rx, 2*ry),
+            (0, -rx*tan(pi-a)+ry)
+        ]
 
         return cls(shell=coords, x_spacing=width, x_shift=rx,
-                   y_spacing=rx*tan(a)+ry, y_shift=-rx*tan(pi+a)+ry)
+                   y_spacing=coords[3][-1], y_shift=coords[0][-1])
+
+    @classmethod
+    def regular_hexagon(cls, **kwargs):
+        """
+        area,
+        edge,
+        ldiagonal
+        sdiagonal
+        :param kwargs:
+        :return:
+        """
+        if len(kwargs) > 1:
+            raise ValueError
+
+        else:
+            key = list(kwargs.keys())[0]
+            arg = kwargs[key]
+
+        R = {
+            'area': lambda: sqrt(2*arg) / 27**(1/4),
+            'edge': lambda: arg,
+            'ldiagonal': lambda: arg/2,
+            'sdiagonal': lambda: arg/sqrt(3),
+        }.get(key, lambda: None)()
+
+        assert R is not None
+
+        cx = (R*sqrt(3)) / 2
+        cy = R
+
+        d = (2*R*sqrt(3))/2
+        r = d/2
+
+        # create a regular hexagonal shaped polygon at
+        # crs bounds (0, 0, width, height)
+        coords = [
+            (0, R*sin(pi+pi/6)+cy),
+            (cx, 0),
+            (2*cx, R*sin(2*pi-pi/6)+cy),
+            (2*cx, R*sin(pi/6)+cy),
+            (cx, 2*R),
+            (0, R*sin(pi-pi/6)+cy),
+        ]
+
+        return cls(shell=coords, x_spacing=d, x_shift=r,
+                   y_spacing=coords[3][-1], y_shift=coords[0][-1])
 
 
 # TODO let it work for multi band imgages
 # TODO parallel
 # TODO doc
 # TODO tests
-def gridded_extraction(img, grid_type='rec', width=1., height=1., fit=False):
+def gridded_extraction(img, grid_type='rec', fit=False, **kwargs):
     with rio.open(img, 'r') as src:
         invtransform = ~src.transform
 
-        grid_polygon = _factory(grid_type, width, height)
+        grid_polygon = _factory(grid_type, **kwargs)
         img_polygon = affine_transform(grid_polygon, [invtransform.a, invtransform.b,
                                                       invtransform.d, abs(invtransform.e),
                                                       0, 0])
@@ -212,7 +263,7 @@ def _extract(img, polygon):
 
 
 # TODO doc
-def _factory(polygon_type, width, height):
+def _factory(polygon_type, **kwargs):
     """
 
     :param polygon_type:
@@ -221,10 +272,13 @@ def _factory(polygon_type, width, height):
     :return:
     """
     if polygon_type == 'rec':
-        return GridPolygon.rectangular(width, height)
+        return GridPolygon.rectangular(**kwargs)
 
-    elif polygon_type == 'hex':
-        return GridPolygon.hexagonal(width, height)
+    elif polygon_type == 'ihex':
+        return GridPolygon.irregular_hexagon(**kwargs)
+
+    elif polygon_type == 'rhex':
+        return GridPolygon.regular_hexagon(**kwargs)
 
     else:
         raise ValueError
