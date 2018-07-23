@@ -9,10 +9,11 @@ import fiona
 from shapely.affinity import scale
 from shapely.geometry import asShape
 
-path = '/home/ilex/Documents/cover_americas.shp'
+path = '/home/tobi/Documents/Master/code/python/Master/data/proc/agg/cover_americas.shp'
 vec = fiona.open(path)
 
-with fiona.open('/home/ilex/Documents/test.shp', 'w', driver=vec.driver, schema=vec.schema, crs=vec.crs) as src:
+with fiona.open('/home/tobi/Documents/Master/code/python/Master/data/proc/agg/cover_scaled_americas.shp',
+                'w', driver=vec.driver, schema=vec.schema, crs=vec.crs) as src:
     for feature in vec:
         if feature['properties']['covered'] != 0:
             ratio = feature['properties']['covered'] / feature['properties']['count']
