@@ -83,6 +83,59 @@ SOCCAlternativeFactors = {
     (SOCClasses.secondary_forest, GL30Classes.artificial): SOCC_data[1],
 }
 
-ESV_costanza = {}
-ESV_deGroot = {}
-ESV_worldbank = {}
+# Ecosystem service values per biome
+# Costanza et al. (2014) Change in the global value of ecosystem services,
+# Global Environmental Change
+# 2011 values from supplementary table in 2007$/ha/yr
+ESV_costanza = {
+    GL30Classes.cropland:   Coefficient('cropland', 5567, std=0),  # cropland 11 sub services
+    GL30Classes.forest:     Coefficient('forest', 5382, std=0),  # forest tropical 17 sub services
+    GL30Classes.regrowth:   Coefficient('forest', 5382, std=0),  # forest tropical 17 sub services
+    GL30Classes.grassland:  Coefficient('grass', 4166, std=0),  # grassland/rangelands 15 sub services
+    GL30Classes.shrubland:  Coefficient('shrub', 0, std=0),  # NEED A VALUE
+    GL30Classes.wetland:    Coefficient('wet', 140174, std=0),  # Wetlands 15 sub services
+    GL30Classes.water:      Coefficient('water', 12512, std=0),  # Lakes/Rivers 5 sub services
+    GL30Classes.tundra:     Coefficient('tundra', 0, std=0),  # NEED A VALUE
+    GL30Classes.artificial: Coefficient('artificial', 6661, std=0),  # urban 3 sub services
+    GL30Classes.bareland:   Coefficient('bare', 0, std=0),  # NEED A VALUE
+    GL30Classes.snow:       Coefficient('bare', 0, std=0),  # NEED A VALUE
+    GL30Classes.no_data:    Coefficient('bare', 0, std=0),  # NEED A VALUE
+}
+
+# Ecosystem service values per biome
+# De Groot et al. (2012) Global estimates of the value of ecosystems
+# and the services in monetary units, Ecosystem Services
+# values from publication table in 2007$/ha/yr
+ESV_deGroot = {
+    GL30Classes.cropland:   Coefficient('cropland', 0, std=0),  # NEED A VALUE
+    GL30Classes.forest:     Coefficient('forest', 5264, std=6526, med=2355, mini=1581, maxi=20851),  # trop. for. 17
+    GL30Classes.regrowth:   Coefficient('forest', 5264, std=6526, med=2355, mini=1581, maxi=20851),  # trop. for. 17
+    GL30Classes.grassland:  Coefficient('grass', 2871, std=3860, med=2698, mini=124, maxi=5930),  # grass 10
+    GL30Classes.shrubland:  Coefficient('shrub', 0, std=0),  # NEED A VALUE
+    GL30Classes.wetland:    Coefficient('wet', 25682, std=36585, med=16534, mini=3018, maxi=104925),  # inland 17
+    GL30Classes.water:      Coefficient('water', 4267, std=2771, med=3938, mini=1446, maxi=7757),  # River/lake 4
+    GL30Classes.tundra:     Coefficient('tundra', 0, std=0),  # NEED A VALUE
+    GL30Classes.artificial: Coefficient('artificial', 0, std=0),  # NEED A VALUE
+    GL30Classes.bareland:   Coefficient('bare', 0, std=0),  # NEED A VALUE
+    GL30Classes.snow:       Coefficient('bare', 0, std=0),  # NEED A VALUE
+    GL30Classes.no_data:    Coefficient('bare', 0, std=0),  # NEED A VALUE
+}
+
+# Ecosystem service value of tropical forest
+# Siikamäki et al. (2015) Global assessment of non-wood forest
+# ecosystem services, PROFOR working paper
+# from table 15
+ESV_worldbank = {
+    GL30Classes.cropland:   Coefficient('cropland', 0, std=0),  # ds per definition no value
+    GL30Classes.forest:     Coefficient('forest', 1312, std=0),  # NWFP, water service, recreation, hunting/fishing
+    GL30Classes.regrowth:   Coefficient('forest', 1312, std=0),  # NWFP, water service, recreation, hunting/fishing
+    GL30Classes.grassland:  Coefficient('grass', 0, std=0),  # ds per definition no value
+    GL30Classes.shrubland:  Coefficient('shrub', 0, std=0),  # ds per definition no value
+    GL30Classes.wetland:    Coefficient('wet', 0, std=0),  # ds per definition no value
+    GL30Classes.water:      Coefficient('water', 0, std=0),  # ds per definition no value
+    GL30Classes.tundra:     Coefficient('tundra', 0, std=0),  # ds per definition no value
+    GL30Classes.artificial: Coefficient('artificial', 0, std=0),  # ds per definition no value
+    GL30Classes.bareland:   Coefficient('bare', 0, std=0),  # ds per definition no value
+    GL30Classes.snow:       Coefficient('bare', 0, std=0),  # ds per definition no value
+    GL30Classes.no_data:    Coefficient('bare', 0, std=0),  # ds per definition no value
+}
