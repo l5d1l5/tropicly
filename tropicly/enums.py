@@ -98,8 +98,8 @@ ESV_costanza = {
     GL30Classes.tundra:     Coefficient('tundra', 0, std=0),  # NEED A VALUE
     GL30Classes.artificial: Coefficient('artificial', 6661, std=0),  # urban 3 sub services
     GL30Classes.bareland:   Coefficient('bare', 0, std=0),  # NEED A VALUE
-    GL30Classes.snow:       Coefficient('bare', 0, std=0),  # NEED A VALUE
-    GL30Classes.no_data:    Coefficient('bare', 0, std=0),  # NEED A VALUE
+    GL30Classes.snow:       Coefficient('snow', 0, std=0),  # NEED A VALUE
+    GL30Classes.no_data:    Coefficient('no_data', 0, std=0),  # NEED A VALUE
 }
 
 # Ecosystem service values per biome
@@ -111,14 +111,14 @@ ESV_deGroot = {
     GL30Classes.forest:     Coefficient('forest', 5264, std=6526, med=2355, mini=1581, maxi=20851),  # trop. for. 17
     GL30Classes.regrowth:   Coefficient('forest', 5264, std=6526, med=2355, mini=1581, maxi=20851),  # trop. for. 17
     GL30Classes.grassland:  Coefficient('grass', 2871, std=3860, med=2698, mini=124, maxi=5930),  # grass 10
-    GL30Classes.shrubland:  Coefficient('shrub', 0, std=0),  # NEED A VALUE
+    GL30Classes.shrubland:  Coefficient('shrub', 1588, std=317, med=1522, mini=1373, maxi=2188),  # ??? woodland 10
     GL30Classes.wetland:    Coefficient('wet', 25682, std=36585, med=16534, mini=3018, maxi=104925),  # inland 17
     GL30Classes.water:      Coefficient('water', 4267, std=2771, med=3938, mini=1446, maxi=7757),  # River/lake 4
     GL30Classes.tundra:     Coefficient('tundra', 0, std=0),  # NEED A VALUE
     GL30Classes.artificial: Coefficient('artificial', 0, std=0),  # NEED A VALUE
     GL30Classes.bareland:   Coefficient('bare', 0, std=0),  # NEED A VALUE
-    GL30Classes.snow:       Coefficient('bare', 0, std=0),  # NEED A VALUE
-    GL30Classes.no_data:    Coefficient('bare', 0, std=0),  # NEED A VALUE
+    GL30Classes.snow:       Coefficient('snow', 0, std=0),  # NEED A VALUE
+    GL30Classes.no_data:    Coefficient('no_data', 0, std=0),  # NEED A VALUE
 }
 
 # Ecosystem service value of tropical forest
@@ -136,6 +136,6 @@ ESV_worldbank = {
     GL30Classes.tundra:     Coefficient('tundra', 0, std=0),  # ds per definition no value
     GL30Classes.artificial: Coefficient('artificial', 0, std=0),  # ds per definition no value
     GL30Classes.bareland:   Coefficient('bare', 0, std=0),  # ds per definition no value
-    GL30Classes.snow:       Coefficient('bare', 0, std=0),  # ds per definition no value
-    GL30Classes.no_data:    Coefficient('bare', 0, std=0),  # ds per definition no value
+    GL30Classes.snow:       Coefficient('snow', 0, std=0),  # ds per definition no value
+    GL30Classes.no_data:    Coefficient('no_data', 0, std=0),  # ds per definition no value
 }
