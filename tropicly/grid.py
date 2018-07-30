@@ -5,13 +5,9 @@ Author: Tobias Seydewitz
 Date: 10.07.18
 Mail: tobi.seyde@gmail.com
 """
-import numpy as np
-import rasterio as rio
-from skimage import draw
 from shapely.geometry import Polygon
-from rasterio.windows import from_bounds
 from math import tan, atan, pi, sin, sqrt
-from shapely.affinity import translate, affine_transform
+from shapely.affinity import translate
 
 
 # TODO tests
@@ -223,63 +219,16 @@ class GridPolygon(Polygon):
                    y_spacing=coords[3][-1], y_shift=coords[0][-1])
 
 
-# TODO let it work for multi band imgages
-# TODO parallel
-# TODO doc
-# TODO tests
-# TODO return count
-def gridded_extraction(img, grid_type='rec', fit=False, **kwargs):
-    with rio.open(img, 'r') as src:
-        invtransform = ~src.transform
+class SegmentedHexagon:
+    def __init__(self, hexagon):
+        # geometric properties
+        self.hexagon = hexagon
+        self.x1, self.y1, self.x2, self.y2 = hexagon.bounds
+        self.R = sqrt(2*hexagon.area) / 27**(1/4)
 
-        grid_polygon = _factory(grid_type, **kwargs)
-        img_polygon = affine_transform(grid_polygon, [invtransform.a, invtransform.b,
-                                                      invtransform.d, abs(invtransform.e),
-                                                      0, 0])
-        grid = PolygonGrid(src.bounds, grid_polygon, fit=fit)
+        self.ratio = 0
+        self.current_split = None
+        self.segments = []
 
-        for polygon in grid:
-            window = from_bounds(*polygon.bounds, transform=src.transform)
-
-            img = src.read(1, window=window)
-            img, c = _extract(img, img_polygon)
-
-            yield img, c, polygon
-
-
-# TODO set pixel outside of polygon by parameter
-# TODO doc
-# TODO tests
-# TODO return count masked pixel
-def _extract(img, polygon):
-    col, row = list(zip(*polygon.boundary.coords))
-    fill_row_coords, fill_col_coords = draw.polygon(row, col, img.shape)
-
-    mask = np.ones(img.shape, dtype=np.bool)
-    mask[fill_row_coords, fill_col_coords] = False
-
-    img[mask] = 0
-
-    return img, np.ma.masked_equal(mask, True).count()
-
-
-# TODO doc
-def _factory(polygon_type, **kwargs):
-    """
-
-    :param polygon_type:
-    :param width:
-    :param height:
-    :return:
-    """
-    if polygon_type == 'rec':
-        return GridPolygon.rectangular(**kwargs)
-
-    elif polygon_type == 'ihex':
-        return GridPolygon.irregular_hexagon(**kwargs)
-
-    elif polygon_type == 'rhex':
-        return GridPolygon.regular_hexagon(**kwargs)
-
-    else:
-        raise ValueError
+    def segment(self, ration):
+        pass
