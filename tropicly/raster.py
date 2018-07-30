@@ -276,9 +276,16 @@ def compute_cover(**kwargs):
     return bib
 
 
-def compute_driver(image, count, polygon, records):
-    ids, counts = np.unique(image, return_counts=True)
-    bib = {str(i) : c for i, c in zip(ids, counts)}
-    bib['count'] = count
-    bib['geometry'] = polygon
-    records.append(bib)
+def compute_driver(**kwargs):
+    ids, counts = np.unique(kwargs['img'], return_counts=True)
+    bib = {str(i): c for i, c in zip(ids, counts)}
+
+    if len(bib) > 1:
+        bib['has_driver'] = 1
+    else:
+        bib['has_driver'] = 0
+
+    bib['count'] = kwargs['count']
+    bib['geometry'] = kwargs['geometry']
+
+    return bib
