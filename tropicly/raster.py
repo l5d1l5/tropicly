@@ -10,6 +10,7 @@ from rasterio import open, band
 from rasterio.merge import merge
 from shapely.geometry import Polygon
 from rasterio.io import DatasetReader
+from rasterio.mask import raster_geometry_mask, mask
 from rasterio.coords import BoundingBox, disjoint_bounds
 from rasterio.warp import reproject, calculate_default_transform
 
@@ -241,3 +242,43 @@ def round_bounds(bounds):
         coords.append(round(coord))
 
     return BoundingBox(*coords)
+
+
+# TODO refactor, generalize
+def worker(img, polygon, func, records):
+    with open(img, 'r') as src:
+        ma, *_ = raster_geometry_mask(src, [polygon], crop=True)
+        data, transform = mask(src, [polygon], crop=True, indexes=1)
+        count = np.ma.masked_equal(ma, True).count()
+
+        kwargs = {
+            'img': data,
+            'transform': transform,
+            'count': count,
+            'geometry': polygon,
+        }
+
+        rec = func(**kwargs)
+
+    records.append(rec)
+
+
+# TODO refactor, generalize
+def compute_cover(**kwargs):
+    mask = np.ma.masked_less(kwargs['img'], 11)
+    bib = {
+        'mean': mask.mean(),
+        'covered': mask.count(),
+        'count': kwargs['count'],
+        'geometry': kwargs['geometry'],
+    }
+
+    return bib
+
+
+def compute_driver(image, count, polygon, records):
+    ids, counts = np.unique(image, return_counts=True)
+    bib = {str(i) : c for i, c in zip(ids, counts)}
+    bib['count'] = count
+    bib['geometry'] = polygon
+    records.append(bib)
