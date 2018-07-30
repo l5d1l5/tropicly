@@ -5,9 +5,11 @@ Author: Tobias Seydewitz
 Date: 06.04.18
 Mail: tobi.seyde@gmail.com
 """
+from tropicly.raster import compute_cover
 from tropicly.sheduler import TaskSheduler
-from tropicly.grid import GridPolygon, PolygonGrid, gridded_extraction
+from tropicly.grid import GridPolygon, PolygonGrid
 from tropicly.confusion_matrix import ConfusionMatrix
+from tropicly.raster import worker as eworker
 from tropicly.sampling import worker as sworker
 from tropicly.frequency import worker as fworker
 from tropicly.alignment import worker as aworker
@@ -24,13 +26,14 @@ __all__ = [
     'GridPolygon',
     'PolygonGrid',
     'TaskSheduler',
+    'compute_cover',
     'ConfusionMatrix',
-    'gridded_extraction',
+    'eworker',
     'aworker',
     'sworker',
     'fworker',
     'hworker',
     'cworker',
     'agbworker',
-    'socworker'
+    'socworker',
 ]
