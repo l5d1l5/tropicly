@@ -220,45 +220,60 @@ class GridPolygon(Polygon):
                    y_spacing=coords[3][-1], y_shift=coords[0][-1])
 
 
+# TODO tests
 class SegmentedHexagon:
     def __init__(self, hexagon):
+        self._ratio = 0
         self.hexagon = hexagon
-        self.ratio = 0
-        self.current_split = None
-        self.segments = []
+        self.top_segment = None  # remaining hexagon
+        self.bottom_segments = []  # stores all hexagon segments
 
         # geometric properties
         self.x1, self.y1, self.x2, self.y2 = hexagon.bounds
-        self.R = sqrt(2*hexagon.area) / 27**(1/4)
+        self.R = sqrt(2*hexagon.area) / 27**(1/4)  # hexagon circumscribed circle radius
 
         # analytic properties
-        self.i1 = self.y1
-        self.i2 = self.y1 + self.R*sin(pi-pi/6)
-        self.i3 = self.y1 + self.R*(sin(pi-pi/6)+1)
-        self.i4 = self.y2
+        # function intervals
+        self.interval1 = self.y1
+        self.interval2 = self.y1 + self.R * sin(pi - pi / 6)
+        self.interval3 = self.y1 + self.R * (sin(pi - pi / 6) + 1)
+        self.interval4 = self.y2
 
         self.slope = 1/tan(pi/6)
         self.intercept = self.x1 + (self.x2-self.x1)/2
 
-    def segment(self, ratio):
-        if self.ratio + ratio > 100 or ratio <= 0:
-            raise ValueError
+    def get_segment(self, ratio):
+        assert (self._ratio + ratio) <= 100  # more than 100%
+        assert ratio >= 0  # no negative ratio allowed
 
-        self.ratio += ratio
+        self._ratio += ratio
 
-        return self.bar(self._split_line())
+        if self._ratio == 100:
+            top = None
+            bottom = self.hexagon if self.top_segment is None else self.top_segment
+
+        elif self.top_segment:
+            top, bottom = self._split_polygon(self.top_segment, self._split_line())
+
+        else:
+            top, bottom = self._split_polygon(self.hexagon, self._split_line())
+
+        self.top_segment = top
+        self.bottom_segments.append({'segment': bottom, 'ratio': ratio})
+
+        return bottom
 
     def _split_line(self):
-        x = ((self.ratio * (self.y2 - self.y1)) / 100) + self.y1
+        x = ((self._ratio * (self.y2 - self.y1)) / 100) + self.y1
 
-        assert self.i1 <= x <= self.i4
+        assert self.interval1 <= x <= self.interval4
 
-        if self.i1 <= x < self.i2:
+        if self.interval1 <= x < self.interval2:
             slope = x - self.y1
             yl = -(slope * self.slope) + self.intercept
             yr = slope * self.slope + self.intercept
 
-        elif self.i2 <= x < self.i3:
+        elif self.interval2 <= x < self.interval3:
             yl = self.x1
             yr = self.x2
 
@@ -267,21 +282,59 @@ class SegmentedHexagon:
             yl = slope * self.slope + self.intercept
             yr = -(slope * self.slope) + self.intercept
 
-        return LineString([(yl, x), (yr, x)])
+        return [(yl, x), (yr, x)]
 
-    def foo(self, line):
-        merged = linemerge([self.hexagon.boundary, line])
-        borders = unary_union(merged)
-        polygons = polygonize(borders)
+    def _split_polygon(self, polygon, split_line):
+        # TODO refactor to one loop
+        previous = list(polygon.boundary.coords)[0]
+        coords = [previous]
+        previous_loc = __class__.point_orientation(split_line, previous)
 
-        return list(polygons)
+        # add intersection coords to hexagon coords
+        for point in list(polygon.boundary.coords)[1:]:
+            current_loc = __class__.point_orientation(split_line, point)
 
+            if current_loc != previous_loc:
+                mid = (previous[0]+point[0])/2
+                intersection = split_line[0] if mid < self.intercept else split_line[1]  # left or right intersection
+                coords.append(intersection)
 
-if __name__ == '__main__':
-    import geopandas as gpd
-    hexa = GridPolygon.regular_hexagon(area=8)
-    hexa = translate(hexa, xoff=3, yoff=-5)
-    seg = SegmentedHexagon(hexa)
-    poly = seg.segment(10)
-    df = gpd.GeoDataFrame(geometry=[poly])
-    df.to_file('/home/tobi/Documents/test.shp')
+            previous = point
+            previous_loc = current_loc
+            coords.append(point)
+
+        top_polygon = []
+        bottom_polygon = []
+        for point in coords:
+            loc = __class__.point_orientation(split_line, point)
+
+            if loc == 1:
+                top_polygon.append(point)
+            elif loc == -1:
+                bottom_polygon.append(point)
+            else:
+                top_polygon.append(point)
+                bottom_polygon.append(point)
+
+        return Polygon(top_polygon), Polygon(bottom_polygon)
+
+    @staticmethod
+    def point_orientation(line, point):
+        if line[0][0] == line[1][0]:  # vertical line
+            y_line = line[0][0]
+            y_point = point[0]
+
+        elif line[0][1] == line[1][1]:  # horizontal line
+            y_line = line[0][1]
+            y_point = point[1]
+
+        else:
+            y_line = ((line[1][1]-line[0][1])/(line[1][0]-line[0][0])) * (point[0]-line[0][0]) + line[0][1]
+            y_point = point[1]
+
+        if y_point == y_line:
+            return 0  # point on line
+        elif y_point < y_line:
+            return -1  # point under line or on the left
+        else:
+            return 1  # point above line or on the right
