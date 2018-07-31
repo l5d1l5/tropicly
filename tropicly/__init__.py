@@ -6,9 +6,9 @@ Date: 06.04.18
 Mail: tobi.seyde@gmail.com
 """
 from tropicly.sheduler import TaskSheduler
-from tropicly.grid import GridPolygon, PolygonGrid
 from tropicly.confusion_matrix import ConfusionMatrix
 from tropicly.raster import compute_cover, compute_driver
+from tropicly.grid import GridPolygon, PolygonGrid, SegmentedHexagon
 from tropicly.raster import worker as eworker
 from tropicly.sampling import worker as sworker
 from tropicly.frequency import worker as fworker
@@ -29,6 +29,7 @@ __all__ = [
     'compute_cover',
     'compute_driver',
     'ConfusionMatrix',
+    'SegmentedHexagon',
     'eworker',
     'aworker',
     'sworker',
