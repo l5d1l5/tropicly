@@ -10,15 +10,99 @@ from collections import OrderedDict
 from shapely.affinity import scale
 from shapely.geometry import asShape
 from tropicly.grid import SegmentedHexagon
+from math import sqrt, isclose
 
 
-path = '/home/ilex/Dropbox/shp/cover_normalized_scaled_americas.shp'
+path = '/home/tobi/Documents/driver_normalized_scaled_asia.shp'
 vec = fiona.open(path)
 
-schema = {'geometry': 'Polygon',
-          'properties': OrderedDict([('class', 'str:10'), ('ratio', 'float:4.2'), ('id', 'int:10')])}
+# # CALCULATE DRIVERS SCALING
+# schema = vec.schema
+# schema['properties']['impact'] = 'int:10'
+# schema['properties']['im/co'] = 'float:10.8'
+# schema['properties']['linear'] = 'float:10.8'
+# schema['properties']['normalized'] = 'float:10.8'
+#
+# for key in schema['properties']:
+#     if key in ['10', '25', '30', '40', '50', '60', '70', '80', '90', '100']:
+#         schema['properties'][key] = 'int:10'
+#
+# with fiona.open('/home/tobi/Documents/driverr_asia.shp', 'w', schema=schema, driver=vec.driver,
+#                 crs=vec.crs) as dst:
+#     for feature in vec:
+#         properties = feature['properties']
+#         impact = 0
+#
+#         for key in properties:
+#             if key == 'covered':
+#                 continue
+#             properties[key] = int(properties[key])
+#             impact += properties[key]
+#
+#         properties['impact'] = impact
+#
+#         ratio = impact / properties['covered']
+#         linear = (ratio - .00005036) / (.25007996 - .00005036)
+#         normalized = ((1. - .6) / (.25007996 - .00005036)) * (ratio - .25007996) + 1.
+#
+#         properties['im/co'] = impact / properties['covered']
+#         properties['linear'] = linear
+#         properties['normalized'] = normalized
+#         feature['properties'] = properties
+#
+#         if impact > 0:
+#             dst.write(feature)
 
-with fiona.open('/home/ilex/Documents/driver_normalized_scaled_americas.shp', 'w', schema=schema, driver=vec.driver, crs=vec.crs) as dst:
+
+# # SCALE DRIVERS
+# with fiona.open('/home/tobi/Documents/driver_normalized_scaled_asia.shp',
+#                 'w', driver=vec.driver, schema=vec.schema, crs=vec.crs) as src:
+#     for feature in vec:
+#         scaling = feature['properties']['normalized']
+#         feature['geometry'] = scale(asShape(feature['geometry']), xfact=scaling,
+#                                     yfact=scaling).__geo_interface__
+#         src.write(feature)
+
+
+# CALCULATE DRIVER HEXAGON SEGMENTS
+def error_gen(actual, rounded):
+    divisor = sqrt(1.0 if actual < 1.0 else actual)
+    return abs(rounded - actual) ** 2 / divisor
+
+
+def round_to_100(percents):
+    if not isclose(sum(percents), 100):
+        raise ValueError
+
+    rounded = [int(val) for val in percents]
+    up_count = 100 - sum(rounded)
+
+    errors = [
+        (error_gen(per, rnd + 1) - error_gen(per, rnd), idx)
+        for idx, (per, rnd) in enumerate(zip(percents, rounded))
+    ]
+
+    rank = sorted(errors)
+
+    for i in range(up_count):
+        rounded[rank[i][1]] += 1
+
+    return rounded
+
+
+schema = {
+    'geometry': 'Polygon',
+    'properties': OrderedDict([
+        ('id', 'int:10'),
+        ('class', 'str:10'),
+        ('ratio', 'int:10'),
+        ('covered', 'int:10'),
+        ('impact', 'int:10'),
+        ('im/co', 'float:10.8')
+    ])
+}
+
+with fiona.open('/home/tobi/Documents/driver_normalized_scaled_ratio_asia.shp', 'w', schema=schema, driver=vec.driver, crs=vec.crs) as dst:
     for idx, feature in enumerate(vec):
         hexagon = SegmentedHexagon(asShape(feature['geometry']))
         properties = feature['properties']
@@ -28,53 +112,27 @@ with fiona.open('/home/ilex/Documents/driver_normalized_scaled_americas.shp', 'w
         for driver in ['10', '25', '30', '40', '50', '60', '70', '80', '90', '100']:
             if driver in properties:
                 if properties[driver] > 0:
-                    ratio = round((properties[driver]/impact)*100)
-                    if ratio > 10:
-                        ratios.append([driver, ratio])
+                    ratio = (properties[driver]/impact)*100
+                    ratios.append([driver, ratio])
 
-        ratios = sorted(ratios, key=lambda x: x[1], reverse=True)
-        for driver, ratio in ratios:
+        driv, rat = list(zip(*ratios))
+        rat = round_to_100(rat)
+        ratios = sorted(zip(driv, rat), key=lambda x: x[1], reverse=True)
+        for driver, ratio in filter(lambda x: x[1] > 0, ratios):
             segment = hexagon.get_segment(ratio)
-            feat = {'geometry': segment.__geo_interface__,
-                    'properties': OrderedDict([('class', driver), ('ratio', ratio), ('id', idx)])}
+            feat = {
+                'geometry': segment.__geo_interface__,
+                'properties': OrderedDict([
+                    ('id', idx),
+                    ('class', driver),
+                    ('ratio', ratio),
+                    ('covered', properties['covered']),
+                    ('impact', properties['impact']),
+                    ('im/co', properties['im/co'])
+                ])
+            }
             dst.write(feat)
 
-
-# SCALE DRIVERS
-# with fiona.open('/home/ilex/Documents/cover_normalized_scaled_americas.shp',
-#                 'w', driver=vec.driver, schema=vec.schema, crs=vec.crs) as src:
-#     for feature in vec:
-#         scaling = feature['properties']['normalized']
-#         feature['geometry'] = scale(asShape(feature['geometry']), xfact=scaling,
-#                                     yfact=scaling).__geo_interface__
-#         src.write(feature)
-
-# CALCULATE DRIVERS SCALING
-# with fiona.open('/home/ilex/Documents/driver_scaled_americas.shp', 'w', schema=schema, driver=vec.driver, crs=vec.crs) as dst:
-#     for feature in vec:
-#         properties = feature['properties']
-#         impact = 0
-#         for key in properties:
-#             if key == 'covered':
-#                 continue
-#             properties[key] = int(properties[key])
-#             impact += properties[key]
-#         properties['impact'] = impact
-#         ratio = impact / properties['covered']
-#         linear = (ratio-0.000051)/(0.233429-0.000051)
-#         normalized = ((1.0-0.6)/(0.233429-0.000051))*(ratio-0.233429)+1.0
-#         properties['im/co'] = impact / properties['covered']
-#         if ratio >= 0.2:
-# properties['scaling'] = 1.0
-# elif ratio >= 0.1:
-# properties['scaling'] = 0.9
-# else:
-# properties['scaling'] = 0.8
-# properties['linear'] = linear
-# properties['normalized'] = normalized
-# feature['properties'] = properties
-# if impact > 0:
-# dst.write(feature)
 
 # CALCULATE COVER SCALING AND SCALE
 # with fiona.open('/home/tobi/Documents/cover_scaled_asia.shp',
