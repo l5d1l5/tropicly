@@ -2,8 +2,9 @@
 
 IFS='.'
 
-# resolutions americas, africa, asia
-resolutions=(0.000274052 0.000270417 0.000282743)
+templates=("/home/tobi/Documents/Master/code/python/Master/data/proc/agg/tif/cover_americas.tif"
+           "/home/tobi/Documents/Master/code/python/Master/data/proc/agg/tif/cover_africa.tif"
+           "/home/tobi/Documents/Master/code/python/Master/data/proc/agg/tif/cover_asia.tif")
 
 for file in /home/tobi/Documents/Master/code/python/Master/data/proc/agg/tif/*.txt
     do
@@ -12,16 +13,20 @@ for file in /home/tobi/Documents/Master/code/python/Master/data/proc/agg/tif/*.t
 
     if [[ ${arr[0]} =~ .*americas ]]
     then
-        res=${resolutions[0]}
+        template=${templates[0]}
 
     elif [[ ${arr[0]} =~ .*africa ]]
     then
 
-        res=${resolutions[1]}
+        template=${templates[1]}
 
     else
-        res=${resolutions[2]}
+        template=${templates[2]}
     fi
+
+    res=$(gdalinfo -json "$template" | jq -r '. | .geoTransform[1]')
+    lower=$(gdalinfo -json "$template" | jq -r '. | .cornerCoordinates.lowerLeft')
+    upper=$(gdalinfo -json "$template" | jq -r '. | .cornerCoordinates.upperRight')
 
     gdalbuildvrt -input_file_list "$file" -tr "$res" "$res" "${arr[0]}.vrt"
 
