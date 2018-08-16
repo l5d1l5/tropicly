@@ -99,7 +99,7 @@ ESV_costanza = {
     GL30Classes.artificial: Coefficient('artificial', 6661, std=0),  # urban 3 sub services
     GL30Classes.bareland:   Coefficient('bare', 0, std=0),  # NEED A VALUE
     GL30Classes.snow:       Coefficient('snow', 0, std=0),  # NEED A VALUE
-    GL30Classes.no_data:    Coefficient('no_data', 0, std=0),  # NEED A VALUE
+    GL30Classes.no_data:    Coefficient('no_data', 0, std=0),
 }
 
 # Ecosystem service values per biome
@@ -118,7 +118,7 @@ ESV_deGroot = {
     GL30Classes.artificial: Coefficient('artificial', 0, std=0),  # NEED A VALUE
     GL30Classes.bareland:   Coefficient('bare', 0, std=0),  # NEED A VALUE
     GL30Classes.snow:       Coefficient('snow', 0, std=0),  # NEED A VALUE
-    GL30Classes.no_data:    Coefficient('no_data', 0, std=0),  # NEED A VALUE
+    GL30Classes.no_data:    Coefficient('no_data', 0, std=0),
 }
 
 # Ecosystem service value of tropical forest
@@ -137,5 +137,5 @@ ESV_worldbank = {
     GL30Classes.artificial: Coefficient('artificial', 0, std=0),  # ds per definition no value
     GL30Classes.bareland:   Coefficient('bare', 0, std=0),  # ds per definition no value
     GL30Classes.snow:       Coefficient('snow', 0, std=0),  # ds per definition no value
-    GL30Classes.no_data:    Coefficient('no_data', 0, std=0),  # ds per definition no value
+    GL30Classes.no_data:    Coefficient('no_data', 0, std=0),
 }
