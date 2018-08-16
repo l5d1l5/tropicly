@@ -1,4 +1,5 @@
 #!/bin/bash
+# requires gdal and jq
 
 IFS='.'
 
@@ -24,6 +25,7 @@ for file in /home/tobi/Documents/Master/code/python/Master/data/proc/agg/tif/*.t
         template=${templates[2]}
     fi
 
+    # jq is a command line json parser
     res=$(gdalinfo -json "$template" | jq -r '. | .geoTransform[1]')
     xmin=$(gdalinfo -json "$template" | jq -r '. | .cornerCoordinates.lowerLeft[0]')
     ymin=$(gdalinfo -json "$template" | jq -r '. | .cornerCoordinates.lowerLeft[1]')
