@@ -1,0 +1,162 @@
+\documentclass[fontsize=12pt, twoside, a4paper]{scrartcl} % koma class
+
+% paper properties
+\usepackage{geometry}
+\geometry{left=3.5cm, right=2.0cm, top=2.5cm, bottom=2.5cm}
+
+% charset and language
+\usepackage[T1]{fontenc} % charset
+\usepackage[utf8]{inputenc} % charset
+\usepackage[german, polish, english]{babel} % language
+\let\babellll\lll % fix for \lll already defined by babel
+\let\lll\relax
+\babeltags{de=german}
+\babeltags{po=polish}
+
+% text formatting
+\usepackage{url}
+\usepackage{lipsum}
+\usepackage{mathptmx} % times new roman
+\usepackage[onehalfspacing]{setspace}
+\AfterTOCHead{\singlespacing}
+\KOMAoptions{parskip=half}
+\KOMAoptions{titlepage=true}
+\KOMAoptions{draft=true}  % COMMENT IF DOCUMENT GOES IN PRINT
+\addtokomafont{disposition}{\normalfont}
+
+% special symbols
+\usepackage{soul}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\let\mathlll\lll % fix for \lll already defined by babel reassign to \mathlll
+\let\lll\babellll
+\usepackage{amstext}
+\usepackage{chemarr}
+\usepackage{textcomp}
+
+% lists
+\usepackage{acronym}
+\usepackage{natbib} % bibliography
+\setcitestyle{sort,authoryear,square,semicolon,aysep={}}
+\renewcommand{\bibfont}{\small \singlespacing}
+\KOMAoptions{toc=listof}
+\KOMAoptions{toc=bibliography}
+
+% tables
+\KOMAoptions{captions=tableheading}
+
+% hyperlinks
+\usepackage[colorlinks=true, urlcolor=blue, linkcolor=blue, citecolor = blue]{hyperref}
+\hypersetup{pdftitle={A comprehensive study on deforestation in the tropical zone}}
+\hypersetup{pdfauthor={Tobias Seydewitz}}
+\hypersetup{pdfsubject={Evaluating the direct deforestation drivers, estimating the carbon emissions trough deforestation and evaluating the ecosystem service value balance of land cover change in the tropical zone between 23.43N and 23.43S.}}
+\hypersetup{pdfcreator={Tobias Seydewitz}}
+\hypersetup{pdfproducer={Tobias Seydewitz}}
+\hypersetup{pdfkeywords={climate, emissions, soil organic carbon change, GIS, ecosystem service values, deforestation}}
+\hypersetup{pdfdisplaydoctitle=true}
+
+% new commands
+\newcommand*\BlankPage{\newpage\null\thispagestyle{empty}\newpage}
+\newcommand{\leadingzero}[1]{\ifnum #1<10 0\the#1\else\the#1\fi}
+\newcommand{\todayI}{\leadingzero{\day}.\leadingzero{\month}.\the\year}
+
+%\recalctypearea
+
+%\usepackage{tabularx}
+%\usepackage{array}
+%\usepackage{caption}
+%\usepackage{longtable}
+%\usepackage{rotating}
+%\usepackage{multirow}
+%\usepackage{multicol}
+%\usepackage{graphicx}
+%\usepackage{tcolorbox} 
+%\usepackage{color}
+%\usepackage{colortbl}
+%\usepackage{color}
+%\usepackage{float}
+
+%\tiny 6pt
+%\scriptsize 8pt
+%\footnotesize 10pt
+%\small 10.95pt
+%\normalsize 12pt
+%\large 14.4pt
+%\Large 17.28pt
+%\LARGE 20.7pt
+%\huge 24.88pt
+%\Huge 24.88pt
+
+
+\begin{document}
+	\nocite{*}
+	\bibliographystyle{tobinat}
+
+	\hypersetup{pageanchor=false}
+
+	% title page
+	\input{cover/sggw_cover.tex}
+	\BlankPage
+
+	% declarations
+	\input{declarations/promoter.tex}
+	\BlankPage
+	\input{declarations/author.tex}
+	\BlankPage
+
+	\BlankPage
+	\BlankPage
+
+	% abstracts
+	\input{abstracts/streszczenie.tex}
+	\BlankPage
+	\input{abstracts/abstract.tex}
+	\BlankPage
+	\input{abstracts/zusammenfassung.tex}
+	\BlankPage
+
+	\BlankPage
+	\BlankPage
+
+	\hypersetup{pageanchor=true}
+	\pagenumbering{arabic}
+	\setcounter{page}{9}
+
+
+	% table of contents
+	\setcounter{secnumdepth}{4} 
+	\setcounter{tocdepth}{4}
+	\tableofcontents
+	\newpage
+
+	% content
+	\input{introduction/introduction.tex}
+	\input{methods/methods.tex}
+	\input{results/results.tex}
+	\input{discussion/discussion.tex}
+	\input{conclusion/conclusion.tex}
+	\newpage
+
+	\input{acknowledgements/acknowledge.tex}
+	\newpage
+
+
+	\pagenumbering{Roman}
+	\setcounter{page}{1}
+
+
+	% references
+	\input{references/references.tex}
+	\newpage
+
+	% lists
+	\input{lists/lists.tex}
+	\newpage
+
+	% appendix
+	\input{appendix/appendix.tex}
+	\newpage
+
+	% share approval
+	\input{share/sggw_share.tex}
+\end{document}

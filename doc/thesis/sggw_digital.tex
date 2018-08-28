@@ -1,0 +1,127 @@
+\documentclass[fontsize=12pt, twoside, a4paper]{scrartcl} % koma class
+
+% paper properties
+\usepackage{geometry}
+\geometry{left=2.0cm, right=3.5cm, top=2.5cm, bottom=2.5cm}
+
+% charset and language
+\usepackage[T1]{fontenc} % charset
+\usepackage[utf8]{inputenc} % charset
+\usepackage[english, german, polish]{babel} % language
+\let\babellll\lll % fix for \lll already defined by babel
+\let\lll\relax
+\babeltags{de=german}
+\babeltags{po=polish}
+\babeltags{en=english}
+
+% text formatting
+\usepackage{mathptmx} % times new roman
+\usepackage[onehalfspacing]{setspace}
+\KOMAoptions{parskip=half}
+\usepackage{url}
+
+% special symbols
+\usepackage{soul}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\let\mathlll\lll % fix for \lll already defined by babel reassign to \mathlll
+\let\lll\babellll
+\usepackage{amstext}
+\usepackage{chemarr}
+\usepackage{textcomp}
+
+% lists
+\usepackage{acronym}
+\usepackage[authoryear]{natbib} % bibliography
+
+% undef
+\usepackage{rotating}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{tcolorbox} 
+\usepackage{color}
+\usepackage{caption}
+\usepackage{colortbl}
+\usepackage{color}
+\usepackage{float}
+\usepackage[colorlinks=true, urlcolor=blue, linkcolor=blue, citecolor = blue]{hyperref} %links and urls
+
+% new commands
+\newcommand*\BlankPage{\newpage\null\thispagestyle{empty}\newpage}
+\newcommand{\leadingzero}[1]{\ifnum #1<10 0\the#1\else\the#1\fi}
+\newcommand{\todayI}{\leadingzero{\day}.\leadingzero{\month}.\the\year}
+
+
+%\recalctypearea
+
+
+\begin{document}
+	\nocite{*}
+	\selectlanguage{english}
+	\bibliographystyle{plainnat}
+
+	% title page
+	\input{cover/cover.tex}
+	\newpage
+	\BlankPage
+
+	% declarations
+	\input{declarations/promoter.tex}
+	\newpage
+	\input{declarations/author.tex}
+	\newpage
+
+	% abstracts
+	\input{abstracts/streszczenie.tex}
+	\newpage
+	\input{abstracts/abstract.tex}
+	\newpage
+	\input{abstracts/zusammenfassung.tex}
+	\newpage
+	\BlankPage
+
+
+	\pagenumbering{arabic}
+	\setcounter{page}{8}
+
+
+	% table of contents
+	\setcounter{tocdepth}{3}
+	\tableofcontents
+	\newpage
+
+	% content
+	\input{introduction/introduction.tex}
+	\input{methods/methods.tex}
+	\input{results/results.tex}
+	\input{discussion/discussion.tex}
+	\input{conclusion/conclusion.tex}
+	\newpage
+
+	\input{acknowledgements/acknowledge.tex}
+	\newpage
+
+
+	\pagenumbering{Roman}
+	\setcounter{page}{1}
+
+
+	% references
+	\input{references/references.tex}
+	\newpage
+
+	% lists
+	\input{lists/lists.tex}
+	\newpage
+
+	% appendix
+	\input{appendix/appendix.tex}
+	\newpage
+
+	% share approval
+	\input{share/share.tex}
+\end{document}
