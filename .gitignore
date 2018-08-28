@@ -101,7 +101,10 @@ ENV/
 .mypy_cache/
 .idea/
 /data
-/doc
+/doc/internship_presen
+/doc/meeting_05_12_2017
+/doc/meeting_06_11_2017
+/doc/sal_meeting
 /img
 /tropicly/js/index.html
 /img/comparision.png
