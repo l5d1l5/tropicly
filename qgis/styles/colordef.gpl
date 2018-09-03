@@ -1,0 +1,17 @@
+GIMP Palette
+Name: QGIS Palette
+Columns: 4
+#
+  0   0   0	Black - No data
+255 255 255	White - No data
+166 206 227	Light-blue - Wetland
+ 31 120 180	Blue - Water
+178 223 138	Light-green - Grassland
+ 51 160  44	Green - Regrowth/Forest
+251 154 153	Light-red - Tundra
+227  26  28	Red - Artificial 
+253 191 111	Light-orange - Bareland
+255 127   0	Orange - Cultivatedland
+202 178 214	Light-purple - Shrubland
+106  61 154	Purple - Snow
+

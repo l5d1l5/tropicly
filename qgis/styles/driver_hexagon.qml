@@ -1,26 +1,37 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
 <qgis version="2.18.20" simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
   <edittypes>
+    <edittype widgetv2type="TextEdit" name="id">
+      <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+    </edittype>
     <edittype widgetv2type="TextEdit" name="class">
       <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
     </edittype>
     <edittype widgetv2type="TextEdit" name="ratio">
       <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
     </edittype>
-    <edittype widgetv2type="TextEdit" name="id">
+    <edittype widgetv2type="TextEdit" name="covered">
+      <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+    </edittype>
+    <edittype widgetv2type="TextEdit" name="impact">
+      <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+    </edittype>
+    <edittype widgetv2type="TextEdit" name="im/co">
       <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
     </edittype>
   </edittypes>
   <renderer-v2 attr="class" forceraster="0" symbollevels="0" type="categorizedSymbol" enableorderby="0">
     <categories>
-      <category render="true" symbol="0" value="10" label="10"/>
-      <category render="true" symbol="1" value="25" label="25"/>
-      <category render="true" symbol="2" value="30" label="30"/>
-      <category render="true" symbol="3" value="40" label="40"/>
-      <category render="true" symbol="4" value="50" label="50"/>
-      <category render="true" symbol="5" value="60" label="60"/>
-      <category render="true" symbol="6" value="80" label="80"/>
-      <category render="true" symbol="7" value="90" label="90"/>
+      <category render="true" symbol="0" value="10" label="Cultivated land"/>
+      <category render="true" symbol="1" value="25" label="Forest regrowth"/>
+      <category render="true" symbol="2" value="30" label="Grassland"/>
+      <category render="true" symbol="3" value="40" label="Shrubland"/>
+      <category render="true" symbol="4" value="50" label="Wetland"/>
+      <category render="true" symbol="5" value="60" label="Water"/>
+      <category render="true" symbol="6" value="70" label="Tundra"/>
+      <category render="true" symbol="7" value="80" label="Artificial land"/>
+      <category render="true" symbol="8" value="90" label="Bareland"/>
+      <category render="true" symbol="9" value="100" label="Snow"/>
     </categories>
     <symbols>
       <symbol alpha="1" clip_to_extent="1" type="fill" name="0">
@@ -33,7 +44,7 @@
           <prop k="offset_unit" v="MM"/>
           <prop k="outline_color" v="0,0,0,255"/>
           <prop k="outline_style" v="solid"/>
-          <prop k="outline_width" v="0.06"/>
+          <prop k="outline_width" v="0.03"/>
           <prop k="outline_width_unit" v="MM"/>
           <prop k="style" v="solid"/>
         </layer>
@@ -48,7 +59,7 @@
           <prop k="offset_unit" v="MM"/>
           <prop k="outline_color" v="0,0,0,255"/>
           <prop k="outline_style" v="solid"/>
-          <prop k="outline_width" v="0.06"/>
+          <prop k="outline_width" v="0.03"/>
           <prop k="outline_width_unit" v="MM"/>
           <prop k="style" v="solid"/>
         </layer>
@@ -63,7 +74,7 @@
           <prop k="offset_unit" v="MM"/>
           <prop k="outline_color" v="0,0,0,255"/>
           <prop k="outline_style" v="solid"/>
-          <prop k="outline_width" v="0.06"/>
+          <prop k="outline_width" v="0.03"/>
           <prop k="outline_width_unit" v="MM"/>
           <prop k="style" v="solid"/>
         </layer>
@@ -71,14 +82,14 @@
       <symbol alpha="1" clip_to_extent="1" type="fill" name="3">
         <layer pass="0" class="SimpleFill" locked="0">
           <prop k="border_width_map_unit_scale" v="0,0,0,0,0,0"/>
-          <prop k="color" v="0,255,0,255"/>
+          <prop k="color" v="202,178,214,255"/>
           <prop k="joinstyle" v="bevel"/>
           <prop k="offset" v="0,0"/>
           <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
           <prop k="offset_unit" v="MM"/>
           <prop k="outline_color" v="0,0,0,255"/>
           <prop k="outline_style" v="solid"/>
-          <prop k="outline_width" v="0.06"/>
+          <prop k="outline_width" v="0.03"/>
           <prop k="outline_width_unit" v="MM"/>
           <prop k="style" v="solid"/>
         </layer>
@@ -86,14 +97,14 @@
       <symbol alpha="1" clip_to_extent="1" type="fill" name="4">
         <layer pass="0" class="SimpleFill" locked="0">
           <prop k="border_width_map_unit_scale" v="0,0,0,0,0,0"/>
-          <prop k="color" v="0,255,255,255"/>
+          <prop k="color" v="166,206,227,255"/>
           <prop k="joinstyle" v="bevel"/>
           <prop k="offset" v="0,0"/>
           <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
           <prop k="offset_unit" v="MM"/>
           <prop k="outline_color" v="0,0,0,255"/>
           <prop k="outline_style" v="solid"/>
-          <prop k="outline_width" v="0.06"/>
+          <prop k="outline_width" v="0.03"/>
           <prop k="outline_width_unit" v="MM"/>
           <prop k="style" v="solid"/>
         </layer>
@@ -108,12 +119,27 @@
           <prop k="offset_unit" v="MM"/>
           <prop k="outline_color" v="0,0,0,255"/>
           <prop k="outline_style" v="solid"/>
-          <prop k="outline_width" v="0.06"/>
+          <prop k="outline_width" v="0.03"/>
           <prop k="outline_width_unit" v="MM"/>
           <prop k="style" v="solid"/>
         </layer>
       </symbol>
       <symbol alpha="1" clip_to_extent="1" type="fill" name="6">
+        <layer pass="0" class="SimpleFill" locked="0">
+          <prop k="border_width_map_unit_scale" v="0,0,0,0,0,0"/>
+          <prop k="color" v="251,154,153,255"/>
+          <prop k="joinstyle" v="bevel"/>
+          <prop k="offset" v="0,0"/>
+          <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
+          <prop k="offset_unit" v="MM"/>
+          <prop k="outline_color" v="0,0,0,255"/>
+          <prop k="outline_style" v="solid"/>
+          <prop k="outline_width" v="0.03"/>
+          <prop k="outline_width_unit" v="MM"/>
+          <prop k="style" v="solid"/>
+        </layer>
+      </symbol>
+      <symbol alpha="1" clip_to_extent="1" type="fill" name="7">
         <layer pass="0" class="SimpleFill" locked="0">
           <prop k="border_width_map_unit_scale" v="0,0,0,0,0,0"/>
           <prop k="color" v="227,26,28,255"/>
@@ -123,22 +149,37 @@
           <prop k="offset_unit" v="MM"/>
           <prop k="outline_color" v="0,0,0,255"/>
           <prop k="outline_style" v="solid"/>
-          <prop k="outline_width" v="0.06"/>
+          <prop k="outline_width" v="0.03"/>
           <prop k="outline_width_unit" v="MM"/>
           <prop k="style" v="solid"/>
         </layer>
       </symbol>
-      <symbol alpha="1" clip_to_extent="1" type="fill" name="7">
+      <symbol alpha="1" clip_to_extent="1" type="fill" name="8">
         <layer pass="0" class="SimpleFill" locked="0">
           <prop k="border_width_map_unit_scale" v="0,0,0,0,0,0"/>
-          <prop k="color" v="255,255,191,255"/>
+          <prop k="color" v="253,191,111,255"/>
           <prop k="joinstyle" v="bevel"/>
           <prop k="offset" v="0,0"/>
           <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
           <prop k="offset_unit" v="MM"/>
           <prop k="outline_color" v="0,0,0,255"/>
           <prop k="outline_style" v="solid"/>
-          <prop k="outline_width" v="0.06"/>
+          <prop k="outline_width" v="0.03"/>
+          <prop k="outline_width_unit" v="MM"/>
+          <prop k="style" v="solid"/>
+        </layer>
+      </symbol>
+      <symbol alpha="1" clip_to_extent="1" type="fill" name="9">
+        <layer pass="0" class="SimpleFill" locked="0">
+          <prop k="border_width_map_unit_scale" v="0,0,0,0,0,0"/>
+          <prop k="color" v="106,61,154,255"/>
+          <prop k="joinstyle" v="bevel"/>
+          <prop k="offset" v="0,0"/>
+          <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
+          <prop k="offset_unit" v="MM"/>
+          <prop k="outline_color" v="0,0,0,255"/>
+          <prop k="outline_style" v="solid"/>
+          <prop k="outline_width" v="0.03"/>
           <prop k="outline_width_unit" v="MM"/>
           <prop k="style" v="solid"/>
         </layer>
@@ -155,14 +196,12 @@
           <prop k="offset_unit" v="MM"/>
           <prop k="outline_color" v="0,0,0,255"/>
           <prop k="outline_style" v="solid"/>
-          <prop k="outline_width" v="0.06"/>
+          <prop k="outline_width" v="0.03"/>
           <prop k="outline_width_unit" v="MM"/>
           <prop k="style" v="solid"/>
         </layer>
       </symbol>
     </source-symbol>
-    <colorramp type="randomcolors" name="[source]"/>
-    <invertedcolorramp value="0"/>
     <rotation/>
     <sizescale scalemethod="diameter"/>
   </renderer-v2>
@@ -338,6 +377,7 @@
   <SingleCategoryDiagramRenderer diagramType="Histogram" sizeLegend="0" attributeLegend="1">
     <DiagramCategory penColor="#000000" labelPlacementMethod="XHeight" penWidth="0" diagramOrientation="Up" sizeScale="0,0,0,0,0,0" minimumSize="0" barWidth="5" penAlpha="255" maxScaleDenominator="1e+08" backgroundColor="#ffffff" transparency="0" width="15" scaleDependency="Area" backgroundAlpha="255" angleOffset="1440" scaleBasedVisibility="0" enabled="0" height="15" lineSizeScale="0,0,0,0,0,0" sizeType="MM" lineSizeType="MM" minScaleDenominator="inf">
       <fontProperties description="Ubuntu,11,-1,5,50,0,0,0,0,0" style=""/>
+      <attribute field="" color="#000000" label=""/>
     </DiagramCategory>
     <symbol alpha="1" clip_to_extent="1" type="marker" name="sizeSymbol">
       <layer pass="0" class="SimpleMarker" locked="0">
@@ -363,11 +403,14 @@
     </symbol>
   </SingleCategoryDiagramRenderer>
   <DiagramLayerSettings yPosColumn="-1" showColumn="-1" linePlacementFlags="10" placement="0" dist="0" xPosColumn="-1" priority="0" obstacle="0" zIndex="0" showAll="1"/>
-  <annotationform></annotationform>
+  <annotationform>.</annotationform>
   <aliases>
-    <alias field="class" index="0" name=""/>
-    <alias field="ratio" index="1" name=""/>
-    <alias field="id" index="2" name=""/>
+    <alias field="id" index="0" name=""/>
+    <alias field="class" index="1" name=""/>
+    <alias field="ratio" index="2" name=""/>
+    <alias field="covered" index="3" name=""/>
+    <alias field="impact" index="4" name=""/>
+    <alias field="im/co" index="5" name=""/>
   </aliases>
   <excludeAttributesWMS/>
   <excludeAttributesWFS/>
@@ -378,12 +421,15 @@
       <column width="-1" hidden="0" type="field" name="ratio"/>
       <column width="-1" hidden="0" type="field" name="id"/>
       <column width="-1" hidden="1" type="actions"/>
+      <column width="-1" hidden="0" type="field" name="covered"/>
+      <column width="-1" hidden="0" type="field" name="impact"/>
+      <column width="-1" hidden="0" type="field" name="im/co"/>
     </columns>
   </attributetableconfig>
-  <editform></editform>
+  <editform>.</editform>
   <editforminit/>
   <editforminitcodesource>0</editforminitcodesource>
-  <editforminitfilepath></editforminitfilepath>
+  <editforminitfilepath>.</editforminitfilepath>
   <editforminitcode><![CDATA[# -*- coding: utf-8 -*-
 """
 QGIS forms can have a Python function that is called when the form is
@@ -409,9 +455,12 @@ def my_form_open(dialog, layer, feature):
     <fieldstyles/>
   </conditionalstyles>
   <defaults>
+    <default field="id" expression=""/>
     <default field="class" expression=""/>
     <default field="ratio" expression=""/>
-    <default field="id" expression=""/>
+    <default field="covered" expression=""/>
+    <default field="impact" expression=""/>
+    <default field="im/co" expression=""/>
   </defaults>
   <previewExpression>COALESCE( "id", '&lt;NULL>' )</previewExpression>
   <layerGeometryType>2</layerGeometryType>

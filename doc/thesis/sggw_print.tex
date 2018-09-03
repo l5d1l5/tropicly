@@ -23,6 +23,7 @@
 \KOMAoptions{titlepage=true}
 \KOMAoptions{draft=true}  % COMMENT IF DOCUMENT GOES IN PRINT
 \addtokomafont{disposition}{\normalfont}
+\addtokomafont{caption}{\footnotesize}
 
 % special symbols
 \usepackage{soul}
@@ -36,7 +37,7 @@
 
 % lists
 \usepackage{acronym}
-\usepackage{natbib} % bibliography
+\usepackage{natbib}
 \setcitestyle{sort,authoryear,square,semicolon,aysep={}}
 \renewcommand{\bibfont}{\small \singlespacing}
 \KOMAoptions{toc=listof}
@@ -45,8 +46,11 @@
 % tables
 \KOMAoptions{captions=tableheading}
 
+% images
+\usepackage{graphicx}
+
 % hyperlinks
-\usepackage[colorlinks=true, urlcolor=blue, linkcolor=blue, citecolor = blue]{hyperref}
+\usepackage[hidelinks, colorlinks=false, urlcolor=blue, linkcolor=blue, citecolor = blue]{hyperref}
 \hypersetup{pdftitle={A comprehensive study on deforestation in the tropical zone}}
 \hypersetup{pdfauthor={Tobias Seydewitz}}
 \hypersetup{pdfsubject={Evaluating the direct deforestation drivers, estimating the carbon emissions trough deforestation and evaluating the ecosystem service value balance of land cover change in the tropical zone between 23.43N and 23.43S.}}
@@ -69,7 +73,6 @@
 %\usepackage{rotating}
 %\usepackage{multirow}
 %\usepackage{multicol}
-%\usepackage{graphicx}
 %\usepackage{tcolorbox} 
 %\usepackage{color}
 %\usepackage{colortbl}
@@ -86,6 +89,24 @@
 %\LARGE 20.7pt
 %\huge 24.88pt
 %\Huge 24.88pt
+
+%\begin{figure}
+%	\centering
+%	\includegraphics[scale=0.95]{img/overview}
+%	\caption[list titel]{test}
+%	\label{fig:test}
+%\end{figure}
+
+%\begin{table}
+%	\centering
+%	\caption{Dies ist nur eine Beispieltabelle}
+%	\label{tab:table1}
+%	\begin{tabular}{llll}
+%		Dies & ist & ein & Beispiel.\\\hline
+%		Bitte & lassen & Sie & den \\
+%		Inhalt & dieser & Tabelle & unbeachtet.
+%	\end{tabular}
+%\end{table}
 
 
 \begin{document}

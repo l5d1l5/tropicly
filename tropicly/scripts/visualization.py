@@ -13,7 +13,7 @@ from tropicly.grid import SegmentedHexagon
 from math import sqrt, isclose
 
 
-path = '/home/tobi/Documents/driver_normalized_scaled_asia.shp'
+path = '/home/tobi/Documents/Master/code/python/Master/data/proc/agg/shp/driver_normalized_scaled_americas.shp'
 vec = fiona.open(path)
 
 # # CALCULATE DRIVERS SCALING
@@ -102,7 +102,7 @@ schema = {
     ])
 }
 
-with fiona.open('/home/tobi/Documents/driver_normalized_scaled_ratio_asia.shp', 'w', schema=schema, driver=vec.driver, crs=vec.crs) as dst:
+with fiona.open('/home/tobi/Documents/driver_normalized_scaled_ratio_americas.shp', 'w', schema=schema, driver=vec.driver, crs=vec.crs) as dst:
     for idx, feature in enumerate(vec):
         hexagon = SegmentedHexagon(asShape(feature['geometry']))
         properties = feature['properties']

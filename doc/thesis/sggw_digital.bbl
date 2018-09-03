@@ -1,0 +1,50 @@
+\begin{thebibliography}{4}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Chen et~al.(2014)Chen, Chen, Liao, Cao, Chen, Chen, He, Han, Peng, Lu,
+  Zhang, Tong, and Mills]{Chen2014}
+Chen J., Chen J., Liao A., Cao X., Chen L., Chen X., He C., Han G., Peng S., Lu
+  M., Zhang W., Tong X., and Mills J.
+\newblock \emph{30-meter {G}lobal {L}and {C}over {D}ataset - {P}roduct
+  {D}escription}.
+\newblock National Geomatics Center of China, May 2014.
+
+\bibitem[Hansen et~al.(2013{\natexlab{a}})Hansen, Potapov, Moore, Hancher,
+  Turubanova, Tyukavina, Thau, Stehman, Goetz, Loveland, Kommareddy, Egorov,
+  Chini, Justice, and Townshend]{Hansen2013}
+Hansen M.~C., Potapov P.~V., Moore R., Hancher M., Turubanova S.~A., Tyukavina
+  A., Thau D., Stehman S.~V., Goetz S.~J., Loveland T.~R., Kommareddy A.,
+  Egorov A., Chini L., Justice C.~O., and Townshend J. R.~G.
+\newblock {H}igh-{R}esolution {G}lobal {M}aps of 21st-{C}entury {F}orest
+  {C}over {C}hange.
+\newblock \emph{Science}, 342\penalty0 (6160):\penalty0 850--853, November
+  2013{\natexlab{a}}.
+\newblock \doi{10.1126/science.1239552}.
+
+\bibitem[Hansen et~al.(2013{\natexlab{b}})Hansen, Potapov, Moore, Hancher,
+  Turubanova, Tyukavina, Thau, Stehman, Goetz, Loveland, Kommareddy, Egorov,
+  Chini, Justice, and Townshend]{Hansen2013a}
+Hansen M.~C., Potapov P.~V., Moore R., Hancher M., Turubanova S.~A., Tyukavina
+  A., Thau D., Stehman S.~V., Goetz S.~J., Loveland T.~R., Kommareddy A.,
+  Egorov A., Chini L., Justice C.~O., and Townshend J. R.~G.
+\newblock Supplementary {M}aterials for: {H}igh-{R}esolution {G}lobal {M}aps of
+  21st-{C}entury {F}orest {C}over {C}hange.
+\newblock \emph{Sciene}, 342\penalty0 (6160):\penalty0 1--32, November
+  2013{\natexlab{b}}.
+\newblock \doi{10.1126/science.1244693}.
+
+\bibitem[Hosonuma et~al.(2012)Hosonuma, Herold, De~Sy, De~Fries, Brockhaus,
+  Verchot, Angelsen, and Romijn]{Hosonuma2012}
+Hosonuma N., Herold M., De~Sy V., De~Fries R.~S., Brockhaus M., Verchot L.,
+  Angelsen A., and Romijn E.
+\newblock An assessment of deforestation and forest degradation drivers in
+  developing countries.
+\newblock \emph{Environmental Research Letters}, 7\penalty0 (4):\penalty0
+  1--12, October 2012.
+\newblock \doi{10.1088/1748-9326/7/4/044009}.
+
+\end{thebibliography}

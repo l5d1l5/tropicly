@@ -1,0 +1,52 @@
+\select@language {english}
+\contentsline {section}{\numberline {1}Introduction}{11}{section.1}
+\contentsline {subsection}{\numberline {1.1}Tropical forest}{11}{subsection.1.1}
+\contentsline {subsubsection}{\numberline {1.1.1}Current state}{11}{subsubsection.1.1.1}
+\contentsline {subsubsection}{\numberline {1.1.2}Contribution to climate}{11}{subsubsection.1.1.2}
+\contentsline {subsubsection}{\numberline {1.1.3}Forest definitions}{11}{subsubsection.1.1.3}
+\contentsline {subsection}{\numberline {1.2}Deforestation}{11}{subsection.1.2}
+\contentsline {subsubsection}{\numberline {1.2.1}Land use and land cover change}{11}{subsubsection.1.2.1}
+\contentsline {subsubsection}{\numberline {1.2.2}Drivers of deforestation}{11}{subsubsection.1.2.2}
+\contentsline {subsection}{\numberline {1.3}Emissions trough deforestation}{11}{subsection.1.3}
+\contentsline {subsubsection}{\numberline {1.3.1}Removal of AGB}{11}{subsubsection.1.3.1}
+\contentsline {subsubsection}{\numberline {1.3.2}Soil organic carbon change and soil dynamics}{11}{subsubsection.1.3.2}
+\contentsline {subsection}{\numberline {1.4}Ecosystem services}{11}{subsection.1.4}
+\contentsline {subsubsection}{\numberline {1.4.1}Ecosystem service values}{11}{subsubsection.1.4.1}
+\contentsline {subsection}{\numberline {1.5}Research objective and questions}{11}{subsection.1.5}
+\contentsline {section}{\numberline {2}Data and methods}{11}{section.2}
+\contentsline {subsection}{\numberline {2.1}Data}{11}{subsection.2.1}
+\contentsline {subsubsection}{\numberline {2.1.1}Spatial data}{11}{subsubsection.2.1.1}
+\contentsline {paragraph}{\numberline {2.1.1.1}Global Forest Change}{11}{paragraph.2.1.1.1}
+\contentsline {paragraph}{\numberline {2.1.1.2}GlobeLand30}{11}{paragraph.2.1.1.2}
+\contentsline {paragraph}{\numberline {2.1.1.3}Intact Forest Landscapes}{12}{paragraph.2.1.1.3}
+\contentsline {paragraph}{\numberline {2.1.1.4}Aboveground Woody Biomass}{12}{paragraph.2.1.1.4}
+\contentsline {paragraph}{\numberline {2.1.1.5}Global Soil Organic Carbon}{12}{paragraph.2.1.1.5}
+\contentsline {paragraph}{\numberline {2.1.1.6}Auxiliary}{12}{paragraph.2.1.1.6}
+\contentsline {subsubsection}{\numberline {2.1.2}Numerical data}{12}{subsubsection.2.1.2}
+\contentsline {paragraph}{\numberline {2.1.2.1}Soil Organic Carbon}{12}{paragraph.2.1.2.1}
+\contentsline {paragraph}{\numberline {2.1.2.2}Ecosystem Service Values}{12}{paragraph.2.1.2.2}
+\contentsline {subsection}{\numberline {2.2}Methods}{12}{subsection.2.2}
+\contentsline {subsubsection}{\numberline {2.2.1}Preprocessing}{12}{subsubsection.2.2.1}
+\contentsline {subsubsection}{\numberline {2.2.2}Deforestation}{12}{subsubsection.2.2.2}
+\contentsline {paragraph}{\numberline {2.2.2.1}Forest definition}{12}{paragraph.2.2.2.1}
+\contentsline {paragraph}{\numberline {2.2.2.2}Land use change driver}{12}{paragraph.2.2.2.2}
+\contentsline {paragraph}{\numberline {2.2.2.3}Accuracy assessment}{12}{paragraph.2.2.2.3}
+\contentsline {subsubsection}{\numberline {2.2.3}Emissions}{12}{subsubsection.2.2.3}
+\contentsline {paragraph}{\numberline {2.2.3.1}Above ground biomass}{12}{paragraph.2.2.3.1}
+\contentsline {paragraph}{\numberline {2.2.3.2}Soil organic carbon change}{12}{paragraph.2.2.3.2}
+\contentsline {subsubsection}{\numberline {2.2.4}Ecosystem service values}{13}{subsubsection.2.2.4}
+\contentsline {paragraph}{\numberline {2.2.4.1}Ecosystem service value loss}{13}{paragraph.2.2.4.1}
+\contentsline {paragraph}{\numberline {2.2.4.2}Ecosystem service value gain}{13}{paragraph.2.2.4.2}
+\contentsline {subsubsection}{\numberline {2.2.5}Binning analysis}{13}{subsubsection.2.2.5}
+\contentsline {section}{\numberline {3}Results}{13}{section.3}
+\contentsline {subsection}{\numberline {3.1}Deforestation drivers}{13}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Deforestation emissions}{13}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Ecosystem service value balance}{13}{subsection.3.3}
+\contentsline {section}{\numberline {4}Discussion}{13}{section.4}
+\contentsline {section}{\numberline {5}Conclusion}{13}{section.5}
+\contentsline {section}{Acknowledgements}{14}{section*.2}
+\contentsline {section}{References}{I}{section*.2}
+\contentsline {section}{\nonumberline List of Figures}{II}{section*.4}
+\contentsline {section}{\nonumberline List of Tables}{II}{section*.5}
+\contentsline {section}{List of Abbreviations}{II}{section*.6}
+\contentsline {section}{Appendix}{III}{section*.7}

@@ -3,8 +3,14 @@
   <title></title>
   <autotransaction active="0"/>
   <evaluateDefaultValues active="0"/>
-  <layer-tree-group expanded="1" checked="Qt::Checked" name="">
+  <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="">
     <customproperties/>
+    <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="hex_driver20180903141817986" source="/home/tobi/Documents/Master/code/python/Master/data/auxiliary/hex_driver.shp" name="hex_driver">
+      <customproperties/>
+    </layer-tree-layer>
+    <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Unchecked" id="driver_americas20180903140027413" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/shp/driver_americas.shp" name="driver_americas">
+      <customproperties/>
+    </layer-tree-layer>
     <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="hexboundaries_africa20180814074740925" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/shp/hexboundaries_africa.shp" name="hexboundaries_africa">
       <customproperties/>
     </layer-tree-layer>
@@ -28,10 +34,10 @@
   <mapcanvas>
     <units>degrees</units>
     <extent>
-      <xmin>4.7953129712843463</xmin>
-      <ymin>-47.47325258094985401</ymin>
-      <xmax>183.52568363309475785</xmax>
-      <ymax>58.55537367574462593</ymax>
+      <xmin>-121.84696265325241882</xmin>
+      <ymin>-39.39981653700069586</ymin>
+      <xmax>-40.65729253782596686</xmax>
+      <ymax>39.13515046838464428</ymax>
     </extent>
     <rotation>0</rotation>
     <projections>0</projections>
@@ -58,9 +64,21 @@
       <item>hexboundaries_africa20180814074740925</item>
       <item>hexboundaries_americas20180814074746164</item>
       <item>hexboundaries_asia20180814074751293</item>
+      <item>driver_americas20180903140027413</item>
+      <item>hex_driver20180903141817986</item>
     </custom-order>
   </layer-tree-canvas>
   <legend updateDrawingOrder="true">
+    <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="hex_driver" showFeatureCount="0">
+      <filegroup open="true" hidden="false">
+        <legendlayerfile isInOverview="0" layerid="hex_driver20180903141817986" visible="1"/>
+      </filegroup>
+    </legendlayer>
+    <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="driver_americas" showFeatureCount="0">
+      <filegroup open="true" hidden="false">
+        <legendlayerfile isInOverview="0" layerid="driver_americas20180903140027413" visible="0"/>
+      </filegroup>
+    </legendlayer>
     <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="hexboundaries_africa" showFeatureCount="0">
       <filegroup open="true" hidden="false">
         <legendlayerfile isInOverview="0" layerid="hexboundaries_africa20180814074740925" visible="1"/>
@@ -92,7 +110,352 @@
       </filegroup>
     </legendlayer>
   </legend>
+  <Composer title="americas" visible="1">
+    <Composition resizeToContentsMarginLeft="0" snapping="0" showPages="1" guidesVisible="1" resizeToContentsMarginTop="0" worldFileMap="{aa4f7cca-8817-4ecf-ac5d-623efee0fe1f}" alignmentSnap="1" printResolution="300" paperWidth="210" gridVisible="1" snapGridOffsetX="0" smartGuides="1" snapGridOffsetY="0" resizeToContentsMarginRight="0" snapTolerancePixels="5" printAsRaster="0" generateWorldFile="0" paperHeight="297" numPages="1" snapGridResolution="10" resizeToContentsMarginBottom="0">
+      <symbol alpha="1" clip_to_extent="1" type="fill" name="">
+        <layer pass="0" class="SimpleFill" locked="0">
+          <prop k="border_width_map_unit_scale" v="0,0,0,0,0,0"/>
+          <prop k="color" v="255,255,255,255"/>
+          <prop k="joinstyle" v="miter"/>
+          <prop k="offset" v="0,0"/>
+          <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
+          <prop k="offset_unit" v="MM"/>
+          <prop k="outline_color" v="0,0,0,255"/>
+          <prop k="outline_style" v="no"/>
+          <prop k="outline_width" v="0.26"/>
+          <prop k="outline_width_unit" v="MM"/>
+          <prop k="style" v="solid"/>
+        </layer>
+      </symbol>
+      <SnapLine y1="0" x1="34.8105" y2="297" x2="34.8105"/>
+      <SnapLine y1="0" x1="189.957" y2="297" x2="189.957"/>
+      <SnapLine y1="24.6074" x1="0" y2="24.6074" x2="210"/>
+      <SnapLine y1="270.382" x1="0" y2="270.382" x2="210"/>
+      <SnapLine y1="0" x1="110.433" y2="297" x2="110.433"/>
+      <ComposerLabel valign="32" marginX="1" marginY="1" labelText="Coordinate system:&#xa;WGS84 (EPSG:4326)" htmlState="0" halign="1">
+        <LabelFont description="Times New Roman,6,-1,5,50,0,0,0,0,0" style="Regular"/>
+        <FontColor red="0" blue="0" green="0"/>
+        <ComposerItem pagey="102.941" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="true" x="169.345" y="102.941" visibility="1" zValue="4" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="21.6121" outlineWidth="0.3" excludeFromExports="0" uuid="{d5247b0e-7f5a-4dc1-9019-c1df537580c5}" height="6.805" itemRotation="0" frame="false" pagex="169.345">
+          <FrameColor alpha="255" red="0" blue="0" green="0"/>
+          <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+          <customproperties/>
+        </ComposerItem>
+      </ComposerLabel>
+      <ComposerLabel valign="32" marginX="1" marginY="1" labelText="Forest change [%]" htmlState="0" halign="1">
+        <LabelFont description="Times New Roman,10,-1,5,50,0,0,0,0,0" style="Regular"/>
+        <FontColor red="0" blue="0" green="0"/>
+        <ComposerItem pagey="71.1359" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="44.8539" y="71.1359" visibility="1" zValue="3" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="29.0645" outlineWidth="0.3" excludeFromExports="0" uuid="{b04de9e8-6ae7-4885-9a5b-86fc8483bc07}" height="6.05305" itemRotation="0" frame="false" pagex="44.8539">
+          <FrameColor alpha="255" red="0" blue="0" green="0"/>
+          <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+          <customproperties/>
+        </ComposerItem>
+      </ComposerLabel>
+      <ComposerLegend symbolWidth="7" title="Legend" rasterBorderWidth="0" titleAlignment="1" map="0" wmsLegendWidth="50" rasterBorderColor="0,0,0,255" wrapChar="" fontColor="#000000" legendFilterByAtlas="0" columnCount="1" wmsLegendHeight="25" columnSpace="2" symbolHeight="4" equalColumnWidth="0" resizeToContents="1" splitLayer="0" boxSpace="2" rasterBorder="1">
+        <styles>
+          <style marginBottom="2" name="title">
+            <styleFont description="Times New Roman,10,-1,5,50,0,1,0,0,0" style="Regular"/>
+          </style>
+          <style marginTop="2" name="group">
+            <styleFont description="Times New Roman,10,-1,5,50,0,0,0,0,0" style="Regular"/>
+          </style>
+          <style marginTop="2" name="subgroup">
+            <styleFont description="Times New Roman,10,-1,5,50,0,0,0,0,0" style="Regular"/>
+          </style>
+          <style marginTop="2" name="symbol">
+            <styleFont description="Ubuntu,11,-1,5,50,0,0,0,0,0" style=""/>
+          </style>
+          <style marginTop="2" marginLeft="2" name="symbolLabel">
+            <styleFont description="Times New Roman,10,-1,5,50,0,0,0,0,0" style="Regular"/>
+          </style>
+        </styles>
+        <layer-tree-group expanded="1" checked="Qt::Checked" name="">
+          <customproperties/>
+          <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="hexboundaries_americas20180814074746164" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/shp/hexboundaries_americas.shp" name="hexboundaries_americas">
+            <customproperties>
+              <property key="legend/title-label" value="Country boundary"/>
+            </customproperties>
+          </layer-tree-layer>
+          <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="driver_normalized_scaled_ratio_americas20180814074624461" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/shp/driver_normalized_scaled_ratio_americas.shp" name="driver_normalized_scaled_ratio_americas">
+            <customproperties>
+              <property key="legend/node-order" value="0,1,2,3,4,5,6,7,8"/>
+              <property key="legend/title-label" value="Deforestation driver"/>
+            </customproperties>
+          </layer-tree-layer>
+        </layer-tree-group>
+        <ComposerItem pagey="24.7574" page="1" id="legend" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="151.245" y="24.7574" visibility="1" zValue="2" background="true" transparency="0" frameJoinStyle="round" blendMode="0" width="38.5625" outlineWidth="0.3" excludeFromExports="0" uuid="{c7b7ccd2-5c15-40bc-9870-67394b51afc5}" height="78.6894" itemRotation="0" frame="true" pagex="151.245">
+          <FrameColor alpha="255" red="0" blue="0" green="0"/>
+          <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+          <customproperties/>
+        </ComposerItem>
+      </ComposerLegend>
+      <ComposerMap followPreset="false" mapRotation="0" keepLayerSet="false" followPresetName="" id="0" previewMode="Cache" drawCanvasItems="true">
+        <Extent ymin="-26.57177018816103242" xmin="-113.77815875348629504" ymax="28.79658673364096444" xmax="-32.86051233596082"/>
+        <LayerSet/>
+        <Grid/>
+        <ComposerMapGrid rightAnnotationDirection="0" gridFramePenColor="0,0,0,255" show="0" bottomAnnotationPosition="1" annotationPrecision="3" showAnnotation="0" topFrameDivisions="0" uuid="{03ebd1b7-598e-4e4e-b2d5-9ff54f1cbe4a}" leftAnnotationDirection="0" topAnnotationPosition="1" rightAnnotationDisplay="0" offsetX="0" offsetY="0" rightFrameDivisions="0" gridStyle="0" annotationFontColor="0,0,0,255" intervalX="0" gridFrameSideFlags="15" intervalY="0" bottomAnnotationDirection="0" leftAnnotationDisplay="0" leftFrameDivisions="0" frameFillColor1="255,255,255,255" annotationExpression="" frameFillColor2="0,0,0,255" crossLength="3" gridFramePenThickness="0.5" bottomAnnotationDisplay="0" unit="0" topAnnotationDisplay="0" leftAnnotationPosition="1" blendMode="0" gridFrameStyle="0" rightAnnotationPosition="1" gridFrameWidth="2" name="Grid 1" annotationFormat="0" bottomFrameDivisions="0" topAnnotationDirection="0" frameAnnotationDistance="1">
+          <lineStyle>
+            <symbol alpha="1" clip_to_extent="1" type="line" name="">
+              <layer pass="0" class="SimpleLine" locked="0">
+                <prop k="capstyle" v="square"/>
+                <prop k="customdash" v="5;2"/>
+                <prop k="customdash_map_unit_scale" v="0,0,0,0,0,0"/>
+                <prop k="customdash_unit" v="MM"/>
+                <prop k="draw_inside_polygon" v="0"/>
+                <prop k="joinstyle" v="bevel"/>
+                <prop k="line_color" v="0,0,0,255"/>
+                <prop k="line_style" v="solid"/>
+                <prop k="line_width" v="0"/>
+                <prop k="line_width_unit" v="MM"/>
+                <prop k="offset" v="0"/>
+                <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
+                <prop k="offset_unit" v="MM"/>
+                <prop k="use_custom_dash" v="0"/>
+                <prop k="width_map_unit_scale" v="0,0,0,0,0,0"/>
+              </layer>
+            </symbol>
+          </lineStyle>
+          <markerStyle>
+            <symbol alpha="1" clip_to_extent="1" type="marker" name="">
+              <layer pass="0" class="SimpleMarker" locked="0">
+                <prop k="angle" v="0"/>
+                <prop k="color" v="0,0,0,255"/>
+                <prop k="horizontal_anchor_point" v="1"/>
+                <prop k="joinstyle" v="bevel"/>
+                <prop k="name" v="circle"/>
+                <prop k="offset" v="0,0"/>
+                <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
+                <prop k="offset_unit" v="MM"/>
+                <prop k="outline_color" v="0,0,0,255"/>
+                <prop k="outline_style" v="solid"/>
+                <prop k="outline_width" v="0"/>
+                <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
+                <prop k="outline_width_unit" v="MM"/>
+                <prop k="scale_method" v="diameter"/>
+                <prop k="size" v="2"/>
+                <prop k="size_map_unit_scale" v="0,0,0,0,0,0"/>
+                <prop k="size_unit" v="MM"/>
+                <prop k="vertical_anchor_point" v="1"/>
+              </layer>
+            </symbol>
+          </markerStyle>
+          <annotationFontProperties description="Ubuntu,11,-1,5,50,0,0,0,0,0" style=""/>
+        </ComposerMapGrid>
+        <AtlasMap scalingMode="2" atlasDriven="0" margin="0.10000000000000001"/>
+        <ComposerItem pagey="24.7574" page="1" id="americas" lastValidViewScaleFactor="7.5013" positionMode="0" positionLock="false" x="34.9605" y="24.7574" visibility="1" zValue="1" background="true" transparency="0" frameJoinStyle="round" blendMode="0" width="115" outlineWidth="0.3" excludeFromExports="0" uuid="{aa4f7cca-8817-4ecf-ac5d-623efee0fe1f}" height="78.6894" itemRotation="0" frame="true" pagex="34.9605">
+          <FrameColor alpha="255" red="0" blue="0" green="0"/>
+          <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+          <customproperties/>
+        </ComposerItem>
+      </ComposerMap>
+      <customproperties>
+        <property key="imageCropMarginBottom" value="0"/>
+        <property key="imageCropMarginLeft" value="0"/>
+        <property key="imageCropMarginRight" value="0"/>
+        <property key="imageCropMarginTop" value="0"/>
+        <property key="imageCropToContents" value="false"/>
+      </customproperties>
+    </Composition>
+  </Composer>
   <projectlayers>
+    <maplayer simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+      <extent>
+        <xmin>-112.92542926817647242</xmin>
+        <ymin>-25.62060569610147454</ymin>
+        <xmax>-33.40725431323443928</xmax>
+        <ymax>27.11366965301751364</ymax>
+      </extent>
+      <id>driver_americas20180903140027413</id>
+      <datasource>../../data/proc/agg/shp/driver_americas.shp</datasource>
+      <keywordList>
+        <value></value>
+      </keywordList>
+      <layername>driver_americas</layername>
+      <srs>
+        <spatialrefsys>
+          <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
+          <srsid>3452</srsid>
+          <srid>4326</srid>
+          <authid>EPSG:4326</authid>
+          <description>WGS 84</description>
+          <projectionacronym>longlat</projectionacronym>
+          <ellipsoidacronym>WGS84</ellipsoidacronym>
+          <geographicflag>true</geographicflag>
+        </spatialrefsys>
+      </srs>
+      <provider encoding="UTF-8">ogr</provider>
+      <vectorjoins/>
+      <layerDependencies/>
+      <expressionfields/>
+      <map-layer-style-manager current="">
+        <map-layer-style name=""/>
+      </map-layer-style-manager>
+      <edittypes>
+        <edittype widgetv2type="TextEdit" name="10">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="100">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="25">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="30">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="40">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="50">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="60">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="80">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="90">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="covered">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="impact">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="im/co">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="scaling">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="linear">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="normalized">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+      </edittypes>
+      <renderer-v2 forceraster="0" symbollevels="0" type="singleSymbol" enableorderby="0">
+        <symbols>
+          <symbol alpha="1" clip_to_extent="1" type="fill" name="0">
+            <layer pass="0" class="SimpleFill" locked="0">
+              <prop k="border_width_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="color" v="138,99,115,255"/>
+              <prop k="joinstyle" v="bevel"/>
+              <prop k="offset" v="0,0"/>
+              <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="offset_unit" v="MM"/>
+              <prop k="outline_color" v="0,0,0,255"/>
+              <prop k="outline_style" v="solid"/>
+              <prop k="outline_width" v="0.26"/>
+              <prop k="outline_width_unit" v="MM"/>
+              <prop k="style" v="solid"/>
+            </layer>
+          </symbol>
+        </symbols>
+        <rotation/>
+        <sizescale scalemethod="diameter"/>
+      </renderer-v2>
+      <labeling type="simple"/>
+      <customproperties/>
+      <blendMode>0</blendMode>
+      <featureBlendMode>0</featureBlendMode>
+      <layerTransparency>0</layerTransparency>
+      <displayfield>10</displayfield>
+      <label>0</label>
+      <labelattributes>
+        <label fieldname="" text="Label"/>
+        <family fieldname="" name="Ubuntu"/>
+        <size fieldname="" units="pt" value="12"/>
+        <bold fieldname="" on="0"/>
+        <italic fieldname="" on="0"/>
+        <underline fieldname="" on="0"/>
+        <strikeout fieldname="" on="0"/>
+        <color fieldname="" red="0" blue="0" green="0"/>
+        <x fieldname=""/>
+        <y fieldname=""/>
+        <offset x="0" y="0" units="pt" yfieldname="" xfieldname=""/>
+        <angle fieldname="" value="0" auto="0"/>
+        <alignment fieldname="" value="center"/>
+        <buffercolor fieldname="" red="255" blue="255" green="255"/>
+        <buffersize fieldname="" units="pt" value="1"/>
+        <bufferenabled fieldname="" on=""/>
+        <multilineenabled fieldname="" on=""/>
+        <selectedonly on=""/>
+      </labelattributes>
+      <annotationform></annotationform>
+      <aliases>
+        <alias field="10" index="0" name=""/>
+        <alias field="100" index="1" name=""/>
+        <alias field="25" index="2" name=""/>
+        <alias field="30" index="3" name=""/>
+        <alias field="40" index="4" name=""/>
+        <alias field="50" index="5" name=""/>
+        <alias field="60" index="6" name=""/>
+        <alias field="80" index="7" name=""/>
+        <alias field="90" index="8" name=""/>
+        <alias field="covered" index="9" name=""/>
+        <alias field="impact" index="10" name=""/>
+        <alias field="im/co" index="11" name=""/>
+        <alias field="scaling" index="12" name=""/>
+        <alias field="linear" index="13" name=""/>
+        <alias field="normalized" index="14" name=""/>
+      </aliases>
+      <excludeAttributesWMS/>
+      <excludeAttributesWFS/>
+      <attributeactions default="-1"/>
+      <attributetableconfig actionWidgetStyle="dropDown" sortExpression="&quot;normalized&quot;" sortOrder="1">
+        <columns>
+          <column width="-1" hidden="0" type="field" name="10"/>
+          <column width="-1" hidden="0" type="field" name="100"/>
+          <column width="-1" hidden="0" type="field" name="25"/>
+          <column width="-1" hidden="0" type="field" name="30"/>
+          <column width="-1" hidden="0" type="field" name="40"/>
+          <column width="-1" hidden="0" type="field" name="50"/>
+          <column width="-1" hidden="0" type="field" name="60"/>
+          <column width="-1" hidden="0" type="field" name="80"/>
+          <column width="-1" hidden="0" type="field" name="90"/>
+          <column width="-1" hidden="0" type="field" name="covered"/>
+          <column width="-1" hidden="0" type="field" name="impact"/>
+          <column width="-1" hidden="0" type="field" name="im/co"/>
+          <column width="-1" hidden="0" type="field" name="scaling"/>
+          <column width="-1" hidden="0" type="field" name="linear"/>
+          <column width="-1" hidden="0" type="field" name="normalized"/>
+          <column width="-1" hidden="1" type="actions"/>
+        </columns>
+      </attributetableconfig>
+      <editform></editform>
+      <editforminit/>
+      <editforminitcodesource>0</editforminitcodesource>
+      <editforminitfilepath></editforminitfilepath>
+      <editforminitcode><![CDATA[]]></editforminitcode>
+      <featformsuppress>0</featformsuppress>
+      <editorlayout>generatedlayout</editorlayout>
+      <widgets/>
+      <conditionalstyles>
+        <rowstyles/>
+        <fieldstyles/>
+      </conditionalstyles>
+      <defaults>
+        <default field="10" expression=""/>
+        <default field="100" expression=""/>
+        <default field="25" expression=""/>
+        <default field="30" expression=""/>
+        <default field="40" expression=""/>
+        <default field="50" expression=""/>
+        <default field="60" expression=""/>
+        <default field="80" expression=""/>
+        <default field="90" expression=""/>
+        <default field="covered" expression=""/>
+        <default field="impact" expression=""/>
+        <default field="im/co" expression=""/>
+        <default field="scaling" expression=""/>
+        <default field="linear" expression=""/>
+        <default field="normalized" expression=""/>
+      </defaults>
+      <previewExpression>COALESCE( "10", '&lt;NULL>' )</previewExpression>
+    </maplayer>
     <maplayer simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
       <extent>
         <xmin>-26.34650597272364081</xmin>
@@ -147,14 +510,16 @@
       </edittypes>
       <renderer-v2 attr="class" forceraster="0" symbollevels="0" type="categorizedSymbol" enableorderby="0">
         <categories>
-          <category render="true" symbol="0" value="10" label="10"/>
-          <category render="true" symbol="1" value="25" label="25"/>
-          <category render="true" symbol="2" value="30" label="30"/>
-          <category render="true" symbol="3" value="40" label="40"/>
-          <category render="true" symbol="4" value="50" label="50"/>
-          <category render="true" symbol="5" value="60" label="60"/>
-          <category render="true" symbol="6" value="80" label="80"/>
-          <category render="true" symbol="7" value="90" label="90"/>
+          <category render="true" symbol="0" value="10" label="Cultivated land"/>
+          <category render="true" symbol="1" value="25" label="Forest regrowth"/>
+          <category render="true" symbol="2" value="30" label="Grassland"/>
+          <category render="true" symbol="3" value="40" label="Shrubland"/>
+          <category render="true" symbol="4" value="50" label="Wetland"/>
+          <category render="true" symbol="5" value="60" label="Water"/>
+          <category render="true" symbol="6" value="70" label="Tundra"/>
+          <category render="true" symbol="7" value="80" label="Artificial land"/>
+          <category render="true" symbol="8" value="90" label="Bareland"/>
+          <category render="true" symbol="9" value="100" label="Snow"/>
         </categories>
         <symbols>
           <symbol alpha="1" clip_to_extent="1" type="fill" name="0">
@@ -167,7 +532,7 @@
               <prop k="offset_unit" v="MM"/>
               <prop k="outline_color" v="0,0,0,255"/>
               <prop k="outline_style" v="solid"/>
-              <prop k="outline_width" v="0.06"/>
+              <prop k="outline_width" v="0.03"/>
               <prop k="outline_width_unit" v="MM"/>
               <prop k="style" v="solid"/>
             </layer>
@@ -182,7 +547,7 @@
               <prop k="offset_unit" v="MM"/>
               <prop k="outline_color" v="0,0,0,255"/>
               <prop k="outline_style" v="solid"/>
-              <prop k="outline_width" v="0.06"/>
+              <prop k="outline_width" v="0.03"/>
               <prop k="outline_width_unit" v="MM"/>
               <prop k="style" v="solid"/>
             </layer>
@@ -197,7 +562,7 @@
               <prop k="offset_unit" v="MM"/>
               <prop k="outline_color" v="0,0,0,255"/>
               <prop k="outline_style" v="solid"/>
-              <prop k="outline_width" v="0.06"/>
+              <prop k="outline_width" v="0.03"/>
               <prop k="outline_width_unit" v="MM"/>
               <prop k="style" v="solid"/>
             </layer>
@@ -205,14 +570,14 @@
           <symbol alpha="1" clip_to_extent="1" type="fill" name="3">
             <layer pass="0" class="SimpleFill" locked="0">
               <prop k="border_width_map_unit_scale" v="0,0,0,0,0,0"/>
-              <prop k="color" v="0,255,0,255"/>
+              <prop k="color" v="202,178,214,255"/>
               <prop k="joinstyle" v="bevel"/>
               <prop k="offset" v="0,0"/>
               <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="offset_unit" v="MM"/>
               <prop k="outline_color" v="0,0,0,255"/>
               <prop k="outline_style" v="solid"/>
-              <prop k="outline_width" v="0.06"/>
+              <prop k="outline_width" v="0.03"/>
               <prop k="outline_width_unit" v="MM"/>
               <prop k="style" v="solid"/>
             </layer>
@@ -220,14 +585,14 @@
           <symbol alpha="1" clip_to_extent="1" type="fill" name="4">
             <layer pass="0" class="SimpleFill" locked="0">
               <prop k="border_width_map_unit_scale" v="0,0,0,0,0,0"/>
-              <prop k="color" v="0,255,255,255"/>
+              <prop k="color" v="166,206,227,255"/>
               <prop k="joinstyle" v="bevel"/>
               <prop k="offset" v="0,0"/>
               <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="offset_unit" v="MM"/>
               <prop k="outline_color" v="0,0,0,255"/>
               <prop k="outline_style" v="solid"/>
-              <prop k="outline_width" v="0.06"/>
+              <prop k="outline_width" v="0.03"/>
               <prop k="outline_width_unit" v="MM"/>
               <prop k="style" v="solid"/>
             </layer>
@@ -242,12 +607,27 @@
               <prop k="offset_unit" v="MM"/>
               <prop k="outline_color" v="0,0,0,255"/>
               <prop k="outline_style" v="solid"/>
-              <prop k="outline_width" v="0.06"/>
+              <prop k="outline_width" v="0.03"/>
               <prop k="outline_width_unit" v="MM"/>
               <prop k="style" v="solid"/>
             </layer>
           </symbol>
           <symbol alpha="1" clip_to_extent="1" type="fill" name="6">
+            <layer pass="0" class="SimpleFill" locked="0">
+              <prop k="border_width_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="color" v="251,154,153,255"/>
+              <prop k="joinstyle" v="bevel"/>
+              <prop k="offset" v="0,0"/>
+              <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="offset_unit" v="MM"/>
+              <prop k="outline_color" v="0,0,0,255"/>
+              <prop k="outline_style" v="solid"/>
+              <prop k="outline_width" v="0.03"/>
+              <prop k="outline_width_unit" v="MM"/>
+              <prop k="style" v="solid"/>
+            </layer>
+          </symbol>
+          <symbol alpha="1" clip_to_extent="1" type="fill" name="7">
             <layer pass="0" class="SimpleFill" locked="0">
               <prop k="border_width_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="color" v="227,26,28,255"/>
@@ -257,22 +637,37 @@
               <prop k="offset_unit" v="MM"/>
               <prop k="outline_color" v="0,0,0,255"/>
               <prop k="outline_style" v="solid"/>
-              <prop k="outline_width" v="0.06"/>
+              <prop k="outline_width" v="0.03"/>
               <prop k="outline_width_unit" v="MM"/>
               <prop k="style" v="solid"/>
             </layer>
           </symbol>
-          <symbol alpha="1" clip_to_extent="1" type="fill" name="7">
+          <symbol alpha="1" clip_to_extent="1" type="fill" name="8">
             <layer pass="0" class="SimpleFill" locked="0">
               <prop k="border_width_map_unit_scale" v="0,0,0,0,0,0"/>
-              <prop k="color" v="255,255,191,255"/>
+              <prop k="color" v="253,191,111,255"/>
               <prop k="joinstyle" v="bevel"/>
               <prop k="offset" v="0,0"/>
               <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="offset_unit" v="MM"/>
               <prop k="outline_color" v="0,0,0,255"/>
               <prop k="outline_style" v="solid"/>
-              <prop k="outline_width" v="0.06"/>
+              <prop k="outline_width" v="0.03"/>
+              <prop k="outline_width_unit" v="MM"/>
+              <prop k="style" v="solid"/>
+            </layer>
+          </symbol>
+          <symbol alpha="1" clip_to_extent="1" type="fill" name="9">
+            <layer pass="0" class="SimpleFill" locked="0">
+              <prop k="border_width_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="color" v="106,61,154,255"/>
+              <prop k="joinstyle" v="bevel"/>
+              <prop k="offset" v="0,0"/>
+              <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="offset_unit" v="MM"/>
+              <prop k="outline_color" v="0,0,0,255"/>
+              <prop k="outline_style" v="solid"/>
+              <prop k="outline_width" v="0.03"/>
               <prop k="outline_width_unit" v="MM"/>
               <prop k="style" v="solid"/>
             </layer>
@@ -289,7 +684,7 @@
               <prop k="offset_unit" v="MM"/>
               <prop k="outline_color" v="0,0,0,255"/>
               <prop k="outline_style" v="solid"/>
-              <prop k="outline_width" v="0.06"/>
+              <prop k="outline_width" v="0.03"/>
               <prop k="outline_width_unit" v="MM"/>
               <prop k="style" v="solid"/>
             </layer>
@@ -470,6 +865,7 @@
       <SingleCategoryDiagramRenderer diagramType="Histogram" sizeLegend="0" attributeLegend="1">
         <DiagramCategory penColor="#000000" labelPlacementMethod="XHeight" penWidth="0" diagramOrientation="Up" sizeScale="0,0,0,0,0,0" minimumSize="0" barWidth="5" penAlpha="255" maxScaleDenominator="1e+08" backgroundColor="#ffffff" transparency="0" width="15" scaleDependency="Area" backgroundAlpha="255" angleOffset="1440" scaleBasedVisibility="0" enabled="0" height="15" lineSizeScale="0,0,0,0,0,0" sizeType="MM" lineSizeType="MM" minScaleDenominator="inf">
           <fontProperties description="Ubuntu,11,-1,5,50,0,0,0,0,0" style=""/>
+          <attribute field="" color="#000000" label=""/>
         </DiagramCategory>
         <symbol alpha="1" clip_to_extent="1" type="marker" name="sizeSymbol">
           <layer pass="0" class="SimpleMarker" locked="0">
@@ -495,7 +891,7 @@
         </symbol>
       </SingleCategoryDiagramRenderer>
       <DiagramLayerSettings yPosColumn="-1" showColumn="-1" linePlacementFlags="10" placement="0" dist="0" xPosColumn="-1" priority="0" obstacle="0" zIndex="0" showAll="1"/>
-      <annotationform></annotationform>
+      <annotationform>.</annotationform>
       <aliases>
         <alias field="id" index="0" name=""/>
         <alias field="class" index="1" name=""/>
@@ -507,7 +903,7 @@
       <excludeAttributesWMS/>
       <excludeAttributesWFS/>
       <attributeactions default="-1"/>
-      <attributetableconfig actionWidgetStyle="dropDown" sortExpression="&quot;im/co&quot;" sortOrder="1">
+      <attributetableconfig actionWidgetStyle="dropDown" sortExpression="" sortOrder="0">
         <columns>
           <column width="-1" hidden="0" type="field" name="class"/>
           <column width="-1" hidden="0" type="field" name="ratio"/>
@@ -518,10 +914,10 @@
           <column width="-1" hidden="0" type="field" name="im/co"/>
         </columns>
       </attributetableconfig>
-      <editform></editform>
+      <editform>.</editform>
       <editforminit/>
       <editforminitcodesource>0</editforminitcodesource>
-      <editforminitfilepath></editforminitfilepath>
+      <editforminitfilepath>.</editforminitfilepath>
       <editforminitcode><![CDATA[# -*- coding: utf-8 -*-
 """
 QGIS forms can have a Python function that is called when the form is
@@ -589,26 +985,37 @@ def my_form_open(dialog, layer, feature):
         <map-layer-style name=""/>
       </map-layer-style-manager>
       <edittypes>
+        <edittype widgetv2type="TextEdit" name="id">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
         <edittype widgetv2type="TextEdit" name="class">
           <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="ratio">
           <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="id">
+        <edittype widgetv2type="TextEdit" name="covered">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="impact">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="im/co">
           <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
       </edittypes>
       <renderer-v2 attr="class" forceraster="0" symbollevels="0" type="categorizedSymbol" enableorderby="0">
         <categories>
-          <category render="true" symbol="0" value="10" label="10"/>
-          <category render="true" symbol="1" value="25" label="25"/>
-          <category render="true" symbol="2" value="30" label="30"/>
-          <category render="true" symbol="3" value="40" label="40"/>
-          <category render="true" symbol="4" value="50" label="50"/>
-          <category render="true" symbol="5" value="60" label="60"/>
-          <category render="true" symbol="6" value="80" label="80"/>
-          <category render="true" symbol="7" value="90" label="90"/>
+          <category render="true" symbol="0" value="10" label="Cultivated land"/>
+          <category render="true" symbol="1" value="25" label="Forest regrowth"/>
+          <category render="true" symbol="2" value="30" label="Grassland"/>
+          <category render="true" symbol="3" value="40" label="Shrubland"/>
+          <category render="true" symbol="4" value="50" label="Wetland"/>
+          <category render="true" symbol="5" value="60" label="Water"/>
+          <category render="true" symbol="6" value="70" label="Tundra"/>
+          <category render="true" symbol="7" value="80" label="Artificial land"/>
+          <category render="true" symbol="8" value="90" label="Bareland"/>
+          <category render="true" symbol="9" value="100" label="Snow"/>
         </categories>
         <symbols>
           <symbol alpha="1" clip_to_extent="1" type="fill" name="0">
@@ -621,7 +1028,7 @@ def my_form_open(dialog, layer, feature):
               <prop k="offset_unit" v="MM"/>
               <prop k="outline_color" v="0,0,0,255"/>
               <prop k="outline_style" v="solid"/>
-              <prop k="outline_width" v="0.06"/>
+              <prop k="outline_width" v="0.03"/>
               <prop k="outline_width_unit" v="MM"/>
               <prop k="style" v="solid"/>
             </layer>
@@ -636,7 +1043,7 @@ def my_form_open(dialog, layer, feature):
               <prop k="offset_unit" v="MM"/>
               <prop k="outline_color" v="0,0,0,255"/>
               <prop k="outline_style" v="solid"/>
-              <prop k="outline_width" v="0.06"/>
+              <prop k="outline_width" v="0.03"/>
               <prop k="outline_width_unit" v="MM"/>
               <prop k="style" v="solid"/>
             </layer>
@@ -651,7 +1058,7 @@ def my_form_open(dialog, layer, feature):
               <prop k="offset_unit" v="MM"/>
               <prop k="outline_color" v="0,0,0,255"/>
               <prop k="outline_style" v="solid"/>
-              <prop k="outline_width" v="0.06"/>
+              <prop k="outline_width" v="0.03"/>
               <prop k="outline_width_unit" v="MM"/>
               <prop k="style" v="solid"/>
             </layer>
@@ -659,14 +1066,14 @@ def my_form_open(dialog, layer, feature):
           <symbol alpha="1" clip_to_extent="1" type="fill" name="3">
             <layer pass="0" class="SimpleFill" locked="0">
               <prop k="border_width_map_unit_scale" v="0,0,0,0,0,0"/>
-              <prop k="color" v="0,255,0,255"/>
+              <prop k="color" v="202,178,214,255"/>
               <prop k="joinstyle" v="bevel"/>
               <prop k="offset" v="0,0"/>
               <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="offset_unit" v="MM"/>
               <prop k="outline_color" v="0,0,0,255"/>
               <prop k="outline_style" v="solid"/>
-              <prop k="outline_width" v="0.06"/>
+              <prop k="outline_width" v="0.03"/>
               <prop k="outline_width_unit" v="MM"/>
               <prop k="style" v="solid"/>
             </layer>
@@ -674,14 +1081,14 @@ def my_form_open(dialog, layer, feature):
           <symbol alpha="1" clip_to_extent="1" type="fill" name="4">
             <layer pass="0" class="SimpleFill" locked="0">
               <prop k="border_width_map_unit_scale" v="0,0,0,0,0,0"/>
-              <prop k="color" v="0,255,255,255"/>
+              <prop k="color" v="166,206,227,255"/>
               <prop k="joinstyle" v="bevel"/>
               <prop k="offset" v="0,0"/>
               <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="offset_unit" v="MM"/>
               <prop k="outline_color" v="0,0,0,255"/>
               <prop k="outline_style" v="solid"/>
-              <prop k="outline_width" v="0.06"/>
+              <prop k="outline_width" v="0.03"/>
               <prop k="outline_width_unit" v="MM"/>
               <prop k="style" v="solid"/>
             </layer>
@@ -696,12 +1103,27 @@ def my_form_open(dialog, layer, feature):
               <prop k="offset_unit" v="MM"/>
               <prop k="outline_color" v="0,0,0,255"/>
               <prop k="outline_style" v="solid"/>
-              <prop k="outline_width" v="0.06"/>
+              <prop k="outline_width" v="0.03"/>
               <prop k="outline_width_unit" v="MM"/>
               <prop k="style" v="solid"/>
             </layer>
           </symbol>
           <symbol alpha="1" clip_to_extent="1" type="fill" name="6">
+            <layer pass="0" class="SimpleFill" locked="0">
+              <prop k="border_width_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="color" v="251,154,153,255"/>
+              <prop k="joinstyle" v="bevel"/>
+              <prop k="offset" v="0,0"/>
+              <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="offset_unit" v="MM"/>
+              <prop k="outline_color" v="0,0,0,255"/>
+              <prop k="outline_style" v="solid"/>
+              <prop k="outline_width" v="0.03"/>
+              <prop k="outline_width_unit" v="MM"/>
+              <prop k="style" v="solid"/>
+            </layer>
+          </symbol>
+          <symbol alpha="1" clip_to_extent="1" type="fill" name="7">
             <layer pass="0" class="SimpleFill" locked="0">
               <prop k="border_width_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="color" v="227,26,28,255"/>
@@ -711,22 +1133,37 @@ def my_form_open(dialog, layer, feature):
               <prop k="offset_unit" v="MM"/>
               <prop k="outline_color" v="0,0,0,255"/>
               <prop k="outline_style" v="solid"/>
-              <prop k="outline_width" v="0.06"/>
+              <prop k="outline_width" v="0.03"/>
               <prop k="outline_width_unit" v="MM"/>
               <prop k="style" v="solid"/>
             </layer>
           </symbol>
-          <symbol alpha="1" clip_to_extent="1" type="fill" name="7">
+          <symbol alpha="1" clip_to_extent="1" type="fill" name="8">
             <layer pass="0" class="SimpleFill" locked="0">
               <prop k="border_width_map_unit_scale" v="0,0,0,0,0,0"/>
-              <prop k="color" v="255,255,191,255"/>
+              <prop k="color" v="253,191,111,255"/>
               <prop k="joinstyle" v="bevel"/>
               <prop k="offset" v="0,0"/>
               <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="offset_unit" v="MM"/>
               <prop k="outline_color" v="0,0,0,255"/>
               <prop k="outline_style" v="solid"/>
-              <prop k="outline_width" v="0.06"/>
+              <prop k="outline_width" v="0.03"/>
+              <prop k="outline_width_unit" v="MM"/>
+              <prop k="style" v="solid"/>
+            </layer>
+          </symbol>
+          <symbol alpha="1" clip_to_extent="1" type="fill" name="9">
+            <layer pass="0" class="SimpleFill" locked="0">
+              <prop k="border_width_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="color" v="106,61,154,255"/>
+              <prop k="joinstyle" v="bevel"/>
+              <prop k="offset" v="0,0"/>
+              <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="offset_unit" v="MM"/>
+              <prop k="outline_color" v="0,0,0,255"/>
+              <prop k="outline_style" v="solid"/>
+              <prop k="outline_width" v="0.03"/>
               <prop k="outline_width_unit" v="MM"/>
               <prop k="style" v="solid"/>
             </layer>
@@ -743,7 +1180,7 @@ def my_form_open(dialog, layer, feature):
               <prop k="offset_unit" v="MM"/>
               <prop k="outline_color" v="0,0,0,255"/>
               <prop k="outline_style" v="solid"/>
-              <prop k="outline_width" v="0.06"/>
+              <prop k="outline_width" v="0.03"/>
               <prop k="outline_width_unit" v="MM"/>
               <prop k="style" v="solid"/>
             </layer>
@@ -924,6 +1361,7 @@ def my_form_open(dialog, layer, feature):
       <SingleCategoryDiagramRenderer diagramType="Histogram" sizeLegend="0" attributeLegend="1">
         <DiagramCategory penColor="#000000" labelPlacementMethod="XHeight" penWidth="0" diagramOrientation="Up" sizeScale="0,0,0,0,0,0" minimumSize="0" barWidth="5" penAlpha="255" maxScaleDenominator="1e+08" backgroundColor="#ffffff" transparency="0" width="15" scaleDependency="Area" backgroundAlpha="255" angleOffset="1440" scaleBasedVisibility="0" enabled="0" height="15" lineSizeScale="0,0,0,0,0,0" sizeType="MM" lineSizeType="MM" minScaleDenominator="inf">
           <fontProperties description="Ubuntu,11,-1,5,50,0,0,0,0,0" style=""/>
+          <attribute field="" color="#000000" label=""/>
         </DiagramCategory>
         <symbol alpha="1" clip_to_extent="1" type="marker" name="sizeSymbol">
           <layer pass="0" class="SimpleMarker" locked="0">
@@ -949,27 +1387,33 @@ def my_form_open(dialog, layer, feature):
         </symbol>
       </SingleCategoryDiagramRenderer>
       <DiagramLayerSettings yPosColumn="-1" showColumn="-1" linePlacementFlags="10" placement="0" dist="0" xPosColumn="-1" priority="0" obstacle="0" zIndex="0" showAll="1"/>
-      <annotationform></annotationform>
+      <annotationform>.</annotationform>
       <aliases>
-        <alias field="class" index="0" name=""/>
-        <alias field="ratio" index="1" name=""/>
-        <alias field="id" index="2" name=""/>
+        <alias field="id" index="0" name=""/>
+        <alias field="class" index="1" name=""/>
+        <alias field="ratio" index="2" name=""/>
+        <alias field="covered" index="3" name=""/>
+        <alias field="impact" index="4" name=""/>
+        <alias field="im/co" index="5" name=""/>
       </aliases>
       <excludeAttributesWMS/>
       <excludeAttributesWFS/>
       <attributeactions default="-1"/>
-      <attributetableconfig actionWidgetStyle="dropDown" sortExpression="" sortOrder="0">
+      <attributetableconfig actionWidgetStyle="dropDown" sortExpression="&quot;im/co&quot;" sortOrder="1">
         <columns>
           <column width="-1" hidden="0" type="field" name="class"/>
           <column width="-1" hidden="0" type="field" name="ratio"/>
           <column width="-1" hidden="0" type="field" name="id"/>
           <column width="-1" hidden="1" type="actions"/>
+          <column width="-1" hidden="0" type="field" name="covered"/>
+          <column width="-1" hidden="0" type="field" name="impact"/>
+          <column width="-1" hidden="0" type="field" name="im/co"/>
         </columns>
       </attributetableconfig>
-      <editform></editform>
+      <editform>.</editform>
       <editforminit/>
       <editforminitcodesource>0</editforminitcodesource>
-      <editforminitfilepath></editforminitfilepath>
+      <editforminitfilepath>.</editforminitfilepath>
       <editforminitcode><![CDATA[# -*- coding: utf-8 -*-
 """
 QGIS forms can have a Python function that is called when the form is
@@ -995,9 +1439,12 @@ def my_form_open(dialog, layer, feature):
         <fieldstyles/>
       </conditionalstyles>
       <defaults>
+        <default field="id" expression=""/>
         <default field="class" expression=""/>
         <default field="ratio" expression=""/>
-        <default field="id" expression=""/>
+        <default field="covered" expression=""/>
+        <default field="impact" expression=""/>
+        <default field="im/co" expression=""/>
       </defaults>
       <previewExpression>COALESCE( "id", '&lt;NULL>' )</previewExpression>
     </maplayer>
@@ -1055,14 +1502,16 @@ def my_form_open(dialog, layer, feature):
       </edittypes>
       <renderer-v2 attr="class" forceraster="0" symbollevels="0" type="categorizedSymbol" enableorderby="0">
         <categories>
-          <category render="true" symbol="0" value="10" label="10"/>
-          <category render="true" symbol="1" value="25" label="25"/>
-          <category render="true" symbol="2" value="30" label="30"/>
-          <category render="true" symbol="3" value="40" label="40"/>
-          <category render="true" symbol="4" value="50" label="50"/>
-          <category render="true" symbol="5" value="60" label="60"/>
-          <category render="true" symbol="6" value="80" label="80"/>
-          <category render="true" symbol="7" value="90" label="90"/>
+          <category render="true" symbol="0" value="10" label="Cultivated land"/>
+          <category render="true" symbol="1" value="25" label="Forest regrowth"/>
+          <category render="true" symbol="2" value="30" label="Grassland"/>
+          <category render="true" symbol="3" value="40" label="Shrubland"/>
+          <category render="true" symbol="4" value="50" label="Wetland"/>
+          <category render="true" symbol="5" value="60" label="Water"/>
+          <category render="true" symbol="6" value="70" label="Tundra"/>
+          <category render="true" symbol="7" value="80" label="Artificial land"/>
+          <category render="true" symbol="8" value="90" label="Bareland"/>
+          <category render="true" symbol="9" value="100" label="Snow"/>
         </categories>
         <symbols>
           <symbol alpha="1" clip_to_extent="1" type="fill" name="0">
@@ -1075,7 +1524,7 @@ def my_form_open(dialog, layer, feature):
               <prop k="offset_unit" v="MM"/>
               <prop k="outline_color" v="0,0,0,255"/>
               <prop k="outline_style" v="solid"/>
-              <prop k="outline_width" v="0.06"/>
+              <prop k="outline_width" v="0.03"/>
               <prop k="outline_width_unit" v="MM"/>
               <prop k="style" v="solid"/>
             </layer>
@@ -1090,7 +1539,7 @@ def my_form_open(dialog, layer, feature):
               <prop k="offset_unit" v="MM"/>
               <prop k="outline_color" v="0,0,0,255"/>
               <prop k="outline_style" v="solid"/>
-              <prop k="outline_width" v="0.06"/>
+              <prop k="outline_width" v="0.03"/>
               <prop k="outline_width_unit" v="MM"/>
               <prop k="style" v="solid"/>
             </layer>
@@ -1105,7 +1554,7 @@ def my_form_open(dialog, layer, feature):
               <prop k="offset_unit" v="MM"/>
               <prop k="outline_color" v="0,0,0,255"/>
               <prop k="outline_style" v="solid"/>
-              <prop k="outline_width" v="0.06"/>
+              <prop k="outline_width" v="0.03"/>
               <prop k="outline_width_unit" v="MM"/>
               <prop k="style" v="solid"/>
             </layer>
@@ -1113,14 +1562,14 @@ def my_form_open(dialog, layer, feature):
           <symbol alpha="1" clip_to_extent="1" type="fill" name="3">
             <layer pass="0" class="SimpleFill" locked="0">
               <prop k="border_width_map_unit_scale" v="0,0,0,0,0,0"/>
-              <prop k="color" v="0,255,0,255"/>
+              <prop k="color" v="202,178,214,255"/>
               <prop k="joinstyle" v="bevel"/>
               <prop k="offset" v="0,0"/>
               <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="offset_unit" v="MM"/>
               <prop k="outline_color" v="0,0,0,255"/>
               <prop k="outline_style" v="solid"/>
-              <prop k="outline_width" v="0.06"/>
+              <prop k="outline_width" v="0.03"/>
               <prop k="outline_width_unit" v="MM"/>
               <prop k="style" v="solid"/>
             </layer>
@@ -1128,14 +1577,14 @@ def my_form_open(dialog, layer, feature):
           <symbol alpha="1" clip_to_extent="1" type="fill" name="4">
             <layer pass="0" class="SimpleFill" locked="0">
               <prop k="border_width_map_unit_scale" v="0,0,0,0,0,0"/>
-              <prop k="color" v="0,255,255,255"/>
+              <prop k="color" v="166,206,227,255"/>
               <prop k="joinstyle" v="bevel"/>
               <prop k="offset" v="0,0"/>
               <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="offset_unit" v="MM"/>
               <prop k="outline_color" v="0,0,0,255"/>
               <prop k="outline_style" v="solid"/>
-              <prop k="outline_width" v="0.06"/>
+              <prop k="outline_width" v="0.03"/>
               <prop k="outline_width_unit" v="MM"/>
               <prop k="style" v="solid"/>
             </layer>
@@ -1150,12 +1599,27 @@ def my_form_open(dialog, layer, feature):
               <prop k="offset_unit" v="MM"/>
               <prop k="outline_color" v="0,0,0,255"/>
               <prop k="outline_style" v="solid"/>
-              <prop k="outline_width" v="0.06"/>
+              <prop k="outline_width" v="0.03"/>
               <prop k="outline_width_unit" v="MM"/>
               <prop k="style" v="solid"/>
             </layer>
           </symbol>
           <symbol alpha="1" clip_to_extent="1" type="fill" name="6">
+            <layer pass="0" class="SimpleFill" locked="0">
+              <prop k="border_width_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="color" v="251,154,153,255"/>
+              <prop k="joinstyle" v="bevel"/>
+              <prop k="offset" v="0,0"/>
+              <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="offset_unit" v="MM"/>
+              <prop k="outline_color" v="0,0,0,255"/>
+              <prop k="outline_style" v="solid"/>
+              <prop k="outline_width" v="0.03"/>
+              <prop k="outline_width_unit" v="MM"/>
+              <prop k="style" v="solid"/>
+            </layer>
+          </symbol>
+          <symbol alpha="1" clip_to_extent="1" type="fill" name="7">
             <layer pass="0" class="SimpleFill" locked="0">
               <prop k="border_width_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="color" v="227,26,28,255"/>
@@ -1165,22 +1629,37 @@ def my_form_open(dialog, layer, feature):
               <prop k="offset_unit" v="MM"/>
               <prop k="outline_color" v="0,0,0,255"/>
               <prop k="outline_style" v="solid"/>
-              <prop k="outline_width" v="0.06"/>
+              <prop k="outline_width" v="0.03"/>
               <prop k="outline_width_unit" v="MM"/>
               <prop k="style" v="solid"/>
             </layer>
           </symbol>
-          <symbol alpha="1" clip_to_extent="1" type="fill" name="7">
+          <symbol alpha="1" clip_to_extent="1" type="fill" name="8">
             <layer pass="0" class="SimpleFill" locked="0">
               <prop k="border_width_map_unit_scale" v="0,0,0,0,0,0"/>
-              <prop k="color" v="255,255,191,255"/>
+              <prop k="color" v="253,191,111,255"/>
               <prop k="joinstyle" v="bevel"/>
               <prop k="offset" v="0,0"/>
               <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="offset_unit" v="MM"/>
               <prop k="outline_color" v="0,0,0,255"/>
               <prop k="outline_style" v="solid"/>
-              <prop k="outline_width" v="0.06"/>
+              <prop k="outline_width" v="0.03"/>
+              <prop k="outline_width_unit" v="MM"/>
+              <prop k="style" v="solid"/>
+            </layer>
+          </symbol>
+          <symbol alpha="1" clip_to_extent="1" type="fill" name="9">
+            <layer pass="0" class="SimpleFill" locked="0">
+              <prop k="border_width_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="color" v="106,61,154,255"/>
+              <prop k="joinstyle" v="bevel"/>
+              <prop k="offset" v="0,0"/>
+              <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="offset_unit" v="MM"/>
+              <prop k="outline_color" v="0,0,0,255"/>
+              <prop k="outline_style" v="solid"/>
+              <prop k="outline_width" v="0.03"/>
               <prop k="outline_width_unit" v="MM"/>
               <prop k="style" v="solid"/>
             </layer>
@@ -1197,7 +1676,7 @@ def my_form_open(dialog, layer, feature):
               <prop k="offset_unit" v="MM"/>
               <prop k="outline_color" v="0,0,0,255"/>
               <prop k="outline_style" v="solid"/>
-              <prop k="outline_width" v="0.06"/>
+              <prop k="outline_width" v="0.03"/>
               <prop k="outline_width_unit" v="MM"/>
               <prop k="style" v="solid"/>
             </layer>
@@ -1378,6 +1857,7 @@ def my_form_open(dialog, layer, feature):
       <SingleCategoryDiagramRenderer diagramType="Histogram" sizeLegend="0" attributeLegend="1">
         <DiagramCategory penColor="#000000" labelPlacementMethod="XHeight" penWidth="0" diagramOrientation="Up" sizeScale="0,0,0,0,0,0" minimumSize="0" barWidth="5" penAlpha="255" maxScaleDenominator="1e+08" backgroundColor="#ffffff" transparency="0" width="15" scaleDependency="Area" backgroundAlpha="255" angleOffset="1440" scaleBasedVisibility="0" enabled="0" height="15" lineSizeScale="0,0,0,0,0,0" sizeType="MM" lineSizeType="MM" minScaleDenominator="inf">
           <fontProperties description="Ubuntu,11,-1,5,50,0,0,0,0,0" style=""/>
+          <attribute field="" color="#000000" label=""/>
         </DiagramCategory>
         <symbol alpha="1" clip_to_extent="1" type="marker" name="sizeSymbol">
           <layer pass="0" class="SimpleMarker" locked="0">
@@ -1403,7 +1883,7 @@ def my_form_open(dialog, layer, feature):
         </symbol>
       </SingleCategoryDiagramRenderer>
       <DiagramLayerSettings yPosColumn="-1" showColumn="-1" linePlacementFlags="10" placement="0" dist="0" xPosColumn="-1" priority="0" obstacle="0" zIndex="0" showAll="1"/>
-      <annotationform></annotationform>
+      <annotationform>.</annotationform>
       <aliases>
         <alias field="id" index="0" name=""/>
         <alias field="class" index="1" name=""/>
@@ -1426,10 +1906,10 @@ def my_form_open(dialog, layer, feature):
           <column width="-1" hidden="0" type="field" name="im/co"/>
         </columns>
       </attributetableconfig>
-      <editform></editform>
+      <editform>.</editform>
       <editforminit/>
       <editforminitcodesource>0</editforminitcodesource>
-      <editforminitfilepath></editforminitfilepath>
+      <editforminitfilepath>.</editforminitfilepath>
       <editforminitcode><![CDATA[# -*- coding: utf-8 -*-
 """
 QGIS forms can have a Python function that is called when the form is
@@ -1463,6 +1943,307 @@ def my_form_open(dialog, layer, feature):
         <default field="im/co" expression=""/>
       </defaults>
       <previewExpression>COALESCE( "id", '&lt;NULL>' )</previewExpression>
+    </maplayer>
+    <maplayer simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+      <id>hex_driver20180903141817986</id>
+      <datasource>../../data/auxiliary/hex_driver.shp</datasource>
+      <keywordList>
+        <value></value>
+      </keywordList>
+      <layername>hex_driver</layername>
+      <srs>
+        <spatialrefsys>
+          <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
+          <srsid>3452</srsid>
+          <srid>4326</srid>
+          <authid>EPSG:4326</authid>
+          <description>WGS 84</description>
+          <projectionacronym>longlat</projectionacronym>
+          <ellipsoidacronym>WGS84</ellipsoidacronym>
+          <geographicflag>true</geographicflag>
+        </spatialrefsys>
+      </srs>
+      <provider encoding="UTF-8">ogr</provider>
+      <vectorjoins/>
+      <layerDependencies/>
+      <expressionfields/>
+      <map-layer-style-manager current="">
+        <map-layer-style name=""/>
+      </map-layer-style-manager>
+      <edittypes>
+        <edittype widgetv2type="TextEdit" name="scale">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="label">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+      </edittypes>
+      <renderer-v2 forceraster="0" symbollevels="0" type="singleSymbol" enableorderby="0">
+        <symbols>
+          <symbol alpha="1" clip_to_extent="1" type="fill" name="0">
+            <layer pass="0" class="SimpleFill" locked="0">
+              <prop k="border_width_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="color" v="190,11,89,0"/>
+              <prop k="joinstyle" v="bevel"/>
+              <prop k="offset" v="0,0"/>
+              <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="offset_unit" v="MM"/>
+              <prop k="outline_color" v="0,0,0,255"/>
+              <prop k="outline_style" v="solid"/>
+              <prop k="outline_width" v="0.06"/>
+              <prop k="outline_width_unit" v="MM"/>
+              <prop k="style" v="solid"/>
+            </layer>
+          </symbol>
+        </symbols>
+        <rotation/>
+        <sizescale scalemethod="diameter"/>
+      </renderer-v2>
+      <labeling type="simple"/>
+      <customproperties>
+        <property key="embeddedWidgets/count" value="0"/>
+        <property key="labeling" value="pal"/>
+        <property key="labeling/addDirectionSymbol" value="false"/>
+        <property key="labeling/angleOffset" value="0"/>
+        <property key="labeling/blendMode" value="0"/>
+        <property key="labeling/bufferBlendMode" value="0"/>
+        <property key="labeling/bufferColorA" value="255"/>
+        <property key="labeling/bufferColorB" value="255"/>
+        <property key="labeling/bufferColorG" value="255"/>
+        <property key="labeling/bufferColorR" value="255"/>
+        <property key="labeling/bufferDraw" value="false"/>
+        <property key="labeling/bufferJoinStyle" value="128"/>
+        <property key="labeling/bufferNoFill" value="false"/>
+        <property key="labeling/bufferSize" value="1"/>
+        <property key="labeling/bufferSizeInMapUnits" value="false"/>
+        <property key="labeling/bufferSizeMapUnitScale" value="0,0,0,0,0,0"/>
+        <property key="labeling/bufferTransp" value="0"/>
+        <property key="labeling/centroidInside" value="false"/>
+        <property key="labeling/centroidWhole" value="false"/>
+        <property key="labeling/decimals" value="3"/>
+        <property key="labeling/displayAll" value="true"/>
+        <property key="labeling/dist" value="0"/>
+        <property key="labeling/distInMapUnits" value="false"/>
+        <property key="labeling/distMapUnitScale" value="0,0,0,0,0,0"/>
+        <property key="labeling/drawLabels" value="true"/>
+        <property key="labeling/enabled" value="true"/>
+        <property key="labeling/fieldName" value="label"/>
+        <property key="labeling/fitInPolygonOnly" value="false"/>
+        <property key="labeling/fontCapitals" value="0"/>
+        <property key="labeling/fontFamily" value="Times New Roman"/>
+        <property key="labeling/fontItalic" value="false"/>
+        <property key="labeling/fontLetterSpacing" value="0"/>
+        <property key="labeling/fontLimitPixelSize" value="false"/>
+        <property key="labeling/fontMaxPixelSize" value="10000"/>
+        <property key="labeling/fontMinPixelSize" value="3"/>
+        <property key="labeling/fontSize" value="10"/>
+        <property key="labeling/fontSizeInMapUnits" value="false"/>
+        <property key="labeling/fontSizeMapUnitScale" value="0,0,0,0,0,0"/>
+        <property key="labeling/fontStrikeout" value="false"/>
+        <property key="labeling/fontUnderline" value="false"/>
+        <property key="labeling/fontWeight" value="50"/>
+        <property key="labeling/fontWordSpacing" value="0"/>
+        <property key="labeling/formatNumbers" value="false"/>
+        <property key="labeling/isExpression" value="false"/>
+        <property key="labeling/labelOffsetInMapUnits" value="true"/>
+        <property key="labeling/labelOffsetMapUnitScale" value="0,0,0,0,0,0"/>
+        <property key="labeling/labelPerPart" value="false"/>
+        <property key="labeling/leftDirectionSymbol" value="&lt;"/>
+        <property key="labeling/limitNumLabels" value="false"/>
+        <property key="labeling/maxCurvedCharAngleIn" value="25"/>
+        <property key="labeling/maxCurvedCharAngleOut" value="-25"/>
+        <property key="labeling/maxNumLabels" value="2000"/>
+        <property key="labeling/mergeLines" value="false"/>
+        <property key="labeling/minFeatureSize" value="0"/>
+        <property key="labeling/multilineAlign" value="4294967295"/>
+        <property key="labeling/multilineHeight" value="1"/>
+        <property key="labeling/namedStyle" value="Regular"/>
+        <property key="labeling/obstacle" value="true"/>
+        <property key="labeling/obstacleFactor" value="1"/>
+        <property key="labeling/obstacleType" value="0"/>
+        <property key="labeling/offsetType" value="0"/>
+        <property key="labeling/placeDirectionSymbol" value="0"/>
+        <property key="labeling/placement" value="1"/>
+        <property key="labeling/placementFlags" value="10"/>
+        <property key="labeling/plussign" value="false"/>
+        <property key="labeling/predefinedPositionOrder" value="TR,TL,BR,BL,R,L,TSR,BSR"/>
+        <property key="labeling/preserveRotation" value="true"/>
+        <property key="labeling/previewBkgrdColor" value="#ffffff"/>
+        <property key="labeling/priority" value="5"/>
+        <property key="labeling/quadOffset" value="5"/>
+        <property key="labeling/repeatDistance" value="0"/>
+        <property key="labeling/repeatDistanceMapUnitScale" value="0,0,0,0,0,0"/>
+        <property key="labeling/repeatDistanceUnit" value="1"/>
+        <property key="labeling/reverseDirectionSymbol" value="false"/>
+        <property key="labeling/rightDirectionSymbol" value=">"/>
+        <property key="labeling/scaleMax" value="10000000"/>
+        <property key="labeling/scaleMin" value="1"/>
+        <property key="labeling/scaleVisibility" value="false"/>
+        <property key="labeling/shadowBlendMode" value="6"/>
+        <property key="labeling/shadowColorB" value="0"/>
+        <property key="labeling/shadowColorG" value="0"/>
+        <property key="labeling/shadowColorR" value="0"/>
+        <property key="labeling/shadowDraw" value="false"/>
+        <property key="labeling/shadowOffsetAngle" value="135"/>
+        <property key="labeling/shadowOffsetDist" value="1"/>
+        <property key="labeling/shadowOffsetGlobal" value="true"/>
+        <property key="labeling/shadowOffsetMapUnitScale" value="0,0,0,0,0,0"/>
+        <property key="labeling/shadowOffsetUnits" value="1"/>
+        <property key="labeling/shadowRadius" value="1.5"/>
+        <property key="labeling/shadowRadiusAlphaOnly" value="false"/>
+        <property key="labeling/shadowRadiusMapUnitScale" value="0,0,0,0,0,0"/>
+        <property key="labeling/shadowRadiusUnits" value="1"/>
+        <property key="labeling/shadowScale" value="100"/>
+        <property key="labeling/shadowTransparency" value="30"/>
+        <property key="labeling/shadowUnder" value="0"/>
+        <property key="labeling/shapeBlendMode" value="0"/>
+        <property key="labeling/shapeBorderColorA" value="255"/>
+        <property key="labeling/shapeBorderColorB" value="128"/>
+        <property key="labeling/shapeBorderColorG" value="128"/>
+        <property key="labeling/shapeBorderColorR" value="128"/>
+        <property key="labeling/shapeBorderWidth" value="0"/>
+        <property key="labeling/shapeBorderWidthMapUnitScale" value="0,0,0,0,0,0"/>
+        <property key="labeling/shapeBorderWidthUnits" value="1"/>
+        <property key="labeling/shapeDraw" value="false"/>
+        <property key="labeling/shapeFillColorA" value="255"/>
+        <property key="labeling/shapeFillColorB" value="255"/>
+        <property key="labeling/shapeFillColorG" value="255"/>
+        <property key="labeling/shapeFillColorR" value="255"/>
+        <property key="labeling/shapeJoinStyle" value="64"/>
+        <property key="labeling/shapeOffsetMapUnitScale" value="0,0,0,0,0,0"/>
+        <property key="labeling/shapeOffsetUnits" value="1"/>
+        <property key="labeling/shapeOffsetX" value="0"/>
+        <property key="labeling/shapeOffsetY" value="0"/>
+        <property key="labeling/shapeRadiiMapUnitScale" value="0,0,0,0,0,0"/>
+        <property key="labeling/shapeRadiiUnits" value="1"/>
+        <property key="labeling/shapeRadiiX" value="0"/>
+        <property key="labeling/shapeRadiiY" value="0"/>
+        <property key="labeling/shapeRotation" value="0"/>
+        <property key="labeling/shapeRotationType" value="0"/>
+        <property key="labeling/shapeSVGFile" value=""/>
+        <property key="labeling/shapeSizeMapUnitScale" value="0,0,0,0,0,0"/>
+        <property key="labeling/shapeSizeType" value="0"/>
+        <property key="labeling/shapeSizeUnits" value="1"/>
+        <property key="labeling/shapeSizeX" value="0"/>
+        <property key="labeling/shapeSizeY" value="0"/>
+        <property key="labeling/shapeTransparency" value="0"/>
+        <property key="labeling/shapeType" value="0"/>
+        <property key="labeling/substitutions" value="&lt;substitutions/>"/>
+        <property key="labeling/textColorA" value="255"/>
+        <property key="labeling/textColorB" value="0"/>
+        <property key="labeling/textColorG" value="0"/>
+        <property key="labeling/textColorR" value="0"/>
+        <property key="labeling/textTransp" value="0"/>
+        <property key="labeling/upsidedownLabels" value="0"/>
+        <property key="labeling/useSubstitutions" value="false"/>
+        <property key="labeling/wrapChar" value=""/>
+        <property key="labeling/xOffset" value="1.3"/>
+        <property key="labeling/yOffset" value="0"/>
+        <property key="labeling/zIndex" value="0"/>
+        <property key="variableNames"/>
+        <property key="variableValues"/>
+      </customproperties>
+      <blendMode>0</blendMode>
+      <featureBlendMode>0</featureBlendMode>
+      <layerTransparency>0</layerTransparency>
+      <displayfield>scale</displayfield>
+      <label>0</label>
+      <labelattributes>
+        <label fieldname="" text="Label"/>
+        <family fieldname="" name="Ubuntu"/>
+        <size fieldname="" units="pt" value="12"/>
+        <bold fieldname="" on="0"/>
+        <italic fieldname="" on="0"/>
+        <underline fieldname="" on="0"/>
+        <strikeout fieldname="" on="0"/>
+        <color fieldname="" red="0" blue="0" green="0"/>
+        <x fieldname=""/>
+        <y fieldname=""/>
+        <offset x="0" y="0" units="pt" yfieldname="" xfieldname=""/>
+        <angle fieldname="" value="0" auto="0"/>
+        <alignment fieldname="" value="center"/>
+        <buffercolor fieldname="" red="255" blue="255" green="255"/>
+        <buffersize fieldname="" units="pt" value="1"/>
+        <bufferenabled fieldname="" on=""/>
+        <multilineenabled fieldname="" on=""/>
+        <selectedonly on=""/>
+      </labelattributes>
+      <SingleCategoryDiagramRenderer diagramType="Histogram" sizeLegend="0" attributeLegend="1">
+        <DiagramCategory penColor="#000000" labelPlacementMethod="XHeight" penWidth="0" diagramOrientation="Up" sizeScale="0,0,0,0,0,0" minimumSize="0" barWidth="5" penAlpha="255" maxScaleDenominator="1e+08" backgroundColor="#ffffff" transparency="0" width="15" scaleDependency="Area" backgroundAlpha="255" angleOffset="1440" scaleBasedVisibility="0" enabled="0" height="15" lineSizeScale="0,0,0,0,0,0" sizeType="MM" lineSizeType="MM" minScaleDenominator="inf">
+          <fontProperties description="Ubuntu,11,-1,5,50,0,0,0,0,0" style=""/>
+        </DiagramCategory>
+        <symbol alpha="1" clip_to_extent="1" type="marker" name="sizeSymbol">
+          <layer pass="0" class="SimpleMarker" locked="0">
+            <prop k="angle" v="0"/>
+            <prop k="color" v="255,0,0,255"/>
+            <prop k="horizontal_anchor_point" v="1"/>
+            <prop k="joinstyle" v="bevel"/>
+            <prop k="name" v="circle"/>
+            <prop k="offset" v="0,0"/>
+            <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
+            <prop k="offset_unit" v="MM"/>
+            <prop k="outline_color" v="0,0,0,255"/>
+            <prop k="outline_style" v="solid"/>
+            <prop k="outline_width" v="0"/>
+            <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
+            <prop k="outline_width_unit" v="MM"/>
+            <prop k="scale_method" v="diameter"/>
+            <prop k="size" v="2"/>
+            <prop k="size_map_unit_scale" v="0,0,0,0,0,0"/>
+            <prop k="size_unit" v="MM"/>
+            <prop k="vertical_anchor_point" v="1"/>
+          </layer>
+        </symbol>
+      </SingleCategoryDiagramRenderer>
+      <DiagramLayerSettings yPosColumn="-1" showColumn="-1" linePlacementFlags="10" placement="0" dist="0" xPosColumn="-1" priority="0" obstacle="0" zIndex="0" showAll="1"/>
+      <annotationform></annotationform>
+      <aliases>
+        <alias field="scale" index="0" name=""/>
+        <alias field="label" index="1" name=""/>
+      </aliases>
+      <excludeAttributesWMS/>
+      <excludeAttributesWFS/>
+      <attributeactions default="-1"/>
+      <attributetableconfig actionWidgetStyle="dropDown" sortExpression="" sortOrder="-1069146400">
+        <columns>
+          <column width="-1" hidden="0" type="field" name="scale"/>
+          <column width="-1" hidden="0" type="field" name="label"/>
+          <column width="-1" hidden="1" type="actions"/>
+        </columns>
+      </attributetableconfig>
+      <editform></editform>
+      <editforminit/>
+      <editforminitcodesource>0</editforminitcodesource>
+      <editforminitfilepath></editforminitfilepath>
+      <editforminitcode><![CDATA[# -*- coding: utf-8 -*-
+"""
+QGIS forms can have a Python function that is called when the form is
+opened.
+
+Use this function to add extra logic to your forms.
+
+Enter the name of the function in the "Python Init function"
+field.
+An example follows:
+"""
+from qgis.PyQt.QtWidgets import QWidget
+
+def my_form_open(dialog, layer, feature):
+	geom = feature.geometry()
+	control = dialog.findChild(QWidget, "MyLineEdit")
+]]></editforminitcode>
+      <featformsuppress>0</featformsuppress>
+      <editorlayout>generatedlayout</editorlayout>
+      <widgets/>
+      <conditionalstyles>
+        <rowstyles/>
+        <fieldstyles/>
+      </conditionalstyles>
+      <defaults>
+        <default field="scale" expression=""/>
+        <default field="label" expression=""/>
+      </defaults>
+      <previewExpression>COALESCE( "scale", '&lt;NULL>' )</previewExpression>
     </maplayer>
     <maplayer simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
       <extent>
@@ -1513,7 +2294,7 @@ def my_form_open(dialog, layer, feature):
               <prop k="offset_unit" v="MM"/>
               <prop k="outline_color" v="0,0,0,255"/>
               <prop k="outline_style" v="solid"/>
-              <prop k="outline_width" v="0.46"/>
+              <prop k="outline_width" v="0.15"/>
               <prop k="outline_width_unit" v="MM"/>
               <prop k="style" v="solid"/>
             </layer>
@@ -1694,6 +2475,7 @@ def my_form_open(dialog, layer, feature):
       <SingleCategoryDiagramRenderer diagramType="Histogram" sizeLegend="0" attributeLegend="1">
         <DiagramCategory penColor="#000000" labelPlacementMethod="XHeight" penWidth="0" diagramOrientation="Up" sizeScale="0,0,0,0,0,0" minimumSize="0" barWidth="5" penAlpha="255" maxScaleDenominator="1e+08" backgroundColor="#ffffff" transparency="0" width="15" scaleDependency="Area" backgroundAlpha="255" angleOffset="1440" scaleBasedVisibility="0" enabled="0" height="15" lineSizeScale="0,0,0,0,0,0" sizeType="MM" lineSizeType="MM" minScaleDenominator="inf">
           <fontProperties description="Ubuntu,11,-1,5,50,0,0,0,0,0" style=""/>
+          <attribute field="" color="#000000" label=""/>
         </DiagramCategory>
         <symbol alpha="1" clip_to_extent="1" type="marker" name="sizeSymbol">
           <layer pass="0" class="SimpleMarker" locked="0">
@@ -1719,23 +2501,23 @@ def my_form_open(dialog, layer, feature):
         </symbol>
       </SingleCategoryDiagramRenderer>
       <DiagramLayerSettings yPosColumn="-1" showColumn="-1" linePlacementFlags="10" placement="0" dist="0" xPosColumn="-1" priority="0" obstacle="0" zIndex="0" showAll="1"/>
-      <annotationform></annotationform>
+      <annotationform>.</annotationform>
       <aliases>
         <alias field="country" index="0" name=""/>
       </aliases>
       <excludeAttributesWMS/>
       <excludeAttributesWFS/>
       <attributeactions default="-1"/>
-      <attributetableconfig actionWidgetStyle="dropDown" sortExpression="" sortOrder="1536454880">
+      <attributetableconfig actionWidgetStyle="dropDown" sortExpression="" sortOrder="0">
         <columns>
           <column width="-1" hidden="0" type="field" name="country"/>
           <column width="-1" hidden="1" type="actions"/>
         </columns>
       </attributetableconfig>
-      <editform></editform>
+      <editform>.</editform>
       <editforminit/>
       <editforminitcodesource>0</editforminitcodesource>
-      <editforminitfilepath></editforminitfilepath>
+      <editforminitfilepath>.</editforminitfilepath>
       <editforminitcode><![CDATA[# -*- coding: utf-8 -*-
 """
 QGIS forms can have a Python function that is called when the form is
@@ -1817,7 +2599,7 @@ def my_form_open(dialog, layer, feature):
               <prop k="offset_unit" v="MM"/>
               <prop k="outline_color" v="0,0,0,255"/>
               <prop k="outline_style" v="solid"/>
-              <prop k="outline_width" v="0.46"/>
+              <prop k="outline_width" v="0.15"/>
               <prop k="outline_width_unit" v="MM"/>
               <prop k="style" v="solid"/>
             </layer>
@@ -1858,7 +2640,7 @@ def my_form_open(dialog, layer, feature):
         <property key="labeling/fitInPolygonOnly" value="false"/>
         <property key="labeling/fontCapitals" value="0"/>
         <property key="labeling/fontFamily" value="Ubuntu"/>
-        <property key="labeling/fontItalic" value="false"/>
+        <property key="labeling/fontItalic" value="true"/>
         <property key="labeling/fontLetterSpacing" value="0"/>
         <property key="labeling/fontLimitPixelSize" value="false"/>
         <property key="labeling/fontMaxPixelSize" value="10000"/>
@@ -1868,7 +2650,7 @@ def my_form_open(dialog, layer, feature):
         <property key="labeling/fontSizeMapUnitScale" value="0,0,0,0,0,0"/>
         <property key="labeling/fontStrikeout" value="false"/>
         <property key="labeling/fontUnderline" value="false"/>
-        <property key="labeling/fontWeight" value="50"/>
+        <property key="labeling/fontWeight" value="63"/>
         <property key="labeling/fontWordSpacing" value="0"/>
         <property key="labeling/formatNumbers" value="false"/>
         <property key="labeling/isExpression" value="true"/>
@@ -1998,6 +2780,7 @@ def my_form_open(dialog, layer, feature):
       <SingleCategoryDiagramRenderer diagramType="Histogram" sizeLegend="0" attributeLegend="1">
         <DiagramCategory penColor="#000000" labelPlacementMethod="XHeight" penWidth="0" diagramOrientation="Up" sizeScale="0,0,0,0,0,0" minimumSize="0" barWidth="5" penAlpha="255" maxScaleDenominator="1e+08" backgroundColor="#ffffff" transparency="0" width="15" scaleDependency="Area" backgroundAlpha="255" angleOffset="1440" scaleBasedVisibility="0" enabled="0" height="15" lineSizeScale="0,0,0,0,0,0" sizeType="MM" lineSizeType="MM" minScaleDenominator="inf">
           <fontProperties description="Ubuntu,11,-1,5,50,0,0,0,0,0" style=""/>
+          <attribute field="" color="#000000" label=""/>
         </DiagramCategory>
         <symbol alpha="1" clip_to_extent="1" type="marker" name="sizeSymbol">
           <layer pass="0" class="SimpleMarker" locked="0">
@@ -2023,7 +2806,7 @@ def my_form_open(dialog, layer, feature):
         </symbol>
       </SingleCategoryDiagramRenderer>
       <DiagramLayerSettings yPosColumn="-1" showColumn="-1" linePlacementFlags="10" placement="0" dist="0" xPosColumn="-1" priority="0" obstacle="0" zIndex="0" showAll="1"/>
-      <annotationform></annotationform>
+      <annotationform>.</annotationform>
       <aliases>
         <alias field="id" index="0" name=""/>
         <alias field="country" index="1" name=""/>
@@ -2031,17 +2814,17 @@ def my_form_open(dialog, layer, feature):
       <excludeAttributesWMS/>
       <excludeAttributesWFS/>
       <attributeactions default="-1"/>
-      <attributetableconfig actionWidgetStyle="dropDown" sortExpression="" sortOrder="1536454880">
+      <attributetableconfig actionWidgetStyle="dropDown" sortExpression="" sortOrder="0">
         <columns>
           <column width="-1" hidden="0" type="field" name="id"/>
           <column width="-1" hidden="0" type="field" name="country"/>
           <column width="-1" hidden="1" type="actions"/>
         </columns>
       </attributetableconfig>
-      <editform></editform>
+      <editform>.</editform>
       <editforminit/>
       <editforminitcodesource>0</editforminitcodesource>
-      <editforminitfilepath></editforminitfilepath>
+      <editforminitfilepath>.</editforminitfilepath>
       <editforminitcode><![CDATA[# -*- coding: utf-8 -*-
 """
 QGIS forms can have a Python function that is called when the form is
@@ -2121,7 +2904,7 @@ def my_form_open(dialog, layer, feature):
               <prop k="offset_unit" v="MM"/>
               <prop k="outline_color" v="0,0,0,255"/>
               <prop k="outline_style" v="solid"/>
-              <prop k="outline_width" v="0.46"/>
+              <prop k="outline_width" v="0.15"/>
               <prop k="outline_width_unit" v="MM"/>
               <prop k="style" v="solid"/>
             </layer>
@@ -2302,6 +3085,7 @@ def my_form_open(dialog, layer, feature):
       <SingleCategoryDiagramRenderer diagramType="Histogram" sizeLegend="0" attributeLegend="1">
         <DiagramCategory penColor="#000000" labelPlacementMethod="XHeight" penWidth="0" diagramOrientation="Up" sizeScale="0,0,0,0,0,0" minimumSize="0" barWidth="5" penAlpha="255" maxScaleDenominator="1e+08" backgroundColor="#ffffff" transparency="0" width="15" scaleDependency="Area" backgroundAlpha="255" angleOffset="1440" scaleBasedVisibility="0" enabled="0" height="15" lineSizeScale="0,0,0,0,0,0" sizeType="MM" lineSizeType="MM" minScaleDenominator="inf">
           <fontProperties description="Ubuntu,11,-1,5,50,0,0,0,0,0" style=""/>
+          <attribute field="" color="#000000" label=""/>
         </DiagramCategory>
         <symbol alpha="1" clip_to_extent="1" type="marker" name="sizeSymbol">
           <layer pass="0" class="SimpleMarker" locked="0">
@@ -2327,23 +3111,23 @@ def my_form_open(dialog, layer, feature):
         </symbol>
       </SingleCategoryDiagramRenderer>
       <DiagramLayerSettings yPosColumn="-1" showColumn="-1" linePlacementFlags="10" placement="0" dist="0" xPosColumn="-1" priority="0" obstacle="0" zIndex="0" showAll="1"/>
-      <annotationform></annotationform>
+      <annotationform>.</annotationform>
       <aliases>
         <alias field="country" index="0" name=""/>
       </aliases>
       <excludeAttributesWMS/>
       <excludeAttributesWFS/>
       <attributeactions default="-1"/>
-      <attributetableconfig actionWidgetStyle="dropDown" sortExpression="" sortOrder="1666942656">
+      <attributetableconfig actionWidgetStyle="dropDown" sortExpression="" sortOrder="0">
         <columns>
           <column width="-1" hidden="0" type="field" name="country"/>
           <column width="-1" hidden="1" type="actions"/>
         </columns>
       </attributetableconfig>
-      <editform></editform>
+      <editform>.</editform>
       <editforminit/>
       <editforminitcodesource>0</editforminitcodesource>
-      <editforminitfilepath></editforminitfilepath>
+      <editforminitfilepath>.</editforminitfilepath>
       <editforminitcode><![CDATA[# -*- coding: utf-8 -*-
 """
 QGIS forms can have a Python function that is called when the form is
@@ -2398,9 +3182,55 @@ def my_form_open(dialog, layer, feature):
     </Gui>
     <Digitizing>
       <DefaultSnapToleranceUnit type="int">1</DefaultSnapToleranceUnit>
+      <LayerSnappingList type="QStringList">
+        <value>driver_normalized_scaled_ratio_africa20180814074622639</value>
+        <value>driver_normalized_scaled_ratio_americas20180814074624461</value>
+        <value>driver_normalized_scaled_ratio_asia20180814074626532</value>
+        <value>hexboundaries_africa20180814074740925</value>
+        <value>hexboundaries_americas20180814074746164</value>
+        <value>hexboundaries_asia20180814074751293</value>
+        <value>driver_americas20180903140027413</value>
+      </LayerSnappingList>
+      <LayerSnappingEnabledList type="QStringList">
+        <value>enabled</value>
+        <value>enabled</value>
+        <value>enabled</value>
+        <value>enabled</value>
+        <value>enabled</value>
+        <value>enabled</value>
+        <value>enabled</value>
+      </LayerSnappingEnabledList>
       <SnappingMode type="QString">current_layer</SnappingMode>
+      <AvoidIntersectionsList type="QStringList"/>
+      <LayerSnappingToleranceUnitList type="QStringList">
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+      </LayerSnappingToleranceUnitList>
+      <LayerSnapToList type="QStringList">
+        <value>to_vertex</value>
+        <value>to_vertex</value>
+        <value>to_vertex</value>
+        <value>to_vertex</value>
+        <value>to_vertex</value>
+        <value>to_vertex</value>
+        <value>to_vertex</value>
+      </LayerSnapToList>
       <DefaultSnapType type="QString">to vertex</DefaultSnapType>
       <DefaultSnapTolerance type="double">10</DefaultSnapTolerance>
+      <LayerSnappingToleranceList type="QStringList">
+        <value>10.000000</value>
+        <value>10.000000</value>
+        <value>10.000000</value>
+        <value>10.000000</value>
+        <value>10.000000</value>
+        <value>10.000000</value>
+        <value>10.000000</value>
+      </LayerSnappingToleranceList>
     </Digitizing>
     <PositionPrecision>
       <DecimalPlaces type="int">2</DecimalPlaces>

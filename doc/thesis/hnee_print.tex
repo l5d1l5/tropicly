@@ -2,23 +2,27 @@
 
 % paper properties
 \usepackage{geometry}
-\geometry{left=2.0cm, right=3.5cm, top=2.5cm, bottom=2.5cm}
+\geometry{left=3.5cm, right=2.0cm, top=2.5cm, bottom=2.5cm}
 
 % charset and language
 \usepackage[T1]{fontenc} % charset
 \usepackage[utf8]{inputenc} % charset
-\usepackage[english, german, polish]{babel} % language
+\usepackage[german, polish, english]{babel} % language
 \let\babellll\lll % fix for \lll already defined by babel
 \let\lll\relax
 \babeltags{de=german}
 \babeltags{po=polish}
-\babeltags{en=english}
 
 % text formatting
+\usepackage{url}
+\usepackage{lipsum}
 \usepackage{mathptmx} % times new roman
 \usepackage[onehalfspacing]{setspace}
+\AfterTOCHead{\singlespacing}
 \KOMAoptions{parskip=half}
-\usepackage{url}
+\KOMAoptions{titlepage=true}
+\KOMAoptions{draft=true}  % COMMENT IF DOCUMENT GOES IN PRINT
+\addtokomafont{disposition}{\normalfont}
 
 % special symbols
 \usepackage{soul}
@@ -32,65 +36,96 @@
 
 % lists
 \usepackage{acronym}
-\usepackage[authoryear]{natbib} % bibliography
+\usepackage{natbib} % bibliography
+\setcitestyle{sort,authoryear,square,semicolon,aysep={}}
+\renewcommand{\bibfont}{\small \singlespacing}
+\KOMAoptions{toc=listof}
+\KOMAoptions{toc=bibliography}
 
-% undef
-\usepackage{rotating}
-\usepackage{tabularx}
-\usepackage{longtable}
-\usepackage{array}
-\usepackage{multirow}
-\usepackage{multicol}
-\usepackage{graphicx}
-\usepackage{tcolorbox} 
-\usepackage{color}
-\usepackage{caption}
-\usepackage{colortbl}
-\usepackage{color}
-\usepackage{float}
-\usepackage[colorlinks=true, urlcolor=blue, linkcolor=blue, citecolor = blue]{hyperref} %links and urls
+% tables
+\KOMAoptions{captions=tableheading}
+
+% hyperlinks
+\usepackage[hidelinks, colorlinks=false, urlcolor=blue, linkcolor=blue, citecolor = blue]{hyperref}
+\hypersetup{pdftitle={A comprehensive study on deforestation in the tropical zone}}
+\hypersetup{pdfauthor={Tobias Seydewitz}}
+\hypersetup{pdfsubject={Evaluating the direct deforestation drivers, estimating the carbon emissions trough deforestation and evaluating the ecosystem service value balance of land cover change in the tropical zone between 23.43N and 23.43S.}}
+\hypersetup{pdfcreator={Tobias Seydewitz}}
+\hypersetup{pdfproducer={Tobias Seydewitz}}
+\hypersetup{pdfkeywords={climate, emissions, soil organic carbon change, GIS, ecosystem service values, deforestation}}
+\hypersetup{pdfdisplaydoctitle=true}
 
 % new commands
 \newcommand*\BlankPage{\newpage\null\thispagestyle{empty}\newpage}
 \newcommand{\leadingzero}[1]{\ifnum #1<10 0\the#1\else\the#1\fi}
 \newcommand{\todayI}{\leadingzero{\day}.\leadingzero{\month}.\the\year}
 
-
 %\recalctypearea
+
+%\usepackage{tabularx}
+%\usepackage{array}
+%\usepackage{caption}
+%\usepackage{longtable}
+%\usepackage{rotating}
+%\usepackage{multirow}
+%\usepackage{multicol}
+%\usepackage{graphicx}
+%\usepackage{tcolorbox} 
+%\usepackage{color}
+%\usepackage{colortbl}
+%\usepackage{color}
+%\usepackage{float}
+
+%\tiny 6pt
+%\scriptsize 8pt
+%\footnotesize 10pt
+%\small 10.95pt
+%\normalsize 12pt
+%\large 14.4pt
+%\Large 17.28pt
+%\LARGE 20.7pt
+%\huge 24.88pt
+%\Huge 24.88pt
 
 
 \begin{document}
 	\nocite{*}
-	\selectlanguage{english}
-	\bibliographystyle{plainnat}
+	\bibliographystyle{tobinat}
+
+	\hypersetup{pageanchor=false}
 
 	% title page
-	\input{cover/cover.tex}
-	\newpage
+	\input{cover/hnee_cover.tex}
 	\BlankPage
 
 	% declarations
 	\input{declarations/promoter.tex}
-	\newpage
+	\BlankPage
 	\input{declarations/author.tex}
-	\newpage
+	\BlankPage
+
+	\BlankPage
+	\BlankPage
 
 	% abstracts
 	\input{abstracts/streszczenie.tex}
-	\newpage
+	\BlankPage
 	\input{abstracts/abstract.tex}
-	\newpage
+	\BlankPage
 	\input{abstracts/zusammenfassung.tex}
-	\newpage
 	\BlankPage
 
+	\BlankPage
+	\BlankPage
 
+	\hypersetup{pageanchor=true}
 	\pagenumbering{arabic}
-	\setcounter{page}{8}
+	\setcounter{page}{9}
 
 
 	% table of contents
-	\setcounter{tocdepth}{3}
+	\setcounter{secnumdepth}{4} 
+	\setcounter{tocdepth}{4}
 	\tableofcontents
 	\newpage
 
@@ -123,5 +158,5 @@
 	\newpage
 
 	% share approval
-	\input{share/share.tex}
+	\input{share/hnee_share.tex}
 \end{document}
