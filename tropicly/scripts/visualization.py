@@ -13,7 +13,12 @@ from tropicly.grid import SegmentedHexagon
 from math import sqrt, isclose
 
 
-path = '/home/tobi/Documents/Master/code/python/Master/data/proc/agg/shp/driver_normalized_scaled_americas.shp'
+# REFACTOR THIS SHIT TO REUSEABLE FUNCTIONS
+
+
+# path = '/home/tobi/Documents/Master/code/python/Master/data/proc/agg/shp/driver_americas_filtered.shp'
+# path = '/home/tobi/Documents/driver_filtered_americas.shp'
+path = '/home/tobi/Documents/driver_normalized_scaled_filtered_americas.shp'
 vec = fiona.open(path)
 
 # # CALCULATE DRIVERS SCALING
@@ -27,23 +32,23 @@ vec = fiona.open(path)
 #     if key in ['10', '25', '30', '40', '50', '60', '70', '80', '90', '100']:
 #         schema['properties'][key] = 'int:10'
 #
-# with fiona.open('/home/tobi/Documents/driverr_asia.shp', 'w', schema=schema, driver=vec.driver,
+# with fiona.open('/home/tobi/Documents/driver_filtered_americas.shp', 'w', schema=schema, driver=vec.driver,
 #                 crs=vec.crs) as dst:
 #     for feature in vec:
 #         properties = feature['properties']
 #         impact = 0
 #
 #         for key in properties:
-#             if key == 'covered':
-#                 continue
-#             properties[key] = int(properties[key])
-#             impact += properties[key]
+#             if key in ['10', '25', '30', '40', '50', '60', '70', '80', '90', '100']:
+#                 properties[key] = int(properties[key])
+#                 impact += properties[key]
 #
 #         properties['impact'] = impact
 #
 #         ratio = impact / properties['covered']
-#         linear = (ratio - .00005036) / (.25007996 - .00005036)
-#         normalized = ((1. - .6) / (.25007996 - .00005036)) * (ratio - .25007996) + 1.
+#         linear = (ratio - .00006402) / (.22866233 - .00006402)
+#         normalized = ((1. - .5) / (.22866233 - .00006402)) * (ratio - .22866233) + 1.
+#         normalized = (int(normalized * 10) + 1) / 10
 #
 #         properties['im/co'] = impact / properties['covered']
 #         properties['linear'] = linear
@@ -55,7 +60,7 @@ vec = fiona.open(path)
 
 
 # # SCALE DRIVERS
-# with fiona.open('/home/tobi/Documents/driver_normalized_scaled_asia.shp',
+# with fiona.open('/home/tobi/Documents/driver_normalized_scaled_filtered_americas.shp',
 #                 'w', driver=vec.driver, schema=vec.schema, crs=vec.crs) as src:
 #     for feature in vec:
 #         scaling = feature['properties']['normalized']
@@ -102,7 +107,8 @@ schema = {
     ])
 }
 
-with fiona.open('/home/tobi/Documents/driver_normalized_scaled_ratio_americas.shp', 'w', schema=schema, driver=vec.driver, crs=vec.crs) as dst:
+with fiona.open('/home/tobi/Documents/driver_normalized_scaled_ratio_filtered_americas.shp', 'w', schema=schema,
+                driver=vec.driver, crs=vec.crs) as dst:
     for idx, feature in enumerate(vec):
         hexagon = SegmentedHexagon(asShape(feature['geometry']))
         properties = feature['properties']
