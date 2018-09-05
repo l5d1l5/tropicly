@@ -10,7 +10,7 @@ import numpy as np
 from math import log10
 
 
-path = '/home/tobi/Documents/Master/code/python/Master/data/proc/agg/shp/driver_asia.shp'
+path = '/home/tobi/Documents/Master/code/python/Master/data/proc/agg/shp/driver_africa.shp'
 vec = fiona.open(path)
 
 impact = []
@@ -24,7 +24,7 @@ iqr = q75 - q25
 lower = q25 - iqr
 upper = q75 + iqr
 
-with fiona.open('/home/tobi/Documents/driver_asia_filtered.shp', 'w',
+with fiona.open('/home/tobi/Documents/driver_africa_filtered.shp', 'w',
                 driver=vec.driver, crs=vec.crs, schema=vec.schema) as dst:
     for feat, lg in zip(vec, impact):
         if lower <= lg <= upper:
