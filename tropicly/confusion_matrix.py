@@ -148,6 +148,24 @@ class ConfusionMatrix:
                                          index=self._label + ['cc'],
                                          columns=self._label + ['rc'])
 
+    def as_tex_string(self):
+        """
+        Returns the confusion matrix as a tex table string.
+
+        :return: str
+            A tex table string.
+        """
+        matrix = np.vstack((
+            np.array(self._label + ['total'], dtype=np.str),
+            self._matrix.astype(np.str)
+        ))
+        matrix = np.hstack((
+            np.array([' '] + self._label + ['total'], dtype=np.str).reshape((len(self._label)+2, 1)),
+            matrix
+        ))
+
+        return ' \\\\ \n'.join([' & '.join(row) for row in matrix])
+
     def __str__(self):
         # TODO implement
         """
