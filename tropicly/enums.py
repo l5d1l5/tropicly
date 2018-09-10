@@ -88,6 +88,7 @@ SOCCAlternativeFactors = {
 # Global Environmental Change
 # 2011 values from supplementary table in 2007$/ha/yr
 ESV_costanza = {
+    'name': 'co',
     GL30Classes.cropland:   Coefficient('cropland', 5567, std=0),  # cropland 11 sub services
     GL30Classes.forest:     Coefficient('forest', 5382, std=0),  # forest tropical 17 sub services
     GL30Classes.regrowth:   Coefficient('forest', 5382, std=0),  # forest tropical 17 sub services
@@ -107,6 +108,7 @@ ESV_costanza = {
 # and the services in monetary units, Ecosystem Services
 # values from publication table in 2007$/ha/yr
 ESV_deGroot = {
+    'name': 'gr',
     GL30Classes.cropland:   Coefficient('cropland', 0, std=0),  # NEED A VALUE
     GL30Classes.forest:     Coefficient('forest', 5264, std=6526, med=2355, mini=1581, maxi=20851),  # trop. for. 17
     GL30Classes.regrowth:   Coefficient('forest', 5264, std=6526, med=2355, mini=1581, maxi=20851),  # trop. for. 17
@@ -126,6 +128,7 @@ ESV_deGroot = {
 # ecosystem services, PROFOR working paper
 # from table 15
 ESV_worldbank = {
+    'name': 'wb',
     GL30Classes.cropland:   Coefficient('cropland', 0, std=0),  # ds per definition no value
     GL30Classes.forest:     Coefficient('forest', 1312, std=0),  # NWFP, water service, recreation, hunting/fishing
     GL30Classes.regrowth:   Coefficient('forest', 1312, std=0),  # NWFP, water service, recreation, hunting/fishing
