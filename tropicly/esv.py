@@ -7,13 +7,9 @@ Mail: tobi.seyde@gmail.com
 """
 import numpy as np
 import rasterio as rio
+import pandas as pd
 from tropicly.raster import write
 from tropicly.enums import GL30Classes
-
-from tropicly.enums import ESV_costanza, ESV_deGroot, ESV_worldbank
-import geopandas as gpd
-from tropicly.sheduler import TaskSheduler
-from threading import Thread
 
 
 def worker(driver, esv, names, **kwargs):
@@ -21,14 +17,30 @@ def worker(driver, esv, names, **kwargs):
         profile = src.profile
         data = src.read(1)
 
-    deficit = forest_deficit(data, esv, **kwargs)
+    deficit = forest_loss(data, esv, **kwargs)
     gain = landcover_gain(data, esv, **kwargs)
 
     write(deficit, names[0], **profile)
     write(gain, names[1], **profile)
 
 
-def landcover_gain(driver, esv, attr='mean', gl30=(10, 25, 30, 40, 70, 80, 90)):
+def landcover_gain(data, esv, attr='mean', gl30=(10, 25, 30, 40, 70, 80, 90)):
+    if isinstance(data, np.ndarray):
+        return landcover_gain_from_map(data, esv, attr=attr, gl30=gl30)
+
+    else:
+        return landcover_gain_from_frame(data, esv, attr=attr, gl30=gl30)
+
+
+def forest_loss(data, esv, attr='mean', gl30=(10, 25, 30, 40, 70, 80, 90)):
+    if isinstance(data, np.ndarray):
+        return forest_loss_from_map(data, esv, attr=attr, gl30=gl30)
+
+    else:
+        return forest_loss_from_frame(data, esv, attr=attr, gl30=gl30)
+
+
+def landcover_gain_from_map(driver, esv, attr=None, gl30=None):
     mask = np.zeros(driver.shape, dtype=np.uint32)
 
     for i in gl30:
@@ -38,7 +50,7 @@ def landcover_gain(driver, esv, attr='mean', gl30=(10, 25, 30, 40, 70, 80, 90)):
     return mask
 
 
-def forest_deficit(driver, esv, attr='mean', gl30=(10, 25, 30, 40, 70, 80, 90)):
+def forest_loss_from_map(driver, esv, attr=None, gl30=None):
     mask = np.zeros(driver.shape, dtype=np.uint32)
     mask[np.isin(driver, gl30)] = 1
 
@@ -49,29 +61,38 @@ def forest_deficit(driver, esv, attr='mean', gl30=(10, 25, 30, 40, 70, 80, 90)):
     return factor_map
 
 
-def progress(**kwargs):
-    ratio = (kwargs['total'] - kwargs['pending']) / kwargs['total']
-    ratio = round(ratio*100, 2)
-    print('{} % of 100 %'.format(ratio))
+def forest_loss_from_frame(row, esv, attr=None, gl30=None):
+    columns = []
+    values = []
+    count = 0
+
+    for i in gl30:
+        if str(i) in row:
+            columns.append(esv['name']+'_l_'+str(i))
+            values.append(row[str(i)] * esv.get(GL30Classes.forest).__getattribute__(attr))
+
+            count += row[str(i)]
+
+    columns.append(esv['name']+'_l_tot')
+    values.append(count * esv.get(GL30Classes.forest).__getattribute__(attr))
+
+    return pd.Series(data=values, index=columns)
 
 
-if __name__ == '__main__':
-    path = '/home/tobi/Documents/Master/code/python/Master/data/'
-    out = path+'proc/esv/'
+def landcover_gain_from_frame(row, esv, attr=None, gl30=None):
+    columns = []
+    values = []
+    total = 0
 
-    sheduler = TaskSheduler('esv', 5)
-    sheduler.on_progress.connect(progress)
+    for i in gl30:
+        if str(i) in row:
+            gain = row[str(i)] * esv.get(GL30Classes(i)).__getattribute__(attr)
+            total += gain
 
-    mask = gpd.read_file(path+'auxiliary/mask.shp')
+            columns.append(esv['name']+'_g_'+str(i))
+            values.append(gain)
 
-    for idx, row in mask.iterrows():
-        key = row.key
-        driver = '{}proc/driver/{}'.format(path, row.driver)
+    columns.append(esv['name']+'_g_tot')
+    values.append(total)
 
-        groot_names = [out+'groot_deficit_{}.tif'.format(key), out+'groot_gain_{}.tif'.format(key)]
-        costa_names = [out+'costa_deficit_{}.tif'.format(key), out+'costa_gain_{}.tif'.format(key)]
-        world_names = [out+'world_deficit_{}.tif'.format(key), out+'world_gain_{}.tif'.format(key)]
-
-        sheduler.add_task(Thread(target=worker, args=(driver, ESV_deGroot, groot_names)))
-        sheduler.add_task(Thread(target=worker, args=(driver, ESV_costanza, costa_names)))
-        sheduler.add_task(Thread(target=worker, args=(driver, ESV_worldbank, world_names)))
+    return pd.Series(data=values, index=columns)
