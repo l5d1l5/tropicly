@@ -24,23 +24,28 @@ def worker(driver, esv, names, **kwargs):
     write(gain, names[1], **profile)
 
 
-def landcover_gain(data, esv, attr='mean', gl30=(10, 25, 30, 40, 70, 80, 90)):
+def landcover_gain(data, esv, attr='mean', area=900, gl30=(10, 25, 30, 40, 70, 80, 90)):
+    ha_per_pixel = area * 0.0001
+
     if isinstance(data, np.ndarray):
-        return landcover_gain_from_map(data, esv, attr=attr, gl30=gl30)
+        return landcover_gain_from_map(data, esv, attr=attr, area=ha_per_pixel, gl30=gl30)
 
     else:
-        return landcover_gain_from_frame(data, esv, attr=attr, gl30=gl30)
+        return landcover_gain_from_frame(data, esv, attr=attr, area=ha_per_pixel, gl30=gl30)
 
 
-def forest_loss(data, esv, attr='mean', gl30=(10, 25, 30, 40, 70, 80, 90)):
+def forest_loss(data, esv, attr='mean', area=900, gl30=(10, 25, 30, 40, 70, 80, 90)):
+    ha_per_pixel = area * 0.0001
+
     if isinstance(data, np.ndarray):
-        return forest_loss_from_map(data, esv, attr=attr, gl30=gl30)
+        return forest_loss_from_map(data, esv, attr=attr, area=ha_per_pixel, gl30=gl30)
 
     else:
-        return forest_loss_from_frame(data, esv, attr=attr, gl30=gl30)
+        return forest_loss_from_frame(data, esv, attr=attr, area=ha_per_pixel, gl30=gl30)
 
 
-def landcover_gain_from_map(driver, esv, attr=None, gl30=None):
+# TODO refactor include area
+def landcover_gain_from_map(driver, esv, attr=None, area=None, gl30=None):
     mask = np.zeros(driver.shape, dtype=np.uint32)
 
     for i in gl30:
@@ -50,7 +55,8 @@ def landcover_gain_from_map(driver, esv, attr=None, gl30=None):
     return mask
 
 
-def forest_loss_from_map(driver, esv, attr=None, gl30=None):
+# TODO include area
+def forest_loss_from_map(driver, esv, attr=None, area=None, gl30=None):
     mask = np.zeros(driver.shape, dtype=np.uint32)
     mask[np.isin(driver, gl30)] = 1
 
@@ -61,32 +67,33 @@ def forest_loss_from_map(driver, esv, attr=None, gl30=None):
     return factor_map
 
 
-def forest_loss_from_frame(row, esv, attr=None, gl30=None):
-    columns = []
-    values = []
-    count = 0
-
-    for i in gl30:
-        if str(i) in row:
-            columns.append(esv['name']+'_l_'+str(i))
-            values.append(row[str(i)] * esv.get(GL30Classes.forest).__getattribute__(attr))
-
-            count += row[str(i)]
-
-    columns.append(esv['name']+'_l_tot')
-    values.append(count * esv.get(GL30Classes.forest).__getattribute__(attr))
-
-    return pd.Series(data=values, index=columns)
-
-
-def landcover_gain_from_frame(row, esv, attr=None, gl30=None):
+def forest_loss_from_frame(row, esv, attr=None, area=None, gl30=None):
     columns = []
     values = []
     total = 0
 
     for i in gl30:
         if str(i) in row:
-            gain = row[str(i)] * esv.get(GL30Classes(i)).__getattribute__(attr)
+            loss = round(row[str(i)] * area * esv.get(GL30Classes.forest).__getattribute__(attr))
+            total += loss
+
+            columns.append(esv['name']+'_l_'+str(i))
+            values.append(loss)
+
+    columns.append(esv['name']+'_l_tot')
+    values.append(total)
+
+    return pd.Series(data=values, index=columns)
+
+
+def landcover_gain_from_frame(row, esv, attr=None, area=None, gl30=None):
+    columns = []
+    values = []
+    total = 0
+
+    for i in gl30:
+        if str(i) in row:
+            gain = round(row[str(i)] * area * esv.get(GL30Classes(i)).__getattribute__(attr))
             total += gain
 
             columns.append(esv['name']+'_g_'+str(i))
