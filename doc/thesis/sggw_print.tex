@@ -45,6 +45,9 @@
 
 % tables
 \KOMAoptions{captions=tableheading}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{array}
 
 % images
 \usepackage{graphicx}
@@ -63,6 +66,7 @@
 \newcommand*\BlankPage{\newpage\null\thispagestyle{empty}\newpage}
 \newcommand{\leadingzero}[1]{\ifnum #1<10 0\the#1\else\the#1\fi}
 \newcommand{\todayI}{\leadingzero{\day}.\leadingzero{\month}.\the\year}
+\newcommand{\STAB}[1]{\begin{tabular}{@{}c@{}}#1\end{tabular}}
 
 %\recalctypearea
 
