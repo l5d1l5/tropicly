@@ -10,6 +10,7 @@ from rasterio import open, band
 from rasterio.merge import merge
 from shapely.geometry import Polygon
 from rasterio.io import DatasetReader
+from tropicly.distance import Distance
 from rasterio.mask import raster_geometry_mask, mask
 from rasterio.coords import BoundingBox, disjoint_bounds
 from rasterio.warp import reproject, calculate_default_transform
@@ -246,6 +247,8 @@ def round_bounds(bounds):
 
 # TODO refactor, generalize
 def worker(img, polygon, func, records):
+    dist = Distance('hav')
+
     with open(img, 'r') as src:
         ma, *_ = raster_geometry_mask(src, [polygon], crop=True)
         data, transform = mask(src, [polygon], crop=True, indexes=1)
@@ -256,6 +259,7 @@ def worker(img, polygon, func, records):
             'transform': transform,
             'count': count,
             'geometry': polygon,
+            'distance': dist,
         }
 
         rec = func(**kwargs)
@@ -265,11 +269,17 @@ def worker(img, polygon, func, records):
 
 # TODO refactor, generalize
 def compute_cover(**kwargs):
-    mask = np.ma.masked_less(kwargs['img'], 11)
+    transform = kwargs['transform']
+    cover = np.ma.masked_less(kwargs['img'], 11)
+
+    x = kwargs['distance']((transform.xoff, transform.yoff), (transform.xoff + transform.a, transform.yoff))
+    y = kwargs['distance']((transform.xoff, transform.yoff), (transform.xoff, transform.yoff + transform.e))
+
     bib = {
-        'mean': mask.mean(),
-        'covered': mask.count(),
+        'mean': cover.mean(),
+        'covered': cover.count(),
         'count': kwargs['count'],
+        'area': round(x*y),
         'geometry': kwargs['geometry'],
     }
 
