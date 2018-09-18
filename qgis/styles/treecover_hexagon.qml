@@ -10,6 +10,18 @@
     <edittype widgetv2type="TextEdit" name="mean">
       <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
     </edittype>
+    <edittype widgetv2type="TextEdit" name="px_area">
+      <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+    </edittype>
+    <edittype widgetv2type="TextEdit" name="ratio">
+      <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+    </edittype>
+    <edittype widgetv2type="TextEdit" name="area">
+      <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+    </edittype>
+    <edittype widgetv2type="TextEdit" name="scaling">
+      <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+    </edittype>
   </edittypes>
   <renderer-v2 attr="mean" forceraster="0" symbollevels="0" type="graduatedSymbol" graduatedMethod="GraduatedColor" enableorderby="0">
     <ranges>
@@ -34,7 +46,7 @@
           <prop k="offset_unit" v="MM"/>
           <prop k="outline_color" v="0,0,0,255"/>
           <prop k="outline_style" v="solid"/>
-          <prop k="outline_width" v="0.06"/>
+          <prop k="outline_width" v="0.03"/>
           <prop k="outline_width_unit" v="MM"/>
           <prop k="style" v="solid"/>
         </layer>
@@ -49,7 +61,7 @@
           <prop k="offset_unit" v="MM"/>
           <prop k="outline_color" v="0,0,0,255"/>
           <prop k="outline_style" v="solid"/>
-          <prop k="outline_width" v="0.06"/>
+          <prop k="outline_width" v="0.03"/>
           <prop k="outline_width_unit" v="MM"/>
           <prop k="style" v="solid"/>
         </layer>
@@ -64,7 +76,7 @@
           <prop k="offset_unit" v="MM"/>
           <prop k="outline_color" v="0,0,0,255"/>
           <prop k="outline_style" v="solid"/>
-          <prop k="outline_width" v="0.06"/>
+          <prop k="outline_width" v="0.03"/>
           <prop k="outline_width_unit" v="MM"/>
           <prop k="style" v="solid"/>
         </layer>
@@ -79,7 +91,7 @@
           <prop k="offset_unit" v="MM"/>
           <prop k="outline_color" v="0,0,0,255"/>
           <prop k="outline_style" v="solid"/>
-          <prop k="outline_width" v="0.06"/>
+          <prop k="outline_width" v="0.03"/>
           <prop k="outline_width_unit" v="MM"/>
           <prop k="style" v="solid"/>
         </layer>
@@ -94,7 +106,7 @@
           <prop k="offset_unit" v="MM"/>
           <prop k="outline_color" v="0,0,0,255"/>
           <prop k="outline_style" v="solid"/>
-          <prop k="outline_width" v="0.06"/>
+          <prop k="outline_width" v="0.03"/>
           <prop k="outline_width_unit" v="MM"/>
           <prop k="style" v="solid"/>
         </layer>
@@ -109,7 +121,7 @@
           <prop k="offset_unit" v="MM"/>
           <prop k="outline_color" v="0,0,0,255"/>
           <prop k="outline_style" v="solid"/>
-          <prop k="outline_width" v="0.06"/>
+          <prop k="outline_width" v="0.03"/>
           <prop k="outline_width_unit" v="MM"/>
           <prop k="style" v="solid"/>
         </layer>
@@ -124,7 +136,7 @@
           <prop k="offset_unit" v="MM"/>
           <prop k="outline_color" v="0,0,0,255"/>
           <prop k="outline_style" v="solid"/>
-          <prop k="outline_width" v="0.06"/>
+          <prop k="outline_width" v="0.03"/>
           <prop k="outline_width_unit" v="MM"/>
           <prop k="style" v="solid"/>
         </layer>
@@ -139,7 +151,7 @@
           <prop k="offset_unit" v="MM"/>
           <prop k="outline_color" v="0,0,0,255"/>
           <prop k="outline_style" v="solid"/>
-          <prop k="outline_width" v="0.06"/>
+          <prop k="outline_width" v="0.03"/>
           <prop k="outline_width_unit" v="MM"/>
           <prop k="style" v="solid"/>
         </layer>
@@ -154,7 +166,7 @@
           <prop k="offset_unit" v="MM"/>
           <prop k="outline_color" v="0,0,0,255"/>
           <prop k="outline_style" v="solid"/>
-          <prop k="outline_width" v="0.06"/>
+          <prop k="outline_width" v="0.03"/>
           <prop k="outline_width_unit" v="MM"/>
           <prop k="style" v="solid"/>
         </layer>
@@ -171,7 +183,7 @@
           <prop k="offset_unit" v="MM"/>
           <prop k="outline_color" v="0,0,0,255"/>
           <prop k="outline_style" v="solid"/>
-          <prop k="outline_width" v="0.06"/>
+          <prop k="outline_width" v="0.03"/>
           <prop k="outline_width_unit" v="MM"/>
           <prop k="style" v="solid"/>
         </layer>
@@ -361,7 +373,6 @@
   <SingleCategoryDiagramRenderer diagramType="Histogram" sizeLegend="0" attributeLegend="1">
     <DiagramCategory penColor="#000000" labelPlacementMethod="XHeight" penWidth="0" diagramOrientation="Up" sizeScale="0,0,0,0,0,0" minimumSize="0" barWidth="5" penAlpha="255" maxScaleDenominator="1e+08" backgroundColor="#ffffff" transparency="0" width="15" scaleDependency="Area" backgroundAlpha="255" angleOffset="1440" scaleBasedVisibility="0" enabled="0" height="15" lineSizeScale="0,0,0,0,0,0" sizeType="MM" lineSizeType="MM" minScaleDenominator="inf">
       <fontProperties description="Ubuntu,11,-1,5,50,0,0,0,0,0" style=""/>
-      <attribute field="" color="#000000" label=""/>
     </DiagramCategory>
     <symbol alpha="1" clip_to_extent="1" type="marker" name="sizeSymbol">
       <layer pass="0" class="SimpleMarker" locked="0">
@@ -392,6 +403,10 @@
     <alias field="count" index="0" name=""/>
     <alias field="covered" index="1" name=""/>
     <alias field="mean" index="2" name=""/>
+    <alias field="px_area" index="3" name=""/>
+    <alias field="ratio" index="4" name=""/>
+    <alias field="area" index="5" name=""/>
+    <alias field="scaling" index="6" name=""/>
   </aliases>
   <excludeAttributesWMS/>
   <excludeAttributesWFS/>
@@ -402,6 +417,10 @@
       <column width="-1" hidden="0" type="field" name="covered"/>
       <column width="-1" hidden="0" type="field" name="mean"/>
       <column width="-1" hidden="1" type="actions"/>
+      <column width="-1" hidden="0" type="field" name="px_area"/>
+      <column width="-1" hidden="0" type="field" name="ratio"/>
+      <column width="-1" hidden="0" type="field" name="area"/>
+      <column width="-1" hidden="0" type="field" name="scaling"/>
     </columns>
   </attributetableconfig>
   <editform>.</editform>
@@ -436,6 +455,10 @@ def my_form_open(dialog, layer, feature):
     <default field="count" expression=""/>
     <default field="covered" expression=""/>
     <default field="mean" expression=""/>
+    <default field="px_area" expression=""/>
+    <default field="ratio" expression=""/>
+    <default field="area" expression=""/>
+    <default field="scaling" expression=""/>
   </defaults>
   <previewExpression>COALESCE( "count", '&lt;NULL>' )</previewExpression>
   <layerGeometryType>2</layerGeometryType>

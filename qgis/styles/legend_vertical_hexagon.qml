@@ -50,10 +50,10 @@
     </symbols>
   </renderer-v2>
   <labeling type="rule-based">
-    <rules key="{e54e84ef-2246-4fd1-9ec5-1fa4871aab2d}">
-      <rule description="Scaled hexagon label" filter=" &quot;id&quot; = 1" key="{e941b123-edbf-4f31-a8cb-cdc1a26ea7f8}">
+    <rules key="{15461951-717d-4a37-8b06-14c775cee498}">
+      <rule description="Scaled hexagon label" filter=" &quot;id&quot; = 1" key="{d9fbb873-8ba4-40a4-9eca-8ddc510871af}">
         <settings>
-          <text-style fontItalic="0" fontFamily="Times New Roman" fontLetterSpacing="0" fontUnderline="0" fontWeight="50" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="0" isExpression="0" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="10" fieldName="label" namedStyle="Regular" fontWordSpacing="0" useSubstitutions="0">
+          <text-style fontItalic="0" fontFamily="Times New Roman" fontLetterSpacing="0" fontUnderline="0" fontWeight="50" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="0" isExpression="0" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="5" fieldName="label" namedStyle="Regular" fontWordSpacing="0" useSubstitutions="0">
             <substitutions/>
           </text-style>
           <text-format placeDirectionSymbol="0" multilineAlign="4294967295" rightDirectionSymbol=">" multilineHeight="1" plussign="0" addDirectionSymbol="0" leftDirectionSymbol="&lt;" formatNumbers="0" decimals="3" wrapChar="" reverseDirectionSymbol="0"/>
@@ -237,6 +237,7 @@
   <SingleCategoryDiagramRenderer diagramType="Histogram" sizeLegend="0" attributeLegend="1">
     <DiagramCategory penColor="#000000" labelPlacementMethod="XHeight" penWidth="0" diagramOrientation="Up" sizeScale="0,0,0,0,0,0" minimumSize="0" barWidth="5" penAlpha="255" maxScaleDenominator="1e+08" backgroundColor="#ffffff" transparency="0" width="15" scaleDependency="Area" backgroundAlpha="255" angleOffset="1440" scaleBasedVisibility="0" enabled="0" height="15" lineSizeScale="0,0,0,0,0,0" sizeType="MM" lineSizeType="MM" minScaleDenominator="inf">
       <fontProperties description="Ubuntu,11,-1,5,50,0,0,0,0,0" style=""/>
+      <attribute field="" color="#000000" label=""/>
     </DiagramCategory>
     <symbol alpha="1" clip_to_extent="1" type="marker" name="sizeSymbol">
       <layer pass="0" class="SimpleMarker" locked="0">
@@ -262,7 +263,7 @@
     </symbol>
   </SingleCategoryDiagramRenderer>
   <DiagramLayerSettings yPosColumn="-1" showColumn="-1" linePlacementFlags="10" placement="0" dist="0" xPosColumn="-1" priority="0" obstacle="0" zIndex="0" showAll="1"/>
-  <annotationform></annotationform>
+  <annotationform>.</annotationform>
   <aliases>
     <alias field="scale" index="0" name=""/>
     <alias field="id" index="1" name=""/>
@@ -271,7 +272,7 @@
   <excludeAttributesWMS/>
   <excludeAttributesWFS/>
   <attributeactions default="-1"/>
-  <attributetableconfig actionWidgetStyle="dropDown" sortExpression="&quot;scale&quot;" sortOrder="0">
+  <attributetableconfig actionWidgetStyle="dropDown" sortExpression="&quot;label&quot;" sortOrder="0">
     <columns>
       <column width="-1" hidden="0" type="field" name="scale"/>
       <column width="-1" hidden="1" type="actions"/>
@@ -279,10 +280,10 @@
       <column width="-1" hidden="0" type="field" name="label"/>
     </columns>
   </attributetableconfig>
-  <editform></editform>
+  <editform>.</editform>
   <editforminit/>
   <editforminitcodesource>0</editforminitcodesource>
-  <editforminitfilepath></editforminitfilepath>
+  <editforminitfilepath>.</editforminitfilepath>
   <editforminitcode><![CDATA[# -*- coding: utf-8 -*-
 """
 QGIS forms can have a Python function that is called when the form is
