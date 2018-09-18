@@ -264,7 +264,8 @@ def worker(img, polygon, func, records):
 
         rec = func(**kwargs)
 
-    records.append(rec)
+    if rec:
+        records.append(rec)
 
 
 # TODO refactor, generalize
@@ -279,11 +280,12 @@ def compute_cover(**kwargs):
         'mean': cover.mean(),
         'covered': cover.count(),
         'count': kwargs['count'],
-        'area': round(x*y),
+        'px_area': round(x*y),
         'geometry': kwargs['geometry'],
     }
 
-    return bib
+    if bib['covered'] > 0:
+        return bib
 
 
 def compute_driver(**kwargs):
