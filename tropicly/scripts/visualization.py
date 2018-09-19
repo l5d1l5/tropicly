@@ -16,12 +16,13 @@ from tropicly.grid import SegmentedHexagon
 
 
 def visual_treecover(path, out, bins=None, unit=1000000, scaling='relative'):
+    properties = []
+    geometries = []
+    scaled_geometries = []
+    max_count = 0
+
     if not bins:
         bins = [i/10 for i in range(1, 11)]
-
-    geometries = []
-    properties = []
-    max_area = 0
 
     with fiona.open(path, 'r') as src:
         crs = src.crs
@@ -29,28 +30,26 @@ def visual_treecover(path, out, bins=None, unit=1000000, scaling='relative'):
         for feat in src:
             prop, geo = feat['properties'], feat['geometry']
 
-            prop['ratio'] = prop['covered'] / prop['count']
-            prop['area'] = (prop['covered'] * prop['px_area']) / unit
-
-            if prop['area'] > max_area:
-                max_area = prop['area']
+            if prop['count'] > max_count:
+                max_count = prop['count']
 
             geometries.append(geo)
             properties.append(prop)
 
-    scaled_geometries = []
     for prop, geo in zip(properties, geometries):
-        if scaling == 'relative':
-            factor = bins[bisect_left(bins, prop['ratio'])]
-            poly = scale(asShape(geo), xfact=factor, yfact=factor)
-            prop['scaling'] = factor
+        area = (prop['covered'] * prop['px_area']) / unit
 
+        if scaling == 'relative':
+            ratio = prop['covered'] / max_count
         else:
-            ratio = prop['area'] / max_area
-            factor = bins[bisect_left(bins, ratio)]
-            poly = scale(asShape(geo), xfact=factor, yfact=factor)
-            prop['a_ratio'] = ratio
-            prop['scaling'] = factor
+            ratio = area / ((max_count * prop['px_area']) / unit)
+
+        factor = bins[bisect_left(bins, ratio)]
+        poly = scale(asShape(geo), xfact=factor, yfact=factor)
+
+        prop['area'] = area
+        prop['ratio'] = ratio
+        prop['scaling'] = factor
 
         scaled_geometries.append(poly)
 
@@ -194,16 +193,64 @@ def visual_treecover(path, out, bins=None, unit=1000000, scaling='relative'):
 if __name__ == '__main__':
     visual_treecover(
         '/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/treecover/americas_cover.shp',
-        '/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/treecover/americas_cover_absolute_scaled_10bins.shp',
+        '/home/tobi/Documents/americas_cover_absolute_scaled_10bins.shp',
         scaling='absolute'
     )
     visual_treecover(
         '/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/treecover/africa_cover.shp',
-        '/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/treecover/africa_cover_absolute_scaled_10bins.shp',
+        '/home/tobi/Documents/africa_cover_absolute_scaled_10bins.shp',
         scaling='absolute'
     )
     visual_treecover(
         '/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/treecover/asia_cover.shp',
-        '/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/treecover/asia_cover_absolute_scaled_10bins.shp',
+        '/home/tobi/Documents/asia_cover_absolute_scaled_10bins.shp',
         scaling='absolute'
+    )
+
+    visual_treecover(
+        '/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/treecover/americas_cover.shp',
+        '/home/tobi/Documents/americas_cover_absolute_scaled_5bins.shp',
+        scaling='absolute',
+        bins=[.2, .4, .6, .8, 1.]
+    )
+    visual_treecover(
+        '/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/treecover/africa_cover.shp',
+        '/home/tobi/Documents/africa_cover_absolute_scaled_10bins.shp',
+        scaling='absolute',
+        bins=[.2, .4, .6, .8, 1.]
+    )
+    visual_treecover(
+        '/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/treecover/asia_cover.shp',
+        '/home/tobi/Documents/asia_cover_absolute_scaled_5bins.shp',
+        scaling='absolute',
+        bins=[.2, .4, .6, .8, 1.]
+    )
+
+    visual_treecover(
+        '/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/treecover/americas_cover.shp',
+        '/home/tobi/Documents/americas_cover_relative_scaled_10bins.shp',
+    )
+    visual_treecover(
+        '/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/treecover/africa_cover.shp',
+        '/home/tobi/Documents/africa_cover_relative_scaled_10bins.shp',
+    )
+    visual_treecover(
+        '/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/treecover/asia_cover.shp',
+        '/home/tobi/Documents/asia_cover_relative_scaled_10bins.shp',
+    )
+
+    visual_treecover(
+        '/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/treecover/americas_cover.shp',
+        '/home/tobi/Documents/americas_cover_relative_scaled_5bins.shp',
+        bins=[.2, .4, .6, .8, 1.]
+    )
+    visual_treecover(
+        '/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/treecover/africa_cover.shp',
+        '/home/tobi/Documents/africa_cover_relative_scaled_5bins.shp',
+        bins=[.2, .4, .6, .8, 1.]
+    )
+    visual_treecover(
+        '/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/treecover/asia_cover.shp',
+        '/home/tobi/Documents/asia_cover_relative_scaled_5bins.shp',
+        bins=[.2, .4, .6, .8, 1.]
     )
