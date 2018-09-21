@@ -59,12 +59,45 @@ def visual_treecover(path, out, bins=None, unit=1000000, scaling='relative'):
     gdf.to_file(out)
 
 
+def visual_driver(path, out, bins=(.2, .4, .6, .8, 1.)):
+    # layer props are driver (10,25,30,40,50,60,70,80,90,100)
+    # covered
+    # loss
+    # area
+    # compute ratio of lost forest
+    # scale hexagons relative to loss
+    # compute area lost
+    # scale hexagon absolute to loss
+    properties = []
+    geometries = []
+    scaled_geometries = []
+    max_loss = 0
 
-# REFACTOR THIS SHIT TO REUSEABLE FUNCTIONS
+    with fiona.open(path, 'r') as src:
+        crs = src.crs
+
+        for feat in src:
+            prop, geo = feat['properties'], feat['geometry']
+
+            if prop['loss'] > max_loss:
+                max_loss = prop['loss']
+
+            properties.append(prop)
+            geometries.append(geo)
+
+    for prop, geo in zip(properties, geometries):
+        ratio = prop['loss'] / max_loss
+        factor = bins[bisect_left(bins, ratio)]
+        poly = scale(asShape(geo), xfact=factor, yfact=factor)
+        scaled_geometries.append(poly)
+        prop['ratio'] = ratio
+
+    df = pd.DataFrame(properties)
+    gdf = gpd.GeoDataFrame(df, geometry=scaled_geometries)
+    gdf.crs = crs
+    gdf.to_file(out)
 
 
-# path = '/home/tobi/Documents/driver_africa_filtered.shp'
-# path = '/home/tobi/Documents/driver_filtered_africa.shp'
 # path = '/home/tobi/Documents/driver_normalized_scaled_filtered_africa.shp'
 # vec = fiona.open(path)
 
@@ -191,66 +224,5 @@ def visual_treecover(path, out, bins=None, unit=1000000, scaling='relative'):
 
 
 if __name__ == '__main__':
-    visual_treecover(
-        '/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/treecover/americas_cover.shp',
-        '/home/tobi/Documents/americas_cover_absolute_scaled_10bins.shp',
-        scaling='absolute'
-    )
-    visual_treecover(
-        '/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/treecover/africa_cover.shp',
-        '/home/tobi/Documents/africa_cover_absolute_scaled_10bins.shp',
-        scaling='absolute'
-    )
-    visual_treecover(
-        '/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/treecover/asia_cover.shp',
-        '/home/tobi/Documents/asia_cover_absolute_scaled_10bins.shp',
-        scaling='absolute'
-    )
-
-    visual_treecover(
-        '/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/treecover/americas_cover.shp',
-        '/home/tobi/Documents/americas_cover_absolute_scaled_5bins.shp',
-        scaling='absolute',
-        bins=[.2, .4, .6, .8, 1.]
-    )
-    visual_treecover(
-        '/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/treecover/africa_cover.shp',
-        '/home/tobi/Documents/africa_cover_absolute_scaled_10bins.shp',
-        scaling='absolute',
-        bins=[.2, .4, .6, .8, 1.]
-    )
-    visual_treecover(
-        '/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/treecover/asia_cover.shp',
-        '/home/tobi/Documents/asia_cover_absolute_scaled_5bins.shp',
-        scaling='absolute',
-        bins=[.2, .4, .6, .8, 1.]
-    )
-
-    visual_treecover(
-        '/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/treecover/americas_cover.shp',
-        '/home/tobi/Documents/americas_cover_relative_scaled_10bins.shp',
-    )
-    visual_treecover(
-        '/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/treecover/africa_cover.shp',
-        '/home/tobi/Documents/africa_cover_relative_scaled_10bins.shp',
-    )
-    visual_treecover(
-        '/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/treecover/asia_cover.shp',
-        '/home/tobi/Documents/asia_cover_relative_scaled_10bins.shp',
-    )
-
-    visual_treecover(
-        '/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/treecover/americas_cover.shp',
-        '/home/tobi/Documents/americas_cover_relative_scaled_5bins.shp',
-        bins=[.2, .4, .6, .8, 1.]
-    )
-    visual_treecover(
-        '/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/treecover/africa_cover.shp',
-        '/home/tobi/Documents/africa_cover_relative_scaled_5bins.shp',
-        bins=[.2, .4, .6, .8, 1.]
-    )
-    visual_treecover(
-        '/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/treecover/asia_cover.shp',
-        '/home/tobi/Documents/asia_cover_relative_scaled_5bins.shp',
-        bins=[.2, .4, .6, .8, 1.]
-    )
+    visual_driver('/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/test.shp',
+                  '/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/test4.shp')
