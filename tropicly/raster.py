@@ -276,7 +276,7 @@ def compute_cover(**kwargs):
     x = kwargs['distance']((transform.xoff, transform.yoff), (transform.xoff + transform.a, transform.yoff))
     y = kwargs['distance']((transform.xoff, transform.yoff), (transform.xoff, transform.yoff + transform.e))
 
-    bib = {
+    feature = {
         'mean': cover.mean(),
         'covered': cover.count(),
         'count': kwargs['count'],
@@ -284,20 +284,28 @@ def compute_cover(**kwargs):
         'geometry': kwargs['geometry'],
     }
 
-    if bib['covered'] > 0:
-        return bib
+    if feature['covered'] > 0:
+        return feature
 
 
 def compute_driver(**kwargs):
+    transform = kwargs['transform']
+
+    x = kwargs['distance']((transform.xoff, transform.yoff), (transform.xoff + transform.a, transform.yoff))
+    y = kwargs['distance']((transform.xoff, transform.yoff), (transform.xoff, transform.yoff + transform.e))
+
     ids, counts = np.unique(kwargs['img'], return_counts=True)
-    bib = {str(i): c for i, c in zip(ids, counts)}
+    feature = {str(key): int(value) for key, value in zip(ids, counts) if key not in [0, 20, 255]}
 
-    if len(bib) > 1:
-        bib['has_driver'] = 1
-    else:
-        bib['has_driver'] = 0
+    if not feature:
+        return
 
-    bib['count'] = kwargs['count']
-    bib['geometry'] = kwargs['geometry']
+    loss = sum(feature.values())
 
-    return bib
+    feature.update({
+        'loss': loss,
+        'px_area': round(x*y),
+        'geometry': kwargs['geometry'],
+    })
+
+    return feature
