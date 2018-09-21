@@ -5,15 +5,15 @@
   <evaluateDefaultValues active="0"/>
   <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="">
     <customproperties/>
-    <layer-tree-group expanded="0" checked="Qt::Unchecked" name="boundaries">
+    <layer-tree-group expanded="0" checked="Qt::Checked" name="boundaries">
       <customproperties/>
-      <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Unchecked" id="hexboundaries_asia20180726111526360" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/common/hexboundaries_asia.shp" name="hexboundaries_asia">
+      <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="hexboundaries_asia20180726111526360" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/common/hexboundaries_asia.shp" name="hexboundaries_asia">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Unchecked" id="hexboundaries_africa20180726111645071" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/common/hexboundaries_africa.shp" name="hexboundaries_africa">
+      <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="hexboundaries_africa20180726111645071" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/common/hexboundaries_africa.shp" name="hexboundaries_africa">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Unchecked" id="hexboundaries_americas20180726111554823" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/common/hexboundaries_americas.shp" name="hexboundaries_americas">
+      <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="hexboundaries_americas20180726111554823" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/common/hexboundaries_americas.shp" name="hexboundaries_americas">
         <customproperties/>
       </layer-tree-layer>
     </layer-tree-group>
@@ -106,10 +106,10 @@
   <mapcanvas>
     <units>degrees</units>
     <extent>
-      <xmin>-47.18777609266193451</xmin>
-      <ymin>-4.73710437447644495</ymin>
-      <xmax>60.226234292389492</xmax>
-      <ymax>37.60541671466725688</ymax>
+      <xmin>66.36754284353980893</xmin>
+      <ymin>-20.30149575277339125</ymin>
+      <xmax>173.78155322859123544</xmax>
+      <ymax>22.04102533637031058</ymax>
     </extent>
     <rotation>0</rotation>
     <projections>0</projections>
@@ -160,20 +160,20 @@
     </custom-order>
   </layer-tree-canvas>
   <legend updateDrawingOrder="true">
-    <legendgroup open="false" checked="Qt::Unchecked" name="boundaries">
-      <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="hexboundaries_asia" showFeatureCount="0">
+    <legendgroup open="false" checked="Qt::Checked" name="boundaries">
+      <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="hexboundaries_asia" showFeatureCount="0">
         <filegroup open="true" hidden="false">
-          <legendlayerfile isInOverview="0" layerid="hexboundaries_asia20180726111526360" visible="0"/>
+          <legendlayerfile isInOverview="0" layerid="hexboundaries_asia20180726111526360" visible="1"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="hexboundaries_africa" showFeatureCount="0">
+      <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="hexboundaries_africa" showFeatureCount="0">
         <filegroup open="true" hidden="false">
-          <legendlayerfile isInOverview="0" layerid="hexboundaries_africa20180726111645071" visible="0"/>
+          <legendlayerfile isInOverview="0" layerid="hexboundaries_africa20180726111645071" visible="1"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="hexboundaries_americas" showFeatureCount="0">
+      <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="hexboundaries_americas" showFeatureCount="0">
         <filegroup open="true" hidden="false">
-          <legendlayerfile isInOverview="0" layerid="hexboundaries_americas20180726111554823" visible="0"/>
+          <legendlayerfile isInOverview="0" layerid="hexboundaries_americas20180726111554823" visible="1"/>
         </filegroup>
       </legendlayer>
     </legendgroup>
@@ -4153,13 +4153,10 @@ def my_form_open(dialog, layer, feature):
         <edittype widgetv2type="TextEdit" name="px_area">
           <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ratio">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
         <edittype widgetv2type="TextEdit" name="area">
           <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="a_ratio">
+        <edittype widgetv2type="TextEdit" name="ratio">
           <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="scaling">
@@ -4548,10 +4545,9 @@ def my_form_open(dialog, layer, feature):
         <alias field="covered" index="1" name=""/>
         <alias field="mean" index="2" name=""/>
         <alias field="px_area" index="3" name=""/>
-        <alias field="ratio" index="4" name=""/>
-        <alias field="area" index="5" name=""/>
-        <alias field="a_ratio" index="6" name=""/>
-        <alias field="scaling" index="7" name=""/>
+        <alias field="area" index="4" name=""/>
+        <alias field="ratio" index="5" name=""/>
+        <alias field="scaling" index="6" name=""/>
       </aliases>
       <excludeAttributesWMS/>
       <excludeAttributesWFS/>
@@ -4602,9 +4598,8 @@ def my_form_open(dialog, layer, feature):
         <default field="covered" expression=""/>
         <default field="mean" expression=""/>
         <default field="px_area" expression=""/>
-        <default field="ratio" expression=""/>
         <default field="area" expression=""/>
-        <default field="a_ratio" expression=""/>
+        <default field="ratio" expression=""/>
         <default field="scaling" expression=""/>
       </defaults>
       <previewExpression>COALESCE( "count", '&lt;NULL>' )</previewExpression>
@@ -5726,6 +5721,7 @@ def my_form_open(dialog, layer, feature):
       <SingleCategoryDiagramRenderer diagramType="Histogram" sizeLegend="0" attributeLegend="1">
         <DiagramCategory penColor="#000000" labelPlacementMethod="XHeight" penWidth="0" diagramOrientation="Up" sizeScale="0,0,0,0,0,0" minimumSize="0" barWidth="5" penAlpha="255" maxScaleDenominator="1e+08" backgroundColor="#ffffff" transparency="0" width="15" scaleDependency="Area" backgroundAlpha="255" angleOffset="1440" scaleBasedVisibility="0" enabled="0" height="15" lineSizeScale="0,0,0,0,0,0" sizeType="MM" lineSizeType="MM" minScaleDenominator="inf">
           <fontProperties description="Ubuntu,11,-1,5,50,0,0,0,0,0" style=""/>
+          <attribute field="" color="#000000" label=""/>
         </DiagramCategory>
         <symbol alpha="1" clip_to_extent="1" type="marker" name="sizeSymbol">
           <layer pass="0" class="SimpleMarker" locked="0">
@@ -6072,6 +6068,7 @@ def my_form_open(dialog, layer, feature):
       <SingleCategoryDiagramRenderer diagramType="Histogram" sizeLegend="0" attributeLegend="1">
         <DiagramCategory penColor="#000000" labelPlacementMethod="XHeight" penWidth="0" diagramOrientation="Up" sizeScale="0,0,0,0,0,0" minimumSize="0" barWidth="5" penAlpha="255" maxScaleDenominator="1e+08" backgroundColor="#ffffff" transparency="0" width="15" scaleDependency="Area" backgroundAlpha="255" angleOffset="1440" scaleBasedVisibility="0" enabled="0" height="15" lineSizeScale="0,0,0,0,0,0" sizeType="MM" lineSizeType="MM" minScaleDenominator="inf">
           <fontProperties description="Ubuntu,11,-1,5,50,0,0,0,0,0" style=""/>
+          <attribute field="" color="#000000" label=""/>
         </DiagramCategory>
         <symbol alpha="1" clip_to_extent="1" type="marker" name="sizeSymbol">
           <layer pass="0" class="SimpleMarker" locked="0">
@@ -6194,10 +6191,10 @@ def my_form_open(dialog, layer, feature):
         <edittype widgetv2type="TextEdit" name="px_area">
           <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ratio">
+        <edittype widgetv2type="TextEdit" name="area">
           <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="area">
+        <edittype widgetv2type="TextEdit" name="ratio">
           <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="scaling">
@@ -6586,8 +6583,8 @@ def my_form_open(dialog, layer, feature):
         <alias field="covered" index="1" name=""/>
         <alias field="mean" index="2" name=""/>
         <alias field="px_area" index="3" name=""/>
-        <alias field="ratio" index="4" name=""/>
-        <alias field="area" index="5" name=""/>
+        <alias field="area" index="4" name=""/>
+        <alias field="ratio" index="5" name=""/>
         <alias field="scaling" index="6" name=""/>
       </aliases>
       <excludeAttributesWMS/>
@@ -6638,8 +6635,8 @@ def my_form_open(dialog, layer, feature):
         <default field="covered" expression=""/>
         <default field="mean" expression=""/>
         <default field="px_area" expression=""/>
-        <default field="ratio" expression=""/>
         <default field="area" expression=""/>
+        <default field="ratio" expression=""/>
         <default field="scaling" expression=""/>
       </defaults>
       <previewExpression>COALESCE( "count", '&lt;NULL>' )</previewExpression>
@@ -6689,10 +6686,10 @@ def my_form_open(dialog, layer, feature):
         <edittype widgetv2type="TextEdit" name="px_area">
           <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ratio">
+        <edittype widgetv2type="TextEdit" name="area">
           <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="area">
+        <edittype widgetv2type="TextEdit" name="ratio">
           <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="scaling">
@@ -7081,8 +7078,8 @@ def my_form_open(dialog, layer, feature):
         <alias field="covered" index="1" name=""/>
         <alias field="mean" index="2" name=""/>
         <alias field="px_area" index="3" name=""/>
-        <alias field="ratio" index="4" name=""/>
-        <alias field="area" index="5" name=""/>
+        <alias field="area" index="4" name=""/>
+        <alias field="ratio" index="5" name=""/>
         <alias field="scaling" index="6" name=""/>
       </aliases>
       <excludeAttributesWMS/>
@@ -7133,8 +7130,8 @@ def my_form_open(dialog, layer, feature):
         <default field="covered" expression=""/>
         <default field="mean" expression=""/>
         <default field="px_area" expression=""/>
-        <default field="ratio" expression=""/>
         <default field="area" expression=""/>
+        <default field="ratio" expression=""/>
         <default field="scaling" expression=""/>
       </defaults>
       <previewExpression>COALESCE( "count", '&lt;NULL>' )</previewExpression>
@@ -7184,13 +7181,10 @@ def my_form_open(dialog, layer, feature):
         <edittype widgetv2type="TextEdit" name="px_area">
           <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ratio">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
         <edittype widgetv2type="TextEdit" name="area">
           <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="a_ratio">
+        <edittype widgetv2type="TextEdit" name="ratio">
           <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="scaling">
@@ -7579,10 +7573,9 @@ def my_form_open(dialog, layer, feature):
         <alias field="covered" index="1" name=""/>
         <alias field="mean" index="2" name=""/>
         <alias field="px_area" index="3" name=""/>
-        <alias field="ratio" index="4" name=""/>
-        <alias field="area" index="5" name=""/>
-        <alias field="a_ratio" index="6" name=""/>
-        <alias field="scaling" index="7" name=""/>
+        <alias field="area" index="4" name=""/>
+        <alias field="ratio" index="5" name=""/>
+        <alias field="scaling" index="6" name=""/>
       </aliases>
       <excludeAttributesWMS/>
       <excludeAttributesWFS/>
@@ -7633,9 +7626,8 @@ def my_form_open(dialog, layer, feature):
         <default field="covered" expression=""/>
         <default field="mean" expression=""/>
         <default field="px_area" expression=""/>
-        <default field="ratio" expression=""/>
         <default field="area" expression=""/>
-        <default field="a_ratio" expression=""/>
+        <default field="ratio" expression=""/>
         <default field="scaling" expression=""/>
       </defaults>
       <previewExpression>COALESCE( "count", '&lt;NULL>' )</previewExpression>
@@ -7685,13 +7677,10 @@ def my_form_open(dialog, layer, feature):
         <edittype widgetv2type="TextEdit" name="px_area">
           <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ratio">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
         <edittype widgetv2type="TextEdit" name="area">
           <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="a_ratio">
+        <edittype widgetv2type="TextEdit" name="ratio">
           <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="scaling">
@@ -8080,10 +8069,9 @@ def my_form_open(dialog, layer, feature):
         <alias field="covered" index="1" name=""/>
         <alias field="mean" index="2" name=""/>
         <alias field="px_area" index="3" name=""/>
-        <alias field="ratio" index="4" name=""/>
-        <alias field="area" index="5" name=""/>
-        <alias field="a_ratio" index="6" name=""/>
-        <alias field="scaling" index="7" name=""/>
+        <alias field="area" index="4" name=""/>
+        <alias field="ratio" index="5" name=""/>
+        <alias field="scaling" index="6" name=""/>
       </aliases>
       <excludeAttributesWMS/>
       <excludeAttributesWFS/>
@@ -8134,9 +8122,8 @@ def my_form_open(dialog, layer, feature):
         <default field="covered" expression=""/>
         <default field="mean" expression=""/>
         <default field="px_area" expression=""/>
-        <default field="ratio" expression=""/>
         <default field="area" expression=""/>
-        <default field="a_ratio" expression=""/>
+        <default field="ratio" expression=""/>
         <default field="scaling" expression=""/>
       </defaults>
       <previewExpression>COALESCE( "count", '&lt;NULL>' )</previewExpression>
@@ -8757,6 +8744,7 @@ def my_form_open(dialog, layer, feature):
       <SingleCategoryDiagramRenderer diagramType="Histogram" sizeLegend="0" attributeLegend="1">
         <DiagramCategory penColor="#000000" labelPlacementMethod="XHeight" penWidth="0" diagramOrientation="Up" sizeScale="0,0,0,0,0,0" minimumSize="0" barWidth="5" penAlpha="255" maxScaleDenominator="1e+08" backgroundColor="#ffffff" transparency="0" width="15" scaleDependency="Area" backgroundAlpha="255" angleOffset="1440" scaleBasedVisibility="0" enabled="0" height="15" lineSizeScale="0,0,0,0,0,0" sizeType="MM" lineSizeType="MM" minScaleDenominator="inf">
           <fontProperties description="Ubuntu,11,-1,5,50,0,0,0,0,0" style=""/>
+          <attribute field="" color="#000000" label=""/>
         </DiagramCategory>
         <symbol alpha="1" clip_to_extent="1" type="marker" name="sizeSymbol">
           <layer pass="0" class="SimpleMarker" locked="0">
@@ -9103,6 +9091,7 @@ def my_form_open(dialog, layer, feature):
       <SingleCategoryDiagramRenderer diagramType="Histogram" sizeLegend="0" attributeLegend="1">
         <DiagramCategory penColor="#000000" labelPlacementMethod="XHeight" penWidth="0" diagramOrientation="Up" sizeScale="0,0,0,0,0,0" minimumSize="0" barWidth="5" penAlpha="255" maxScaleDenominator="1e+08" backgroundColor="#ffffff" transparency="0" width="15" scaleDependency="Area" backgroundAlpha="255" angleOffset="1440" scaleBasedVisibility="0" enabled="0" height="15" lineSizeScale="0,0,0,0,0,0" sizeType="MM" lineSizeType="MM" minScaleDenominator="inf">
           <fontProperties description="Ubuntu,11,-1,5,50,0,0,0,0,0" style=""/>
+          <attribute field="" color="#000000" label=""/>
         </DiagramCategory>
         <symbol alpha="1" clip_to_extent="1" type="marker" name="sizeSymbol">
           <layer pass="0" class="SimpleMarker" locked="0">
@@ -9225,10 +9214,10 @@ def my_form_open(dialog, layer, feature):
         <edittype widgetv2type="TextEdit" name="px_area">
           <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ratio">
+        <edittype widgetv2type="TextEdit" name="area">
           <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="area">
+        <edittype widgetv2type="TextEdit" name="ratio">
           <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="scaling">
@@ -9617,8 +9606,8 @@ def my_form_open(dialog, layer, feature):
         <alias field="covered" index="1" name=""/>
         <alias field="mean" index="2" name=""/>
         <alias field="px_area" index="3" name=""/>
-        <alias field="ratio" index="4" name=""/>
-        <alias field="area" index="5" name=""/>
+        <alias field="area" index="4" name=""/>
+        <alias field="ratio" index="5" name=""/>
         <alias field="scaling" index="6" name=""/>
       </aliases>
       <excludeAttributesWMS/>
@@ -9669,8 +9658,8 @@ def my_form_open(dialog, layer, feature):
         <default field="covered" expression=""/>
         <default field="mean" expression=""/>
         <default field="px_area" expression=""/>
-        <default field="ratio" expression=""/>
         <default field="area" expression=""/>
+        <default field="ratio" expression=""/>
         <default field="scaling" expression=""/>
       </defaults>
       <previewExpression>COALESCE( "count", '&lt;NULL>' )</previewExpression>
@@ -9720,10 +9709,10 @@ def my_form_open(dialog, layer, feature):
         <edittype widgetv2type="TextEdit" name="px_area">
           <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ratio">
+        <edittype widgetv2type="TextEdit" name="area">
           <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="area">
+        <edittype widgetv2type="TextEdit" name="ratio">
           <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="scaling">
@@ -10112,8 +10101,8 @@ def my_form_open(dialog, layer, feature):
         <alias field="covered" index="1" name=""/>
         <alias field="mean" index="2" name=""/>
         <alias field="px_area" index="3" name=""/>
-        <alias field="ratio" index="4" name=""/>
-        <alias field="area" index="5" name=""/>
+        <alias field="area" index="4" name=""/>
+        <alias field="ratio" index="5" name=""/>
         <alias field="scaling" index="6" name=""/>
       </aliases>
       <excludeAttributesWMS/>
@@ -10164,8 +10153,8 @@ def my_form_open(dialog, layer, feature):
         <default field="covered" expression=""/>
         <default field="mean" expression=""/>
         <default field="px_area" expression=""/>
-        <default field="ratio" expression=""/>
         <default field="area" expression=""/>
+        <default field="ratio" expression=""/>
         <default field="scaling" expression=""/>
       </defaults>
       <previewExpression>COALESCE( "count", '&lt;NULL>' )</previewExpression>
@@ -10215,13 +10204,10 @@ def my_form_open(dialog, layer, feature):
         <edittype widgetv2type="TextEdit" name="px_area">
           <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ratio">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
         <edittype widgetv2type="TextEdit" name="area">
           <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="a_ratio">
+        <edittype widgetv2type="TextEdit" name="ratio">
           <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="scaling">
@@ -10610,10 +10596,9 @@ def my_form_open(dialog, layer, feature):
         <alias field="covered" index="1" name=""/>
         <alias field="mean" index="2" name=""/>
         <alias field="px_area" index="3" name=""/>
-        <alias field="ratio" index="4" name=""/>
-        <alias field="area" index="5" name=""/>
-        <alias field="a_ratio" index="6" name=""/>
-        <alias field="scaling" index="7" name=""/>
+        <alias field="area" index="4" name=""/>
+        <alias field="ratio" index="5" name=""/>
+        <alias field="scaling" index="6" name=""/>
       </aliases>
       <excludeAttributesWMS/>
       <excludeAttributesWFS/>
@@ -10664,9 +10649,8 @@ def my_form_open(dialog, layer, feature):
         <default field="covered" expression=""/>
         <default field="mean" expression=""/>
         <default field="px_area" expression=""/>
-        <default field="ratio" expression=""/>
         <default field="area" expression=""/>
-        <default field="a_ratio" expression=""/>
+        <default field="ratio" expression=""/>
         <default field="scaling" expression=""/>
       </defaults>
       <previewExpression>COALESCE( "count", '&lt;NULL>' )</previewExpression>
@@ -10716,13 +10700,10 @@ def my_form_open(dialog, layer, feature):
         <edittype widgetv2type="TextEdit" name="px_area">
           <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ratio">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
         <edittype widgetv2type="TextEdit" name="area">
           <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="a_ratio">
+        <edittype widgetv2type="TextEdit" name="ratio">
           <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="scaling">
@@ -11111,10 +11092,9 @@ def my_form_open(dialog, layer, feature):
         <alias field="covered" index="1" name=""/>
         <alias field="mean" index="2" name=""/>
         <alias field="px_area" index="3" name=""/>
-        <alias field="ratio" index="4" name=""/>
-        <alias field="area" index="5" name=""/>
-        <alias field="a_ratio" index="6" name=""/>
-        <alias field="scaling" index="7" name=""/>
+        <alias field="area" index="4" name=""/>
+        <alias field="ratio" index="5" name=""/>
+        <alias field="scaling" index="6" name=""/>
       </aliases>
       <excludeAttributesWMS/>
       <excludeAttributesWFS/>
@@ -11165,9 +11145,8 @@ def my_form_open(dialog, layer, feature):
         <default field="covered" expression=""/>
         <default field="mean" expression=""/>
         <default field="px_area" expression=""/>
-        <default field="ratio" expression=""/>
         <default field="area" expression=""/>
-        <default field="a_ratio" expression=""/>
+        <default field="ratio" expression=""/>
         <default field="scaling" expression=""/>
       </defaults>
       <previewExpression>COALESCE( "count", '&lt;NULL>' )</previewExpression>
@@ -11788,6 +11767,7 @@ def my_form_open(dialog, layer, feature):
       <SingleCategoryDiagramRenderer diagramType="Histogram" sizeLegend="0" attributeLegend="1">
         <DiagramCategory penColor="#000000" labelPlacementMethod="XHeight" penWidth="0" diagramOrientation="Up" sizeScale="0,0,0,0,0,0" minimumSize="0" barWidth="5" penAlpha="255" maxScaleDenominator="1e+08" backgroundColor="#ffffff" transparency="0" width="15" scaleDependency="Area" backgroundAlpha="255" angleOffset="1440" scaleBasedVisibility="0" enabled="0" height="15" lineSizeScale="0,0,0,0,0,0" sizeType="MM" lineSizeType="MM" minScaleDenominator="inf">
           <fontProperties description="Ubuntu,11,-1,5,50,0,0,0,0,0" style=""/>
+          <attribute field="" color="#000000" label=""/>
         </DiagramCategory>
         <symbol alpha="1" clip_to_extent="1" type="marker" name="sizeSymbol">
           <layer pass="0" class="SimpleMarker" locked="0">
@@ -12134,6 +12114,7 @@ def my_form_open(dialog, layer, feature):
       <SingleCategoryDiagramRenderer diagramType="Histogram" sizeLegend="0" attributeLegend="1">
         <DiagramCategory penColor="#000000" labelPlacementMethod="XHeight" penWidth="0" diagramOrientation="Up" sizeScale="0,0,0,0,0,0" minimumSize="0" barWidth="5" penAlpha="255" maxScaleDenominator="1e+08" backgroundColor="#ffffff" transparency="0" width="15" scaleDependency="Area" backgroundAlpha="255" angleOffset="1440" scaleBasedVisibility="0" enabled="0" height="15" lineSizeScale="0,0,0,0,0,0" sizeType="MM" lineSizeType="MM" minScaleDenominator="inf">
           <fontProperties description="Ubuntu,11,-1,5,50,0,0,0,0,0" style=""/>
+          <attribute field="" color="#000000" label=""/>
         </DiagramCategory>
         <symbol alpha="1" clip_to_extent="1" type="marker" name="sizeSymbol">
           <layer pass="0" class="SimpleMarker" locked="0">
@@ -12256,10 +12237,10 @@ def my_form_open(dialog, layer, feature):
         <edittype widgetv2type="TextEdit" name="px_area">
           <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ratio">
+        <edittype widgetv2type="TextEdit" name="area">
           <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="area">
+        <edittype widgetv2type="TextEdit" name="ratio">
           <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="scaling">
@@ -12648,8 +12629,8 @@ def my_form_open(dialog, layer, feature):
         <alias field="covered" index="1" name=""/>
         <alias field="mean" index="2" name=""/>
         <alias field="px_area" index="3" name=""/>
-        <alias field="ratio" index="4" name=""/>
-        <alias field="area" index="5" name=""/>
+        <alias field="area" index="4" name=""/>
+        <alias field="ratio" index="5" name=""/>
         <alias field="scaling" index="6" name=""/>
       </aliases>
       <excludeAttributesWMS/>
@@ -12700,8 +12681,8 @@ def my_form_open(dialog, layer, feature):
         <default field="covered" expression=""/>
         <default field="mean" expression=""/>
         <default field="px_area" expression=""/>
-        <default field="ratio" expression=""/>
         <default field="area" expression=""/>
+        <default field="ratio" expression=""/>
         <default field="scaling" expression=""/>
       </defaults>
       <previewExpression>COALESCE( "count", '&lt;NULL>' )</previewExpression>
@@ -12751,10 +12732,10 @@ def my_form_open(dialog, layer, feature):
         <edittype widgetv2type="TextEdit" name="px_area">
           <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ratio">
+        <edittype widgetv2type="TextEdit" name="area">
           <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="area">
+        <edittype widgetv2type="TextEdit" name="ratio">
           <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="scaling">
@@ -13143,8 +13124,8 @@ def my_form_open(dialog, layer, feature):
         <alias field="covered" index="1" name=""/>
         <alias field="mean" index="2" name=""/>
         <alias field="px_area" index="3" name=""/>
-        <alias field="ratio" index="4" name=""/>
-        <alias field="area" index="5" name=""/>
+        <alias field="area" index="4" name=""/>
+        <alias field="ratio" index="5" name=""/>
         <alias field="scaling" index="6" name=""/>
       </aliases>
       <excludeAttributesWMS/>
@@ -13195,8 +13176,8 @@ def my_form_open(dialog, layer, feature):
         <default field="covered" expression=""/>
         <default field="mean" expression=""/>
         <default field="px_area" expression=""/>
-        <default field="ratio" expression=""/>
         <default field="area" expression=""/>
+        <default field="ratio" expression=""/>
         <default field="scaling" expression=""/>
       </defaults>
       <previewExpression>COALESCE( "count", '&lt;NULL>' )</previewExpression>

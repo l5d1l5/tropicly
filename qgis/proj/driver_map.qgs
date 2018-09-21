@@ -7,67 +7,67 @@
     <customproperties/>
     <layer-tree-group expanded="0" checked="Qt::Checked" name="legend">
       <customproperties/>
-      <layer-tree-layer expanded="0" providerKey="ogr" checked="Qt::Checked" id="driver_asia_legend_vertical20180905093720083" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/shp/driver_asia_legend_vertical.shp" name="driver_asia_legend_vertical">
+      <layer-tree-layer expanded="0" providerKey="ogr" checked="Qt::Checked" id="driver_asia_legend_vertical20180905093720083" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/driver/driver_asia_legend_vertical.shp" name="driver_asia_legend_vertical">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="0" providerKey="ogr" checked="Qt::Checked" id="driver_africa_legend_vertical20180905093559028" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/shp/driver_africa_legend_vertical.shp" name="driver_africa_legend_vertical">
+      <layer-tree-layer expanded="0" providerKey="ogr" checked="Qt::Checked" id="driver_africa_legend_vertical20180905093559028" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/driver/driver_africa_legend_vertical.shp" name="driver_africa_legend_vertical">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="0" providerKey="ogr" checked="Qt::Checked" id="driver_americas_legend_vertical20180905093421029" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/shp/driver_americas_legend_vertical.shp" name="driver_americas_legend_vertical">
+      <layer-tree-layer expanded="0" providerKey="ogr" checked="Qt::Checked" id="driver_americas_legend_vertical20180905093421029" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/driver/driver_americas_legend_vertical.shp" name="driver_americas_legend_vertical">
         <customproperties/>
       </layer-tree-layer>
     </layer-tree-group>
     <layer-tree-group expanded="0" checked="Qt::Checked" name="boundaries">
       <customproperties/>
-      <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="hexboundaries_africa20180814074740925" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/shp/hexboundaries_africa.shp" name="hexboundaries_africa">
+      <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="hexboundaries_africa20180814074740925" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/common/hexboundaries_africa.shp" name="hexboundaries_africa">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="hexboundaries_asia20180814074751293" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/shp/hexboundaries_asia.shp" name="hexboundaries_asia">
+      <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="hexboundaries_asia20180814074751293" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/common/hexboundaries_asia.shp" name="hexboundaries_asia">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="hexboundaries_americas20180814074746164" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/shp/hexboundaries_americas.shp" name="hexboundaries_americas">
+      <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="hexboundaries_americas20180814074746164" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/common/hexboundaries_americas.shp" name="hexboundaries_americas">
         <customproperties/>
       </layer-tree-layer>
     </layer-tree-group>
     <layer-tree-group expanded="0" checked="Qt::Unchecked" name="driver">
       <customproperties/>
-      <layer-tree-layer expanded="0" providerKey="ogr" checked="Qt::Unchecked" id="driver_normalized_scaled_ratio_americas20180814074624461" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/shp/driver_normalized_scaled_ratio_americas.shp" name="driver_normalized_scaled_ratio_americas">
+      <layer-tree-layer expanded="0" providerKey="ogr" checked="Qt::Unchecked" id="driver_normalized_scaled_ratio_americas20180814074624461" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/driver/driver_normalized_scaled_ratio_americas.shp" name="driver_normalized_scaled_ratio_americas">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="0" providerKey="ogr" checked="Qt::Unchecked" id="driver_normalized_scaled_ratio_africa20180814074622639" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/shp/driver_normalized_scaled_ratio_africa.shp" name="driver_normalized_scaled_ratio_africa">
+      <layer-tree-layer expanded="0" providerKey="ogr" checked="Qt::Unchecked" id="driver_normalized_scaled_ratio_africa20180814074622639" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/driver/driver_normalized_scaled_ratio_africa.shp" name="driver_normalized_scaled_ratio_africa">
         <customproperties/>
       </layer-tree-layer>
     </layer-tree-group>
-    <layer-tree-group expanded="0" checked="Qt::Checked" name="driver_filtered">
+    <layer-tree-group expanded="1" checked="Qt::Checked" name="driver_filtered">
       <customproperties/>
-      <layer-tree-layer expanded="0" providerKey="ogr" checked="Qt::Checked" id="driver_normalized_scaled_ratio_filtered_asia20180905103914145" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/shp/driver_normalized_scaled_ratio_filtered_asia.shp" name="driver_normalized_scaled_ratio_filtered_asia">
+      <layer-tree-layer expanded="0" providerKey="ogr" checked="Qt::Checked" id="driver_normalized_scaled_ratio_filtered_asia20180905103914145" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/driver/driver_normalized_scaled_ratio_filtered_asia.shp" name="driver_normalized_scaled_ratio_filtered_asia">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="0" providerKey="ogr" checked="Qt::Checked" id="driver_normalized_scaled_ratio_filtered_africa20180905111813689" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/shp/driver_normalized_scaled_ratio_filtered_africa.shp" name="driver_normalized_scaled_ratio_filtered_africa">
+      <layer-tree-layer expanded="0" providerKey="ogr" checked="Qt::Checked" id="driver_normalized_scaled_ratio_filtered_africa20180905111813689" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/driver/driver_normalized_scaled_ratio_filtered_africa.shp" name="driver_normalized_scaled_ratio_filtered_africa">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="0" providerKey="ogr" checked="Qt::Checked" id="driver_normalized_scaled_ratio_filtered_americas20180905100842649" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/shp/driver_normalized_scaled_ratio_filtered_americas.shp" name="driver_normalized_scaled_ratio_filtered_americas">
+      <layer-tree-layer expanded="0" providerKey="ogr" checked="Qt::Checked" id="driver_normalized_scaled_ratio_filtered_americas20180905100842649" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/driver/driver_normalized_scaled_ratio_filtered_americas.shp" name="driver_normalized_scaled_ratio_filtered_americas">
         <customproperties/>
       </layer-tree-layer>
     </layer-tree-group>
     <layer-tree-group expanded="0" checked="Qt::Unchecked" name="src">
       <customproperties/>
-      <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Unchecked" id="driver_filtered_asia20180905103958336" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/shp/driver_filtered_asia.shp" name="driver_filtered_asia">
+      <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Unchecked" id="driver_filtered_asia20180905103958336" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/driver/driver_filtered_asia.shp" name="driver_filtered_asia">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Unchecked" id="driver_filtered_africa20180905111434793" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/shp/driver_filtered_africa.shp" name="driver_filtered_africa">
+      <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Unchecked" id="driver_filtered_africa20180905111434793" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/driver/driver_filtered_africa.shp" name="driver_filtered_africa">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Unchecked" id="driver_filtered_americas20180905100721986" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/shp/driver_filtered_americas.shp" name="driver_filtered_americas">
+      <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Unchecked" id="driver_filtered_americas20180905100721986" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/driver/driver_filtered_americas.shp" name="driver_filtered_americas">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Unchecked" id="driver_asia20180904092655781" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/shp/driver_asia.shp" name="driver_asia">
+      <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Unchecked" id="driver_asia20180904092655781" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/driver/driver_asia.shp" name="driver_asia">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Unchecked" id="driver_africa20180904080252444" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/shp/driver_africa.shp" name="driver_africa">
+      <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Unchecked" id="driver_africa20180904080252444" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/driver/driver_africa.shp" name="driver_africa">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Unchecked" id="driver_americas20180903140027413" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/shp/driver_americas.shp" name="driver_americas">
+      <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Unchecked" id="driver_americas20180903140027413" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/driver/driver_americas.shp" name="driver_americas">
         <customproperties/>
       </layer-tree-layer>
     </layer-tree-group>
@@ -76,10 +76,10 @@
   <mapcanvas>
     <units>degrees</units>
     <extent>
-      <xmin>-101.65429423619252702</xmin>
-      <ymin>-60.26380972613550568</ymin>
-      <xmax>117.23560087626287896</xmax>
-      <ymax>27.02692605764144673</ymax>
+      <xmin>-111.20901187999021431</xmin>
+      <ymin>-36.54103988511786838</ymin>
+      <xmax>-1.76406432376250422</xmax>
+      <ymax>7.10432800677060072</ymax>
     </extent>
     <rotation>0</rotation>
     <projections>0</projections>
@@ -166,7 +166,7 @@
         </filegroup>
       </legendlayer>
     </legendgroup>
-    <legendgroup open="false" checked="Qt::Checked" name="driver_filtered">
+    <legendgroup open="true" checked="Qt::Checked" name="driver_filtered">
       <legendlayer drawingOrder="-1" open="false" checked="Qt::Checked" name="driver_normalized_scaled_ratio_filtered_asia" showFeatureCount="0">
         <filegroup open="false" hidden="false">
           <legendlayerfile isInOverview="0" layerid="driver_normalized_scaled_ratio_filtered_asia20180905103914145" visible="1"/>
@@ -276,12 +276,12 @@
         </styles>
         <layer-tree-group expanded="1" checked="Qt::Checked" name="">
           <customproperties/>
-          <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="hexboundaries_americas20180814074746164" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/shp/hexboundaries_americas.shp" name="hexboundaries_americas">
+          <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="hexboundaries_americas20180814074746164" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/common/hexboundaries_americas.shp" name="hexboundaries_americas">
             <customproperties>
               <property key="legend/title-label" value="Country boundary"/>
             </customproperties>
           </layer-tree-layer>
-          <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="driver_normalized_scaled_ratio_americas20180814074624461" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/shp/driver_normalized_scaled_ratio_americas.shp" name="driver_normalized_scaled_ratio_americas">
+          <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="driver_normalized_scaled_ratio_americas20180814074624461" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/driver/driver_normalized_scaled_ratio_americas.shp" name="driver_normalized_scaled_ratio_americas">
             <customproperties>
               <property key="legend/node-order" value="0,1,2,3,4,5,6,7,8"/>
               <property key="legend/title-label" value="Deforestation driver"/>
@@ -297,18 +297,18 @@
       <ComposerMap followPreset="false" mapRotation="0" keepLayerSet="true" followPresetName="" id="0" previewMode="Cache" drawCanvasItems="true">
         <Extent ymin="-26.65362329869898872" xmin="-113.77815875348629504" ymax="28.71473362310300814" xmax="-32.86051233596082"/>
         <LayerSet>
-          <Layer provider="ogr" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/shp/driver_asia_legend_vertical.shp" name="driver_asia_legend_vertical">driver_asia_legend_vertical20180905093720083</Layer>
-          <Layer provider="ogr" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/shp/driver_africa_legend_vertical.shp" name="driver_africa_legend_vertical">driver_africa_legend_vertical20180905093559028</Layer>
-          <Layer provider="ogr" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/shp/driver_americas_legend_vertical.shp" name="driver_americas_legend_vertical">driver_americas_legend_vertical20180905093421029</Layer>
-          <Layer provider="ogr" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/shp/hexboundaries_africa.shp" name="hexboundaries_africa">hexboundaries_africa20180814074740925</Layer>
-          <Layer provider="ogr" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/shp/hexboundaries_asia.shp" name="hexboundaries_asia">hexboundaries_asia20180814074751293</Layer>
-          <Layer provider="ogr" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/shp/hexboundaries_americas.shp" name="hexboundaries_americas">hexboundaries_americas20180814074746164</Layer>
-          <Layer provider="ogr" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/shp/driver_normalized_scaled_ratio_filtered_asia.shp" name="driver_normalized_scaled_ratio_filtered_asia">driver_normalized_scaled_ratio_filtered_asia20180905103914145</Layer>
-          <Layer provider="ogr" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/shp/driver_normalized_scaled_ratio_filtered_africa.shp" name="driver_normalized_scaled_ratio_filtered_africa">driver_normalized_scaled_ratio_filtered_africa20180905111813689</Layer>
-          <Layer provider="ogr" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/shp/driver_normalized_scaled_ratio_filtered_americas.shp" name="driver_normalized_scaled_ratio_filtered_americas">driver_normalized_scaled_ratio_filtered_americas20180905100842649</Layer>
+          <Layer provider="ogr" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/driver/driver_asia_legend_vertical.shp" name="driver_asia_legend_vertical">driver_asia_legend_vertical20180905093720083</Layer>
+          <Layer provider="ogr" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/driver/driver_africa_legend_vertical.shp" name="driver_africa_legend_vertical">driver_africa_legend_vertical20180905093559028</Layer>
+          <Layer provider="ogr" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/driver/driver_americas_legend_vertical.shp" name="driver_americas_legend_vertical">driver_americas_legend_vertical20180905093421029</Layer>
+          <Layer provider="ogr" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/common/hexboundaries_africa.shp" name="hexboundaries_africa">hexboundaries_africa20180814074740925</Layer>
+          <Layer provider="ogr" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/common/hexboundaries_asia.shp" name="hexboundaries_asia">hexboundaries_asia20180814074751293</Layer>
+          <Layer provider="ogr" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/common/hexboundaries_americas.shp" name="hexboundaries_americas">hexboundaries_americas20180814074746164</Layer>
+          <Layer provider="ogr" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/driver/driver_normalized_scaled_ratio_filtered_asia.shp" name="driver_normalized_scaled_ratio_filtered_asia">driver_normalized_scaled_ratio_filtered_asia20180905103914145</Layer>
+          <Layer provider="ogr" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/driver/driver_normalized_scaled_ratio_filtered_africa.shp" name="driver_normalized_scaled_ratio_filtered_africa">driver_normalized_scaled_ratio_filtered_africa20180905111813689</Layer>
+          <Layer provider="ogr" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/driver/driver_normalized_scaled_ratio_filtered_americas.shp" name="driver_normalized_scaled_ratio_filtered_americas">driver_normalized_scaled_ratio_filtered_americas20180905100842649</Layer>
         </LayerSet>
         <LayerStyles>
-          <LayerStyle provider="ogr" layerid="driver_africa_legend_vertical20180905093559028" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/shp/driver_africa_legend_vertical.shp" name="driver_africa_legend_vertical">
+          <LayerStyle provider="ogr" layerid="driver_africa_legend_vertical20180905093559028" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/driver/driver_africa_legend_vertical.shp" name="driver_africa_legend_vertical">
             <qgis version="2.18.20" simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="scale">
@@ -627,7 +627,7 @@ def my_form_open(dialog, layer, feature):
               <layerGeometryType>2</layerGeometryType>
             </qgis>
           </LayerStyle>
-          <LayerStyle provider="ogr" layerid="driver_americas_legend_vertical20180905093421029" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/shp/driver_americas_legend_vertical.shp" name="driver_americas_legend_vertical">
+          <LayerStyle provider="ogr" layerid="driver_americas_legend_vertical20180905093421029" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/driver/driver_americas_legend_vertical.shp" name="driver_americas_legend_vertical">
             <qgis version="2.18.20" simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="scale">
@@ -946,7 +946,7 @@ def my_form_open(dialog, layer, feature):
               <layerGeometryType>2</layerGeometryType>
             </qgis>
           </LayerStyle>
-          <LayerStyle provider="ogr" layerid="driver_asia_legend_vertical20180905093720083" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/shp/driver_asia_legend_vertical.shp" name="driver_asia_legend_vertical">
+          <LayerStyle provider="ogr" layerid="driver_asia_legend_vertical20180905093720083" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/driver/driver_asia_legend_vertical.shp" name="driver_asia_legend_vertical">
             <qgis version="2.18.20" simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="scale">
@@ -1265,7 +1265,7 @@ def my_form_open(dialog, layer, feature):
               <layerGeometryType>2</layerGeometryType>
             </qgis>
           </LayerStyle>
-          <LayerStyle provider="ogr" layerid="driver_normalized_scaled_ratio_filtered_africa20180905111813689" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/shp/driver_normalized_scaled_ratio_filtered_africa.shp" name="driver_normalized_scaled_ratio_filtered_africa">
+          <LayerStyle provider="ogr" layerid="driver_normalized_scaled_ratio_filtered_africa20180905111813689" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/driver/driver_normalized_scaled_ratio_filtered_africa.shp" name="driver_normalized_scaled_ratio_filtered_africa">
             <qgis version="2.18.20" simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
@@ -1733,7 +1733,7 @@ def my_form_open(dialog, layer, feature):
               <layerGeometryType>2</layerGeometryType>
             </qgis>
           </LayerStyle>
-          <LayerStyle provider="ogr" layerid="driver_normalized_scaled_ratio_filtered_americas20180905100842649" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/shp/driver_normalized_scaled_ratio_filtered_americas.shp" name="driver_normalized_scaled_ratio_filtered_americas">
+          <LayerStyle provider="ogr" layerid="driver_normalized_scaled_ratio_filtered_americas20180905100842649" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/driver/driver_normalized_scaled_ratio_filtered_americas.shp" name="driver_normalized_scaled_ratio_filtered_americas">
             <qgis version="2.18.20" simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
@@ -2201,7 +2201,7 @@ def my_form_open(dialog, layer, feature):
               <layerGeometryType>2</layerGeometryType>
             </qgis>
           </LayerStyle>
-          <LayerStyle provider="ogr" layerid="driver_normalized_scaled_ratio_filtered_asia20180905103914145" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/shp/driver_normalized_scaled_ratio_filtered_asia.shp" name="driver_normalized_scaled_ratio_filtered_asia">
+          <LayerStyle provider="ogr" layerid="driver_normalized_scaled_ratio_filtered_asia20180905103914145" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/driver/driver_normalized_scaled_ratio_filtered_asia.shp" name="driver_normalized_scaled_ratio_filtered_asia">
             <qgis version="2.18.20" simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
@@ -2669,7 +2669,7 @@ def my_form_open(dialog, layer, feature):
               <layerGeometryType>2</layerGeometryType>
             </qgis>
           </LayerStyle>
-          <LayerStyle provider="ogr" layerid="hexboundaries_africa20180814074740925" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/shp/hexboundaries_africa.shp" name="hexboundaries_africa">
+          <LayerStyle provider="ogr" layerid="hexboundaries_africa20180814074740925" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/common/hexboundaries_africa.shp" name="hexboundaries_africa">
             <qgis version="2.18.20" simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="country">
@@ -2943,7 +2943,7 @@ def my_form_open(dialog, layer, feature):
               <layerGeometryType>2</layerGeometryType>
             </qgis>
           </LayerStyle>
-          <LayerStyle provider="ogr" layerid="hexboundaries_americas20180814074746164" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/shp/hexboundaries_americas.shp" name="hexboundaries_americas">
+          <LayerStyle provider="ogr" layerid="hexboundaries_americas20180814074746164" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/common/hexboundaries_americas.shp" name="hexboundaries_americas">
             <qgis version="2.18.20" simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
@@ -3223,7 +3223,7 @@ def my_form_open(dialog, layer, feature):
               <layerGeometryType>2</layerGeometryType>
             </qgis>
           </LayerStyle>
-          <LayerStyle provider="ogr" layerid="hexboundaries_asia20180814074751293" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/shp/hexboundaries_asia.shp" name="hexboundaries_asia">
+          <LayerStyle provider="ogr" layerid="hexboundaries_asia20180814074751293" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/common/hexboundaries_asia.shp" name="hexboundaries_asia">
             <qgis version="2.18.20" simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="country">
@@ -3623,12 +3623,12 @@ def my_form_open(dialog, layer, feature):
         </styles>
         <layer-tree-group expanded="1" checked="Qt::Checked" name="">
           <customproperties/>
-          <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="hexboundaries_americas20180814074746164" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/shp/hexboundaries_americas.shp" name="hexboundaries_americas">
+          <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="hexboundaries_americas20180814074746164" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/common/hexboundaries_americas.shp" name="hexboundaries_americas">
             <customproperties>
               <property key="legend/title-label" value="Country boundary"/>
             </customproperties>
           </layer-tree-layer>
-          <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="driver_normalized_scaled_ratio_americas20180814074624461" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/shp/driver_normalized_scaled_ratio_americas.shp" name="driver_normalized_scaled_ratio_americas">
+          <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="driver_normalized_scaled_ratio_americas20180814074624461" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/driver/driver_normalized_scaled_ratio_americas.shp" name="driver_normalized_scaled_ratio_americas">
             <customproperties>
               <property key="legend/node-order" value="0,1,2,3,4,5,6,7,8"/>
               <property key="legend/title-label" value="Deforestation driver"/>
@@ -3644,18 +3644,18 @@ def my_form_open(dialog, layer, feature):
       <ComposerMap followPreset="false" mapRotation="0" keepLayerSet="true" followPresetName="" id="0" previewMode="Cache" drawCanvasItems="true">
         <Extent ymin="-27.19454787870264312" xmin="-24.2704977133228752" ymax="28.17380904309935374" xmax="56.64714870420259984"/>
         <LayerSet>
-          <Layer provider="ogr" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/shp/driver_asia_legend_vertical.shp" name="driver_asia_legend_vertical">driver_asia_legend_vertical20180905093720083</Layer>
-          <Layer provider="ogr" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/shp/driver_africa_legend_vertical.shp" name="driver_africa_legend_vertical">driver_africa_legend_vertical20180905093559028</Layer>
-          <Layer provider="ogr" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/shp/driver_americas_legend_vertical.shp" name="driver_americas_legend_vertical">driver_americas_legend_vertical20180905093421029</Layer>
-          <Layer provider="ogr" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/shp/hexboundaries_africa.shp" name="hexboundaries_africa">hexboundaries_africa20180814074740925</Layer>
-          <Layer provider="ogr" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/shp/hexboundaries_asia.shp" name="hexboundaries_asia">hexboundaries_asia20180814074751293</Layer>
-          <Layer provider="ogr" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/shp/hexboundaries_americas.shp" name="hexboundaries_americas">hexboundaries_americas20180814074746164</Layer>
-          <Layer provider="ogr" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/shp/driver_normalized_scaled_ratio_filtered_asia.shp" name="driver_normalized_scaled_ratio_filtered_asia">driver_normalized_scaled_ratio_filtered_asia20180905103914145</Layer>
-          <Layer provider="ogr" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/shp/driver_normalized_scaled_ratio_filtered_africa.shp" name="driver_normalized_scaled_ratio_filtered_africa">driver_normalized_scaled_ratio_filtered_africa20180905111813689</Layer>
-          <Layer provider="ogr" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/shp/driver_normalized_scaled_ratio_filtered_americas.shp" name="driver_normalized_scaled_ratio_filtered_americas">driver_normalized_scaled_ratio_filtered_americas20180905100842649</Layer>
+          <Layer provider="ogr" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/driver/driver_asia_legend_vertical.shp" name="driver_asia_legend_vertical">driver_asia_legend_vertical20180905093720083</Layer>
+          <Layer provider="ogr" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/driver/driver_africa_legend_vertical.shp" name="driver_africa_legend_vertical">driver_africa_legend_vertical20180905093559028</Layer>
+          <Layer provider="ogr" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/driver/driver_americas_legend_vertical.shp" name="driver_americas_legend_vertical">driver_americas_legend_vertical20180905093421029</Layer>
+          <Layer provider="ogr" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/common/hexboundaries_africa.shp" name="hexboundaries_africa">hexboundaries_africa20180814074740925</Layer>
+          <Layer provider="ogr" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/common/hexboundaries_asia.shp" name="hexboundaries_asia">hexboundaries_asia20180814074751293</Layer>
+          <Layer provider="ogr" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/common/hexboundaries_americas.shp" name="hexboundaries_americas">hexboundaries_americas20180814074746164</Layer>
+          <Layer provider="ogr" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/driver/driver_normalized_scaled_ratio_filtered_asia.shp" name="driver_normalized_scaled_ratio_filtered_asia">driver_normalized_scaled_ratio_filtered_asia20180905103914145</Layer>
+          <Layer provider="ogr" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/driver/driver_normalized_scaled_ratio_filtered_africa.shp" name="driver_normalized_scaled_ratio_filtered_africa">driver_normalized_scaled_ratio_filtered_africa20180905111813689</Layer>
+          <Layer provider="ogr" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/driver/driver_normalized_scaled_ratio_filtered_americas.shp" name="driver_normalized_scaled_ratio_filtered_americas">driver_normalized_scaled_ratio_filtered_americas20180905100842649</Layer>
         </LayerSet>
         <LayerStyles>
-          <LayerStyle provider="ogr" layerid="driver_africa_legend_vertical20180905093559028" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/shp/driver_africa_legend_vertical.shp" name="driver_africa_legend_vertical">
+          <LayerStyle provider="ogr" layerid="driver_africa_legend_vertical20180905093559028" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/driver/driver_africa_legend_vertical.shp" name="driver_africa_legend_vertical">
             <qgis version="2.18.20" simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="scale">
@@ -3974,7 +3974,7 @@ def my_form_open(dialog, layer, feature):
               <layerGeometryType>2</layerGeometryType>
             </qgis>
           </LayerStyle>
-          <LayerStyle provider="ogr" layerid="driver_americas_legend_vertical20180905093421029" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/shp/driver_americas_legend_vertical.shp" name="driver_americas_legend_vertical">
+          <LayerStyle provider="ogr" layerid="driver_americas_legend_vertical20180905093421029" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/driver/driver_americas_legend_vertical.shp" name="driver_americas_legend_vertical">
             <qgis version="2.18.20" simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="scale">
@@ -4293,7 +4293,7 @@ def my_form_open(dialog, layer, feature):
               <layerGeometryType>2</layerGeometryType>
             </qgis>
           </LayerStyle>
-          <LayerStyle provider="ogr" layerid="driver_asia_legend_vertical20180905093720083" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/shp/driver_asia_legend_vertical.shp" name="driver_asia_legend_vertical">
+          <LayerStyle provider="ogr" layerid="driver_asia_legend_vertical20180905093720083" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/driver/driver_asia_legend_vertical.shp" name="driver_asia_legend_vertical">
             <qgis version="2.18.20" simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="scale">
@@ -4612,7 +4612,7 @@ def my_form_open(dialog, layer, feature):
               <layerGeometryType>2</layerGeometryType>
             </qgis>
           </LayerStyle>
-          <LayerStyle provider="ogr" layerid="driver_normalized_scaled_ratio_filtered_africa20180905111813689" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/shp/driver_normalized_scaled_ratio_filtered_africa.shp" name="driver_normalized_scaled_ratio_filtered_africa">
+          <LayerStyle provider="ogr" layerid="driver_normalized_scaled_ratio_filtered_africa20180905111813689" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/driver/driver_normalized_scaled_ratio_filtered_africa.shp" name="driver_normalized_scaled_ratio_filtered_africa">
             <qgis version="2.18.20" simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
@@ -5080,7 +5080,7 @@ def my_form_open(dialog, layer, feature):
               <layerGeometryType>2</layerGeometryType>
             </qgis>
           </LayerStyle>
-          <LayerStyle provider="ogr" layerid="driver_normalized_scaled_ratio_filtered_americas20180905100842649" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/shp/driver_normalized_scaled_ratio_filtered_americas.shp" name="driver_normalized_scaled_ratio_filtered_americas">
+          <LayerStyle provider="ogr" layerid="driver_normalized_scaled_ratio_filtered_americas20180905100842649" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/driver/driver_normalized_scaled_ratio_filtered_americas.shp" name="driver_normalized_scaled_ratio_filtered_americas">
             <qgis version="2.18.20" simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
@@ -5548,7 +5548,7 @@ def my_form_open(dialog, layer, feature):
               <layerGeometryType>2</layerGeometryType>
             </qgis>
           </LayerStyle>
-          <LayerStyle provider="ogr" layerid="driver_normalized_scaled_ratio_filtered_asia20180905103914145" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/shp/driver_normalized_scaled_ratio_filtered_asia.shp" name="driver_normalized_scaled_ratio_filtered_asia">
+          <LayerStyle provider="ogr" layerid="driver_normalized_scaled_ratio_filtered_asia20180905103914145" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/driver/driver_normalized_scaled_ratio_filtered_asia.shp" name="driver_normalized_scaled_ratio_filtered_asia">
             <qgis version="2.18.20" simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
@@ -6016,7 +6016,7 @@ def my_form_open(dialog, layer, feature):
               <layerGeometryType>2</layerGeometryType>
             </qgis>
           </LayerStyle>
-          <LayerStyle provider="ogr" layerid="hexboundaries_africa20180814074740925" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/shp/hexboundaries_africa.shp" name="hexboundaries_africa">
+          <LayerStyle provider="ogr" layerid="hexboundaries_africa20180814074740925" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/common/hexboundaries_africa.shp" name="hexboundaries_africa">
             <qgis version="2.18.20" simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="country">
@@ -6290,7 +6290,7 @@ def my_form_open(dialog, layer, feature):
               <layerGeometryType>2</layerGeometryType>
             </qgis>
           </LayerStyle>
-          <LayerStyle provider="ogr" layerid="hexboundaries_americas20180814074746164" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/shp/hexboundaries_americas.shp" name="hexboundaries_americas">
+          <LayerStyle provider="ogr" layerid="hexboundaries_americas20180814074746164" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/common/hexboundaries_americas.shp" name="hexboundaries_americas">
             <qgis version="2.18.20" simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
@@ -6570,7 +6570,7 @@ def my_form_open(dialog, layer, feature):
               <layerGeometryType>2</layerGeometryType>
             </qgis>
           </LayerStyle>
-          <LayerStyle provider="ogr" layerid="hexboundaries_asia20180814074751293" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/shp/hexboundaries_asia.shp" name="hexboundaries_asia">
+          <LayerStyle provider="ogr" layerid="hexboundaries_asia20180814074751293" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/common/hexboundaries_asia.shp" name="hexboundaries_asia">
             <qgis version="2.18.20" simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="country">
@@ -6954,18 +6954,18 @@ def my_form_open(dialog, layer, feature):
       <ComposerMap followPreset="false" mapRotation="0" keepLayerSet="true" followPresetName="" id="0" previewMode="Cache" drawCanvasItems="true">
         <Extent ymin="-17.05428940119450942" xmin="64.26197817212268149" ymax="26.97321991700049182" xmax="172.80916501462917267"/>
         <LayerSet>
-          <Layer provider="ogr" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/shp/driver_asia_legend_vertical.shp" name="driver_asia_legend_vertical">driver_asia_legend_vertical20180905093720083</Layer>
-          <Layer provider="ogr" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/shp/driver_africa_legend_vertical.shp" name="driver_africa_legend_vertical">driver_africa_legend_vertical20180905093559028</Layer>
-          <Layer provider="ogr" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/shp/driver_americas_legend_vertical.shp" name="driver_americas_legend_vertical">driver_americas_legend_vertical20180905093421029</Layer>
-          <Layer provider="ogr" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/shp/hexboundaries_africa.shp" name="hexboundaries_africa">hexboundaries_africa20180814074740925</Layer>
-          <Layer provider="ogr" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/shp/hexboundaries_asia.shp" name="hexboundaries_asia">hexboundaries_asia20180814074751293</Layer>
-          <Layer provider="ogr" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/shp/hexboundaries_americas.shp" name="hexboundaries_americas">hexboundaries_americas20180814074746164</Layer>
-          <Layer provider="ogr" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/shp/driver_normalized_scaled_ratio_filtered_asia.shp" name="driver_normalized_scaled_ratio_filtered_asia">driver_normalized_scaled_ratio_filtered_asia20180905103914145</Layer>
-          <Layer provider="ogr" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/shp/driver_normalized_scaled_ratio_filtered_africa.shp" name="driver_normalized_scaled_ratio_filtered_africa">driver_normalized_scaled_ratio_filtered_africa20180905111813689</Layer>
-          <Layer provider="ogr" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/shp/driver_normalized_scaled_ratio_filtered_americas.shp" name="driver_normalized_scaled_ratio_filtered_americas">driver_normalized_scaled_ratio_filtered_americas20180905100842649</Layer>
+          <Layer provider="ogr" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/driver/driver_asia_legend_vertical.shp" name="driver_asia_legend_vertical">driver_asia_legend_vertical20180905093720083</Layer>
+          <Layer provider="ogr" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/driver/driver_africa_legend_vertical.shp" name="driver_africa_legend_vertical">driver_africa_legend_vertical20180905093559028</Layer>
+          <Layer provider="ogr" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/driver/driver_americas_legend_vertical.shp" name="driver_americas_legend_vertical">driver_americas_legend_vertical20180905093421029</Layer>
+          <Layer provider="ogr" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/common/hexboundaries_africa.shp" name="hexboundaries_africa">hexboundaries_africa20180814074740925</Layer>
+          <Layer provider="ogr" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/common/hexboundaries_asia.shp" name="hexboundaries_asia">hexboundaries_asia20180814074751293</Layer>
+          <Layer provider="ogr" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/common/hexboundaries_americas.shp" name="hexboundaries_americas">hexboundaries_americas20180814074746164</Layer>
+          <Layer provider="ogr" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/driver/driver_normalized_scaled_ratio_filtered_asia.shp" name="driver_normalized_scaled_ratio_filtered_asia">driver_normalized_scaled_ratio_filtered_asia20180905103914145</Layer>
+          <Layer provider="ogr" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/driver/driver_normalized_scaled_ratio_filtered_africa.shp" name="driver_normalized_scaled_ratio_filtered_africa">driver_normalized_scaled_ratio_filtered_africa20180905111813689</Layer>
+          <Layer provider="ogr" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/driver/driver_normalized_scaled_ratio_filtered_americas.shp" name="driver_normalized_scaled_ratio_filtered_americas">driver_normalized_scaled_ratio_filtered_americas20180905100842649</Layer>
         </LayerSet>
         <LayerStyles>
-          <LayerStyle provider="ogr" layerid="driver_africa_legend_vertical20180905093559028" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/shp/driver_africa_legend_vertical.shp" name="driver_africa_legend_vertical">
+          <LayerStyle provider="ogr" layerid="driver_africa_legend_vertical20180905093559028" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/driver/driver_africa_legend_vertical.shp" name="driver_africa_legend_vertical">
             <qgis version="2.18.20" simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="scale">
@@ -7284,7 +7284,7 @@ def my_form_open(dialog, layer, feature):
               <layerGeometryType>2</layerGeometryType>
             </qgis>
           </LayerStyle>
-          <LayerStyle provider="ogr" layerid="driver_americas_legend_vertical20180905093421029" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/shp/driver_americas_legend_vertical.shp" name="driver_americas_legend_vertical">
+          <LayerStyle provider="ogr" layerid="driver_americas_legend_vertical20180905093421029" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/driver/driver_americas_legend_vertical.shp" name="driver_americas_legend_vertical">
             <qgis version="2.18.20" simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="scale">
@@ -7603,7 +7603,7 @@ def my_form_open(dialog, layer, feature):
               <layerGeometryType>2</layerGeometryType>
             </qgis>
           </LayerStyle>
-          <LayerStyle provider="ogr" layerid="driver_asia_legend_vertical20180905093720083" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/shp/driver_asia_legend_vertical.shp" name="driver_asia_legend_vertical">
+          <LayerStyle provider="ogr" layerid="driver_asia_legend_vertical20180905093720083" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/driver/driver_asia_legend_vertical.shp" name="driver_asia_legend_vertical">
             <qgis version="2.18.20" simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="scale">
@@ -7922,7 +7922,7 @@ def my_form_open(dialog, layer, feature):
               <layerGeometryType>2</layerGeometryType>
             </qgis>
           </LayerStyle>
-          <LayerStyle provider="ogr" layerid="driver_normalized_scaled_ratio_filtered_africa20180905111813689" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/shp/driver_normalized_scaled_ratio_filtered_africa.shp" name="driver_normalized_scaled_ratio_filtered_africa">
+          <LayerStyle provider="ogr" layerid="driver_normalized_scaled_ratio_filtered_africa20180905111813689" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/driver/driver_normalized_scaled_ratio_filtered_africa.shp" name="driver_normalized_scaled_ratio_filtered_africa">
             <qgis version="2.18.20" simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
@@ -8390,7 +8390,7 @@ def my_form_open(dialog, layer, feature):
               <layerGeometryType>2</layerGeometryType>
             </qgis>
           </LayerStyle>
-          <LayerStyle provider="ogr" layerid="driver_normalized_scaled_ratio_filtered_americas20180905100842649" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/shp/driver_normalized_scaled_ratio_filtered_americas.shp" name="driver_normalized_scaled_ratio_filtered_americas">
+          <LayerStyle provider="ogr" layerid="driver_normalized_scaled_ratio_filtered_americas20180905100842649" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/driver/driver_normalized_scaled_ratio_filtered_americas.shp" name="driver_normalized_scaled_ratio_filtered_americas">
             <qgis version="2.18.20" simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
@@ -8858,7 +8858,7 @@ def my_form_open(dialog, layer, feature):
               <layerGeometryType>2</layerGeometryType>
             </qgis>
           </LayerStyle>
-          <LayerStyle provider="ogr" layerid="driver_normalized_scaled_ratio_filtered_asia20180905103914145" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/shp/driver_normalized_scaled_ratio_filtered_asia.shp" name="driver_normalized_scaled_ratio_filtered_asia">
+          <LayerStyle provider="ogr" layerid="driver_normalized_scaled_ratio_filtered_asia20180905103914145" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/driver/driver_normalized_scaled_ratio_filtered_asia.shp" name="driver_normalized_scaled_ratio_filtered_asia">
             <qgis version="2.18.20" simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
@@ -9326,7 +9326,7 @@ def my_form_open(dialog, layer, feature):
               <layerGeometryType>2</layerGeometryType>
             </qgis>
           </LayerStyle>
-          <LayerStyle provider="ogr" layerid="hexboundaries_africa20180814074740925" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/shp/hexboundaries_africa.shp" name="hexboundaries_africa">
+          <LayerStyle provider="ogr" layerid="hexboundaries_africa20180814074740925" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/common/hexboundaries_africa.shp" name="hexboundaries_africa">
             <qgis version="2.18.20" simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="country">
@@ -9600,7 +9600,7 @@ def my_form_open(dialog, layer, feature):
               <layerGeometryType>2</layerGeometryType>
             </qgis>
           </LayerStyle>
-          <LayerStyle provider="ogr" layerid="hexboundaries_americas20180814074746164" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/shp/hexboundaries_americas.shp" name="hexboundaries_americas">
+          <LayerStyle provider="ogr" layerid="hexboundaries_americas20180814074746164" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/common/hexboundaries_americas.shp" name="hexboundaries_americas">
             <qgis version="2.18.20" simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
@@ -9880,7 +9880,7 @@ def my_form_open(dialog, layer, feature):
               <layerGeometryType>2</layerGeometryType>
             </qgis>
           </LayerStyle>
-          <LayerStyle provider="ogr" layerid="hexboundaries_asia20180814074751293" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/shp/hexboundaries_asia.shp" name="hexboundaries_asia">
+          <LayerStyle provider="ogr" layerid="hexboundaries_asia20180814074751293" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/common/hexboundaries_asia.shp" name="hexboundaries_asia">
             <qgis version="2.18.20" simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="country">
@@ -10229,7 +10229,7 @@ def my_form_open(dialog, layer, feature):
         <ymax>25.25260125283229939</ymax>
       </extent>
       <id>driver_africa20180904080252444</id>
-      <datasource>../../data/proc/agg/shp/driver_africa.shp</datasource>
+      <datasource>../../data/proc/agg/vector/driver/driver_africa.shp</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -10416,7 +10416,7 @@ def my_form_open(dialog, layer, feature):
         <ymax>-16.07398184544639008</ymax>
       </extent>
       <id>driver_africa_legend_vertical20180905093559028</id>
-      <datasource>../../data/proc/agg/shp/driver_africa_legend_vertical.shp</datasource>
+      <datasource>../../data/proc/agg/vector/driver/driver_africa_legend_vertical.shp</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -10763,7 +10763,7 @@ def my_form_open(dialog, layer, feature):
         <ymax>27.11366965301751364</ymax>
       </extent>
       <id>driver_americas20180903140027413</id>
-      <datasource>../../data/proc/agg/shp/driver_americas.shp</datasource>
+      <datasource>../../data/proc/agg/vector/driver/driver_americas.shp</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -10962,7 +10962,7 @@ def my_form_open(dialog, layer, feature):
         <ymax>-15.69191040617233313</ymax>
       </extent>
       <id>driver_americas_legend_vertical20180905093421029</id>
-      <datasource>../../data/proc/agg/shp/driver_americas_legend_vertical.shp</datasource>
+      <datasource>../../data/proc/agg/vector/driver/driver_americas_legend_vertical.shp</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -11309,7 +11309,7 @@ def my_form_open(dialog, layer, feature):
         <ymax>25.9463733326235193</ymax>
       </extent>
       <id>driver_asia20180904092655781</id>
-      <datasource>../../data/proc/agg/shp/driver_asia.shp</datasource>
+      <datasource>../../data/proc/agg/vector/driver/driver_asia.shp</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -11496,7 +11496,7 @@ def my_form_open(dialog, layer, feature):
         <ymax>15.26594128143567985</ymax>
       </extent>
       <id>driver_asia_legend_vertical20180905093720083</id>
-      <datasource>../../data/proc/agg/shp/driver_asia_legend_vertical.shp</datasource>
+      <datasource>../../data/proc/agg/vector/driver/driver_asia_legend_vertical.shp</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -11843,7 +11843,7 @@ def my_form_open(dialog, layer, feature):
         <ymax>19.66897209821969739</ymax>
       </extent>
       <id>driver_filtered_africa20180905111434793</id>
-      <datasource>../../data/proc/agg/shp/driver_filtered_africa.shp</datasource>
+      <datasource>../../data/proc/agg/vector/driver/driver_filtered_africa.shp</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -12030,7 +12030,7 @@ def my_form_open(dialog, layer, feature):
         <ymax>27.11366965301751364</ymax>
       </extent>
       <id>driver_filtered_americas20180905100721986</id>
-      <datasource>../../data/proc/agg/shp/driver_filtered_americas.shp</datasource>
+      <datasource>../../data/proc/agg/vector/driver/driver_filtered_americas.shp</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -12229,7 +12229,7 @@ def my_form_open(dialog, layer, feature):
         <ymax>25.9463733326235193</ymax>
       </extent>
       <id>driver_filtered_asia20180905103958336</id>
-      <datasource>../../data/proc/agg/shp/driver_filtered_asia.shp</datasource>
+      <datasource>../../data/proc/agg/vector/driver/driver_filtered_asia.shp</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -12416,7 +12416,7 @@ def my_form_open(dialog, layer, feature):
         <ymax>25.25260125283229939</ymax>
       </extent>
       <id>driver_normalized_scaled_ratio_africa20180814074622639</id>
-      <datasource>../../data/proc/agg/shp/driver_normalized_scaled_ratio_africa.shp</datasource>
+      <datasource>../../data/proc/agg/vector/driver/driver_normalized_scaled_ratio_africa.shp</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -12912,7 +12912,7 @@ def my_form_open(dialog, layer, feature):
         <ymax>26.75383577416469905</ymax>
       </extent>
       <id>driver_normalized_scaled_ratio_americas20180814074624461</id>
-      <datasource>../../data/proc/agg/shp/driver_normalized_scaled_ratio_americas.shp</datasource>
+      <datasource>../../data/proc/agg/vector/driver/driver_normalized_scaled_ratio_americas.shp</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -13408,7 +13408,7 @@ def my_form_open(dialog, layer, feature):
         <ymax>19.66897209821969739</ymax>
       </extent>
       <id>driver_normalized_scaled_ratio_filtered_africa20180905111813689</id>
-      <datasource>../../data/proc/agg/shp/driver_normalized_scaled_ratio_filtered_africa.shp</datasource>
+      <datasource>../../data/proc/agg/vector/driver/driver_normalized_scaled_ratio_filtered_africa.shp</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -13904,7 +13904,7 @@ def my_form_open(dialog, layer, feature):
         <ymax>26.74142770937667279</ymax>
       </extent>
       <id>driver_normalized_scaled_ratio_filtered_americas20180905100842649</id>
-      <datasource>../../data/proc/agg/shp/driver_normalized_scaled_ratio_filtered_americas.shp</datasource>
+      <datasource>../../data/proc/agg/vector/driver/driver_normalized_scaled_ratio_filtered_americas.shp</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -14400,7 +14400,7 @@ def my_form_open(dialog, layer, feature):
         <ymax>25.57413138898267846</ymax>
       </extent>
       <id>driver_normalized_scaled_ratio_filtered_asia20180905103914145</id>
-      <datasource>../../data/proc/agg/shp/driver_normalized_scaled_ratio_filtered_asia.shp</datasource>
+      <datasource>../../data/proc/agg/vector/driver/driver_normalized_scaled_ratio_filtered_asia.shp</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -14896,7 +14896,7 @@ def my_form_open(dialog, layer, feature):
         <ymax>27.11381097103650006</ymax>
       </extent>
       <id>hexboundaries_africa20180814074740925</id>
-      <datasource>../../data/proc/agg/shp/hexboundaries_africa.shp</datasource>
+      <datasource>../../data/proc/agg/vector/common/hexboundaries_africa.shp</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -15198,7 +15198,7 @@ def my_form_open(dialog, layer, feature):
         <ymax>27.11366965301751364</ymax>
       </extent>
       <id>hexboundaries_americas20180814074746164</id>
-      <datasource>../../data/proc/agg/shp/hexboundaries_americas.shp</datasource>
+      <datasource>../../data/proc/agg/vector/common/hexboundaries_americas.shp</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -15506,7 +15506,7 @@ def my_form_open(dialog, layer, feature):
         <ymax>25.9463733326235193</ymax>
       </extent>
       <id>hexboundaries_asia20180814074751293</id>
-      <datasource>../../data/proc/agg/shp/hexboundaries_asia.shp</datasource>
+      <datasource>../../data/proc/agg/vector/common/hexboundaries_asia.shp</datasource>
       <keywordList>
         <value></value>
       </keywordList>
