@@ -55,7 +55,7 @@ def landcover_gain_from_map(driver, esv, attr=None, area=None, gl30=None):
     return mask
 
 
-# TODO include area
+# TODO refactor include area
 def forest_loss_from_map(driver, esv, attr=None, area=None, gl30=None):
     mask = np.zeros(driver.shape, dtype=np.uint32)
     mask[np.isin(driver, gl30)] = 1
@@ -71,6 +71,9 @@ def forest_loss_from_frame(row, esv, attr=None, area=None, gl30=None):
     columns = []
     values = []
     total = 0
+
+    if 'px_area' in row:
+        area = row['px_area'] * 0.0001
 
     for i in gl30:
         if str(i) in row:
@@ -90,6 +93,9 @@ def landcover_gain_from_frame(row, esv, attr=None, area=None, gl30=None):
     columns = []
     values = []
     total = 0
+
+    if 'px_area' in row:
+        area = row['px_area'] * 0.0001
 
     for i in gl30:
         if str(i) in row:
