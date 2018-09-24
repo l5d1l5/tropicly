@@ -79,7 +79,7 @@ def soc_emissions(driver, soc, intact=None, method='mean', area=900, co2=3.7,
     :return: np.array
     """
     ha_per_px = area * 0.0001
-    # prevent zero overflow (soc raster contain pixel values 0.1e^x and -3.e^x)
+    # prevent zero overflow (soc raster contain pixel values 0.1e^-x and -3.e^x)
     soc[soc < 0] = 0
 
     factors = factor_map(driver, intact=intact, attr=method, forest_type=forest_type)
