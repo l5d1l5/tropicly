@@ -213,7 +213,7 @@
         </ComposerItem>
       </ComposerLegend>
       <ComposerMap followPreset="false" mapRotation="0" keepLayerSet="true" followPresetName="" id="0" previewMode="Cache" drawCanvasItems="true">
-        <Extent ymin="-58.56100428830607285" xmin="-117.82680445594728269" ymax="46.58280418247787225" xmax="178.48756487080751754"/>
+        <Extent ymin="-58.56100428830607285" xmin="-117.82680445594728269" ymax="46.58280418247787935" xmax="178.48756487080751754"/>
         <LayerSet>
           <Layer provider="ogr" source="/home/tobi/Documents/Master/code/python/Master/data/auxiliary/aio.shp" name="aio">aio20180924110657534</Layer>
           <Layer provider="ogr" source="/home/tobi/Documents/Master/code/python/Master/data/auxiliary/gadm36_levels_shp/gadm36_0.shp" name="gadm36_0">gadm36_020180830095050711</Layer>
