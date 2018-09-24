@@ -309,3 +309,17 @@ def compute_driver(**kwargs):
     })
 
     return feature
+
+
+def compute_emissions(**kwargs):
+    emissions = np.ma.masked_less_equal(kwargs['img'], 0)
+
+    feature = {
+        'emission_px': emissions.count(),
+        'count': kwargs['count'],
+        'total': emissions.sum(),
+        'geometry': kwargs['geometry'],
+    }
+
+    if feature['emission_px'] > 0:
+        return feature
