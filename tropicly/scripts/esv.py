@@ -26,7 +26,9 @@ for ax, row in zip(axes, src):
     ax.bar(
         [i for i in range(1, 4)],
         row[2::2]/(10**9),
-        width=0.4, align='edge', color='#99d594',
+        width=0.4,
+        align='edge',
+        color='#99d594',
         label='Gain'
     )
 
