@@ -32,10 +32,9 @@ for ax, group in zip(axes, src.groupby(by='region')):
         sym='.',
         patch_artist=True
     )
-    ax.set_xticklabels(['JC0', 'JC10', 'JC20', 'JC30'], fontsize=10, fontname='Times new roman')
-    #ax.grid(True, axis='y')
-    ax.set_xlabel(region, fontsize=12, fontname='Times new roman')
 
+    ax.set_xticklabels(['JC0', 'JC10', 'JC20', 'JC30'], fontsize=10, fontname='Times new roman')
+    ax.set_title(region, fontsize=12, fontname='Times new roman')
     for box, med, mean in zip(boxes['boxes'], boxes['medians'], boxes['means']):
         box.set_facecolor('white')
         med.set_color('black')
