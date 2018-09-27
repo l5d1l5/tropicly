@@ -4,8 +4,8 @@
 
 \begin{table}
 	\centering
-	\caption[Sampling count]{Confusion matrix}
-	\label{tab:rt1}
+	\caption[Accuracy assessment]{Confusion matrix}
+	\label{tab:accuracy_tab}
 	\begin{tabular}{ll|rrrrrrrrr|rrr}
 		& & \multicolumn{9}{c|}{Reference} & & & \\
 		& Cls & 10 & 20 & 25 & 30 & 40 & 50 & 60 & 80 & 90 & Tot & UAc & Om \\\hline
@@ -23,6 +23,21 @@
 		& PAc & .85 & .62 & .88 & .77 & .71 & .51 & .67 & .46 & .36 & & \multicolumn{2}{r}{OvAc} \\
 		& Com & .15 & .38 & .12 & .23 & .29 & .49 & .33 & .54 & .64 & &
 		\multicolumn{2}{r}{.75} \\ 
+	\end{tabular}
+\end{table}
+
+\begin{table}
+	\centering
+	\caption[Soil organic carbon emissions]{Soil organic carbon emissions}
+	\label{tab:soce_tab}
+	\begin{tabular}{lrrrrrrrrr}
+		\hline
+		\multirow{3}{*}{Region} & \multicolumn{3}{c}{SC1}& \multicolumn{3}{c}{SC2} & \multicolumn{3}{c}{SC3} \\
+		 & \multicolumn{3}{c}{[Gt CO$_2$]}& \multicolumn{3}{c}{[Gt CO$_2$]} & \multicolumn{3}{c}{[Gt CO$_2$]} \\
+		 & min & mean & max & min & mean & max & min & mean & max \\\hline
+		Americas & 0.80 & 0.96 & 1.12 & 0.45 & 0.61 & 0.77 & 0.43 & 0.59 & 0.76 \\
+		Asia & 0.66 & 0.81 & 0.97 & 0.22 & 0.28 & 0.34 & 0.22 & 0.28 & 0.33 \\
+		Africa & 0.32 & 0.39 & 0.45 & 0.17 & 0.23 & 0.29 & 0.16 & 0.23 & 0.29 \\\hline
 	\end{tabular}
 \end{table}
 
