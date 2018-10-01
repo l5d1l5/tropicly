@@ -11,6 +11,7 @@ import geopandas as gpd
 from bisect import bisect_left
 from math import sqrt, isclose
 from shapely.affinity import scale
+from collections import OrderedDict
 from shapely.geometry import asShape
 from tropicly.grid import SegmentedHexagon
 
@@ -59,43 +60,74 @@ def visual_treecover(path, out, bins=None, unit=1000000, scaling='relative'):
     gdf.to_file(out)
 
 
-def visual_driver(path, out, bins=(.2, .4, .6, .8, 1.)):
-    # layer props are driver (10,25,30,40,50,60,70,80,90,100)
-    # covered
-    # loss
-    # area
-    # compute ratio of lost forest
-    # scale hexagons relative to loss
-    # compute area lost
-    # scale hexagon absolute to loss
-    properties = []
-    geometries = []
-    scaled_geometries = []
-    max_loss = 0
+def error_gen(actual, rounded):
+    # refer to stack overflow
+    divisor = sqrt(1.0 if actual < 1.0 else actual)
+    return abs(rounded - actual) ** 2 / divisor
 
+
+def round_to_100(percents):
+    # refer to stack overflow
+    if not isclose(sum(percents), 100):
+        raise ValueError
+
+    rounded = [int(val) for val in percents]
+    up_count = 100 - sum(rounded)
+
+    errors = [
+        (error_gen(per, rnd + 1) - error_gen(per, rnd), idx)
+        for idx, (per, rnd) in enumerate(zip(percents, rounded))
+    ]
+
+    rank = sorted(errors)
+
+    for i in range(up_count):
+        rounded[rank[i][1]] += 1
+
+    return rounded
+
+
+def visual_segmented(path, out, scaling=None):
+    # id, class, ratio, loss, covered, px_area
     with fiona.open(path, 'r') as src:
         crs = src.crs
+        records = []
+        geometry = []
 
-        for feat in src:
+        for idx, feat in enumerate(src):
             prop, geo = feat['properties'], feat['geometry']
 
-            if prop['loss'] > max_loss:
-                max_loss = prop['loss']
+            poly = asShape(geo) if not scaling else scale(asShape(geo), xfact=scaling, yfact=scaling)
+            poly = SegmentedHexagon(poly)
 
-            properties.append(prop)
-            geometries.append(geo)
+            # extract driver ratios (cls, ratio) and sort in decreasing order
+            ratios = sorted(
+                [
+                    (str(cls), (prop[str(cls)]/prop['loss'])*100)
+                    for cls in range(10, 105, 5) if str(cls) in prop
+                ],
+                key=lambda tup: tup[1],
+                reverse=True
+            )
+            cls, ratios = list(zip(*ratios))
+            ratios = list(zip(cls, round_to_100(ratios)))
 
-    for prop, geo in zip(properties, geometries):
-        ratio = prop['loss'] / max_loss
-        factor = bins[bisect_left(bins, ratio)]
-        poly = scale(asShape(geo), xfact=factor, yfact=factor)
-        scaled_geometries.append(poly)
-        prop['ratio'] = ratio
+            for cls, ratio in filter(lambda x: x[1] > 0, ratios):
+                records.append(OrderedDict([
+                    ('id', idx),
+                    ('cls', cls),
+                    ('loss', prop['loss']),
+                    ('total', prop[str(cls)]),
+                    ('covered', prop['covered']),
+                    ('ratio', ratio),
+                    ('px_area', prop['px_area'])
+                ]))
+                geometry.append(poly.get_segment(ratio))
 
-    df = pd.DataFrame(properties)
-    gdf = gpd.GeoDataFrame(df, geometry=scaled_geometries)
-    gdf.crs = crs
-    gdf.to_file(out)
+        df = pd.DataFrame.from_records(records)
+        gdf = gpd.GeoDataFrame(df, geometry=geometry)
+        gdf.crs = crs
+        gdf.to_file(out)
 
 
 # path = '/home/tobi/Documents/driver_normalized_scaled_filtered_africa.shp'
@@ -142,87 +174,20 @@ def visual_driver(path, out, bins=(.2, .4, .6, .8, 1.)):
 #             dst.write(feature)
 
 
-# # SCALE DRIVERS
-# with fiona.open('/home/tobi/Documents/driver_normalized_scaled_filtered_africa.shp',
-#                 'w', driver=vec.driver, schema=vec.schema, crs=vec.crs) as src:
-#     for feature in vec:
-#         scaling = feature['properties']['normalized']
-#         feature['geometry'] = scale(asShape(feature['geometry']), xfact=scaling,
-#                                     yfact=scaling).__geo_interface__
-#         src.write(feature)
-
-
-# # CALCULATE DRIVER HEXAGON SEGMENTS
-# def error_gen(actual, rounded):
-#     divisor = sqrt(1.0 if actual < 1.0 else actual)
-#     return abs(rounded - actual) ** 2 / divisor
-#
-#
-# def round_to_100(percents):
-#     if not isclose(sum(percents), 100):
-#         raise ValueError
-#
-#     rounded = [int(val) for val in percents]
-#     up_count = 100 - sum(rounded)
-#
-#     errors = [
-#         (error_gen(per, rnd + 1) - error_gen(per, rnd), idx)
-#         for idx, (per, rnd) in enumerate(zip(percents, rounded))
-#     ]
-#
-#     rank = sorted(errors)
-#
-#     for i in range(up_count):
-#         rounded[rank[i][1]] += 1
-#
-#     return rounded
-#
-#
-# schema = {
-#     'geometry': 'Polygon',
-#     'properties': OrderedDict([
-#         ('id', 'int:10'),
-#         ('class', 'str:10'),
-#         ('ratio', 'int:10'),
-#         ('covered', 'int:10'),
-#         ('impact', 'int:10'),
-#         ('im/co', 'float:10.8')
-#     ])
-# }
-#
-# with fiona.open('/home/tobi/Documents/driver_normalized_scaled_ratio_filtered_africa.shp', 'w', schema=schema,
-#                 driver=vec.driver, crs=vec.crs) as dst:
-#     for idx, feature in enumerate(vec):
-#         hexagon = SegmentedHexagon(asShape(feature['geometry']))
-#         properties = feature['properties']
-#         impact = properties['impact']
-#
-#         ratios = []
-#         for driver in ['10', '25', '30', '40', '50', '60', '70', '80', '90', '100']:
-#             if driver in properties:
-#                 if properties[driver] > 0:
-#                     ratio = (properties[driver]/impact)*100
-#                     ratios.append([driver, ratio])
-#
-#         driv, rat = list(zip(*ratios))
-#         rat = round_to_100(rat)
-#         ratios = sorted(zip(driv, rat), key=lambda x: x[1], reverse=True)
-#         for driver, ratio in filter(lambda x: x[1] > 0, ratios):
-#             segment = hexagon.get_segment(ratio)
-#             feat = {
-#                 'geometry': segment.__geo_interface__,
-#                 'properties': OrderedDict([
-#                     ('id', idx),
-#                     ('class', driver),
-#                     ('ratio', ratio),
-#                     ('covered', properties['covered']),
-#                     ('impact', properties['impact']),
-#                     ('im/co', properties['im/co'])
-#                 ])
-#             }
-#             dst.write(feat)
-
-
 if __name__ == '__main__':
-    visual_driver('/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/test.shp',
-                  '/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/test4.shp')
+    visual_segmented(
+        '/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/driver/americas_driver.shp',
+        '/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/driver/americas_driver_segmented.shp',
+        0.8
+    )
+    visual_segmented(
+        '/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/driver/africa_driver.shp',
+        '/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/driver/africa_driver_segmented.shp',
+        0.8
+    )
+    visual_segmented(
+        '/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/driver/asia_driver.shp',
+        '/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/driver/asia_driver_segmented.shp',
+        0.8
+    )
+
