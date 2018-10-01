@@ -4,23 +4,26 @@
     <edittype widgetv2type="TextEdit" name="id">
       <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
     </edittype>
-    <edittype widgetv2type="TextEdit" name="class">
+    <edittype widgetv2type="TextEdit" name="cls">
       <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
     </edittype>
-    <edittype widgetv2type="TextEdit" name="ratio">
+    <edittype widgetv2type="TextEdit" name="loss">
+      <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+    </edittype>
+    <edittype widgetv2type="TextEdit" name="total">
       <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
     </edittype>
     <edittype widgetv2type="TextEdit" name="covered">
       <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
     </edittype>
-    <edittype widgetv2type="TextEdit" name="impact">
+    <edittype widgetv2type="TextEdit" name="ratio">
       <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
     </edittype>
-    <edittype widgetv2type="TextEdit" name="im/co">
+    <edittype widgetv2type="TextEdit" name="px_area">
       <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
     </edittype>
   </edittypes>
-  <renderer-v2 attr="class" forceraster="0" symbollevels="0" type="categorizedSymbol" enableorderby="0">
+  <renderer-v2 attr="cls" forceraster="0" symbollevels="0" type="categorizedSymbol" enableorderby="0">
     <categories>
       <category render="true" symbol="0" value="10" label="Cultivated land"/>
       <category render="true" symbol="1" value="25" label="Forest regrowth"/>
@@ -377,7 +380,6 @@
   <SingleCategoryDiagramRenderer diagramType="Histogram" sizeLegend="0" attributeLegend="1">
     <DiagramCategory penColor="#000000" labelPlacementMethod="XHeight" penWidth="0" diagramOrientation="Up" sizeScale="0,0,0,0,0,0" minimumSize="0" barWidth="5" penAlpha="255" maxScaleDenominator="1e+08" backgroundColor="#ffffff" transparency="0" width="15" scaleDependency="Area" backgroundAlpha="255" angleOffset="1440" scaleBasedVisibility="0" enabled="0" height="15" lineSizeScale="0,0,0,0,0,0" sizeType="MM" lineSizeType="MM" minScaleDenominator="inf">
       <fontProperties description="Ubuntu,11,-1,5,50,0,0,0,0,0" style=""/>
-      <attribute field="" color="#000000" label=""/>
     </DiagramCategory>
     <symbol alpha="1" clip_to_extent="1" type="marker" name="sizeSymbol">
       <layer pass="0" class="SimpleMarker" locked="0">
@@ -406,24 +408,26 @@
   <annotationform>.</annotationform>
   <aliases>
     <alias field="id" index="0" name=""/>
-    <alias field="class" index="1" name=""/>
-    <alias field="ratio" index="2" name=""/>
-    <alias field="covered" index="3" name=""/>
-    <alias field="impact" index="4" name=""/>
-    <alias field="im/co" index="5" name=""/>
+    <alias field="cls" index="1" name=""/>
+    <alias field="loss" index="2" name=""/>
+    <alias field="total" index="3" name=""/>
+    <alias field="covered" index="4" name=""/>
+    <alias field="ratio" index="5" name=""/>
+    <alias field="px_area" index="6" name=""/>
   </aliases>
   <excludeAttributesWMS/>
   <excludeAttributesWFS/>
   <attributeactions default="-1"/>
   <attributetableconfig actionWidgetStyle="dropDown" sortExpression="" sortOrder="0">
     <columns>
-      <column width="-1" hidden="0" type="field" name="class"/>
       <column width="-1" hidden="0" type="field" name="ratio"/>
       <column width="-1" hidden="0" type="field" name="id"/>
       <column width="-1" hidden="1" type="actions"/>
       <column width="-1" hidden="0" type="field" name="covered"/>
-      <column width="-1" hidden="0" type="field" name="impact"/>
-      <column width="-1" hidden="0" type="field" name="im/co"/>
+      <column width="-1" hidden="0" type="field" name="cls"/>
+      <column width="-1" hidden="0" type="field" name="loss"/>
+      <column width="-1" hidden="0" type="field" name="total"/>
+      <column width="-1" hidden="0" type="field" name="px_area"/>
     </columns>
   </attributetableconfig>
   <editform>.</editform>
@@ -456,11 +460,12 @@ def my_form_open(dialog, layer, feature):
   </conditionalstyles>
   <defaults>
     <default field="id" expression=""/>
-    <default field="class" expression=""/>
-    <default field="ratio" expression=""/>
+    <default field="cls" expression=""/>
+    <default field="loss" expression=""/>
+    <default field="total" expression=""/>
     <default field="covered" expression=""/>
-    <default field="impact" expression=""/>
-    <default field="im/co" expression=""/>
+    <default field="ratio" expression=""/>
+    <default field="px_area" expression=""/>
   </defaults>
   <previewExpression>COALESCE( "id", '&lt;NULL>' )</previewExpression>
   <layerGeometryType>2</layerGeometryType>
