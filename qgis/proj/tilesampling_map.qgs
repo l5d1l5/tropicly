@@ -5,33 +5,33 @@
   <evaluateDefaultValues active="0"/>
   <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="">
     <customproperties/>
-    <layer-tree-group expanded="0" checked="Qt::Unchecked" name="introduction">
+    <layer-tree-group expanded="1" checked="Qt::Checked" name="introduction">
       <customproperties/>
-      <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Unchecked" id="aio20180924110657534" source="/home/tobi/Documents/Master/code/python/Master/data/auxiliary/aio.shp" name="aio">
+      <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="aio20180924110657534" source="/home/tobi/Documents/Master/code/python/Master/data/auxiliary/aio.shp" name="aio">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Unchecked" id="gadm36_0_copy20180924125115309" source="/home/tobi/Documents/Master/code/python/Master/data/auxiliary/gadm36_levels_shp/gadm36_0.shp" name="gadm36_0">
+      <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="gadm36_0_copy20180924125115309" source="/home/tobi/Documents/Master/code/python/Master/data/auxiliary/gadm36_levels_shp/gadm36_0.shp" name="gadm36_0">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="0" providerKey="gdal" checked="Qt::Unchecked" id="cover_asia20180924111837572" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/raster/tif/cover_asia.tif" name="cover_asia">
+      <layer-tree-layer expanded="0" providerKey="gdal" checked="Qt::Checked" id="cover_asia20180924111837572" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/raster/tif/cover_asia.tif" name="cover_asia">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="0" providerKey="gdal" checked="Qt::Unchecked" id="cover_africa20180924110915987" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/raster/tif/cover_africa.tif" name="cover_africa">
+      <layer-tree-layer expanded="0" providerKey="gdal" checked="Qt::Checked" id="cover_africa20180924110915987" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/raster/tif/cover_africa.tif" name="cover_africa">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="0" providerKey="gdal" checked="Qt::Unchecked" id="cover_americas20180924111559180" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/raster/tif/cover_americas.tif" name="cover_americas">
+      <layer-tree-layer expanded="0" providerKey="gdal" checked="Qt::Checked" id="cover_americas20180924111559180" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/raster/tif/cover_americas.tif" name="cover_americas">
         <customproperties/>
       </layer-tree-layer>
     </layer-tree-group>
-    <layer-tree-group expanded="1" checked="Qt::Checked" name="methods">
+    <layer-tree-group expanded="1" checked="Qt::Unchecked" name="methods">
       <customproperties/>
-      <layer-tree-layer expanded="0" providerKey="ogr" checked="Qt::Checked" id="mask20180724103809486" source="/home/tobi/Documents/Master/code/python/Master/data/auxiliary/mask.shp" name="mask">
+      <layer-tree-layer expanded="0" providerKey="ogr" checked="Qt::Unchecked" id="mask20180724103809486" source="/home/tobi/Documents/Master/code/python/Master/data/auxiliary/mask.shp" name="mask">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="tropical_countries_copy20180924125604598" source="/home/tobi/Documents/Master/code/python/Master/data/auxiliary/tropical_countries.shp" name="tropical_countries">
+      <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Unchecked" id="tropical_countries_copy20180924125604598" source="/home/tobi/Documents/Master/code/python/Master/data/auxiliary/tropical_countries.shp" name="tropical_countries">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="gadm36_020180830095050711" source="/home/tobi/Documents/Master/code/python/Master/data/auxiliary/gadm36_levels_shp/gadm36_0.shp" name="gadm36_0">
+      <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Unchecked" id="gadm36_020180830095050711" source="/home/tobi/Documents/Master/code/python/Master/data/auxiliary/gadm36_levels_shp/gadm36_0.shp" name="gadm36_0">
         <customproperties/>
       </layer-tree-layer>
     </layer-tree-group>
@@ -75,52 +75,52 @@
     </custom-order>
   </layer-tree-canvas>
   <legend updateDrawingOrder="true">
-    <legendgroup open="false" checked="Qt::Unchecked" name="introduction">
-      <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="aio" showFeatureCount="0">
+    <legendgroup open="true" checked="Qt::Checked" name="introduction">
+      <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="aio" showFeatureCount="0">
         <filegroup open="true" hidden="false">
-          <legendlayerfile isInOverview="0" layerid="aio20180924110657534" visible="0"/>
-        </filegroup>
-      </legendlayer>
-      <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="gadm36_0" showFeatureCount="0">
-        <filegroup open="true" hidden="false">
-          <legendlayerfile isInOverview="0" layerid="gadm36_0_copy20180924125115309" visible="0"/>
-        </filegroup>
-      </legendlayer>
-      <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="cover_asia" showFeatureCount="0">
-        <filegroup open="false" hidden="false">
-          <legendlayerfile isInOverview="0" layerid="cover_asia20180924111837572" visible="0"/>
-        </filegroup>
-      </legendlayer>
-      <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="cover_africa" showFeatureCount="0">
-        <filegroup open="false" hidden="false">
-          <legendlayerfile isInOverview="0" layerid="cover_africa20180924110915987" visible="0"/>
-        </filegroup>
-      </legendlayer>
-      <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="cover_americas" showFeatureCount="0">
-        <filegroup open="false" hidden="false">
-          <legendlayerfile isInOverview="0" layerid="cover_americas20180924111559180" visible="0"/>
-        </filegroup>
-      </legendlayer>
-    </legendgroup>
-    <legendgroup open="true" checked="Qt::Checked" name="methods">
-      <legendlayer drawingOrder="-1" open="false" checked="Qt::Checked" name="mask" showFeatureCount="0">
-        <filegroup open="false" hidden="false">
-          <legendlayerfile isInOverview="0" layerid="mask20180724103809486" visible="1"/>
-        </filegroup>
-      </legendlayer>
-      <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="tropical_countries" showFeatureCount="0">
-        <filegroup open="true" hidden="false">
-          <legendlayerfile isInOverview="0" layerid="tropical_countries_copy20180924125604598" visible="1"/>
+          <legendlayerfile isInOverview="0" layerid="aio20180924110657534" visible="1"/>
         </filegroup>
       </legendlayer>
       <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="gadm36_0" showFeatureCount="0">
         <filegroup open="true" hidden="false">
-          <legendlayerfile isInOverview="0" layerid="gadm36_020180830095050711" visible="1"/>
+          <legendlayerfile isInOverview="0" layerid="gadm36_0_copy20180924125115309" visible="1"/>
+        </filegroup>
+      </legendlayer>
+      <legendlayer drawingOrder="-1" open="false" checked="Qt::Checked" name="cover_asia" showFeatureCount="0">
+        <filegroup open="false" hidden="false">
+          <legendlayerfile isInOverview="0" layerid="cover_asia20180924111837572" visible="1"/>
+        </filegroup>
+      </legendlayer>
+      <legendlayer drawingOrder="-1" open="false" checked="Qt::Checked" name="cover_africa" showFeatureCount="0">
+        <filegroup open="false" hidden="false">
+          <legendlayerfile isInOverview="0" layerid="cover_africa20180924110915987" visible="1"/>
+        </filegroup>
+      </legendlayer>
+      <legendlayer drawingOrder="-1" open="false" checked="Qt::Checked" name="cover_americas" showFeatureCount="0">
+        <filegroup open="false" hidden="false">
+          <legendlayerfile isInOverview="0" layerid="cover_americas20180924111559180" visible="1"/>
+        </filegroup>
+      </legendlayer>
+    </legendgroup>
+    <legendgroup open="true" checked="Qt::Unchecked" name="methods">
+      <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="mask" showFeatureCount="0">
+        <filegroup open="false" hidden="false">
+          <legendlayerfile isInOverview="0" layerid="mask20180724103809486" visible="0"/>
+        </filegroup>
+      </legendlayer>
+      <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="tropical_countries" showFeatureCount="0">
+        <filegroup open="true" hidden="false">
+          <legendlayerfile isInOverview="0" layerid="tropical_countries_copy20180924125604598" visible="0"/>
+        </filegroup>
+      </legendlayer>
+      <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="gadm36_0" showFeatureCount="0">
+        <filegroup open="true" hidden="false">
+          <legendlayerfile isInOverview="0" layerid="gadm36_020180830095050711" visible="0"/>
         </filegroup>
       </legendlayer>
     </legendgroup>
   </legend>
-  <Composer title="intro" visible="0">
+  <Composer title="intro" visible="1">
     <Composition resizeToContentsMarginLeft="0" snapping="0" showPages="1" guidesVisible="1" resizeToContentsMarginTop="0" worldFileMap="{afbe5b8b-b513-4103-9cb6-48a4afa21752}" alignmentSnap="1" printResolution="300" paperWidth="210" gridVisible="1" snapGridOffsetX="0" smartGuides="1" snapGridOffsetY="0" resizeToContentsMarginRight="0" snapTolerancePixels="5" printAsRaster="0" generateWorldFile="0" paperHeight="297" numPages="1" snapGridResolution="10" resizeToContentsMarginBottom="0">
       <symbol alpha="1" clip_to_extent="1" type="fill" name="">
         <layer pass="0" class="SimpleFill" locked="0">
@@ -147,7 +147,7 @@
       <ComposerLabel valign="32" marginX="1" marginY="1" labelText="Coordinate system:&#xa;WGS84 (EPSG:4326)" htmlState="0" halign="1">
         <LabelFont description="Times New Roman,6,-1,5,50,0,0,0,0,0" style="Regular"/>
         <FontColor red="0" blue="0" green="0"/>
-        <ComposerItem pagey="78.8412" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="true" x="94.908" y="78.8412" visibility="1" zValue="4" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="21.5475" outlineWidth="0.3" excludeFromExports="0" uuid="{444d5f13-067e-4910-afc5-8808bb3bf694}" height="6.87685" itemRotation="0" frame="false" pagex="94.908">
+        <ComposerItem pagey="80.8116" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="134.474" y="80.8116" visibility="1" zValue="4" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="21.5475" outlineWidth="0.3" excludeFromExports="0" uuid="{444d5f13-067e-4910-afc5-8808bb3bf694}" height="6.87685" itemRotation="0" frame="false" pagex="134.474">
           <FrameColor alpha="255" red="0" blue="0" green="0"/>
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
           <customproperties/>
@@ -156,7 +156,7 @@
       <ComposerLabel valign="32" marginX="1" marginY="1" labelText="Sources:&#xa;GADM (2018), World Map Version 3.4&#xa;Hansen/UMD/Google/USGS/NASA&#xa;&#xa;" htmlState="0" halign="1">
         <LabelFont description="Times New Roman,6,-1,5,50,0,0,0,0,0" style="Regular"/>
         <FontColor red="0" blue="0" green="0"/>
-        <ComposerItem pagey="78.8412" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="true" x="34.8427" y="78.8412" visibility="1" zValue="3" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="47.5487" outlineWidth="0.3" excludeFromExports="0" uuid="{0c37051b-40a6-41fb-b6a5-513784b45a41}" height="12.1971" itemRotation="0" frame="false" pagex="34.8427">
+        <ComposerItem pagey="80.8116" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="155.432" y="80.8116" visibility="1" zValue="3" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="38.2627" outlineWidth="0.3" excludeFromExports="0" uuid="{0c37051b-40a6-41fb-b6a5-513784b45a41}" height="12.1971" itemRotation="0" frame="false" pagex="155.432">
           <FrameColor alpha="255" red="0" blue="0" green="0"/>
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
           <customproperties/>
@@ -206,7 +206,7 @@
             </layer-tree-layer>
           </layer-tree-group>
         </layer-tree-group>
-        <ComposerItem pagey="74.5912" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="true" x="114.948" y="74.5912" visibility="1" zValue="2" background="true" transparency="0" frameJoinStyle="round" blendMode="0" width="75.0516" outlineWidth="0.3" excludeFromExports="0" uuid="{3532284c-797a-4ca8-854c-ed51b5f0ee93}" height="10.5" itemRotation="0" frame="true" pagex="114.948">
+        <ComposerItem pagey="79" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="34.8427" y="79" visibility="1" zValue="2" background="false" transparency="0" frameJoinStyle="round" blendMode="0" width="75.0516" outlineWidth="0.3" excludeFromExports="0" uuid="{3532284c-797a-4ca8-854c-ed51b5f0ee93}" height="10.5" itemRotation="0" frame="false" pagex="34.8427">
           <FrameColor alpha="255" red="0" blue="0" green="0"/>
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
           <customproperties/>
@@ -265,7 +265,7 @@
           <annotationFontProperties description="Ubuntu,6,-1,5,50,0,0,0,0,0" style="Regular"/>
         </ComposerMapGrid>
         <AtlasMap scalingMode="2" atlasDriven="0" margin="0.10000000000000001"/>
-        <ComposerItem pagey="25" page="1" id="Map" lastValidViewScaleFactor="6.34382" positionMode="0" positionLock="true" x="35" y="25" visibility="1" zValue="1" background="true" transparency="0" frameJoinStyle="round" blendMode="0" width="155" outlineWidth="0.3" excludeFromExports="0" uuid="{afbe5b8b-b513-4103-9cb6-48a4afa21752}" height="55" itemRotation="0" frame="true" pagex="35">
+        <ComposerItem pagey="25" page="1" id="Map" lastValidViewScaleFactor="8.59627" positionMode="0" positionLock="false" x="35" y="25" visibility="1" zValue="1" background="true" transparency="0" frameJoinStyle="round" blendMode="0" width="155" outlineWidth="0.3" excludeFromExports="0" uuid="{afbe5b8b-b513-4103-9cb6-48a4afa21752}" height="55" itemRotation="0" frame="false" pagex="35">
           <FrameColor alpha="255" red="0" blue="0" green="0"/>
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
           <customproperties/>
@@ -280,7 +280,7 @@
       </customproperties>
     </Composition>
   </Composer>
-  <Composer title="methods" visible="1">
+  <Composer title="methods" visible="0">
     <Composition resizeToContentsMarginLeft="0" snapping="0" showPages="1" guidesVisible="1" resizeToContentsMarginTop="0" worldFileMap="{52165484-4662-428a-a74e-5b02522b6ec1}" alignmentSnap="1" printResolution="300" paperWidth="210" gridVisible="1" snapGridOffsetX="0" smartGuides="1" snapGridOffsetY="0" resizeToContentsMarginRight="0" snapTolerancePixels="5" printAsRaster="0" generateWorldFile="0" paperHeight="297" numPages="1" snapGridResolution="10" resizeToContentsMarginBottom="0">
       <symbol alpha="1" clip_to_extent="1" type="fill" name="">
         <layer pass="0" class="SimpleFill" locked="0">
@@ -307,7 +307,7 @@
       <ComposerLabel valign="32" marginX="1" marginY="1" labelText="Coordinate system:&#xa;WGS84 (EPSG:4326)" htmlState="0" halign="1">
         <LabelFont description="Times New Roman,6,-1,5,50,0,0,0,0,0" style="Regular"/>
         <FontColor red="0" blue="0" green="0"/>
-        <ComposerItem pagey="79.25" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="99.4452" y="79.25" visibility="1" zValue="4" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="21.5475" outlineWidth="0.3" excludeFromExports="0" uuid="{94a2bf95-f548-4807-b477-dfbf96309922}" height="6.87685" itemRotation="0" frame="false" pagex="99.4452">
+        <ComposerItem pagey="79.15" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="153.478" y="79.15" visibility="1" zValue="4" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="21.5475" outlineWidth="0.3" excludeFromExports="0" uuid="{94a2bf95-f548-4807-b477-dfbf96309922}" height="6.87685" itemRotation="0" frame="false" pagex="153.478">
           <FrameColor alpha="255" red="0" blue="0" green="0"/>
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
           <customproperties/>
@@ -316,7 +316,7 @@
       <ComposerLabel valign="32" marginX="1" marginY="1" labelText="Sources:&#xa;GADM (2018), World Map Version 3.4&#xa;" htmlState="0" halign="1">
         <LabelFont description="Times New Roman,6,-1,5,50,0,0,0,0,0" style="Regular"/>
         <FontColor red="0" blue="0" green="0"/>
-        <ComposerItem pagey="79.25" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="34.6843" y="79.25" visibility="1" zValue="3" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="36.672" outlineWidth="0.3" excludeFromExports="0" uuid="{405d1028-049d-4cc3-8adb-3266f9b0dd49}" height="9.87107" itemRotation="0" frame="false" pagex="34.6843">
+        <ComposerItem pagey="84.4645" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="153.478" y="84.4645" visibility="1" zValue="3" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="36.672" outlineWidth="0.3" excludeFromExports="0" uuid="{405d1028-049d-4cc3-8adb-3266f9b0dd49}" height="9.87107" itemRotation="0" frame="false" pagex="153.478">
           <FrameColor alpha="255" red="0" blue="0" green="0"/>
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
           <customproperties/>
@@ -359,14 +359,14 @@
             </layer-tree-layer>
           </layer-tree-group>
         </layer-tree-group>
-        <ComposerItem pagey="75.4769" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="119.613" y="75.4769" visibility="1" zValue="2" background="true" transparency="0" frameJoinStyle="round" blendMode="0" width="70.3875" outlineWidth="0.3" excludeFromExports="0" uuid="{6ec6b5e0-f8de-4c3e-8142-a9804263f07b}" height="10.5" itemRotation="0" frame="true" pagex="119.613">
+        <ComposerItem pagey="79.15" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="34.8427" y="79.15" visibility="1" zValue="2" background="false" transparency="0" frameJoinStyle="round" blendMode="0" width="70.3875" outlineWidth="0.3" excludeFromExports="0" uuid="{6ec6b5e0-f8de-4c3e-8142-a9804263f07b}" height="10.5" itemRotation="0" frame="false" pagex="34.8427">
           <FrameColor alpha="255" red="0" blue="0" green="0"/>
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
           <customproperties/>
         </ComposerItem>
       </ComposerLegend>
       <ComposerMap followPreset="false" mapRotation="0" keepLayerSet="false" followPresetName="" id="0" previewMode="Cache" drawCanvasItems="true">
-        <Extent ymin="-58.56100428830607285" xmin="-117.82680445594728269" ymax="46.58280418247787935" xmax="178.48756487080751754"/>
+        <Extent ymin="-56.78190253698750922" xmin="-117.82680445594725427" ymax="48.36190593379644298" xmax="178.48756487080754596"/>
         <LayerSet/>
         <Grid/>
         <ComposerMapGrid rightAnnotationDirection="0" gridFramePenColor="0,0,0,255" show="1" bottomAnnotationPosition="1" annotationPrecision="0" showAnnotation="1" topFrameDivisions="0" uuid="{42e6af2d-16dd-4eee-92ab-bf10121f91b4}" leftAnnotationDirection="0" topAnnotationPosition="1" rightAnnotationDisplay="3" offsetX="0" offsetY="0" rightFrameDivisions="0" gridStyle="1" annotationFontColor="0,0,0,255" intervalX="20" gridFrameSideFlags="5" intervalY="20" bottomAnnotationDirection="0" leftAnnotationDisplay="0" leftFrameDivisions="0" frameFillColor1="255,255,255,255" annotationExpression="" frameFillColor2="0,0,0,255" crossLength="0.5" gridFramePenThickness="0" bottomAnnotationDisplay="3" unit="0" topAnnotationDisplay="0" leftAnnotationPosition="1" blendMode="0" gridFrameStyle="4" rightAnnotationPosition="1" gridFrameWidth="0.69999999999999996" name="Grid 1" annotationFormat="0" bottomFrameDivisions="0" topAnnotationDirection="0" frameAnnotationDistance="0.1">
@@ -418,7 +418,7 @@
           <annotationFontProperties description="Ubuntu,6,-1,5,50,0,0,0,0,0" style="Regular"/>
         </ComposerMapGrid>
         <AtlasMap scalingMode="2" atlasDriven="0" margin="0.10000000000000001"/>
-        <ComposerItem pagey="25" page="1" id="Map" lastValidViewScaleFactor="7.18845" positionMode="0" positionLock="false" x="35" y="25" visibility="1" zValue="1" background="true" transparency="0" frameJoinStyle="round" blendMode="0" width="155" outlineWidth="0.3" excludeFromExports="0" uuid="{52165484-4662-428a-a74e-5b02522b6ec1}" height="55" itemRotation="0" frame="true" pagex="35">
+        <ComposerItem pagey="25" page="1" id="Map" lastValidViewScaleFactor="6.52042" positionMode="0" positionLock="false" x="35" y="25" visibility="1" zValue="1" background="true" transparency="0" frameJoinStyle="round" blendMode="0" width="155" outlineWidth="0.3" excludeFromExports="0" uuid="{52165484-4662-428a-a74e-5b02522b6ec1}" height="55" itemRotation="0" frame="false" pagex="35">
           <FrameColor alpha="255" red="0" blue="0" green="0"/>
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
           <customproperties/>
