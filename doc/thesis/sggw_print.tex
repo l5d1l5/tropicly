@@ -24,6 +24,7 @@
 \KOMAoptions{draft=true}  % COMMENT IF DOCUMENT GOES IN PRINT
 \addtokomafont{disposition}{\normalfont}
 \addtokomafont{caption}{\footnotesize}
+\usepackage{color}
 
 % special symbols
 \usepackage{soul}
@@ -119,25 +120,25 @@
 
 	\hypersetup{pageanchor=false}
 
-	% title page
-	\input{cover/sggw_cover.tex}
+		% title page
+		\input{cover/sggw_cover.tex}
 	\BlankPage
 
-	% declarations
-	\input{declarations/promoter.tex}
+		% declarations
+		\input{declarations/promoter.tex}
 	\BlankPage
-	\input{declarations/author.tex}
-	\BlankPage
-
-	\BlankPage
+		\input{declarations/author.tex}
 	\BlankPage
 
-	% abstracts
-	\input{abstracts/streszczenie.tex}
 	\BlankPage
-	\input{abstracts/abstract.tex}
 	\BlankPage
-	\input{abstracts/zusammenfassung.tex}
+
+		% abstracts
+		\input{abstracts/streszczenie.tex}
+	\BlankPage
+		\input{abstracts/abstract.tex}
+	\BlankPage
+		\input{abstracts/zusammenfassung.tex}
 	\BlankPage
 
 	\BlankPage
@@ -154,15 +155,18 @@
 	\tableofcontents
 	\newpage
 
-	% content
-	\input{introduction/introduction.tex}
-	\input{methods/methods.tex}
-	\input{results/results.tex}
-	\input{discussion/discussion.tex}
-	\input{conclusion/conclusion.tex}
+		% content
+		\input{introduction/introduction.tex}
 	\newpage
-
-	\input{acknowledgements/acknowledge.tex}
+		\input{methods/methods.tex}
+	\newpage
+		\input{results/results.tex}
+	\newpage
+		\input{discussion/discussion.tex}
+	\newpage
+		\input{conclusion/conclusion.tex}
+	\newpage
+		\input{acknowledgements/acknowledge.tex}
 	\newpage
 
 
@@ -170,18 +174,18 @@
 	\setcounter{page}{1}
 
 
-	% references
-	\input{references/references.tex}
+		% references
+		\input{references/references.tex}
 	\newpage
 
-	% lists
-	\input{lists/lists.tex}
+		% lists
+		\input{lists/lists.tex}
 	\newpage
 
-	% appendix
-	\input{appendix/appendix.tex}
+		% appendix
+		\input{appendix/appendix.tex}
 	\newpage
 
-	% share approval
-	\input{share/sggw_share.tex}
+		% share approval
+		\input{share/sggw_share.tex}
 \end{document}
