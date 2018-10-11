@@ -2,9 +2,9 @@
 \contentsline {section}{\numberline {1}Introduction}{11}{section.1}
 \contentsline {subsection}{\numberline {1.1}Tropical forest}{11}{subsection.1.1}
 \contentsline {subsubsection}{\numberline {1.1.1}Current state}{11}{subsubsection.1.1.1}
-\contentsline {subsubsection}{\numberline {1.1.2}Contribution to climate}{12}{subsubsection.1.1.2}
-\contentsline {subsubsection}{\numberline {1.1.3}Forest definitions}{12}{subsubsection.1.1.3}
-\contentsline {subsection}{\numberline {1.2}Deforestation}{12}{subsection.1.2}
+\contentsline {subsubsection}{\numberline {1.1.2}Contribution to climate}{11}{subsubsection.1.1.2}
+\contentsline {subsubsection}{\numberline {1.1.3}Forest definitions}{11}{subsubsection.1.1.3}
+\contentsline {subsection}{\numberline {1.2}Deforestation}{11}{subsection.1.2}
 \contentsline {subsubsection}{\numberline {1.2.1}Land use and land cover change}{12}{subsubsection.1.2.1}
 \contentsline {subsubsection}{\numberline {1.2.2}Drivers of deforestation}{12}{subsubsection.1.2.2}
 \contentsline {subsection}{\numberline {1.3}Emissions trough deforestation}{12}{subsection.1.3}
@@ -22,14 +22,14 @@
 \contentsline {paragraph}{\numberline {2.1.1.4}Aboveground Woody Biomass}{13}{paragraph.2.1.1.4}
 \contentsline {paragraph}{\numberline {2.1.1.5}Global Soil Organic Carbon}{13}{paragraph.2.1.1.5}
 \contentsline {paragraph}{\numberline {2.1.1.6}Auxiliary}{13}{paragraph.2.1.1.6}
-\contentsline {subsubsection}{\numberline {2.1.2}Numerical data}{13}{subsubsection.2.1.2}
+\contentsline {subsubsection}{\numberline {2.1.2}Empirical data}{13}{subsubsection.2.1.2}
 \contentsline {paragraph}{\numberline {2.1.2.1}Soil Organic Carbon}{13}{paragraph.2.1.2.1}
-\contentsline {paragraph}{\numberline {2.1.2.2}Ecosystem Service Values}{13}{paragraph.2.1.2.2}
-\contentsline {subsection}{\numberline {2.2}Methods}{13}{subsection.2.2}
-\contentsline {subsubsection}{\numberline {2.2.1}Preprocessing}{13}{subsubsection.2.2.1}
-\contentsline {subsubsection}{\numberline {2.2.2}Deforestation}{13}{subsubsection.2.2.2}
-\contentsline {paragraph}{\numberline {2.2.2.1}Forest definition}{13}{paragraph.2.2.2.1}
-\contentsline {paragraph}{\numberline {2.2.2.2}Land use change driver}{13}{paragraph.2.2.2.2}
+\contentsline {paragraph}{\numberline {2.1.2.2}Ecosystem Service Values}{14}{paragraph.2.1.2.2}
+\contentsline {subsection}{\numberline {2.2}Methods}{14}{subsection.2.2}
+\contentsline {subsubsection}{\numberline {2.2.1}Preprocessing}{14}{subsubsection.2.2.1}
+\contentsline {subsubsection}{\numberline {2.2.2}Deforestation}{14}{subsubsection.2.2.2}
+\contentsline {paragraph}{\numberline {2.2.2.1}Forest definition}{14}{paragraph.2.2.2.1}
+\contentsline {paragraph}{\numberline {2.2.2.2}Land use change driver}{14}{paragraph.2.2.2.2}
 \contentsline {paragraph}{\numberline {2.2.2.3}Accuracy assessment}{14}{paragraph.2.2.2.3}
 \contentsline {subsubsection}{\numberline {2.2.3}Emissions}{14}{subsubsection.2.2.3}
 \contentsline {paragraph}{\numberline {2.2.3.1}Above ground biomass}{14}{paragraph.2.2.3.1}
@@ -39,12 +39,13 @@
 \contentsline {paragraph}{\numberline {2.2.4.2}Ecosystem service value gain}{14}{paragraph.2.2.4.2}
 \contentsline {subsubsection}{\numberline {2.2.5}Binning analysis}{14}{subsubsection.2.2.5}
 \contentsline {section}{\numberline {3}Results}{15}{section.3}
-\contentsline {subsection}{\numberline {3.1}Deforestation drivers}{15}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2}Deforestation emissions}{15}{subsection.3.2}
-\contentsline {subsection}{\numberline {3.3}Ecosystem service value balance}{15}{subsection.3.3}
-\contentsline {section}{\numberline {4}Discussion}{16}{section.4}
-\contentsline {section}{\numberline {5}Conclusion}{17}{section.5}
-\contentsline {section}{Acknowledgements}{18}{section*.2}
+\contentsline {subsection}{\numberline {3.1}Forest definition and accuracy assessment}{15}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Deforestation drivers}{16}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Deforestation emissions}{21}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.4}Ecosystem service value balance}{21}{subsection.3.4}
+\contentsline {section}{\numberline {4}Discussion}{22}{section.4}
+\contentsline {section}{\numberline {5}Conclusion}{23}{section.5}
+\contentsline {section}{Acknowledgements}{24}{section*.2}
 \contentsline {section}{References}{I}{section*.2}
 \contentsline {section}{\nonumberline List of Figures}{II}{section*.4}
 \contentsline {section}{\nonumberline List of Tables}{II}{section*.5}
