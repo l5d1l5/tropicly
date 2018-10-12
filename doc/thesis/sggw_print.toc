@@ -1,10 +1,10 @@
 \select@language {english}
 \contentsline {section}{\numberline {1}Introduction}{11}{section.1}
 \contentsline {subsection}{\numberline {1.1}Tropical forest}{11}{subsection.1.1}
-\contentsline {subsubsection}{\numberline {1.1.1}Current state}{11}{subsubsection.1.1.1}
-\contentsline {subsubsection}{\numberline {1.1.2}Contribution to climate}{11}{subsubsection.1.1.2}
-\contentsline {subsubsection}{\numberline {1.1.3}Forest definitions}{11}{subsubsection.1.1.3}
-\contentsline {subsection}{\numberline {1.2}Deforestation}{11}{subsection.1.2}
+\contentsline {subsubsection}{\numberline {1.1.1}Current state}{12}{subsubsection.1.1.1}
+\contentsline {subsubsection}{\numberline {1.1.2}Contribution to climate}{12}{subsubsection.1.1.2}
+\contentsline {subsubsection}{\numberline {1.1.3}Forest definitions}{12}{subsubsection.1.1.3}
+\contentsline {subsection}{\numberline {1.2}Deforestation}{12}{subsection.1.2}
 \contentsline {subsubsection}{\numberline {1.2.1}Land use and land cover change}{12}{subsubsection.1.2.1}
 \contentsline {subsubsection}{\numberline {1.2.2}Drivers of deforestation}{12}{subsubsection.1.2.2}
 \contentsline {subsection}{\numberline {1.3}Emissions trough deforestation}{12}{subsection.1.3}
@@ -26,7 +26,7 @@
 \contentsline {paragraph}{\numberline {2.1.2.1}Soil Organic Carbon}{13}{paragraph.2.1.2.1}
 \contentsline {paragraph}{\numberline {2.1.2.2}Ecosystem Service Values}{14}{paragraph.2.1.2.2}
 \contentsline {subsection}{\numberline {2.2}Methods}{14}{subsection.2.2}
-\contentsline {subsubsection}{\numberline {2.2.1}Preprocessing}{14}{subsubsection.2.2.1}
+\contentsline {subsubsection}{\numberline {2.2.1}Pre-processing}{14}{subsubsection.2.2.1}
 \contentsline {subsubsection}{\numberline {2.2.2}Deforestation}{14}{subsubsection.2.2.2}
 \contentsline {paragraph}{\numberline {2.2.2.1}Forest definition}{14}{paragraph.2.2.2.1}
 \contentsline {paragraph}{\numberline {2.2.2.2}Land use change driver}{14}{paragraph.2.2.2.2}
@@ -41,10 +41,13 @@
 \contentsline {section}{\numberline {3}Results}{15}{section.3}
 \contentsline {subsection}{\numberline {3.1}Forest definition and accuracy assessment}{15}{subsection.3.1}
 \contentsline {subsection}{\numberline {3.2}Deforestation drivers}{16}{subsection.3.2}
-\contentsline {subsection}{\numberline {3.3}Deforestation emissions}{21}{subsection.3.3}
-\contentsline {subsection}{\numberline {3.4}Ecosystem service value balance}{21}{subsection.3.4}
-\contentsline {section}{\numberline {4}Discussion}{22}{section.4}
-\contentsline {section}{\numberline {5}Conclusion}{23}{section.5}
+\contentsline {subsubsection}{\numberline {3.2.1}Global}{16}{subsubsection.3.2.1}
+\contentsline {subsubsection}{\numberline {3.2.2}Americas}{16}{subsubsection.3.2.2}
+\contentsline {subsubsection}{\numberline {3.2.3}Asia}{16}{subsubsection.3.2.3}
+\contentsline {subsubsection}{\numberline {3.2.4}Africa}{16}{subsubsection.3.2.4}
+\contentsline {subsection}{\numberline {3.3}Deforestation emissions}{22}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.4}Ecosystem service value balance}{22}{subsection.3.4}
+\contentsline {section}{\numberline {4}Discussion}{23}{section.4}
 \contentsline {section}{Acknowledgements}{24}{section*.2}
 \contentsline {section}{References}{I}{section*.2}
 \contentsline {section}{\nonumberline List of Figures}{II}{section*.4}

@@ -25,7 +25,7 @@
 \BOOKMARK [4][-]{paragraph.2.1.2.1}{Soil Organic Carbon}{subsubsection.2.1.2}% 25
 \BOOKMARK [4][-]{paragraph.2.1.2.2}{Ecosystem Service Values}{subsubsection.2.1.2}% 26
 \BOOKMARK [2][-]{subsection.2.2}{Methods}{section.2}% 27
-\BOOKMARK [3][-]{subsubsection.2.2.1}{Preprocessing}{subsection.2.2}% 28
+\BOOKMARK [3][-]{subsubsection.2.2.1}{Pre-processing}{subsection.2.2}% 28
 \BOOKMARK [3][-]{subsubsection.2.2.2}{Deforestation}{subsection.2.2}% 29
 \BOOKMARK [4][-]{paragraph.2.2.2.1}{Forest definition}{subsubsection.2.2.2}% 30
 \BOOKMARK [4][-]{paragraph.2.2.2.2}{Land use change driver}{subsubsection.2.2.2}% 31
@@ -40,13 +40,16 @@
 \BOOKMARK [1][-]{section.3}{Results}{}% 40
 \BOOKMARK [2][-]{subsection.3.1}{Forest definition and accuracy assessment}{section.3}% 41
 \BOOKMARK [2][-]{subsection.3.2}{Deforestation drivers}{section.3}% 42
-\BOOKMARK [2][-]{subsection.3.3}{Deforestation emissions}{section.3}% 43
-\BOOKMARK [2][-]{subsection.3.4}{Ecosystem service value balance}{section.3}% 44
-\BOOKMARK [1][-]{section.4}{Discussion}{}% 45
-\BOOKMARK [1][-]{section.5}{Conclusion}{}% 46
-\BOOKMARK [1][-]{section*.2}{Acknowledgements}{}% 47
-\BOOKMARK [1][-]{section*.2}{References}{}% 48
-\BOOKMARK [1][-]{section*.4}{List of Figures}{}% 49
-\BOOKMARK [1][-]{section*.5}{List of Tables}{}% 50
-\BOOKMARK [1][-]{section*.6}{List of Abbreviations}{}% 51
-\BOOKMARK [1][-]{section*.7}{Appendix}{}% 52
+\BOOKMARK [3][-]{subsubsection.3.2.1}{Global}{subsection.3.2}% 43
+\BOOKMARK [3][-]{subsubsection.3.2.2}{Americas}{subsection.3.2}% 44
+\BOOKMARK [3][-]{subsubsection.3.2.3}{Asia}{subsection.3.2}% 45
+\BOOKMARK [3][-]{subsubsection.3.2.4}{Africa}{subsection.3.2}% 46
+\BOOKMARK [2][-]{subsection.3.3}{Deforestation emissions}{section.3}% 47
+\BOOKMARK [2][-]{subsection.3.4}{Ecosystem service value balance}{section.3}% 48
+\BOOKMARK [1][-]{section.4}{Discussion}{}% 49
+\BOOKMARK [1][-]{section*.2}{Acknowledgements}{}% 50
+\BOOKMARK [1][-]{section*.2}{References}{}% 51
+\BOOKMARK [1][-]{section*.4}{List of Figures}{}% 52
+\BOOKMARK [1][-]{section*.5}{List of Tables}{}% 53
+\BOOKMARK [1][-]{section*.6}{List of Abbreviations}{}% 54
+\BOOKMARK [1][-]{section*.7}{Appendix}{}% 55
