@@ -243,9 +243,8 @@ class SegmentedHexagon:
         self.intercept = self.x1 + (self.x2-self.x1)/2
 
     def get_segment(self, ratio):
-        # TODO bug if ratio == 0 function returns the entire hexagon
         assert (self._ratio + ratio) <= 100  # more than 100%
-        assert ratio >= 0  # no negative ratio allowed
+        assert ratio > 0  # no negative ratio allowed
 
         self._ratio += ratio
 
