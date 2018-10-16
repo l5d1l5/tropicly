@@ -240,7 +240,7 @@ class SegmentedHexagon:
         self.interval4 = self.y2
 
         self.slope = 1/tan(pi/6)
-        self.intercept = self.x1 + (self.x2-self.x1)/2
+        self.intercept = (self.x1+self.x2)/2
 
     def get_segment(self, ratio):
         assert (self._ratio + ratio) <= 100  # more than 100%
@@ -264,6 +264,7 @@ class SegmentedHexagon:
         return bottom
 
     def _split_line(self):
+        # TODO rename x to y and y to x
         x = ((self._ratio * (self.y2 - self.y1)) / 100) + self.y1
 
         assert self.interval1 <= x <= self.interval4
