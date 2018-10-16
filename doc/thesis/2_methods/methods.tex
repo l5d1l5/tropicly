@@ -4,23 +4,7 @@
 \subsection{Data}
 \label{subsec:data}
 %TODO mention data acquisition in each section
-%TODO table of data sets
-%TODO add url to reference
-
-	\begin{table}[ht]
-		\centering
-		\caption[Used datasets]{Used datasets}
-		\label{tab:datasets}
-		\begin{tabular}{lll}
-			\hline
-			Name & Notes & Reference \\\hline
-			Global Forest Change & V1.0, treecover2000, lossyear and gain & \\
-			GlobeLand30 & 2000 and 2010 & \\
-			GSOCmap & V1.0 & \\
-			Intact Forest Landscapes & 2000 & \\
-			Aboveground live woody biomass & & \\
-		\end{tabular}
-	\end{table}
+%TODO no table cause you reference each dataset
 
 	\begin{figure}[ht]
 		\centering
@@ -63,3 +47,76 @@
 		\paragraph{Ecosystem service value gain}
 
 	\subsubsection{Binning analysis}
+	%TODO x/y shift equations
+		\begin{equation}
+		\label{eq:paramters}
+			R = \frac{\sqrt{2A}}{\sqrt[4]{27}} = \frac{D}{2} = \frac{d}{\sqrt{3}}
+		\end{equation}
+		\begin{equation}
+		\label{eq:centerx}
+			c_x = \frac{R\sqrt{3}}{2} 
+		\end{equation}
+		\begin{equation}
+		\label{eq:centery}
+			c_y = R
+		\end{equation}
+		\begin{equation}
+		\label{eq:hexagon}
+			\mathbf{H} =
+			\begin{bmatrix}
+				0 & c_x & 2c_x & 2c_x & c_x & 0 \\
+				R\sin\left(\frac{7\pi}{6}\right) + c_y & 0 & R\sin\left(\frac{11\pi}{6}\right)+c_y & R\sin\left(\frac{\pi}{6}\right)+c_y & 2R & R\sin\left(\frac{5\pi}{6}\right)+c_y \\
+				1 & 1 & 1 & 1 & 1 & 1
+			\end{bmatrix}
+		\end{equation}
+		\begin{equation}
+		\label{eq:translate}
+		\mathbf{T} =
+			\begin{bmatrix}
+				1 & 0 & x_{off} \\
+				0 & 1 & y_{off} \\
+				0 & 0 & 1
+			\end{bmatrix} \cdot \mathbf{H}
+		\end{equation}
+		\begin{equation}
+		\label{eq:bounds}
+			\mathbf{B} =
+			\begin{bmatrix}
+				x_1 & x_2 \\
+				y_1 & y_2
+			\end{bmatrix}
+		\end{equation}
+		\begin{equation}
+		\label{eq:radius}
+			R = \frac{\sqrt{2A}}{\sqrt[4]{27}}
+		\end{equation}
+		\begin{equation}
+		\label{eq:percentage}
+			y = \frac{P(y_2-y_1)}{100} + y_1
+		\end{equation}
+		\begin{equation}
+		\label{eq:left}
+			f^{-1}(y) =
+			\begin{cases} 
+				-\frac{y - y_1}{\tan{(\frac{\pi}{6}})} + \frac{x_1 + x_2}{2} & \text{if } y_1 \le y < y_1 + R\sin{(\frac{5\pi}{6})} \\
+				x_1 & \text{if } y_1 + R\sin{(\frac{5\pi}{6})} \le y < R(\sin{(\frac{5\pi}{6})} + 1) \\
+				\frac{y - y_2}{\tan{(\frac{\pi}{6}})} + \frac{x_1 + x_2}{2} & \text{if } R(\sin{(\frac{5\pi}{6})} + 1) \le y \le y_2
+			\end{cases}
+		\end{equation}
+		\begin{equation}
+		\label{eq:right}
+			g^{-1}(y) = 
+			\begin{cases} 
+				\frac{y - y_1}{\tan{(\frac{\pi}{6}})} + \frac{x_1 + x_2}{2} & \text{if } y_1 \le y < y_1 + R\sin{(\frac{5\pi}{6})} \\
+				x_2 & \text{if } y_1 + R\sin{(\frac{5\pi}{6})} \le y < R(\sin{(\frac{5\pi}{6})} + 1) \\
+				-\frac{y - y_2}{\tan{(\frac{\pi}{6}})} + \frac{x_1 + x_2}{2} & \text{if } R(\sin{(\frac{5\pi}{6})} + 1) \le y \le y_2
+			\end{cases}
+		\end{equation}
+		\begin{equation}
+		\label{eq:line}
+			\mathbf{L} =
+			\begin{bmatrix}
+				f^{-1}(y) & g^{-1}(y) \\
+				y & y
+			\end{bmatrix}
+		\end{equation}

@@ -21,9 +21,9 @@
 \contentsline {paragraph}{\numberline {2.1.1.3}Intact Forest Landscapes}{13}{paragraph.2.1.1.3}
 \contentsline {paragraph}{\numberline {2.1.1.4}Aboveground Woody Biomass}{13}{paragraph.2.1.1.4}
 \contentsline {paragraph}{\numberline {2.1.1.5}Global Soil Organic Carbon}{13}{paragraph.2.1.1.5}
-\contentsline {paragraph}{\numberline {2.1.1.6}Auxiliary}{14}{paragraph.2.1.1.6}
-\contentsline {subsubsection}{\numberline {2.1.2}Empirical data}{14}{subsubsection.2.1.2}
-\contentsline {paragraph}{\numberline {2.1.2.1}Soil Organic Carbon}{14}{paragraph.2.1.2.1}
+\contentsline {paragraph}{\numberline {2.1.1.6}Auxiliary}{13}{paragraph.2.1.1.6}
+\contentsline {subsubsection}{\numberline {2.1.2}Empirical data}{13}{subsubsection.2.1.2}
+\contentsline {paragraph}{\numberline {2.1.2.1}Soil Organic Carbon}{13}{paragraph.2.1.2.1}
 \contentsline {paragraph}{\numberline {2.1.2.2}Ecosystem Service Values}{14}{paragraph.2.1.2.2}
 \contentsline {subsection}{\numberline {2.2}Methods}{14}{subsection.2.2}
 \contentsline {subsubsection}{\numberline {2.2.1}Pre-processing}{14}{subsubsection.2.2.1}
@@ -37,28 +37,28 @@
 \contentsline {subsubsection}{\numberline {2.2.4}Ecosystem service values}{14}{subsubsection.2.2.4}
 \contentsline {paragraph}{\numberline {2.2.4.1}Ecosystem service value loss}{14}{paragraph.2.2.4.1}
 \contentsline {paragraph}{\numberline {2.2.4.2}Ecosystem service value gain}{14}{paragraph.2.2.4.2}
-\contentsline {subsubsection}{\numberline {2.2.5}Binning analysis}{14}{subsubsection.2.2.5}
-\contentsline {section}{\numberline {3}Results}{15}{section.3}
-\contentsline {subsection}{\numberline {3.1}Forest definition and accuracy assessment}{15}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2}Deforestation drivers}{16}{subsection.3.2}
-\contentsline {subsubsection}{\numberline {3.2.1}Global}{16}{subsubsection.3.2.1}
-\contentsline {subsubsection}{\numberline {3.2.2}Americas}{16}{subsubsection.3.2.2}
-\contentsline {subsubsection}{\numberline {3.2.3}Asia}{16}{subsubsection.3.2.3}
-\contentsline {subsubsection}{\numberline {3.2.4}Africa}{16}{subsubsection.3.2.4}
-\contentsline {subsection}{\numberline {3.3}Deforestation emissions}{22}{subsection.3.3}
-\contentsline {subsubsection}{\numberline {3.3.1}Global}{23}{subsubsection.3.3.1}
-\contentsline {subsubsection}{\numberline {3.3.2}Americas}{23}{subsubsection.3.3.2}
-\contentsline {subsubsection}{\numberline {3.3.3}Asia}{23}{subsubsection.3.3.3}
-\contentsline {subsubsection}{\numberline {3.3.4}Africa}{23}{subsubsection.3.3.4}
-\contentsline {subsection}{\numberline {3.4}Ecosystem service value balance}{23}{subsection.3.4}
-\contentsline {subsubsection}{\numberline {3.4.1}Global}{23}{subsubsection.3.4.1}
-\contentsline {subsubsection}{\numberline {3.4.2}Americas}{23}{subsubsection.3.4.2}
-\contentsline {subsubsection}{\numberline {3.4.3}Asia}{23}{subsubsection.3.4.3}
-\contentsline {subsubsection}{\numberline {3.4.4}Africa}{23}{subsubsection.3.4.4}
-\contentsline {section}{\numberline {4}Discussion}{24}{section.4}
-\contentsline {section}{Acknowledgements}{25}{section*.2}
+\contentsline {subsubsection}{\numberline {2.2.5}Binning analysis}{15}{subsubsection.2.2.5}
+\contentsline {section}{\numberline {3}Results}{16}{section.3}
+\contentsline {subsection}{\numberline {3.1}Forest definition and accuracy assessment}{16}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Deforestation drivers}{17}{subsection.3.2}
+\contentsline {subsubsection}{\numberline {3.2.1}Global}{17}{subsubsection.3.2.1}
+\contentsline {subsubsection}{\numberline {3.2.2}Americas}{17}{subsubsection.3.2.2}
+\contentsline {subsubsection}{\numberline {3.2.3}Asia}{17}{subsubsection.3.2.3}
+\contentsline {subsubsection}{\numberline {3.2.4}Africa}{17}{subsubsection.3.2.4}
+\contentsline {subsection}{\numberline {3.3}Deforestation emissions}{23}{subsection.3.3}
+\contentsline {subsubsection}{\numberline {3.3.1}Global}{24}{subsubsection.3.3.1}
+\contentsline {subsubsection}{\numberline {3.3.2}Americas}{24}{subsubsection.3.3.2}
+\contentsline {subsubsection}{\numberline {3.3.3}Asia}{24}{subsubsection.3.3.3}
+\contentsline {subsubsection}{\numberline {3.3.4}Africa}{24}{subsubsection.3.3.4}
+\contentsline {subsection}{\numberline {3.4}Ecosystem service value balance}{24}{subsection.3.4}
+\contentsline {subsubsection}{\numberline {3.4.1}Global}{24}{subsubsection.3.4.1}
+\contentsline {subsubsection}{\numberline {3.4.2}Americas}{24}{subsubsection.3.4.2}
+\contentsline {subsubsection}{\numberline {3.4.3}Asia}{24}{subsubsection.3.4.3}
+\contentsline {subsubsection}{\numberline {3.4.4}Africa}{24}{subsubsection.3.4.4}
+\contentsline {section}{\numberline {4}Discussion}{25}{section.4}
+\contentsline {section}{Acknowledgements}{26}{section*.2}
 \contentsline {section}{References}{I}{section*.2}
 \contentsline {section}{\nonumberline List of Figures}{II}{section*.4}
 \contentsline {section}{\nonumberline List of Tables}{II}{section*.5}
 \contentsline {section}{List of Abbreviations}{II}{section*.6}
-\contentsline {section}{Appendix}{IV}{section*.7}
+\contentsline {section}{Appendix}{III}{section*.7}
