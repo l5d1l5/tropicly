@@ -1,4 +1,4 @@
-\documentclass[fontsize=12pt, twoside, a4paper]{scrartcl} % koma class
+\documentclass[fontsize=12pt, twoside, a4paper]{scrreprt} % koma class
 
 % paper properties
 \usepackage{geometry}
@@ -68,6 +68,7 @@
 \newcommand{\leadingzero}[1]{\ifnum #1<10 0\the#1\else\the#1\fi}
 \newcommand{\todayI}{\leadingzero{\day}.\leadingzero{\month}.\the\year}
 \newcommand{\STAB}[1]{\begin{tabular}{@{}c@{}}#1\end{tabular}}
+\newcommand*\note[1]{{\color{red} #1}}
 
 %\recalctypearea
 
@@ -115,7 +116,7 @@
 
 
 \begin{document}
-	\nocite{*}
+	%\nocite{*} % cite all no matter if used in text
 	\bibliographystyle{tobinat}
 
 	\hypersetup{pageanchor=false}

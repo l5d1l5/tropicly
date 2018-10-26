@@ -1,68 +1,28 @@
-\begin{thebibliography}{10}
+\begin{thebibliography}{6}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
 
-\bibitem[Arsanjani et~al.(2016{\natexlab{a}})Arsanjani, See, and
-  Tayyebi]{Arsanjani2016a}
-Arsanjani J.~J., See L., and Tayyebi A.
-\newblock Assessing the suitability of {G}lobe{L}and30 for mapping land cover
-  in {G}ermany.
-\newblock \emph{International Journal of Digital Earth}, 2016{\natexlab{a}}.
-\newblock \doi{10.1080/17538947.2016.1151956}.
+\bibitem[Carr(1990)]{Carr1990}
+Carr D.~B.
+\newblock Looking at large data sets using binned data plots.
+\newblock resreport, U.S. Department of Energy, 1990.
 
-\bibitem[Arsanjani et~al.(2016{\natexlab{b}})Arsanjani, Tayyebi, and
-  Vaz]{Arsanjani2016}
-Arsanjani J.~J., Tayyebi A., and Vaz E.
-\newblock {G}lobe{L}and30 as an alternative fine-scale global land cover map:
-  {C}hallenges, possibilities, and implications for developing countries.
-\newblock \emph{Habitat International xxx}, pages 1--7, 2016{\natexlab{b}}.
-\newblock \doi{10.1016/j.habitatint.2016.02.003}.
+\bibitem[Carr et~al.(1987)Carr, Littlefield, Nicholson, and
+  Littlefield]{Carr1987}
+Carr D.~B., Littlefield R.~J., Nicholson W.~L., and Littlefield J.~S.
+\newblock Scatterplot matrix techniques for large {N}.
+\newblock \emph{Journal of the American Statistical Association}, 82\penalty0
+  (398), 1987.
 
-\bibitem[Baccini et~al.(2012)Baccini, Goetz, Walker, Laporte, Sun,
-  Sulla-Menashe, Hackler, Beck, Friedl, Samanta, and Houghton]{Baccini2012}
-Baccini A., Goetz S., Walker W., Laporte N., Sun M., Sulla-Menashe D., Hackler
-  J., Beck P., Friedl M., Samanta S., and Houghton R.
-\newblock Estimated carbon dioxide emissions from tropical deforestation
-  improved by carbon-density maps.
-\newblock \emph{Nature Climate Change}, 2, March 2012.
-\newblock \doi{10.1038/nclimate1354}.
-
-\bibitem[Baccini et~al.(2017)Baccini, Walker, Carvalho, Farina, and
-  D.~Sulla-Menashe]{Baccini2017}
-Baccini A., Walker W., Carvalho L., Farina M., and D.~Sulla-Menashe R. A.~H.
-\newblock Tropical forests are a net carbon source based on aboveground
-  measumeasure of gain and loss.
-\newblock \emph{Science}, September 2017.
-\newblock \doi{10.1126/science.aam5962}.
-
-\bibitem[Chen et~al.(2014)Chen, Chen, Liao, Cao, Chen, Chen, He, Han, Peng, Lu,
-  Zhang, Tong, and Mills]{Chen2014}
-Chen J., Chen J., Liao A., Cao X., Chen L., Chen X., He C., Han G., Peng S., Lu
-  M., Zhang W., Tong X., and Mills J.
-\newblock \emph{30-meter {G}lobal {L}and {C}over {D}ataset - {P}roduct
-  {D}escription}.
-\newblock National Geomatics Center of China, May 2014.
-
-\bibitem[Chen et~al.(2015)Chen, Chen, Liao, Cao, Chen, Chen, He, Han, Peng, Lu,
-  Zhang, Tong, and Mills]{Chen2015}
-Chen J., Chen J., Liao A., Cao X., Chen L., Chen X., He C., Han G., Peng S., Lu
-  M., Zhang W., Tong X., and Mills J.
-\newblock Global land cover mapping at 30 m resolution: {A} {POK}-based
-  operational approach.
-\newblock \emph{ISPRS Journal of Photogrammetry and Remote Sensing},
-  103:\penalty0 7--27, 2015.
-\newblock \doi{10.1016/j.isprsjprs.2014.09.002}.
-\newblock URL \url{http://www.globallandcover.com}.
-
-\bibitem[Chen et~al.(2017)Chen, Cao, Peng, and Ren]{Chen2017}
-Chen J., Cao X., Peng S., and Ren H.
-\newblock {A}nalysis and {A}pplications of {G}lobe{L}and30: {A} {R}eview.
-\newblock \emph{International Journal of Geo-Information}, 6\penalty0 (230),
-  July 2017.
-\newblock \doi{10.3390/ijgi6080230}.
+\bibitem[Carr et~al.(1992)Carr, Olsen, and White]{Carr1992}
+Carr D.~B., Olsen A.~R., and White D.
+\newblock Hexagon mosaic maps for display of univariate and bivariate
+  geographical data.
+\newblock \emph{Cartography and Geographic Information Systems}, 19\penalty0
+  (4), 1992.
 
 \bibitem[Hansen et~al.(2013{\natexlab{a}})Hansen, Potapov, Moore, Hancher,
   Turubanova, Tyukavina, Thau, Stehman, Goetz, Loveland, Kommareddy, Egorov,
@@ -92,15 +52,14 @@ Hansen M.~C., Potapov P.~V., Moore R., Hancher M., Turubanova S.~A., Tyukavina
 \newblock URL
   \url{http://science.sciencemag.org/content/suppl/2013/11/14/342.6160.850.DC1}.
 
-\bibitem[Potapov et~al.(2017)Potapov, Hansen, Laestadius, Turubanova,
-  Yaroshenko, Thies, Smith, Zhuravleva, Komarova, Minnemeyer, and
-  Esipova]{Potapov2017}
-Potapov P., Hansen M.~C., Laestadius L., Turubanova S., Yaroshenko A., Thies
-  C., Smith W., Zhuravleva I., Komarova A., Minnemeyer S., and Esipova E.
-\newblock The last frontiers of wilderness: {T}racking loss of intact forest
-  landscapes from 2000 to 2013.
-\newblock \emph{Science Advances}, 3, 2017.
-\newblock \doi{10.1126/sciadv.1600821}.
-\newblock URL \url{http://www.intactforests.org/}.
+\bibitem[Li et~al.(2017)Li, Sulla-Menashe, Motesharrei, Kalnay, Ying, Li, and
+  Ma]{Li2017}
+Li Y., Sulla-Menashe D., Motesharrei S., Kalnay X.-P.~S., Ying Q., Li S., and
+  Ma Z.
+\newblock Inconsistent estimates of forest cover change in {C}hina between 2000
+  and 2013 from multiple datasets: differences in parameters, spatial
+  resolution, and definitions.
+\newblock \emph{Scientific Reports}, 7\penalty0 (8748), August 2017.
+\newblock \doi{10.1038/s41598-017-07732-5}.
 
 \end{thebibliography}

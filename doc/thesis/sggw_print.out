@@ -1,63 +1,63 @@
-\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
-\BOOKMARK [2][-]{subsection.1.1}{Tropical forest}{section.1}% 2
-\BOOKMARK [3][-]{subsubsection.1.1.1}{Current state}{subsection.1.1}% 3
-\BOOKMARK [3][-]{subsubsection.1.1.2}{Contribution to climate}{subsection.1.1}% 4
-\BOOKMARK [3][-]{subsubsection.1.1.3}{Forest definitions}{subsection.1.1}% 5
-\BOOKMARK [2][-]{subsection.1.2}{Deforestation}{section.1}% 6
-\BOOKMARK [3][-]{subsubsection.1.2.1}{Land use and land cover change}{subsection.1.2}% 7
-\BOOKMARK [3][-]{subsubsection.1.2.2}{Drivers of deforestation}{subsection.1.2}% 8
-\BOOKMARK [2][-]{subsection.1.3}{Emissions trough deforestation}{section.1}% 9
-\BOOKMARK [3][-]{subsubsection.1.3.1}{Removal of AGB}{subsection.1.3}% 10
-\BOOKMARK [3][-]{subsubsection.1.3.2}{Soil organic carbon change and soil dynamics}{subsection.1.3}% 11
-\BOOKMARK [2][-]{subsection.1.4}{Ecosystem services}{section.1}% 12
-\BOOKMARK [3][-]{subsubsection.1.4.1}{Ecosystem service values}{subsection.1.4}% 13
-\BOOKMARK [2][-]{subsection.1.5}{Research objective and questions}{section.1}% 14
-\BOOKMARK [1][-]{section.2}{Data and methods}{}% 15
-\BOOKMARK [2][-]{subsection.2.1}{Data}{section.2}% 16
-\BOOKMARK [3][-]{subsubsection.2.1.1}{Spatial data}{subsection.2.1}% 17
-\BOOKMARK [4][-]{paragraph.2.1.1.1}{Global Forest Change}{subsubsection.2.1.1}% 18
-\BOOKMARK [4][-]{paragraph.2.1.1.2}{GlobeLand30}{subsubsection.2.1.1}% 19
-\BOOKMARK [4][-]{paragraph.2.1.1.3}{Intact Forest Landscapes}{subsubsection.2.1.1}% 20
-\BOOKMARK [4][-]{paragraph.2.1.1.4}{Aboveground Woody Biomass}{subsubsection.2.1.1}% 21
-\BOOKMARK [4][-]{paragraph.2.1.1.5}{Global Soil Organic Carbon}{subsubsection.2.1.1}% 22
-\BOOKMARK [4][-]{paragraph.2.1.1.6}{Auxiliary}{subsubsection.2.1.1}% 23
-\BOOKMARK [3][-]{subsubsection.2.1.2}{Empirical data}{subsection.2.1}% 24
-\BOOKMARK [4][-]{paragraph.2.1.2.1}{Soil Organic Carbon}{subsubsection.2.1.2}% 25
-\BOOKMARK [4][-]{paragraph.2.1.2.2}{Ecosystem Service Values}{subsubsection.2.1.2}% 26
-\BOOKMARK [2][-]{subsection.2.2}{Methods}{section.2}% 27
-\BOOKMARK [3][-]{subsubsection.2.2.1}{Pre-processing}{subsection.2.2}% 28
-\BOOKMARK [3][-]{subsubsection.2.2.2}{Deforestation}{subsection.2.2}% 29
-\BOOKMARK [4][-]{paragraph.2.2.2.1}{Forest definition}{subsubsection.2.2.2}% 30
-\BOOKMARK [4][-]{paragraph.2.2.2.2}{Land use change driver}{subsubsection.2.2.2}% 31
-\BOOKMARK [4][-]{paragraph.2.2.2.3}{Accuracy assessment}{subsubsection.2.2.2}% 32
-\BOOKMARK [3][-]{subsubsection.2.2.3}{Emissions}{subsection.2.2}% 33
-\BOOKMARK [4][-]{paragraph.2.2.3.1}{Above ground biomass}{subsubsection.2.2.3}% 34
-\BOOKMARK [4][-]{paragraph.2.2.3.2}{Soil organic carbon change}{subsubsection.2.2.3}% 35
-\BOOKMARK [3][-]{subsubsection.2.2.4}{Ecosystem service values}{subsection.2.2}% 36
-\BOOKMARK [4][-]{paragraph.2.2.4.1}{Ecosystem service value loss}{subsubsection.2.2.4}% 37
-\BOOKMARK [4][-]{paragraph.2.2.4.2}{Ecosystem service value gain}{subsubsection.2.2.4}% 38
-\BOOKMARK [3][-]{subsubsection.2.2.5}{Binning analysis}{subsection.2.2}% 39
-\BOOKMARK [1][-]{section.3}{Results}{}% 40
-\BOOKMARK [2][-]{subsection.3.1}{Forest definition and accuracy assessment}{section.3}% 41
-\BOOKMARK [2][-]{subsection.3.2}{Deforestation drivers}{section.3}% 42
-\BOOKMARK [3][-]{subsubsection.3.2.1}{Global}{subsection.3.2}% 43
-\BOOKMARK [3][-]{subsubsection.3.2.2}{Americas}{subsection.3.2}% 44
-\BOOKMARK [3][-]{subsubsection.3.2.3}{Asia}{subsection.3.2}% 45
-\BOOKMARK [3][-]{subsubsection.3.2.4}{Africa}{subsection.3.2}% 46
-\BOOKMARK [2][-]{subsection.3.3}{Deforestation emissions}{section.3}% 47
-\BOOKMARK [3][-]{subsubsection.3.3.1}{Global}{subsection.3.3}% 48
-\BOOKMARK [3][-]{subsubsection.3.3.2}{Americas}{subsection.3.3}% 49
-\BOOKMARK [3][-]{subsubsection.3.3.3}{Asia}{subsection.3.3}% 50
-\BOOKMARK [3][-]{subsubsection.3.3.4}{Africa}{subsection.3.3}% 51
-\BOOKMARK [2][-]{subsection.3.4}{Ecosystem service value balance}{section.3}% 52
-\BOOKMARK [3][-]{subsubsection.3.4.1}{Global}{subsection.3.4}% 53
-\BOOKMARK [3][-]{subsubsection.3.4.2}{Americas}{subsection.3.4}% 54
-\BOOKMARK [3][-]{subsubsection.3.4.3}{Asia}{subsection.3.4}% 55
-\BOOKMARK [3][-]{subsubsection.3.4.4}{Africa}{subsection.3.4}% 56
-\BOOKMARK [1][-]{section.4}{Discussion}{}% 57
-\BOOKMARK [1][-]{section*.2}{Acknowledgements}{}% 58
-\BOOKMARK [1][-]{section*.2}{References}{}% 59
-\BOOKMARK [1][-]{section*.4}{List of Figures}{}% 60
-\BOOKMARK [1][-]{section*.5}{List of Tables}{}% 61
-\BOOKMARK [1][-]{section*.6}{List of Abbreviations}{}% 62
-\BOOKMARK [1][-]{section*.7}{Appendix}{}% 63
+\BOOKMARK [0][-]{chapter.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.1.1}{Tropical forest}{chapter.1}% 2
+\BOOKMARK [2][-]{subsection.1.1.1}{Current state}{section.1.1}% 3
+\BOOKMARK [2][-]{subsection.1.1.2}{Contribution to climate}{section.1.1}% 4
+\BOOKMARK [2][-]{subsection.1.1.3}{Forest definitions}{section.1.1}% 5
+\BOOKMARK [1][-]{section.1.2}{Deforestation}{chapter.1}% 6
+\BOOKMARK [2][-]{subsection.1.2.1}{Land use and land cover change}{section.1.2}% 7
+\BOOKMARK [2][-]{subsection.1.2.2}{Drivers of deforestation}{section.1.2}% 8
+\BOOKMARK [2][-]{subsection.1.2.3}{Emissions trough deforestation}{section.1.2}% 9
+\BOOKMARK [2][-]{subsection.1.2.4}{Removal of AGB}{section.1.2}% 10
+\BOOKMARK [2][-]{subsection.1.2.5}{Soil organic carbon change and soil dynamics}{section.1.2}% 11
+\BOOKMARK [1][-]{section.1.3}{Ecosystem services}{chapter.1}% 12
+\BOOKMARK [2][-]{subsection.1.3.1}{Ecosystem service values}{section.1.3}% 13
+\BOOKMARK [2][-]{subsection.1.3.2}{Research objective and questions}{section.1.3}% 14
+\BOOKMARK [0][-]{chapter.2}{Data and methods}{}% 15
+\BOOKMARK [1][-]{section.2.1}{Data}{chapter.2}% 16
+\BOOKMARK [2][-]{subsection.2.1.1}{Spatial data}{section.2.1}% 17
+\BOOKMARK [3][-]{subsubsection.2.1.1.1}{Global Forest Change}{subsection.2.1.1}% 18
+\BOOKMARK [3][-]{subsubsection.2.1.1.2}{GlobeLand30}{subsection.2.1.1}% 19
+\BOOKMARK [3][-]{subsubsection.2.1.1.3}{Intact Forest Landscapes}{subsection.2.1.1}% 20
+\BOOKMARK [3][-]{subsubsection.2.1.1.4}{Aboveground Woody Biomass}{subsection.2.1.1}% 21
+\BOOKMARK [3][-]{subsubsection.2.1.1.5}{Global Soil Organic Carbon}{subsection.2.1.1}% 22
+\BOOKMARK [3][-]{subsubsection.2.1.1.6}{Auxiliary}{subsection.2.1.1}% 23
+\BOOKMARK [2][-]{subsection.2.1.2}{Empirical data}{section.2.1}% 24
+\BOOKMARK [3][-]{subsubsection.2.1.2.1}{Soil Organic Carbon}{subsection.2.1.2}% 25
+\BOOKMARK [3][-]{subsubsection.2.1.2.2}{Ecosystem Service Values}{subsection.2.1.2}% 26
+\BOOKMARK [1][-]{section.2.2}{Methods}{chapter.2}% 27
+\BOOKMARK [2][-]{subsection.2.2.1}{Pre-processing}{section.2.2}% 28
+\BOOKMARK [2][-]{subsection.2.2.2}{Deforestation}{section.2.2}% 29
+\BOOKMARK [3][-]{subsubsection.2.2.2.1}{Forest definition}{subsection.2.2.2}% 30
+\BOOKMARK [3][-]{subsubsection.2.2.2.2}{Land use change driver}{subsection.2.2.2}% 31
+\BOOKMARK [3][-]{subsubsection.2.2.2.3}{Accuracy assessment}{subsection.2.2.2}% 32
+\BOOKMARK [2][-]{subsection.2.2.3}{Emissions}{section.2.2}% 33
+\BOOKMARK [3][-]{subsubsection.2.2.3.1}{Above ground biomass}{subsection.2.2.3}% 34
+\BOOKMARK [3][-]{subsubsection.2.2.3.2}{Soil organic carbon change}{subsection.2.2.3}% 35
+\BOOKMARK [2][-]{subsection.2.2.4}{Ecosystem service values}{section.2.2}% 36
+\BOOKMARK [3][-]{subsubsection.2.2.4.1}{Ecosystem service value loss}{subsection.2.2.4}% 37
+\BOOKMARK [3][-]{subsubsection.2.2.4.2}{Ecosystem service value gain}{subsection.2.2.4}% 38
+\BOOKMARK [2][-]{subsection.2.2.5}{Binning analysis}{section.2.2}% 39
+\BOOKMARK [0][-]{chapter.3}{Results}{}% 40
+\BOOKMARK [1][-]{section.3.1}{Forest definition and accuracy assessment}{chapter.3}% 41
+\BOOKMARK [1][-]{section.3.2}{Deforestation drivers}{chapter.3}% 42
+\BOOKMARK [2][-]{subsection.3.2.1}{Global}{section.3.2}% 43
+\BOOKMARK [2][-]{subsection.3.2.2}{Americas}{section.3.2}% 44
+\BOOKMARK [2][-]{subsection.3.2.3}{Asia}{section.3.2}% 45
+\BOOKMARK [2][-]{subsection.3.2.4}{Africa}{section.3.2}% 46
+\BOOKMARK [1][-]{section.3.3}{Deforestation emissions}{chapter.3}% 47
+\BOOKMARK [2][-]{subsection.3.3.1}{Global}{section.3.3}% 48
+\BOOKMARK [2][-]{subsection.3.3.2}{Americas}{section.3.3}% 49
+\BOOKMARK [2][-]{subsection.3.3.3}{Asia}{section.3.3}% 50
+\BOOKMARK [2][-]{subsection.3.3.4}{Africa}{section.3.3}% 51
+\BOOKMARK [1][-]{section.3.4}{Ecosystem service value balance}{chapter.3}% 52
+\BOOKMARK [2][-]{subsection.3.4.1}{Global}{section.3.4}% 53
+\BOOKMARK [2][-]{subsection.3.4.2}{Americas}{section.3.4}% 54
+\BOOKMARK [2][-]{subsection.3.4.3}{Asia}{section.3.4}% 55
+\BOOKMARK [2][-]{subsection.3.4.4}{Africa}{section.3.4}% 56
+\BOOKMARK [0][-]{chapter.4}{Discussion}{}% 57
+\BOOKMARK [0][-]{chapter*.3}{Acknowledgements}{}% 58
+\BOOKMARK [0][-]{chapter*.3}{Bibliography}{}% 59
+\BOOKMARK [0][-]{chapter*.5}{List of Figures}{}% 60
+\BOOKMARK [0][-]{chapter*.6}{List of Tables}{}% 61
+\BOOKMARK [0][-]{chapter*.7}{List of Abbreviations}{}% 62
+\BOOKMARK [0][-]{chapter*.8}{Appendix}{}% 63

@@ -177,17 +177,17 @@ def visual_segmented(path, out, scaling=None):
 if __name__ == '__main__':
     visual_segmented(
         '/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/driver/americas_driver.shp',
-        '/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/driver/americas_driver_segmented.shp',
+        '/home/tobi/Documents/americas_driver_segmented.shp',
         0.8
     )
     visual_segmented(
         '/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/driver/africa_driver.shp',
-        '/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/driver/africa_driver_segmented.shp',
+        '/home/tobi/Documents/africa_driver_segmented.shp',
         0.8
     )
     visual_segmented(
         '/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/driver/asia_driver.shp',
-        '/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/driver/asia_driver_segmented.shp',
+        '/home/tobi/Documents/asia_driver_segmented.shp',
         0.8
     )
 
