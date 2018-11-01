@@ -44,18 +44,20 @@ e_point = [(x[3]+x[4])/2, (y[3]+y[4])/2]
 d_line = [[x[0], x[2]], [mid[1], mid[1]]]
 d_point = [(x[0]+mid[0])/2, mid[1]]
 r_point = [(mid[0]+x[2])/2, mid[1]]
+origin = 0
 
 # annotation coords
 labels = ['v$_{}$'.format(i) for i in range(len(x)-1)]
-labels += ['$m$']
+labels += ['m']
 labels += ['$R$']
 labels += ['$e$']
 labels += ['$d$']
 labels += ['$r$']
 labels += ['$x_1, y_2$']
+labels += ['$0, 0$']
 
-annotation_x = x[:-1] + [mid[0]] + [R_point[0]] + [e_point[0]] + [d_point[0]] + [r_point[0]] + [img[0]]
-annotation_y = y[:-1] + [mid[1]] + [R_point[1]] + [e_point[1]] + [d_point[1]] + [r_point[1]] + [img[1]]
+annotation_x = x[:-1] + [mid[0]] + [R_point[0]] + [e_point[0]] + [d_point[0]] + [r_point[0]] + [img[0]] + [origin]
+annotation_y = y[:-1] + [mid[1]] + [R_point[1]] + [e_point[1]] + [d_point[1]] + [r_point[1]] + [img[1]] + [origin]
 
 annotation_coords = np.array([annotation_x, annotation_y]).T
 
@@ -70,11 +72,12 @@ for label, coords in zip(labels, annotation_coords):
 # visualization
 fig, ax = plt.subplots()
 
-ax.set_xlim(left=-0.1, right=6.8)
-ax.set_ylim(bottom=-0.1, top=4.8)
+ax.set_xlim(left=-0.1, right=8)
+ax.set_ylim(bottom=-0.1, top=5.8)
 ax.set_aspect('equal')
 
 points = ax.scatter(x, y, marker='x', color='black', zorder=2)
+orig = ax.scatter(origin, origin, marker='+', color='black', zorder=2)
 mid = ax.scatter(*mid, marker='.', color='black', zorder=2)
 bounds = ax.scatter((img[0], img[2]), (img[1], img[3]), marker='x', color='black', zorder=2)
 hex = Polygon(hex_coords, closed=True, edgecolor='red', fill=False, zorder=1)
@@ -93,11 +96,15 @@ ax.add_artist(hex_grid)
 ax.get_xaxis().set_visible(False)
 ax.get_yaxis().set_visible(False)
 
+for spine in ax.spines.values():
+    spine.set_visible(False)
+
+
 for annotation in annotations:
     ax.annotate(*annotation, zorder=1, fontsize=10, weight='bold')
 
-ax.annotate('Odd row:\n$x_{off}=x_1+r$\n$y_{off}=y_1-v_3+v_0$', (0, 2.3), fontsize=10,)
-ax.annotate('Even row:\n$x_{off}=x_1+d$\n$y_{off}=y_1-v_3+v_0$', (0, 3.3), fontsize=10,)
+ax.annotate('Odd row:\n$x_{off}=x_1+r$\n$y_{off}=y_1-v_3+v_0$', (-0.1, 2.3), fontsize=10,)
+ax.annotate('Even row:\n$x_{off}=x_1+d$\n$y_{off}=y_1-v_3+v_0$', (-0.1, 3.3), fontsize=10,)
 
 fig.show()
 fig.savefig(
