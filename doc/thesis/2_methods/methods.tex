@@ -4,27 +4,24 @@
 \section{Data}
 \label{sec:data}
 %TODO mention data acquisition in each section
-	\note{Introduction word what follows in this section}
-
-	\begin{figure}[ht]
-		\centering
-		\includegraphics[scale=.97]{img/method_overview_frameless}
-		\caption[Study extent]{Study extent and raster image tiles}
-		\label{fig:studyextent}
-	\end{figure}
-
+%TODO map of image tiles
 	\subsection{Spatial data}
 		\subsubsection{Global Forest Change}
-			\ac{GFC} 2000-2012 Version 1.0 is the first high resolution dataset that provides a comprehensive view on the annual global forest cover change between 2000 and 2012 \citep{Hansen2013, Li2017}. The initial \ac{GFC} dataset released by \citeauthor{Hansen2013} is extended by recent releases which encompass the annual forest cover changes between 2000-2013, 2000-2014, 2000-2015 and 2000-2016, respectively. All versions of this dataset have in common, that they are derived from growing season imagery captured by the remote sensing satellite Landsat 7 Enhanced Thematic Mapper Plus (ETM+) at a spatial resolution of 30 meters per pixel \citep{Hansen2013a}. On the satellite imagery a time-series spectral metrics analysis is applied to gather the global forest extent at 2000 as well as the annual forest loss and gain. Hence, \ac{GFC} comprises three independent data layers  tree cover, annually forest loss and  forest gain divided into 10x10 degree tiles by the geodetic coordinate system \ac{WGS84} (EPSG:4326). Furthermore, across the provided layers the pixel data is coded in unsigned 8 bit integers. Hansen et al. defined trees as all vegetation taller than 5 meters for their study. Forest loss is defined as a stand displacement disturbance leading from a forest state to a non forest-state. To compute this losses.\note{finish description, accuracy report, acquisition}
+			\ac{GFC} 2000-2012 Version 1.0 is the first high resolution dataset that provides a comprehensive view on the annual global forest cover change between 2000 and 2012 \citep{Hansen2013, Li2017}. The initial \ac{GFC} dataset released by \citeauthor{Hansen2013} is extended by recent releases which encompass the annual forest cover changes between 2000-2013, 2000-2014, 2000-2015 and 2000-2016, respectively. All versions of this dataset have in common, that they are derived from growing season imagery captured by the remote sensing satellite Landsat 7 Enhanced Thematic Mapper Plus (ETM+) at a spatial resolution of 30 meters per pixel \citep{Hansen2013a}. On the satellite imagery a time-series spectral metrics analysis is applied to gather the global forest extent at 2000 as well as the annual forest loss and gain. Hence, \ac{GFC} comprises three independent data layers tree cover, annually forest loss and forest gain divided into 10x10 degree tiles by the geodetic coordinate system \ac{WGS84} (EPSG:4326) with a spatial resolution of 1 arc-second per pixel. Furthermore, across the provided \ac{GTiff} layers the pixel data is coded in unsigned 8 bit integers. Hansen et al. defined trees as all vegetation taller than 5 meters for their study. Forest loss is defined as a stand displacement disturbance leading from a forest state to a non forest-state. To compute this losses.\note{finish description, accuracy report}
+
+			The \citeauthor{Hansen2013} \ac{GFC} dataset is without any constraint publicly available for download. On the version 1.0 dataset homepage you may download "\verb|*.txt|" files containing the download \ac{URL} of the tiles for each sub dataset. The spatial location of an image tile can be determined with a tile identifier "\verb|{NAME}_{LAT}[NS]_{LNG}[WE]|" were latitude (LAT) and longitude refer to the tope left decimal corner coordinates in \ac{WGS84} and N or S as well W or E to the orientation on the hemisphere. For this project we needed the subdatasets: Treecover2000, lossyear and gain. The download process is fully automatized with an Python script. First this script downloads the required "\verb|*.txt|" files and creates an list where each \ac{URL} is a list element. Next it iterates over the list and extracts the corner coordinates from the file identifier with an \ac{REGEX}. This coordinate string is converted to an numeric identifier where latitude coordinates on the northern hemishpere are between $[90,0]$ and on the southern hemisphere between $(0,-90]$. Now a dataset tile is only downloaded if it is within the study extent between [30,-20] latitude. The acquired image tiles are shown in Figure \ref{fig:tiles}.
+			\begin{figure}[ht]
+				\centering
+				\includegraphics[scale=.96]{img/tiles}
+				\caption[Map of downloaded dataset tiles]{\textbf{Map of downloaded dataset tiles:} This map shows the acquired image tiles for this study. From top to bottom in green Global Forest Change (GFC) dataset tiles (Treecover2000, lossyear and gain), the land cover dataset GlobeLand30 (GL30) image tiles in red, and in blue the Aboveground Biomass (AGB) dataset tiles. The orange filled shapes highlight countries within the tropical zone.}
+				\label{fig:tiles}
+			\end{figure}
+
 		\subsubsection{GlobeLand30}
-			\ac{GL30} is the first 30 meter spatial resolution global land cover dataset that provides a comprehensive view on the distribution of 10 different land cover classes (Table \ref{tab:gl30classes}) over the earth \citep{Chen2017}. Currently this dataset is for two different time frames available 2000 and 2010 \citep{Chen2015}. The dataset is coded in unsigned 8 bit integers and as coordinates system it uses \ac{WGS84} in \ac{UTM} projection and is shipped in a tilled manner where each tile covers 6x5 degrees \citep{Chen2014}. For detection of the 10 land cover classes \citeauthor{Chen2015} used a so called \ac{POK} oriented approach \citep{Chen2015}. They grouped mapping process in different stages where each land cover type is detected separately and deleted from the source satellite image the order is: water bodies, wetland, snow and ice, cultivated land and forest, shrub land, grass land and bare land synchronous. For the detection of a land cover type they used at pixel level one of the following classifiers: \ac{DT}, \ac{SVM} or \ac{MLC}. After pixel detection they grouped the classified pixel to an object and validated this object by expert knowledge. For their approach they used satellite imagery from Landsat and HJ1.
-
-			\citeauthor{Chen2015} estimates an overall accuracy of 80.33\% for the product from 2010 and 78.6\% for the product from 2000 (2000 only validated at Shaanxi province in China) \citep{Chen2015}. Various scientists besides \citeauthor{Chen2015} validated the mapping accuracy of \ac{GL30} at different regions and scales. \citeauthor{Arsanjani2016} estimates an accuracy of 77.9\% for Iran and an accuracy >80\% for Germany \citep{Arsanjani2016a,Arsanjani2016}. Yang, Cao and Jacobson estimate an accuracy of 82.4\%, 80.1\% and 83.1\% for China, Nepal and East Africa, respectively \note{reference}. Unfortunately, there are no estimates for countries regions falling completely in the tropical zone.
-
-			Chen funded the land cover mapping to the UN but it is not barrier less public available. Restriction is registration on the dataset homepage but the author was not able to register at the platform. Fortunately the supervisor of this work had already an account for this page otherwise I would be fucked. The homepage 
+			\ac{GL30} is the first 30 meter per pixel spatial resolution global land cover dataset that provides a comprehensive view on the distribution of 10 different land cover classes (Table \ref{tab:gl30classes}) over the earth \citep{Chen2017}. Currently this dataset is for two different time frames available 2000 and 2010 \citep{Chen2015}. The dataset is coded in unsigned 8 bit integers and as coordinates system it uses \ac{WGS84} in \ac{UTM} projection and is shipped as \ac{GTiff} in a tilled manner where each tile covers 6x5 degrees \citep{Chen2014}. For detection of the 10 land cover classes \citeauthor{Chen2015} used a so called \ac{POK} oriented approach \citep{Chen2015}. The assigned pixel values and the corresponding land cover class is listed in Table \ref{tab:gl30classes}. They grouped mapping process in different stages where each land cover type is detected separately and deleted from the source satellite image the order is: water bodies, wetland, snow and ice, cultivated land and forest, shrub land, grass land and bare land synchronous. For the detection of a land cover type they used at pixel level one of the following classifiers: \ac{DT}, \ac{SVM} or \ac{MLC}. After pixel detection they grouped the classified pixel to an object and validated this object by expert knowledge. For their approach they used satellite imagery from Landsat and HJ1 and auxiliary data like MODIS NDVI.
 			\begin{table}[ht]
 				\centering
-				\caption[Overview of the \ac{GL30} classification schema]{Classification schema of the \ac{GL30} product. The code column is the assigned pixel value, type the corresponding land cover type and definition explains in broad terms which types of surfaces fall into the land cover type.\citep{Chen2017}}
+				\caption[Classification schema of the GlobeLand30 product]{\textbf{Classification schema of the GlobeLand30 product:} The code column is the assigned pixel value, type the corresponding land cover type and definition explains in broad terms which types of surfaces fall into the land cover type.\citep{Chen2017}}
 				\label{tab:gl30classes}
 				\begin{tabular}{rlp{10.3cm}}
 					\hline
@@ -32,27 +29,36 @@
 					10 & Cultivated land & used for agriculture, horticulture and gardens, including paddy fields, irrigated and dry farmland, vegetable and fruit gardens, etc. \\
 					20 & Forest & covered by trees, vegetation covers over 30\%, including deciduous and coniferous forest, and sparse woodland with cover 10-30\%, etc. \\
 					30 & Grassland & covered by natural grass with cover over 10\%, etc.\\
-					40 & Shrub land & covered by shrubs with cover over 30\%, including deciduous and evergreen shrubs, and desert steppe with cover over 10\%, etc.\\
+					40 & Shrubland & covered by shrubs with cover over 30\%, including deciduous and evergreen shrubs, and desert steppe with cover over 10\%, etc.\\
 					50 & Wetland & covered by wetland plants and water bodies, including inland marsh, lake marsh, river floodplain wetland, forest/shrub wetland, peat bogs, mangrove and salt marsh, etc.\\
 					60 & Water bodies & in land area, including river, lake, reservoir, fish pond, etc.\\
 					70 & Tundra & covered by lichen, moss, hardy perennial herb and shrubs in the polar regions, including shrub-, herbaceous-, wet- and barren-tundra, etc.\\
 					80 & Artificial surfaces & modified by anthropogenic influence, including all kinds of habitation, industrial and mining area, transportation facilities, and interior urban green zones and water bodies, etc.\\
-					90 & Bare land & with vegetation cover lower 10\%, including desert, sandy fields, Gobi, bare rocks, saline and alkaline land, etc.\\
+					90 & Bareland & with vegetation cover lower 10\%, including desert, sandy fields, Gobi, bare rocks, saline and alkaline land, etc.\\
 					100 & Snow and ice & covered by permanent snow, glacier and icecap\\\hline
 				\end{tabular}
 			\end{table}
+
+			\citeauthor{Chen2015} estimates an overall accuracy of 80.33\% for the product from 2010 and 78.6\% for the product from 2000 (2000 only validated at Shaanxi province in China) \citep{Chen2015}. Various scientists besides \citeauthor{Chen2015} validated the mapping accuracy of \ac{GL30} at different regions and scales. \citeauthor{Arsanjani2016} estimates an accuracy of 77.9\% for Iran and an accuracy >80\% for Germany \citep{Arsanjani2016a,Arsanjani2016}. Yang, Cao and Jacobson estimate an accuracy of 82.4\%, 80.1\% and 83.1\% for China, Nepal and East Africa, respectively \note{reference}. Unfortunately, there are no estimates for countries regions falling completely in the tropical zone.
+
+			Chen funded the \ac{GL30} land cover mapping to the UN but it is not barrier less public available. Restriction is registration on the dataset homepage but the author was not able to register at the platform. Fortunately the supervisor of this work had already an account for this page otherwise I would be fucked. To download tiles of this dataset a order application must be filled with the required image tiles identifiers and the the year must be selected. An tile identifier "\verb|[NS]{LAT}_{LNG}|" consist of the hemisphere orientation followed by the top left corner latitude and logitude decimal coordinate (\ac{WGS84}). The homepage provides an interface for selecting the required image tiles but it is broken and buggy, especially the selection of multiple tiles did not work. Fortunately they provide a vector file which contains the dataset tile polygons with assigned identifies. This file was used to select all required tiles within the tropical zone between approxiamtely 23°N and 23°S (\ac{WGS84}), the selection is shown in Figure \ref{fig:tiles}. The corresponding identifiers were converted to an single line string and copied to application form. After submitting the form your order will be checked and approved. After one week we received 2 weeks limited access to an password protected ftp server were we downloaded the data. Due to restrictions this process of selecting data and download it could not be automatized with one pipeline only the selection and string conversion was automatized with a throw away script.
+
 		\subsubsection{Intact Forest Landscapes}
 			\lipsum[1-2]
+
 		\subsubsection{Aboveground Woody Biomass}
 			\lipsum[1-2]
+
 		\subsubsection{Global Soil Organic Carbon}
 			\lipsum[1-2]
+
 		\subsubsection{Auxiliary}
 			\lipsum[1-2]
 
 	\subsection{Empirical data}
 		\subsubsection{Soil Organic Carbon}
 			\lipsum[1-2]
+
 		\subsubsection{Ecosystem Service Values}
 			\lipsum[1-2]
 
@@ -61,6 +67,12 @@
 \label{sec:methods}
 %TODO need more speacking section headings
 %TODO flowchart
+	\begin{figure}[ht]
+		\centering
+		\includegraphics[scale=.97]{img/method_overview_frameless}
+		\caption[Map of aligned data tiles and sampling locations]{\textbf{Map of aligned data tiles and sampling locations:} The map shows the location of the aligned multi-image stack tiles as black-framed square sized polygons, the sampling locations for accuracy assessment in red, and countries within the tropical zone in orange.}
+		\label{fig:processing}
+	\end{figure}
 
 	\subsection{Pre-processing}
 		Problem description, all data in different crs, also all data has diferent extent, also some data is vector data must converted to raster data. from each raster data where only tilled data set created a tile mask in target crs projection where stored name of the file an its extent. select a template datasets in our case gl30 2010. intersection compute with mask intersections are selections, now pipeline if more tiles for one needed merge them, after reproject them next clip then, for vector data to raster, software python geopandas and rasterio
@@ -132,8 +144,8 @@
 		\end{equation}
 		\begin{figure}[ht]
 			\centering
-			\includegraphics[scale=.6]{img/hexagons}
-			\caption[Hexagon grid]{Located at the left bottom corner in red a hexagon defined by its geometric properties the 6 vertex vectors \{$v_0,...,v_5$\} (black crosses), with center vector $m$, edge length $e$, $R$ radius of the circumscribing circle, $r$ radius of the inscribed circle and $d$ the length of the short diagonal. Top right black dotted box are the bounds of an area which is tessellated by a hexagon grid in red. Each grid cell is translated from the origin hexagon at its position by computing the $x_{off}$ and $y_{off}$ offset with the presented equations at the left-hand side of the grid. }
+			\includegraphics[scale=.7]{img/hexagons}
+			\caption[Hexagon tessellation]{\textbf{Hexagon tessellation:} Located at the left bottom corner in red a hexagon defined by its geometric properties the 6 vertex vectors \{$\vec{v_0},...,\vec{v_5}$\} (black crosses), with center vector $\vec{m}$, edge length $e$, $R$ radius of the circumscribing circle, $r$ radius of the inscribed circle and $d$ the length of the short diagonal. Top right black dotted box are the bounds of an area which is tessellated by a hexagon grid in red. Each grid cell is translated from the origin hexagon at its position by computing the $x_{off}$ and $y_{off}$ offset with the presented equations at the left-hand side of the grid. }
 			\label{fig:hexagon}
 		\end{figure}
 		\note{polygon clipping}

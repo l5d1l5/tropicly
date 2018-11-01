@@ -24,6 +24,7 @@
 \KOMAoptions{draft=true}  %TODO false in print
 \addtokomafont{disposition}{\normalfont}
 \addtokomafont{caption}{\footnotesize}
+\setkomafont{captionlabel}{\bfseries}
 \usepackage{color}
 
 % special symbols
@@ -49,6 +50,7 @@
 \usepackage{multirow}
 \usepackage{multicol}
 \usepackage{array}
+\usepackage{longtable}
 
 % images
 \usepackage{graphicx}
@@ -69,13 +71,14 @@
 \newcommand{\todayI}{\leadingzero{\day}.\leadingzero{\month}.\the\year}
 \newcommand{\STAB}[1]{\begin{tabular}{@{}c@{}}#1\end{tabular}}
 \newcommand*\note[1]{{\color{red} #1}}
+\renewcommand*{\captionformat}{.\ }
 
 %\recalctypearea
 
 %\usepackage{tabularx}
 %\usepackage{array}
 %\usepackage{caption}
-%\usepackage{longtable}
+
 %\usepackage{rotating}
 %\usepackage{multirow}
 %\usepackage{multicol}
