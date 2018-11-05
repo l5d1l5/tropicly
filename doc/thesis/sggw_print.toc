@@ -56,9 +56,9 @@
 \contentsline {subsection}{\numberline {3.4.3}Asia}{41}{subsection.3.4.3}
 \contentsline {subsection}{\numberline {3.4.4}Africa}{41}{subsection.3.4.4}
 \contentsline {chapter}{\numberline {4}Discussion}{42}{chapter.4}
-\contentsline {chapter}{Acknowledgements}{43}{chapter*.13}
-\contentsline {chapter}{Bibliography}{I}{chapter*.13}
-\contentsline {chapter}{\nonumberline List of Figures}{III}{chapter*.15}
-\contentsline {chapter}{\nonumberline List of Tables}{IV}{chapter*.16}
-\contentsline {chapter}{List of Abbreviations}{V}{chapter*.17}
-\contentsline {chapter}{Appendix}{VI}{chapter*.18}
+\contentsline {chapter}{Acknowledgements}{43}{chapter*.15}
+\contentsline {chapter}{Bibliography}{I}{chapter*.15}
+\contentsline {chapter}{\nonumberline List of Figures}{III}{chapter*.17}
+\contentsline {chapter}{\nonumberline List of Tables}{IV}{chapter*.18}
+\contentsline {chapter}{List of Abbreviations}{V}{chapter*.19}
+\contentsline {chapter}{Appendix}{VI}{chapter*.20}
