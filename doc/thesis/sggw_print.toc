@@ -43,8 +43,8 @@
 \contentsline {section}{\numberline {3.2}Deforestation drivers}{35}{section.3.2}
 \contentsline {subsection}{\numberline {3.2.1}Global}{35}{subsection.3.2.1}
 \contentsline {subsection}{\numberline {3.2.2}Americas}{35}{subsection.3.2.2}
-\contentsline {subsection}{\numberline {3.2.3}Asia}{35}{subsection.3.2.3}
-\contentsline {subsection}{\numberline {3.2.4}Africa}{35}{subsection.3.2.4}
+\contentsline {subsection}{\numberline {3.2.3}Asia}{36}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.4}Africa}{36}{subsection.3.2.4}
 \contentsline {section}{\numberline {3.3}Deforestation emissions}{41}{section.3.3}
 \contentsline {subsection}{\numberline {3.3.1}Global}{42}{subsection.3.3.1}
 \contentsline {subsection}{\numberline {3.3.2}Americas}{42}{subsection.3.3.2}

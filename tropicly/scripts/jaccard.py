@@ -18,12 +18,12 @@ zeros = src[src['JC00'] == 0]
 src.drop(zeros.index, axis=0, inplace=True)
 src.rename(columns=lambda x: x.upper() if x[:2] == 'jc' else x, inplace=True)
 src.dropna(axis=0, how='any', inplace=True)
-src.columns = 'JC0 JC10 JC20 JC30 tile region'.split()
+src.columns = 'JC0 JC1 JC2 JC3 tile region'.split()
 
 fig, axes = plt.subplots(ncols=3, sharey=True, figsize=(5.5, 3))
 fig.subplots_adjust(wspace=0.1)
 
-for ax, group in zip(axes, src.groupby(by='region')):
+for ax, group in zip(axes, src.groupby(by='region', sort=True)):
     region, df = group
 
     boxes = ax.boxplot(
@@ -33,7 +33,7 @@ for ax, group in zip(axes, src.groupby(by='region')):
         patch_artist=True
     )
 
-    ax.set_xticklabels(['JC0', 'JC10', 'JC20', 'JC30'], fontsize=10, fontname='Times new roman')
+    ax.set_xticklabels(['JC$_0$', 'JC$_1$', 'JC$_2$', 'JC$_3$'], fontsize=10, fontname='Times new roman')
     ax.set_title(region, fontsize=12, fontname='Times new roman')
     for box, med, mean in zip(boxes['boxes'], boxes['medians'], boxes['means']):
         box.set_facecolor('white')
