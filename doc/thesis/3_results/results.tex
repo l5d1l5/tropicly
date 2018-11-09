@@ -9,22 +9,37 @@
 		\begin{figure}[ht]
 			\centering
 			\includegraphics[scale=1]{img/jaccard}
-			\caption[Similarity distribution of \ac{GFC} tree cover vs. \ac{GL30} tree cover at 200]{\textbf{Similarity distribution of \ac{GFC} tree cover vs. \ac{GL30} tree cover at 200:} Americas from JC0 till JC30: $\bar{x}\approxeq$ 0.71, 0.71, 0.70, 0.69; $\tilde{x}\approxeq$ 0.77, 0.77, 0.76, 0.75; $Q_1\approxeq$ 0.64, 0.65, 0.64, 0.63; $Q_3\approxeq$ 0.84, 0.84, 0.84, 0.83;}
+			\caption[Similarity distribution of \ac{GFC} tree cover vs. \ac{GL30} tree cover at 200]{\textbf{Similarity distribution of \ac{GFC} tree cover vs. \ac{GL30} tree cover at 2000:} Americas from JC$_0$ till JC$_3$: $\bar{x}\approxeq$ .71, .71, .70, .69; $\tilde{x}\approxeq$ .77, .77, .76, .75; $Q_1\approxeq$ .64, .65, .64, .63; $Q_3\approxeq$ .84, .84, .84, .83; Asia from JC$_0$ till JC$_3$: $\bar{x}\approxeq$ .71, .71, .70, .69; $\tilde{x}\approxeq$ .77, .77, .76, .75; $Q_1\approxeq$ .65, .66, .64, .63; $Q_3\approxeq$ .84, .84, .84, .83; Africa from JC$_0$ till JC$_3$: $\bar{x}\approxeq$ .39, .39, .34, .32; $\tilde{x}\approxeq$ .40, .40, .31, .29; $Q_1\approxeq$ .14, .10, .00, .00; $Q_3\approxeq$ .60, .61, .63, .56}
 			\label{fig:jaccard}
 		\end{figure}
 
 		\begin{table}[ht]
 			\centering
-			\caption[Wilcoxon]{Wilcoxon}
-			\label{tab:wilcoxon}
+			\caption[Two-sided Wilcoxon signed-rank test]{\textbf{Two-sided Wilcoxon signed-rank test:}}
+			\label{tab:wilcoxontwosided}
 			\begin{tabular}{lrrrr|rrrr|rrrr}
 				& \multicolumn{12}{c}{H$_0$: $\tilde{x_1}=\tilde{x_2}$} \\
 				& \multicolumn{4}{c|}{Americas} & \multicolumn{4}{c|}{Asia} & \multicolumn{4}{c}{Africa} \\
 				Cls & JC$_0$ & JC$_1$ & JC$_2$ & JC$_3$ & JC$_0$ & JC$_1$ & JC$_2$ & JC$_3$ & JC$_0$ & JC$_1$ & JC$_2$ & JC$_3$ \\\hline
-				JC$_0$ & .00 & .00 & .00 & .00 & .00 & .00 & .00 & .00 & .00 & .00 & .00 & .00 \\
-				JC$_1$ &  &  &  &  &  &  &  &  &  &  &  &  \\
-				JC$_2$ &  &  &  &  &  &  &  &  &  &  &  &  \\
-				JC$_3$ &  &  &  &  &  &  &  &  &  &  &  &  \\\hline
+				JC$_0$ & 1. &  &  &  & 1. &  &  &  & 1. &  &  & \\
+				JC$_1$ & .00 & 1. &  &  & .72 & 1. &  &  & .22 & 1. &  & \\
+				JC$_2$ & .06 & .36 & 1. &  & .00 & .00 & 1. &  & .03 & .03 & 1. & \\
+				JC$_3$ & .16 & .50 & .60 & 1. & .00 & .00 & .00 & 1. & .00 & .00 & .00 & 1. \\\hline
+			\end{tabular}
+		\end{table}
+
+		\begin{table}[ht]
+			\centering
+			\caption[One-sided Wilcoxon signed-rank test]{\textbf{One-sided Wilcoxon signed-rank test:}}
+			\label{tab:wilcoxononesided}
+			\begin{tabular}{llrrrr|rrrr|rrrr}
+				& & \multicolumn{12}{c}{H$_0$: $\tilde{x_1}\leq\tilde{x_2}$} \\
+				& & \multicolumn{4}{c|}{Americas} & \multicolumn{4}{c|}{Asia} & \multicolumn{4}{c}{Africa} \\
+				& Cls & JC$_0$ & JC$_1$ & JC$_2$ & JC$_3$ & JC$_0$ & JC$_1$ & JC$_2$ & JC$_3$ & JC$_0$ & JC$_1$ & JC$_2$ & JC$_3$ \\\hline
+				\multirow{4}{*}{\STAB{\rotatebox[origin=c]{90}{H$_0$: $\tilde{x_1}\geq\tilde{x_2}$}}} & JC$_0$ & 1. & .00 & .03 & .08 & 1. & .64 & 1. & 1. & 1. & .11 & .98 & 1. \\
+				& JC$_1$ & 1. & 1. & .18 & .25 & .36 & 1. & 1. & 1. & .89 & 1. & .99 & 1. \\
+				& JC$_2$ & .97 & .82 & 1. & .30 & .00 & .00 & 1. & 1. & .02 & .01 & 1. & 1. \\
+				& JC$_3$ & .92 & .75 & .70 & 1. & .00 & .00 & .00 & 1. & .00 & .00 & .00 & 1. \\\hline
 			\end{tabular}
 		\end{table}
 
