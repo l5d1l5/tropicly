@@ -17,9 +17,10 @@
 			\centering
 			\caption[Two-sided Wilcoxon signed-rank test]{\textbf{Two-sided Wilcoxon signed-rank test:}}
 			\label{tab:wilcoxontwosided}
-			\begin{tabular}{lrrrr|rrrr|rrrr}
-				& \multicolumn{12}{c}{H$_0$: $\tilde{x_1}=\tilde{x_2}$} \\
-				& \multicolumn{4}{c|}{Americas} & \multicolumn{4}{c|}{Asia} & \multicolumn{4}{c}{Africa} \\
+			\begin{tabular}{lrrrrrrrrrrrr}
+				\hline
+				& \multicolumn{12}{c}{H$_0$: $\tilde{x_1}=\tilde{x_2}$} \\\hline
+				& \multicolumn{4}{c}{Americas} & \multicolumn{4}{c}{Asia} & \multicolumn{4}{c}{Africa} \\
 				Cls & JC$_0$ & JC$_1$ & JC$_2$ & JC$_3$ & JC$_0$ & JC$_1$ & JC$_2$ & JC$_3$ & JC$_0$ & JC$_1$ & JC$_2$ & JC$_3$ \\\hline
 				JC$_0$ & 1. &  &  &  & 1. &  &  &  & 1. &  &  & \\
 				JC$_1$ & .00 & 1. &  &  & .72 & 1. &  &  & .22 & 1. &  & \\
@@ -32,9 +33,10 @@
 			\centering
 			\caption[One-sided Wilcoxon signed-rank test]{\textbf{One-sided Wilcoxon signed-rank test:}}
 			\label{tab:wilcoxononesided}
-			\begin{tabular}{llrrrr|rrrr|rrrr}
-				& & \multicolumn{12}{c}{H$_0$: $\tilde{x_1}\leq\tilde{x_2}$} \\
-				& & \multicolumn{4}{c|}{Americas} & \multicolumn{4}{c|}{Asia} & \multicolumn{4}{c}{Africa} \\
+			\begin{tabular}{llrrrrrrrrrrrr}
+				\hline
+				& & \multicolumn{12}{c}{H$_0$: $\tilde{x_1}\leq\tilde{x_2}$} \\\hline
+				& & \multicolumn{4}{c}{Americas} & \multicolumn{4}{c}{Asia} & \multicolumn{4}{c}{Africa} \\
 				& Cls & JC$_0$ & JC$_1$ & JC$_2$ & JC$_3$ & JC$_0$ & JC$_1$ & JC$_2$ & JC$_3$ & JC$_0$ & JC$_1$ & JC$_2$ & JC$_3$ \\\hline
 				\multirow{4}{*}{\STAB{\rotatebox[origin=c]{90}{H$_0$: $\tilde{x_1}\geq\tilde{x_2}$}}} & JC$_0$ & 1. & .00 & .03 & .08 & 1. & .64 & 1. & 1. & 1. & .11 & .98 & 1. \\
 				& JC$_1$ & 1. & 1. & .18 & .25 & .36 & 1. & 1. & 1. & .89 & 1. & .99 & 1. \\
@@ -47,8 +49,9 @@
 			\centering
 			\caption[Accuracy assessment]{Confusion matrix for accuracy assessment}
 			\label{tab:accuracy}
-			\begin{tabular}{ll|rrrrrrrrr|rrr}
-				& & \multicolumn{9}{c|}{Reference} & & & \\
+			\begin{tabular}{llrrrrrrrrrrrr}
+				\hline
+				& & \multicolumn{9}{c}{Reference} & & & \\
 				& Cls & 10 & 20 & 25 & 30 & 40 & 50 & 60 & 80 & 90 & Tot & UAc & Om \\\hline
 				\multirow{9}{*}{\STAB{\rotatebox[origin=c]{90}{Prediction}}}
 				& 10 & 732 & 38 & 62 & 15 & 16 & 2 & 3 & 5 & 0 & 873 & .84 & .16 \\ 
@@ -62,7 +65,7 @@
 				& 90 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 3 & 5 & 9 & .56 & .44 \\\hline 
 				& Tot & 858 & 1209 & 1313 & 1899 & 499 & 99 & 27 & 108 & 14 & 6026 & & \\
 				& PAc & .85 & .62 & .88 & .77 & .71 & .51 & .67 & .46 & .36 & & \multicolumn{2}{r}{OvAc} \\
-				& Com & .15 & .38 & .12 & .23 & .29 & .49 & .33 & .54 & .64 & & \multicolumn{2}{r}{.75} \\ 
+				& Com & .15 & .38 & .12 & .23 & .29 & .49 & .33 & .54 & .64 & & \multicolumn{2}{r}{.75} \\ \hline
 			\end{tabular}
 		\end{table}
 

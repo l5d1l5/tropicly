@@ -1,4 +1,4 @@
-\begin{thebibliography}{15}
+\begin{thebibliography}{18}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -92,11 +92,24 @@ Chen J., Cao X., Peng S., and Ren H.
   July 2017.
 \newblock \doi{10.3390/ijgi6080230}.
 
+\bibitem[Don et~al.(2010)Don, Schumacher, and Freibauer]{Don2010}
+Don A., Schumacher J., and Freibauer A.
+\newblock Impact of tropical land-use change on soil organic carbon stocks - a
+  meta-analysis.
+\newblock \emph{Global Change Biology}, 17\penalty0 (4):\penalty0 1658--1670,
+  November 2010.
+\newblock \doi{10.1111/j.1365-2486.2010.02336.x}.
+
 \bibitem[FAO(2012)]{FAO2012}
 FAO.
 \newblock {FRA} 2015 terms and definitions.
 \newblock resreport, Food and Agriculture Organization of the United Nations,
   2012.
+
+\bibitem[FAO and ITPS(2018)]{FAO2018}
+FAO and ITPS.
+\newblock Global {S}oil {O}rganic {C}arbon {M}ap.
+\newblock resreport, FAO and ITPS, 2018.
 
 \bibitem[Hansen et~al.(2013)Hansen, Potapov, Moore, Hancher, Turubanova,
   Tyukavina, Thau, Stehman, Goetz, Loveland, Kommareddy, Egorov, Chini,
@@ -111,6 +124,14 @@ Hansen M.~C., Potapov P.~V., Moore R., Hancher M., Turubanova S.~A., Tyukavina
 \newblock \doi{10.1126/science.1244693}.
 \newblock URL
   \url{https://earthenginepartners.appspot.com/science-2013-global-forest/download_v1.0.html}.
+
+\bibitem[Hijmans et~al.(2018)Hijmans, Garcia, Kapoor, Rala, Maunahan, and
+  Wieczorek]{Hijmans2018}
+Hijmans R., Garcia N., Kapoor J., Rala A., Maunahan A., and Wieczorek J.
+\newblock {GADM} database of {G}lobal {A}dministrative {A}reas.
+\newblock Online, May 2018.
+\newblock URL \url{https://www.gadm.org}.
+\newblock Version 3.6.
 
 \bibitem[Li et~al.(2017)Li, Sulla-Menashe, Motesharrei, Kalnay, Ying, Li, and
   Ma]{Li2017}
