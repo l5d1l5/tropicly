@@ -100,15 +100,22 @@
 \label{sec:methods}
 %TODO need more speacking section headings
 %TODO flowchart
-	\begin{figure}[ht]
-		\centering
-		\includegraphics[scale=.97]{img/method_overview_frameless}
-		\caption[Map of aligned data tiles and sampling locations]{\textbf{Map of aligned data tiles and sampling locations:} The map shows the location of the aligned multi-image stack tiles as black-framed square sized polygons, the sampling locations for accuracy assessment in red, and countries within the tropical zone in orange.}
-		\label{fig:processing}
-	\end{figure}
-
 	\subsection{Pre-processing}
-		Problem description, all data in different crs, also all data has diferent extent, also some data is vector data must converted to raster data. from each raster data where only tilled data set created a tile mask in target crs projection where stored name of the file an its extent. select a template datasets in our case gl30 2010. intersection compute with mask intersections are selections, now pipeline if more tiles for one needed merge them, after reproject them next clip then, for vector data to raster, software python geopandas and rasterio
+		As mentioned in the data section, we have several datasets with different image properties like extent, coordinate reference system, coverage of the globe as single tile or multi-tile and so on. To perform further a in detail analysis we need to create an similar image stack where each tile is aligned with the other images. In further descriptions we will refer to this stack as aligned image stack.
+
+		Description: first we have our different datasets some are single tile data, some are multi tile data, some are vector data, we create a tile index mask for each multi tile dataset (GL30, GFC, AGB) in, extract the bounds of the tile, create a polygon from bounds, reproject polygon to wgs84, store polygon in a shapefile structure, assign to polygon as attribute the tile name file name as identifier, during the masking process i recognized that the gl30 dataset has coordinate system issues, the tiles at the edges of the earth , theses masks are than intersected to get overlapping tile stack, next step is to group the intersecting tiles by the key 
+		\begin{figure}[ht]
+			\centering
+			\includegraphics[scale=.8]{img/align}
+			\caption[Flowchart of tile alignment process]{\textbf{Flowchart of tile alignment process:} }
+			\label{fig:align}
+		\end{figure}
+		\begin{figure}[ht]
+			\centering
+			\includegraphics[scale=.97]{img/method_overview_frameless}
+			\caption[Map of aligned data tiles and sampling locations]{\textbf{Map of aligned data tiles and sampling locations:} The map shows the location of the aligned multi-image stack tiles as black-framed square sized polygons, the sampling locations for accuracy assessment in red, and countries within the tropical zone in orange.}
+			\label{fig:processing}
+		\end{figure}
 
 	\subsection{Deforestation}
 		\subsubsection{Forest definition}
