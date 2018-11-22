@@ -5,6 +5,7 @@ Author: Tobias Seydewitz
 Date: 14.04.18
 Mail: tobi.seyde@gmail.com
 """
+import re
 import numpy as np
 from rasterio import open, band
 from rasterio.merge import merge
@@ -231,6 +232,17 @@ def int_to_orient(x, y):
     lat, ns = (-1 * y, 'S') if y < 0 else (y, 'N')
 
     return '{:02d}{}_{:03d}{}'.format(lat, ns, lng, we)
+
+
+def orient_to_int(orient):
+    # TODO doc
+    coor, orient = re.match(r'(?P<coor>\d+)(?P<orient>[NSWE])', orient, re.I).groups()
+
+    if orient.lower() in ('n', 'e'):
+        return int(coor)
+
+    else:
+        return -1 * int(coor)
 
 
 def round_bounds(bounds):

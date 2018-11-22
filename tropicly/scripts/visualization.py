@@ -42,6 +42,7 @@ def visual_treecover(path, out, bins=None, unit=1000000, scaling='relative'):
 
         if scaling == 'relative':
             ratio = prop['covered'] / max_count
+
         else:
             ratio = area / ((max_count * prop['px_area']) / unit)
 
@@ -175,19 +176,21 @@ def visual_segmented(path, out, scaling=None):
 
 
 if __name__ == '__main__':
-    visual_segmented(
-        '/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/driver/americas_driver.shp',
-        '/home/tobi/Documents/americas_driver_segmented.shp',
-        0.8
-    )
-    visual_segmented(
-        '/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/driver/africa_driver.shp',
-        '/home/tobi/Documents/africa_driver_segmented.shp',
-        0.8
-    )
-    visual_segmented(
-        '/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/driver/asia_driver.shp',
-        '/home/tobi/Documents/asia_driver_segmented.shp',
-        0.8
-    )
-
+    # visual_segmented(
+    #     '/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/driver/americas_driver.shp',
+    #     '/home/tobi/Documents/americas_driver_segmented.shp',
+    #     0.8
+    # )
+    # visual_segmented(
+    #     '/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/driver/africa_driver.shp',
+    #     '/home/tobi/Documents/africa_driver_segmented.shp',
+    #     0.8
+    # )
+    # visual_segmented(
+    #      '/home/tobi/Documents/Master/code/python/susa/driver_peru_cleaned.shp',
+    #      '/home/tobi/Documents/Master/code/python/susa/driver_peru_segmented.shp',
+    #      0.8
+    # )
+    visual_treecover('/home/tobi/Documents/Master/code/python/susa/legend.shp',
+                     '/home/tobi/Documents/Master/code/python/susa/legend_scaled.shp',
+                     scaling='relative')
