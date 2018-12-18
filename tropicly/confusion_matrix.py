@@ -1,25 +1,11 @@
 """
-confusion_matrix.py
-
 Author: Tobias Seydewitz
-Date: 06.05.18
 Mail: tobi.seyde@gmail.com
 """
-import logging
 import numpy as np
 import pandas as pd
 
-
-LOGGER = logging.getLogger(__name__)
-LOGGER.addHandler(logging.NullHandler())
-
-
-class ConfusionMatrixBaseError(Exception):
-    """Base class"""
-
-
-class ConfusionMatrixLabelError(ConfusionMatrixBaseError):
-    """Error for malicious label"""
+from tropicly.errors import TropiclyConfusionMatrixLabelError, TropiclyConfusionMatrixError
 
 
 class ConfusionMatrix:
@@ -30,9 +16,9 @@ class ConfusionMatrix:
     def __init__(self, label, dtype=np.int):
         """
         Instance constructor, creates a confusion matrix in dimension of
-        NxN derived from length label.
+        NxM derived from length label.
 
-        :param label: list of int, char
+        :param label: list of int or chars
             Classification labels/classes.
         :param dtype: optional, np.dtype
             You should not change this value.
@@ -40,7 +26,7 @@ class ConfusionMatrix:
         self._label = sorted(set(label))
 
         if len(self._label) < 2:
-            raise ConfusionMatrixLabelError('Minimal requirement is 2 independent labels.')
+            raise TropiclyConfusionMatrixLabelError('Minimal requirement is 2 independent labels.')
 
         self._matrix = np.zeros((len(self._label) + 1, len(self._label) + 1), dtype=dtype)
 
@@ -52,9 +38,8 @@ class ConfusionMatrix:
         Labels/classes are initialized from a list of all reference values.
 
         :param records: list of tuple(reference, prediction)
-            Classification label.
+            Classification labels.
         :return: ConfusionMatrix
-            The instance.
         """
         reference, prediction = list(zip(*records))
 
@@ -77,10 +62,10 @@ class ConfusionMatrix:
         :param prediction: list
             Predicted labels.
         :return: ConfusionMatrix
-            The instance.
         """
         if len(reference) != len(prediction):
-            raise ValueError
+            raise TropiclyConfusionMatrixError('Length reference != prediction is %s != %s' %
+                                               (len(reference), len(prediction)))
 
         obj = cls(reference)
 
@@ -100,7 +85,7 @@ class ConfusionMatrix:
         """
         if reference not in self._label or prediction not in self._label:
             msg = '{}, {} unknown label for {}.'.format(reference, prediction, self._label)
-            raise ConfusionMatrixLabelError(msg)
+            raise TropiclyConfusionMatrixLabelError(msg)
 
         col = self._label.index(reference)
         row = self._label.index(prediction)
@@ -124,12 +109,13 @@ class ConfusionMatrix:
         :return: NormalizedConfusionMatrix
             A instance of NormalizedConfusionMatrix.
         """
+        mat = self._matrix
+
         if method in ('c', 'co', 'com', 'commission'):
             mat = self._matrix.T
             ncm = _NormalizedConfusionMatrix(self._label, 'commission')
 
         else:
-            mat = self._matrix
             ncm = _NormalizedConfusionMatrix(self._label, 'omission')
 
         for idx, val in enumerate(mat[:-1]):
@@ -211,7 +197,6 @@ class _NormalizedConfusionMatrix(ConfusionMatrix):
         self._population = 0
 
     def add(self, values, index):
-        # TODO prevent division by zero
         """
         Adds a normalized row to matrix.
 
@@ -223,14 +208,19 @@ class _NormalizedConfusionMatrix(ConfusionMatrix):
             true positive index.
         """
         # cache for overall accuracy
-        self._positive += values[index]
-        self._population += values[-1]
 
-        rates = [
-            round(val / values[-1], 2)
-            for idx, val in enumerate(values[:-1])
-        ]
-        rates.append(round((sum(values[:-1]) - values[index]) / values[-1], 2))
+        if sum(values) != 0:
+            self._positive += values[index]
+            self._population += values[-1]
+
+            rates = [
+                round(val / values[-1], 2)
+                for idx, val in enumerate(values[:-1])
+            ]
+            rates.append(round((sum(values[:-1]) - values[index]) / values[-1], 2))
+
+        else:
+            rates = [0] * len(values)
 
         if self._method == 'commission':
             for idx, val in enumerate(rates):
@@ -240,7 +230,8 @@ class _NormalizedConfusionMatrix(ConfusionMatrix):
             self._matrix[index] = rates
 
         # update overall accuracy
-        self._matrix[-1][-1] = round(self._positive / self._population, 2)
+        if self._population != 0:
+            self._matrix[-1][-1] = round(self._positive / self._population, 2)
 
     def __repr__(self):
         return '<{}(label={}, method={}) at {}>'.format(self.__class__.__name__, self._label,
