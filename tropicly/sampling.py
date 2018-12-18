@@ -1,20 +1,11 @@
 """
-sampling.py
-
 Author: Tobias Seydewitz
-Date: 09.04.18
 Mail: tobi.seyde@gmail.com
 """
-import logging
 import numpy as np
 from rasterio import open
 
-
-# TODO refactor exceptions
-
-
-LOGGER = logging.getLogger(__name__)
-LOGGER.addHandler(logging.NullHandler())
+from tropicly.errors import TropiclySamplingError
 
 
 def worker(image, return_stack, **kwargs):
@@ -36,6 +27,7 @@ def worker(image, return_stack, **kwargs):
 
     samples = sample_occupied(data, affine=affine, **kwargs)
 
+    # case stack is list or a queue
     if isinstance(return_stack, list):
         return_stack.append(samples)
 
@@ -60,18 +52,20 @@ def sample_occupied(data, samples=100, occupied=None, affine=None, seed=None):
     :param affine: Affine, optional
         Affine matrix to convert image coordinates to real world
         coordinates. Must be an affine object.
-    :param seed: int, str, optional
+    :param seed: int or str, optional
         Seed for random number generator.
-    :return: list of dictionaries
+    :return: list of dict
         Each sample is a dictionary with the following keys:
         label: cell value
         row: image coordinate
         col: image coordinate
-        x: real world coordinate or none
-        y: real world coordinate or none
+
+        and if affine is provided.
+        x: longitude
+        y: latitude
     """
     if len(data.shape) != 2:
-        raise ValueError
+        raise TropiclySamplingError('Data shape is %s should be 2' % len(data.shape))
 
     mask = np.zeros(data.shape, dtype=np.uint8)
 
@@ -86,16 +80,16 @@ def sample_occupied(data, samples=100, occupied=None, affine=None, seed=None):
     records = []
     for sample in draw_sample(cells, samples, seed):
         row, col = sample
-        x, y = None, None
+        record = {
+            'label': data[row][col],
+            'row': row,
+            'col': col,
+        }
 
         if affine:
             x, y = (col, row) * affine
-
-        record = {'label': data[row][col],
-                  'row': row,
-                  'col': col,
-                  'x': x,
-                  'y': y, }
+            record['x'] = x
+            record['y'] = y
 
         records.append(record)
 
@@ -113,19 +107,19 @@ def draw_sample(data, samples=None, seed=None):
     :param samples: int, optional
         Total number of samples to draw from list until the
         function returns.
-    :param seed: int, str, optional
+    :param seed: int or str, optional
         Seed for random number generator.
     :return:
         A randomly selected list value.
     """
     random = np.random.RandomState(seed)
 
-    c = 0
+    pos = 0
     while data:
         idx = random.randint(len(data))
         yield data.pop(idx)
 
-        c += 1
+        pos += 1
 
-        if samples and samples == c:
+        if samples and samples == pos:
             return
