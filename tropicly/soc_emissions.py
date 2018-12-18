@@ -18,7 +18,7 @@ LOGGER = logging.getLogger(__name__)
 LOGGER.addHandler(logging.NullHandler())
 
 
-# Inject alternatives SOCAlternativeFactors, SOCCFactors, SOCCAlternativeFactors
+# Inject alternatives SOCAlternativeFactors, SOCCFactors
 SOCCFACTORS = SOCCFactors
 
 
