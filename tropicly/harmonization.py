@@ -1,21 +1,14 @@
 """
-harmonization.py
-
 Author: Tobias Seydewitz
-Date: 06.04.18
 Mail: tobi.seyde@gmail.com
 """
 import logging
-import numpy as np
-from rasterio import open
 from collections import namedtuple
 
-
-# TODO refactor exceptions
-
+import numpy as np
+from rasterio import open
 
 LOGGER = logging.getLogger(__name__)
-LOGGER.addHandler(logging.NullHandler())
 
 
 def worker(landcover, treecover, return_stack, *args, **kwargs):
@@ -143,6 +136,34 @@ def binary_jaccard(arr1, arr2, return_matrix=False):
     if return_matrix:
         Matrix = namedtuple('Matrix', 'm11 m10 m01 m00')
         return jaccard, Matrix(m11, m10, m01, 0)
+
+    return jaccard
+
+
+def binary_jaccard_improved(arr1, arr2, return_matrix=False):
+    x, y = arr1.astype(np.bool), arr2.astype(np.bool)
+
+    a = x & y
+    abc = x | y
+    b = x ^ a
+    c = y ^ a
+    d = np.logical_not(x) & np.logical_not(y)
+
+    numerator = np.count_nonzero(a)
+    denominator = np.count_nonzero(abc)
+
+    if denominator == 0:
+        jaccard = 0
+
+    else:
+        jaccard = numerator / denominator
+        jaccard = np.round_(jaccard, 4)
+
+    if return_matrix:
+        matrix = [[numerator, np.count_nonzero(b)],
+                  [np.count_nonzero(c), np.count_nonzero(d)]]
+
+        return jaccard, matrix
 
     return jaccard
 
