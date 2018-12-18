@@ -5,10 +5,12 @@ Author: Tobias Seydewitz
 Date: 09.05.18
 Mail: tobi.seyde@gmail.com
 """
-from queue import Queue
-from threading import Thread, Event
-from tropicly.observer import Signal
 from multiprocessing import cpu_count
+from queue import Queue
+from threading import Event
+from threading import Thread
+
+from tropicly.observer import Signal
 
 
 class TaskSheduler(Thread):
