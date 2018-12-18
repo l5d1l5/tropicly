@@ -6,15 +6,21 @@ Date: 14.04.18
 Mail: tobi.seyde@gmail.com
 """
 import re
+
 import numpy as np
-from rasterio import open, band
-from rasterio.merge import merge
-from shapely.geometry import Polygon
+from rasterio import band
+from rasterio import open
+from rasterio.coords import BoundingBox
+from rasterio.coords import disjoint_bounds
 from rasterio.io import DatasetReader
+from rasterio.mask import mask
+from rasterio.mask import raster_geometry_mask
+from rasterio.merge import merge
+from rasterio.warp import calculate_default_transform
+from rasterio.warp import reproject
+from shapely.geometry import Polygon
+
 from tropicly.distance import Distance
-from rasterio.mask import raster_geometry_mask, mask
-from rasterio.coords import BoundingBox, disjoint_bounds
-from rasterio.warp import reproject, calculate_default_transform
 
 
 def make_warp_profile(template, crs):
