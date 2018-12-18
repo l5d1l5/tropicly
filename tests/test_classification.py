@@ -5,12 +5,14 @@ Author: Tobias Seydewitz
 Date: 10.04.18
 Mail: tobi.seyde@gmail.com
 """
-import numpy as np
 from unittest import TestCase
+
+import numpy as np
+
 from tests.utilities import random_test_data
-from tropicly.classification import (extract_square,
-                                     superimpose,
-                                     reclassify)
+from tropicly.classification import extract_square
+from tropicly.classification import reclassify
+from tropicly.classification import superimpose
 
 
 class TestClassification(TestCase):

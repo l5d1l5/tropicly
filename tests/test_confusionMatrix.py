@@ -1,8 +1,10 @@
 from unittest import TestCase
+
 import numpy as np
-from tropicly.confusion_matrix import (ConfusionMatrix,
-                                       ConfusionMatrixLabelError,
-                                       _NormalizedConfusionMatrix)
+
+from tropicly.confusion_matrix import ConfusionMatrix
+from tropicly.confusion_matrix import TropiclyConfusionMatrixLabelError
+from tropicly.confusion_matrix import _NormalizedConfusionMatrix
 
 
 class TestConfusionMatrix(TestCase):
@@ -46,7 +48,7 @@ class TestConfusionMatrix(TestCase):
         self.assertTrue(np.array_equal(self.expected, cm._matrix))
 
     def test_malicious_labels(self):
-        with self.assertRaises(ConfusionMatrixLabelError) as err:
+        with self.assertRaises(TropiclyConfusionMatrixLabelError) as err:
             ConfusionMatrix([1, 1])
 
     def test_add_with_digi_cm(self):
@@ -56,7 +58,7 @@ class TestConfusionMatrix(TestCase):
         self.assertTrue(np.array_equal(self.expected, self.digi_cm._matrix))
 
     def test_add_with_malicious_values(self):
-        with self.assertRaises(ConfusionMatrixLabelError) as err:
+        with self.assertRaises(TropiclyConfusionMatrixLabelError) as err:
             for val in self.records:
                 self.char_cm.add(*val)
 

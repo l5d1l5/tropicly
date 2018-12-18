@@ -5,19 +5,22 @@ Author: Tobias Seydewitz
 Date: 09.04.18
 Mail: tobi.seyde@gmail.com
 """
+from unittest import TestCase
+
 import numpy as np
 from affine import Affine
-from unittest import TestCase
+
 from tests.utilities import random_test_data
-from tropicly.sampling import (draw_sample,
-                               sample_occupied)
+from tropicly.errors import TropiclySamplingError
+from tropicly.sampling import draw_sample
+from tropicly.sampling import sample_occupied
 
 
 class TestSampling(TestCase):
     def test_sample_occupied_with_malicious_data(self):
         a = np.random.randint(2, size=10)
 
-        with self.assertRaises(ValueError) as err:
+        with self.assertRaises(TropiclySamplingError) as err:
             sample_occupied(a)
 
     def test_sample_occupied_with_empty(self):
@@ -31,9 +34,9 @@ class TestSampling(TestCase):
     def test_sample_occupied_with_valid(self):
         *_, gl30_10 = random_test_data((2, 2))
 
-        expected = [{'x': None, 'label': 80, 'col': 0, 'y': None, 'row': 1},
-                    {'x': None, 'label': 50, 'col': 1, 'y': None, 'row': 0},
-                    {'x': None, 'label': 90, 'col': 0, 'y': None, 'row': 0}]
+        expected = [{'label': 80, 'col': 0, 'row': 1},
+                    {'label': 50, 'col': 1, 'row': 0},
+                    {'label': 90, 'col': 0, 'row': 0}]
         actual = sample_occupied(gl30_10, seed=42)
 
         self.assertEqual(expected, actual)

@@ -6,6 +6,7 @@ Date: 05.04.18
 Mail: tobi.seyde@gmail.com
 """
 import random
+
 import numpy as np
 
 
@@ -60,7 +61,7 @@ def random_test_data(size=(100, 100), seed=42):
 
 def matrix_sum(n):
     """
-    Creates a nxn matrix with random values between 1 <= x <= 10 and
+    Creates a n x m matrix with random values between 1 <= x <= 10 and
     computes a the matrix sum.
 
     :param n: int
