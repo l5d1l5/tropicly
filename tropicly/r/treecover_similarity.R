@@ -35,6 +35,4 @@ for(i in 1:4) {
     less[j, i] = wilcox.test(africa[,i], africa[,j], paired = TRUE, alternative = 'less')$p.value
   }
 }
-test = wilcox.test(americas$JC00, americas$JC10, paired = TRUE, alternative = 'two.sided')
-summary(test)
-test$statistic
+
