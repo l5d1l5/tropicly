@@ -1,14 +1,10 @@
 """
-grid.py
-
 Author: Tobias Seydewitz
-Date: 10.07.18
 Mail: tobi.seyde@gmail.com
 """
 from math import tan, atan, pi, sin, sqrt
 from shapely.affinity import translate
-from shapely.geometry import Polygon, LineString
-from shapely.ops import linemerge, polygonize, unary_union
+from shapely.geometry import Polygon
 
 
 # TODO tests
