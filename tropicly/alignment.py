@@ -1,37 +1,29 @@
-"""
-alignment.py
-
-Author: Tobias Seydewitz
-Date: 01.06.18
-Mail: tobi.seyde@gmail.com
-"""
-import numpy as np
 from time import time
+
+import numpy as np
 from rasterio.features import rasterize
-from tropicly.raster import (clip,
-                             write,
-                             merge_from,
-                             clip_raster,
-                             round_bounds,
-                             polygon_from,
-                             int_to_orient,
-                             reproject_like,
-                             make_warp_profile,)
+
+from tropicly.raster import clip
+from tropicly.raster import clip_raster
+from tropicly.raster import int_to_orient
+from tropicly.raster import make_warp_profile
+from tropicly.raster import merge_from
+from tropicly.raster import polygon_from
+from tropicly.raster import reproject_like
+from tropicly.raster import round_bounds
+from tropicly.raster import write
 
 
-CRS = {'init': 'epsg:4326'}
-
-
-def worker(template, alignments, vector, pathobj):
+def worker(template, alignments, vector, crs, pathobj):
     # TODO refactor
-    kwargs = make_warp_profile(template, CRS)
+    kwargs = make_warp_profile(template, crs)
     kwargs['out'] = pathobj
 
     out = raster_alignment(alignments, **kwargs)
 
     data = rasterize_vector(vector, kwargs['transform'], kwargs['bounds'], (kwargs['height'], kwargs['width']))
     name = 'ifl{:x}.tif'.format(id(data))
-    out['ifl'] = write(data, str(pathobj/name), **kwargs)
+    out['ifl'] = write(data, str(pathobj / name), **kwargs)
 
     kwargs['bounds'] = round_bounds(kwargs['bounds'])
 
@@ -46,7 +38,7 @@ def raster_alignment(alignments, **kwargs):
         values = list(set(values))
 
         name = '{}{:x}.tif'.format(key, abs(hash(''.join(values) + str(time()))))
-        path = str(kwargs['out']/name)
+        path = str(kwargs['out'] / name)
 
         err_msg = 'Failed at {} files {}'.format(key, values)
 
@@ -75,7 +67,7 @@ def raster_clip(to_clip, bounds, **kwargs):
 
     for key, value in to_clip.items():
         name = '{}_{}.tif'.format(key, orientation)
-        path = str(kwargs['out']/name)
+        path = str(kwargs['out'] / name)
 
         data, transform = clip_raster(value, bounds)
         kwargs.update({'transform': transform})
