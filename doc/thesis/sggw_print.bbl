@@ -1,4 +1,4 @@
-\begin{thebibliography}{18}
+\begin{thebibliography}{32}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -47,6 +47,15 @@ Baccini A., Walker W., Carvalho L., Farina M., and D.~Sulla-Menashe R. A.~H.
 \newblock \emph{Science}, September 2017.
 \newblock \doi{10.1126/science.aam5962}.
 
+\bibitem[Cao et~al.(2016)Cao, Li, Lei, Lei, Tan, Zhang, Yan, Xie, Zhang, and
+  Yang]{Cao2016}
+Cao X., Li A., Lei G., Lei G., Tan J., Zhang Z., Yan D., Xie H., Zhang S., and
+  Yang Y.
+\newblock Land cover mapping and spatial pattern analysis with remote sensing
+  in {N}epal.
+\newblock \emph{Journal of Geo-information Science}, 18:\penalty0 1384--1398,
+  2016.
+
 \bibitem[Carr(1990)]{Carr1990}
 Carr D.~B.
 \newblock Looking at large data sets using binned data plots.
@@ -92,6 +101,32 @@ Chen J., Cao X., Peng S., and Ren H.
   July 2017.
 \newblock \doi{10.3390/ijgi6080230}.
 
+\bibitem[Congalton(1991)]{Congalton1991}
+Congalton R.~G.
+\newblock A review of assessing the accuracy of classifications of remotely
+  sensed data.
+\newblock \emph{Remote Sensing of the Environment}, 46:\penalty0 37--46, 1991.
+
+\bibitem[Costanza et~al.(2014)Costanza, de~Groot, Sutton, van~der Ploeg,
+  Anderson, Kubiszewski, Farber, and Turner]{Costanza2014}
+Costanza R., Groot R., de, Sutton P., Ploeg S., van~der, Anderson S.~J.,
+  Kubiszewski I., Farber S., and Turner K.~R.
+\newblock Change in the global value of ecosystem services.
+\newblock \emph{Global Environmental Change}, 26:\penalty0 152--158, 2014.
+\newblock \doi{10.1016/j.gloenvcha.2014.04.002}.
+
+\bibitem[de~Groot et~al.(2012)de~Groot, Brander, van~der Ploeg, Costanza,
+  Bernard, Braat, Christie, Crossman, Ghermandi, Hein, Hussain, Kumar,
+  McVittie, Portela, Rodriguez, ten Brink, and van Beukering]{Groot2012}
+Groot R., de, Brander L., Ploeg S., van~der, Costanza R., Bernard F., Braat L.,
+  Christie M., Crossman N., Ghermandi A., Hein L., Hussain S., Kumar P.,
+  McVittie A., Portela R., Rodriguez L.~C., Brink P., ten, and Beukering P.,
+  van.
+\newblock Global estimates of the value of ecosystems and the services in
+  monetary units.
+\newblock \emph{Ecosystem Services}, 1:\penalty0 50--61, 2012.
+\newblock \doi{10.1016/j.ecoser.2012.07.005}.
+
 \bibitem[Don et~al.(2010)Don, Schumacher, and Freibauer]{Don2010}
 Don A., Schumacher J., and Freibauer A.
 \newblock Impact of tropical land-use change on soil organic carbon stocks - a
@@ -110,6 +145,11 @@ FAO.
 FAO and ITPS.
 \newblock Global {S}oil {O}rganic {C}arbon {M}ap.
 \newblock resreport, FAO and ITPS, 2018.
+
+\bibitem[Foody(2002)]{Foody2002}
+Foody G.~M.
+\newblock Status of land cover classification accuracy assessment.
+\newblock \emph{Remote Sensing of Environment}, 80:\penalty0 185--201, 2002.
 
 \bibitem[Hansen et~al.(2013)Hansen, Potapov, Moore, Hancher, Turubanova,
   Tyukavina, Thau, Stehman, Goetz, Loveland, Kommareddy, Egorov, Chini,
@@ -133,6 +173,19 @@ Hijmans R., Garcia N., Kapoor J., Rala A., Maunahan A., and Wieczorek J.
 \newblock URL \url{https://www.gadm.org}.
 \newblock Version 3.6.
 
+\bibitem[Jaccard(1912)]{Jaccard1912}
+Jaccard P.
+\newblock The distribution of the flor in the alpine zone.
+\newblock \emph{The New Phytologist}, 11\penalty0 (2), February 1912.
+
+\bibitem[Jacobson et~al.(2015)Jacobson, Dhanota, Godfrey, Jacobson, Rossman,
+  Stanish, Walker, and Riggio]{Jacobson2015}
+Jacobson A., Dhanota J., Godfrey J., Jacobson H., Rossman Z., Stanish A.,
+  Walker H., and Riggio J.
+\newblock A novel approach to mapping land conversion using {G}oogle {E}arth
+  with an application to {E}ast {A}frica.
+\newblock \emph{Environmental Modelling and Software}, 72:\penalty0 1--9, 2015.
+
 \bibitem[Li et~al.(2017)Li, Sulla-Menashe, Motesharrei, Kalnay, Ying, Li, and
   Ma]{Li2017}
 Li Y., Sulla-Menashe D., Motesharrei S., Kalnay X.-P.~S., Ying Q., Li S., and
@@ -142,6 +195,11 @@ Li Y., Sulla-Menashe D., Motesharrei S., Kalnay X.-P.~S., Ying Q., Li S., and
   resolution, and definitions.
 \newblock \emph{Scientific Reports}, 7\penalty0 (8748), August 2017.
 \newblock \doi{10.1038/s41598-017-07732-5}.
+
+\bibitem[McKinney(2010)]{McKinney2010}
+McKinney W.
+\newblock Data structures for statistical computing in {P}ython.
+\newblock \emph{Proceedings of the 9th Python in Science Conference}, 2010.
 
 \bibitem[Potapov et~al.(2017)Potapov, Hansen, Laestadius, Turubanova,
   Yaroshenko, Thies, Smith, Zhuravleva, Komarova, Minnemeyer, and
@@ -153,5 +211,43 @@ Potapov P., Hansen M.~C., Laestadius L., Turubanova S., Yaroshenko A., Thies
 \newblock \emph{Science Advances}, 3, 2017.
 \newblock \doi{10.1126/sciadv.1600821}.
 \newblock URL \url{http://www.intactforests.org/}.
+
+\bibitem[Sampat et~al.(2009)Sampat, Wang, Gupta, Bovik, and Markey]{Sampat2009}
+Sampat M.~P., Wang Z., Gupta S., Bovik A.~C., and Markey M.~K.
+\newblock Complex wavelet structural similarity: a new image similarity index.
+\newblock \emph{IEEE Transactions on Image Processing}, 18\penalty0 (11),
+  November 2009.
+
+\bibitem[Seydewitz(2017)]{Seydewitz2017}
+Seydewitz T.
+\newblock Applicability of {G}lobe{L}and30 and {G}lobal {F}orest {C}hange data
+  products for forest land cover change studies on global and regional scales.
+\newblock resreport, Potsdam Institute for Climate Impact Research, 2017.
+\newblock Internship - report.
+
+\bibitem[Shi(1993)]{Shi1993}
+Shi G.~R.
+\newblock Multivariate data analysis in palaeoecology and palaeobiogeography -
+  a review.
+\newblock \emph{Palaeogeography, Palaeoclimatology, Palaeoecology}, 105, 1993.
+
+\bibitem[Siikamaki et~al.(2015)Siikamaki, Santiago-Avila, and
+  Vail]{Siikamaki2015}
+Siikamaki J., Santiago-Avila F.~J., and Vail P.
+\newblock Global assessment of non-wood forest ecosystem services.
+\newblock resreport, Program on Forests (PROFOR), 2015.
+
+\bibitem[van Rossum and Development(2018)]{Rossum2018}
+Rossum G., van and Development T.
+\newblock The {P}ython language reference: release 3.5.6.
+\newblock Online, 2018.
+\newblock URL \url{https://docs.python.org/3.5/download.html}.
+\newblock Python Software Foundation.
+
+\bibitem[Yang et~al.(2017)Yang, Xiao, Feng, and Li]{Yang2017}
+Yang Y., Xiao P., Feng X., and Li H.
+\newblock Accuracy assessment of seven global land cover datasets over {C}hina.
+\newblock \emph{ISPRS Journal of Photogrammetry and Remote Sensing},
+  125:\penalty0 156--173, 2017.
 
 \end{thebibliography}

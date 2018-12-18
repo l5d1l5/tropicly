@@ -21,11 +21,11 @@
 				\hline
 				& \multicolumn{12}{c}{H$_0$: $\tilde{x_1}=\tilde{x_2}$} \\\hline
 				& \multicolumn{4}{c}{Americas} & \multicolumn{4}{c}{Asia} & \multicolumn{4}{c}{Africa} \\
-				Cls & JC$_0$ & JC$_1$ & JC$_2$ & JC$_3$ & JC$_0$ & JC$_1$ & JC$_2$ & JC$_3$ & JC$_0$ & JC$_1$ & JC$_2$ & JC$_3$ \\\hline
-				JC$_0$ & 1. &  &  &  & 1. &  &  &  & 1. &  &  & \\
-				JC$_1$ & .00 & 1. &  &  & .72 & 1. &  &  & .22 & 1. &  & \\
-				JC$_2$ & .06 & .36 & 1. &  & .00 & .00 & 1. &  & .03 & .03 & 1. & \\
-				JC$_3$ & .16 & .50 & .60 & 1. & .00 & .00 & .00 & 1. & .00 & .00 & .00 & 1. \\\hline
+				Cls & JI$_0$ & JI$_1$ & JI$_2$ & JI$_3$ & JI$_0$ & JI$_1$ & JI$_2$ & JI$_3$ & JI$_0$ & JI$_1$ & JI$_2$ & JI$_3$ \\\hline
+				JI$_0$ & 1. &  &  &  & 1. &  &  &  & 1. &  &  & \\
+				JI$_1$ & .00 & 1. &  &  & .72 & 1. &  &  & .22 & 1. &  & \\
+				JI$_2$ & .06 & .36 & 1. &  & .00 & .00 & 1. &  & .03 & .03 & 1. & \\
+				JI$_3$ & .16 & .50 & .60 & 1. & .00 & .00 & .00 & 1. & .00 & .00 & .00 & 1. \\\hline
 			\end{tabular}
 		\end{table}
 
@@ -37,11 +37,11 @@
 				\hline
 				& & \multicolumn{12}{c}{H$_0$: $\tilde{x_1}\leq\tilde{x_2}$} \\\hline
 				& & \multicolumn{4}{c}{Americas} & \multicolumn{4}{c}{Asia} & \multicolumn{4}{c}{Africa} \\
-				& Cls & JC$_0$ & JC$_1$ & JC$_2$ & JC$_3$ & JC$_0$ & JC$_1$ & JC$_2$ & JC$_3$ & JC$_0$ & JC$_1$ & JC$_2$ & JC$_3$ \\\hline
-				\multirow{4}{*}{\STAB{\rotatebox[origin=c]{90}{H$_0$: $\tilde{x_1}\geq\tilde{x_2}$}}} & JC$_0$ & 1. & .00 & .03 & .08 & 1. & .64 & 1. & 1. & 1. & .11 & .98 & 1. \\
-				& JC$_1$ & 1. & 1. & .18 & .25 & .36 & 1. & 1. & 1. & .89 & 1. & .99 & 1. \\
-				& JC$_2$ & .97 & .82 & 1. & .30 & .00 & .00 & 1. & 1. & .02 & .01 & 1. & 1. \\
-				& JC$_3$ & .92 & .75 & .70 & 1. & .00 & .00 & .00 & 1. & .00 & .00 & .00 & 1. \\\hline
+				& Cls & JI$_0$ & JI$_1$ & JI$_2$ & JI$_3$ & JI$_0$ & JI$_1$ & JI$_2$ & JI$_3$ & JI$_0$ & JI$_1$ & JI$_2$ & JI$_3$ \\\hline
+				\multirow{4}{*}{\STAB{\rotatebox[origin=c]{90}{H$_0$: $\tilde{x_1}\geq\tilde{x_2}$}}} & JI$_0$ & 1. & .00 & .03 & .08 & 1. & .64 & 1. & 1. & 1. & .11 & .98 & 1. \\
+				& JI$_1$ & 1. & 1. & .18 & .25 & .36 & 1. & 1. & 1. & .89 & 1. & .99 & 1. \\
+				& JI$_2$ & .97 & .82 & 1. & .30 & .00 & .00 & 1. & 1. & .02 & .01 & 1. & 1. \\
+				& JI$_3$ & .92 & .75 & .70 & 1. & .00 & .00 & .00 & 1. & .00 & .00 & .00 & 1. \\\hline
 			\end{tabular}
 		\end{table}
 
@@ -84,26 +84,27 @@
 				\centering
 				\caption[Deforestation driver]{Absolute in km$^2$}
 				\label{tab:driver_tab}
-				\begin{tabular}{lllrrr} 	Type & Class & & Americas & Asia & Africa \\\hline
-					\multirow{4}{*}{Agriculture} & \multirow{2}{*}{Cropland} & rel. & 24.37 & 18.37 & 25.01 \\
-					& & abs. & 95908 & 38719 & 44368 \\
-					& \multirow{2}{*}{Grassland} & rel. & 46.19 & 8.41 & 50.46 \\
-					& & abs. & 181781 & 17726 & 89516 \\
-					\multirow{4}{*}{Forestry/Plantations} & \multirow{2}{*}{Regrowth} & rel. & 14.40 & 70.27 & 18.61 \\
-					& & abs. & 56671 & 148111 & 33014 \\
-					& \multirow{2}{*}{Shrubland} & rel. & 12.69 & 1.11 & 3.77 \\
-					& & abs. & 49941 & 2340 & 6688 \\
-					\multirow{4}{*}{Urban/Mining} & \multirow{2}{*}{Artificial} & rel. & 0.41 & 0.46 & 0.71 \\
-					& & abs. & 1614 & 970 & 1260 \\
-					& \multirow{2}{*}{Bareland} & rel. & 0.10 & 0.03 & 0.09 \\
-					& & abs. & 394 & 63 & 160 \\
-					\multirow{4}{*}{Natural} & \multirow{2}{*}{Wetland} & rel. & 1.50 & 0.97 & 1.23 \\
-					& & abs. & 5903 & 2045 & 2182 \\
-					& \multirow{2}{*}{Water} & rel. & 0.32 & 0.38 & 0.13 \\
-					& & abs. & 1259 & 801 & 231 \\\hline
-					\multicolumn{2}{c}{\multirow{2}{*}{Forest loss}} & rel. & 3.87 & 4.68 & 1.69 \\
-					& & abs. & 393550 & 210774 & 177400 \\
-					\multicolumn{2}{c}{Forest cover} & abs. & 10223187 & 4457940 & 10496591 \\\hline
+				\begin{tabular}{lcllrrr}
+					Class & Code & Type & & Americas & Asia & Africa \\\hline
+					\multirow{4}{*}{Agriculture} & \multirow{2}{*}{10} & \multirow{2}{*}{Cropland} & rel. & 24.37 & 18.37 & 25.01 \\
+					& & & abs. & 95908 & 38719 & 44368 \\
+					& \multirow{2}{*}{30} & \multirow{2}{*}{Grassland} & rel. & 46.19 & 8.41 & 50.46 \\
+					& & & abs. & 181781 & 17726 & 89516 \\
+					\multirow{4}{*}{Forestry/Plantations} & \multirow{2}{*}{25} & \multirow{2}{*}{Regrowth} & rel. & 14.40 & 70.27 & 18.61 \\
+					& & & abs. & 56671 & 148111 & 33014 \\
+					& \multirow{2}{*}{40} & \multirow{2}{*}{Shrubland} & rel. & 12.69 & 1.11 & 3.77 \\
+					& & & abs. & 49941 & 2340 & 6688 \\
+					\multirow{4}{*}{Urban/Mining} & \multirow{2}{*}{80} & \multirow{2}{*}{Artificial} & rel. & 0.41 & 0.46 & 0.71 \\
+					& & & abs. & 1614 & 970 & 1260 \\
+					& \multirow{2}{*}{90} & \multirow{2}{*}{Bareland} & rel. & 0.10 & 0.03 & 0.09 \\
+					& & & abs. & 394 & 63 & 160 \\
+					\multirow{4}{*}{Natural} & \multirow{2}{*}{50} & \multirow{2}{*}{Wetland} & rel. & 1.50 & 0.97 & 1.23 \\
+					& & & abs. & 5903 & 2045 & 2182 \\
+					& \multirow{2}{*}{60} & \multirow{2}{*}{Water} & rel. & 0.32 & 0.38 & 0.13 \\
+					& & & abs. & 1259 & 801 & 231 \\\hline
+					\multicolumn{3}{c}{\multirow{2}{*}{Forest loss}} & rel. & 3.87 & 4.68 & 1.69 \\
+					& & & abs. & 393550 & 210774 & 177400 \\
+					\multicolumn{3}{c}{Forest cover} & abs. & 10223187 & 4457940 & 10496591 \\\hline
 				\end{tabular}
 			\end{table}
 

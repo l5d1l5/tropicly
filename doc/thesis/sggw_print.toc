@@ -25,40 +25,40 @@
 \contentsline {subsection}{\numberline {2.1.2}Empirical data}{24}{subsection.2.1.2}
 \contentsline {subsubsection}{\numberline {2.1.2.1}Soil Organic Carbon}{24}{subsubsection.2.1.2.1}
 \contentsline {subsubsection}{\numberline {2.1.2.2}Ecosystem Service Values}{25}{subsubsection.2.1.2.2}
-\contentsline {section}{\numberline {2.2}Methods}{25}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Preprocessing}{25}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2}Deforestation}{27}{subsection.2.2.2}
-\contentsline {subsubsection}{\numberline {2.2.2.1}Forest definition}{27}{subsubsection.2.2.2.1}
-\contentsline {subsubsection}{\numberline {2.2.2.2}Land use change driver}{27}{subsubsection.2.2.2.2}
-\contentsline {subsubsection}{\numberline {2.2.2.3}Accuracy assessment}{27}{subsubsection.2.2.2.3}
-\contentsline {subsection}{\numberline {2.2.3}Emissions}{27}{subsection.2.2.3}
-\contentsline {subsubsection}{\numberline {2.2.3.1}Above ground biomass}{27}{subsubsection.2.2.3.1}
-\contentsline {subsubsection}{\numberline {2.2.3.2}Soil organic carbon change}{28}{subsubsection.2.2.3.2}
-\contentsline {subsection}{\numberline {2.2.4}Ecosystem service values}{28}{subsection.2.2.4}
-\contentsline {subsubsection}{\numberline {2.2.4.1}Ecosystem service value loss}{28}{subsubsection.2.2.4.1}
-\contentsline {subsubsection}{\numberline {2.2.4.2}Ecosystem service value gain}{29}{subsubsection.2.2.4.2}
-\contentsline {subsection}{\numberline {2.2.5}Binning analysis}{29}{subsection.2.2.5}
-\contentsline {chapter}{\numberline {3}Results}{33}{chapter.3}
-\contentsline {section}{\numberline {3.1}Forest definition and accuracy assessment}{33}{section.3.1}
-\contentsline {section}{\numberline {3.2}Deforestation drivers}{34}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Global}{34}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Americas}{34}{subsection.3.2.2}
-\contentsline {subsection}{\numberline {3.2.3}Asia}{34}{subsection.3.2.3}
-\contentsline {subsection}{\numberline {3.2.4}Africa}{34}{subsection.3.2.4}
-\contentsline {section}{\numberline {3.3}Deforestation emissions}{40}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}Global}{41}{subsection.3.3.1}
-\contentsline {subsection}{\numberline {3.3.2}Americas}{41}{subsection.3.3.2}
-\contentsline {subsection}{\numberline {3.3.3}Asia}{41}{subsection.3.3.3}
-\contentsline {subsection}{\numberline {3.3.4}Africa}{41}{subsection.3.3.4}
-\contentsline {section}{\numberline {3.4}Ecosystem service value balance}{41}{section.3.4}
-\contentsline {subsection}{\numberline {3.4.1}Global}{41}{subsection.3.4.1}
-\contentsline {subsection}{\numberline {3.4.2}Americas}{41}{subsection.3.4.2}
-\contentsline {subsection}{\numberline {3.4.3}Asia}{41}{subsection.3.4.3}
-\contentsline {subsection}{\numberline {3.4.4}Africa}{41}{subsection.3.4.4}
-\contentsline {chapter}{\numberline {4}Discussion}{42}{chapter.4}
-\contentsline {chapter}{Acknowledgements}{43}{chapter*.38}
-\contentsline {chapter}{Bibliography}{I}{chapter*.38}
-\contentsline {chapter}{\nonumberline List of Figures}{III}{chapter*.40}
-\contentsline {chapter}{\nonumberline List of Tables}{IV}{chapter*.41}
-\contentsline {chapter}{List of Abbreviations}{V}{chapter*.42}
-\contentsline {chapter}{Appendix}{VII}{chapter*.43}
+\contentsline {section}{\numberline {2.2}Methods}{26}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Preprocessing}{26}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Deforestation}{28}{subsection.2.2.2}
+\contentsline {subsubsection}{\numberline {2.2.2.1}Forest definition}{28}{subsubsection.2.2.2.1}
+\contentsline {subsubsection}{\numberline {2.2.2.2}Proximate deforestation driver}{28}{subsubsection.2.2.2.2}
+\contentsline {subsubsection}{\numberline {2.2.2.3}Accuracy assessment}{29}{subsubsection.2.2.2.3}
+\contentsline {subsection}{\numberline {2.2.3}Emissions}{31}{subsection.2.2.3}
+\contentsline {subsubsection}{\numberline {2.2.3.1}Above ground biomass}{31}{subsubsection.2.2.3.1}
+\contentsline {subsubsection}{\numberline {2.2.3.2}Soil organic carbon change}{32}{subsubsection.2.2.3.2}
+\contentsline {subsection}{\numberline {2.2.4}Ecosystem service values}{32}{subsection.2.2.4}
+\contentsline {subsubsection}{\numberline {2.2.4.1}Ecosystem service value loss}{32}{subsubsection.2.2.4.1}
+\contentsline {subsubsection}{\numberline {2.2.4.2}Ecosystem service value gain}{33}{subsubsection.2.2.4.2}
+\contentsline {subsection}{\numberline {2.2.5}Binning analysis}{33}{subsection.2.2.5}
+\contentsline {chapter}{\numberline {3}Results}{38}{chapter.3}
+\contentsline {section}{\numberline {3.1}Forest definition and accuracy assessment}{38}{section.3.1}
+\contentsline {section}{\numberline {3.2}Deforestation drivers}{39}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Global}{39}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Americas}{39}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}Asia}{39}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.4}Africa}{39}{subsection.3.2.4}
+\contentsline {section}{\numberline {3.3}Deforestation emissions}{45}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Global}{46}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Americas}{46}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}Asia}{46}{subsection.3.3.3}
+\contentsline {subsection}{\numberline {3.3.4}Africa}{46}{subsection.3.3.4}
+\contentsline {section}{\numberline {3.4}Ecosystem service value balance}{46}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Global}{46}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.2}Americas}{46}{subsection.3.4.2}
+\contentsline {subsection}{\numberline {3.4.3}Asia}{46}{subsection.3.4.3}
+\contentsline {subsection}{\numberline {3.4.4}Africa}{46}{subsection.3.4.4}
+\contentsline {chapter}{\numberline {4}Discussion}{47}{chapter.4}
+\contentsline {chapter}{Acknowledgements}{48}{chapter*.45}
+\contentsline {chapter}{Bibliography}{I}{chapter*.45}
+\contentsline {chapter}{\nonumberline List of Figures}{IV}{chapter*.47}
+\contentsline {chapter}{\nonumberline List of Tables}{V}{chapter*.48}
+\contentsline {chapter}{List of Abbreviations}{VI}{chapter*.49}
+\contentsline {chapter}{Appendix}{VIII}{chapter*.50}
