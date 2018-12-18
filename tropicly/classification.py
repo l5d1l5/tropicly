@@ -6,20 +6,20 @@ Date: 09.04.18
 Mail: tobi.seyde@gmail.com
 """
 import logging
+
 import numpy as np
 from rasterio import open
-from tropicly.raster import write
+from rasterio.features import rasterize
+from rasterio.features import shapes
 from shapely.geometry import Polygon
+
 from tropicly.distance import Distance
 from tropicly.frequency import most_common_class
-from rasterio.features import shapes, rasterize
-
-
-# TODO refactor exceptions
-
+from tropicly.raster import write
 
 LOGGER = logging.getLogger(__name__)
-LOGGER.addHandler(logging.NullHandler())
+
+# TODO refactor exceptions
 
 
 def worker(landcover, treecover, gain, loss, filename):
@@ -66,38 +66,32 @@ def superimpose(landcover, treecover, gain, loss, years=(1, 2, 3, 4, 5, 6, 7, 8,
     filtered GFC annual losses.
 
     :param landcover: np.array
-        Gl30 image data.
+        Gl30 image data
     :param treecover: np.array
-        GFC treecover data.
+        GFC treecover data
     :param gain: np.array
-        GFC gain data.
+        GFC gain data
     :param loss: np.array
-        GFC annual loss data.
-    :param years: list of int
+        GFC annual loss data
+    :param years: list, tuple of int
         Years to consider for superimposing.
+        Default is (1, 2, 3, 4, 5, 6, 7, 8, 9, 10).
     :param canopy_density: int
-        Canopy density to consider
+        Canopy density to consider.
+        Selects all densities >canopy_density, so
+        it is a exclusive selection
     :return: np.array
-        Superimposed image.
+        Proximate driver of deforestation image
     """
     shape = [landcover.shape, treecover.shape, gain.shape, loss.shape]
 
     if len(set(shape)) > 1:
         raise ValueError
 
-    shape = shape[0]
+    losses = (treecover > canopy_density) & np.isin(loss, years)
 
-    tree_data = np.zeros(shape, dtype=np.uint8)
-    tree_data[treecover > canopy_density] = 1
-
-    loss_data = np.zeros(shape, dtype=np.uint8)
-    loss_data[np.logical_and(tree_data == 1, np.isin(loss, years))] = 1
-
-    gain_data = np.zeros(shape, dtype=np.uint8)
-    gain_data[np.logical_and(loss_data == 1, gain == 1)] = 1
-
-    driver = loss_data * landcover
-    driver[gain_data == 1] = 25
+    driver = losses * landcover
+    driver[(losses & gain) == 1] = 25
 
     return driver
 
