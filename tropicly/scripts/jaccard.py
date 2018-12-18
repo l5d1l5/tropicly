@@ -33,7 +33,7 @@ for ax, group in zip(axes, src.groupby(by='region', sort=True)):
         patch_artist=True
     )
 
-    ax.set_xticklabels(['JC$_0$', 'JC$_1$', 'JC$_2$', 'JC$_3$'], fontsize=10, fontname='Times new roman')
+    ax.set_xticklabels(['JI$_0$', 'JI$_1$', 'JI$_2$', 'JI$_3$'], fontsize=10, fontname='Times new roman')
     ax.set_title(region, fontsize=12, fontname='Times new roman')
     for box, med, mean in zip(boxes['boxes'], boxes['medians'], boxes['means']):
         box.set_facecolor('white')
