@@ -5,12 +5,14 @@ Author: Tobias Seydewitz
 Date: 05.04.18
 Mail: tobi.seyde@gmail.com
 """
-import numpy as np
 from unittest import TestCase
+
+import numpy as np
+
 from tests.utilities import random_test_data
-from tropicly.harmonization import (binary_jaccard,
-                                    treecover_similarity,
-                                    simple_matching_coefficient,)
+from tropicly.harmonization import binary_jaccard
+from tropicly.harmonization import simple_matching_coefficient
+from tropicly.harmonization import treecover_similarity
 
 
 class TestHarmonization(TestCase):
@@ -28,10 +30,10 @@ class TestHarmonization(TestCase):
                     'SMC10': 1.0,
                     'SMC20': 1.0,
                     'SMC30': 1.0,
-                    'JC0': 0,
-                    'JC10': 0,
-                    'JC20': 0,
-                    'JC30': 0}
+                    'JI0': 0,
+                    'JI10': 0,
+                    'JI20': 0,
+                    'JI30': 0}
         actual = treecover_similarity(a, a, compute_smc=True)
 
         self.assertEqual(expected, actual)
@@ -43,19 +45,13 @@ class TestHarmonization(TestCase):
                     'SMC10': 0.9026,
                     'SMC20': 0.9517,
                     'SMC30': 1.0,
-                    'JC0': 0.7075,
-                    'JC10': 0.786,
-                    'JC20': 0.881,
-                    'JC30': 1.0}
+                    'JI0': 0.7075,
+                    'JI10': 0.786,
+                    'JI20': 0.881,
+                    'JI30': 1.0}
         actual = treecover_similarity(gl30, gfc, compute_smc=True)
 
         self.assertEqual(expected, actual)
-
-    def test_binary_jaccard_with_non_binary_data(self):
-        a = np.random.randint(5, size=(10, 10))
-
-        with self.assertRaises(ValueError) as err:
-            binary_jaccard(a, a)
 
     def test_binary_jaccard_with_non_zero_equal_binary_data(self):
         a = np.random.randint(2, size=(10, 10))

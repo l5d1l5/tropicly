@@ -73,9 +73,9 @@ def treecover_similarity(gl30, gfc, cover_class=(20,), canopy_density=(0, 10, 20
         gfc_binary[gfc > density] = 1
 
         jc, _ = binary_jaccard(gl30_binary, gfc_binary, return_matrix=True)
-        values['JC%s' % density] = jc
+        values['JI%s' % density] = jc
 
-        LOGGER.debug('JC%s matrix: %s', density, _)
+        LOGGER.debug('JI%s matrix: %s', density, _)
 
         if compute_smc:
             smc, _ = simple_matching_coefficient(gl30_binary, gfc_binary, return_matrix=True)
@@ -88,60 +88,27 @@ def treecover_similarity(gl30, gfc, cover_class=(20,), canopy_density=(0, 10, 20
 
 def binary_jaccard(arr1, arr2, return_matrix=False):
     """
-    Calculates the Jaccard Index (JI) of two equal sized binary arrays or vectors.
+    Calculates the Jaccard Index (JI) of two equal sized arrays or vectors.
     If return_matrix is set to true the method provides the JI and the necessary
-    calculation matrix as a named tuple.
+    calculation matrix as a 2x2 array.
 
     :param arr1: numpy.ndarray, list or tuple
     :param arr2: numpy.ndarray, list or tuple
-        Both array alike objects sized in equal dimensions should contain exclusively
-        binary data (1,0).
-    :param return_matrix: boolean
-        Optional, a boolean value determining the return of the calculation matrix.
-    :return: float OR (float, namedtuple(m11, m01, m10, m00))
+        Both array alike objects sized in equal n x m (dimensions).
+    :param return_matrix: boolean, optional
+        A boolean value determining the return of the calculation matrix.
+    :return: float OR (float, list)
         Default, the method returns only the JI if, return_matrix is set to true the
         method returns the JI and the computation matrix.
-        The Matrix contains the following attributes:
-        m11 = total number of attributes where arr1 == 1 and arr2 == 1
-        m10 = total number of attributes where arr1 == 1 and arr2 == 0
-        m01 = total number of attributes where arr1 == 0 and arr2 == 1
-        m00 = not required, set to 0
+        [[a, b],
+         [c, d]]
+         a: total both images are true
+
     """
-    a, b = np.array(arr1, dtype=np.int8), np.array(arr2, dtype=np.int8)
+    x, y = np.array(arr1, np.bool), np.array(arr2, np.bool)
 
-    if np.sum(np.logical_or(a < 0, a > 1)) != 0 or np.sum(np.logical_or(b < 0, b > 1)) != 0:
-        raise ValueError('Attributes should contain only binary values')
-
-    C = a + b
-    A = (b - C) + b  # a = (a - C) + a, m10 = a == 1
-    B = (a - C) + a  # b = (b - C) + b, m01 = b == 1
-
-    # Total number of attributes where a == 1 and b == 1
-    m11 = np.sum(C == 2)
-    # Total number of attributes where a == 1 and b == 0
-    m10 = np.sum(A == -1)
-    # Total number of attributes where a == 0 and b == 1
-    m01 = np.sum(B == -1)
-
-    denominator = (m10 + m01 + m11)
-
-    # prevent division by zero
-    if denominator == 0:
-        jaccard = 0
-
-    else:
-        jaccard = m11 / denominator
-        jaccard = np.round_(jaccard, 4)
-
-    if return_matrix:
-        Matrix = namedtuple('Matrix', 'm11 m10 m01 m00')
-        return jaccard, Matrix(m11, m10, m01, 0)
-
-    return jaccard
-
-
-def binary_jaccard_improved(arr1, arr2, return_matrix=False):
-    x, y = arr1.astype(np.bool), arr2.astype(np.bool)
+    if x.shape != y.shape:
+        raise ValueError
 
     a = x & y
     abc = x | y
@@ -190,16 +157,12 @@ def simple_matching_coefficient(arr1, arr2, return_matrix=False):
         m00 = total number of attributes where arr1 == 0 and arr2 == 0
     """
     _, matrix = binary_jaccard(arr1, arr2, True)
-    a = np.array(arr1, dtype=np.int8)
+    size = sum(matrix[0]) + sum(matrix[1])
 
-    # total number of attributes where a == 0 and b == 0
-    m00 = a.size - sum(matrix)
-
-    smc = (matrix.m11 + m00) / a.size
+    smc = (matrix[0][0] + matrix[1][1]) / size
     smc = np.round_(smc, 4)
 
     if return_matrix:
-        matrix = matrix._replace(m00=m00)
         return smc, matrix
 
     return smc
