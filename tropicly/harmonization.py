@@ -3,7 +3,6 @@ Author: Tobias Seydewitz
 Mail: tobi.seyde@gmail.com
 """
 import logging
-from collections import namedtuple
 
 import numpy as np
 from rasterio import open
@@ -72,7 +71,7 @@ def treecover_similarity(gl30, gfc, cover_class=(20,), canopy_density=(0, 10, 20
         gfc_binary = np.zeros(gfc.shape, dtype=np.uint8)
         gfc_binary[gfc > density] = 1
 
-        jc, _ = binary_jaccard(gl30_binary, gfc_binary, return_matrix=True)
+        jc, _ = jaccard_index(gl30_binary, gfc_binary, return_matrix=True)
         values['JI%s' % density] = jc
 
         LOGGER.debug('JI%s matrix: %s', density, _)
@@ -86,11 +85,17 @@ def treecover_similarity(gl30, gfc, cover_class=(20,), canopy_density=(0, 10, 20
     return values
 
 
-def binary_jaccard(arr1, arr2, return_matrix=False):
+def jaccard_index(arr1, arr2, return_matrix=False):
     """
     Calculates the Jaccard Index (JI) of two equal sized arrays or vectors.
     If return_matrix is set to true the method provides the JI and the necessary
     calculation matrix as a 2x2 array.
+    Equation:
+    JI = a / (a + b + c)
+    a := Similarity, both are true
+    b := Difference, x is true and y is false
+    c := Difference, x is false and y is true
+    d := Difference, x and y are false
 
     :param arr1: numpy.ndarray, list or tuple
     :param arr2: numpy.ndarray, list or tuple
@@ -102,8 +107,6 @@ def binary_jaccard(arr1, arr2, return_matrix=False):
         method returns the JI and the computation matrix.
         [[a, b],
          [c, d]]
-         a: total both images are true
-
     """
     x, y = np.array(arr1, np.bool), np.array(arr2, np.bool)
 
@@ -119,10 +122,9 @@ def binary_jaccard(arr1, arr2, return_matrix=False):
     numerator = np.count_nonzero(a)
     denominator = np.count_nonzero(abc)
 
-    if denominator == 0:
-        jaccard = 0
+    jaccard = 0
 
-    else:
+    if denominator != 0:
         jaccard = numerator / denominator
         jaccard = np.round_(jaccard, 4)
 
@@ -156,7 +158,7 @@ def simple_matching_coefficient(arr1, arr2, return_matrix=False):
         m01 = total number of attributes where arr1 == 0 and arr2 == 1
         m00 = total number of attributes where arr1 == 0 and arr2 == 0
     """
-    _, matrix = binary_jaccard(arr1, arr2, True)
+    _, matrix = jaccard_index(arr1, arr2, True)
     size = sum(matrix[0]) + sum(matrix[1])
 
     smc = (matrix[0][0] + matrix[1][1]) / size

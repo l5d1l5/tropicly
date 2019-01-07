@@ -10,7 +10,7 @@ from unittest import TestCase
 import numpy as np
 
 from tests.utilities import random_test_data
-from tropicly.harmonization import binary_jaccard
+from tropicly.harmonization import jaccard_index
 from tropicly.harmonization import simple_matching_coefficient
 from tropicly.harmonization import treecover_similarity
 
@@ -57,7 +57,7 @@ class TestHarmonization(TestCase):
         a = np.random.randint(2, size=(10, 10))
 
         expected = 1
-        actual = binary_jaccard(a, a)
+        actual = jaccard_index(a, a)
 
         self.assertEqual(expected, actual, 'Must return a jaccard of 1.0 in case of equal image.')
 
@@ -65,7 +65,7 @@ class TestHarmonization(TestCase):
         a = np.zeros(shape=(10, 10))
 
         expected = 0
-        actual = binary_jaccard(a, a)
+        actual = jaccard_index(a, a)
 
         self.assertEqual(expected, actual, 'Zero image should return a jaccard of zero.')
 
@@ -74,7 +74,7 @@ class TestHarmonization(TestCase):
         b = [1] * 5 + [0] * 5
 
         expected = .5
-        actual = binary_jaccard(a, b)
+        actual = jaccard_index(a, b)
 
         self.assertEqual(expected, actual, 'Half equal image should return a jaccard of 0.5.')
 
