@@ -1,6 +1,7 @@
 \chapter{Data and methods}
 \label{ch:datamethods}
 % TODO introduce what is the content of the chapter
+% TODO one idea per paragraph
 \section{Data}
 \label{sec:data}
 % TODO table overview of the data
@@ -129,19 +130,24 @@
 
 	\subsection{Deforestation}
 		\subsubsection{Forest definition}
+			%TODO equations
+			Goal:
+			We aggregate two layers. Both have slightly different definitions for tree cover. To successful aggregate the layers we must harmonize the tree cover situation between the gfc tree cover and the gl30 2000 treecover. Because we want to map changes both have to agree on tree cover.
+
+			Similarity:
+			To determine the similarity between gl30 and gfd tree cover we used jaccard index. Jaccard Index (coefficient of community) is a simple measure of similarity between two binary paired populations or the measure of the degree of spatial overlap between two images. First applied by Jaccard in 1912 to compare distributions of alpine flora. Properties of Jaccard if a is zero jaccard is zero if b and c are zero jaccard is one. value range between 0 and 1 and relationship between s(ij) and a near linear. Process we computed subsequently for each image tile the jaccard index. First step is to filter gl30 map for tree cover. Next we compute the jaccard index  The process is implement as binary operations (a = x or y, abc = x or y, b = x xor a, c = y xor a, d = not x and not y) by means of numpy and python.
+
+			Hypothesis testing:
+
 			Treecover agreement: Jaccard index first applied for a study on plant distribution similarities at different locations in alps and developend by jaccard \citep{Jaccard1912,Shi1993,Sampat2009} jaccard index, wilcoxon signed-rank test, gl30 2000, gfc treecover 2000, different canopy densities JI$_0$$[0,100]$, JI$_{1}$$(10,100]$, JI$_{2}$$(20,100]$, JI$_{3}$$(30,100]$ 
 
 		\subsubsection{Proximate deforestation driver}
 			%TODO flowchart needs reclassification
 			Based on our forest definition developed in the previous section we want to classify all the tropical deforestation within a canopy density of $(10,100]$ percent between 2001 till 2010. Additionally we must consider the mean miss-classification rate of 52 \% by previous findings of \citeauthor{Seydewitz2017} \citep{Seydewitz2017}. Therefore we have to develop a feasible method to resolve this issue.
 
-			For classifying the proximate drivers of deforestation we select the following raster images from our \ac{AISM}: \ac{GFC} treecover2000, \ac{GFC} lossyear, \ac{GFC} gain, and the \ac{GL30} \ac{LC} classification from 2010. Now, we apply to each raster image stack the following described operations. From the treecover2000 layer we select all pixels where the canopy density is within $(10,100]$ percent and set them to one (true). The same is procedure is applied on the lossyear layer by setting all forest loss pixels within the time period 2001 till 2010 to one (true). After both layers are combined with a logical AND to select our target deforestation pixels. Finally, we build the Hadamard product (element-wise multiplication) of the target deforestation layer and the \ac{GL30} \ac{LC} layer to classify the deforestation pixels. Last step is to add the forest gain layer 
-			use the hadamard product to classify the target deforestations with the \ac{GL30} layer. For classifying the regrowth 
-			The classification is implemented as a Python function which requires as parameter the previously named raster layers. Additionally the target canopy density and time period is freely selectable.
+			For classifying the proximate drivers of deforestation we select the following raster images from our \ac{AISM}: \ac{GFC} treecover2000, \ac{GFC} lossyear, \ac{GFC} gain, and the \ac{GL30} \ac{LC} classification from 2010. Now, we apply to each raster image stack the following described operations. From the treecover2000 layer we select all pixels where the canopy density is within $(10,100]$ percent and set them to one (true). The same is procedure is applied on the lossyear layer by setting all forest loss pixels within the time period 2001 till 2010 to one (true). After both layers are combined with a logical AND to select our target deforestation pixels. Finally, we build the Hadamard product (element-wise multiplication) of the target deforestation layer and the \ac{GL30} \ac{LC} layer to classify the deforestation pixels. For classifying forest regrowth we filtered the \ac{GFC} gain layer by forest gains within our target temporal resolution and losses within our target canopy density. After, the filtered gains are aggregated with our classified deforestation by using the Hadamard product of both layers. Figure \ref{fig:driver_flowchart} shows the classification process as a flowchart. The classification process is implemented as a Python function which requires as parameter the previously named raster layers. Additionally the target canopy density and time period is freely selectable. The described filtering and aggregation steps are implements as binary operations for fast processing by means of numpy.
 
-			Classification: We from our AISM treecover 2000, lossyear, gain and gl30 2010. select from all pixels within 11 and 100 canopy density and set them to 1, from lossyear losses between 2001 and 2010, additionally  we filter losses so they are only in our target canopy density and set them to 1, now do the hadamard product with the gl30 layer, last step is to filter gain within our loss layer and to add it to the hadamard product as 25, this is regrowth.
-
-			Resolve classification issues: 
+			Clustering of all patches still classified as forest (value 20), apply square sized buffer around cluster center, count occurrences of other classes within the buffer, apply to cluster most frequent class, exclude from counting 20, 0, and 255, buffer size 500x500 m 25 ha.
 			\begin{figure}[ht]
 				\centering
 				\includegraphics[scale=0.5]{img/driver_flowchart}
