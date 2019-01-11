@@ -1,25 +1,7 @@
 \select@language {english}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {1.1}{\ignorespaces Tropical zone}}{11}{figure.1.1}
-\contentsline {figure}{\numberline {1.2}{\ignorespaces Deforestation examples}}{13}{figure.1.2}
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Map of downloaded dataset tiles}}{19}{figure.2.1}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Flowchart of tile alignment process}}{27}{figure.2.2}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Map of aligned data tiles and sampling locations}}{27}{figure.2.3}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces }}{29}{figure.2.4}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Hexagon tessellation}}{36}{figure.2.5}
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Similarity distribution of \ac {GFC} tree cover vs. \ac {GL30} tree cover at 200}}{38}{figure.3.1}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Ecosystem service values}}{40}{figure.3.2}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Ecosystem service values}}{41}{figure.3.3}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Ecosystem service values}}{41}{figure.3.4}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Ecosystem service values}}{42}{figure.3.5}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Ecosystem service values}}{42}{figure.3.6}
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Ecosystem service values}}{43}{figure.3.7}
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Ecosystem service values}}{43}{figure.3.8}
-\contentsline {figure}{\numberline {3.9}{\ignorespaces Ecosystem service values}}{44}{figure.3.9}
-\contentsline {figure}{\numberline {3.10}{\ignorespaces Ecosystem service values}}{44}{figure.3.10}
-\contentsline {figure}{\numberline {3.11}{\ignorespaces Ecosystem service values}}{45}{figure.3.11}
-\contentsline {figure}{\numberline {3.12}{\ignorespaces Ecosystem service values}}{45}{figure.3.12}
-\contentsline {figure}{\numberline {3.13}{\ignorespaces Ecosystem service values}}{46}{figure.3.13}
-\addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Map of downloaded dataset tiles}}{12}{figure.1.1}
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Tile alignment algorithm}}{20}{figure.1.2}
+\contentsline {figure}{\numberline {1.3}{\ignorespaces Aligned raster images and sampling locations}}{20}{figure.1.3}
+\contentsline {figure}{\numberline {1.4}{\ignorespaces Classification of proximate deforestation drivers}}{23}{figure.1.4}
+\contentsline {figure}{\numberline {1.5}{\ignorespaces Hexagon tessellation}}{29}{figure.1.5}
