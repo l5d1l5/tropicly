@@ -62,7 +62,7 @@ def worker(landcover, treecover, gain, loss, filename):
 
 def superimpose(landcover, treecover, gain, loss, years=(1, 2, 3, 4, 5, 6, 7, 8, 9, 10), canopy_density=10):
     """
-    Determines the direct drivers of deforestation. Superimposes GL30 with
+    Determines the proximate drivers of deforestation. Superimposes GL30 with
     filtered GFC annual losses.
 
     :param landcover: np.array
@@ -98,10 +98,14 @@ def superimpose(landcover, treecover, gain, loss, years=(1, 2, 3, 4, 5, 6, 7, 8,
 
 def reclassify(driver, clustering=(20,), reject=(0, 20, 255), side_length=500, res=(1, 1)):
     """
-    Reclassify pixels in a raster image. Pixels selected by clustering will be clustered.
-    For each cluster the center point will be determined and a square buffer around centroid
-    is extracted in dimension of side_length and res. Most frequent class in buffer is applied
-    as the new class.
+    Reclassify pixels in a raster image by the following approach:
+    - Cluster pixels, parameter clustering determines which pixels should be interpreted as occupied
+    - Create square shaped buffer of parameter side_length size around cluster centroid
+    - Count most frequent class within buffer under exclusion of values in parameter reject
+    - Reassign cluster to most frequent class
+    - Parameter res defines the real world - image coordinates conversion (side_length / res)
+        Example: res=1,1, side_length=500
+                 buffer=500 pixel * 500 pixel
 
     :param driver: np.array
         A 2-dimensional integer numpy array.
