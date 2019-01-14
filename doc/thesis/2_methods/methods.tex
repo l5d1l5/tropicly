@@ -1,6 +1,7 @@
 \chapter{Data and methods}
 \label{ch:datamethods}
 % TODO one idea per paragraph
+% TODO rasterio, fiona, gepandas uses gdal, pandas and numpy use extensively c as backend language for fast proc
 	In this chapter we describe our approach to answer the scientific questions made in the introduction. The first section of this chapter introduces the datasets used during this study. For each dataset, we shortly describe by which approach it is derived and what are the fundamental properties of it. Additionally if possible, we try to give for each dataset an accuracy assessment ideally prepared by other scientists or by the research group itself. Finally, we describe our idea behind using the data and how we acquired and filtered it. The second and last section of this chapter is focused on the applied methodology to prepare our analysis and results. For each processing step we give a short description of the methodical background and describe the core functionality of our processing algorithms.
 
 	For implementing our processing algorithms we selected for each task the technology which fulfills best the requirements. Python is our core language for implementing our processing algorithms because it supports a easy implementation of multiprocessing which is heavily used in this project. From the Python \ac{stdlib} we used the following libraries: urllib, re, unittest, time, math, logging, collections, bisect, and enum. Additionally for geo-processing we used the following open source libraries: numpy, pandas, fiona, geopandas, shapely, matplotlib. The entire frontend of our Python source code is aggregated in a Jupyter Notebook and available on GITHUB. This ensures that everyone interested can easily reproduce the findings of our project. JavaScript and the additional modules papaparse and the google maps api are used for programming a small web app for cross validation of land use predictions. R is used for hypothesis testing. Bash is used to aggregate large raster datasets as vrt files. To prepare map visualizations we used QGIS. Dia is used for preparing flowcharts and GIMP is used for image post-processing.
@@ -151,37 +152,57 @@
 
 	\subsection{Deforestation}
 		\subsubsection{Forest definition}
-			%TODO equations
-			Goal:
 			We aggregate two layers. Both have slightly different definitions for tree cover. To successful aggregate the layers we must harmonize the tree cover situation between the gfc tree cover and the gl30 2000 treecover. Because we want to map changes both have to agree on tree cover as well on losses. Additionally we must develop an reliable process to compare the overall similarity between these images.
 			Idea is if both treecover at 2000 are nearly similar the should capture the same loss at 2010. Also we compared the forest loss agreement between both layers.
 
-			Similarity Treecover:
-			To determine the similarity between gl30 and gfc tree cover we used jaccard index. Jaccard Index (coefficient of community) is a simple measure of similarity between two binary paired populations or the measure of the degree of spatial overlap between two images. First applied by Jaccard in 1912 to compare distributions of alpine flora. Properties of Jaccard if a is zero jaccard is zero if b and c are zero jaccard is one. value range between 0 and 1 and relationship between s(ij) and a near linear. Process we computed subsequently for each image tile the jaccard index \citep{Jaccard1912,Shi1993,Sampat2009}. First step is to filter gl30 map for tree cover and set all values to one. Also we must set all values of the gfc tree cover layer to one. Next we compute by equation bla the jaccard index. After we exclude in gfc tree cover the canopy density below 11 and compute another times the jaccard indexs. This we execute till we computed the following jaccard indexes: JI$_0$$[0,100]$, JI$_{1}$$(10,100]$, JI$_{2}$$(20,100]$, JI$_{3}$$(30,100]$ the interval describes the canopy densities. The process can be implement as binary operations (a = x or y, abc = x or y, b = x xor a, c = y xor a, d = not x and not y) by means of numpy and python.
+			To determine the similarity between \ac{GL30} 2000 and \ac{GFC} reference tree-cover we used \ac{JI}. The \ac{JI} or coefficient of community is a simple measure of similarity between two binary paired populations or the measure of the degree of spatial overlap between two images \citep{Sampat2009}. This index was first applied by \citeauthor{Jaccard1912} to compare distributions of rare alpine flora, in 1912 \citep{Jaccard1912}.
+			
+			If we compare two binary images, let $a$ be the number where both images have an agreement represented as a pixel value of one. 
+
+			The \ac{JI} is always within the closed interval $[0,1]$, where a index of one or zero means a complete similarity between both populations or a complete disagreement, respectively. The relationship between $a$ and \ac{JI} is near-linear \citep{Shi1993}. 
+
+			First step is to filter gl30 map for tree cover and set all values to one. Also we must set all values of the gfc tree cover layer to one. Next we compute by equation bla the jaccard index. After we exclude in gfc tree cover the canopy density below 11 and compute another times the jaccard indexs. This we execute till we computed the following jaccard indexes: JI$_0$$[0,100]$, JI$_{1}$$(10,100]$, JI$_{2}$$(20,100]$, JI$_{3}$$(30,100]$ the interval describes the canopy densities.
+			\begin{equation}
+			\label{eq:jaccardmatrix}
+				\mathbf{JI_{coeff}} =
+				\begin{bmatrix}
+					|\mathbf{X_1} \land \mathbf{X_2}| & |(\mathbf{X_1} \land \mathbf{X_2}) \oplus \mathbf{X_2}|  \\
+					|(\mathbf{X_1} \land \mathbf{X_2}) \oplus \mathbf{X_1}| &  |(\neg \mathbf{X_1}) \land (\neg \mathbf{X_2})|  \\
+				\end{bmatrix}
+			\end{equation}
 			\begin{equation}
 			\label{eq:jaccard}
-				JI = \frac{|x_1 \land x_2|}{|x_1 \lor x_2|}
+				JI = \frac{|\mathbf{X_1} \land \mathbf{X_2}|}{|\mathbf{X_1} \lor \mathbf{X_2}|}
 			\end{equation}
-
-			Similarity treecover loss:
-			test
 
 			Hypothesis testing comparing similarities in tree cover:
 			After computing the jaccard index for each tile we tested if the tree cover similarity increases if we exclude a certain canopy density class. By using R and the Wilcoxon signed rank test we compared the similarities between the ji combinations.
 
+			%TODO check loss layer similar
+			Similarity treecover loss:
+
 		\subsubsection{Proximate deforestation driver}
 			%TODO flowchart needs reclassification
+			%TODO cite hoshen kopelman
 			Based on our forest definition developed in the previous section we want to classify all the tropical deforestation within a canopy density of $(10,100]$ percent between 2001 till 2010. Additionally we must consider the mean miss-classification rate of 52 \% by previous findings of \citeauthor{Seydewitz2017} \citep{Seydewitz2017}. Therefore we have to develop a feasible method to resolve this issue.
 
-			For classifying the proximate drivers of deforestation we selected the following raster images from our \ac{AISM}: \ac{GFC} treecover2000, \ac{GFC} lossyear, \ac{GFC} gain, and the \ac{GL30} \ac{LC} classification of 2010. Now, we apply to each raster image stack the following described operations. From the treecover2000 layer we select all pixels where the canopy density is within $(10,100]$ percent and set them to one (true). The same is procedure is applied on the lossyear layer by setting all forest loss pixels within the time period 2001 till 2010 to one (true). After both layers are combined with a logical AND to select our target deforestation pixels. Finally, we build the Hadamard product (element-wise multiplication) of the target deforestation layer and the \ac{GL30} \ac{LC} layer to classify the deforestation pixels. For classifying forest regrowth we filtered the \ac{GFC} gain layer by forest gains within our target temporal resolution and losses within our target canopy density. After, the filtered gains are aggregated with our classified deforestation by using the Hadamard product of both layers. Figure \ref{fig:driver_flowchart} shows the classification process as a flowchart. The classification process is implemented as a Python function which requires as parameter the previously named raster layers. Additionally the target canopy density and time period is freely selectable. The described filtering and aggregation steps are implements as binary operations for fast processing by means of numpy.
-
-			Clustering of all patches still classified as forest (value 20), apply square sized buffer around cluster center, count occurrences of other classes within the buffer, apply to cluster most frequent class, exclude from counting 20, 0, and 255, buffer size 500x500 m 25 ha.
+			For classifying the proximate drivers of deforestation we selected the following raster images from our \ac{AISM}: \ac{GFC} reference tree-cover, \ac{GFC} annual losses, \ac{GFC} gain, and the \ac{GL30} \ac{LC} classification of 2010. Now, we apply to each raster image stack the following described operations. From the reference tree-cover images we select all pixels where the canopy density is within the half open interval of $(10,100]$ percent and set them to one (true). The same exercise is applied on the annual losses stratum by setting all forest loss pixels within the time period 2001 till 2010 to one (true). After, both layers are combined with a logical AND operation to select our target deforestation pixels. Finally, we build the haadamard product (element-wise multiplication) of the target deforestation layer and the \ac{GL30} \ac{LC} stratum to classify the pixels with a deforestation event. For classifying forest regrowth we filtered the \ac{GFC} gain layer to consider only tree-cover gain within our target temporal resolution and target canopy density. After, the filtered stratum is aggregated with our classified deforestations by using the Hadamard product of both layers. Figure \ref{fig:driver_flowchart} shows an overview of the classification process. The classification algorithm is implemented as a Python function which requires as parameter the previously named raster layers. Additionally the target canopy density and time period is freely selectable for experimental variations. The described filtering and aggregation steps are implements as binary matrix operations for fast processing of large data sizes by means of numpy.
 			\begin{figure}[ht]
 				\centering
-				\includegraphics[scale=.9]{img/driver_flowchart}
+				\includegraphics[scale=.68]{img/driver_flowchart}
 				\caption[Classification of proximate deforestation drivers]{\textbf{Classification of proximate deforestation drivers:} For the classification of the proximate deforestation drivers the following layers are required GL30 2010, GFC treecover, annual losses, and gain. From treecover we select all pixels within the canopy density interval $(10,100)]$. The treecover mask is used to select the appropriate annual losses within the time interval $[2001,2010]$. To predict a land cover change after a deforestation event we use the hadamard product }
 				\label{fig:driver_flowchart}
 			\end{figure}
+
+			After classifying the proximate deforestation drivers we developed an approach to reclassify the misclassified pixels based on a approximated probability. We define mis-classified pixels as sites where the \ac{GFC} annual loss data predicts a deforestation but the \ac{GL30} stratum still classifies them as forest. First step of our reclassification is to cluster the mis-classified pixels with the Hoshen-Kopelman algorithm. The clustering algorithm is implemented as a part of \ac{GDAL} and can be called trough the rasterio interface. For this project we used the following parameters: connectivity 4 and a boolean mask where only pixel values 20 are true. Now the algorithm creates for each pixel cluster a polygon. After we created a squared sized buffer with side length of 500 x 500m around the polygon centroid (geometric midpoint of the polygon). Because \ac{WGS84} is not an equal area \ac{CRS} we must compute for each tile the buffer size separately. To compute the buffer size in image coordinates we used the Haversine formula in equation \ref{eq:haversine} to determine the on-ground resolution in meter on pixel level. Where $d$ is the great-circle distance between two latitude, longitude pairs $\varphi_n, \lambda_n$ and $r$ is the earth radius of approximately 6378137m. Because this computation is expensive we assumed that the pixel resolution is equal for an entire raster tile. After extracting the buffer we counted the most frequent class under exclusion of pixels with a value of 0, 20 or 255 within the buffer. Finally if the most frequent class is defined we reassigned this class value to the cluster. The reclassification algorithm is implemented as a Python function which requires as parameters a proximate driver raster image, a list of elements which should be interpreted as occupied cells for the clustering, pixel values which should be excluded from counting, the side length of the buffer, and the on-ground resolution. 
+			\begin{equation}
+			\label{eq:haversine}
+				d = 2r\arcsin\left(
+				\sqrt{
+						\sin^2\left(\frac{\varphi_2-\varphi_1}{2}\right)+\cos\left(\varphi_1\right)\cos\left(\varphi_2\right)\sin^2\left(\frac{\lambda_2-\lambda_1}{2}\right)
+				}
+				\right)
+			\end{equation}
 
 		\subsubsection{Accuracy assessment}
 			For examining the accuracy of our proximate deforestation driver prediction we used a confusion matrix (also known as two-way frequency tables, error matrix or contingency tables). These matrices are commonly used for an accuracy assessment of land cover classifications and enables the computation of marginal and conditional distributions \citep{Congalton1991,Foody2002}. Table \ref{tab:confusion} shows a general model of a confusion matrix. Foundation for an accuracy assessment by means of a confusion matrix is a collection of ground-truth samples which can be compared with the class predictions for these samples produced by a classification algorithm. For the preparation of our accuracy assessment, we have to extract a collection of pixel samples with a deforestation occurrence from our proximate  driver maps (further also called predictions). Next, we compose a set of ground-truth for these predictions (further also called references).
@@ -239,15 +260,6 @@
 	\subsection{Emissions}
 		\subsubsection{Above ground biomass}
 			For computing the loss and emissions from aboveground biomass we need the following layers: proximate deforestation drivers and the biomass map. From the proximate deforestation drivers map the total treecover loss is extracted by setting all values greater than zero to one. For converting carbon content to co2 we used the factor 3.7. The total aboveground biomass emissions from deforestation is computed by the following formula. We excluded from our calculation all pixels classified as forest.
-
-			\begin{equation}
-			\label{eq:Haversine}
-				d = 2r\arcsin\left(
-					\sqrt{
-						\sin^2\left(\frac{\varphi_2-\varphi_1}{2}\right)+\cos\left(\varphi_1\right)\cos\left(\varphi_2\right)\sin^2\left(\frac{\lambda_2-\lambda_1}{2}\right)
-					}
-				\right)
-			\end{equation}
 			\begin{equation}
 			\label{eq:AGB}
 				AGBE_{tile} = 3.7A\displaystyle\sum_{i=0}^{N}\displaystyle\sum_{j=0}^{M} AGB(i,j)Px(i,j)

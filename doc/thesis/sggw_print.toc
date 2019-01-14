@@ -14,14 +14,14 @@
 \contentsline {subsection}{\numberline {1.2.2}Deforestation}{20}{subsection.1.2.2}
 \contentsline {subsubsection}{\numberline {1.2.2.1}Forest definition}{20}{subsubsection.1.2.2.1}
 \contentsline {subsubsection}{\numberline {1.2.2.2}Proximate deforestation driver}{21}{subsubsection.1.2.2.2}
-\contentsline {subsubsection}{\numberline {1.2.2.3}Accuracy assessment}{22}{subsubsection.1.2.2.3}
-\contentsline {subsection}{\numberline {1.2.3}Emissions}{25}{subsection.1.2.3}
-\contentsline {subsubsection}{\numberline {1.2.3.1}Above ground biomass}{25}{subsubsection.1.2.3.1}
-\contentsline {subsubsection}{\numberline {1.2.3.2}Soil organic carbon change}{25}{subsubsection.1.2.3.2}
-\contentsline {subsection}{\numberline {1.2.4}Ecosystem service values}{26}{subsection.1.2.4}
-\contentsline {subsection}{\numberline {1.2.5}Binning analysis}{26}{subsection.1.2.5}
-\contentsline {chapter}{Bibliography}{I}{equation.1.2.22}
-\contentsline {chapter}{\nonumberline List of Figures}{IV}{chapter*.46}
-\contentsline {chapter}{\nonumberline List of Tables}{V}{chapter*.47}
-\contentsline {chapter}{List of Abbreviations}{VI}{chapter*.48}
-\contentsline {chapter}{Appendix}{VIII}{chapter*.49}
+\contentsline {subsubsection}{\numberline {1.2.2.3}Accuracy assessment}{23}{subsubsection.1.2.2.3}
+\contentsline {subsection}{\numberline {1.2.3}Emissions}{26}{subsection.1.2.3}
+\contentsline {subsubsection}{\numberline {1.2.3.1}Above ground biomass}{26}{subsubsection.1.2.3.1}
+\contentsline {subsubsection}{\numberline {1.2.3.2}Soil organic carbon change}{26}{subsubsection.1.2.3.2}
+\contentsline {subsection}{\numberline {1.2.4}Ecosystem service values}{27}{subsection.1.2.4}
+\contentsline {subsection}{\numberline {1.2.5}Binning analysis}{27}{subsection.1.2.5}
+\contentsline {chapter}{Bibliography}{I}{equation.1.2.23}
+\contentsline {chapter}{\nonumberline List of Figures}{IV}{chapter*.48}
+\contentsline {chapter}{\nonumberline List of Tables}{V}{chapter*.49}
+\contentsline {chapter}{List of Abbreviations}{VI}{chapter*.50}
+\contentsline {chapter}{Appendix}{VIII}{chapter*.51}
