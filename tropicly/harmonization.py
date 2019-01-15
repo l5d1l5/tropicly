@@ -93,8 +93,8 @@ def jaccard_index(arr1, arr2, return_matrix=False):
     Equation:
     JI = a / (a + b + c)
     a := Similarity, both are true
-    b := Difference, x is true and y is false
-    c := Difference, x is false and y is true
+    b := Difference, y is true and x is false
+    c := Difference, x is true and y is false
     d := Difference, x and y are false
 
     :param arr1: numpy.ndarray, list or tuple
@@ -104,7 +104,7 @@ def jaccard_index(arr1, arr2, return_matrix=False):
         A boolean value determining the return of the calculation matrix.
     :return: float OR (float, list)
         Default, the method returns only the JI if, return_matrix is set to true the
-        method returns the JI and the computation matrix.
+        method returns the JI and the coefficient matrix.
         [[a, b],
          [c, d]]
     """
@@ -115,9 +115,6 @@ def jaccard_index(arr1, arr2, return_matrix=False):
 
     a = x & y
     abc = x | y
-    b = x ^ a
-    c = y ^ a
-    d = np.logical_not(x) & np.logical_not(y)
 
     numerator = np.count_nonzero(a)
     denominator = np.count_nonzero(abc)
@@ -129,8 +126,12 @@ def jaccard_index(arr1, arr2, return_matrix=False):
         jaccard = np.round_(jaccard, 4)
 
     if return_matrix:
-        matrix = [[numerator, np.count_nonzero(b)],
-                  [np.count_nonzero(c), np.count_nonzero(d)]]
+        b = x ^ a
+        c = y ^ a
+        d = np.logical_not(abc)
+
+        matrix = [[numerator, np.count_nonzero(c)],
+                  [np.count_nonzero(b), np.count_nonzero(d)]]
 
         return jaccard, matrix
 
