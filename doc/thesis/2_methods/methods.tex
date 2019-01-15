@@ -1,14 +1,16 @@
 \chapter{Data and methods}
 \label{ch:datamethods}
-% TODO one idea per paragraph
-% TODO rasterio, fiona, gepandas uses gdal, pandas and numpy use extensively c as backend language for fast proc
-	In this chapter we describe our approach to answer the scientific questions made in the introduction. The first section of this chapter introduces the datasets used during this study. For each dataset, we shortly describe by which approach it is derived and what are the fundamental properties of it. Additionally if possible, we try to give for each dataset an accuracy assessment ideally prepared by other scientists or by the research group itself. Finally, we describe our idea behind using the data and how we acquired and filtered it. The second and last section of this chapter is focused on the applied methodology to prepare our analysis and results. For each processing step we give a short description of the methodical background and describe the core functionality of our processing algorithms.
+%TODO one idea per paragraph
+	In this chapter, we describe our approach to answer the scientific questions stated during the introduction. The first section of this chapter introduces the datasets used during this study. For each dataset, we shortly describe by which approach it is derived and what are the fundamental meta properties. Additionally if possible, we try to give for each dataset an accuracy assessment ideally prepared by other scientists or by the research group itself. Finally, we describe our idea behind using the data and how we acquired and filtered it. The second and last section of this chapter is focused on the applied methodology to prepare our analysis and results. For each processing step we give a short description of the methodical background and describe the core functionality of our processing algorithms.
 
+%TODO move to methods chapter
+%TODO rasterio, fiona, gepandas uses gdal, pandas and numpy use extensively c as backend language for fast proc
+%TODO mention development of the sheduler for multiprocessing
 	For implementing our processing algorithms we selected for each task the technology which fulfills best the requirements. Python is our core language for implementing our processing algorithms because it supports a easy implementation of multiprocessing which is heavily used in this project. From the Python \ac{stdlib} we used the following libraries: urllib, re, unittest, time, math, logging, collections, bisect, and enum. Additionally for geo-processing we used the following open source libraries: numpy, pandas, fiona, geopandas, shapely, matplotlib. The entire frontend of our Python source code is aggregated in a Jupyter Notebook and available on GITHUB. This ensures that everyone interested can easily reproduce the findings of our project. JavaScript and the additional modules papaparse and the google maps api are used for programming a small web app for cross validation of land use predictions. R is used for hypothesis testing. Bash is used to aggregate large raster datasets as vrt files. To prepare map visualizations we used QGIS. Dia is used for preparing flowcharts and GIMP is used for image post-processing.
 
 \section{Data}
 \label{sec:data}
-% TODO put in each dataset section why you use the data as first paragraph/sentence. SO WHAT??? 
+%TODO put in each dataset section why you use the data as first paragraph/sentence. SO WHAT??? 
 	Table \ref{tab:datasets} shows a comprehensive overview of the applied datasets for this study. Spatial datasets comprises vector as well raster data and empirical data is extracted from the cited publications. Each dataset is introduced in a extra section following the order of appearance in the table.
 	\begin{table}[ht]
 		\centering
@@ -80,7 +82,7 @@
 		The \ac{AGB} raster mosaic is public available on the homepage of \ac{GFW}. As mentioned, the dataset covers only the tropical zone, therefore we acquires the entire mosaic. The \ac{GFW} homepage provides an \ac{GeoJSON} \ac{API} to receive the actual \ac{URL} of each raster image. If a request is send to this \ac{API} the server response with a \ac{GeoJSON} feature collection. The collection contains as attributes the \ac{URL}s of the biomass images, the \ac{URL} of the uncertainty layers, and the rectangular bounds of each image. The data acquisition is automatized by means of Python and the \ac{stdlib} modules urllib, threading, and the open source library geopandas \citep{Rossum2018,McKinney2010}. At first the \ac{GeoJSON} is downloaded via an \ac{API} call and eventually stored on disk. Next we iterate the features of the \ac{GeoJSON} collection and extract the \ac{URL}s (biomass and uncertainty) of each tile. These \ac{URL}s are downloaded and subsequently stored on disk. During the downloads of the uncertainty layers the \ac{GFW} server answered repeatedly with a 404 (Not found). Therefore the uncertainty layers are not available. In total we downloaded 105 different image tiles, their extent and spatial location is shown in blue at the bottom panel of figure \ref{fig:tiles}.
 
 	\subsection{Global Soil Organic Carbon}
-		% TODO references for wosis, hwsd, and other data products
+	%TODO references for wosis, hwsd, and other data products
 		The \ac{GSOCmap} is a joint project between \ac{GSP} and \ac{ITPS} to produce a global \ac{SOC} content map by a country driven approach. In the year 2018, the first iteration of this map in version 1.0 was released, and shortly followed by 1.1 (new country submission by Rwanda) and 1.2 (new country submissions by Chile and Colombia). As the short release cycle suggests the mapping project is intended as a long-lived dataset which will improve over time and by new country submissions. Till now 67 (approximately 63 \% of the global land mass) different countries submitted their country based \ac{SOC} estimates. To foster the national \ac{SOC} mappings the \ac{ISRIC} provides several covariate datasets like national \ac{DEM} maps, annual spectral remote sensing data or national soil type grids. Additionally the contributors can join a mapping training and use the \ac{GSOCmap} cookbook as guidance for their mapping efforts. As an exchange, each country shares its national \ac{GSOCmap} by compliance of several criteria e.g. reporting of the Meta-data of the \ac{SOC} sampling (sample timeline, sample depth, bulk density etc.), uncertainty assessment, and the applied methods for estimating and interpolation of the \ac{SOC} content. For interpolating the guide organizations suggest the following approaches: simple geo-matching, class-matching, \ac{MLR}, \ac{RF} or \ac{SVM}. The national maps are aggregated to the final \ac{GSOCmap} with a target resolution of 30 arc-seconds (approximately 1 Km$^2$) in the \ac{CRS} \ac{WGS84}. The dataset is one single raster image as \ac{GTiff} coded in float covering the entire globe where each pixel value is the \ac{SOC} content in Mg C ha$^{-1}$ at a soil depth of 0-30 cm \citep{FAO2018}.
 
 		The product is validated by comparing the pixel level estimates with soil sampling data from various soil databases (WoSIS, HWSD, etc.). In total 312122 samples where divided into three sub-levels (<150 Mg C ha$^{-1}$, >150 Mg C ha$^{-1}$, and all samples) and subsequently computed the \ac{ME}. The \ac{ME} of the entire sample space and <150 Mg C ha$^{-1}$ suggests that the mean \ac{SOCC} estimate is an overestimate of 1.6 and 4.5 Mg C ha$^{-1}$ respectively. All samples with a \ac{SOCC} content >150 Mg C ha$^{-1}$ show an underestimate by approximately 165 Mg C ha$^{-1}$ in the mean. Additionally, an uncertainty assessment was prepared to estimate a \ac{SD} between $\pm$ 0-16 t ha$^{-1}$ for the tropical zone. Unfortunately, is this assessment pretty rough and till now not available as a product. The \ac{GSOCmap} in comparison with other global \ac{SOC} products has the lowest \ac{RMSE}. In summary, the prepared validations show evidence that the \ac{GSOCmap} is a conservative data product with a tendency to underestimate the \ac{SOCC}.
@@ -106,6 +108,7 @@
 		\end{table}
 
 	\subsection{Ecosystem Service Values}
+	%TODO move type to methods and explain there
 		Some text to ensure document flow.
 		\begin{table}[ht]
 			\centering
@@ -129,11 +132,12 @@
 
 \section{Methods}
 \label{sec:methods}
-% TODO flowchart of all processes
+%TODO flowchart of all processes
 	Figure \note{flowchart and reference} shows an overview of the entire processing pipeline. The following sections describe detailed the applied approach for each step in figure. The order of appearance is from left to right. 
 
 	\subsection{Preprocessing}
-		%TODO improve flowchart final masking, improve caption
+	%TODO improve flowchart final masking, improve caption
+	%TODO total number of tiles * datasets
 		Before we apply further analysis, we have to generalize the used datasets. As introduced in the data section do we use datasets which differ largely in their metadata properties, for example, single-tiled or multi-tiled images, used \ac{CRS}, spatial resolution, and file type. Therefore, our goal should be to develop a process which creates an image stack of equal meta-data for each location in our study extent. In further descriptions, we will refer to this stack as \ac{AISM}. As target \ac{CRS} for our \ac{AISM} we chose \ac{WGS84} and as target extent for the mosaic, we use the bounding box of the \ac{GL30}-2010 tiles. The following paragraph explains how we developed the alignment algorithm by means of Python and the additional open source libraries rasterio, geopandas, and shapely \citep{Rossum2018,McKinney2010}.
 
 		The first exercise of the preprocessing algorithm is to detect all tiles covering the extent of our template tiles. At first, we create for each multi-tiled dataset a polygon mask as \ac{SHP}. This mask contains the spatial extent of each tile within a dataset and as attribute the corresponding file identifier. If the dataset tiles are not in \ac{WGS84} the extracted bounds are subsequently reprojected to this \ac{CRS}. During the masking process, we recognized that the raster mosaic bounds of both \ac{GL30} datasets (2000 and 2010) generate re-projection errors. These errors showed up as polygons spanning the entire globe but one tile can only fill its \ac{UTM} zone extent. A further analysis revealed that all tiles located in \ac{UTM} zone 1 and 60 overflowing the maximum and minimum longitude coordinates of this zones. As solution we excluded all tiles within \ac{UTM} zone 1 and 60 from further processing, namely: n01\_00, s01\_00, s01\_10, s01\_15, s01\_20, s60\_00, s60\_05, s60\_10, s60\_15, and n53\_00. The described steps can be found as well in figure \ref{fig:preprocessing_flowchart}. Now, as the figure suggests we determine the intersection between these mask layers and group the intersecting tiles by our template tile. Next, we create for the template tile a re-projection profile (warp profile) and apply it subsequently to all intersecting tiles based on the following rules: if from one dataset more than one tile intersects merge them followed by re-projection or if only one tile intersects just re-project it. As introduced the \ac{GSOCmap} consist only of one single tile with a spatial resolution of approximately 1 Km$^2$, so it must only re-project and re-sampled by nearest-neighbor approach. We select from the \ac{IFL} layer all polygons within our template warp profile and convert them to a raster layer where intact forest patches are coded by a one in 8-bit unsigned integer. Last step of the alignment process is the rounding of the \ac{AISM} bounds to full integer degrees and a subsequent clipping of each tile to this rounded bounds. The entire work flow it pictured in figure \ref{fig:preprocessing_flowchart} and results in a \ac{AISM} shown in figure \ref{fig:aism}. Finally, we create a polygon mask of our \ac{AISM} and store for each polygon the corresponding dataset tiles. This mask is used as a file index for the next algorithms.
@@ -152,38 +156,35 @@
 
 	\subsection{Deforestation}
 		\subsubsection{Forest definition}
-			We aggregate two layers. Both have slightly different definitions for tree cover. To successful aggregate the layers we must harmonize the tree cover situation between the gfc tree cover and the gl30 2000 treecover. Because we want to map changes both have to agree on tree cover as well on losses. Additionally we must develop an reliable process to compare the overall similarity between these images.
-			Idea is if both treecover at 2000 are nearly similar the should capture the same loss at 2010. Also we compared the forest loss agreement between both layers.
+		%TODO Similarity treecover loss methods and results
+		%TODO reference to inferential statistics book
+		%TODO set number of tiles
+			We aggregate two layers. Both have slightly different definitions for tree cover. To successful aggregate the layers we must harmonize the tree cover situation between the gfc tree cover and the gl30 2000 tree-cover. Because we want to map changes both have to agree on tree cover as well on losses. Additionally we must develop an reliable process to compare the overall similarity between these images.
+			Idea is if both tree-cover at 2000 are nearly similar the should capture the same loss at 2010. Also we compared the forest loss agreement between both layers.
 
-			To determine the similarity between \ac{GL30} 2000 and \ac{GFC} reference tree-cover we used \ac{JI}. The \ac{JI} or coefficient of community is a simple measure of similarity between two binary paired populations or the measure of the degree of spatial overlap between two images \citep{Sampat2009}. This index was first applied by \citeauthor{Jaccard1912} to compare distributions of rare alpine flora, in 1912 \citep{Jaccard1912}.
-			
-			If we compare two binary images, let $a$ be the number where both images have an agreement represented as a pixel value of one. 
-
-			The \ac{JI} is always within the closed interval $[0,1]$, where a index of one or zero means a complete similarity between both populations or a complete disagreement, respectively. The relationship between $a$ and \ac{JI} is near-linear \citep{Shi1993}. 
-
-			First step is to filter gl30 map for tree cover and set all values to one. Also we must set all values of the gfc tree cover layer to one. Next we compute by equation bla the jaccard index. After we exclude in gfc tree cover the canopy density below 11 and compute another times the jaccard indexs. This we execute till we computed the following jaccard indexes: JI$_0$$[0,100]$, JI$_{1}$$(10,100]$, JI$_{2}$$(20,100]$, JI$_{3}$$(30,100]$ the interval describes the canopy densities.
-			\begin{equation}
-			\label{eq:jaccardmatrix}
-				\mathbf{JI_{coeff}} =
-				\begin{bmatrix}
-					|\mathbf{X_1} \land \mathbf{X_2}| & |(\mathbf{X_1} \land \mathbf{X_2}) \oplus \mathbf{X_2}|  \\
-					|(\mathbf{X_1} \land \mathbf{X_2}) \oplus \mathbf{X_1}| &  |(\neg \mathbf{X_1}) \land (\neg \mathbf{X_2})|  \\
-				\end{bmatrix}
-			\end{equation}
+			To determine the similarity between \ac{GL30} 2000 and \ac{GFC} reference tree cover we used \ac{JI}. The \ac{JI} or coefficient of community is a simple measure of similarity between two binary paired populations or the measure of the degree of spatial overlap between two images \citep{Sampat2009}. This index was first applied by \citeauthor{Jaccard1912} to compare distributions of rare alpine flora, in 1912 \citep{Jaccard1912}. If we compare two binary images, let $a$ be the magnitude where both images (Img$_1$, Img$_2$) have an agreement represented as a pixel value of one. Let $b$ the magnitude where Img$_1$ is zero and Img$_2$ is one and $c$ the inverse of this expression. Assume that $d$ is the magnitude of elements where both images are zero. Table \ref{tab:jaccardmatrix} that the computation of this coefficients $a$, $b$, $c$, and $d$ can expressed as boolean operations. Equation \ref{eq:jaccard} shows how the \ac{JI} is computed from the coefficients. This computation can be reduced to two boolean operations for a major performance increase. The \ac{JI} is always within the closed interval $[0,1]$, where a index of one or zero means a complete similarity between both populations or a complete disagreement, respectively. The relationship between $a$ and \ac{JI} is near linear \citep{Shi1993}. The first step to compute the \ac{JI} for our raster images is to extract the tree cover from the \ac{GL30} 2000 land cover by setting all pixels with values $\neq$ 20 to zero and values $=$ 20 to one. Next, we extract from the \ac{GFC} reference tree-cover pixel values within the half-opened interval of the following canopy density classes and set them to one: $(0,100]$, $(10,100]$, $(20,100]$, and $(30,100]$. Now we compute for the entire study extent of \note{n} tiles and each tile combination \ac{GL30} tree cover and \ac{GFC} tree cover canopy density subset the \ac{JI} by using equation \ref{eq:jaccard}. The algorithm is implemented in Python by using numpy's ability to perform boolean operations between large matrices. As parameters the function expects two matrices with the same dimensionality in $R^{n*m}$ and a boolean indicating if the function should return the coefficient matrix as well. The described preprocessing steps are implemented as a extra function which accepts to raster layers and optionally a list of integer values to consider as \ac{GFC} tree-cover as well the lower interval threshold of the copy densities.
+			\begin{table}[ht]
+				\centering
+				\caption[Jaccard Index coefficient matrix]{\textbf{Jaccard Index coefficient matrix:} $a$ is the magnitude of agreement, $d$ is the magnitude of disagreement, $b$ and $c$ are the partial disagreements between both images. The computation of this coefficients can be expressed as boolean operations on matrices as shown in this table.}
+				\label{tab:jaccardmatrix}
+				\begin{tabular}{lccc}
+					\hline
+					& & \multicolumn{2}{c}{Img$_1$} \\
+					& State & 1 & 0 \\\hline
+					\multirow{2}{*}{\STAB{\rotatebox[origin=c]{90}{Img$_2$}}} & 1 & $a=|\mathbf{X_1} \land \mathbf{X_2}|$ & $b=|(\mathbf{X_1} \land \mathbf{X_2}) \oplus \mathbf{X_2}| $ \\ 
+					& 0 & $c=|(\mathbf{X_1} \land \mathbf{X_2}) \oplus \mathbf{X_1}|$ & $d=|\neg ( \mathbf{X_1} \lor \mathbf{X_2})|$ \\\hline 
+				\end{tabular}
+			\end{table}
 			\begin{equation}
 			\label{eq:jaccard}
-				JI = \frac{|\mathbf{X_1} \land \mathbf{X_2}|}{|\mathbf{X_1} \lor \mathbf{X_2}|}
+				JI = \frac{a}{a+b+c} = \frac{|\mathbf{X_1} \land \mathbf{X_2}|}{|\mathbf{X_1} \lor \mathbf{X_2}|}
 			\end{equation}
 
-			Hypothesis testing comparing similarities in tree cover:
-			After computing the jaccard index for each tile we tested if the tree cover similarity increases if we exclude a certain canopy density class. By using R and the Wilcoxon signed rank test we compared the similarities between the ji combinations.
-
-			%TODO check loss layer similar
-			Similarity treecover loss:
+			Now we have to check if the tree cover similarity increases or decreases, hypothesis is the similarity of GL30 and GFC tree cover is max when the selected canopy density is 10-100 in case of tropical africa or 30-100 percent in tropical asia and america. We use inferential statistics and cross testing to check our assumptions. We grouped the computed jaccard indexes per continent/region as the red line in figure 1.3 shows. To avoid to deduce the underlying distribution of the jaccard indexes we used a nonparametric test called wilcoxon signed rank test. this test requires in minimum ordinal scaled samples, the dependent variable is continues and each pair is independent. This criteria are meet by our dataset. We applied the wilcoxon test as two and one sided. The test procedure is implemented by means of R.
 
 		\subsubsection{Proximate deforestation driver}
-			%TODO flowchart needs reclassification
-			%TODO cite hoshen kopelman
+		%TODO flowchart needs reclassification
+		%TODO cite hoshen kopelman
 			Based on our forest definition developed in the previous section we want to classify all the tropical deforestation within a canopy density of $(10,100]$ percent between 2001 till 2010. Additionally we must consider the mean miss-classification rate of 52 \% by previous findings of \citeauthor{Seydewitz2017} \citep{Seydewitz2017}. Therefore we have to develop a feasible method to resolve this issue.
 
 			For classifying the proximate drivers of deforestation we selected the following raster images from our \ac{AISM}: \ac{GFC} reference tree-cover, \ac{GFC} annual losses, \ac{GFC} gain, and the \ac{GL30} \ac{LC} classification of 2010. Now, we apply to each raster image stack the following described operations. From the reference tree-cover images we select all pixels where the canopy density is within the half open interval of $(10,100]$ percent and set them to one (true). The same exercise is applied on the annual losses stratum by setting all forest loss pixels within the time period 2001 till 2010 to one (true). After, both layers are combined with a logical AND operation to select our target deforestation pixels. Finally, we build the haadamard product (element-wise multiplication) of the target deforestation layer and the \ac{GL30} \ac{LC} stratum to classify the pixels with a deforestation event. For classifying forest regrowth we filtered the \ac{GFC} gain layer to consider only tree-cover gain within our target temporal resolution and target canopy density. After, the filtered stratum is aggregated with our classified deforestations by using the Hadamard product of both layers. Figure \ref{fig:driver_flowchart} shows an overview of the classification process. The classification algorithm is implemented as a Python function which requires as parameter the previously named raster layers. Additionally the target canopy density and time period is freely selectable for experimental variations. The described filtering and aggregation steps are implements as binary matrix operations for fast processing of large data sizes by means of numpy.
@@ -280,14 +281,14 @@
 			For computing the ecosystem service balances we just relayed on our proximate deforestation drivers predictions. The loss of ecosystem service values is just the sum of deforested pixels multiplied by the ecosystem service value of tropical forest of a certain dataset. we excluded all pixels classified as forest from the loss sum. for computing the ecosystem service gain we used the deforestation driver prediction classes. now we depend on what the empirical data provides for the certain type.
 
 	\subsection{Binning analysis}
-		% TODO REVIEW, CHANGE TO GOOD ENGLISH
+	%TODO REVIEW, CHANGE TO GOOD ENGLISH
 		The previous sections were focused on the generation of large scale spatial data. Now, a feasible method must be developed for analyzing, aggregating, interpreting, and visualizing our results. For the development of a proper approach we have to generalize the problem domain. At first we are confronted with large N (many samples) which results in a high dimensionality and complexity of relationships among this variables \citep{Carr1990}. From a visual/analytical perspective georeferenced raster maps can be interpreted as a multivariate scatter plot of large datasets where longitude and latitude represent the x and y coordinate of an data point and the pixel values (in this case nominal scaled) representing the third dimension as an group coloring. Therefore we have a large multidimensional dataset combined with a scatter plot visualization which leads commonly to over plotting issues and hidden point densities \citep{Carr1987}. Due to the spatial nature of your data we are also confronted with not equal distributed data some regions show high data densities and other regions have sparse to no data. Also a severe problem domain is the frame size of our representation. Goal is to present data on a continental level which intensifies visual problems. Each pixel has a resolution of approximately 30x30m, the continental representation of americas spanning approximately 1200000x120000km2. Therefore small scale isolated changes are hidden and only large scale changes are visual detectable. Which results in hidden details and not perceivable patterns of change.
 
-		% TODO REFERENCE FOR MAJOR RESAMPLING APPROACH
-		% TODO DESCRIBE ADVANTAGES DISADVANTAGES OF VARIOUS TESSELATIONS
+	%TODO REFERENCE FOR MAJOR RESAMPLING APPROACH
+	%TODO DESCRIBE ADVANTAGES DISADVANTAGES OF VARIOUS TESSELATIONS
 		Goal should be to develop an process who solve this issues and generates satisfying output for our multivariate data. In case of raster data a re-sampling to coarser resolution could solve over plotting and resolution issues as well normalize the unequal distributed data. But the nature of re-sampling (for nominal data a nearest neighbor or majority wins \note{Reference}) would negate important spatial patterns as well frequency distributions. Another well known approach is to use binning of the spatial explicit data with a certain kind of regular polygon that is tessellating the plane \citep{Carr1992}. Polygon tessellations provide numerous opportunities for presenting multivariate statistical summaries. The scaling of the polygon could be used to represent pixel densities within the polygon area, a polygon filling color gradient is applicable to show nominal or ordinal scaled data. Also it is imaginable to use the polygon interior for a pie chart. To use regular tessellation it is important to mention there are only three types of regular polygons tessellate the plane: squares, equilateral triangles and hexagons \citep{Carr1992}. Square tessellation is the most common approach used for binning in spatial visualization. A raster image is a square tessellation. In a square mosaic each polygon shares 4 edge neighbors and 4 vertex neighbors \note{more explanation error distance disadvantages etc Hexagons properties, advantages disadvantages of both tessellations}. Final goal is to show your analysis results of spatial explicit raster data in hexagonal binned form. For bivariate maps we choose a visual representation with scaled hexagons and colorization. For multivariate details we choose a pie chart alike visualization. We split the hexagons horizontal in regards of the presented ratio. The ratios should be ordered descending so that the greatest ratio is south oriented. It is following a general description how we created the hexagon grids and how we tackled the polygon split problem. 
 
-		% TODO REFERENCE IMAGE BETTER
+	%TODO REFERENCE IMAGE BETTER
 		To be flexible at hexagon construction we accept 4 different parameters as construction arguments: $D$ long diagonal (Diameter of the circumscribing circle), $d$ short diagonal (diameter of the inscribed circle), $A$ area the hexagon should span and or $e$ the edge length. One selected parameter of these is used to compute $R$ the radius of the circumscribing circle with respect to input parameter as shown in  equation \ref{eq:paramters}. R is used to calculate the midpoint $<c_x, c_y>$ of the hexagon located in the first quadrant of the cartesian coordinate system Equation \ref{eq:centerx} and \ref{eq:centery}. Equation \ref{eq:hexagon} shows the computation of the hexagon anti-clockwise vertex matrix. Whereas the two leftmost vertices (first and last row of the matrix $\textbf{H}$) are located at koordinatenursprung, will sagen auf deutsch korridanten at x=0 und y=value of matrix. In summary equation \ref{eq:paramters} to \ref{eq:hexagon} show the creation of an hexagon at the leftmost corner of first quadrant (Figure \ref{fig:hexagon}). The orientation is important for the subsequent mosaic creation.
 		\begin{equation}
 		\label{eq:paramters}
@@ -310,8 +311,8 @@
 				1 & 1 & 1 & 1 & 1 & 1
 			\end{bmatrix}
 		\end{equation}
-		% TODO BENCHMARK FUNCTIONS
-		% TODO FINISH TESSELATION DESCRIPTION USE IMAGE
+	%TODO BENCHMARK FUNCTIONS
+	%TODO FINISH TESSELATION DESCRIPTION USE IMAGE
 		A polygon tessellation needs several polygons to create a grid in case of the creation of one hexagon with the presented algorithm needs approximately \note{benchmark} but the creation of \note{several N hexagons} needs approximately \note{benchmark}. Therefore it is much simpler to create only one hexagon with the presented algorithm and to create the grid polygons by copying the coordinates of the source polygon and translating them to their target position with a affine transformation matrix shown in equation \ref{eq:translate}. To create the grid we get the rectangular bounds of the area to tessellate as a matrix $\textbf{B} \in R^{2\times2}$ (equation \ref{eq:bounds}), where the first column of the matrix contains the lower left corner and the second column the upper right corner of the image. Each subsequent translation in regards of $x_{off}$ is $x_1 + d$ for even rows and bla bla for odd rows. $Y_{off}$ is computed by bla bla see figure \ref{fig:hexagon}.
 		\begin{equation}
 		\label{eq:translate}
@@ -336,9 +337,9 @@
 			\caption[Hexagon tessellation]{\textbf{Hexagon tessellation:} Located at the left bottom corner in red a hexagon defined by its geometric properties the 6 vertex vectors \{$\vec{v_0},...,\vec{v_5}$\} (black crosses), with center vector $\vec{m}$, edge length $e$, $R$ radius of the circumscribing circle, $r$ radius of the inscribed circle and $d$ the length of the short diagonal. Top right black dotted box are the bounds of an area which is tessellated by a hexagon grid in red. Each grid cell is translated from the origin hexagon at its position by computing the $x_{off}$ and $y_{off}$ offset with the presented equations at the left-hand side of the grid. }
 			\label{fig:hexagon}
 		\end{figure}
-		% TODO DESCRIBE THE BINNING OF DATA AND WHAT WE WANT TO ACHIEVE
+	%TODO DESCRIBE THE BINNING OF DATA AND WHAT WE WANT TO ACHIEVE
 		Binning of raster data is easy we just have a point in polygon problem each points/pixels falling in hexagon are counted and aggregated through a function. In case of drivers of deforestation we count all driver classes per hexagon and compute ratios next we compute the sha \note{describe for each map how you build it}
-		% TODO DESCRIBE CLIPPING
+	%TODO DESCRIBE CLIPPING
 		As mentioned before for the visualization of the drivers of deforestation map we want to segment the hexagons with horizontal lines and each segment should represent the share of the direct deforestation driver within the tessellated area. To compute the split line for a certain hexagon we need the hexagon R computeable from the area of the hexagon equation \ref{eq:radius} and the rectangular bounds of the hexagon. We compute the relative share of an deforestation driver per hexagon this relative share can be used to compute the y-axis coordinate of an split line equation \ref{eq:percentage}. A regular hexagon can not only be presented in it vertex form as shown above. We can also use functions to define the hexagon shape. A hexagon consist of 2 picewise functions where each function consist of 3 linear functions restricted to an intervall. If we invert these functions we can use these functions to compute the x-coordinate of the split line with the previous computed y-coordinate Equations \ref{eq:left} and \ref{eq:right}. As a results we receive the solution matrix L which represents the horizontal line segment splitting the hexagon at the point where we want (driver ratio share) equation \ref{eq:line}. The solution matrix can be plugged in to a polygon split function which separates the hexagon polygon in a upper and lower part to do so we iterate over the hexagon vertices and decide if they are above or under the split line and append to a lower upper polygon. These list are our results \note{explain better split function}.
 		\begin{equation}
 		\label{eq:radius}
@@ -374,4 +375,4 @@
 				y & y
 			\end{bmatrix}
 		\end{equation}
-		% TODO describe how you aggreageted the information of the maps
+	%TODO describe how you aggreageted the information of the maps
