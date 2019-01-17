@@ -14,15 +14,13 @@
 \contentsline {subsection}{\numberline {1.2.2}Preprocessing}{19}{subsection.1.2.2}
 \contentsline {subsection}{\numberline {1.2.3}Deforestation}{20}{subsection.1.2.3}
 \contentsline {subsubsection}{\numberline {1.2.3.1}Forest definition}{20}{subsubsection.1.2.3.1}
-\contentsline {subsubsection}{\numberline {1.2.3.2}Proximate deforestation driver}{22}{subsubsection.1.2.3.2}
+\contentsline {subsubsection}{\numberline {1.2.3.2}Proximate deforestation driver}{23}{subsubsection.1.2.3.2}
 \contentsline {subsubsection}{\numberline {1.2.3.3}Accuracy assessment}{24}{subsubsection.1.2.3.3}
-\contentsline {subsection}{\numberline {1.2.4}Emissions}{26}{subsection.1.2.4}
-\contentsline {subsubsection}{\numberline {1.2.4.1}Above ground biomass}{26}{subsubsection.1.2.4.1}
-\contentsline {subsubsection}{\numberline {1.2.4.2}Soil organic carbon change}{27}{subsubsection.1.2.4.2}
-\contentsline {subsection}{\numberline {1.2.5}Ecosystem service values}{27}{subsection.1.2.5}
-\contentsline {subsection}{\numberline {1.2.6}Binning analysis}{27}{subsection.1.2.6}
+\contentsline {subsection}{\numberline {1.2.4}Emissions}{27}{subsection.1.2.4}
+\contentsline {subsection}{\numberline {1.2.5}Ecosystem service values}{28}{subsection.1.2.5}
+\contentsline {subsection}{\numberline {1.2.6}Binning analysis}{28}{subsection.1.2.6}
 \contentsline {chapter}{Bibliography}{I}{equation.1.2.22}
-\contentsline {chapter}{\nonumberline List of Figures}{IV}{chapter*.48}
-\contentsline {chapter}{\nonumberline List of Tables}{V}{chapter*.49}
-\contentsline {chapter}{List of Abbreviations}{VI}{chapter*.50}
-\contentsline {chapter}{Appendix}{VIII}{chapter*.51}
+\contentsline {chapter}{\nonumberline List of Figures}{IV}{chapter*.49}
+\contentsline {chapter}{\nonumberline List of Tables}{V}{chapter*.50}
+\contentsline {chapter}{List of Abbreviations}{VI}{chapter*.51}
+\contentsline {chapter}{Appendix}{VIII}{chapter*.52}
