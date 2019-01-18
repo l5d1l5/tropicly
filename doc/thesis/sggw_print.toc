@@ -10,15 +10,15 @@
 \contentsline {subsection}{\numberline {1.1.7}Ecosystem Service Values}{17}{subsection.1.1.7}
 \contentsline {subsection}{\numberline {1.1.8}Auxiliary}{18}{subsection.1.1.8}
 \contentsline {section}{\numberline {1.2}Methods}{18}{section.1.2}
-\contentsline {subsection}{\numberline {1.2.1}Software, design and technology}{19}{subsection.1.2.1}
+\contentsline {subsection}{\numberline {1.2.1}Software, design and technology}{18}{subsection.1.2.1}
 \contentsline {subsection}{\numberline {1.2.2}Preprocessing}{19}{subsection.1.2.2}
 \contentsline {subsection}{\numberline {1.2.3}Deforestation}{20}{subsection.1.2.3}
 \contentsline {subsubsection}{\numberline {1.2.3.1}Forest definition}{20}{subsubsection.1.2.3.1}
 \contentsline {subsubsection}{\numberline {1.2.3.2}Proximate deforestation driver}{23}{subsubsection.1.2.3.2}
 \contentsline {subsubsection}{\numberline {1.2.3.3}Accuracy assessment}{24}{subsubsection.1.2.3.3}
 \contentsline {subsection}{\numberline {1.2.4}Emissions}{27}{subsection.1.2.4}
-\contentsline {subsection}{\numberline {1.2.5}Ecosystem service values}{28}{subsection.1.2.5}
-\contentsline {subsection}{\numberline {1.2.6}Binning analysis}{28}{subsection.1.2.6}
+\contentsline {subsection}{\numberline {1.2.5}Ecosystem service values}{29}{subsection.1.2.5}
+\contentsline {subsection}{\numberline {1.2.6}Binning analysis}{29}{subsection.1.2.6}
 \contentsline {chapter}{Bibliography}{I}{equation.1.2.22}
 \contentsline {chapter}{\nonumberline List of Figures}{IV}{chapter*.49}
 \contentsline {chapter}{\nonumberline List of Tables}{V}{chapter*.50}

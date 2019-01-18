@@ -6,7 +6,6 @@
 \section{Data}
 \label{sec:data}
 %TODO put in each dataset section why you use the data as first paragraph/sentence. SO WHAT??? 
-%TODO reference for gadm
 	\begin{table}[ht]
 		\centering
 		\caption[Datasets used during this study]{\textbf{Datasets used during this study:} The source column contains a reference to the corresponding dataset launch publication. If the data is provided as a download the bibliographic reference contains the download URL.}
@@ -19,7 +18,7 @@
 			Intact Forest Landscape & spatial & \citet{Potapov2017}\\
 			Aboveground Woddy Biomass & spatial & \citet{Baccini2015}\\
 			Global Soil Organic Carbon Content & spatial & \citet{FAO2018}\\
-			Global Administrative Areas & spatial & \\
+			Global Administrative Areas & spatial & \citet{Hijmans2018}\\
 			Soil Organic Carbon Change & empirical & \citet{Don2010}\\
 			\multirow{3}{*}{Ecosystem Service Values} & \multirow{3}{*}{empirical} & \citet{Groot2012}\\
 			&& \citet{Costanza2014}\\
@@ -105,7 +104,7 @@
 
 	\subsection{Ecosystem Service Values}
 	%TODO move type to methods and explain there
-		Some text to ensure document flow.
+		\note{Pending}
 		\begin{table}[ht]
 			\centering
 			\caption[Selection of Ecosystem Service Values (ESV) used in this study]{\textbf{Selection of Ecosystem Service Values (ESV) per biome used in this study:} ESV per biome connected with the corresponding GlobeLand30 land-cover class, and its monetary value in Int.\$ ha$^-1$. Dg refers to data from \citeauthor{Groot2012}, Co from \citeauthor{Costanza2014}, and Wb from \citeauthor{Siikamaki2015}.\citep{Groot2012,Costanza2014,Siikamaki2015}}
@@ -131,11 +130,10 @@
 %TODO flowchart of all processes
 	Figure \note{flowchart and reference} shows an overview of the entire processing pipeline. The following sections describe detailed the applied approach for each step in figure. The order of appearance is from left to right. 
 
-%TODO rasterio, fiona, gepandas uses gdal, pandas and numpy use extensively c as backend language for fast proc
-%TODO mention development of the sheduler for multiprocessing
-	For implementing our processing algorithms we selected for each task the technology which fulfills best the requirements. Python is our core language for implementing our processing algorithms because it supports a easy implementation of multiprocessing which is heavily used in this project. From the Python \ac{stdlib} we used the following libraries: urllib, re, unittest, time, math, logging, collections, bisect, and enum. Additionally for geo-processing we used the following open source libraries: numpy, pandas, fiona, geopandas, shapely, matplotlib. The entire frontend of our Python source code is aggregated in a Jupyter Notebook and available on GITHUB. This ensures that everyone interested can easily reproduce the findings of our project. JavaScript and the additional modules papaparse and the google maps api are used for programming a small web app for cross validation of land use predictions. R is used for hypothesis testing. Bash is used to aggregate large raster datasets as vrt files. To prepare map visualizations we used QGIS. Dia is used for preparing flowcharts and GIMP is used for image post-processing.
-
 	\subsection{Software, design and technology}
+	%TODO rasterio, fiona, gepandas uses gdal, pandas and numpy use extensively c as backend language for fast proc
+	%TODO mention development of the sheduler for multiprocessing
+		For implementing our processing algorithms we selected for each task the technology which fulfills best the requirements. Python is our core language for implementing our processing algorithms because it supports a easy implementation of multiprocessing which is heavily used in this project. From the Python \ac{stdlib} we used the following libraries: urllib, re, unittest, time, math, logging, collections, bisect, and enum. Additionally for geo-processing we used the following open source libraries: numpy, pandas, fiona, geopandas, shapely, matplotlib. The entire frontend of our Python source code is aggregated in a Jupyter Notebook and available on GITHUB. This ensures that everyone interested can easily reproduce the findings of our project. JavaScript and the additional modules papaparse and the google maps api are used for programming a small web app for cross validation of land use predictions. R is used for hypothesis testing. Bash is used to aggregate large raster datasets as vrt files. To prepare map visualizations we used QGIS. Dia is used for preparing flowcharts and GIMP is used for image post-processing.
 
 	\subsection{Preprocessing}
 	%TODO improve flowchart final masking, improve caption
@@ -156,14 +154,11 @@
 			\label{fig:aism}
 		\end{figure}
 
-	\subsection{Deforestation}
+	\subsection{Deforestation} 
 		\subsubsection{Forest definition}
-		%TODO Similarity treecover loss methods and results
+		%TODO Similarity treecover loss methods
 		%TODO set number of tiles
-			We aggregate two layers. Both have slightly different definitions for tree cover. We must harmonize this tree cover definitions
-			our switch is the canopy density of gfc. we can regulate over this wich losses to consider. problem we want to classify stable deforestation to deforestation with a land use change after deforestation. not deforestation with 
-			To successful aggregate the layers we must harmonize the tree cover situation between the gfc tree cover and the gl30 2000 tree-cover. Because we want to map changes both have to agree on tree cover as well on losses. Additionally we must develop an reliable process to compare the overall similarity between these images.
-			Idea is if both tree-cover at 2000 are nearly similar the should capture the same loss at 2010. Also we compared the forest loss agreement between both layers.
+			To determine the proximate driver of deforestation we applied the two datasets \ac{GFC} and \ac{GL30} but both differ in their definition of tree cover by canopy cover threshold as introduced in section \ref{sec:data}. \ac{GFC} detects tree cover over the entire canopy density interval of $(0,100)$ while the \ac{GL30} threshold is set to > 10 \%. To successful extract stable land cover transformation by superimposing both layers we must harmonize the tree cover definition of both strata. Our hypothesis is if both layers agree on tree cover they should also agree if a transition to an non-forest state occurs. To harmonize both definitions we have the opportunity to vary the canopy density of \ac{GFC} to determine at which density class the similarity between them is at its maximum. After we use the examined max similarity canopy density to filter the tree cover loss and gain layer.
 
 			To determine the similarity between \ac{GL30} 2000 and \ac{GFC} reference tree cover we used the \ac{JI}. The \ac{JI} or coefficient of community is a simple measure of similarity between two pairs of a binary population or the measure of the degree of spatial overlap between two images \citep{Sampat2009}. This index was first applied by \citeauthor{Jaccard1912} to compare distributions of rare alpine flora, in 1912 \citep{Jaccard1912}. If we compare two binary images, let $a$ be the magnitude where both images (Img$_1$, Img$_2$) have an agreement represented as a pixel value of one. Let $b$ the magnitude where Img$_1$ is zero and Img$_2$ is one and $c$ the inverse of this expression. Assume that $d$ is the magnitude of elements where both images are zero. The matrix in table \ref{tab:jaccardmatrix} shows that the computation of this coefficients $a$, $b$, $c$, and $d$ can be expressed as a set of boolean operations. Equation \ref{eq:jaccard} shows how the \ac{JI} is computed by substitute integer values for the variables. This computation can be reduced to two boolean operations for a major performance increase. The \ac{JI} is always within the closed interval $[0,1]$, where a index of one or zero means a complete similarity between both populations or a complete disagreement, respectively. The relationship between $a$ and \ac{JI} is near linear \citep{Shi1993}. The first step to compute the \ac{JI} for our raster images is to extract the tree cover from the \ac{GL30} 2000 land cover by setting all pixels with values $\neq$ 20 to zero and values $=$ 20 to one. Next, we extract from the \ac{GFC} reference tree-cover pixel values within the half-opened interval of the following canopy density classes and set them to one: $(0,100]$, $(10,100]$, $(20,100]$, and $(30,100]$. We will refer to this \ac{JI} of different canopy density classes as JI$_0$, JI$_1$, JI$_2$, and JI$_3$. Now we compute for the entire study extent of \note{n} tiles and each tile combination of \ac{GL30} tree cover and \ac{GFC} tree cover canopy density subset the \ac{JI} by using equation \ref{eq:jaccard}. The algorithm is implemented in Python by using numpy's ability to perform boolean operations between large matrices. As parameters the function expects two matrices with the same dimensionality in $R^{n*m}$ and a boolean indicating if the function should return the coefficient matrix as well. The described preprocessing steps are implemented as a extra function which accepts to raster layers and optionally a list of integer values to consider as \ac{GFC} tree-cover as well the lower interval threshold of the copy densities.
 			\begin{table}[ht]
@@ -187,11 +182,10 @@
  
 		\subsubsection{Proximate deforestation driver}
 		%TODO flowchart needs reclassification
-		%TODO cite hoshen kopelman
 		%TODO add to goal the median loss agreement
 			Based on our forest definition developed in the previous section we want to classify all the tropical deforestation within a canopy density of $(10,100]$ percent between 2001 till 2010. Additionally we must consider the mean miss-classification rate of 52 \% by previous findings of \citeauthor{Seydewitz2017} \citep{Seydewitz2017}. Therefore we have to develop a feasible method to resolve this issue.
 
-			For classifying the proximate drivers of deforestation we selected the following raster images from our \ac{AISM}: \ac{GFC} reference tree-cover, \ac{GFC} annual losses, \ac{GFC} gain, and the \ac{GL30} \ac{LC} classification of 2010. Now, we apply to each raster image stack the following described operations. From the reference tree-cover images we select all pixels where the canopy density is within the half open interval of $(10,100]$ percent and set them to one (true). The same exercise is applied on the annual losses stratum by setting all forest loss pixels within the time period 2001 till 2010 to one (true). After, both layers are combined with a logical AND operation to select our target deforestation pixels. Finally, we build the hadamard product (element-wise multiplication) of the target deforestation layer and the \ac{GL30} \ac{LC} stratum to classify the pixels with a deforestation event. For classifying forest regrowth we filtered the \ac{GFC} gain layer to consider only tree-cover gain within our target temporal resolution and target canopy density. After, the filtered stratum is aggregated with our classified deforestations by using the Hadamard product of both layers. We will refer to this proximate deforestation driver layers as PDDL. Figure \ref{fig:driver_flowchart} shows an overview of the classification process. The classification algorithm is implemented as a Python function which requires as parameter the previously named raster layers. Additionally the target canopy density and time period is freely selectable for experimental variations. The described filtering and aggregation steps are implements as binary matrix operations for fast processing of large data sizes by means of numpy.
+			For classifying the proximate drivers of deforestation we selected the following raster images from our \ac{AISM}: \ac{GFC} reference tree-cover, \ac{GFC} annual losses, \ac{GFC} gain, and the \ac{GL30} \ac{LC} classification of 2010. Now, we apply to each raster image stack the following described operations. From the reference tree-cover images we select all pixels where the canopy density is within the half open interval of $(10,100]$ percent and set them to one (true). The same exercise is applied on the annual losses stratum by setting all forest loss pixels within the time period 2001 till 2010 to one (true). After, both layers are combined with a logical AND operation to select our target deforestation pixels. Finally, we build the hadamard product (element-wise multiplication) of the target deforestation layer and the \ac{GL30} \ac{LC} stratum to classify the pixels with a deforestation event. For classifying forest regrowth we filtered the \ac{GFC} gain layer to consider only tree-cover gain within our target temporal resolution and target canopy density. After, the filtered stratum is aggregated with our classified deforestations by using the Hadamard product of both layers. We will refer to this proximate deforestation driver layers as PDD. Figure \ref{fig:driver_flowchart} shows an overview of the classification process. The classification algorithm is implemented as a Python function which requires as parameter the previously named raster layers. Additionally the target canopy density and time period is freely selectable for experimental variations. The described filtering and aggregation steps are implements as binary matrix operations for fast processing of large data sizes by means of numpy.
 			\begin{figure}[ht]
 				\centering
 				\includegraphics[scale=.68]{img/driver_flowchart}
@@ -265,18 +259,22 @@
 			\end{equation}
 
 	\subsection{Emissions}
-		Short goal please
+		Land cover change respectively deforestation releases carbon emissions. These emissions can be grouped to different categories like emissions from transportation, biomass removal, changes of soil carbon dynamics, processing of certain kind of products etc.. During the previous sections we developed an approach to predict the change of tree cover driven by proximate causes like conversion to cropland or else. Now we can use these predictions to approximate the CO$_2$ emissions rising from this land cover transformations. For this study we focus on the emissions emitted by biomass removal and from changes of soil carbon dynamics. The first paragraph is focused on the estimation of emissions from biomass removal and the second section tries to approximate the impact of land cover change on the soil organic carbon content. 
 
-		To obtain the gross CO$_2$ emissions through proximate deforestation driver we selected the following raster tiles from our \ac{AISM}: the \ac{AGB} stratum and our classification of the \ac{PDD}. By means of Python we implemented a function which accepts as parameter two raster images, the area a pixel covers in $m^2$, a factor to convert carbon to CO$_2$, and a list of proximate driver classes to consider as deforestation. We considered the following driver classes as deforestation for the computation: 10 (cropland), 25 (regrowth), 30 (grassland), 40 (shrubland), 50 (wetland), 60 (water bodies), 70 (tundra), 80 (artificial), and 90 (bareland). The function compute the gross emissions by using  equation \ref{eq:AGB}. Let $Y_{ij}$ be the \ac{AGB} in Mg C ha$^{-1}$ and $X_{ij}$ the \ac{PDD} at an pixel index $i,j$ obtained from a raster image matrix in $R^{N*M}$. Let $A$ be the area in ha a pixel covers for a certain image tile. This area is calculated by using the haversine function from equation \ref{eq:haversine}. The factor 3.7 converts Carbon to CO$_2$. Let $AGBE_{tile}$ be the cumulative emissions emitted from the removal of tree cover. Then this value can be obtained by taking the sum of the products of $Y_{ij}$ and $f(X_{ij})$. Whereas the piecewise function $f$ only evaluates to one if the proximate deforestation driver is within our set of classes we want to consider as deforestation. To obtain the gross \ac{AGB} emissions through the deforestation by proximate deforestation driver we aggregated the sum of $AGBE_{tile}$ for the regions Latin America, Asia, and Africa.
+		To obtain the gross CO$_2$ emissions through proximate deforestation driver we selected the following raster tiles from our \ac{AISM}: the \ac{AGB} stratum and our classification of the \ac{PDD}. By means of Python we implemented a function which accepts as parameter two raster images, the area a pixel covers in $m^2$, a factor to convert carbon to CO$_2$, and a list of proximate driver classes to consider as deforestation. We considered the following driver classes as deforestation for the computation: 10 (cropland), 25 (regrowth), 30 (grassland), 40 (shrubland), 50 (wetland), 60 (water bodies), 70 (tundra), 80 (artificial), and 90 (bareland). The function computes the gross emissions by using  equation \ref{eq:AGB}. Let $Y_{ij}$ be the \ac{AGB} in Mg C ha$^{-1}$ and $X_{ij}$ the \ac{PDD} at an pixel index $i,j$ obtained from a raster image matrix in $R^{N*M}$. Let $A$ be the area in ha a pixel covers for a certain image tile. This area is calculated by using the haversine function from equation \ref{eq:haversine}. The factor 3.7 converts Carbon to CO$_2$. Let $AGBE_{tile}$ be the cumulative emissions emitted from the removal of tree cover. Then this value can be obtained by taking the sum of the product of $Y_{ij}$ and $f(X_{ij})$. Whereas the piecewise function $f$ only evaluates to one if the proximate deforestation driver is within our set of classes we want to consider as deforestation. To obtain the gross \ac{AGB} emissions through the deforestation by proximate deforestation driver we aggregated the sum of $AGBE_{tile}$ for the regions Latin America, Asia, and Africa.
 		\begin{equation}
 		\label{eq:AGB}
 			AGBE_{tile} = 3.7A\displaystyle\sum_{i=0}^{N}\displaystyle\sum_{j=0}^{M} f(X_{ij})Y_{ij}
 		\end{equation}
 
-		For computing the soil organic carbon change we used the following layers from ou aism: gsoc, proximate deforestation drivers and intac forest landscape. We computed soil organic carbon change in two different scenarios: scenario one (sc1) assumes that all forest losses are primary forest and scenario two distincts between loss of primary and secondary forest. To compute the soc we used the following formular. For distinct between primary and secondary forest loss we used the ifl layer and assumed that forest loss within a intact forest path is a loss in primary forest and losses outside of the patch are loss in secondary forest. The soil organic carbon change can only be computed for land use change class which are represented by the values given in table bla. This means we linked the following proximate driver classes with the following soc change factors: cropland with cropland, grassland with tundra, grassland, shrubland, bareland. In result this means we excluded from calculation the following landuse change classes: water, artificial, and wetland. 
+		To obtain the gross CO$_2$ emissions emitted by the change of soil organic carbon content we selected the following raster tiles from our \ac{AISM}: the \ac{IFL} stratum, the \ac{GSOCmap}, and our prediction of \ac{PDD}. We decided predict the \ac{SOC} emissions for two different scenarios. In scenario one SC$_1$ we assume that all tree covered areas concerned by land cover change are primary forest. For scenario two SC$_2$ we used \ac{IFL} stratum to determine the forest type. If land cover changes within an \ac{IFL} patch it concerns primary forest otherwise it is secondary forest. The \ac{SOC} emissions of both scenarios can be computed by equation \ref{eq:SOC}. Let $X_{ij}$ be the \ac{PDD} from our prediction, $Y_{ij}$ the forest type determined by the \ac{IFL} stratum, and $Z_{ij}$ the \ac{SOC} Mg C ha$^{-1}$ determined by \ac{GSOCmap} at an pixel with index $i,j$ obtained from a raster image matrix in $R^{N*M}$. Let $A$ be the area in ha a pixel covers for a certain image tile. This area is calculated by using the haversine function from equation \ref{eq:haversine}. The factor 3.7 converts Carbon to CO$_2$. Let $SOCC_{tile}$ be the cumulative soil organic carbon emissions emitted by the change of forest to another land cover type. Then this value can be obtained by taking the sum of the product of $Z_{ij}$ and $h(X_{ij}, Y_{ij})$. Whereas the piecewise function $h$ returns the mean soil organic carbon change and the standard error in respect to the forest type and proximate driver class. The mappings of drive classes and forest type for both scenarios are shown in table \ref{tab:scenario1} and \ref{tab:scenario2}. This algorithm is implemented by means of Python. The function needs as parameter the required layers whereas the \ac{IFL} stratum is optional, the area a pixel covers in $m^2$, a conversion factor for carbon to $CO_2$, a identifier for the forest type, and if the standard error should be included during computation of the emission. If the \ac{IFL} stratum is provided the algorithm will relay on this layer to determine the forest type otherwise it uses forest type identifier. To obtain the gross \ac{SOC} emissions through the change of land cover we aggregated the sum of $SOCE_{tile}$ for the regions Latin America, Asia, and Africa. 
+		\begin{equation}
+		\label{eq:SOC}
+			SOCE_{tile} = 3.7A\displaystyle\sum_{i=0}^{N}\displaystyle\sum_{j=0}^{M} h(X_{ij}, Y_{ij})Z_{ij}
+		\end{equation}
 		\begin{table}[ht]
 			\centering
-			\caption[Scenario 1]{\textbf{:} For standard errors of the land-use changes $\dagger$ Primary forest$\rightarrow$Cropland, $\ddagger$ Primary forest$\rightarrow$Secondary forest, and $\diamond$ Primary forest$\rightarrow$Grassland refer to table \ref{tab:soc}.}
+			\caption[Scenario one mapping of soil organic carbon change to porixmate driver]{\textbf{Scenario one mapping of soil organic carbon change to proximate driver:} In scenario one we assume that deforestation always occurs in primary forest. Refer to table \ref{tab:gl30classes} for the type of the proximate driver class. For standard errors of the land-use changes $\dagger$ Primary forest$\rightarrow$Cropland, $\ddagger$ Primary forest$\rightarrow$Secondary forest, and $\diamond$ Primary forest$\rightarrow$Grassland refer to table \ref{tab:soc}.}
 			\label{tab:scenario1}
 			\begin{tabular}{lcccccc}
 				\hline
@@ -289,7 +287,7 @@
 		\end{table}
 		\begin{table}[ht]
 			\centering
-			\caption[Scenario 2]{\textbf{:}}
+			\caption[Scenario two mapping of soil organic carbon change to porixmate driver]{\textbf{Scenario two mapping of soil organic carbon change to proximate driver:} In scenario two we use the Intact Forest Landscape stratum to distinguish between deforestation in primary and secondary forest. Refer to table \ref{tab:gl30classes} for the type of the proximate driver class. For standard errors of the land-use changes $\dagger$ Primary forest$\rightarrow$Cropland, $\ddagger$ Primary forest$\rightarrow$Secondary forest, $\diamond$ Primary forest$\rightarrow$Grassland, $\S$ Secondary forest$\rightarrow$Cropland, and $*$ Secondary forest$\rightarrow$Grassland refer to table \ref{tab:soc}.}
 			\label{tab:scenario2}
 			\begin{tabular}{lrrrrrr}
 				\hline
@@ -301,13 +299,9 @@
 				\hline
 			\end{tabular}
 		\end{table}
-		\begin{equation}
-		\label{eq:SOC}
-			SOCE_{tile} = 3.7A\displaystyle\sum_{i=0}^{N}\displaystyle\sum_{j=0}^{M} h(X_{ij}, c)Y_{ij}
-		\end{equation}
 
 	\subsection{Ecosystem service values}
-			For computing the ecosystem service balances we just relayed on our proximate deforestation drivers predictions. The loss of ecosystem service values is just the sum of deforested pixels multiplied by the ecosystem service value of tropical forest of a certain dataset. we excluded all pixels classified as forest from the loss sum. for computing the ecosystem service gain we used the deforestation driver prediction classes. now we depend on what the empirical data provides for the certain type.
+			\note{Pending}
 
 	\subsection{Binning analysis}
 	%TODO REVIEW, CHANGE TO GOOD ENGLISH
