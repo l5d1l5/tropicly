@@ -1,12 +1,3 @@
-"""
-classification.py
-
-Author: Tobias Seydewitz
-Date: 09.04.18
-Mail: tobi.seyde@gmail.com
-"""
-import logging
-
 import numpy as np
 from rasterio import open
 from rasterio.features import rasterize
@@ -17,8 +8,8 @@ from tropicly.distance import Distance
 from tropicly.frequency import most_common_class
 from tropicly.raster import write
 
-LOGGER = logging.getLogger(__name__)
 
+# TODO doc
 # TODO refactor exceptions
 
 

@@ -1,10 +1,3 @@
-"""
-python.py
-
-Author: Tobias Seydewitz
-Date: 16.05.18
-Mail: tobi.seyde@gmail.com
-"""
 from enum import Enum
 from tropicly.factors import Coefficient
 

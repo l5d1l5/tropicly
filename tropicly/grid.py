@@ -1,13 +1,17 @@
-"""
-Author: Tobias Seydewitz
-Mail: tobi.seyde@gmail.com
-"""
-from math import tan, atan, pi, sin, sqrt
+from math import atan
+from math import pi
+from math import sin
+from math import sqrt
+from math import tan
+
 from shapely.affinity import translate
 from shapely.geometry import Polygon
 
 
 # TODO tests
+# TODO doc
+
+
 class PolygonGrid:
     """
     Creates a grid covering a raster image with a selected Polygon.

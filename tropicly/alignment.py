@@ -14,6 +14,10 @@ from tropicly.raster import round_bounds
 from tropicly.raster import write
 
 
+# TODO doc
+# TODO exceptions
+
+
 def worker(template, alignments, vector, crs, pathobj):
     # TODO refactor
     kwargs = make_warp_profile(template, crs)
@@ -77,14 +81,6 @@ def raster_clip(to_clip, bounds, **kwargs):
 
 
 def rasterize_vector(vector, transform, bounds, shape):
-    """
-
-    :param transform:
-    :param bounds:
-    :param shape:
-    :param vector:
-    :return:
-    """
     clipper = polygon_from(bounds)
     geometries = list(vector.cx[bounds[0]:bounds[2], bounds[1]:bounds[3]].geometry)
 

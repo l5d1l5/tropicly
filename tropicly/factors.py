@@ -1,12 +1,3 @@
-"""
-factors.py
-
-Author: Tobias Seydewitz
-Date: 16.05.18
-Mail: tobi.seyde@gmail.com
-"""
-
-
 class Coefficient:
     """
     A data object class stores some statistical properties.

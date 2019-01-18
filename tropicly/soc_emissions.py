@@ -1,11 +1,3 @@
-"""
-soc_emissions.py
-
-Author: Tobias Seydewitz
-Date: 14.05.18
-Mail: tobi.seyde@gmail.com
-"""
-import logging
 import numpy as np
 from rasterio import open
 from tropicly.utils import write
@@ -14,12 +6,11 @@ from tropicly.factors import Coefficient
 from tropicly.enums import SOCClasses, GL30Classes, SOCCFactors, SOCCAlternativeFactors
 
 
-LOGGER = logging.getLogger(__name__)
-LOGGER.addHandler(logging.NullHandler())
-
-
 # Inject alternatives SOCAlternativeFactors, SOCCFactors
 SOCCFACTORS = SOCCFactors
+
+
+# TODO doc
 
 
 def worker(driver, soc, out_name, intact=None, **kwargs):

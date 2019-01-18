@@ -1,12 +1,3 @@
-"""
-observer.py
-
-Author: Tobias Seydewitz
-Date: 09.05.18
-Mail: tobi.seyde@gmail.com
-"""
-
-
 class Signal:
     """
     Simple implementation of observer pattern.

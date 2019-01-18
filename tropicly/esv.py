@@ -1,16 +1,12 @@
-"""
-esv.py
-
-Author: Tobias Seydewitz
-Date: 20.06.18
-Mail: tobi.seyde@gmail.com
-"""
 import numpy as np
-import rasterio as rio
 import pandas as pd
-from tropicly.raster import write
-from tropicly.enums import GL30Classes
+import rasterio as rio
 
+from tropicly.enums import GL30Classes
+from tropicly.raster import write
+
+
+# TODO doc
 
 def worker(driver, esv, names, **kwargs):
     with rio.open(driver, 'r') as src:

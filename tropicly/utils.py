@@ -1,31 +1,26 @@
-"""
-utils.py
-
-Author: Tobias Seydewitz
-Date: 20.10.17
-Mail: tobi.seyde@gmail.com
-
-Description:
-"""
+import copy
+import logging
 import os
 import re
 import time
-import copy
-import pyproj
-import logging
 import urllib.request
-import shapely.geometry
+from collections import namedtuple
+from contextlib import contextmanager
+from functools import wraps
+from pathlib import Path
 
+import geopandas as gpd
 import numpy as np
 import pandas as pd
+import pyproj
 import rasterio as rio
-import geopandas as gpd
-from pathlib import Path
-from functools import wraps
+import shapely.geometry
+from rasterio import coords
+from rasterio import merge
+from rasterio import warp
 
-from contextlib import contextmanager
-from rasterio import warp, merge, coords
-from collections import namedtuple
+
+# TODO clean this mess
 
 
 __all__ = [

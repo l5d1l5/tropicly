@@ -1,23 +1,11 @@
-"""
-distance.py
-
-Author: Tobias Seydewitz
-Date: 12.04.18
-Mail: tobi.seyde@gmail.com
-"""
-import logging
-from math import (sin,
-                  cos,
-                  asin,
-                  sqrt,
-                  radians,)
+from math import asin
+from math import cos
+from math import radians
+from math import sin
+from math import sqrt
 
 
 # TODO refactor exceptions
-
-
-LOGGER = logging.getLogger(__name__)
-LOGGER.addHandler(logging.NullHandler())
 
 
 def haversine(coord1, coord2, scale='m'):

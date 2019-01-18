@@ -1,9 +1,3 @@
-"""
-Author: Tobias Seydewitz
-Mail: tobi.seyde@gmail.com
-"""
-
-
 class TropiclyExceptions(Exception):
     """Base class for tropicly exceptions"""
 

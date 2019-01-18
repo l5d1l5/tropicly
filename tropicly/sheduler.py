@@ -1,10 +1,3 @@
-"""
-sheduler.py
-
-Author: Tobias Seydewitz
-Date: 09.05.18
-Mail: tobi.seyde@gmail.com
-"""
 from multiprocessing import cpu_count
 from queue import Queue
 from threading import Event
@@ -13,10 +6,10 @@ from threading import Thread
 from tropicly.observer import Signal
 
 
-class TaskSheduler(Thread):
-    """
+# TODO doc
 
-    """
+
+class TaskSheduler(Thread):
     def __init__(self, name, max_threads):
         super().__init__(name=name)
 

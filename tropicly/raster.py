@@ -1,10 +1,3 @@
-"""
-raster.py
-
-Author: Tobias Seydewitz
-Date: 14.04.18
-Mail: tobi.seyde@gmail.com
-"""
 import re
 
 import numpy as np
@@ -21,6 +14,9 @@ from rasterio.warp import reproject
 from shapely.geometry import Polygon
 
 from tropicly.distance import Distance
+
+
+# TODO doc
 
 
 def make_warp_profile(template, crs):

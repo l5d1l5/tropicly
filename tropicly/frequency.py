@@ -1,21 +1,10 @@
-"""
-frequency.py
+from collections import OrderedDict
 
-Author: Tobias Seydewitz
-Date: 10.04.18
-Mail: tobi.seyde@gmail.com
-"""
-import logging
 import numpy as np
 from rasterio import open
-from collections import OrderedDict
 
 
 # TODO refactor exceptions
-
-
-LOGGER = logging.getLogger(__name__)
-LOGGER.addHandler(logging.NullHandler())
 
 
 def worker(image, return_stack, *args):

@@ -1,11 +1,8 @@
-"""
-Author: Tobias Seydewitz
-Mail: tobi.seyde@gmail.com
-"""
 import logging
 
 import numpy as np
 from rasterio import open
+
 
 LOGGER = logging.getLogger(__name__)
 
