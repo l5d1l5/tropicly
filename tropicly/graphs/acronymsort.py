@@ -13,8 +13,8 @@ def acronym_sort(content):
     :return: list of str
         A list of string.
     """
-    # Latex acronym "\acro{any}{any}\n"
-    acronym_grammar = re.compile(r'(^.*\\acro\{(?P<acro>[\w+ -]+)\}\{[\w/ -]+\}\r?\n?$)')
+    # Latex acronym "any\acro{letter|number| |-}{letter|number| |-}\n"
+    acronym_grammar = re.compile(r'(^.*\\acro\{(?P<acronym>[\w+ -]+)\}\{[\w/ -]+\}\r?\n?$)')
 
     lines = []
     count = 0
@@ -31,7 +31,7 @@ def acronym_sort(content):
                 line = content[count]
                 match = acronym_grammar.match(line)
 
-            acronym_lines = sorted(acronym_lines, key=lambda obj: obj.group('acro'))
+            acronym_lines = sorted(acronym_lines, key=lambda obj: obj.group('acronym'))
             lines += [obj.group(1) for obj in acronym_lines]
 
         else:
@@ -42,6 +42,7 @@ def acronym_sort(content):
 
 
 if __name__ == '__main__':
+    # from cli: first in  file and second arg out file
     in_name = sys.argv[1]
     out_name = sys.argv[2]
 
