@@ -1,18 +1,14 @@
-"""
-visualization.py
-
-Author: Tobias Seydewitz
-Date: 12.07.18
-Mail: tobi.seyde@gmail.com
-"""
-import fiona
-import pandas as pd
-import geopandas as gpd
 from bisect import bisect_left
-from math import sqrt, isclose
-from shapely.affinity import scale
 from collections import OrderedDict
+from math import isclose
+from math import sqrt
+
+import fiona
+import geopandas as gpd
+import pandas as pd
+from shapely.affinity import scale
 from shapely.geometry import asShape
+
 from tropicly.grid import SegmentedHexagon
 
 

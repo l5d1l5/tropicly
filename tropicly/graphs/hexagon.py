@@ -1,19 +1,17 @@
-"""
-hexagon.py
+from math import cos
+from math import pi
+from math import sin
 
-Author: Tobias Seydewitz
-Date: 25.10.18
-Mail: tobi.seyde@gmail.com
-"""
-import numpy as np
-from math import sin, cos, pi
 import matplotlib.pyplot as plt
-from matplotlib.lines import Line2D
-from matplotlib.patches import Polygon, Rectangle
-from matplotlib.collections import PolyCollection
+import numpy as np
 from matplotlib import rcParams
+from matplotlib.collections import PolyCollection
+from matplotlib.lines import Line2D
+from matplotlib.patches import Polygon
+from matplotlib.patches import Rectangle
 
-from tropicly.grid import GridPolygon, PolygonGrid
+from tropicly.grid import GridPolygon
+from tropicly.grid import PolygonGrid
 
 
 rcParams['patch.facecolor'] = 'none'

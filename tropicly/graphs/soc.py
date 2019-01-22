@@ -1,12 +1,5 @@
-"""
-soc.py
-
-Author: Tobias Seydewitz
-Date: 25.09.18
-Mail: tobi.seyde@gmail.com
-"""
-import pandas as pd
 import matplotlib.pyplot as plt
+import pandas as pd
 
 
 src = pd.read_csv('/home/tobi/Documents/Master/code/python/Master/data/proc/ana/soce.csv')
