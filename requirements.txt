@@ -9,6 +9,7 @@ shapely
 jupyter
 rasterio
 geopandas
+matplotlib
 
 
 
