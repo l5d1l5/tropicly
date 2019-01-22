@@ -6,7 +6,8 @@ from tropicly.enums import GL30Classes
 from tropicly.raster import write
 
 
-# TODO doc
+# TODO doc,
+#  haversine
 
 def worker(driver, esv, names, **kwargs):
     with rio.open(driver, 'r') as src:
