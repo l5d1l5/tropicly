@@ -1,3 +1,5 @@
+from logging import getLogger
+
 import numpy as np
 from rasterio import open
 from rasterio.features import rasterize
@@ -8,9 +10,10 @@ from tropicly.distance import Distance
 from tropicly.frequency import most_common_class
 from tropicly.raster import write
 
-
 # TODO doc
 # TODO refactor exceptions
+
+LOGGER = getLogger(__name__)
 
 
 def worker(landcover, treecover, gain, loss, filename):

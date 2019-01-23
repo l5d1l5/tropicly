@@ -1,13 +1,15 @@
 import numpy as np
 from rasterio import open
-from tropicly.utils import write
-from tropicly.distance import Distance
-from tropicly.factors import Coefficient
-from tropicly.enums import SOCClasses, GL30Classes, SOCCFactors, SOCCAlternativeFactors
 
+from tropicly.distance import Distance
+from tropicly.enums import GL30Classes
+from tropicly.enums import SOCCCoefficients
+from tropicly.enums import SOCClasses
+from tropicly.factors import Coefficient
+from tropicly.utils import write
 
 # Inject alternatives SOCAlternativeFactors, SOCCFactors
-SOCCFACTORS = SOCCFactors
+SOCCFACTORS = SOCCCoefficients
 
 
 # TODO doc
@@ -56,19 +58,6 @@ def worker(driver, soc, out_name, intact=None, **kwargs):
 
 def soc_emissions(driver, soc, intact=None, method='mean', area=900, co2=3.7,
                   forest_type=SOCClasses.secondary_forest):
-    """
-    Des
-
-    :param driver: np.array
-
-    :param soc: np.array
-    :param intact: np.array
-    :param method: str
-    :param area: numeric
-    :param co2: numeric
-    :param forest_type:
-    :return: np.array
-    """
     ha_per_px = area * 0.0001
     # prevent zero overflow (soc raster contain pixel values 0.1e^-x and -3.e^x)
     soc[soc < 0] = 0
@@ -82,14 +71,6 @@ def soc_emissions(driver, soc, intact=None, method='mean', area=900, co2=3.7,
 
 
 def factor_map(driver, intact=None, attr='mean', forest_type=SOCClasses.secondary_forest):
-    """
-
-    :param driver: np.array
-    :param intact: np.array
-    :param attr: str
-    :param forest_type: enum.member
-    :return: np.array
-    """
     factors = np.zeros(driver.shape, dtype=np.float32)
     zero_factor = Coefficient('zero', 0, 0)
 

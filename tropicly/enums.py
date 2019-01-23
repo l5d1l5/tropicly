@@ -1,4 +1,5 @@
 from enum import Enum
+
 from tropicly.factors import Coefficient
 
 
@@ -17,9 +18,13 @@ class SOCClasses(Enum):
 class GL30Classes(Enum):
     """
     GlobLand30 land cover classes. Chen et al. (2015)
+
+    The enum member values correspond to the pixel values of our
+    proximate deforestation driver predictions.
     """
     cropland = 10
     forest = 20
+    # not in Chen et al. introduced by us to represent Hansen et al. gain
     regrowth = 25
     grassland = 30
     shrubland = 40
@@ -32,49 +37,37 @@ class GL30Classes(Enum):
     no_data = 255
 
 
-# Full depth soil organic carbon change factors
+# Full depth soil organic carbon change coefficients
 # Don et al. (2011) Impact of tropical land-use change on soil organic
 # carbon stocks - a meta-analysis, Global Change Biology
-SOCC_data = [
-    Coefficient((SOCClasses.primary_forest, SOCClasses.grassland), .121, .023),
-    Coefficient((SOCClasses.primary_forest, SOCClasses.cropland), .252, .033),
-    Coefficient((SOCClasses.primary_forest, SOCClasses.perennial_crops), .303, .027),
-    Coefficient((SOCClasses.primary_forest, SOCClasses.secondary_forest), .086, .02),
-    Coefficient((SOCClasses.secondary_forest, SOCClasses.grassland), .064, .025),
-    Coefficient((SOCClasses.secondary_forest, SOCClasses.cropland), .213, .041),
-    Coefficient((SOCClasses.secondary_forest, SOCClasses.perennial_crops), .024, .042),
-]
+PRIMARY_FOREST_GRASSLAND_TRANSITION = Coefficient('primary forest -> grassland', .121, .023)
+PRIMARY_FOREST_CROPLAND_TRANSITION = Coefficient('primary forest -> cropland', .252, .033)
+PRIMARY_FOREST_PERENNIAL_CROPS_TRANSITION = Coefficient('primary forest -> perennial crops', .303, .027)
+PRIMARY_FOREST_SECONDARY_FOREST_TRANSITION = Coefficient('primary forest -> secondary forest', .086, .02)
+SECONDARY_FOREST_GRASSLAND_TRANSITION = Coefficient('secondary forest -> grassland', .064, .025)
+SECONDARY_FOREST_CROPLAND_TRANSITION = Coefficient('secondary forest -> cropland', .213, .041)
+SECONDARY_FOREST_PERENNIAL_CROPS_TRANSITION = Coefficient('secondary forest -> perennial crops', .024, .042)
 
-SOCCFactors = {
-    (SOCClasses.primary_forest, GL30Classes.cropland): SOCC_data[1],
-    (SOCClasses.primary_forest, GL30Classes.regrowth): SOCC_data[3],
-    (SOCClasses.primary_forest, GL30Classes.grassland): SOCC_data[0],
-    (SOCClasses.primary_forest, GL30Classes.shrubland): SOCC_data[0],
-    (SOCClasses.primary_forest, GL30Classes.tundra): SOCC_data[0],
-    (SOCClasses.primary_forest, GL30Classes.bareland): SOCC_data[0],
-    (SOCClasses.secondary_forest, GL30Classes.cropland): SOCC_data[-2],
-    (SOCClasses.secondary_forest, GL30Classes.grassland): SOCC_data[-3],
-    (SOCClasses.secondary_forest, GL30Classes.shrubland): SOCC_data[-3],
-    (SOCClasses.secondary_forest, GL30Classes.tundra): SOCC_data[-3],
-    (SOCClasses.secondary_forest, GL30Classes.bareland): SOCC_data[-3],
+
+# Mapping of soil organic carbon change coefficients to proximate deforestation driver classes
+SOCCCoefficients = {
+    (SOCClasses.primary_forest, GL30Classes.cropland): PRIMARY_FOREST_CROPLAND_TRANSITION,
+    (SOCClasses.primary_forest, GL30Classes.regrowth): PRIMARY_FOREST_SECONDARY_FOREST_TRANSITION,
+    (SOCClasses.primary_forest, GL30Classes.grassland): PRIMARY_FOREST_GRASSLAND_TRANSITION,
+    (SOCClasses.primary_forest, GL30Classes.shrubland): PRIMARY_FOREST_GRASSLAND_TRANSITION,
+    (SOCClasses.primary_forest, GL30Classes.tundra): PRIMARY_FOREST_GRASSLAND_TRANSITION,
+    (SOCClasses.primary_forest, GL30Classes.bareland): PRIMARY_FOREST_GRASSLAND_TRANSITION,
+    (SOCClasses.secondary_forest, GL30Classes.cropland): SECONDARY_FOREST_CROPLAND_TRANSITION,
+    (SOCClasses.secondary_forest, GL30Classes.grassland): SECONDARY_FOREST_GRASSLAND_TRANSITION,
+    (SOCClasses.secondary_forest, GL30Classes.shrubland): SECONDARY_FOREST_GRASSLAND_TRANSITION,
+    (SOCClasses.secondary_forest, GL30Classes.tundra): SECONDARY_FOREST_GRASSLAND_TRANSITION,
+    (SOCClasses.secondary_forest, GL30Classes.bareland): SECONDARY_FOREST_GRASSLAND_TRANSITION,
 }
 
-SOCCAlternativeFactors = {
-    (SOCClasses.primary_forest, GL30Classes.cropland): SOCC_data[1],
-    (SOCClasses.primary_forest, GL30Classes.regrowth): SOCC_data[3],
-    (SOCClasses.primary_forest, GL30Classes.grassland): SOCC_data[0],
-    (SOCClasses.primary_forest, GL30Classes.shrubland): SOCC_data[0],
-    (SOCClasses.primary_forest, GL30Classes.tundra): SOCC_data[0],
-    (SOCClasses.primary_forest, GL30Classes.bareland): SOCC_data[0],
-    (SOCClasses.primary_forest, GL30Classes.artificial): SOCC_data[1],
-    (SOCClasses.secondary_forest, GL30Classes.cropland): SOCC_data[-2],
-    (SOCClasses.secondary_forest, GL30Classes.regrowth): SOCC_data[3],
-    (SOCClasses.secondary_forest, GL30Classes.grassland): SOCC_data[-3],
-    (SOCClasses.secondary_forest, GL30Classes.shrubland): SOCC_data[-3],
-    (SOCClasses.secondary_forest, GL30Classes.tundra): SOCC_data[-3],
-    (SOCClasses.secondary_forest, GL30Classes.bareland): SOCC_data[-3],
-    (SOCClasses.secondary_forest, GL30Classes.artificial): SOCC_data[1],
-}
+
+# ESV mappings should be dictionaries, dict key should be a member of the GL30classes enum
+# dict value should be the corresponding ESV in monetary units (Int$/ha) as an instance of
+# the Coefficient class
 
 # Ecosystem service values per biome
 # Costanza et al. (2014) Change in the global value of ecosystem services,

@@ -1,10 +1,12 @@
 from collections import OrderedDict
+from logging import getLogger
 
 import numpy as np
 from rasterio import open
 
-
 # TODO refactor exceptions
+
+LOGGER = getLogger(__name__)
 
 
 def worker(image, return_stack, *args):
