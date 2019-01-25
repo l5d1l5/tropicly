@@ -19,7 +19,7 @@
 \contentsline {subsection}{\numberline {1.2.4}Emissions}{27}{subsection.1.2.4}
 \contentsline {subsection}{\numberline {1.2.5}Ecosystem service values}{29}{subsection.1.2.5}
 \contentsline {subsection}{\numberline {1.2.6}Binning analysis and visualization}{30}{subsection.1.2.6}
-\contentsline {chapter}{Bibliography}{I}{equation.1.2.25}
+\contentsline {chapter}{Bibliography}{I}{equation.1.2.29}
 \contentsline {chapter}{\nonumberline List of Figures}{IV}{chapter*.50}
 \contentsline {chapter}{\nonumberline List of Tables}{V}{chapter*.51}
 \contentsline {chapter}{List of Abbreviations}{VI}{chapter*.52}

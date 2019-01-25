@@ -338,10 +338,12 @@
 	\subsection{Binning analysis and visualization}
 		During the previous sections, we were focused on the exercise of creating large scale spatial explicit predictions for land cover transitions and the following consequences for humanity. Now, an appropriate method must be developed to analyze and visualize these spatial explicit datasets by generalizing the problem domain. By the nature of fine resolution raster images and the large area of our study extent we must handle a large $N$ (many samples) and the resulting high dimensionality respectively complexity of relationships among the samples \citep{Carr1990}. Raster image maps can be interpreted as multivariate scatter plots. In our case this scatter plot has the three dimensions $x$ is the longitude, $y$ the latitude coordinate of a pixel, and $z$ is the nominal scaled pixel value in case of the \ac{PDD} prediction. Drawing scatter plots with large multidimensional $N$ commonly leads to overplotting and hidden point densities \citep{Carr1987}. Additionally, it is to assume that the distribution of \ac{PDD} is not equally distributed over the entire study extent. Hence, there should be regions with sparse data densities and with high densities but our goal is to visualize land cover changes on a continental level. As mentioned the ground resolution of one pixel covers an area of approximately 30x30 m and as an example, the bounding box of Latin America covers an area of $5*10^7$ Km$^2$. The large frame size as well the unequal distributed data leads to the issue that only large scale land cover changes are representable and small scale isolated changes stay hidden.
 
-		By referring to the latter paragraph our goal should be to develop a process to solve the representation issues and generates satisfying maps. In the case of raster data, one opportunity could be a re-sampling to a coarser on-ground resolution. This approach may solve the overplotting as well resolution issues and normalize unequal distributed data. For nominal scaled data the commonly used re-sampling methods are nearest neighbor or majority wins \note{Reference}. Both approaches are not appropriate because they would negate spatial patterns and eliminate important land cover class frequency distributions. Another well-accepted method is binning of spatially explicit data with a regular polygon that can tessellate the plane \citep{Carr1992}. Polygon tessellations provide numerous opportunities for presenting multivariate statistical and visual summaries. The scale of a polygon may be used to visualize pixel densities within the bounds and a color gradient may be used to prepare a choropleth map for nominal or ordinal scaled data. Additionally, the interior of a polygon may be used to prepare a pie chart. Hence, binning enables convenient visualization of multidimensional data. For preparing a regular tessellation only three types of convex polygons can be used to tessellate the plane: squares, equilateral triangles, and hexagons \citep{Carr1992}. Square tessellations are the most common method in comparison with hexagons for binning and visualizing spatial data. Every raster image is already a square tessellation of the mapped object and most of the image processing algorithms are focused on squares. Hexagon mosaic maps have two major advantages over square tessellations: visual appeal and representational accuracy. Binning of data by a square or hexagon mosaic creates visual lines. These lines compete with the data generated patterns. Especially humans have a strong visual response to horizontal and vertical lines. Hence, the line artifacts of square tessellations are distracting and should be avoided. Thus, we decided to use hexagon mosaic maps to represent the visual and statistical results of our study. For bivariate representations, we select the combination of scaling and color gradient. Multivariate data is visualized by hexagonal pie charts. The following paragraphs describe our algorithmic approach to create these mosaic maps.
+		By referring to the latter paragraph our goal should be to develop a process to solve the representation issues and generates satisfying maps. In the case of raster data, one opportunity could be a re-sampling to a coarser on-ground resolution. This approach may solve the overplotting as well resolution issues and normalize unequal distributed data. For nominal scaled data the commonly used re-sampling methods are nearest neighbor or majority wins \note{Reference}. Both approaches are not appropriate because they would negate spatial patterns and eliminate important land cover class frequency distributions. Another well-accepted method is binning of spatially explicit data with a regular polygon that can tessellate the plane \citep{Carr1992}. Polygon tessellations provide numerous opportunities for presenting multivariate statistical and visual summaries. The scale of a polygon may be used to visualize pixel densities within the bounds and a color gradient may be used to prepare a choropleth map for nominal or ordinal scaled data. Additionally, the interior of a polygon may be used to prepare a pie chart. Hence, binning enables convenient visualization of multidimensional data. For preparing a regular tessellation only three types of convex polygons can be used to tessellate the plane: squares, equilateral triangles, and hexagons \citep{Carr1992}. Square tessellations are the most common method in comparison with hexagons for binning and visualizing spatial data. Every raster image is already a square tessellation of the mapped object and most of the image processing algorithms are focused on squares. Hexagon mosaic maps have two major advantages over square tessellations: visual appeal and representational accuracy. Binning of data by a square or hexagon mosaic creates visual lines. These lines compete with the data generated patterns. Especially humans have a strong visual response to horizontal and vertical lines. Hence, the line artifacts of square tessellations are distracting and should be avoided. Thus, we decided to use hexagon mosaic maps to represent the visual and statistical results of our study. For bivariate representations, we select the combination of scaling and color gradient. Multivariate data is visualized by hexagonal pie charts. The following paragraphs describe our algorithmic approach to create these mosaic maps. We used Python and the open source library shapely to implement our algorithms.
 
-	%TODO reference image
-		To be flexible at hexagon construction we accept 4 different parameters as construction arguments: $D$ long diagonal (Diameter of the circumscribing circle), $d$ short diagonal (diameter of the inscribed circle), $A$ area the hexagon should span and or $e$ the edge length. One selected parameter of these is used to compute $R$ the radius of the circumscribing circle with respect to input parameter as shown in  equation \ref{eq:hexagon_parameter}. R is used to calculate the midpoint $<c_x, c_y>$ of the hexagon located in the first quadrant of the cartesian coordinate system Equation \ref{eq:hexagon_center_x} and \ref{eq:hexagon_center_y}. Equation \ref{eq:hexagon_matrix} shows the computation of the hexagon anti-clockwise vertex matrix. Whereas the two leftmost vertices (first and last row of the matrix $\textbf{H}$) are located at koordinatenursprung, will sagen auf deutsch korridanten at x=0 und y=value of matrix. In summary equation \ref{eq:hexagon_parameter} to \ref{eq:hexagon_matrix} show the creation of an hexagon at the leftmost corner of first quadrant (Figure \ref{fig:hexagon}). The orientation is important for the subsequent mosaic creation.
+	%TODO image needs D
+	%TODO image change y_2 to y_1
+	%TODO image change equations to explained
+		The first step to construct a hexagon tessellation is to define the vertices of the polygon. There are two common orientations of hexagons in $R^2$ flat topped and pointy topped. For our hexagon construction we decided to use pointy topped polygons. For flexibility our algorithm accepts one out of four parameter to construct a hexagon polygon. The unit of the parameter is always in map units. Let $D$ be the long diagonal (diameter of the circumscribing circle), $d$ the short diagonal (diameter of the inscribed circle), $A$ the area the hexagon should cover, and $e$ the edge length of a hexagon. Let $R$ be the radius of the circumscribing circle. Then $R$ can be obtained by applying equation \ref{eq:hexagon_parameter} with one out of the parameter set $D$, $d$, $A$, or $e$. $R$ is used to compute the center vector $\vec{m}=<c_x, c_y>$ of the polygon by applying equation \ref{eq:hexagon_center_x} and \ref{eq:hexagon_center_y}. The polygon center is always located in the first quadrant of the Cartesian coordinate system. Now, by using $R$, $c_x$, and $c_y$ we can obtain $\mathbf{H}$ the anti-clockwise orientated vertex matrix of a hexagon. The construction of a hexagon by using the introduced method is shown in the left bottom corner of figure \ref{fig:hexagon}. The next paragraph describes how we derive a tessellation from the constructed hexagon.
 		\begin{equation}
 		\label{eq:hexagon_parameter}
 			R = \frac{\sqrt{2A}}{\sqrt[4]{27}} = \frac{D}{2} = \frac{d}{\sqrt{3}} = e
@@ -363,42 +365,55 @@
 				1 & 1 & 1 & 1 & 1 & 1
 			\end{bmatrix}
 		\end{equation}
+		\begin{figure}[ht]
+			\centering
+			\includegraphics[scale=.66]{img/hexagons}
+			\caption[Hexagon tessellation]{\textbf{Hexagon tessellation:} Located at the left bottom corner in red a hexagon defined by its geometric properties the 6 vertex vectors \{$\vec{v_0},...,\vec{v_5}$\} (black crosses), with center vector $\vec{m}$, edge length $e$, $R$ radius of the circumscribing circle, $r$ radius of the inscribed circle and $d$ the short diagonal (diameter of the inscribed circle). Top right black dotted box are the bounds of an area which is tessellated by a hexagon grid in red. Each grid cell is translated from the origin hexagon at its position by computing the $x_{off}$ and $y_{off}$ offset with the presented equations at the left-hand side of the grid. }
+			\label{fig:hexagon}
+		\end{figure}
 
-	%TODO BENCHMARK FUNCTIONS
-	%TODO FINISH TESSELATION DESCRIPTION USE IMAGE
-		A polygon tessellation needs several polygons to create a grid in case of the creation of one hexagon with the presented algorithm needs approximately \note{benchmark} but the creation of \note{several N hexagons} needs approximately \note{benchmark}. Therefore it is much simpler to create only one hexagon with the presented algorithm and to create the grid polygons by copying the coordinates of the source polygon and translating them to their target position with a affine transformation matrix shown in equation \ref{eq:hexagon_translate}. To create the grid we get the rectangular bounds of the area to tessellate as a matrix $\textbf{B} \in R^{2\times2}$ (equation \ref{eq:hexagon_bounds}), where the first column of the matrix contains the lower left corner and the second column the upper right corner of the image. Each subsequent translation in regards of $x_{off}$ is $x_1 + d$ for even rows and bla bla for odd rows. $Y_{off}$ is computed by bla bla see figure \ref{fig:hexagon}.
-		\begin{equation}
-		\label{eq:hexagon_translate}
-		\mathbf{T} =
-			\begin{bmatrix}
-				1 & 0 & x_{off} \\
-				0 & 1 & y_{off} \\
-				0 & 0 & 1
-			\end{bmatrix} \circ \mathbf{H}
-		\end{equation}
+		To create a polygon grid of a plane image we must align several hexagons to cover the image. For our tessellation algorithm we use the vertex matrix $\mathbf{H}$ computed by the previously described approach and subsequently translate it to its position within the grid. We expect to receive the bounds matrix $\mathbf{B}$ of the raster image which should be tessellated by hexagons, equation \ref{eq:hexagon_bounds}. Let $x_1$, $y_1$ be the left bottom corner coordinates and $x_2$, $y_2$ the right top corner coordinates of an image. Let $x_{off}(0)$, $y_{off}(0)$ in equation \ref{eq:hexagon_x_off_start} and \ref{eq:hexagon_y_off_start} be the initial coordinates for creating a polygon grid over a plane. Then we can obtain $x_{off}(n+1)$ the $x$ coordinates for even rows by applying equation \ref{eq:hexagon_x_off_even} and $x_{off}(n+1)$ the $x$ coordinates for odd rows by equation \ref{eq:hexagon_x_off_odd}. Where $r$ is the radius of an inscribed circle in a hexagon and can be obtained by dividing $d$ by 2. Then $\mathbf{H}$ can be translated to the vertex matrix $\mathbf{T}$ by applying the dot product of an affine transformation matrix and $\mathbf{H}$, equation \ref{eq:hexagon_translate}.
 		\begin{equation}
 		\label{eq:hexagon_bounds}
 			\mathbf{B} =
-			\begin{bmatrix}
+				\begin{bmatrix}
 				x_1 & x_2 \\
 				y_1 & y_2
 			\end{bmatrix}
 		\end{equation}
-		\begin{figure}[ht]
-			\centering
-			\includegraphics[scale=.7]{img/hexagons}
-			\caption[Hexagon tessellation]{\textbf{Hexagon tessellation:} Located at the left bottom corner in red a hexagon defined by its geometric properties the 6 vertex vectors \{$\vec{v_0},...,\vec{v_5}$\} (black crosses), with center vector $\vec{m}$, edge length $e$, $R$ radius of the circumscribing circle, $r$ radius of the inscribed circle and $d$ the length of the short diagonal. Top right black dotted box are the bounds of an area which is tessellated by a hexagon grid in red. Each grid cell is translated from the origin hexagon at its position by computing the $x_{off}$ and $y_{off}$ offset with the presented equations at the left-hand side of the grid. }
-			\label{fig:hexagon}
-		\end{figure}
-
-	%TODO DESCRIBE THE BINNING OF DATA AND WHAT WE WANT TO ACHIEVE
-		Binning of raster data is easy we just have a point in polygon problem each points/pixels falling in hexagon are counted and aggregated through a function. In case of drivers of deforestation we count all driver classes per hexagon and compute ratios next we compute the sha \note{describe for each map how you build it}
-	%TODO DESCRIBE CLIPPING
-		As mentioned before for the visualization of the drivers of deforestation map we want to segment the hexagons with horizontal lines and each segment should represent the share of the direct deforestation driver within the tessellated area. To compute the split line for a certain hexagon we need the hexagon R computeable from the area of the hexagon equation \ref{eq:hexagon_radius} and the rectangular bounds of the hexagon. We compute the relative share of an deforestation driver per hexagon this relative share can be used to compute the y-axis coordinate of an split line equation \ref{eq:hexagon_ratio}. A regular hexagon can not only be presented in it vertex form as shown above. We can also use functions to define the hexagon shape. A hexagon consist of 2 picewise functions where each function consist of 3 linear functions restricted to an intervall. If we invert these functions we can use these functions to compute the x-coordinate of the split line with the previous computed y-coordinate Equations \ref{eq:hexagon_left_intersection} and \ref{eq:hexagon_right_intersection}. As a results we receive the solution matrix L which represents the horizontal line segment splitting the hexagon at the point where we want (driver ratio share) equation \ref{eq:hexagon_split_line}. The solution matrix can be plugged in to a polygon split function which separates the hexagon polygon in a upper and lower part to do so we iterate over the hexagon vertices and decide if they are above or under the split line and append to a lower upper polygon. These list are our results \note{explain better split function}.
 		\begin{equation}
-		\label{eq:hexagon_radius}
-			R = \frac{\sqrt{2A}}{\sqrt[4]{27}}
+		\label{eq:hexagon_x_off_start}
+			x_{off}(0)=x_1
 		\end{equation}
+		\begin{equation}
+		\label{eq:hexagon_y_off_start}
+			y_{off}(0)=y_1
+		\end{equation}
+		\begin{equation}
+		\label{eq:hexagon_x_off_even}
+			x_{off}(n+1)=x_{off}(n)+d
+		\end{equation}
+		\begin{equation}
+		\label{eq:hexagon_x_off_odd}
+			x_{off}(n+1)=x_{off}(n)-r+d
+		\end{equation}
+		\begin{equation}
+		\label{eq:hexagon_y_off}
+			y_{off}(n+1)=y_{off}(n)-v_{0,2}+v_{3,2}
+		\end{equation}
+		\begin{equation}
+		\label{eq:hexagon_translate}
+		\mathbf{T} =
+			\begin{bmatrix}
+				1 & 0 & x_{off}(n) \\
+				0 & 1 & y_{off}(n) \\
+				0 & 0 & 1
+			\end{bmatrix} \circ \mathbf{H}
+		\end{equation}
+
+		Goal: A pie chart within the area of a hexagon, split the hexagon in horizontal pieces which represent a ratio
+
+		How: Compute the y coordinate of the split line from the ratio, the distance between y1 and y2, compute from this the x coordinates
 		\begin{equation}
 		\label{eq:hexagon_ratio}
 			y = \frac{P(y_2-y_1)}{100} + y_1
@@ -429,4 +444,11 @@
 				y & y
 			\end{bmatrix}
 		\end{equation}
-	%TODO describe how you aggreageted the information of the maps
+
+		Goal: All use hexagons with an area of 0.5 degrees i square, aggregated tiles per continent americas, africa, asia
+
+		Treecover: Count tree cover pixels within hexagon in canopy interval (10,100], count total pixels within hexagon, compute pixel area with haversine, divide tree covered area by total area, 5 ratio bins 0.2 0.4 0.6 0.8 1.0 for scaling, store the area for interval, mean canopy density over occupied pixels, use mean canopy density for choropleth map
+
+		PDD: count frequencies within a hexagon, compute frequency ratios, segement hexagons by the ratio of pdd driver, order the drivers in decreasing order, most common is first, tried with scaling but not feasible cause few big sized and many small sized, just scale them a bit down cause visual appeal,
+
+		Loss: count frequency of pdd recognized as deforestation 
