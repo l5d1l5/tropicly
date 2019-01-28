@@ -6,40 +6,41 @@
 
 		\subsection{Forest definition}
 		\label{subsec:forest_definition}
+			X axis are the canopy density groups (0,100], (10,100], (20,100], (30,100], y-axis is Jaccard Index between 0 and 1.  Red crosses highlight the mean and whisker length is 1.5 times the inter quartile range
 			\begin{figure}[ht]
 				\centering
 				\includegraphics[scale=1]{img/jaccard}
-				\caption[]{\textbf{:} }
+				\caption[Tree cover similarity distribution of the continental regions]{\textbf{Tree cover similarity distribution over the continental regions:} Red crosses within the boxes highlight the arithmetic mean. Whisker length is 1.5 times the Inter Quartile Range. Americas comprises }
 				\label{fig:jaccard}
 			\end{figure}
 			\begin{table}[ht]
 				\centering
 				\caption[Two-sided Wilcoxon signed-rank test]{\textbf{Two-sided Wilcoxon signed-rank test:}}
 				\label{tab:wilcoxontwosided}
-				\begin{tabular}{lrrrrrrrrrrrr}
+				\begin{tabular}{lllllllllllll}
 					\hline
 					& \multicolumn{12}{c}{H$_0$: $\tilde{x_1}=\tilde{x_2}$} \\\hline
 					& \multicolumn{4}{c}{Americas} & \multicolumn{4}{c}{Asia} & \multicolumn{4}{c}{Africa} \\
 					Cls & JI$_0$ & JI$_1$ & JI$_2$ & JI$_3$ & JI$_0$ & JI$_1$ & JI$_2$ & JI$_3$ & JI$_0$ & JI$_1$ & JI$_2$ & JI$_3$ \\\hline
-					JI$_0$ & 1. &  &  &  & 1. &  &  &  & 1. &  &  & \\
-					JI$_1$ & .00 & 1. &  &  & .72 & 1. &  &  & .22 & 1. &  & \\
-					JI$_2$ & .06 & .36 & 1. &  & .00 & .00 & 1. &  & .03 & .03 & 1. & \\
-					JI$_3$ & .16 & .50 & .60 & 1. & .00 & .00 & .00 & 1. & .00 & .00 & .00 & 1. \\\hline
+					JI$_0$ & - & - & - & - & - & - & - & - & - & - & - & - \\
+					JI$_1$ & .00$^{***}$ & - & - & - & .72 & - & - & - & .22 & - & - & - \\
+					JI$_2$ & .06 & .36 & - & - & .00$^{***}$ & .00$^{***}$ & - & - & .03$^{*}$ & .03$^{*}$  & - & - \\
+					JI$_3$ & .16 & .50 & .60 & - & .00$^{***}$ & .00$^{***}$ & .00$^{***}$ & - & .00$^{***}$ & .00$^{***}$ & .00$^{***}$ & - \\\hline
 				\end{tabular}
 			\end{table}
 			\begin{table}[ht]
 				\centering
 				\caption[One-sided Wilcoxon signed-rank test]{\textbf{One-sided Wilcoxon signed-rank test:}}
 				\label{tab:wilcoxononesided}
-				\begin{tabular}{llrrrrrrrrrrrr}
+				\begin{tabular}{llllllllllllll}
 					\hline
 					& & \multicolumn{12}{c}{H$_0$: $\tilde{x_1}\leq\tilde{x_2}$} \\\hline
 					& & \multicolumn{4}{c}{Americas} & \multicolumn{4}{c}{Asia} & \multicolumn{4}{c}{Africa} \\
 					& Cls & JI$_0$ & JI$_1$ & JI$_2$ & JI$_3$ & JI$_0$ & JI$_1$ & JI$_2$ & JI$_3$ & JI$_0$ & JI$_1$ & JI$_2$ & JI$_3$ \\\hline
-					\multirow{4}{*}{\STAB{\rotatebox[origin=c]{90}{H$_0$: $\tilde{x_1}\geq\tilde{x_2}$}}} & JI$_0$ & 1. & .00 & .03 & .08 & 1. & .64 & 1. & 1. & 1. & .11 & .98 & 1. \\
-					& JI$_1$ & 1. & 1. & .18 & .25 & .36 & 1. & 1. & 1. & .89 & 1. & .99 & 1. \\
-					& JI$_2$ & .97 & .82 & 1. & .30 & .00 & .00 & 1. & 1. & .02 & .01 & 1. & 1. \\
-					& JI$_3$ & .92 & .75 & .70 & 1. & .00 & .00 & .00 & 1. & .00 & .00 & .00 & 1. \\\hline
+					\multirow{4}{*}{\STAB{\rotatebox[origin=c]{90}{H$_0$: $\tilde{x_1}\geq\tilde{x_2}$}}} & JI$_0$ & - & .00$^{****}$ & .03$^{*}$ & .08 & - & .64 & 1. & 1. & - & .11 & .98 & 1. \\
+					& JI$_1$ & 1. & - & .18 & .25 & .36 & - & 1. & 1. & .89 & - & .99 & 1. \\
+					& JI$_2$ & .97 & .82 & - & .30 & .00$^{****}$ & .00$^{****}$ & - & 1. & .02 & .01 & - & 1. \\
+					& JI$_3$ & .92 & .75 & .70 & - & .00$^{****}$ & .00$^{****}$ & .00$^{****}$ & - & .00 & .00 & .00 & - \\\hline
 				\end{tabular}
 			\end{table}
 

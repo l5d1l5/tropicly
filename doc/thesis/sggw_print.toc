@@ -27,8 +27,8 @@
 \contentsline {section}{\numberline {2.2}Emissions}{36}{section.2.2}
 \contentsline {section}{\numberline {2.3}Ecosystem service values}{36}{section.2.3}
 \contentsline {section}{\numberline {2.4}Binning analysis and visualization}{36}{section.2.4}
-\contentsline {chapter}{Bibliography}{I}{section.2.4}
-\contentsline {chapter}{\nonumberline List of Figures}{IV}{chapter*.50}
-\contentsline {chapter}{\nonumberline List of Tables}{V}{chapter*.51}
-\contentsline {chapter}{List of Abbreviations}{VI}{chapter*.52}
-\contentsline {chapter}{Appendix}{VIII}{chapter*.53}
+\contentsline {chapter}{Bibliography}{II}{section.2.4}
+\contentsline {chapter}{\nonumberline List of Figures}{V}{chapter*.50}
+\contentsline {chapter}{\nonumberline List of Tables}{VI}{chapter*.51}
+\contentsline {chapter}{List of Abbreviations}{VII}{chapter*.52}
+\contentsline {chapter}{Appendix}{IX}{chapter*.53}
