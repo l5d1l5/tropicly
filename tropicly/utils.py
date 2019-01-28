@@ -25,7 +25,7 @@ from rasterio import warp
 
 __all__ = [
     'LOGGER',
-    'get_data_dir',
+    'cache_directories',
     'execute_concurrent',
     'download',
     'write_binary',
@@ -42,13 +42,34 @@ LOGGER.addHandler(logging.NullHandler())
 RANDOM_STATE = np.random.RandomState(42)
 
 
-# Common
-def get_data_dir(path: str) -> namedtuple:
-    # TODO doc
+def get_data_dir():
+    """
+    Get the data directory path of this project.
+
+    :return: Path
+        Path to data directory as path object.
+    """
+    data_root = Path(os.path.dirname(os.path.realpath(__file__)))
+    return data_root.parent / 'data'
+
+
+def cache_directories(path):
+    """
+    Caches directories in path as a namedtuple. Tuple keys are the directory names
+    and tuple values are pathlib.Path objects. Attention, directory naming must
+    follow the python variable name conventions, otherwise a exception will be thrown.
+
+    :param path: str or Path
+        Path to cache
+    :return: namedtuple of Path
+        The cached directory structure as a flat data structure.
+        Key is directory name and value is a Path object.
+    """
     dir_structure = {
         os.path.split(root)[-1]: Path(root)
-        for root, *_ in os.walk(path)
+        for root, *_ in os.walk(str(path))
     }
+
     Directories = namedtuple('Directories', dir_structure.keys())
     return Directories(**dir_structure)
 
