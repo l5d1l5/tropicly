@@ -127,50 +127,6 @@ def visual_segmented(path, out, scaling=None):
         gdf.to_file(out)
 
 
-# path = '/home/tobi/Documents/driver_normalized_scaled_filtered_africa.shp'
-# vec = fiona.open(path)
-
-# # CALCULATE DRIVERS SCALING
-# schema = vec.schema
-# schema['properties']['impact'] = 'int:10'
-# schema['properties']['im/co'] = 'float:10.8'
-# schema['properties']['linear'] = 'float:10.8'
-# schema['properties']['normalized'] = 'float:10.8'
-#
-# for key in schema['properties']:
-#     if key in ['10', '25', '30', '40', '50', '60', '70', '80', '90', '100']:
-#         schema['properties'][key] = 'int:10'
-#
-# with fiona.open('/home/tobi/Documents/driver_filtered_africa.shp', 'w', schema=schema, driver=vec.driver,
-#                 crs=vec.crs) as dst:
-#     for feature in vec:
-#         properties = feature['properties']
-#         impact = 0
-#
-#         for key in properties:
-#             if key in ['10', '25', '30', '40', '50', '60', '70', '80', '90', '100']:
-#                 properties[key] = int(properties[key])
-#                 impact += properties[key]
-#
-#         properties['impact'] = impact
-#
-#         ratio = impact / properties['covered']
-#         linear = (ratio - .00018060) / (.11331036 - .00018060)
-#         normalized = ((1. - .5) / (.11331036 - .00018060)) * (ratio - .11331036) + 1.
-#         normalized = (int(normalized * 10) + 1) / 10
-#
-#         if normalized > 1.0:
-#             normalized = 1.0
-#
-#         properties['im/co'] = impact / properties['covered']
-#         properties['linear'] = linear
-#         properties['normalized'] = normalized
-#         feature['properties'] = properties
-#
-#         if impact > 0:
-#             dst.write(feature)
-
-
 if __name__ == '__main__':
     # visual_segmented(
     #     '/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/driver/americas_driver.shp',
