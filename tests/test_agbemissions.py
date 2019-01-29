@@ -12,7 +12,7 @@ class TestAGBEmissions(TestCase):
 
     def test_agb_emissions(self):
         expected = np.round(0.09 * 3.7 * self.biomass, decimals=2).astype(np.float32)
-        actual = agb_emissions(self.driver, self.biomass, gl30=(0, 10, 20, 25, 30, 40, 50, 60,
-                                                                70, 80, 90, 100, 255))
+        actual = agb_emissions(self.driver, self.biomass, pdd_classes=(0, 10, 20, 25, 30, 40, 50, 60,
+                                                                       70, 80, 90, 100, 255))
 
         self.assertTrue(np.array_equal(expected, actual))

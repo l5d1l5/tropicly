@@ -14,12 +14,11 @@ from tropicly.raster import round_bounds
 from tropicly.raster import write
 
 
-# TODO thesis
+# TODO doc
 # TODO exceptions
 
 
 def worker(template, alignments, vector, crs, pathobj):
-    # TODO refactor
     kwargs = make_warp_profile(template, crs)
     kwargs['out'] = pathobj
 

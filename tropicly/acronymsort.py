@@ -3,15 +3,18 @@ import sys
 
 
 def acronym_sort(content):
-    """
-    Sorts a list of Latex acronyms. For the list of acronyms, the acronym (V1.41) CTAN
-    package syntax should be used. Furthermore, each line should contain only one acronym.
-    The algorithm sorts only acronyms rest of the document is left untouched.
+    """Sorts a list of Latex acronyms
 
-    :param content: list of str
-        A list of string.
-    :return: list of str
-        A list of string.
+    For the list of acronyms, the CTAN acronym package (V1.41) syntax should be used.
+    Furthermore, each line should contain only one acronym. The algorithm sorts
+    only acronyms the rest of the document is left untouched.
+
+    Args:
+        content (list of str): Content of a tex file as a list of lines.
+
+    Returns:
+        list of str: The sorted list of acronyms
+
     """
     # Latex acronym "any\acro{letter|number| |-}{letter|number| |-}\n"
     acronym_grammar = re.compile(r'(^.*\\acro\{(?P<acronym>[\w+ -]+)\}\{[\w/ -]+\}\r?\n?$)')

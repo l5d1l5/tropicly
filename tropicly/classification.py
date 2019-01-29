@@ -16,20 +16,19 @@ from tropicly.raster import write
 LOGGER = getLogger(__name__)
 
 
-def worker(landcover, treecover, gain, loss, filename):
-    """
-    Worker function for parallel execution.
+def worker(landcover, treecover, gain, loss, out_name, distance='hav'):
+    """Worker function for parallel execution.
 
-    :param landcover: str
-        Path to GL30 landcover image.
-    :param treecover: str
-        Path to GFC treecover image.
-    :param gain: str
-        Path to GFC gain image.
-    :param loss: str
-        Path to GFC annual loss image.
-    :param filename: str
-        Out path.
+    Predicts a Proximate Deforestation Driver by using the functions ``superimpose``
+    and ``reclassify``.
+
+    Args:
+        landcover (str or Path): Path to GlobLand30 raster image.
+        treecover (str or Path): Path to Global Forest Change tree cover raster image.
+        gain (str or Path): Path to Global Forest Change tree cover gain raster image.
+        loss (str or Path): Path to Global Forest Change annual tree cover loss raster image.
+        out_name (str or Path): Path plus name of out file.
+        distance (str, optional): Default is Haversine equation.
     """
     with open(landcover, 'r') as h1, open(treecover, 'r') as h2,\
             open(gain, 'r') as h3, open(loss, 'r') as h4:
@@ -41,7 +40,7 @@ def worker(landcover, treecover, gain, loss, filename):
         transform = h1.transform
         profile = h1.profile
 
-    haversine = Distance('hav')
+    haversine = Distance(distance)
     x = haversine((transform.xoff, transform.yoff), (transform.xoff + transform.a, transform.yoff))
     y = haversine((transform.xoff, transform.yoff), (transform.xoff, transform.yoff + transform.e))
 
@@ -51,7 +50,7 @@ def worker(landcover, treecover, gain, loss, filename):
 
     np.copyto(driver, reclassified, where=reclassified > 0)
 
-    write(driver, filename, **profile)
+    write(driver, out_name, **profile)
 
 
 def superimpose(landcover, treecover, gain, loss, years=(1, 2, 3, 4, 5, 6, 7, 8, 9, 10), canopy_density=10):
