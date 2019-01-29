@@ -14,7 +14,7 @@ from tropicly.raster import round_bounds
 from tropicly.raster import write
 
 
-# TODO doc
+# TODO thesis
 # TODO exceptions
 
 

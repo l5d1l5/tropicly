@@ -173,7 +173,7 @@ def execute_concurrent(to_execute, max_threads, msg='{} of 100 %', callback=defa
 
 # Download
 def download(url, **kwargs):
-    # TODO doc
+    # TODO thesis
     request = urllib.request.Request(url, **kwargs)
     response = None
 
@@ -190,7 +190,7 @@ def download(url, **kwargs):
 
 
 def write_binary(content, to_path):
-    # TODO doc
+    # TODO thesis
     with open(to_path, 'wb') as dst:
         dst.write(content)
 
@@ -222,7 +222,7 @@ def read_raster(item):
 
 
 def fetch_metadata(from_path_or_reader, *args):
-    # TODO doc
+    # TODO thesis
     """
     This method fetches user selected metadata features from a raster file and
     returns them as a named tuple where the attribute name is the selected
@@ -307,7 +307,7 @@ def reproject_from(in_path, to_crs, out_path):
 
 
 def reproject_like(template, in_path, out_path: str):
-    # TODO doc
+    # TODO thesis
     crs, transform, width, height = fetch_metadata(template, 'crs', 'transform', 'width', 'height')
 
     with rio.open(in_path, 'r') as src:
@@ -401,7 +401,7 @@ def merge_alike(with_template, to_merge):
 
 
 def clip_raster(raster, dst_bounds):
-    # TODO doc
+    # TODO thesis
     src = read_raster(raster)
     src_bounds = src.bounds
 
@@ -487,7 +487,7 @@ def polygon_from(bounds):
 
 
 def polygoniz(rasters, target_crs):
-    # TODO doc
+    # TODO thesis
     """
     This function creates a tile index from a list of raster files.
 
@@ -517,7 +517,7 @@ def polygoniz(rasters, target_crs):
 
 
 def tile_index(rasters, target_crs, **kwargs):
-    # TODO doc
+    # TODO thesis
     """
     Description Pending
 
@@ -537,7 +537,7 @@ def tile_index(rasters, target_crs, **kwargs):
 
 
 def orientation_to_int(orient):
-    # TODO doc
+    # TODO thesis
     coor, orient = re.match(r'(?P<coor>\d+)(?P<orient>[NSWE])', orient, re.I).groups()
 
     if orient.lower() in ('n', 'e'):
@@ -572,7 +572,7 @@ def int_to_orient(x, y):
 
 
 def round_bounds(bounds):
-    # TODO doc, round method ceil, floor
+    # TODO thesis, round method ceil, floor
     attrs = ('left', 'bottom', 'right', 'top')
 
     coors = []
@@ -586,7 +586,7 @@ def round_bounds(bounds):
 
 # Worker
 def dispatch_name(val, key, idx):
-    # TODO doc
+    # TODO thesis
     return {
         'merge_0': lambda: ('cover', '{}_{}.tif'.format(idx, key)),
         'merge_1': lambda: ('loss', '{}_{}.tif'.format(idx, key)),
@@ -600,7 +600,7 @@ def dispatch_name(val, key, idx):
 
 
 def download_worker(url: str, to_path: str, **kwargs) -> None:
-    # TODO doc
+    # TODO thesis
     content = download(url, **kwargs)
 
     if content is not None:
@@ -608,7 +608,7 @@ def download_worker(url: str, to_path: str, **kwargs) -> None:
 
 
 def alignment_worker(to_reproject, to_crs, to_merge_alike, out_path, generic_name):
-    # TODO doc
+    # TODO thesis
     template = None
     path = Path(out_path)
 
@@ -643,7 +643,7 @@ def alignment_worker(to_reproject, to_crs, to_merge_alike, out_path, generic_nam
 
 
 def clip_worker(to_clip, bounds, profile, out_path):
-    # TODO doc
+    # TODO thesis
     key = int_to_orient(bounds.left, bounds.top)
     path = Path(out_path)
 

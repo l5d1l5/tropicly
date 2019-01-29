@@ -14,7 +14,7 @@ def worker(image, return_stack, **kwargs):
         Result will be added to container object. Should provide
         a put or append method.
     :param kwargs: optional
-        Parameter for sample_occupied. Please, consider the doc of this function
+        Parameter for sample_occupied. Please, consider the thesis of this function
         for detailed instructions.
     """
     with open(image, 'r') as src:

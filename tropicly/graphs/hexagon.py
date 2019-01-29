@@ -106,6 +106,6 @@ ax.annotate('Even row:\n$x_{off}=x_1+d$\n$y_{off}=y_1-v_3+v_0$', (-0.1, 3.3), fo
 
 fig.show()
 fig.savefig(
-    '/home/tobi/Documents/Master/code/python/Master/doc/thesis/img/hexagons.png',
+    '/home/tobi/Documents/Master/code/python/Master/thesis/thesis/img/hexagons.png',
     format='png'
 )

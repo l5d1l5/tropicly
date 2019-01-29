@@ -38,7 +38,7 @@ axes[0].set_ylabel(r'SOCe [Gt CO$_2$]', fontsize=12, fontname='Times new roman')
 
 plt.show()
 fig.savefig(
-    '/home/tobi/Documents/Master/code/python/Master/doc/thesis/img/soc.png',
+    '/home/tobi/Documents/Master/code/python/Master/thesis/thesis/img/soc.png',
     format='png'
 )
 for row in src:

@@ -38,6 +38,6 @@ axes[-1].legend()
 
 plt.show()
 fig.savefig(
-    '/home/tobi/Documents/Master/code/python/Master/doc/thesis/img/esv.png',
+    '/home/tobi/Documents/Master/code/python/Master/thesis/thesis/img/esv.png',
     format='png'
 )

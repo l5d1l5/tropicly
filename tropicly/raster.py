@@ -16,7 +16,7 @@ from shapely.geometry import Polygon
 from tropicly.distance import Distance
 
 
-# TODO doc
+# TODO thesis
 
 
 def make_warp_profile(template, crs):
@@ -114,7 +114,7 @@ def read_raster(item):
 
 
 def clip_raster(raster, dst_bounds):
-    # TODO doc
+    # TODO thesis
     src = read_raster(raster)
     src_bounds = src.bounds
 
@@ -237,7 +237,7 @@ def int_to_orient(x, y):
 
 
 def orient_to_int(orient):
-    # TODO doc
+    # TODO thesis
     coor, orient = re.match(r'(?P<coor>\d+)(?P<orient>[NSWE])', orient, re.I).groups()
 
     if orient.lower() in ('n', 'e'):
@@ -248,7 +248,7 @@ def orient_to_int(orient):
 
 
 def round_bounds(bounds):
-    # TODO doc, round method ceil, floor
+    # TODO thesis, round method ceil, floor
     attrs = ('left', 'bottom', 'right', 'top')
 
     coords = []

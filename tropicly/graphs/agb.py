@@ -30,6 +30,6 @@ ax.set_xticklabels(
 
 plt.show()
 fig.savefig(
-    '/home/tobi/Documents/Master/code/python/Master/doc/thesis/img/agbe.png',
+    '/home/tobi/Documents/Master/code/python/Master/thesis/thesis/img/agbe.png',
     format='png'
 )

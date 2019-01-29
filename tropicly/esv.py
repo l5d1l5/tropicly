@@ -6,7 +6,7 @@ from tropicly.enums import GL30Classes
 from tropicly.raster import write
 
 
-# TODO doc,
+# TODO thesis,
 #  haversine
 
 def worker(driver, esv, names, **kwargs):

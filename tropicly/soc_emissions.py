@@ -12,7 +12,7 @@ from tropicly.utils import write
 SOCCFACTORS = SOCCCoefficients
 
 
-# TODO doc
+# TODO thesis
 
 
 def worker(driver, soc, out_name, intact=None, **kwargs):
@@ -29,7 +29,7 @@ def worker(driver, soc, out_name, intact=None, **kwargs):
         Path to intact forest raster image.
     :param kwargs:
         Parameters for soc_emissions function. Please,
-        refer to the function doc for a list of possible
+        refer to the function thesis for a list of possible
         parameter.
     """
     with open(driver, 'r') as h1, open(soc, 'r') as h2:

@@ -21,7 +21,7 @@ def worker(landcover, treecover, return_stack, *args, **kwargs):
         Additional parameters, will be added to result record.
     :param kwargs:
         Parameter for treecover_similarity function. Please consider function
-        doc for detailed info.
+        thesis for detailed info.
     """
     with open(landcover, 'r') as handle1, open(treecover, 'r') as handle2:
         gl30 = handle1.read(1)
