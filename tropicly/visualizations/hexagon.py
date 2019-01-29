@@ -12,7 +12,10 @@ from matplotlib.patches import Rectangle
 
 from tropicly.grid import GridPolygon
 from tropicly.grid import PolygonGrid
+from tropicly.utils import cache_directories
+from tropicly.utils import get_data_dir
 
+DIRS = cache_directories(get_data_dir())
 
 rcParams['patch.facecolor'] = 'none'
 
@@ -104,8 +107,8 @@ for annotation in annotations:
 ax.annotate('Odd row:\n$x_{off}=x_1+r$\n$y_{off}=y_1-v_3+v_0$', (-0.1, 2.3), fontsize=10,)
 ax.annotate('Even row:\n$x_{off}=x_1+d$\n$y_{off}=y_1-v_3+v_0$', (-0.1, 3.3), fontsize=10,)
 
-fig.show()
+#fig.show()
 fig.savefig(
-    '/home/tobi/Documents/Master/code/python/Master/thesis/thesis/img/hexagons.png',
+    str(DIRS.fig / 'hexagons.png'),
     format='png'
 )

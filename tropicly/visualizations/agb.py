@@ -1,8 +1,12 @@
 import matplotlib.pyplot as plt
 import pandas as pd
 
+from tropicly.utils import cache_directories
+from tropicly.utils import get_data_dir
 
-src = pd.read_csv('/home/tobi/Documents/Master/code/python/Master/data/proc/ana/agbe.csv').T
+DIRS = cache_directories(get_data_dir())
+
+src = pd.read_csv(DIRS.ana / 'agbe.csv').T
 src = src[[1, 0, 2]]
 src = src.values
 
@@ -28,8 +32,8 @@ ax.set_xticklabels(
 )
 
 
-plt.show()
+#plt.show()
 fig.savefig(
-    '/home/tobi/Documents/Master/code/python/Master/thesis/thesis/img/agbe.png',
+    str(DIRS.fig / 'agbe.png'),
     format='png'
 )

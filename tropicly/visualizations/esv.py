@@ -1,8 +1,12 @@
 import matplotlib.pyplot as plt
 import pandas as pd
 
+from tropicly.utils import cache_directories
+from tropicly.utils import get_data_dir
 
-src = pd.read_csv('/home/tobi/Documents/Master/code/python/Master/data/proc/ana/esv.csv').values
+DIRS = cache_directories(get_data_dir())
+
+src = pd.read_csv(DIRS.ana / 'esv.csv').values
 
 fig, axes = plt.subplots(ncols=3, sharey=True, figsize=(4.5, 3))
 fig.subplots_adjust(wspace=0.1)
@@ -36,8 +40,8 @@ for ax, row in zip(axes, [src[0], src[2], src[1]]):
 axes[0].set_ylabel('ESV [billion Int$/y]', fontsize=12, fontname='Times new roman')
 axes[-1].legend()
 
-plt.show()
+#plt.show()
 fig.savefig(
-    '/home/tobi/Documents/Master/code/python/Master/thesis/thesis/img/esv.png',
+    str(DIRS.fig / 'esv.png'),
     format='png'
 )
