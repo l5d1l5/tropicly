@@ -5,6 +5,9 @@ from tropicly.errors import TropiclyConfusionMatrixError
 from tropicly.errors import TropiclyConfusionMatrixLabelError
 
 
+# TODO doc
+
+
 class ConfusionMatrix:
     """
     A simple class to build a confusion matrix for classification

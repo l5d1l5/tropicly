@@ -9,7 +9,7 @@ from shapely.geometry import Polygon
 
 
 # TODO tests
-# TODO thesis
+#  doc
 
 
 class PolygonGrid:

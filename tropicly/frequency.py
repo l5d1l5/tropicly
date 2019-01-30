@@ -4,7 +4,8 @@ from logging import getLogger
 import numpy as np
 from rasterio import open
 
-# TODO refactor exceptions
+# TODO exceptions
+#  doc
 
 LOGGER = getLogger(__name__)
 

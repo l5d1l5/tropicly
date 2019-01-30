@@ -5,6 +5,8 @@ from tropicly.distance import Distance
 from tropicly.utils import write
 
 
+# TODO doc
+
 def worker(pdd, agb, out_name, distance='hav'):
     """Worker function for parallel execution.
 

@@ -3,6 +3,8 @@ from rasterio import open
 
 from tropicly.errors import TropiclySamplingError
 
+# TODO doc
+
 
 def worker(image, return_stack, **kwargs):
     """

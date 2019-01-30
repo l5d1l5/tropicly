@@ -12,6 +12,9 @@ from shapely.geometry import asShape
 from tropicly.grid import SegmentedHexagon
 
 
+# TODO doc
+
+
 def visual_treecover(path, out, bins=None, unit=1000000, scaling='relative'):
     properties = []
     geometries = []

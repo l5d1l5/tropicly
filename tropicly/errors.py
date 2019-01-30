@@ -1,3 +1,6 @@
+# TODO doc
+
+
 class TropiclyExceptions(Exception):
     """Base class for tropicly exceptions"""
 

@@ -5,8 +5,8 @@ from math import sin
 from math import sqrt
 
 
-# TODO refactor exceptions
-
+# TODO exceptions
+#  doc
 
 def haversine(coord1, coord2, scale='m'):
     """

@@ -10,8 +10,8 @@ from tropicly.distance import Distance
 from tropicly.frequency import most_common_class
 from tropicly.raster import write
 
-# TODO thesis
-# TODO refactor exceptions
+# TODO doc
+#  exceptions
 
 LOGGER = getLogger(__name__)
 

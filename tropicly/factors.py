@@ -1,3 +1,6 @@
+# TODO doc
+
+
 class Coefficient:
     """
     A data object class stores some statistical properties.

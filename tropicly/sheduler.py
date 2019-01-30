@@ -6,7 +6,7 @@ from threading import Thread
 from tropicly.observer import Signal
 
 
-# TODO thesis
+# TODO doc
 
 
 class TaskSheduler(Thread):

@@ -3,6 +3,7 @@ import logging
 import numpy as np
 from rasterio import open
 
+# TODO doc
 
 LOGGER = logging.getLogger(__name__)
 

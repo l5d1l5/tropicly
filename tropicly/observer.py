@@ -1,3 +1,6 @@
+# TODO doc
+
+
 class Signal:
     """
     Simple implementation of observer pattern.

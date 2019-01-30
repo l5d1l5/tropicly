@@ -16,7 +16,7 @@ from shapely.geometry import Polygon
 from tropicly.distance import Distance
 
 
-# TODO thesis
+# TODO doc
 
 
 def make_warp_profile(template, crs):

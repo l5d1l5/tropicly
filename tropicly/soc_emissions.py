@@ -12,7 +12,7 @@ from tropicly.utils import write
 SOCCFACTORS = SOCCCoefficients
 
 
-# TODO thesis
+# TODO doc
 
 
 def worker(driver, soc, out_name, intact=None, **kwargs):
