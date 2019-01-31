@@ -10,29 +10,44 @@
 	\section{Software, design and technology}
 
 	\section{Deforestation}
-	\label{sec:deforestation}
+	\label{sec:discussion_deforestation}
 
 		\subsection{Forest definition}
-		\label{subsec:forest_definition}
+		\label{subsec:discussion_forest_definition}
+			\begin{itemize}
+				\item We can see at which regions Chen et al switched their tree cover definition to 10
+				\item To improve we should apply for each tile a canopy class decision based on our analysis
+				\item This could improve the improve the similarity (accuracy) by maximizing the sample count
+				\item Use this jaccard method to exclude tiles where the tree cover similarity fall below a certain threshold
+			\end{itemize}
 
 		\subsection{Tree cover and deforestation}
-		\label{subsec:tree_cover_and_deforestation}
+		\label{subsec:discussion_tree_cover_and_deforestation}
 
 		\subsection{Proximate deforestation driver}
-		\label{subsec:proxy_deforestation_driver}
+		\label{subsec:discussion_proxy_deforestation_driver}
+			\begin{itemize}
+				\item Reclassification is not a good idea cause this approach leads not to consistent results
+			\end{itemize}
 
 		\subsection{Accuracy assessment}
-		\label{subsec:accuracy_assessment}
+		\label{subsec:discussion_accuracy_assessment}
+			\begin{itemize}
+				\item Is largely subjective because it is prepared from the study author
+				\item Better if someone independent does it 
+			\end{itemize}
 
 	\section{Emissions}
 
 	\section{Ecosystem service values}
+		\begin{itemize}
+			\item resilience of esv loss could be achieved over optimizing total value of the new land-use
+			\item target optimization is use the clearcut by maximizing profit and minimizing the esv loss
+		\end{itemize}
 
 	\section{Binning analysis and visualization}
+		\begin{itemize}
+			\item Cut polygon by line the Scala (1992) approach explained with parametric separation function, and bezier
+			\item A approach where ratio is also ratio of the hexagon area
+		\end{itemize}
 
-
-\begin{itemize}
-	\item Reclassification is not a good idea cuase this approach leads not to consistent results
-	\item Cut polygon by line the scala approach explained with parametric separation function, and bezier 
-	\item resilience of esv loss could be achieved over optimizing total value of the new land-use  
-\end{itemize}
