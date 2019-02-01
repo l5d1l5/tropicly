@@ -7,19 +7,11 @@
 
 		\subsection{Forest definition}
 		\label{subsec:results_forest_definition}
-		%TODO significance code for tables, compress tables
+		%TODO boxplot for all regions
 		%TODO appendix graph distribution of the similarity indexes
-			\note{Goal:} Our goal was to determine at which canopy cover class the similarity between both layers is greatest to get the subsequent proximate deforestation driver for stable land cover changes optimal by anthropogenic causes. We applied the jaccard index for searching the similarity. We grouped our analysis by continental regions americas, asia, africa. Americas accounts for 82 tiles, Asia 86 tiles and Africa 101. We excluded from the analysis all tiles where the initial jaccard index is zero because theses tiles does not contain any tree cover in both tile pairs. This results in 76 Americas , 73 asia and 86 africa. Further we determined the optimal canopy density class by applying the non parametric two and one sided wilcoxon signed rank test. Our initial hypothesis was that the agreement is max between gl30 and hansen when the selected canopy density is between 30 and 100. Because then both datasets should agree by their authors definition of tree cover. The following paragraphs present the results of the analysis for each continental region. 
+			\note{Goal:} Our goal was to determine at which canopy cover class the similarity between both layers is greatest to get the subsequent proximate deforestation driver for stable land cover changes optimal by anthropogenic causes by keeping the largest number of pixels from the gfc dataset. We applied the jaccard index for searching the similarity. We grouped our analysis by continental regions americas, asia, africa. Americas accounts for 82 tiles, Asia 86 tiles and Africa 101. We excluded from the analysis all tiles where the initial jaccard index is zero because theses tiles does not contain any tree cover in both tile pairs. This results in 76 Americas , 73 asia and 86 africa. Further we determined the optimal canopy density class for all regions and for single regions by applying the non parametric two and one sided wilcoxon signed rank test. Our initial hypothesis was that the agreement is max between gl30 and hansen when the selected canopy density is between 30 and 100. Because then both datasets should agree by their authors definition of tree cover. The following paragraphs present the results of the analysis for each continental region. 
 
-			\note{Americas:} Figure \ref{fig:jaccard} shows the quartile distribution of the computed jaccard index for each tile pair for each canopy density class over the three continental regions. Plotted on the x-axis is the canopy density class identifier where $JI_0$ accounts for (0,100], $JI_0$ (10,100], $JI_0$ (20,100], and $JI_0$ (30,100]. The y-axis is the corresponding jaccard index between 0 and 1 for the corresponding tile pair where 1 means total agreement and 0 total disagreement. The sample mean highlight by red crosses in the boxplot for the Americas does not change significantly within the different canopy density classes. For all experiments it is approximately 0.62. While the sample median decreases from 0.68 to 0.66 from the first canopy density class the last canopy density class. For the first canopy class the upper 25 \% of the samples have tree cover similarity ranging between approximately 0.8 and 1.0. This behavior can be observed at the other canopy density classes to only the maximal similarity increases slightly from 0.9787 to 0.9798. As the figure \note{appendix} suggests the change of the canopy density have only little impact on the tiles where already the similarity is high for the upper 25 percent. The similarity range of the first two canopy density classes for the lower 25 percent of the samples ranges between approximately 0.0003 and 0.47. Whereas the range for last to canopy classes ranges between 0.0 and 0.5. This suggests that the exclusion of higher canopy densities decreases the similarity at samples where the similarity is already low also shown in figure \note{appendix}. 50 percent of the samples have a jaccard index between approximately 0.5 and 0.8.  
- 
-			two sided ji0 and ji0 the distribution is significant p<0.01 not equal, suspicious is the pair ji0 and ji2 the distribution is slightly above being significant different, all other pairs show no significant difference in distribution.
-
-			\note{Asia:}
-
-			\note{Africa:}
-
-			\note{Overall results:} Compare tree cover similarity over continents. Asia has the highest tree cover agreement of all classes p=0.01 (less), p=0.02 (equal) wilcoxon rank sum test
+			\note{Americas:} Figure \ref{fig:jaccard} shows the quartile distribution of the computed jaccard index for each tile pair for each canopy density class over the three continental regions. Plotted on the x-axis is the canopy density class identifier where $JI_0$ accounts for (0,100], $JI_0$ (10,100], $JI_0$ (20,100], and $JI_0$ (30,100]. The y-axis is the corresponding jaccard index between 0 and 1 for the corresponding tile pair where 1 means total agreement and 0 total disagreement. The sample mean highlight by red crosses in the boxplot for the Americas does not change significantly within the different canopy density classes. For all experiments it is approximately 0.62. While the sample median decreases from 0.68 to 0.66 from the first canopy density class the last canopy density class. For the first canopy class the upper 25 \% of the samples have tree cover similarity ranging between approximately 0.8 and 1.0. This behavior can be observed at the other canopy density classes to only the maximal similarity increases slightly from 0.9787 to 0.9798. As the figure \note{appendix} suggests the change of the canopy density have only little impact on the tiles where already the similarity is high for the upper 25 percent. The similarity range of the first two canopy density classes for the lower 25 percent of the samples ranges between approximately 0.0003 and 0.47. Whereas the range for last to canopy classes ranges between 0.0 and 0.5. This suggests that the exclusion of higher canopy densities decreases the similarity at samples where the similarity is already low also shown in figure \note{appendix}. 50 percent of the samples have a jaccard index between approximately 0.5 and 0.8 where here the highest mobility of similarity increase and decrease can be observed. To deduce which canopy density class yields the highest similarity overall samples we applied wilcoxon test. Table \ref{tab:wilcoxontwosided_regions} shows the test results of the two sided test for americas. The test result shows that only $JI_1$ have a significant (p<0.01) difference in the distribution compared to the other classes. To deduce the direction of this difference we applied a one sided test where the results are shown in table \ref{tab:wilcoxononesided_regions}.
 			\begin{figure}[ht]
 				\centering
 				\includegraphics[scale=1]{img/jaccard}
@@ -28,32 +20,67 @@
 			\end{figure}
 			\begin{table}[ht]
 				\centering
-				\caption[Two-sided Wilcoxon signed-rank test]{\textbf{Two-sided Wilcoxon signed-rank test:}}
-				\label{tab:wilcoxontwosided}
+				\caption[Two-sided Wilcoxon signed-rank test for regions]{\textbf{Two-sided Wilcoxon signed-rank test for regions:} H$_0$: $\tilde{x_1}=\tilde{x_2}$, The significance is indicated by $p^{*}<0.05$, $p^{**}<0.02$, and $p^{***}<0.01$.}
+				\label{tab:wilcoxontwosided_regions}
+				\begin{tabular}{llllllllll}
+					\hline
+					& \multicolumn{3}{c}{Americas} & \multicolumn{3}{c}{Asia} & \multicolumn{3}{c}{Africa} \\
+					 & JI$_0$ & JI$_1$ & JI$_2$ & JI$_0$ & JI$_1$ & JI$_2$ & JI$_0$ & JI$_1$ & JI$_2$ \\\hline
+					JI$_0$ & - & - & - & - & - & - & - & - & - \\
+					JI$_1$ & .00$^{***}$ & - & - & .72 & - & - & .22 & - & - \\
+					JI$_2$ & .06 & .36 & - & .00$^{***}$ & .00$^{***}$ & - & .03$^{*}$ & .03$^{*}$  & - \\
+					JI$_3$ & .16 & .50 & .60 & .00$^{***}$ & .00$^{***}$ & .00$^{***}$ & .00$^{***}$ & .00$^{***}$ & .00$^{***}$ \\\hline
+				\end{tabular}
+			\end{table}
+		
+			\begin{table}[ht]
+				\centering
+				\caption[One-sided Wilcoxon signed-rank test for regions]{\textbf{One-sided Wilcoxon signed-rank test for regions:} Columns: H$_0$: $\tilde{x_1}\leq\tilde{x_2}$, Rows: H$_0$: $\tilde{x_1}\geq\tilde{x_2}$, The significance is indicated by $p^{*}<0.05$, $p^{**}<0.025$, $p^{***}<0.01$, and $p^{****}<0.005$.}
+				\label{tab:wilcoxononesided_regions}
 				\begin{tabular}{lllllllllllll}
 					\hline
-					& \multicolumn{12}{c}{H$_0$: $\tilde{x_1}=\tilde{x_2}$} \\\hline
 					& \multicolumn{4}{c}{Americas} & \multicolumn{4}{c}{Asia} & \multicolumn{4}{c}{Africa} \\
-					Cls & JI$_0$ & JI$_1$ & JI$_2$ & JI$_3$ & JI$_0$ & JI$_1$ & JI$_2$ & JI$_3$ & JI$_0$ & JI$_1$ & JI$_2$ & JI$_3$ \\\hline
-					JI$_0$ & - & - & - & - & - & - & - & - & - & - & - & - \\
-					JI$_1$ & .00$^{***}$ & - & - & - & .72 & - & - & - & .22 & - & - & - \\
-					JI$_2$ & .06 & .36 & - & - & .00$^{***}$ & .00$^{***}$ & - & - & .03$^{*}$ & .03$^{*}$  & - & - \\
-					JI$_3$ & .16 & .50 & .60 & - & .00$^{***}$ & .00$^{***}$ & .00$^{***}$ & - & .00$^{***}$ & .00$^{***}$ & .00$^{***}$ & - \\\hline
+					& JI$_0$ & JI$_1$ & JI$_2$ & JI$_3$ & JI$_0$ & JI$_1$ & JI$_2$ & JI$_3$ & JI$_0$ & JI$_1$ & JI$_2$ & JI$_3$ \\\hline
+					JI$_0$ & - & .00$^{****}$ & .03$^{*}$ & .08 & - & .64 & 1. & 1. & - & .11 & .98 & 1. \\
+					JI$_1$ & 1. & - & .18 & .25 & .36 & - & 1. & 1. & .89 & - & .99 & 1. \\
+					JI$_2$ & .97 & .82 & - & .30 & .00$^{****}$ & .00$^{****}$ & - & 1. & .02$^{**}$ & .01$^{**}$ & - & 1. \\
+					JI$_3$ & .92 & .75 & .70 & - & .00$^{****}$ & .00$^{****}$ & .00$^{****}$ & - & .00$^{****}$ & .00$^{****}$ & .00$^{****}$ & - \\\hline
+				\end{tabular}
+			\end{table}
+ 
+			\note{Asia:} As figure \ref{fig:jaccard} suggest does the sample mean is approximately 0.7 for all canopy classes. It decreases slightly at higher canopy density intervals. The median is approximately 0.8 by showing also a slight decrease when the canopy density class is raised. The similarity of the upper 25 percent of the samples is between 0.85 and 0.96 and this does not change over the different canopy density classes. This suggests as the appendix figure shows that high ranking tiles are not largely impacted by changes in the canopy density. For Asia the range of the lower 25 percent of the samples is quite large. It ranges between approximately 0.65 and 0.0 and as appendix shows the mobility of the samples show a downward trend. 50 percent of the samples have a similarity between 0.65 and 0.85 but a the last canopy density plot suggests is also an trend for decrease in similarity so the mobility is more downwards.
+
+			\note{Africa:} As figure \ref{fig:jaccard} for Africa suggests is the similarity mobility of the samples in Africa at highest. The mean and median is nearly the same for the canopy density classes 1 and 2 with approximately 0.4. Further, the upper 25 percent show a similarity range between 0.6 and 0.94 for both classes. The range of the lower 25 percent changes from 0.15 to 0.1 (lower limit 0.0001) within both classes by an increase of the 50 percent range of the second class. The last two canopy density classes show a strong decline in the median similarity to 0.3. Further the range spreads of the mid 50 percent between 0 and 0.5. The exclusion of lower canopy classes has an large impact on the tree cover agreement in africa. 
+
+			\note{Comparison between regions:} Asia shows the highest tree cover similarity over all regions followed by the Americas. Africas tree cover similarity is the with ... The range similarity range of 50 percent of the samples in Asia is also the lowest followed by Americas and Africa at last place. Overall regions the same is that the mobility of the upper 25 percent is not great. This means that if the similarity is already high the change of the canopy density has not an huge impact. As appendix figure suggests are theses samples over the three regions mainly located in core tropical forest zones. It is to assume that these zones have only a small number of pixels with a canopy density lower than 30 percent. Therefore both dataset must detect here changes of the forest layer quite accurate and we have reliable info about forest change.
+
+			For a regional approach a better solution could be to select for each region independently the right canopy density. For America a good agreement between the tree cover could be achieved by selecting the second class. For Asia by selecting the first class and for africa the second. Even better would be to decide per tile individually which canopy density should be selected. This would eliminate regional effects of different forest densities.
+
+			\note{Whats the result for all regions:}
+			\begin{table}[ht]
+				\centering
+				\caption[Two-sided Wilcoxon signed-rank test for all samples]{\textbf{Two-sided Wilcoxon signed-rank test for all samples:} H$_0$: $\tilde{x_1}=\tilde{x_2}$, The significance is indicated by $p^{*}<0.05$, $p^{**}<0.02$, and $p^{***}<0.01$.}
+				\label{tab:wilcoxontwosided_all}
+				\begin{tabular}{llll}
+					\hline
+					& JI$_0$ & JI$_1$ & JI$_2$ \\\hline
+					JI$_0$ & - & - & - \\
+					JI$_1$ & .00$^{***}$ & - & - \\
+					JI$_2$ & .08 & .02$^{**}$ & - \\
+					JI$_3$ & .00$^{***}$ & .00$^{***}$ & .00$^{***}$ \\\hline
 				\end{tabular}
 			\end{table}
 			\begin{table}[ht]
 				\centering
-				\caption[One-sided Wilcoxon signed-rank test]{\textbf{One-sided Wilcoxon signed-rank test:}}
-				\label{tab:wilcoxononesided}
-				\begin{tabular}{llllllllllllll}
+				\caption[One-sided Wilcoxon signed-rank test fro all samples]{\textbf{One-sided Wilcoxon signed-rank test for all samples:} Columns: H$_0$: $\tilde{x_1}\leq\tilde{x_2}$, Rows: H$_0$: $\tilde{x_1}\geq\tilde{x_2}$, The significance is indicated by $p^{*}<0.05$, $p^{**}<0.025$, $p^{***}<0.01$, and $p^{****}<0.005$.}
+				\label{tab:wilcoxononesided_all}
+				\begin{tabular}{lllll}
 					\hline
-					& & \multicolumn{12}{c}{H$_0$: $\tilde{x_1}\leq\tilde{x_2}$} \\\hline
-					& & \multicolumn{4}{c}{Americas} & \multicolumn{4}{c}{Asia} & \multicolumn{4}{c}{Africa} \\
-					& Cls & JI$_0$ & JI$_1$ & JI$_2$ & JI$_3$ & JI$_0$ & JI$_1$ & JI$_2$ & JI$_3$ & JI$_0$ & JI$_1$ & JI$_2$ & JI$_3$ \\\hline
-					\multirow{4}{*}{\STAB{\rotatebox[origin=c]{90}{H$_0$: $\tilde{x_1}\geq\tilde{x_2}$}}} & JI$_0$ & - & .00$^{****}$ & .03$^{*}$ & .08 & - & .64 & 1. & 1. & - & .11 & .98 & 1. \\
-					& JI$_1$ & 1. & - & .18 & .25 & .36 & - & 1. & 1. & .89 & - & .99 & 1. \\
-					& JI$_2$ & .97 & .82 & - & .30 & .00$^{****}$ & .00$^{****}$ & - & 1. & .02 & .01 & - & 1. \\
-					& JI$_3$ & .92 & .75 & .70 & - & .00$^{****}$ & .00$^{****}$ & .00$^{****}$ & - & .00 & .00 & .00 & - \\\hline
+					& JI$_0$ & JI$_1$ & JI$_2$ & JI$_3$ \\\hline
+					JI$_0$ & - & .00$^{****}$ & .96 & 1. \\
+					JI$_1$ & 1. & - & .99 & 1. \\
+					JI$_2$ & .04$^{*}$ & .01$^{***}$ & - & 1. \\
+					JI$_3$ & .00$^{****}$ & .00$^{****}$ & .00$^{****}$ & - \\\hline
 				\end{tabular}
 			\end{table}
 
