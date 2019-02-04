@@ -61,6 +61,6 @@ axes[0].set_ylim(bottom=-.01, top=1.)
 
 plt.show()
 fig.savefig(
-    str(DIRS.ana / 'jaccard.png'),
+    str(DIRS.fig / 'jaccard.png'),
     format='png'
 )
