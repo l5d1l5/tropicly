@@ -33,9 +33,19 @@ less = data.frame(JC00=double(),
                   JC30=double())
 for(i in 1:4) {
   for(j in 1:4) {
-    equal[j, i] = wilcox.test(africa[,i], africa[,j], paired = TRUE, alternative = 'two.sided')$p.value
-    greater[j, i] = wilcox.test(africa[,i], africa[,j], paired = TRUE, alternative = 'greater')$p.value
-    less[j, i] = wilcox.test(africa[,i], africa[,j], paired = TRUE, alternative = 'less')$p.value
+    equal[j, i] = wilcox.test(asia[,i], asia[,j], paired = TRUE, alternative = 'two.sided')$p.value
+    greater[j, i] = wilcox.test(asia[,i], asia[,j], paired = TRUE, alternative = 'greater')$p.value
+    less[j, i] = wilcox.test(asia[,i], asia[,j], paired = TRUE, alternative = 'less')$p.value
   }
 }
 
+x_range = 1:length(africa$JC00)
+
+plot(x_range, africa$JC00, pch=1)
+par(new=T)
+plot(x_range, africa$JC10, axes=F, pch=0)
+par(new=T)
+plot(x_range, africa$JC20, axes=F, pch=2)
+par(new=T)
+plot(x_range, africa$JC30, axes=F, pch=3)
+par(new=F)
