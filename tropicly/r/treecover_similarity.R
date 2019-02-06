@@ -1,4 +1,4 @@
-jc_americas = read.csv('/home/tobi/Documents/tropicly/data/proc/ana/harmonization_americas.csv')
+jc_americas = read.csv('/home/tobi/Documents/tropicly/data/proc/ana/harmonization_sorted_americas.csv')
 americas = jc_americas[jc_americas[,1]!=0,]
 americas = americas[,1:4]
 #cor(americas[,1:4])
@@ -39,13 +39,13 @@ for(i in 1:4) {
   }
 }
 
-x_range = 1:length(africa$JC00)
+x_range = 1:length(americas$JC00)
 
-plot(x_range, africa$JC00, pch=1)
-par(new=T)
-plot(x_range, africa$JC10, axes=F, pch=0)
-par(new=T)
-plot(x_range, africa$JC20, axes=F, pch=2)
-par(new=T)
-plot(x_range, africa$JC30, axes=F, pch=3)
-par(new=F)
+plot(x_range, americas$JC00, pch=1, ylim=0:1)
+par(new=TRUE)
+plot(x_range, americas$JC10, axes=FALSE, pch=0)
+par(new=TRUE)
+plot(x_range, americas$JC20, axes=FALSE, pch=2)
+par(new=TRUE)
+plot(x_range, americas$JC30, axes=FALSE, pch=3)
+par(new=FALSE)
