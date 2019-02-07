@@ -25,7 +25,7 @@
 				\begin{tabular}{llllllllll}
 					\hline
 					& \multicolumn{3}{|c}{Americas} & \multicolumn{3}{|c|}{Asia} & \multicolumn{3}{c|}{Africa} \\
-					 & JI$_0$ & JI$_1$ & JI$_2$ & JI$_0$ & JI$_1$ & JI$_2$ & JI$_0$ & JI$_1$ & JI$_2$ \\\hline
+					Cls & JI$_0$ & JI$_1$ & JI$_2$ & JI$_0$ & JI$_1$ & JI$_2$ & JI$_0$ & JI$_1$ & JI$_2$ \\\hline
 					JI$_0$ & - & - & - & - & - & - & - & - & - \\
 					JI$_1$ & .00$^{***}$ & - & - & .72 & - & - & .22 & - & - \\
 					JI$_2$ & .06 & .36 & - & .00$^{***}$ & .00$^{***}$ & - & .03$^{*}$ & .03$^{*}$  & - \\
@@ -39,7 +39,7 @@
 				\begin{tabular}{lllllllllllll}
 					\hline
 					& \multicolumn{4}{|c}{Americas} & \multicolumn{4}{|c|}{Asia} & \multicolumn{4}{c|}{Africa} \\
-					& JI$_0$ & JI$_1$ & JI$_2$ & JI$_3$ & JI$_0$ & JI$_1$ & JI$_2$ & JI$_3$ & JI$_0$ & JI$_1$ & JI$_2$ & JI$_3$ \\\hline
+					Cls & JI$_0$ & JI$_1$ & JI$_2$ & JI$_3$ & JI$_0$ & JI$_1$ & JI$_2$ & JI$_3$ & JI$_0$ & JI$_1$ & JI$_2$ & JI$_3$ \\\hline
 					JI$_0$ & - & .00$^{\dagger}$ & .03$^{*}$ & .08 & - & .64 & 1. & 1. & - & .11 & .98 & 1. \\
 					JI$_1$ & 1. & - & .18 & .25 & .36 & - & 1. & 1. & .89 & - & .99 & 1. \\
 					JI$_2$ & .97 & .82 & - & .30 & .00$^{\dagger}$ & .00$^{\dagger}$ & - & 1. & .02$^{**}$ & .01$^{**}$ & - & 1. \\
@@ -60,7 +60,7 @@
 				\label{tab:wilcoxontwosided_all}
 				\begin{tabular}{llll}
 					\hline
-					& JI$_0$ & JI$_1$ & JI$_2$ \\\hline
+					Cls & JI$_0$ & JI$_1$ & JI$_2$ \\\hline
 					JI$_0$ & - & - & - \\
 					JI$_1$ & .00$^{***}$ & - & - \\
 					JI$_2$ & .08 & .02$^{**}$ & - \\
@@ -73,7 +73,7 @@
 				\label{tab:wilcoxononesided_all}
 				\begin{tabular}{lllll}
 					\hline
-					& JI$_0$ & JI$_1$ & JI$_2$ & JI$_3$ \\\hline
+					Cls & JI$_0$ & JI$_1$ & JI$_2$ & JI$_3$ \\\hline
 					JI$_0$ & - & .00$^{****}$ & .96 & 1. \\
 					JI$_1$ & 1. & - & .99 & 1. \\
 					JI$_2$ & .04$^{*}$ & .01$^{***}$ & - & 1. \\
@@ -84,37 +84,46 @@
 		\subsection{Tree cover and deforestation}
 		\label{subsec:results_tree_cover_and_deforestation}
 		%TODO images of loss and canopy
+		\note{Goal:}
+		\note{Americas:} \note{Asia:} \note{Africa:}
 
 		\subsection{Proximate deforestation driver}
 		\label{subsec:results_proxy_deforestation_driver}
 
 		\subsection{Accuracy assessment}
 		\label{subsec:results_accuracy_assessment}
-		%TODO kappa coefficient
-			\note{Goal:} Goal is the assessment of the accuracy of our proximate deforestation predictions. We created a set of ground truth data by sampling our proximate deforestation driver layers. In each region we select per random 10 tiles and draw 200 samples per tile. The 200 samples comprises pixels over the full value range of our proximate deforestation driver classes. We imported the prepared sample to our JavaScript application and subsequently classified each sample with a label. To determine the accuracy we used a confusion matrix and the derived metrics like producers accuracy, overall accuracy, kappa coefficient etc.
+		%TODO distribution is it in line with global estimates
+			\note{Goal (review):} Goal is the assessment of the accuracy of our proximate deforestation driver predictions. We created a set of ground truth data by sampling our proximate deforestation driver layers. In each region we select per random 10 tiles and draw 200 samples per tile. The 200 samples comprises pixels over the full value range of our proximate deforestation driver classes. We imported the prepared sample to our JavaScript application and subsequently classified each sample with a label. To determine the accuracy we used a confusion matrix and the derived metrics like producers accuracy, overall accuracy, kappa coefficient etc.
 
-			\note{Results:}
+			\note{Results (review):} Table \ref{tab:results_confusion_matrix} shows the confusion matrix to determine the accuracy of our predictions where the term reference refers to the labeling of pixel by our visual interpretation and predictions refer to the labeling of our proximate driver predictions. The abbreviations PAc, UAc, OvAc, Com, Om, Tot, and Kappa refer to the terms Producers-Accuracy, Users-Accuracy, Overall-Accuracy, Error of Commission, Error of Omission, row or column total, and Kappa Coefficient. From the 6000 samples we draw from our study extent 14 \%, 20 \%, 22 \%, 32 \%, 8 \%, 2 \%, 0.5 \%, 2 \%, and 0.5 \% account for cultivated land (10), tree cover (20), regrowth (25), shrubland (40), wetland (50), water (60), artificial land (80), and bareland (90), respectively. The method predicts a distribution of 15 \%, 18 \%, 27 \%, 31 \%, 7 \%, 1 \%, 0.8 \%, 1 \%, and 0.2 \% for the land cover classes 10, 20, 25, 30, 40, 50, 60, 80, and 90, respectively. Our method achieved an overall accuracy of approximately 76 \%
+
+			\begin{itemize}
+				\item grassland in majority with anthropogenic influence at many sides at water hole was detectable
+				\item decision between regrowth and natural tree cover, relayed on expert knowledge how homogeneous is canopy
+				\item shrub land comprises natural landscapes, young plantations, and areas for cattle ranching
+				\item strong variability of images some high res some landsat quality
+			\end{itemize}
 			\begin{table}[ht]
 				\centering
-				\caption[Accuracy assessment]{Confusion matrix for accuracy assessment}
-				\label{tab:accuracy}
+				\caption[Confussion matrix]{\textbf{Confussion matrix for accuracy assessment:} We draw 6000 samples from 10 random selected tiles from the three regions Americas, Asia and Africa. Labels refer to our proximate deforestation driver classes which correspond to GlobeLand30 classification schema in table \ref{tab:gl30_classes}. Reference refers to the samples we classified by visual interpretation of external imagery and predictions refer to the label the sample has in our proximate driver product. The abbreviations PAc, UAc, OvAc, Com, Om, Tot, and Kappa refer to the terms Producers-Accuracy, Users-Accuracy, Overall-Accuracy, Error of Commission, Error of Omission, row or column total, and Kappa Coefficient.}
+				\label{tab:results_confusion_matrix}
 				\begin{tabular}{llrrrrrrrrrrrr}
 					\hline
-					& & \multicolumn{9}{c}{Reference} & & & \\
+					& & \multicolumn{9}{c}{Reference} & & & \\\cline{3-11}
 					& Cls & 10 & 20 & 25 & 30 & 40 & 50 & 60 & 80 & 90 & Tot & UAc & Om \\\hline
 					\multirow{9}{*}{\STAB{\rotatebox[origin=c]{90}{Prediction}}}
-					& 10 & 732 & 38 & 62 & 15 & 16 & 2 & 3 & 5 & 0 & 873 & .84 & .16 \\ 
-					& 20 & 42 & 751 & 57 & 189 & 31 & 12 & 0 & 17 & 4 & 1103 & .68 & .32 \\ 
-					& 25 & 29 & 202 & 1155 & 173 & 22 & 10 & 5 & 11 & 4 & 1611 & .72 & .28 \\ 
+					& 10 & 730 & 37 & 62 & 15 & 16 & 2 & 3 & 5 & 0 & 870 & .84 & .16 \\ 
+					& 20 & 41 & 744 & 56 & 189 & 31 & 12 & 0 & 15 & 4 & 1092 & .68 & .32 \\ 
+					& 25 & 29 & 202 & 1155 & 172 & 22 & 10 & 5 & 11 & 4 & 1610 & .72 & .28 \\ 
 					& 30 & 36 & 187 & 32 & 1466 & 73 & 21 & 0 & 17 & 0 & 1832 & .80 & .20 \\ 
 					& 40 & 14 & 21 & 4 & 41 & 352 & 1 & 1 & 2 & 1 & 437 & .81 & .19 \\ 
 					& 50 & 0 & 5 & 3 & 10 & 4 & 50 & 0 & 1 & 0 & 73 & .68 & .32 \\ 
 					& 60 & 2 & 1 & 0 & 3 & 0 & 2 & 18 & 2 & 0 & 28 & .64 & .36 \\ 
-					& 80 & 3 & 4 & 0 & 1 & 1 & 1 & 0 & 50 & 0 & 60 & .83 & .17 \\ 
+					& 80 & 3 & 3 & 0 & 1 & 1 & 1 & 0 & 40 & 0 & 49 & .82 & .18 \\ 
 					& 90 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 3 & 5 & 9 & .56 & .44 \\\hline 
-					& Tot & 858 & 1209 & 1313 & 1899 & 499 & 99 & 27 & 108 & 14 & 6026 & & \\
-					& PAc & .85 & .62 & .88 & .77 & .71 & .51 & .67 & .46 & .36 & & \multicolumn{2}{r}{OvAc} \\
-					& Com & .15 & .38 & .12 & .23 & .29 & .49 & .33 & .54 & .64 & & \multicolumn{2}{r}{.75} \\ \hline
+					& Tot & 855 & 1200 & 1312 & 1898 & 499 & 99 & 27 & 96 & 14 & 6000 & & \\
+					& PAc & .85 & .62 & .88 & .77 & .71 & .51 & .67 & .42 & .36 & Kappa & \multicolumn{2}{r}{OvAc} \\
+					& Com & .15 & .38 & .12 & .23 & .29 & .49 & .33 & .58 & .64 & .69 & \multicolumn{2}{r}{.76} \\ \hline
 				\end{tabular}
 			\end{table}
 

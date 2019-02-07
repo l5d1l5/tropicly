@@ -205,11 +205,14 @@
 
 		\subsubsection{Accuracy assessment}
 		%TODO convert expressions to i,j
-		For examining the accuracy of our \ac{PDD} predictions we used a confusion matrix (also known as two-way frequency tables, error matrix or contingency tables). These matrices are commonly used for an accuracy assessment of land cover classifications and enable the computation of marginal and conditional distributions \citep{Congalton1991,Foody2002}. Table \ref{tab:confusion_matrix} shows a general model of a confusion matrix. Foundation for an accuracy assessment by means of a confusion matrix is a collection of ground-truth samples which can be compared with the class predictions for these samples produced by a classification algorithm. For the preparation of our accuracy assessment, we have to extract a collection of pixel samples with a deforestation occurrence from our proximate driver maps (further also called predictions). Next, we compose a set of ground-truth for these predictions (further also called references).
+		%TODO visual interpretation what are the rules u used
+		%TODO decision between regrowth and primary, natural forest based on detection of experct forest worker
+		%TODO plantend forests are age class so they have a homogeneous canopy
+		For examining the accuracy of our \ac{PDD} predictions we used a confusion matrix (also known as two-way frequency tables, error matrix or contingency tables). These matrices are commonly used for an accuracy assessment of land cover classifications and enable the computation of marginal and conditional distributions \citep{Congalton1991,Foody2002}. Table \ref{tab:methods_confusion_matrix} shows a general model of a confusion matrix. Foundation for an accuracy assessment by means of a confusion matrix is a collection of ground-truth samples which can be compared with the class predictions for these samples produced by a classification algorithm. For the preparation of our accuracy assessment, we have to extract a collection of pixel samples with a deforestation occurrence from our proximate driver maps (further also called predictions). Next, we compose a set of ground-truth for these predictions (further also called references).
 			\begin{table}[ht]
 				\centering
 				\caption[A general model of a confusion matrix]{\textbf{A general model of a confusion matrix:} $X_1$, ... , $X_n$ denote classification categories of two independent raters. $x_{n,n}$ are the actual samples sorted into the categories where the values in the diagonal show the agreement between both raters. The remaining cell values account for the disagreement between the two raters. $\sum$ column and row show the marginal distribution and N is the total number of samples.}
-				\label{tab:confusion_matrix}
+				\label{tab:methods_confusion_matrix}
 				\begin{tabular}{lccccc}
 					\hline
 					& & \multicolumn{3}{c}{Reference} & \\
