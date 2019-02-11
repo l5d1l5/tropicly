@@ -4,18 +4,26 @@ import rasterio as rio
 
 from tropicly.enums import GL30Classes
 from tropicly.raster import write
+from tropicly.distance import Distance
 
 
 # TODO doc
-#  haversine
 
-def worker(driver, esv, names, **kwargs):
+
+def worker(driver, esv, names, attr='mean', distance='hav', gl30=(10, 25, 30, 40, 70, 80, 90)):
     with rio.open(driver, 'r') as src:
         profile = src.profile
         data = src.read(1)
 
-    deficit = forest_loss(data, esv, **kwargs)
-    gain = landcover_gain(data, esv, **kwargs)
+    transform = profile['transform']
+
+    haversine = Distance(distance)
+    x = haversine((transform.xoff, transform.yoff), (transform.xoff + transform.a, transform.yoff))
+    y = haversine((transform.xoff, transform.yoff), (transform.xoff, transform.yoff + transform.e))
+    area = round(x * y)
+
+    deficit = forest_loss(data, esv, attr=attr, area=area, gl30=gl30)
+    gain = landcover_gain(data, esv, attr=attr, area=area, gl30=gl30)
 
     write(deficit, names[0], **profile)
     write(gain, names[1], **profile)
@@ -43,23 +51,23 @@ def forest_loss(data, esv, attr='mean', area=900, gl30=(10, 25, 30, 40, 70, 80, 
 
 # TODO refactor include area
 def landcover_gain_from_map(driver, esv, attr=None, area=None, gl30=None):
-    mask = np.zeros(driver.shape, dtype=np.uint32)
+    mask = np.zeros(driver.shape, dtype=np.float64)
 
     for i in gl30:
         coefficient = esv.get(GL30Classes(i)).__getattribute__(attr)
-        mask[driver == i] = coefficient
+        mask[driver == i] = coefficient * area
 
     return mask
 
 
 # TODO refactor include area
 def forest_loss_from_map(driver, esv, attr=None, area=None, gl30=None):
-    mask = np.zeros(driver.shape, dtype=np.uint32)
+    mask = np.zeros(driver.shape, dtype=np.uint8)
     mask[np.isin(driver, gl30)] = 1
 
     coefficient = esv.get(GL30Classes.forest).__getattribute__(attr)
 
-    factor_map = mask * coefficient
+    factor_map = mask * coefficient * area
 
     return factor_map
 
