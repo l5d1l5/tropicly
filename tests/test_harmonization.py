@@ -10,9 +10,9 @@ from unittest import TestCase
 import numpy as np
 
 from tests.utilities import random_test_data
-from tropicly.harmonization import jaccard_index
-from tropicly.harmonization import simple_matching_coefficient
-from tropicly.harmonization import treecover_similarity
+from tropicly.similarity import jaccard_index
+from tropicly.similarity import simple_matching_coefficient
+from tropicly.similarity import treecover_similarity
 
 
 class TestHarmonization(TestCase):

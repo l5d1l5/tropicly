@@ -41,19 +41,19 @@ for region1, region2 in combinations(data.keys(), 2):
 print(two_sided_equal_results)
 print(one_sided_greater_results)
 
-
 # TODO refactor
 df = pd.read_csv(DIRS.ana / 'harmonization_americas.csv')
 nw = df[df.key.str.contains(r'\d{2}N_\d{3}W')]
 sw = df[df.key.str.contains(r'\d{2}S_\d{3}W')]
 
-nw = list(nw)
+nw = list(nw.values)
 nw = list(map(list, nw))
 
-sw = list(sw)
+sw = list(sw.values)
 sw = list(map(list, sw))
 
 nw = sorted(nw, key=lambda x: (x[4][2:3], x[4][-1], int(x[4][:2]), int(x[4][4:7])), reverse=True)
 sw = sorted(sw, key=lambda x: (x[4][2:3], x[4][-1], int(x[4][:2]), int(x[4][4:7])))
 
 df = pd.DataFrame.from_records(nw + sw)
+df.columns = ['JC00', 'JC10', 'JC20', 'JC30', 'key', 'region']
