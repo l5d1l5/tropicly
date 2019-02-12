@@ -38,7 +38,7 @@ def worker(pdd, agb, out_name, distance='hav'):
     write(emissions, out_name, **profile)
 
 
-def agb_emissions(pdd, agb, area=900, co2=3.7, pdd_classes=(10, 25, 30, 40, 50, 60, 70, 80, 90, 100)):
+def agb_emissions(pdd, agb, area=900, co2=3.7, pdd_classes=(10, 25, 30, 40, 70, 80, 90)):
     """Computes the emissions trough Above-ground Biomass removal.
 
     Args:

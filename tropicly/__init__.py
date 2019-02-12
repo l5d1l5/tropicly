@@ -2,18 +2,18 @@ from tropicly.agb_emissions import worker as agbworker
 from tropicly.alignment import worker as aworker
 from tropicly.classification import worker as cworker
 from tropicly.confusion_matrix import ConfusionMatrix
+from tropicly.esv import worker as esvworker
 from tropicly.frequency import worker as fworker
 from tropicly.grid import GridPolygon
 from tropicly.grid import PolygonGrid
 from tropicly.grid import SegmentedHexagon
-from tropicly.harmonization import worker as hworker
 from tropicly.raster import compute_cover
 from tropicly.raster import compute_driver
 from tropicly.raster import worker as eworker
 from tropicly.sampling import worker as sworker
 from tropicly.sheduler import TaskSheduler
+from tropicly.similarity import worker as hworker
 from tropicly.soc_emissions import worker as socworker
-from tropicly.esv import worker as esvworker
 
 __version__ = 0.1
 

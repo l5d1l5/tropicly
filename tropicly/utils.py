@@ -402,7 +402,6 @@ def merge_alike(with_template, to_merge):
 
 
 def clip_raster(raster, dst_bounds):
-    # TODO thesis
     src = read_raster(raster)
     src_bounds = src.bounds
 
