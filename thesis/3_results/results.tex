@@ -25,7 +25,6 @@
 					\hline
 					& \multicolumn{3}{|c}{Americas} & \multicolumn{3}{|c|}{Asia} & \multicolumn{3}{c|}{Africa} \\
 					Cls & JI$_0$ & JI$_1$ & JI$_2$ & JI$_0$ & JI$_1$ & JI$_2$ & JI$_0$ & JI$_1$ & JI$_2$ \\\hline
-					JI$_0$ & - & - & - & - & - & - & - & - & - \\
 					JI$_1$ & .00$^{***}$ & - & - & .72 & - & - & .22 & - & - \\
 					JI$_2$ & .06 & .36 & - & .00$^{***}$ & .00$^{***}$ & - & .03$^{*}$ & .03$^{*}$  & - \\
 					JI$_3$ & .16 & .50 & .60 & .00$^{***}$ & .00$^{***}$ & .00$^{***}$ & .00$^{***}$ & .00$^{***}$ & .00$^{***}$ \\\hline
@@ -60,7 +59,6 @@
 				\begin{tabular}{llll}
 					\hline
 					Cls & JI$_0$ & JI$_1$ & JI$_2$ \\\hline
-					JI$_0$ & - & - & - \\
 					JI$_1$ & .00$^{***}$ & - & - \\
 					JI$_2$ & .08 & .02$^{**}$ & - \\
 					JI$_3$ & .00$^{***}$ & .00$^{***}$ & .00$^{***}$ \\\hline
@@ -87,13 +85,12 @@
 
 		\subsection{Proximate deforestation driver}
 		\label{subsec:results_proxy_deforestation_driver}
-			\note{Goal (review):}
+			\note{Goal (review):} Goal is to estimate the distribution of proximate deforestation drivers on global, continental, and regional scale for the tropics between 2001 and 2010. We used a approach by superimposing the gfc annual loss and the gl30 land cover map from 2010. We carefully selected the target canopy density by analyzing the tree cover agreement between both layers at 2000. We filtered the gfc data by applying the canopy density interval within $(10,100]$. By filtering is meant that we used only annual loss which occur in this interval. Also we selected only gain data from gfc which is connected to a previous loss. We applied a reclassification after superimposing both layers to handle the great share of pixels classified as forest. We used clustering to aggregate these pixels and applied a square sized buffer of 500 meter. We determined the most frequent class within this buffer and assigned it to the cluster.
 
 		\subsection{Accuracy assessment}
 		\label{subsec:results_accuracy_assessment}
 		%TODO distribution is it in line with global estimates
-		
-			\note{Goal (review):} Goal is the assessment of the accuracy of our proximate deforestation driver predictions. We created a set of ground truth data by sampling our proximate deforestation driver layers. In each region we select per random 10 tiles and draw 200 samples per tile. The 200 samples comprises pixels over the full value range of our proximate deforestation driver classes. We imported the prepared sample to our JavaScript application and subsequently classified each sample with a label. To determine the accuracy we used a confusion matrix and the derived metrics like producers accuracy, overall accuracy, kappa coefficient etc.
+			\note{Goal (review):} Goal is the assessment of the accuracy of our proximate deforestation driver predictions. We created a set of ground truth data by sampling our proximate deforestation driver layers. In each continental region we select per random 10 tiles and draw 200 samples per tile. The 200 samples comprises pixels over the full value range of our proximate deforestation driver classes. We imported the prepared sample to our JavaScript application and subsequently classified each sample with a label by visual interpretation of google earth imagery. To determine the accuracy we used a confusion matrix and the derived metrics.
 
 			\note{Results (review):} Table \ref{tab:results_confusion_matrix} shows the confusion matrix to determine the accuracy of our predictions where the term reference refers to the labeling of pixel by our visual interpretation and predictions refer to the labeling of our proximate driver predictions. The abbreviations PAc, UAc, OvAc, Com, Om, Tot, and Kappa refer to the terms Producers-Accuracy, Users-Accuracy, Overall-Accuracy, Error of Commission, Error of Omission, row or column total, and Kappa Coefficient. From the 6000 samples we draw from our study extent 14 \%, 20 \%, 22 \%, 32 \%, 8 \%, 2 \%, 0.5 \%, 2 \%, and 0.5 \% account for cultivated land (10), tree cover (20), regrowth (25), shrubland (40), wetland (50), water (60), artificial land (80), and bareland (90), respectively. Our method predicts a distribution of 15 \%, 18 \%, 27 \%, 31 \%, 7 \%, 1 \%, 0.8 \%, 1 \%, and 0.2 \% for the land cover classes 10, 20, 25, 30, 40, 50, 60, 80, and 90, respectively.
 			Highest producers accuracy is achieved the regrowth class with 88 percent. The prediction of this class was achieved by including global forest change gain data within our target canopy density. During building our reference data set per visual interpretation we determined this class by following these rules. We checked the surroundings and the corresponding pixel for signs of road networks and infrastructure. Further we checked if the canopy shows signs of age class forest and line patterns which show the establishment of artificial introduced forest cover. During the visual interpretation we recognized that a large portion of the regrowth class is occupied by plantations especially in Americas and Asia. For Asia a major share was occupied by palm oil or other plantations. It must be mentioned that here the deforestation within our temporal frame is not coercively the clearing of natural cover/primary forest it shows it shows also rotational cycles of deforestation reforestation.
@@ -125,14 +122,30 @@
 			\end{table}
 
 	\section{Emissions}
-		\note{Goal (review):}
+		\note{Goal (review):} Our goal is to estimate the emissions emitted by proximate deforestation driver. We estimated the emissions from the removal of aboveground biomass and through the change of soil organic carbon content. Detailed below are the pdd classes we assumed as deforestation to estimate the agb emissions: 10, 25, 30, 40, 80, 90. To approximate the emissions by soil organic carbon change we used the transition pathways from don et al. We estimated soc for two different scenarios with the following conditions: scenario one (SC1) all transitions occur in primary forest and scenario two (SC2) by using the intact forest landscape layer we distinguished between primary forest and secondary forest. The first scenario can be seen as liberal estimate and the second scenario as conservative estimate. We aggregated our results on global and continental scale. 
 
 	\section{Ecosystem service values}
-	%TODO compute global balance
-	%TODO compute regional balance
-	%TODO country table goes to appendix
-	%TODO aggregate per
-		Our goal is to estimate the monetary loss of \ac{ESV} by \ac{PDD} at a global, continental, and regional scale. Additionally, we approximated the monetary gain if tree cover is converted to a certain type of \ac{LC}. We refer to this gain as \ac{ESV} gain. Further, we computed the balance between \ac{ESV} loss and gain to estimate the net change of \ac{ESV} in the tropical zone. We applied three datasets which estimate the monetary value of ecosystems on a global scale namely the following data: \citet{Groot2012}, \citet{Costanza2014}, and \citet{Siikamaki2015}. To compute the monetary loss of \ac{ESV} we selected the following \ac{PDD} classes as anthropogenic deforestation: 10 (cultivated land), 25 (regrowth), 30 (grassland), 40 (shrubland), 80 (artificial land), and 90 (bareland). The \ac{ESV} gain depends on the particular \ac{ESV} dataset because the datasets don't define a monetary value for each \ac{PDD} class. For detailed informations refer to section \ref{subsec:esv_methods}. The \ac{ESV} net change or balance is the difference of \ac{ESV} loss and gain. The monetary unit for each value is the Geary–Khamis dollar at 2007 also known as international dollar (2007 Int.\$ ha$^{-1}$).
+		Our goal is to estimate the monetary loss of \ac{ESV} by the aggregated \ac{PDD} at a global and continental scale. Whereas a regional scale aggregation could easily performed with our data. Additionally, we approximated the monetary gain if tree cover is converted to a certain type of \ac{LC}. We refer to this gain as \ac{ESV} gain. Further, we computed the balance between \ac{ESV} loss and gain to estimate the net change of \ac{ESV} in the tropical zone. We applied three datasets which estimate the monetary value of ecosystems on a global scale namely the following data: \citet{Groot2012}, \citet{Costanza2014}, and \citet{Siikamaki2015}. We refer to this datasets as Co, Dg, and Wb. To compute the monetary loss of \ac{ESV} we selected the following \ac{PDD} classes as anthropogenic deforestation: 10 (cultivated land), 25 (regrowth), 30 (grassland), 40 (shrubland), 80 (artificial land), and 90 (bareland). The \ac{ESV} gain depends on the particular \ac{ESV} dataset because the datasets don't define a monetary value for each \ac{PDD} class. For detailed informations refer to section \ref{subsec:esv_methods}. The \ac{ESV} net change or balance is the difference of \ac{ESV} loss and gain. The monetary unit for each value is the Geary–Khamis dollar at 2007 also known as international dollar (2007 Int.\$ ha$^{-1}$).
+		\begin{table}[ht]
+			\centering
+			\caption[Ecosystem service value balance]{\textbf{Ecosystem service value balance:} The dataset column refers to the three global ecosystem service value datasets by \citet{Groot2012} (Co), \citet{Costanza2014} (Dg), and \citet{Siikamaki2015} (Wb). Loss refers to the monetary value of tropical forest deforested by the aggregated anthropogenic proximate deforestation drivers. Gain is the monetary value of the land cover transition and balance is difference of gain and loss. Monetary unit of the ecosystem service values is billion International Dollar 2007 (10$^{-9}$ Int.\$.)}
+			\label{tab:esv_results}
+			\begin{tabular}{lrrrr}
+				\hline
+				Dataset & Global & Americas & Asia & Africa \\
+				\hline
+				Co$_{loss}$ & & 208.3 & & \\
+				Co$_{gain}$ & & 161.0 & & \\
+				Co$_{balance}$ & & -47.3 & & \\
+				Dg$_{loss}$ & & 204.0 & & \\
+				Dg$_{gain}$ & & 82.5 & & \\
+				Dg$_{balance}$ & & -121.5 & &  \\
+				Wb$_{loss}$ & & 51.0 & & \\
+				Wb$_{gain}$ & & 7.3 & & \\
+				Wb$_{balance}$ & & -43.7 & & \\
+				\hline
+			\end{tabular}
+		\end{table}
 
 %%%%%%% TABLE AND FIGURES
 
@@ -256,11 +269,11 @@
 
 
 % ESV
-%		\begin{figure}[ht]
-%			\centering
-%			\includegraphics[scale=1]{img/esv}
-%			\caption[Ecosystem service values]{}
-%			\label{fig:esv}
-%		\end{figure}
+		\begin{figure}[ht]
+			\centering
+			\includegraphics[scale=1]{img/esv}
+			\caption[Ecosystem service values]{}
+			\label{fig:esv}
+		\end{figure}
 
 
