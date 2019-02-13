@@ -7,7 +7,7 @@
 		\subsection{Forest definition}
 		\label{subsec:results_forest_definition}
 		%TODO appendix graph distribution of the similarity indexes
-		%TODO Holm correction to tables
+		%TODO Holm correction to one-sided tables
 			Our goal is to determine at which canopy cover density the agreement between \ac{GL30} and \ac{GFC} tree cover is greatest to receive the subsequent \ac{PDD} for stable \ac{LC} transitions introduced by anthropogenic causes. This process should ensure that we keep the largest number of tree cover loss samples from the \ac{GFC} dataset while harmonizing the tree cover definition between both layers. We applied the \ac{JI} to determine the similarity between each tile pair from our \ac{AISM}. The \ac{JI} computation is grouped by the continental regions Americas (82 tiles), Asia (86 tiles), and Africa (101 tiles). We determined the similarity for the following canopy density intervals: $(0, 100]$, $(10, 100]$, $(20, 100]$, and $(30, 100]$. Later we excluded all tiles with a initial \ac{JI} (canopy density intervall $(0,100]$) from our analysis because these tile pair does not contain any tree cover. We excluded 6, 9, and 15 tiles for Americas, Asia and Africa, respectively. To determine the canopy density interval where the agreement is at maximum we applied the non-parametric tests Wilcoxon signed-rank test and Wilcoxon rank-sum test. Both of the tests are performed as a one- and two-sided to deduce, if there is a difference in agreement (equality) and which direction (less or greater) has this difference. To address the higher probability of family-wise error rate in multiple comparisons we applied the Holm correction. We applied continental and global testing to deduce regional differences and to determine the optimum for our subsequent \ac{PDD} predictions. Further, we compared the tree cover agreement of the three continental regions. Our initial hypothesis was that the tree cover agreement is at its maximum within the canopy density interval of $(30,100]$ for the entire study extent. We assumed that for the Americas and Asia the best results could be achieved with the same canopy density threshold. For Africa we assumed that the highest agreement could be achieved within the interval of $(10,100]$ because this region comprises a higher frequency of sparse woodland cover. The following paragraphs present our results for the three regions in the following order: Americas, Asia and Africa. The last paragraph discusses the results for the entire study extent and determines which canopy density we used for the following \ac{PDD} prediction.
 
 			For Americas, Asia and Africa as well the entire study extent figure \ref{fig:jaccard} shows the distribution of the computed \acp{JI} for all tile pairs within the canopy density intervals. The x-axis are the different canopy density intervals where the label $JI_0$ accounts for $(0,100]$, $JI_1$ $(10,100]$, $JI_2$ $(20,100]$, and $JI_3$ $(30,100]$, respectively. The y-axis is the corresponding \ac{JI} between 0 and 1 where 0 highlights a complete disagreement and 1 a full agreement. The sample mean is labelled by a red cross and the boxes comprises the $Q_1$ (25 \%), $Q_2$ (50 \%), and $Q_3$ (75 \%) sample interval, respectively. For the Americas the sample mean does not change significantly within the four canopy density experiments. It is approximately 0.62 while sample median decreases from 0.68 to 0.66 from the interval class to the last. The upper 25 \% of the first experiment interval have a tree cover similarity ranging between approximately 0.8 and 1. This holds true over the other three experiments while only the maximum similarity slightly increases from 0.9787 to 0.9798. The figure \ref{fig:jaccard_americas_appendix} in the appendix suggests, that exclusions of canopy densities smaller than 11 increases slightly the tree cover agreement of the upper 25 \% but the exclusion of higher canopy density provides no benefit. This can be explained by the fact that the upper percentile already contain samples with a high tree cover agreement and it is to assume that only a small number of pixels have canopy density smaller than 30. Therefore, the interval change has only a small impact on this samples. For the first two canopy density intervals the range of the lower 25 \% percentile is between approximately 0.0003 and 0.45. Whereas the range increases from 0.0 to 0.5 for the last two interval classes. The figure \ref{fig:jaccard_americas_appendix} reveals a strong regional dependency of tree cover agreement within different canopy density classes of the lower percentiles. Whereas samples from the northern hemisphere show a decline in agreement the samples of the southern hemisphere show a increase of agreement. The strong up-shift of the southern samples within the last two intervals increases the range of lower percentile. This suggests in general that samples with low tree cover agreement benefit by the exclusion of lower canopy densities. The mobility of the samples within the $Q_1$ and $Q_3$ percentile show no general trend. For the first two experiments it ranges between 0.5 and 0.8 and for the last two it shows a small decline in $IQR$. This suggests that tiles within this group could benefit from a local optimisation of canopy density exclusion. We applied a Wilcoxon signed-rank test to deduce which canopy density class yields the highest tree cover agreement overall samples in the Americas. Table \ref{tab:wilcoxontwosided_regions} shows the results for the two-sided test and table \ref{tab:wilcoxontwosided_regions} for the one-sided test. The two-sided test reveals that only the similarity distribution between $JI_0$ and $JI_1$ is significantly different ($p<0.01$), while the comparison of the other distributions suggest that they are equal. The directional test of $JI_0$ and $JI_1$ suggests that the regional tree cover agreement is significantly greater ($p<0.005$) if canopy densities smaller than 10 are excluded. Additionally the table shows that $JI_2$ is significantly greater (p<0.05) than $JI_0$ but the comparison between $JI_1$ and $JI_2$ shows no significant difference. Therefore both tests confirm a strong regional or single tile agreement component. The directional test does not confirm that the distribution if $JI_1$ is significantly greater than $JI_2$ and $JI_3$. As the results of our experiments suggests is the tree cover agreement between \ac{GL30} and \ac{GFC} at canopy densities greater than 10 highest within the entire topical Americas. In case of local studies or for smaller extents the canopy density should be selected by a single tile approach to optimise the tree cover agreement by maximising the number of data points of the \ac{GFC} dataset.
@@ -25,9 +25,9 @@
 					\hline
 					& \multicolumn{3}{|c}{Americas} & \multicolumn{3}{|c|}{Asia} & \multicolumn{3}{c|}{Africa} \\
 					Cls & JI$_0$ & JI$_1$ & JI$_2$ & JI$_0$ & JI$_1$ & JI$_2$ & JI$_0$ & JI$_1$ & JI$_2$ \\\hline
-					JI$_1$ & .00$^{***}$ & - & - & .72 & - & - & .22 & - & - \\
-					JI$_2$ & .06 & .36 & - & .00$^{***}$ & .00$^{***}$ & - & .03$^{*}$ & .03$^{*}$  & - \\
-					JI$_3$ & .16 & .50 & .60 & .00$^{***}$ & .00$^{***}$ & .00$^{***}$ & .00$^{***}$ & .00$^{***}$ & .00$^{***}$ \\\hline
+					JI$_1$ & .00$^{***}$ & - & - & .71 & - & - & .22 & - & - \\
+					JI$_2$ & .30 & 1. & - & .00$^{***}$ & .00$^{***}$ & - & .09 & .09  & - \\
+					JI$_3$ & .64 & 1. & 1. & .00$^{***}$ & .00$^{***}$ & .00$^{***}$ & .00$^{***}$ & .00$^{***}$ & .00$^{***}$ \\\hline
 				\end{tabular}
 			\end{table}
 			\begin{table}[ht]
@@ -59,8 +59,8 @@
 				\begin{tabular}{llll}
 					\hline
 					Cls & JI$_0$ & JI$_1$ & JI$_2$ \\\hline
-					JI$_1$ & .00$^{***}$ & - & - \\
-					JI$_2$ & .08 & .02$^{**}$ & - \\
+					JI$_1$ & .01$^{**}$ & - & - \\
+					JI$_2$ & .07 & .04$^{*}$ & - \\
 					JI$_3$ & .00$^{***}$ & .00$^{***}$ & .00$^{***}$ \\\hline
 				\end{tabular}
 			\end{table}
@@ -126,6 +126,11 @@
 
 	\section{Ecosystem service values}
 		Our goal is to estimate the monetary loss of \ac{ESV} by the aggregated \ac{PDD} at a global and continental scale. Whereas a regional scale aggregation could easily performed with our data. Additionally, we approximated the monetary gain if tree cover is converted to a certain type of \ac{LC}. We refer to this gain as \ac{ESV} gain. Further, we computed the balance between \ac{ESV} loss and gain to estimate the net change of \ac{ESV} in the tropical zone. We applied three datasets which estimate the monetary value of ecosystems on a global scale namely the following data: \citet{Groot2012}, \citet{Costanza2014}, and \citet{Siikamaki2015}. We refer to this datasets as Co, Dg, and Wb. To compute the monetary loss of \ac{ESV} we selected the following \ac{PDD} classes as anthropogenic deforestation: 10 (cultivated land), 25 (regrowth), 30 (grassland), 40 (shrubland), 80 (artificial land), and 90 (bareland). The \ac{ESV} gain depends on the particular \ac{ESV} dataset because the datasets don't define a monetary value for each \ac{PDD} class. For detailed informations refer to section \ref{subsec:esv_methods}. The \ac{ESV} net change or balance is the difference of \ac{ESV} loss and gain. The monetary unit for each value is the Geary–Khamis dollar at 2007 also known as international dollar (2007 Int.\$ ha$^{-1}$).
+
+		\note{Americas:}
+		\note{Asia:}
+		\note{Africa:}
+		\note{Global:}
 		\begin{table}[ht]
 			\centering
 			\caption[Ecosystem service value balance]{\textbf{Ecosystem service value balance:} The dataset column refers to the three global ecosystem service value datasets by \citet{Groot2012} (Co), \citet{Costanza2014} (Dg), and \citet{Siikamaki2015} (Wb). Loss refers to the monetary value of tropical forest deforested by the aggregated anthropogenic proximate deforestation drivers. Gain is the monetary value of the land cover transition and balance is difference of gain and loss. Monetary unit of the ecosystem service values is billion International Dollar 2007 (10$^{-9}$ Int.\$.)}
@@ -269,11 +274,11 @@
 
 
 % ESV
-		\begin{figure}[ht]
-			\centering
-			\includegraphics[scale=1]{img/esv}
-			\caption[Ecosystem service values]{}
-			\label{fig:esv}
-		\end{figure}
+%		\begin{figure}[ht]
+%			\centering
+%			\includegraphics[scale=1]{img/esv}
+%			\caption[Ecosystem service values]{}
+%			\label{fig:esv}
+%		\end{figure}
 
 
