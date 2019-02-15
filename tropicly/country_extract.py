@@ -23,14 +23,14 @@ for country, gdf in groups:
     normalized_country = re.sub(r' ', '_', normalized_country)
     normalized_country = re.sub(r'\.', '', normalized_country)
 
-    if normalized_country in ['algeria', 'angola', 'argentina', 'australia',
-                              'bahamas', 'bangladesh', 'belize', 'benin',
-                              'bolivia', 'brazil', 'botswana']:
+    print(normalized_country)
+    if normalized_country not in ['brazil']:
         continue
 
     merge_msg = 'Merging: {}'.format(normalized_country)
     clip_msg = 'Clip: {}'.format(normalized_country)
 
+    # hook for layer dataset to aggregate
     driver_tiles = [DIRS.driver / tile for tile in set(gdf.driver)]
 
     country_geometry = countries[countries['NAME'] == country].__geo_interface__

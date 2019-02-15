@@ -3,7 +3,7 @@ import pandas as pd
 import geopandas as gpd
 
 
-def to_area(row, unit=1000000, columns=('10', '20', '25', '30', '40', '50', '60', '80', '90')):
+def to_area(row, unit=1000000, columns=('10', '20', '25', '30', '40', '60', '80', '90')):
     area = row['area'] / unit
     columns = columns
 
@@ -18,19 +18,20 @@ def to_area(row, unit=1000000, columns=('10', '20', '25', '30', '40', '50', '60'
     return pd.Series(data=absolute, index=columns)
 
 
-def to_relative(row, columns=('10', '20', '25', '30', '40', '50', '60', '80', '90')):
+def to_relative(row, columns=('10', '20', '25', '30', '40', '60', '80', '90')):
     total = sum(
         [row[idx] for idx in columns]
     )
 
     if total != 0:
         for idx in columns:
-            row[idx] = '{}({}\\%)'.format(row[idx], round((row[idx] / total)*100, 1))
+            row[idx] = '{} ({}\\%)'.format(row[idx], round((row[idx] / total)*100, 1))
 
     else:
         for idx in columns:
             row[idx] = '-'
 
+    row['total'] = round(total, 1)
     return row
 
 
@@ -47,7 +48,7 @@ def to_tex(df, path):
 DIRS = cache_directories(get_data_dir())
 
 countries = gpd.read_file(DIRS.masks / 'earth.shp')
-driver = pd.read_csv(DIRS.textual / 'driver.csv')
+driver = pd.read_csv(DIRS.textual / 'driver_water.csv')
 
 region = 'Australia'
 
