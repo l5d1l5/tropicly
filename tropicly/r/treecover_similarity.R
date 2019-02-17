@@ -1,16 +1,16 @@
-jc_americas = read.csv('/media/ilex/StorageOne/docs/code/python/projects/master/data/proc/ana/harmonization_sort_americas.csv')
+jc_americas = read.csv('/home/ilex/Documents/code/python/proj/tropicly/data/proc/ana/harmonization_sort_americas.csv')
 americas = jc_americas[jc_americas[,1]!=0,]
 americas = americas[,1:4]
 #cor(americas[,1:4])
 summary(americas[,1:4])
 
-jc_africa = read.csv('/media/ilex/StorageOne/docs/code/python/projects/master/data/proc/ana/harmonization_sort_africa.csv')
+jc_africa = read.csv('/home/ilex/Documents/code/python/proj/tropicly/data/proc/ana/harmonization_sort_africa.csv')
 africa = jc_africa[jc_africa[,1]!=0,]
 africa = africa[,1:4]
 #cor(africa[,1:4])
 summary(africa[,1:4])
 
-jc_asia = read.csv('/media/ilex/StorageOne/docs/code/python/projects/master/data/proc/ana/harmonization_sort_asia.csv')
+jc_asia = read.csv('/home/ilex/Documents/code/python/proj/tropicly/data/proc/ana/harmonization_sort_asia.csv')
 asia = jc_asia[jc_asia[,1]!=0,]
 asia = asia[,1:4]
 #cor(asia[,1:4])
@@ -39,15 +39,15 @@ for(i in 1:4) {
   }
 }
 
-x_range = 1:length(asia$JC00)
+x_range = 1:length(americas$JC00)
 
-plot(x_range, asia$JC00, pch=1, ylim=0:1)
+plot(x_range, americas$JC00, pch=1, ylim=0:1, xlab='AISM tile', ylab='Jaccard Index')
 par(new=TRUE)
-plot(x_range, asia$JC10, axes=FALSE, pch=0)
+plot(x_range, americas$JC10, axes=FALSE, pch=0, xlab='', ylab='')
 par(new=TRUE)
-plot(x_range, asia$JC20, axes=FALSE, pch=2)
+plot(x_range, americas$JC20, axes=FALSE, pch=2, xlab='', ylab='')
 par(new=TRUE)
-plot(x_range, asia$JC30, axes=FALSE, pch=3)
+plot(x_range, americas$JC30, axes=FALSE, pch=3, xlab='', ylab='')
 par(new=FALSE)
 
 test = c(americas$JC00, americas$JC10, americas$JC20, americas$JC30)
