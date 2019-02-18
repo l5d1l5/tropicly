@@ -1,35 +1,34 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
-<qgis projectname="" version="2.14.11-Essen">
+<qgis projectname="" version="2.18.28">
   <title></title>
+  <autotransaction active="0"/>
+  <evaluateDefaultValues active="0"/>
   <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="">
     <customproperties/>
     <layer-tree-group expanded="0" checked="Qt::Checked" name="main">
       <customproperties/>
-      <layer-tree-layer expanded="1" checked="Qt::Checked" id="Hansen_GFC2013_lossyear_00N_040W20171018130046037" name="Hansen_GFC2013_lossyear_00N_040W">
+      <layer-tree-layer expanded="1" providerKey="gdal" checked="Qt::Checked" id="Hansen_GFC2013_lossyear_00N_040W20171018130046037" source="/home/tobi/Documents/tropicly/data/raw/gfc/Hansen_GFC2013_lossyear_00N_040W.tif" name="Hansen_GFC2013_lossyear_00N_040W">
         <customproperties>
           <property key="expandedLegendNodes"/>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer expanded="1" checked="Qt::Checked" id="Hansen_GFC2013_gain_00N_040W20171018125741273" name="Hansen_GFC2013_gain_00N_040W">
+      <layer-tree-layer expanded="1" providerKey="gdal" checked="Qt::Checked" id="Hansen_GFC2013_gain_00N_040W20171018125741273" source="/home/tobi/Documents/tropicly/data/raw/gfc/Hansen_GFC2013_gain_00N_040W.tif" name="Hansen_GFC2013_gain_00N_040W">
         <customproperties>
           <property key="expandedLegendNodes"/>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer expanded="1" checked="Qt::Checked" id="Hansen_GFC2013_treecover2000_00N_040W20171018123922346" name="Hansen_GFC2013_treecover2000_00N_040W">
+      <layer-tree-layer expanded="1" providerKey="gdal" checked="Qt::Checked" id="Hansen_GFC2013_treecover2000_00N_040W20171018123922346" source="/home/tobi/Documents/tropicly/data/raw/gfc/Hansen_GFC2013_treecover2000_00N_040W.tif" name="Hansen_GFC2013_treecover2000_00N_040W">
         <customproperties>
           <property key="expandedLegendNodes"/>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer expanded="1" checked="Qt::Checked" id="Hansen_GFC2013_datamask_00N_040W20171018132414885" name="Hansen_GFC2013_datamask_00N_040W">
+      <layer-tree-layer expanded="1" providerKey="gdal" checked="Qt::Checked" id="Hansen_GFC2013_datamask_00N_040W20171018132414885" source="/home/tobi/Documents/tropicly/data/raw/auxiliary/Hansen_GFC2013_datamask_00N_040W.tif" name="Hansen_GFC2013_datamask_00N_040W">
         <customproperties/>
       </layer-tree-layer>
     </layer-tree-group>
     <layer-tree-group expanded="0" checked="Qt::Unchecked" name="inset">
       <customproperties/>
-      <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="ne_10m_populated_places20171020155825642" name="ne_10m_populated_places">
-        <customproperties/>
-      </layer-tree-layer>
-      <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="gadm28_adm020171020155411310" name="gadm28_adm0">
+      <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Unchecked" id="ne_10m_populated_places20171020155825642" source="/home/tobi/Documents/tropicly/data/raw/auxiliary/ne_10m_populated_places.shp|layerid=0|subset=&quot;ADM0NAME&quot; = 'Brazil'" name="ne_10m_populated_places">
         <customproperties/>
       </layer-tree-layer>
     </layer-tree-group>
@@ -38,10 +37,10 @@
   <mapcanvas>
     <units>degrees</units>
     <extent>
-      <xmin>-38.4073519135088759</xmin>
-      <ymin>-3.92467109607780973</ymin>
-      <xmax>-38.34496821855380233</xmax>
-      <ymax>-3.87646551361252545</ymax>
+      <xmin>-38.10117320248868111</xmin>
+      <ymin>-4.61388284795832515</ymin>
+      <xmax>-37.60210364284809259</xmax>
+      <ymax>-4.22823818823605091</ymax>
     </extent>
     <rotation>0</rotation>
     <projections>0</projections>
@@ -81,7 +80,6 @@
       <item>Hansen_GFC2013_gain_00N_040W20171018125741273</item>
       <item>Hansen_GFC2013_lossyear_00N_040W20171018130046037</item>
       <item>Hansen_GFC2013_datamask_00N_040W20171018132414885</item>
-      <item>gadm28_adm020171020155411310</item>
       <item>ne_10m_populated_places20171020155825642</item>
     </custom-order>
   </layer-tree-canvas>
@@ -114,15 +112,10 @@
           <legendlayerfile isInOverview="0" layerid="ne_10m_populated_places20171020155825642" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="gadm28_adm0" showFeatureCount="0">
-        <filegroup open="true" hidden="false">
-          <legendlayerfile isInOverview="0" layerid="gadm28_adm020171020155411310" visible="0"/>
-        </filegroup>
-      </legendlayer>
     </legendgroup>
   </legend>
   <Composer title="hansen_showcase" visible="0">
-    <Composition resizeToContentsMarginLeft="0" snapping="1" showPages="1" guidesVisible="1" resizeToContentsMarginTop="0" alignmentSnap="1" printResolution="300" paperWidth="297" gridVisible="0" snapGridOffsetX="0" smartGuides="1" snapGridOffsetY="0" resizeToContentsMarginRight="0" snapTolerancePixels="5" printAsRaster="0" generateWorldFile="0" paperHeight="210" numPages="1" snapGridResolution="10" resizeToContentsMarginBottom="0">
+    <Composition resizeToContentsMarginLeft="0" snapping="1" showPages="1" guidesVisible="1" resizeToContentsMarginTop="0" worldFileMap="" alignmentSnap="1" printResolution="300" paperWidth="297" gridVisible="0" snapGridOffsetX="0" smartGuides="1" snapGridOffsetY="0" resizeToContentsMarginRight="0" snapTolerancePixels="5" printAsRaster="0" generateWorldFile="0" paperHeight="210" numPages="1" snapGridResolution="10" resizeToContentsMarginBottom="0">
       <symbol alpha="1" clip_to_extent="1" type="fill" name="">
         <layer pass="0" class="SimpleFill" locked="0">
           <prop k="border_width_map_unit_scale" v="0,0,0,0,0,0"/>
@@ -203,14 +196,13 @@
           <customproperties/>
         </ComposerItem>
       </ComposerLabel>
-      <ComposerMap mapRotation="0" keepLayerSet="true" id="1" previewMode="Cache" drawCanvasItems="true">
+      <ComposerMap followPreset="false" mapRotation="0" keepLayerSet="true" followPresetName="" id="1" previewMode="Cache" drawCanvasItems="true">
         <Extent ymin="-4.1023623167560137" xmin="-38.76475442885276834" ymax="-3.67287280483721723" xmax="-38.21255362781431586"/>
         <LayerSet>
-          <Layer>ne_10m_populated_places20171020155825642</Layer>
-          <Layer>gadm28_adm020171020155411310</Layer>
+          <Layer provider="ogr" source="/home/tobi/Documents/tropicly/data/raw/auxiliary/ne_10m_populated_places.shp|layerid=0|subset=&quot;ADM0NAME&quot; = 'Brazil'" name="ne_10m_populated_places">ne_10m_populated_places20171020155825642</Layer>
         </LayerSet>
         <LayerStyles>
-          <LayerStyle layerid="gadm28_adm020171020155411310">
+          <LayerStyle provider="" layerid="gadm28_adm020171020155411310" source="" name="">
             <qgis version="2.14.11-Essen" minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="OBJECTID">
@@ -652,7 +644,7 @@ def my_form_open(dialog, layer, feature):
               <layerGeometryType>2</layerGeometryType>
             </qgis>
           </LayerStyle>
-          <LayerStyle layerid="ne_10m_populated_places20171020155825642">
+          <LayerStyle provider="ogr" layerid="ne_10m_populated_places20171020155825642" source="/home/tobi/Documents/tropicly/data/raw/auxiliary/ne_10m_populated_places.shp|layerid=0|subset=&quot;ADM0NAME&quot; = 'Brazil'" name="ne_10m_populated_places">
             <qgis version="2.14.11-Essen" minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="SCALERANK">
@@ -1196,6 +1188,7 @@ def my_form_open(dialog, layer, feature):
                 <prop k="angle" v="0"/>
                 <prop k="color" v="0,0,0,255"/>
                 <prop k="horizontal_anchor_point" v="1"/>
+                <prop k="joinstyle" v="bevel"/>
                 <prop k="name" v="circle"/>
                 <prop k="offset" v="0,0"/>
                 <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
@@ -1239,7 +1232,7 @@ def my_form_open(dialog, layer, feature):
           <customproperties/>
         </ComposerItem>
       </ComposerMap>
-      <ComposerLegend symbolWidth="7" title="Legend" rasterBorderWidth="0" titleAlignment="1" map="0" wmsLegendWidth="50" rasterBorderColor="0,0,0,255" wrapChar="" fontColor="#000000" columnCount="1" wmsLegendHeight="25" columnSpace="2" symbolHeight="4" equalColumnWidth="0" resizeToContents="1" splitLayer="0" boxSpace="2" rasterBorder="1">
+      <ComposerLegend symbolWidth="7" title="Legend" rasterBorderWidth="0" titleAlignment="1" map="0" wmsLegendWidth="50" rasterBorderColor="0,0,0,255" wrapChar="" fontColor="#000000" legendFilterByAtlas="0" columnCount="1" wmsLegendHeight="25" columnSpace="2" symbolHeight="4" equalColumnWidth="0" resizeToContents="1" splitLayer="0" boxSpace="2" rasterBorder="1">
         <styles>
           <style marginBottom="2" name="title">
             <styleFont description="Ubuntu,16,-1,5,50,0,0,0,0,0" style=""/>
@@ -1263,25 +1256,25 @@ def my_form_open(dialog, layer, feature):
             <customproperties>
               <property key="legend/title-style" value="hidden"/>
             </customproperties>
-            <layer-tree-layer expanded="1" checked="Qt::Checked" id="Hansen_GFC2013_datamask_00N_040W20171018132414885" name="Hansen_GFC2013_datamask_00N_040W">
+            <layer-tree-layer expanded="1" providerKey="gdal" checked="Qt::Checked" id="Hansen_GFC2013_datamask_00N_040W20171018132414885" source="/home/tobi/Documents/tropicly/data/raw/auxiliary/Hansen_GFC2013_datamask_00N_040W.tif" name="Hansen_GFC2013_datamask_00N_040W">
               <customproperties>
                 <property key="legend/node-order" value="0,1"/>
                 <property key="legend/title-style" value="hidden"/>
               </customproperties>
             </layer-tree-layer>
-            <layer-tree-layer expanded="1" checked="Qt::Checked" id="Hansen_GFC2013_treecover2000_00N_040W20171018123922346" name="Hansen_GFC2013_treecover2000_00N_040W">
+            <layer-tree-layer expanded="1" providerKey="gdal" checked="Qt::Checked" id="Hansen_GFC2013_treecover2000_00N_040W20171018123922346" source="/home/tobi/Documents/tropicly/data/raw/gfc/Hansen_GFC2013_treecover2000_00N_040W.tif" name="Hansen_GFC2013_treecover2000_00N_040W">
               <customproperties>
                 <property key="expandedLegendNodes"/>
                 <property key="legend/title-style" value="hidden"/>
               </customproperties>
             </layer-tree-layer>
-            <layer-tree-layer expanded="1" checked="Qt::Checked" id="Hansen_GFC2013_lossyear_00N_040W20171018130046037" name="Hansen_GFC2013_lossyear_00N_040W">
+            <layer-tree-layer expanded="1" providerKey="gdal" checked="Qt::Checked" id="Hansen_GFC2013_lossyear_00N_040W20171018130046037" source="/home/tobi/Documents/tropicly/data/raw/gfc/Hansen_GFC2013_lossyear_00N_040W.tif" name="Hansen_GFC2013_lossyear_00N_040W">
               <customproperties>
                 <property key="expandedLegendNodes"/>
                 <property key="legend/title-style" value="hidden"/>
               </customproperties>
             </layer-tree-layer>
-            <layer-tree-layer expanded="1" checked="Qt::Checked" id="Hansen_GFC2013_gain_00N_040W20171018125741273" name="Hansen_GFC2013_gain_00N_040W">
+            <layer-tree-layer expanded="1" providerKey="gdal" checked="Qt::Checked" id="Hansen_GFC2013_gain_00N_040W20171018125741273" source="/home/tobi/Documents/tropicly/data/raw/gfc/Hansen_GFC2013_gain_00N_040W.tif" name="Hansen_GFC2013_gain_00N_040W">
               <customproperties>
                 <property key="expandedLegendNodes"/>
                 <property key="legend/title-style" value="hidden"/>
@@ -1295,16 +1288,16 @@ def my_form_open(dialog, layer, feature):
           <customproperties/>
         </ComposerItem>
       </ComposerLegend>
-      <ComposerMap mapRotation="0" keepLayerSet="true" id="0" previewMode="Cache" drawCanvasItems="true">
+      <ComposerMap followPreset="false" mapRotation="0" keepLayerSet="true" followPresetName="" id="0" previewMode="Cache" drawCanvasItems="true">
         <Extent ymin="-3.92467109607780973" xmin="-38.4073519135088759" ymax="-3.87646551361252545" xmax="-38.34496821855380233"/>
         <LayerSet>
-          <Layer>Hansen_GFC2013_lossyear_00N_040W20171018130046037</Layer>
-          <Layer>Hansen_GFC2013_gain_00N_040W20171018125741273</Layer>
-          <Layer>Hansen_GFC2013_treecover2000_00N_040W20171018123922346</Layer>
-          <Layer>Hansen_GFC2013_datamask_00N_040W20171018132414885</Layer>
+          <Layer provider="gdal" source="/home/tobi/Documents/tropicly/data/raw/gfc/Hansen_GFC2013_lossyear_00N_040W.tif" name="Hansen_GFC2013_lossyear_00N_040W">Hansen_GFC2013_lossyear_00N_040W20171018130046037</Layer>
+          <Layer provider="gdal" source="/home/tobi/Documents/tropicly/data/raw/gfc/Hansen_GFC2013_gain_00N_040W.tif" name="Hansen_GFC2013_gain_00N_040W">Hansen_GFC2013_gain_00N_040W20171018125741273</Layer>
+          <Layer provider="gdal" source="/home/tobi/Documents/tropicly/data/raw/gfc/Hansen_GFC2013_treecover2000_00N_040W.tif" name="Hansen_GFC2013_treecover2000_00N_040W">Hansen_GFC2013_treecover2000_00N_040W20171018123922346</Layer>
+          <Layer provider="gdal" source="/home/tobi/Documents/tropicly/data/raw/auxiliary/Hansen_GFC2013_datamask_00N_040W.tif" name="Hansen_GFC2013_datamask_00N_040W">Hansen_GFC2013_datamask_00N_040W20171018132414885</Layer>
         </LayerSet>
         <LayerStyles>
-          <LayerStyle layerid="Hansen_GFC2013_datamask_00N_040W20171018132414885">
+          <LayerStyle provider="gdal" layerid="Hansen_GFC2013_datamask_00N_040W20171018132414885" source="/home/tobi/Documents/tropicly/data/raw/auxiliary/Hansen_GFC2013_datamask_00N_040W.tif" name="Hansen_GFC2013_datamask_00N_040W">
             <qgis version="2.14.11-Essen" minimumScale="-4.65661e-10" maximumScale="1e+08" hasScaleBasedVisibilityFlag="0">
               <pipe>
                 <rasterrenderer opacity="1" alphaBand="0" classificationMax="2" classificationMinMaxOrigin="CumulativeCutFullExtentEstimated" band="1" classificationMin="1" type="singlebandpseudocolor">
@@ -1323,7 +1316,7 @@ def my_form_open(dialog, layer, feature):
               <blendMode>0</blendMode>
             </qgis>
           </LayerStyle>
-          <LayerStyle layerid="Hansen_GFC2013_gain_00N_040W20171018125741273">
+          <LayerStyle provider="gdal" layerid="Hansen_GFC2013_gain_00N_040W20171018125741273" source="/home/tobi/Documents/tropicly/data/raw/gfc/Hansen_GFC2013_gain_00N_040W.tif" name="Hansen_GFC2013_gain_00N_040W">
             <qgis version="2.14.11-Essen" minimumScale="-4.65661e-10" maximumScale="1e+08" hasScaleBasedVisibilityFlag="0">
               <pipe>
                 <rasterrenderer opacity="1" alphaBand="0" classificationMax="1" classificationMinMaxOrigin="User" band="1" classificationMin="0" type="singlebandpseudocolor">
@@ -1341,7 +1334,7 @@ def my_form_open(dialog, layer, feature):
               <blendMode>0</blendMode>
             </qgis>
           </LayerStyle>
-          <LayerStyle layerid="Hansen_GFC2013_lossyear_00N_040W20171018130046037">
+          <LayerStyle provider="gdal" layerid="Hansen_GFC2013_lossyear_00N_040W20171018130046037" source="/home/tobi/Documents/tropicly/data/raw/gfc/Hansen_GFC2013_lossyear_00N_040W.tif" name="Hansen_GFC2013_lossyear_00N_040W">
             <qgis version="2.14.11-Essen" minimumScale="-4.65661e-10" maximumScale="1e+08" hasScaleBasedVisibilityFlag="0">
               <pipe>
                 <rasterrenderer opacity="1" alphaBand="0" classificationMax="12" classificationMinMaxOrigin="MinMaxFullExtentEstimated" band="1" classificationMin="0" type="singlebandpseudocolor">
@@ -1359,7 +1352,7 @@ def my_form_open(dialog, layer, feature):
               <blendMode>0</blendMode>
             </qgis>
           </LayerStyle>
-          <LayerStyle layerid="Hansen_GFC2013_treecover2000_00N_040W20171018123922346">
+          <LayerStyle provider="gdal" layerid="Hansen_GFC2013_treecover2000_00N_040W20171018123922346" source="/home/tobi/Documents/tropicly/data/raw/gfc/Hansen_GFC2013_treecover2000_00N_040W.tif" name="Hansen_GFC2013_treecover2000_00N_040W">
             <qgis version="2.14.11-Essen" minimumScale="-4.65661e-10" maximumScale="1e+08" hasScaleBasedVisibilityFlag="0">
               <pipe>
                 <rasterrenderer opacity="1" alphaBand="0" classificationMax="100" classificationMinMaxOrigin="MinMaxFullExtentEstimated" band="1" classificationMin="1" type="singlebandpseudocolor">
@@ -1407,6 +1400,7 @@ def my_form_open(dialog, layer, feature):
                 <prop k="angle" v="0"/>
                 <prop k="color" v="0,0,0,255"/>
                 <prop k="horizontal_anchor_point" v="1"/>
+                <prop k="joinstyle" v="bevel"/>
                 <prop k="name" v="circle"/>
                 <prop k="offset" v="0,0"/>
                 <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
@@ -1457,7 +1451,7 @@ def my_form_open(dialog, layer, feature):
         <ymax>0.00013888888888403</ymax>
       </extent>
       <id>Hansen_GFC2013_datamask_00N_040W20171018132414885</id>
-      <datasource>../data/auxiliary/masks/Hansen_GFC2013_datamask_00N_040W.tif</datasource>
+      <datasource>../../data/raw/auxiliary/Hansen_GFC2013_datamask_00N_040W.tif</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -1510,7 +1504,7 @@ def my_form_open(dialog, layer, feature):
         <ymax>0.00013888888888403</ymax>
       </extent>
       <id>Hansen_GFC2013_gain_00N_040W20171018125741273</id>
-      <datasource>../data/core/gfc/Hansen_GFC2013_gain_00N_040W.tif</datasource>
+      <datasource>../../data/raw/gfc/Hansen_GFC2013_gain_00N_040W.tif</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -1562,7 +1556,7 @@ def my_form_open(dialog, layer, feature):
         <ymax>0.00013888888888403</ymax>
       </extent>
       <id>Hansen_GFC2013_lossyear_00N_040W20171018130046037</id>
-      <datasource>../data/core/gfc/Hansen_GFC2013_lossyear_00N_040W.tif</datasource>
+      <datasource>../../data/raw/gfc/Hansen_GFC2013_lossyear_00N_040W.tif</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -1614,7 +1608,7 @@ def my_form_open(dialog, layer, feature):
         <ymax>0.00013888888888403</ymax>
       </extent>
       <id>Hansen_GFC2013_treecover2000_00N_040W20171018123922346</id>
-      <datasource>../data/core/gfc/Hansen_GFC2013_treecover2000_00N_040W.tif</datasource>
+      <datasource>../../data/raw/gfc/Hansen_GFC2013_treecover2000_00N_040W.tif</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -1658,479 +1652,7 @@ def my_form_open(dialog, layer, feature):
       </pipe>
       <blendMode>0</blendMode>
     </maplayer>
-    <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
-      <extent>
-        <xmin>-73.98970794677734375</xmin>
-        <ymin>-33.74708175659179688</ymin>
-        <xmax>-28.84694480895996094</xmax>
-        <ymax>5.2648777961730957</ymax>
-      </extent>
-      <id>gadm28_adm020171020155411310</id>
-      <datasource>../data/auxiliary/masks/gadm28_adm0.shp|layerid=0|subset="NAME_ENGLI" = 'Brazil'</datasource>
-      <keywordList>
-        <value></value>
-      </keywordList>
-      <layername>gadm28_adm0</layername>
-      <srs>
-        <spatialrefsys>
-          <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
-          <srsid>3452</srsid>
-          <srid>4326</srid>
-          <authid>EPSG:4326</authid>
-          <description>WGS 84</description>
-          <projectionacronym>longlat</projectionacronym>
-          <ellipsoidacronym>WGS84</ellipsoidacronym>
-          <geographicflag>true</geographicflag>
-        </spatialrefsys>
-      </srs>
-      <provider encoding="System">ogr</provider>
-      <previewExpression>COALESCE( "NAME_ENGLI", '&lt;NULL>' )</previewExpression>
-      <vectorjoins/>
-      <layerDependencies/>
-      <expressionfields/>
-      <map-layer-style-manager current="">
-        <map-layer-style name=""/>
-      </map-layer-style-manager>
-      <edittypes>
-        <edittype widgetv2type="TextEdit" name="OBJECTID">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="ID_0">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="ISO">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="NAME_ENGLI">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="NAME_ISO">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="NAME_FAO">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="NAME_LOCAL">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="NAME_OBSOL">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="NAME_VARIA">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="NAME_NONLA">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="NAME_FRENC">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="NAME_SPANI">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="NAME_RUSSI">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="NAME_ARABI">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="NAME_CHINE">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="WASPARTOF">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="CONTAINS">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="SOVEREIGN">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="ISO2">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="WWW">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="FIPS">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="ISON">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="VALIDFR">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="VALIDTO">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="POP2000">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="SQKM">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="POPSQKM">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="UNREGION1">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="UNREGION2">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="DEVELOPING">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="CIS">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="Transition">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="OECD">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="WBREGION">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="WBINCOME">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="WBDEBT">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="WBOTHER">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="CEEAC">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="CEMAC">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="CEPLG">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="COMESA">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="EAC">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="ECOWAS">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="IGAD">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="IOC">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="MRU">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="SACU">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="UEMOA">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="UMA">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="PALOP">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="PARTA">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="CACM">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="EurAsEC">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="Agadir">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="SAARC">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="ASEAN">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="NAFTA">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="GCC">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="CSN">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="CARICOM">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="EU">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="CAN">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="ACP">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="Landlocked">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="AOSIS">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="SIDS">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="Islands">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="LDC">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="Shape_Leng">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="Shape_Area">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-      </edittypes>
-      <renderer-v2 forceraster="0" symbollevels="0" type="singleSymbol" enableorderby="0">
-        <symbols>
-          <symbol alpha="1" clip_to_extent="1" type="fill" name="0">
-            <layer pass="0" class="SimpleFill" locked="0">
-              <prop k="border_width_map_unit_scale" v="0,0,0,0,0,0"/>
-              <prop k="color" v="255,255,191,255"/>
-              <prop k="joinstyle" v="bevel"/>
-              <prop k="offset" v="0,0"/>
-              <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
-              <prop k="offset_unit" v="MM"/>
-              <prop k="outline_color" v="0,0,0,255"/>
-              <prop k="outline_style" v="solid"/>
-              <prop k="outline_width" v="0.26"/>
-              <prop k="outline_width_unit" v="MM"/>
-              <prop k="style" v="solid"/>
-            </layer>
-          </symbol>
-        </symbols>
-        <rotation/>
-        <sizescale scalemethod="diameter"/>
-      </renderer-v2>
-      <labeling type="simple"/>
-      <customproperties>
-        <property key="labeling" value="pal"/>
-        <property key="labeling/addDirectionSymbol" value="false"/>
-        <property key="labeling/angleOffset" value="0"/>
-        <property key="labeling/blendMode" value="0"/>
-        <property key="labeling/bufferBlendMode" value="0"/>
-        <property key="labeling/bufferColorA" value="255"/>
-        <property key="labeling/bufferColorB" value="255"/>
-        <property key="labeling/bufferColorG" value="255"/>
-        <property key="labeling/bufferColorR" value="255"/>
-        <property key="labeling/bufferDraw" value="false"/>
-        <property key="labeling/bufferJoinStyle" value="64"/>
-        <property key="labeling/bufferNoFill" value="false"/>
-        <property key="labeling/bufferSize" value="1"/>
-        <property key="labeling/bufferSizeInMapUnits" value="false"/>
-        <property key="labeling/bufferSizeMapUnitScale" value="0,0,0,0,0,0"/>
-        <property key="labeling/bufferTransp" value="0"/>
-        <property key="labeling/centroidInside" value="false"/>
-        <property key="labeling/centroidWhole" value="false"/>
-        <property key="labeling/decimals" value="3"/>
-        <property key="labeling/displayAll" value="false"/>
-        <property key="labeling/dist" value="0"/>
-        <property key="labeling/distInMapUnits" value="false"/>
-        <property key="labeling/distMapUnitScale" value="0,0,0,0,0,0"/>
-        <property key="labeling/drawLabels" value="true"/>
-        <property key="labeling/enabled" value="true"/>
-        <property key="labeling/fieldName" value="NAME_ENGLI"/>
-        <property key="labeling/fitInPolygonOnly" value="false"/>
-        <property key="labeling/fontCapitals" value="0"/>
-        <property key="labeling/fontFamily" value="Ubuntu"/>
-        <property key="labeling/fontItalic" value="false"/>
-        <property key="labeling/fontLetterSpacing" value="0"/>
-        <property key="labeling/fontLimitPixelSize" value="false"/>
-        <property key="labeling/fontMaxPixelSize" value="10000"/>
-        <property key="labeling/fontMinPixelSize" value="3"/>
-        <property key="labeling/fontSize" value="11"/>
-        <property key="labeling/fontSizeInMapUnits" value="false"/>
-        <property key="labeling/fontSizeMapUnitScale" value="0,0,0,0,0,0"/>
-        <property key="labeling/fontStrikeout" value="false"/>
-        <property key="labeling/fontUnderline" value="false"/>
-        <property key="labeling/fontWeight" value="75"/>
-        <property key="labeling/fontWordSpacing" value="0"/>
-        <property key="labeling/formatNumbers" value="false"/>
-        <property key="labeling/isExpression" value="false"/>
-        <property key="labeling/labelOffsetInMapUnits" value="true"/>
-        <property key="labeling/labelOffsetMapUnitScale" value="0,0,0,0,0,0"/>
-        <property key="labeling/labelPerPart" value="false"/>
-        <property key="labeling/leftDirectionSymbol" value="&lt;"/>
-        <property key="labeling/limitNumLabels" value="false"/>
-        <property key="labeling/maxCurvedCharAngleIn" value="20"/>
-        <property key="labeling/maxCurvedCharAngleOut" value="-20"/>
-        <property key="labeling/maxNumLabels" value="2000"/>
-        <property key="labeling/mergeLines" value="false"/>
-        <property key="labeling/minFeatureSize" value="0"/>
-        <property key="labeling/multilineAlign" value="0"/>
-        <property key="labeling/multilineHeight" value="1"/>
-        <property key="labeling/namedStyle" value="Bold"/>
-        <property key="labeling/obstacle" value="true"/>
-        <property key="labeling/obstacleFactor" value="1"/>
-        <property key="labeling/obstacleType" value="0"/>
-        <property key="labeling/offsetType" value="0"/>
-        <property key="labeling/placeDirectionSymbol" value="0"/>
-        <property key="labeling/placement" value="1"/>
-        <property key="labeling/placementFlags" value="10"/>
-        <property key="labeling/plussign" value="false"/>
-        <property key="labeling/predefinedPositionOrder" value="TR,TL,BR,BL,R,L,TSR,BSR"/>
-        <property key="labeling/preserveRotation" value="true"/>
-        <property key="labeling/previewBkgrdColor" value="#ffffff"/>
-        <property key="labeling/priority" value="5"/>
-        <property key="labeling/quadOffset" value="4"/>
-        <property key="labeling/repeatDistance" value="0"/>
-        <property key="labeling/repeatDistanceMapUnitScale" value="0,0,0,0,0,0"/>
-        <property key="labeling/repeatDistanceUnit" value="1"/>
-        <property key="labeling/reverseDirectionSymbol" value="false"/>
-        <property key="labeling/rightDirectionSymbol" value=">"/>
-        <property key="labeling/scaleMax" value="10000000"/>
-        <property key="labeling/scaleMin" value="1"/>
-        <property key="labeling/scaleVisibility" value="false"/>
-        <property key="labeling/shadowBlendMode" value="6"/>
-        <property key="labeling/shadowColorB" value="0"/>
-        <property key="labeling/shadowColorG" value="0"/>
-        <property key="labeling/shadowColorR" value="0"/>
-        <property key="labeling/shadowDraw" value="false"/>
-        <property key="labeling/shadowOffsetAngle" value="135"/>
-        <property key="labeling/shadowOffsetDist" value="1"/>
-        <property key="labeling/shadowOffsetGlobal" value="true"/>
-        <property key="labeling/shadowOffsetMapUnitScale" value="0,0,0,0,0,0"/>
-        <property key="labeling/shadowOffsetUnits" value="1"/>
-        <property key="labeling/shadowRadius" value="1.5"/>
-        <property key="labeling/shadowRadiusAlphaOnly" value="false"/>
-        <property key="labeling/shadowRadiusMapUnitScale" value="0,0,0,0,0,0"/>
-        <property key="labeling/shadowRadiusUnits" value="1"/>
-        <property key="labeling/shadowScale" value="100"/>
-        <property key="labeling/shadowTransparency" value="30"/>
-        <property key="labeling/shadowUnder" value="0"/>
-        <property key="labeling/shapeBlendMode" value="0"/>
-        <property key="labeling/shapeBorderColorA" value="255"/>
-        <property key="labeling/shapeBorderColorB" value="128"/>
-        <property key="labeling/shapeBorderColorG" value="128"/>
-        <property key="labeling/shapeBorderColorR" value="128"/>
-        <property key="labeling/shapeBorderWidth" value="0"/>
-        <property key="labeling/shapeBorderWidthMapUnitScale" value="0,0,0,0,0,0"/>
-        <property key="labeling/shapeBorderWidthUnits" value="1"/>
-        <property key="labeling/shapeDraw" value="false"/>
-        <property key="labeling/shapeFillColorA" value="255"/>
-        <property key="labeling/shapeFillColorB" value="255"/>
-        <property key="labeling/shapeFillColorG" value="255"/>
-        <property key="labeling/shapeFillColorR" value="255"/>
-        <property key="labeling/shapeJoinStyle" value="64"/>
-        <property key="labeling/shapeOffsetMapUnitScale" value="0,0,0,0,0,0"/>
-        <property key="labeling/shapeOffsetUnits" value="1"/>
-        <property key="labeling/shapeOffsetX" value="0"/>
-        <property key="labeling/shapeOffsetY" value="0"/>
-        <property key="labeling/shapeRadiiMapUnitScale" value="0,0,0,0,0,0"/>
-        <property key="labeling/shapeRadiiUnits" value="1"/>
-        <property key="labeling/shapeRadiiX" value="0"/>
-        <property key="labeling/shapeRadiiY" value="0"/>
-        <property key="labeling/shapeRotation" value="0"/>
-        <property key="labeling/shapeRotationType" value="0"/>
-        <property key="labeling/shapeSVGFile" value=""/>
-        <property key="labeling/shapeSizeMapUnitScale" value="0,0,0,0,0,0"/>
-        <property key="labeling/shapeSizeType" value="0"/>
-        <property key="labeling/shapeSizeUnits" value="1"/>
-        <property key="labeling/shapeSizeX" value="0"/>
-        <property key="labeling/shapeSizeY" value="0"/>
-        <property key="labeling/shapeTransparency" value="0"/>
-        <property key="labeling/shapeType" value="0"/>
-        <property key="labeling/textColorA" value="255"/>
-        <property key="labeling/textColorB" value="0"/>
-        <property key="labeling/textColorG" value="0"/>
-        <property key="labeling/textColorR" value="0"/>
-        <property key="labeling/textTransp" value="0"/>
-        <property key="labeling/upsidedownLabels" value="0"/>
-        <property key="labeling/wrapChar" value=""/>
-        <property key="labeling/xOffset" value="0"/>
-        <property key="labeling/yOffset" value="0"/>
-        <property key="labeling/zIndex" value="0"/>
-        <property key="variableNames"/>
-        <property key="variableValues"/>
-      </customproperties>
-      <blendMode>0</blendMode>
-      <featureBlendMode>0</featureBlendMode>
-      <layerTransparency>0</layerTransparency>
-      <displayfield>NAME_ENGLI</displayfield>
-      <label>0</label>
-      <labelattributes>
-        <label fieldname="" text="Label"/>
-        <family fieldname="" name="Ubuntu"/>
-        <size fieldname="" units="pt" value="12"/>
-        <bold fieldname="" on="0"/>
-        <italic fieldname="" on="0"/>
-        <underline fieldname="" on="0"/>
-        <strikeout fieldname="" on="0"/>
-        <color fieldname="" red="0" blue="0" green="0"/>
-        <x fieldname=""/>
-        <y fieldname=""/>
-        <offset x="0" y="0" units="pt" yfieldname="" xfieldname=""/>
-        <angle fieldname="" value="0" auto="0"/>
-        <alignment fieldname="" value="center"/>
-        <buffercolor fieldname="" red="255" blue="255" green="255"/>
-        <buffersize fieldname="" units="pt" value="1"/>
-        <bufferenabled fieldname="" on=""/>
-        <multilineenabled fieldname="" on=""/>
-        <selectedonly on=""/>
-      </labelattributes>
-      <SingleCategoryDiagramRenderer diagramType="Pie">
-        <DiagramCategory penColor="#000000" labelPlacementMethod="XHeight" penWidth="0" diagramOrientation="Up" minimumSize="0" barWidth="5" penAlpha="255" maxScaleDenominator="1e+08" backgroundColor="#ffffff" transparency="0" width="15" scaleDependency="Area" backgroundAlpha="255" angleOffset="1440" scaleBasedVisibility="0" enabled="0" height="15" sizeType="MM" minScaleDenominator="-4.65661e-10">
-          <fontProperties description="Ubuntu,11,-1,5,50,0,0,0,0,0" style=""/>
-          <attribute field="" color="#000000" label=""/>
-        </DiagramCategory>
-      </SingleCategoryDiagramRenderer>
-      <DiagramLayerSettings yPosColumn="-1" linePlacementFlags="10" placement="0" dist="0" xPosColumn="-1" priority="0" obstacle="0" zIndex="0" showAll="1"/>
-      <annotationform>.</annotationform>
-      <excludeAttributesWMS/>
-      <excludeAttributesWFS/>
-      <attributeactions/>
-      <editform>.</editform>
-      <editforminit/>
-      <editforminitcodesource>0</editforminitcodesource>
-      <editforminitfilepath>.</editforminitfilepath>
-      <editforminitcode><![CDATA[# -*- coding: utf-8 -*-
-"""
-QGIS forms can have a Python function that is called when the form is
-opened.
-
-Use this function to add extra logic to your forms.
-
-Enter the name of the function in the "Python Init function"
-field.
-An example follows:
-"""
-from PyQt4.QtGui import QWidget
-
-def my_form_open(dialog, layer, feature):
-	geom = feature.geometry()
-	control = dialog.findChild(QWidget, "MyLineEdit")
-]]></editforminitcode>
-      <featformsuppress>0</featformsuppress>
-      <editorlayout>generatedlayout</editorlayout>
-      <widgets/>
-      <conditionalstyles>
-        <rowstyles/>
-        <fieldstyles/>
-      </conditionalstyles>
-    </maplayer>
-    <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+    <maplayer simplifyAlgorithm="0" minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
       <extent>
         <xmin>-72.66996769376265775</xmin>
         <ymin>-33.52003538130253446</ymin>
@@ -2138,7 +1660,7 @@ def my_form_open(dialog, layer, feature):
         <ymax>3.2166628203417531</ymax>
       </extent>
       <id>ne_10m_populated_places20171020155825642</id>
-      <datasource>../data/auxiliary/masks/ne_10m_populated_places.shp|layerid=0|subset="ADM0NAME" = 'Brazil'</datasource>
+      <datasource>../../data/raw/auxiliary/ne_10m_populated_places.shp|layerid=0|subset="ADM0NAME" = 'Brazil'</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -2156,7 +1678,6 @@ def my_form_open(dialog, layer, feature):
         </spatialrefsys>
       </srs>
       <provider encoding="System">ogr</provider>
-      <previewExpression>COALESCE( "NAME", '&lt;NULL>' )</previewExpression>
       <vectorjoins/>
       <layerDependencies/>
       <expressionfields/>
@@ -2165,280 +1686,313 @@ def my_form_open(dialog, layer, feature):
       </map-layer-style-manager>
       <edittypes>
         <edittype widgetv2type="TextEdit" name="SCALERANK">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="NATSCALE">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="LABELRANK">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="FEATURECLA">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="NAME">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="NAMEPAR">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="NAMEALT">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="DIFFASCII">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="NAMEASCII">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="ADM0CAP">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="CAPALT">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="CAPIN">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="WORLDCITY">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="MEGACITY">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="SOV0NAME">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="SOV_A3">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="ADM0NAME">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="ADM0_A3">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="ADM1NAME">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="ISO_A2">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="NOTE">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="LATITUDE">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="LONGITUDE">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="CHANGED">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="NAMEDIFF">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="DIFFNOTE">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="POP_MAX">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="POP_MIN">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="POP_OTHER">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="RANK_MAX">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="RANK_MIN">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="GEONAMEID">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="MEGANAME">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="LS_NAME">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="LS_MATCH">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="CHECKME">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="MAX_POP10">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="MAX_POP20">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="MAX_POP50">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="MAX_POP300">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="MAX_POP310">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="MAX_NATSCA">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="MIN_AREAKM">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="MAX_AREAKM">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="MIN_AREAMI">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="MAX_AREAMI">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="MIN_PERKM">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="MAX_PERKM">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="MIN_PERMI">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="MAX_PERMI">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="MIN_BBXMIN">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="MAX_BBXMIN">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="MIN_BBXMAX">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="MAX_BBXMAX">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="MIN_BBYMIN">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="MAX_BBYMIN">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="MIN_BBYMAX">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="MAX_BBYMAX">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="MEAN_BBXC">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="MEAN_BBYC">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="COMPARE">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="GN_ASCII">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="FEATURE_CL">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="FEATURE_CO">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="ADMIN1_COD">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="GN_POP">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="ELEVATION">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="GTOPO30">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="TIMEZONE">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="GEONAMESNO">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="UN_FID">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="UN_ADM0">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="UN_LAT">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="UN_LONG">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="POP1950">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="POP1955">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="POP1960">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="POP1965">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="POP1970">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="POP1975">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="POP1980">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="POP1985">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="POP1990">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="POP1995">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="POP2000">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="POP2005">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="POP2010">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="POP2015">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="POP2020">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="POP2025">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="POP2050">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="CITYALT">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="min_zoom">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="wikidataid">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="wof_id">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="CAPALT">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="NAME_EN">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="NAME_DE">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="NAME_ES">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="NAME_FR">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="NAME_PT">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="NAME_RU">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="NAME_ZH">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="orig_ogc_fid">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
       </edittypes>
       <renderer-v2 forceraster="0" symbollevels="0" type="singleSymbol" enableorderby="0">
@@ -2448,6 +2002,7 @@ def my_form_open(dialog, layer, feature):
               <prop k="angle" v="0"/>
               <prop k="color" v="255,255,255,255"/>
               <prop k="horizontal_anchor_point" v="1"/>
+              <prop k="joinstyle" v="bevel"/>
               <prop k="name" v="circle"/>
               <prop k="offset" v="0,0"/>
               <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
@@ -2634,17 +2189,147 @@ def my_form_open(dialog, layer, feature):
         <multilineenabled fieldname="" on=""/>
         <selectedonly on=""/>
       </labelattributes>
-      <SingleCategoryDiagramRenderer diagramType="Pie">
-        <DiagramCategory penColor="#000000" labelPlacementMethod="XHeight" penWidth="0" diagramOrientation="Up" minimumSize="0" barWidth="5" penAlpha="255" maxScaleDenominator="1e+08" backgroundColor="#ffffff" transparency="0" width="15" scaleDependency="Area" backgroundAlpha="255" angleOffset="1440" scaleBasedVisibility="0" enabled="0" height="15" sizeType="MM" minScaleDenominator="-4.65661e-10">
+      <SingleCategoryDiagramRenderer diagramType="Pie" sizeLegend="0" attributeLegend="1">
+        <DiagramCategory penColor="#000000" labelPlacementMethod="XHeight" penWidth="0" diagramOrientation="Up" sizeScale="0,0,0,0,0,0" minimumSize="0" barWidth="5" penAlpha="255" maxScaleDenominator="1e+08" backgroundColor="#ffffff" transparency="0" width="15" scaleDependency="Area" backgroundAlpha="255" angleOffset="1440" scaleBasedVisibility="0" enabled="0" height="15" lineSizeScale="0,0,0,0,0,0" sizeType="MM" lineSizeType="MM" minScaleDenominator="-4.65661e-10">
           <fontProperties description="Ubuntu,11,-1,5,50,0,0,0,0,0" style=""/>
           <attribute field="" color="#000000" label=""/>
         </DiagramCategory>
+        <symbol alpha="1" clip_to_extent="1" type="marker" name="sizeSymbol">
+          <layer pass="0" class="SimpleMarker" locked="0">
+            <prop k="angle" v="0"/>
+            <prop k="color" v="255,0,0,255"/>
+            <prop k="horizontal_anchor_point" v="1"/>
+            <prop k="joinstyle" v="bevel"/>
+            <prop k="name" v="circle"/>
+            <prop k="offset" v="0,0"/>
+            <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
+            <prop k="offset_unit" v="MM"/>
+            <prop k="outline_color" v="0,0,0,255"/>
+            <prop k="outline_style" v="solid"/>
+            <prop k="outline_width" v="0"/>
+            <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
+            <prop k="outline_width_unit" v="MM"/>
+            <prop k="scale_method" v="diameter"/>
+            <prop k="size" v="2"/>
+            <prop k="size_map_unit_scale" v="0,0,0,0,0,0"/>
+            <prop k="size_unit" v="MM"/>
+            <prop k="vertical_anchor_point" v="1"/>
+          </layer>
+        </symbol>
       </SingleCategoryDiagramRenderer>
-      <DiagramLayerSettings yPosColumn="-1" linePlacementFlags="10" placement="0" dist="0" xPosColumn="-1" priority="0" obstacle="0" zIndex="0" showAll="1"/>
+      <DiagramLayerSettings yPosColumn="-1" showColumn="0" linePlacementFlags="10" placement="0" dist="0" xPosColumn="-1" priority="0" obstacle="0" zIndex="0" showAll="1"/>
       <annotationform>.</annotationform>
+      <aliases>
+        <alias field="SCALERANK" index="0" name=""/>
+        <alias field="NATSCALE" index="1" name=""/>
+        <alias field="LABELRANK" index="2" name=""/>
+        <alias field="FEATURECLA" index="3" name=""/>
+        <alias field="NAME" index="4" name=""/>
+        <alias field="NAMEPAR" index="5" name=""/>
+        <alias field="NAMEALT" index="6" name=""/>
+        <alias field="DIFFASCII" index="7" name=""/>
+        <alias field="NAMEASCII" index="8" name=""/>
+        <alias field="ADM0CAP" index="9" name=""/>
+        <alias field="CAPIN" index="10" name=""/>
+        <alias field="WORLDCITY" index="11" name=""/>
+        <alias field="MEGACITY" index="12" name=""/>
+        <alias field="SOV0NAME" index="13" name=""/>
+        <alias field="SOV_A3" index="14" name=""/>
+        <alias field="ADM0NAME" index="15" name=""/>
+        <alias field="ADM0_A3" index="16" name=""/>
+        <alias field="ADM1NAME" index="17" name=""/>
+        <alias field="ISO_A2" index="18" name=""/>
+        <alias field="NOTE" index="19" name=""/>
+        <alias field="LATITUDE" index="20" name=""/>
+        <alias field="LONGITUDE" index="21" name=""/>
+        <alias field="CHANGED" index="22" name=""/>
+        <alias field="NAMEDIFF" index="23" name=""/>
+        <alias field="DIFFNOTE" index="24" name=""/>
+        <alias field="POP_MAX" index="25" name=""/>
+        <alias field="POP_MIN" index="26" name=""/>
+        <alias field="POP_OTHER" index="27" name=""/>
+        <alias field="RANK_MAX" index="28" name=""/>
+        <alias field="RANK_MIN" index="29" name=""/>
+        <alias field="GEONAMEID" index="30" name=""/>
+        <alias field="MEGANAME" index="31" name=""/>
+        <alias field="LS_NAME" index="32" name=""/>
+        <alias field="LS_MATCH" index="33" name=""/>
+        <alias field="CHECKME" index="34" name=""/>
+        <alias field="MAX_POP10" index="35" name=""/>
+        <alias field="MAX_POP20" index="36" name=""/>
+        <alias field="MAX_POP50" index="37" name=""/>
+        <alias field="MAX_POP300" index="38" name=""/>
+        <alias field="MAX_POP310" index="39" name=""/>
+        <alias field="MAX_NATSCA" index="40" name=""/>
+        <alias field="MIN_AREAKM" index="41" name=""/>
+        <alias field="MAX_AREAKM" index="42" name=""/>
+        <alias field="MIN_AREAMI" index="43" name=""/>
+        <alias field="MAX_AREAMI" index="44" name=""/>
+        <alias field="MIN_PERKM" index="45" name=""/>
+        <alias field="MAX_PERKM" index="46" name=""/>
+        <alias field="MIN_PERMI" index="47" name=""/>
+        <alias field="MAX_PERMI" index="48" name=""/>
+        <alias field="MIN_BBXMIN" index="49" name=""/>
+        <alias field="MAX_BBXMIN" index="50" name=""/>
+        <alias field="MIN_BBXMAX" index="51" name=""/>
+        <alias field="MAX_BBXMAX" index="52" name=""/>
+        <alias field="MIN_BBYMIN" index="53" name=""/>
+        <alias field="MAX_BBYMIN" index="54" name=""/>
+        <alias field="MIN_BBYMAX" index="55" name=""/>
+        <alias field="MAX_BBYMAX" index="56" name=""/>
+        <alias field="MEAN_BBXC" index="57" name=""/>
+        <alias field="MEAN_BBYC" index="58" name=""/>
+        <alias field="COMPARE" index="59" name=""/>
+        <alias field="GN_ASCII" index="60" name=""/>
+        <alias field="FEATURE_CL" index="61" name=""/>
+        <alias field="FEATURE_CO" index="62" name=""/>
+        <alias field="ADMIN1_COD" index="63" name=""/>
+        <alias field="GN_POP" index="64" name=""/>
+        <alias field="ELEVATION" index="65" name=""/>
+        <alias field="GTOPO30" index="66" name=""/>
+        <alias field="TIMEZONE" index="67" name=""/>
+        <alias field="GEONAMESNO" index="68" name=""/>
+        <alias field="UN_FID" index="69" name=""/>
+        <alias field="UN_ADM0" index="70" name=""/>
+        <alias field="UN_LAT" index="71" name=""/>
+        <alias field="UN_LONG" index="72" name=""/>
+        <alias field="POP1950" index="73" name=""/>
+        <alias field="POP1955" index="74" name=""/>
+        <alias field="POP1960" index="75" name=""/>
+        <alias field="POP1965" index="76" name=""/>
+        <alias field="POP1970" index="77" name=""/>
+        <alias field="POP1975" index="78" name=""/>
+        <alias field="POP1980" index="79" name=""/>
+        <alias field="POP1985" index="80" name=""/>
+        <alias field="POP1990" index="81" name=""/>
+        <alias field="POP1995" index="82" name=""/>
+        <alias field="POP2000" index="83" name=""/>
+        <alias field="POP2005" index="84" name=""/>
+        <alias field="POP2010" index="85" name=""/>
+        <alias field="POP2015" index="86" name=""/>
+        <alias field="POP2020" index="87" name=""/>
+        <alias field="POP2025" index="88" name=""/>
+        <alias field="POP2050" index="89" name=""/>
+        <alias field="CITYALT" index="90" name=""/>
+        <alias field="min_zoom" index="91" name=""/>
+        <alias field="wikidataid" index="92" name=""/>
+        <alias field="wof_id" index="93" name=""/>
+        <alias field="CAPALT" index="94" name=""/>
+        <alias field="NAME_EN" index="95" name=""/>
+        <alias field="NAME_DE" index="96" name=""/>
+        <alias field="NAME_ES" index="97" name=""/>
+        <alias field="NAME_FR" index="98" name=""/>
+        <alias field="NAME_PT" index="99" name=""/>
+        <alias field="NAME_RU" index="100" name=""/>
+        <alias field="NAME_ZH" index="101" name=""/>
+        <alias field="orig_ogc_fid" index="102" name=""/>
+      </aliases>
       <excludeAttributesWMS/>
       <excludeAttributesWFS/>
-      <attributeactions/>
+      <attributeactions default="0"/>
+      <attributetableconfig actionWidgetStyle="dropDown" sortExpression="" sortOrder="0">
+        <columns/>
+      </attributetableconfig>
       <editform>.</editform>
       <editforminit/>
       <editforminitcodesource>0</editforminitcodesource>
@@ -2673,6 +2358,112 @@ def my_form_open(dialog, layer, feature):
         <rowstyles/>
         <fieldstyles/>
       </conditionalstyles>
+      <defaults>
+        <default field="SCALERANK" expression=""/>
+        <default field="NATSCALE" expression=""/>
+        <default field="LABELRANK" expression=""/>
+        <default field="FEATURECLA" expression=""/>
+        <default field="NAME" expression=""/>
+        <default field="NAMEPAR" expression=""/>
+        <default field="NAMEALT" expression=""/>
+        <default field="DIFFASCII" expression=""/>
+        <default field="NAMEASCII" expression=""/>
+        <default field="ADM0CAP" expression=""/>
+        <default field="CAPIN" expression=""/>
+        <default field="WORLDCITY" expression=""/>
+        <default field="MEGACITY" expression=""/>
+        <default field="SOV0NAME" expression=""/>
+        <default field="SOV_A3" expression=""/>
+        <default field="ADM0NAME" expression=""/>
+        <default field="ADM0_A3" expression=""/>
+        <default field="ADM1NAME" expression=""/>
+        <default field="ISO_A2" expression=""/>
+        <default field="NOTE" expression=""/>
+        <default field="LATITUDE" expression=""/>
+        <default field="LONGITUDE" expression=""/>
+        <default field="CHANGED" expression=""/>
+        <default field="NAMEDIFF" expression=""/>
+        <default field="DIFFNOTE" expression=""/>
+        <default field="POP_MAX" expression=""/>
+        <default field="POP_MIN" expression=""/>
+        <default field="POP_OTHER" expression=""/>
+        <default field="RANK_MAX" expression=""/>
+        <default field="RANK_MIN" expression=""/>
+        <default field="GEONAMEID" expression=""/>
+        <default field="MEGANAME" expression=""/>
+        <default field="LS_NAME" expression=""/>
+        <default field="LS_MATCH" expression=""/>
+        <default field="CHECKME" expression=""/>
+        <default field="MAX_POP10" expression=""/>
+        <default field="MAX_POP20" expression=""/>
+        <default field="MAX_POP50" expression=""/>
+        <default field="MAX_POP300" expression=""/>
+        <default field="MAX_POP310" expression=""/>
+        <default field="MAX_NATSCA" expression=""/>
+        <default field="MIN_AREAKM" expression=""/>
+        <default field="MAX_AREAKM" expression=""/>
+        <default field="MIN_AREAMI" expression=""/>
+        <default field="MAX_AREAMI" expression=""/>
+        <default field="MIN_PERKM" expression=""/>
+        <default field="MAX_PERKM" expression=""/>
+        <default field="MIN_PERMI" expression=""/>
+        <default field="MAX_PERMI" expression=""/>
+        <default field="MIN_BBXMIN" expression=""/>
+        <default field="MAX_BBXMIN" expression=""/>
+        <default field="MIN_BBXMAX" expression=""/>
+        <default field="MAX_BBXMAX" expression=""/>
+        <default field="MIN_BBYMIN" expression=""/>
+        <default field="MAX_BBYMIN" expression=""/>
+        <default field="MIN_BBYMAX" expression=""/>
+        <default field="MAX_BBYMAX" expression=""/>
+        <default field="MEAN_BBXC" expression=""/>
+        <default field="MEAN_BBYC" expression=""/>
+        <default field="COMPARE" expression=""/>
+        <default field="GN_ASCII" expression=""/>
+        <default field="FEATURE_CL" expression=""/>
+        <default field="FEATURE_CO" expression=""/>
+        <default field="ADMIN1_COD" expression=""/>
+        <default field="GN_POP" expression=""/>
+        <default field="ELEVATION" expression=""/>
+        <default field="GTOPO30" expression=""/>
+        <default field="TIMEZONE" expression=""/>
+        <default field="GEONAMESNO" expression=""/>
+        <default field="UN_FID" expression=""/>
+        <default field="UN_ADM0" expression=""/>
+        <default field="UN_LAT" expression=""/>
+        <default field="UN_LONG" expression=""/>
+        <default field="POP1950" expression=""/>
+        <default field="POP1955" expression=""/>
+        <default field="POP1960" expression=""/>
+        <default field="POP1965" expression=""/>
+        <default field="POP1970" expression=""/>
+        <default field="POP1975" expression=""/>
+        <default field="POP1980" expression=""/>
+        <default field="POP1985" expression=""/>
+        <default field="POP1990" expression=""/>
+        <default field="POP1995" expression=""/>
+        <default field="POP2000" expression=""/>
+        <default field="POP2005" expression=""/>
+        <default field="POP2010" expression=""/>
+        <default field="POP2015" expression=""/>
+        <default field="POP2020" expression=""/>
+        <default field="POP2025" expression=""/>
+        <default field="POP2050" expression=""/>
+        <default field="CITYALT" expression=""/>
+        <default field="min_zoom" expression=""/>
+        <default field="wikidataid" expression=""/>
+        <default field="wof_id" expression=""/>
+        <default field="CAPALT" expression=""/>
+        <default field="NAME_EN" expression=""/>
+        <default field="NAME_DE" expression=""/>
+        <default field="NAME_ES" expression=""/>
+        <default field="NAME_FR" expression=""/>
+        <default field="NAME_PT" expression=""/>
+        <default field="NAME_RU" expression=""/>
+        <default field="NAME_ZH" expression=""/>
+        <default field="orig_ogc_fid" expression=""/>
+      </defaults>
+      <previewExpression>COALESCE( "NAME", '&lt;NULL>' )</previewExpression>
     </maplayer>
   </projectlayers>
   <properties>

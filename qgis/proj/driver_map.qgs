@@ -1,5 +1,5 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
-<qgis projectname="" version="2.18.20">
+<qgis projectname="" version="2.18.28">
   <title></title>
   <autotransaction active="0"/>
   <evaluateDefaultValues active="0"/>
@@ -7,55 +7,55 @@
     <customproperties/>
     <layer-tree-group expanded="0" checked="Qt::Checked" name="boundaries">
       <customproperties/>
-      <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="hexboundaries_asia20181001112136445" source="/home/ilex/Documents/StorageOne - docs/code/python/projects/master/data/proc/agg/vector/common/hexboundaries_asia.shp" name="hexboundaries_asia">
+      <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="hexboundaries_asia20181001112136445" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/common/hexboundaries_asia.shp" name="hexboundaries_asia">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="hexboundaries_africa20181001112136426" source="/home/ilex/Documents/StorageOne - docs/code/python/projects/master/data/proc/agg/vector/common/hexboundaries_africa.shp" name="hexboundaries_africa">
+      <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="hexboundaries_africa20181001112136426" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/common/hexboundaries_africa.shp" name="hexboundaries_africa">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="hexboundaries_americas20181001112136437" source="/home/ilex/Documents/StorageOne - docs/code/python/projects/master/data/proc/agg/vector/common/hexboundaries_americas.shp" name="hexboundaries_americas">
+      <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="hexboundaries_americas20181001112136437" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/common/hexboundaries_americas.shp" name="hexboundaries_americas">
         <customproperties/>
       </layer-tree-layer>
     </layer-tree-group>
     <layer-tree-group expanded="1" checked="Qt::Unchecked" name="drivers">
       <customproperties/>
-      <layer-tree-layer expanded="0" providerKey="ogr" checked="Qt::Unchecked" id="asia_driver_segmented20181001112109955" source="/home/ilex/Documents/StorageOne - docs/code/python/projects/master/data/proc/agg/vector/driver/asia_driver_segmented.shp" name="asia_driver_segmented">
+      <layer-tree-layer expanded="0" providerKey="ogr" checked="Qt::Unchecked" id="asia_driver_segmented20181001112109955" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/driver/asia_driver_segmented.shp" name="asia_driver_segmented">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="0" providerKey="ogr" checked="Qt::Unchecked" id="africa_driver_segmented20181001112109826" source="/home/ilex/Documents/StorageOne - docs/code/python/projects/master/data/proc/agg/vector/driver/africa_driver_segmented.shp" name="africa_driver_segmented">
+      <layer-tree-layer expanded="0" providerKey="ogr" checked="Qt::Unchecked" id="africa_driver_segmented20181001112109826" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/driver/africa_driver_segmented.shp" name="africa_driver_segmented">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="0" providerKey="ogr" checked="Qt::Unchecked" id="americas_driver_segmented20181001112109939" source="/home/ilex/Documents/StorageOne - docs/code/python/projects/master/data/proc/agg/vector/driver/americas_driver_segmented.shp" name="americas_driver_segmented">
-        <customproperties/>
-      </layer-tree-layer>
-    </layer-tree-group>
-    <layer-tree-group expanded="1" checked="Qt::Checked" name="deforested">
-      <customproperties/>
-      <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="driver_legend_loss20181010122800296" source="/media/ilex/StorageOne/docs/code/python/projects/master/data/proc/agg/vector/driver/driver_legend_loss.shp" name="driver_legend_loss">
-        <customproperties/>
-      </layer-tree-layer>
-      <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="legend_vertical20181008183930490" source="/home/ilex/Documents/StorageOne - docs/code/python/projects/master/data/proc/agg/vector/common/legend_vertical.shp" name="legend_vertical">
-        <customproperties/>
-      </layer-tree-layer>
-      <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="asia_10bins_deforested20181008183814459" source="/home/ilex/Documents/StorageOne - docs/code/python/projects/master/data/proc/agg/vector/driver/asia_10bins_deforested.shp" name="asia_10bins_deforested">
-        <customproperties/>
-      </layer-tree-layer>
-      <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="africa_10bins_deforested20181008183803427" source="/home/ilex/Documents/StorageOne - docs/code/python/projects/master/data/proc/agg/vector/driver/africa_10bins_deforested.shp" name="africa_10bins_deforested">
-        <customproperties/>
-      </layer-tree-layer>
-      <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="americas_10bins_deforested20181008183808971" source="/home/ilex/Documents/StorageOne - docs/code/python/projects/master/data/proc/agg/vector/driver/americas_10bins_deforested.shp" name="americas_10bins_deforested">
+      <layer-tree-layer expanded="0" providerKey="ogr" checked="Qt::Unchecked" id="americas_driver_segmented20181001112109939" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/driver/americas_driver_segmented.shp" name="americas_driver_segmented">
         <customproperties/>
       </layer-tree-layer>
     </layer-tree-group>
-    <layer-tree-group expanded="0" checked="Qt::Unchecked" name="src">
+    <layer-tree-group expanded="0" checked="Qt::Checked" name="deforested">
       <customproperties/>
-      <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Unchecked" id="africa_driver20181001112109971" source="/home/ilex/Documents/StorageOne - docs/code/python/projects/master/data/proc/agg/vector/driver/africa_driver.shp" name="africa_driver">
+      <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="driver_legend_loss20181010122800296" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/driver/driver_legend_loss.shp" name="driver_legend_loss">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Unchecked" id="asia_driver20181001112109947" source="/home/ilex/Documents/StorageOne - docs/code/python/projects/master/data/proc/agg/vector/driver/asia_driver.shp" name="asia_driver">
+      <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="legend_vertical20181008183930490" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/common/legend_vertical.shp" name="legend_vertical">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Unchecked" id="americas_driver20181001112109963" source="/home/ilex/Documents/StorageOne - docs/code/python/projects/master/data/proc/agg/vector/driver/americas_driver.shp" name="americas_driver">
+      <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="asia_10bins_deforested20181008183814459" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/driver/asia_10bins_deforested.shp" name="asia_10bins_deforested">
+        <customproperties/>
+      </layer-tree-layer>
+      <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="africa_10bins_deforested20181008183803427" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/driver/africa_10bins_deforested.shp" name="africa_10bins_deforested">
+        <customproperties/>
+      </layer-tree-layer>
+      <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="americas_10bins_deforested20181008183808971" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/driver/americas_10bins_deforested.shp" name="americas_10bins_deforested">
+        <customproperties/>
+      </layer-tree-layer>
+    </layer-tree-group>
+    <layer-tree-group expanded="1" checked="Qt::Unchecked" name="src">
+      <customproperties/>
+      <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Unchecked" id="africa_driver20181001112109971" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/driver/africa_driver.shp" name="africa_driver">
+        <customproperties/>
+      </layer-tree-layer>
+      <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Unchecked" id="asia_driver20181001112109947" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/driver/asia_driver.shp" name="asia_driver">
+        <customproperties/>
+      </layer-tree-layer>
+      <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Unchecked" id="americas_driver20181001112109963" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/driver/americas_driver.shp" name="americas_driver">
         <customproperties/>
       </layer-tree-layer>
     </layer-tree-group>
@@ -64,10 +64,10 @@
   <mapcanvas>
     <units>degrees</units>
     <extent>
-      <xmin>-110.99432350814240067</xmin>
-      <ymin>30.73246104737981454</ymin>
-      <xmax>-57.28731831560170917</xmax>
-      <ymax>51.44772521099250184</ymax>
+      <xmin>-119.27997672557899023</xmin>
+      <ymin>-51.57558737740737342</ymin>
+      <xmax>-11.86596634049760723</xmax>
+      <ymax>-10.14505905018199883</ymax>
     </extent>
     <rotation>0</rotation>
     <projections>0</projections>
@@ -139,7 +139,7 @@
         </filegroup>
       </legendlayer>
     </legendgroup>
-    <legendgroup open="true" checked="Qt::Checked" name="deforested">
+    <legendgroup open="false" checked="Qt::Checked" name="deforested">
       <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="driver_legend_loss" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="driver_legend_loss20181010122800296" visible="1"/>
@@ -166,7 +166,7 @@
         </filegroup>
       </legendlayer>
     </legendgroup>
-    <legendgroup open="false" checked="Qt::Unchecked" name="src">
+    <legendgroup open="true" checked="Qt::Unchecked" name="src">
       <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="africa_driver" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="africa_driver20181001112109971" visible="0"/>
@@ -209,7 +209,7 @@
       <ComposerLabel valign="32" marginX="1" marginY="1" labelText="Coordinate system:&#xa;WGS84 (EPSG:4326)" htmlState="0" halign="1">
         <LabelFont description="Times New Roman,6,-1,5,50,0,0,0,0,0" style="Regular"/>
         <FontColor red="0" blue="0" green="0"/>
-        <ComposerItem pagey="96.7918" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="150.245" y="96.7918" visibility="1" zValue="4" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="21.6121" outlineWidth="0.3" excludeFromExports="0" uuid="{e93b440e-064d-40d7-9f16-f9274eb58e2f}" height="6.805" itemRotation="0" frame="false" pagex="150.245">
+        <ComposerItem pagey="96.7918" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="150.245" y="96.7918" visibility="1" zValue="3" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="21.6121" outlineWidth="0.3" excludeFromExports="0" uuid="{e93b440e-064d-40d7-9f16-f9274eb58e2f}" height="6.805" itemRotation="0" frame="false" pagex="150.245">
           <FrameColor alpha="255" red="0" blue="0" green="0"/>
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
           <customproperties/>
@@ -239,7 +239,7 @@
             <customproperties>
               <property key="legend/title-style" value="hidden"/>
             </customproperties>
-            <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="hexboundaries_americas20181001112136437" source="/home/ilex/Documents/StorageOne - docs/code/python/projects/master/data/proc/agg/vector/common/hexboundaries_americas.shp" name="hexboundaries_americas">
+            <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="hexboundaries_americas20181001112136437" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/common/hexboundaries_americas.shp" name="hexboundaries_americas">
               <customproperties/>
             </layer-tree-layer>
           </layer-tree-group>
@@ -247,7 +247,7 @@
             <customproperties>
               <property key="legend/title-style" value="hidden"/>
             </customproperties>
-            <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="americas_driver_segmented20181001112109939" source="/home/ilex/Documents/StorageOne - docs/code/python/projects/master/data/proc/agg/vector/driver/americas_driver_segmented.shp" name="americas_driver_segmented">
+            <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="americas_driver_segmented20181001112109939" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/driver/americas_driver_segmented.shp" name="americas_driver_segmented">
               <customproperties>
                 <property key="legend/node-order" value="0,1,2,3,4,5,7,8"/>
                 <property key="legend/title-label" value="Driver"/>
@@ -264,15 +264,15 @@
       <ComposerMap followPreset="false" mapRotation="0" keepLayerSet="true" followPresetName="" id="0" previewMode="Cache" drawCanvasItems="true">
         <Extent ymin="-26.57177018816103242" xmin="-113.77815875348629504" ymax="28.79658673364096444" xmax="-32.86051233596082"/>
         <LayerSet>
-          <Layer provider="ogr" source="/home/ilex/Documents/StorageOne - docs/code/python/projects/master/data/proc/agg/vector/common/hexboundaries_asia.shp" name="hexboundaries_asia">hexboundaries_asia20181001112136445</Layer>
-          <Layer provider="ogr" source="/home/ilex/Documents/StorageOne - docs/code/python/projects/master/data/proc/agg/vector/common/hexboundaries_africa.shp" name="hexboundaries_africa">hexboundaries_africa20181001112136426</Layer>
-          <Layer provider="ogr" source="/home/ilex/Documents/StorageOne - docs/code/python/projects/master/data/proc/agg/vector/common/hexboundaries_americas.shp" name="hexboundaries_americas">hexboundaries_americas20181001112136437</Layer>
-          <Layer provider="ogr" source="/home/ilex/Documents/StorageOne - docs/code/python/projects/master/data/proc/agg/vector/driver/asia_driver_segmented.shp" name="asia_driver_segmented">asia_driver_segmented20181001112109955</Layer>
-          <Layer provider="ogr" source="/home/ilex/Documents/StorageOne - docs/code/python/projects/master/data/proc/agg/vector/driver/africa_driver_segmented.shp" name="africa_driver_segmented">africa_driver_segmented20181001112109826</Layer>
-          <Layer provider="ogr" source="/home/ilex/Documents/StorageOne - docs/code/python/projects/master/data/proc/agg/vector/driver/americas_driver_segmented.shp" name="americas_driver_segmented">americas_driver_segmented20181001112109939</Layer>
+          <Layer provider="ogr" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/common/hexboundaries_asia.shp" name="hexboundaries_asia">hexboundaries_asia20181001112136445</Layer>
+          <Layer provider="ogr" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/common/hexboundaries_africa.shp" name="hexboundaries_africa">hexboundaries_africa20181001112136426</Layer>
+          <Layer provider="ogr" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/common/hexboundaries_americas.shp" name="hexboundaries_americas">hexboundaries_americas20181001112136437</Layer>
+          <Layer provider="ogr" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/driver/asia_driver_segmented.shp" name="asia_driver_segmented">asia_driver_segmented20181001112109955</Layer>
+          <Layer provider="ogr" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/driver/africa_driver_segmented.shp" name="africa_driver_segmented">africa_driver_segmented20181001112109826</Layer>
+          <Layer provider="ogr" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/driver/americas_driver_segmented.shp" name="americas_driver_segmented">americas_driver_segmented20181001112109939</Layer>
         </LayerSet>
         <LayerStyles>
-          <LayerStyle provider="ogr" layerid="africa_driver_segmented20181001112109826" source="/home/ilex/Documents/StorageOne - docs/code/python/projects/master/data/proc/agg/vector/driver/africa_driver_segmented.shp" name="africa_driver_segmented">
+          <LayerStyle provider="ogr" layerid="africa_driver_segmented20181001112109826" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/driver/africa_driver_segmented.shp" name="africa_driver_segmented">
             <qgis version="2.18.20" simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
@@ -746,7 +746,7 @@ def my_form_open(dialog, layer, feature):
               <layerGeometryType>2</layerGeometryType>
             </qgis>
           </LayerStyle>
-          <LayerStyle provider="ogr" layerid="americas_driver_segmented20181001112109939" source="/home/ilex/Documents/StorageOne - docs/code/python/projects/master/data/proc/agg/vector/driver/americas_driver_segmented.shp" name="americas_driver_segmented">
+          <LayerStyle provider="ogr" layerid="americas_driver_segmented20181001112109939" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/driver/americas_driver_segmented.shp" name="americas_driver_segmented">
             <qgis version="2.18.20" simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
@@ -1220,7 +1220,7 @@ def my_form_open(dialog, layer, feature):
               <layerGeometryType>2</layerGeometryType>
             </qgis>
           </LayerStyle>
-          <LayerStyle provider="ogr" layerid="asia_driver_segmented20181001112109955" source="/home/ilex/Documents/StorageOne - docs/code/python/projects/master/data/proc/agg/vector/driver/asia_driver_segmented.shp" name="asia_driver_segmented">
+          <LayerStyle provider="ogr" layerid="asia_driver_segmented20181001112109955" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/driver/asia_driver_segmented.shp" name="asia_driver_segmented">
             <qgis version="2.18.20" simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
@@ -1694,7 +1694,7 @@ def my_form_open(dialog, layer, feature):
               <layerGeometryType>2</layerGeometryType>
             </qgis>
           </LayerStyle>
-          <LayerStyle provider="ogr" layerid="hexboundaries_africa20181001112136426" source="/home/ilex/Documents/StorageOne - docs/code/python/projects/master/data/proc/agg/vector/common/hexboundaries_africa.shp" name="hexboundaries_africa">
+          <LayerStyle provider="ogr" layerid="hexboundaries_africa20181001112136426" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/common/hexboundaries_africa.shp" name="hexboundaries_africa">
             <qgis version="2.18.20" simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="country">
@@ -1968,7 +1968,7 @@ def my_form_open(dialog, layer, feature):
               <layerGeometryType>2</layerGeometryType>
             </qgis>
           </LayerStyle>
-          <LayerStyle provider="ogr" layerid="hexboundaries_americas20181001112136437" source="/home/ilex/Documents/StorageOne - docs/code/python/projects/master/data/proc/agg/vector/common/hexboundaries_americas.shp" name="hexboundaries_americas">
+          <LayerStyle provider="ogr" layerid="hexboundaries_americas20181001112136437" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/common/hexboundaries_americas.shp" name="hexboundaries_americas">
             <qgis version="2.18.20" simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
@@ -2248,7 +2248,7 @@ def my_form_open(dialog, layer, feature):
               <layerGeometryType>2</layerGeometryType>
             </qgis>
           </LayerStyle>
-          <LayerStyle provider="ogr" layerid="hexboundaries_asia20181001112136445" source="/home/ilex/Documents/StorageOne - docs/code/python/projects/master/data/proc/agg/vector/common/hexboundaries_asia.shp" name="hexboundaries_asia">
+          <LayerStyle provider="ogr" layerid="hexboundaries_asia20181001112136445" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/common/hexboundaries_asia.shp" name="hexboundaries_asia">
             <qgis version="2.18.20" simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="country">
@@ -2453,7 +2453,7 @@ def my_form_open(dialog, layer, feature):
             <customproperties>
               <property key="legend/title-style" value="hidden"/>
             </customproperties>
-            <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="hexboundaries_americas20181001112136437" source="/home/ilex/Documents/StorageOne - docs/code/python/projects/master/data/proc/agg/vector/common/hexboundaries_americas.shp" name="hexboundaries_americas">
+            <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="hexboundaries_americas20181001112136437" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/common/hexboundaries_americas.shp" name="hexboundaries_americas">
               <customproperties>
                 <property key="legend/title-label" value="Country boundary"/>
               </customproperties>
@@ -2463,7 +2463,7 @@ def my_form_open(dialog, layer, feature):
             <customproperties>
               <property key="legend/title-style" value="hidden"/>
             </customproperties>
-            <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="americas_driver_segmented20181001112109939" source="/home/ilex/Documents/StorageOne - docs/code/python/projects/master/data/proc/agg/vector/driver/americas_driver_segmented.shp" name="americas_driver_segmented">
+            <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="americas_driver_segmented20181001112109939" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/driver/americas_driver_segmented.shp" name="americas_driver_segmented">
               <customproperties>
                 <property key="legend/node-order" value="0,1,2,3,4,5,7,8"/>
                 <property key="legend/title-label" value="Deforestation driver"/>
@@ -2650,7 +2650,7 @@ def my_form_open(dialog, layer, feature):
             <customproperties>
               <property key="legend/title-style" value="hidden"/>
             </customproperties>
-            <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="hexboundaries_americas20181001112136437" source="/home/ilex/Documents/StorageOne - docs/code/python/projects/master/data/proc/agg/vector/common/hexboundaries_americas.shp" name="hexboundaries_americas">
+            <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="hexboundaries_americas20181001112136437" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/common/hexboundaries_americas.shp" name="hexboundaries_americas">
               <customproperties>
                 <property key="legend/title-label" value="Country boundary"/>
               </customproperties>
@@ -2660,7 +2660,7 @@ def my_form_open(dialog, layer, feature):
             <customproperties>
               <property key="legend/title-style" value="hidden"/>
             </customproperties>
-            <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="americas_driver_segmented20181001112109939" source="/home/ilex/Documents/StorageOne - docs/code/python/projects/master/data/proc/agg/vector/driver/americas_driver_segmented.shp" name="americas_driver_segmented">
+            <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="americas_driver_segmented20181001112109939" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/driver/americas_driver_segmented.shp" name="americas_driver_segmented">
               <customproperties>
                 <property key="legend/node-order" value="0,1,2,3,4,5,7,8"/>
                 <property key="legend/title-label" value="Deforestation driver"/>
@@ -2807,7 +2807,7 @@ def my_form_open(dialog, layer, feature):
             <customproperties>
               <property key="legend/title-style" value="hidden"/>
             </customproperties>
-            <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="hexboundaries_americas20181001112136437" source="/home/ilex/Documents/StorageOne - docs/code/python/projects/master/data/proc/agg/vector/common/hexboundaries_americas.shp" name="hexboundaries_americas">
+            <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="hexboundaries_americas20181001112136437" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/common/hexboundaries_americas.shp" name="hexboundaries_americas">
               <customproperties>
                 <property key="legend/title-label" value="Country boundary"/>
               </customproperties>
@@ -2821,18 +2821,18 @@ def my_form_open(dialog, layer, feature):
         </ComposerItem>
       </ComposerLegend>
       <ComposerMap followPreset="false" mapRotation="0" keepLayerSet="true" followPresetName="" id="0" previewMode="Cache" drawCanvasItems="true">
-        <Extent ymin="-27.40618269168597365" xmin="-27.62527096527653114" ymax="28.33216132154024436" xmax="59.57986790875268923"/>
+        <Extent ymin="-27.40618269168597365" xmin="-27.62527096527653114" ymax="28.33220443976265202" xmax="59.57986790875268923"/>
         <LayerSet>
-          <Layer provider="ogr" source="/home/ilex/Documents/StorageOne - docs/code/python/projects/master/data/proc/agg/vector/common/hexboundaries_asia.shp" name="hexboundaries_asia">hexboundaries_asia20181001112136445</Layer>
-          <Layer provider="ogr" source="/home/ilex/Documents/StorageOne - docs/code/python/projects/master/data/proc/agg/vector/common/hexboundaries_africa.shp" name="hexboundaries_africa">hexboundaries_africa20181001112136426</Layer>
-          <Layer provider="ogr" source="/home/ilex/Documents/StorageOne - docs/code/python/projects/master/data/proc/agg/vector/common/hexboundaries_americas.shp" name="hexboundaries_americas">hexboundaries_americas20181001112136437</Layer>
-          <Layer provider="ogr" source="/home/ilex/Documents/StorageOne - docs/code/python/projects/master/data/proc/agg/vector/common/legend_vertical.shp" name="legend_vertical">legend_vertical20181008183930490</Layer>
-          <Layer provider="ogr" source="/home/ilex/Documents/StorageOne - docs/code/python/projects/master/data/proc/agg/vector/driver/asia_10bins_deforested.shp" name="asia_10bins_deforested">asia_10bins_deforested20181008183814459</Layer>
-          <Layer provider="ogr" source="/home/ilex/Documents/StorageOne - docs/code/python/projects/master/data/proc/agg/vector/driver/africa_10bins_deforested.shp" name="africa_10bins_deforested">africa_10bins_deforested20181008183803427</Layer>
-          <Layer provider="ogr" source="/home/ilex/Documents/StorageOne - docs/code/python/projects/master/data/proc/agg/vector/driver/americas_10bins_deforested.shp" name="americas_10bins_deforested">americas_10bins_deforested20181008183808971</Layer>
+          <Layer provider="ogr" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/common/hexboundaries_asia.shp" name="hexboundaries_asia">hexboundaries_asia20181001112136445</Layer>
+          <Layer provider="ogr" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/common/hexboundaries_africa.shp" name="hexboundaries_africa">hexboundaries_africa20181001112136426</Layer>
+          <Layer provider="ogr" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/common/hexboundaries_americas.shp" name="hexboundaries_americas">hexboundaries_americas20181001112136437</Layer>
+          <Layer provider="ogr" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/common/legend_vertical.shp" name="legend_vertical">legend_vertical20181008183930490</Layer>
+          <Layer provider="ogr" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/driver/asia_10bins_deforested.shp" name="asia_10bins_deforested">asia_10bins_deforested20181008183814459</Layer>
+          <Layer provider="ogr" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/driver/africa_10bins_deforested.shp" name="africa_10bins_deforested">africa_10bins_deforested20181008183803427</Layer>
+          <Layer provider="ogr" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/driver/americas_10bins_deforested.shp" name="americas_10bins_deforested">americas_10bins_deforested20181008183808971</Layer>
         </LayerSet>
         <LayerStyles>
-          <LayerStyle provider="ogr" layerid="africa_10bins_deforested20181008183803427" source="/home/ilex/Documents/StorageOne - docs/code/python/projects/master/data/proc/agg/vector/driver/africa_10bins_deforested.shp" name="africa_10bins_deforested">
+          <LayerStyle provider="ogr" layerid="africa_10bins_deforested20181008183803427" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/driver/africa_10bins_deforested.shp" name="africa_10bins_deforested">
             <qgis version="2.18.20" simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="10">
@@ -3178,7 +3178,7 @@ def my_form_open(dialog, layer, feature):
               <layerGeometryType>2</layerGeometryType>
             </qgis>
           </LayerStyle>
-          <LayerStyle provider="ogr" layerid="americas_10bins_deforested20181008183808971" source="/home/ilex/Documents/StorageOne - docs/code/python/projects/master/data/proc/agg/vector/driver/americas_10bins_deforested.shp" name="americas_10bins_deforested">
+          <LayerStyle provider="ogr" layerid="americas_10bins_deforested20181008183808971" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/driver/americas_10bins_deforested.shp" name="americas_10bins_deforested">
             <qgis version="2.18.20" simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="10">
@@ -3530,7 +3530,7 @@ def my_form_open(dialog, layer, feature):
               <layerGeometryType>2</layerGeometryType>
             </qgis>
           </LayerStyle>
-          <LayerStyle provider="ogr" layerid="asia_10bins_deforested20181008183814459" source="/home/ilex/Documents/StorageOne - docs/code/python/projects/master/data/proc/agg/vector/driver/asia_10bins_deforested.shp" name="asia_10bins_deforested">
+          <LayerStyle provider="ogr" layerid="asia_10bins_deforested20181008183814459" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/driver/asia_10bins_deforested.shp" name="asia_10bins_deforested">
             <qgis version="2.18.20" simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="10">
@@ -3876,7 +3876,7 @@ def my_form_open(dialog, layer, feature):
               <layerGeometryType>2</layerGeometryType>
             </qgis>
           </LayerStyle>
-          <LayerStyle provider="ogr" layerid="hexboundaries_africa20181001112136426" source="/home/ilex/Documents/StorageOne - docs/code/python/projects/master/data/proc/agg/vector/common/hexboundaries_africa.shp" name="hexboundaries_africa">
+          <LayerStyle provider="ogr" layerid="hexboundaries_africa20181001112136426" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/common/hexboundaries_africa.shp" name="hexboundaries_africa">
             <qgis version="2.18.20" simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="country">
@@ -4150,7 +4150,7 @@ def my_form_open(dialog, layer, feature):
               <layerGeometryType>2</layerGeometryType>
             </qgis>
           </LayerStyle>
-          <LayerStyle provider="ogr" layerid="hexboundaries_americas20181001112136437" source="/home/ilex/Documents/StorageOne - docs/code/python/projects/master/data/proc/agg/vector/common/hexboundaries_americas.shp" name="hexboundaries_americas">
+          <LayerStyle provider="ogr" layerid="hexboundaries_americas20181001112136437" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/common/hexboundaries_americas.shp" name="hexboundaries_americas">
             <qgis version="2.18.20" simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
@@ -4430,7 +4430,7 @@ def my_form_open(dialog, layer, feature):
               <layerGeometryType>2</layerGeometryType>
             </qgis>
           </LayerStyle>
-          <LayerStyle provider="ogr" layerid="hexboundaries_asia20181001112136445" source="/home/ilex/Documents/StorageOne - docs/code/python/projects/master/data/proc/agg/vector/common/hexboundaries_asia.shp" name="hexboundaries_asia">
+          <LayerStyle provider="ogr" layerid="hexboundaries_asia20181001112136445" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/common/hexboundaries_asia.shp" name="hexboundaries_asia">
             <qgis version="2.18.20" simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="country">
@@ -4514,7 +4514,7 @@ def my_form_open(dialog, layer, feature):
               <layerGeometryType>2</layerGeometryType>
             </qgis>
           </LayerStyle>
-          <LayerStyle provider="ogr" layerid="legend_vertical20181008183930490" source="/home/ilex/Documents/StorageOne - docs/code/python/projects/master/data/proc/agg/vector/common/legend_vertical.shp" name="legend_vertical">
+          <LayerStyle provider="ogr" layerid="legend_vertical20181008183930490" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/common/legend_vertical.shp" name="legend_vertical">
             <qgis version="2.18.20" simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="scale">
@@ -5022,7 +5022,7 @@ def my_form_open(dialog, layer, feature):
             <customproperties>
               <property key="legend/title-style" value="hidden"/>
             </customproperties>
-            <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="hexboundaries_americas20181001112136437" source="/home/ilex/Documents/StorageOne - docs/code/python/projects/master/data/proc/agg/vector/common/hexboundaries_americas.shp" name="hexboundaries_americas">
+            <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="hexboundaries_americas20181001112136437" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/common/hexboundaries_americas.shp" name="hexboundaries_americas">
               <customproperties>
                 <property key="legend/title-label" value="Country boundary"/>
               </customproperties>
@@ -5128,7 +5128,7 @@ def my_form_open(dialog, layer, feature):
       <ComposerLabel valign="32" marginX="1" marginY="1" labelText="Forest loss [10³ km²]" htmlState="0" halign="1">
         <LabelFont description="Times New Roman,8,-1,5,50,0,0,0,0,0" style="Regular"/>
         <FontColor red="0" blue="0" green="0"/>
-        <ComposerItem pagey="86.4741" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="66.1607" y="86.4741" visibility="1" zValue="5" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="28.256" outlineWidth="0.3" excludeFromExports="0" uuid="{8ab6d5a3-c764-4fd4-9e8a-750773156722}" height="5.75595" itemRotation="0" frame="false" pagex="66.1607">
+        <ComposerItem pagey="86.4741" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="66.1607" y="86.4741" visibility="1" zValue="4" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="28.256" outlineWidth="0.3" excludeFromExports="0" uuid="{8ab6d5a3-c764-4fd4-9e8a-750773156722}" height="5.75595" itemRotation="0" frame="false" pagex="66.1607">
           <FrameColor alpha="255" red="0" blue="0" green="0"/>
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
           <customproperties/>
@@ -5158,25 +5158,73 @@ def my_form_open(dialog, layer, feature):
             <customproperties>
               <property key="legend/title-style" value="hidden"/>
             </customproperties>
-            <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="hexboundaries_asia20181001112136445" source="/home/ilex/Documents/StorageOne - docs/code/python/projects/master/data/proc/agg/vector/common/hexboundaries_asia.shp" name="hexboundaries_asia">
+            <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="hexboundaries_asia20181001112136445" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/common/hexboundaries_asia.shp" name="hexboundaries_asia">
               <customproperties>
                 <property key="legend/title-label" value="Country boundary"/>
               </customproperties>
             </layer-tree-layer>
           </layer-tree-group>
         </layer-tree-group>
-        <ComposerItem pagey="86.2092" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="35.5307" y="86.2092" visibility="1" zValue="4" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="28.4484" outlineWidth="0.3" excludeFromExports="0" uuid="{0bcdb0ba-a8c5-4d17-a0b2-32fe085beb0e}" height="8.5" itemRotation="0" frame="false" pagex="35.5307">
+        <ComposerItem pagey="86.2092" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="35.5307" y="86.2092" visibility="1" zValue="3" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="28.4484" outlineWidth="0.3" excludeFromExports="0" uuid="{0bcdb0ba-a8c5-4d17-a0b2-32fe085beb0e}" height="8.5" itemRotation="0" frame="false" pagex="35.5307">
           <FrameColor alpha="255" red="0" blue="0" green="0"/>
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
           <customproperties/>
         </ComposerItem>
       </ComposerLegend>
       <ComposerMap followPreset="false" mapRotation="0" keepLayerSet="false" followPresetName="" id="1" previewMode="Cache" drawCanvasItems="true">
-        <Extent ymin="39.42065032688175563" xmin="-104.54227503344236538" ymax="46.90183682447245417" xmax="-50.83526984090173784"/>
+        <Extent ymin="39.42065032688175563" xmin="-104.54227503344236538" ymax="46.90186000625552509" xmax="-50.83526984090173784"/>
         <LayerSet/>
         <Grid/>
+        <ComposerMapGrid rightAnnotationDirection="0" gridFramePenColor="0,0,0,255" show="0" bottomAnnotationPosition="1" annotationPrecision="3" showAnnotation="0" topFrameDivisions="0" uuid="{53837f56-0a91-4a42-a2ad-a6df6509b995}" leftAnnotationDirection="0" topAnnotationPosition="1" rightAnnotationDisplay="0" offsetX="0" offsetY="0" rightFrameDivisions="0" gridStyle="0" annotationFontColor="0,0,0,255" intervalX="0" gridFrameSideFlags="15" intervalY="0" bottomAnnotationDirection="0" leftAnnotationDisplay="0" leftFrameDivisions="0" frameFillColor1="255,255,255,255" annotationExpression="" frameFillColor2="0,0,0,255" crossLength="3" gridFramePenThickness="0.5" bottomAnnotationDisplay="0" unit="0" topAnnotationDisplay="0" leftAnnotationPosition="1" blendMode="0" gridFrameStyle="0" rightAnnotationPosition="1" gridFrameWidth="2" name="Grid 1" annotationFormat="0" bottomFrameDivisions="0" topAnnotationDirection="0" frameAnnotationDistance="1">
+          <lineStyle>
+            <symbol alpha="1" clip_to_extent="1" type="line" name="">
+              <layer pass="0" class="SimpleLine" locked="0">
+                <prop k="capstyle" v="square"/>
+                <prop k="customdash" v="5;2"/>
+                <prop k="customdash_map_unit_scale" v="0,0,0,0,0,0"/>
+                <prop k="customdash_unit" v="MM"/>
+                <prop k="draw_inside_polygon" v="0"/>
+                <prop k="joinstyle" v="bevel"/>
+                <prop k="line_color" v="0,0,0,255"/>
+                <prop k="line_style" v="solid"/>
+                <prop k="line_width" v="0"/>
+                <prop k="line_width_unit" v="MM"/>
+                <prop k="offset" v="0"/>
+                <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
+                <prop k="offset_unit" v="MM"/>
+                <prop k="use_custom_dash" v="0"/>
+                <prop k="width_map_unit_scale" v="0,0,0,0,0,0"/>
+              </layer>
+            </symbol>
+          </lineStyle>
+          <markerStyle>
+            <symbol alpha="1" clip_to_extent="1" type="marker" name="">
+              <layer pass="0" class="SimpleMarker" locked="0">
+                <prop k="angle" v="0"/>
+                <prop k="color" v="0,0,0,255"/>
+                <prop k="horizontal_anchor_point" v="1"/>
+                <prop k="joinstyle" v="bevel"/>
+                <prop k="name" v="circle"/>
+                <prop k="offset" v="0,0"/>
+                <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
+                <prop k="offset_unit" v="MM"/>
+                <prop k="outline_color" v="0,0,0,255"/>
+                <prop k="outline_style" v="solid"/>
+                <prop k="outline_width" v="0"/>
+                <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
+                <prop k="outline_width_unit" v="MM"/>
+                <prop k="scale_method" v="diameter"/>
+                <prop k="size" v="2"/>
+                <prop k="size_map_unit_scale" v="0,0,0,0,0,0"/>
+                <prop k="size_unit" v="MM"/>
+                <prop k="vertical_anchor_point" v="1"/>
+              </layer>
+            </symbol>
+          </markerStyle>
+          <annotationFontProperties description="Ubuntu,11,-1,5,50,0,0,0,0,0" style=""/>
+        </ComposerMapGrid>
         <AtlasMap scalingMode="2" atlasDriven="0" margin="0.10000000000000001"/>
-        <ComposerItem pagey="86.2092" page="1" id="legend2" lastValidViewScaleFactor="7.14894" positionMode="0" positionLock="false" x="90.3393" y="86.2092" visibility="1" zValue="3" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="86.4464" outlineWidth="0.3" excludeFromExports="0" uuid="{9326d199-4225-47c7-bf2b-e1b054572aeb}" height="12.0417" itemRotation="0" frame="false" pagex="90.3393">
+        <ComposerItem pagey="86.2092" page="1" id="legend2" lastValidViewScaleFactor="7.14894" positionMode="0" positionLock="false" x="90.3393" y="86.2092" visibility="1" zValue="2" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="86.4464" outlineWidth="0.3" excludeFromExports="0" uuid="{9326d199-4225-47c7-bf2b-e1b054572aeb}" height="12.0417" itemRotation="0" frame="false" pagex="90.3393">
           <FrameColor alpha="255" red="0" blue="0" green="0"/>
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
           <customproperties/>
@@ -5185,16 +5233,16 @@ def my_form_open(dialog, layer, feature):
       <ComposerMap followPreset="false" mapRotation="0" keepLayerSet="true" followPresetName="" id="0" previewMode="Cache" drawCanvasItems="true">
         <Extent ymin="-16.66845102561320857" xmin="65.27118224375975331" ymax="26.65258203862877195" xmax="170.95307778997067771"/>
         <LayerSet>
-          <Layer provider="ogr" source="/home/ilex/Documents/StorageOne - docs/code/python/projects/master/data/proc/agg/vector/common/hexboundaries_asia.shp" name="hexboundaries_asia">hexboundaries_asia20181001112136445</Layer>
-          <Layer provider="ogr" source="/home/ilex/Documents/StorageOne - docs/code/python/projects/master/data/proc/agg/vector/common/hexboundaries_africa.shp" name="hexboundaries_africa">hexboundaries_africa20181001112136426</Layer>
-          <Layer provider="ogr" source="/home/ilex/Documents/StorageOne - docs/code/python/projects/master/data/proc/agg/vector/common/hexboundaries_americas.shp" name="hexboundaries_americas">hexboundaries_americas20181001112136437</Layer>
-          <Layer provider="ogr" source="/home/ilex/Documents/StorageOne - docs/code/python/projects/master/data/proc/agg/vector/common/legend_vertical.shp" name="legend_vertical">legend_vertical20181008183930490</Layer>
-          <Layer provider="ogr" source="/home/ilex/Documents/StorageOne - docs/code/python/projects/master/data/proc/agg/vector/driver/asia_10bins_deforested.shp" name="asia_10bins_deforested">asia_10bins_deforested20181008183814459</Layer>
-          <Layer provider="ogr" source="/home/ilex/Documents/StorageOne - docs/code/python/projects/master/data/proc/agg/vector/driver/africa_10bins_deforested.shp" name="africa_10bins_deforested">africa_10bins_deforested20181008183803427</Layer>
-          <Layer provider="ogr" source="/home/ilex/Documents/StorageOne - docs/code/python/projects/master/data/proc/agg/vector/driver/americas_10bins_deforested.shp" name="americas_10bins_deforested">americas_10bins_deforested20181008183808971</Layer>
+          <Layer provider="ogr" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/common/hexboundaries_asia.shp" name="hexboundaries_asia">hexboundaries_asia20181001112136445</Layer>
+          <Layer provider="ogr" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/common/hexboundaries_africa.shp" name="hexboundaries_africa">hexboundaries_africa20181001112136426</Layer>
+          <Layer provider="ogr" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/common/hexboundaries_americas.shp" name="hexboundaries_americas">hexboundaries_americas20181001112136437</Layer>
+          <Layer provider="ogr" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/common/legend_vertical.shp" name="legend_vertical">legend_vertical20181008183930490</Layer>
+          <Layer provider="ogr" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/driver/asia_10bins_deforested.shp" name="asia_10bins_deforested">asia_10bins_deforested20181008183814459</Layer>
+          <Layer provider="ogr" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/driver/africa_10bins_deforested.shp" name="africa_10bins_deforested">africa_10bins_deforested20181008183803427</Layer>
+          <Layer provider="ogr" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/driver/americas_10bins_deforested.shp" name="americas_10bins_deforested">americas_10bins_deforested20181008183808971</Layer>
         </LayerSet>
         <LayerStyles>
-          <LayerStyle provider="ogr" layerid="africa_10bins_deforested20181008183803427" source="/home/ilex/Documents/StorageOne - docs/code/python/projects/master/data/proc/agg/vector/driver/africa_10bins_deforested.shp" name="africa_10bins_deforested">
+          <LayerStyle provider="ogr" layerid="africa_10bins_deforested20181008183803427" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/driver/africa_10bins_deforested.shp" name="africa_10bins_deforested">
             <qgis version="2.18.20" simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="10">
@@ -5540,7 +5588,7 @@ def my_form_open(dialog, layer, feature):
               <layerGeometryType>2</layerGeometryType>
             </qgis>
           </LayerStyle>
-          <LayerStyle provider="ogr" layerid="americas_10bins_deforested20181008183808971" source="/home/ilex/Documents/StorageOne - docs/code/python/projects/master/data/proc/agg/vector/driver/americas_10bins_deforested.shp" name="americas_10bins_deforested">
+          <LayerStyle provider="ogr" layerid="americas_10bins_deforested20181008183808971" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/driver/americas_10bins_deforested.shp" name="americas_10bins_deforested">
             <qgis version="2.18.20" simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="10">
@@ -5892,7 +5940,7 @@ def my_form_open(dialog, layer, feature):
               <layerGeometryType>2</layerGeometryType>
             </qgis>
           </LayerStyle>
-          <LayerStyle provider="ogr" layerid="asia_10bins_deforested20181008183814459" source="/home/ilex/Documents/StorageOne - docs/code/python/projects/master/data/proc/agg/vector/driver/asia_10bins_deforested.shp" name="asia_10bins_deforested">
+          <LayerStyle provider="ogr" layerid="asia_10bins_deforested20181008183814459" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/driver/asia_10bins_deforested.shp" name="asia_10bins_deforested">
             <qgis version="2.18.20" simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="10">
@@ -6238,7 +6286,7 @@ def my_form_open(dialog, layer, feature):
               <layerGeometryType>2</layerGeometryType>
             </qgis>
           </LayerStyle>
-          <LayerStyle provider="ogr" layerid="hexboundaries_africa20181001112136426" source="/home/ilex/Documents/StorageOne - docs/code/python/projects/master/data/proc/agg/vector/common/hexboundaries_africa.shp" name="hexboundaries_africa">
+          <LayerStyle provider="ogr" layerid="hexboundaries_africa20181001112136426" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/common/hexboundaries_africa.shp" name="hexboundaries_africa">
             <qgis version="2.18.20" simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="country">
@@ -6512,7 +6560,7 @@ def my_form_open(dialog, layer, feature):
               <layerGeometryType>2</layerGeometryType>
             </qgis>
           </LayerStyle>
-          <LayerStyle provider="ogr" layerid="hexboundaries_americas20181001112136437" source="/home/ilex/Documents/StorageOne - docs/code/python/projects/master/data/proc/agg/vector/common/hexboundaries_americas.shp" name="hexboundaries_americas">
+          <LayerStyle provider="ogr" layerid="hexboundaries_americas20181001112136437" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/common/hexboundaries_americas.shp" name="hexboundaries_americas">
             <qgis version="2.18.20" simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
@@ -6792,7 +6840,7 @@ def my_form_open(dialog, layer, feature):
               <layerGeometryType>2</layerGeometryType>
             </qgis>
           </LayerStyle>
-          <LayerStyle provider="ogr" layerid="hexboundaries_asia20181001112136445" source="/home/ilex/Documents/StorageOne - docs/code/python/projects/master/data/proc/agg/vector/common/hexboundaries_asia.shp" name="hexboundaries_asia">
+          <LayerStyle provider="ogr" layerid="hexboundaries_asia20181001112136445" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/common/hexboundaries_asia.shp" name="hexboundaries_asia">
             <qgis version="2.18.20" simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="country">
@@ -6876,7 +6924,7 @@ def my_form_open(dialog, layer, feature):
               <layerGeometryType>2</layerGeometryType>
             </qgis>
           </LayerStyle>
-          <LayerStyle provider="ogr" layerid="legend_vertical20181008183930490" source="/home/ilex/Documents/StorageOne - docs/code/python/projects/master/data/proc/agg/vector/common/legend_vertical.shp" name="legend_vertical">
+          <LayerStyle provider="ogr" layerid="legend_vertical20181008183930490" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/common/legend_vertical.shp" name="legend_vertical">
             <qgis version="2.18.20" simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="scale">
@@ -7246,7 +7294,7 @@ def my_form_open(dialog, layer, feature):
           <annotationFontProperties description="Ubuntu,11,-1,5,50,0,0,0,0,0" style=""/>
         </ComposerMapGrid>
         <AtlasMap scalingMode="2" atlasDriven="0" margin="0.10000000000000001"/>
-        <ComposerItem pagey="24.6074" page="1" id="asia" lastValidViewScaleFactor="7.14894" positionMode="0" positionLock="false" x="34.957" y="24.6074" visibility="1" zValue="2" background="true" transparency="0" frameJoinStyle="round" blendMode="0" width="149.912" outlineWidth="0.3" excludeFromExports="0" uuid="{532af8d2-d5fb-4b67-a525-77c1547e2934}" height="61.4518" itemRotation="0" frame="false" pagex="34.957">
+        <ComposerItem pagey="24.6074" page="1" id="asia" lastValidViewScaleFactor="7.14894" positionMode="0" positionLock="false" x="34.957" y="24.6074" visibility="1" zValue="1" background="true" transparency="0" frameJoinStyle="round" blendMode="0" width="149.912" outlineWidth="0.3" excludeFromExports="0" uuid="{532af8d2-d5fb-4b67-a525-77c1547e2934}" height="61.4518" itemRotation="0" frame="false" pagex="34.957">
           <FrameColor alpha="255" red="0" blue="0" green="0"/>
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
           <customproperties/>
@@ -8817,7 +8865,21 @@ def my_form_open(dialog, layer, feature):
       <excludeAttributesWFS/>
       <attributeactions default="-1"/>
       <attributetableconfig actionWidgetStyle="dropDown" sortExpression="" sortOrder="0">
-        <columns/>
+        <columns>
+          <column width="-1" hidden="0" type="field" name="10"/>
+          <column width="-1" hidden="0" type="field" name="100"/>
+          <column width="-1" hidden="0" type="field" name="25"/>
+          <column width="-1" hidden="0" type="field" name="30"/>
+          <column width="-1" hidden="0" type="field" name="40"/>
+          <column width="-1" hidden="0" type="field" name="50"/>
+          <column width="-1" hidden="0" type="field" name="60"/>
+          <column width="-1" hidden="0" type="field" name="80"/>
+          <column width="-1" hidden="0" type="field" name="90"/>
+          <column width="-1" hidden="0" type="field" name="loss"/>
+          <column width="-1" hidden="0" type="field" name="px_area"/>
+          <column width="-1" hidden="0" type="field" name="covered"/>
+          <column width="-1" hidden="1" type="actions"/>
+        </columns>
       </attributetableconfig>
       <editform>.</editform>
       <editforminit/>
@@ -8845,7 +8907,7 @@ def my_form_open(dialog, layer, feature):
         <default field="px_area" expression=""/>
         <default field="covered" expression=""/>
       </defaults>
-      <previewExpression></previewExpression>
+      <previewExpression>COALESCE( "10", '&lt;NULL>' )</previewExpression>
     </maplayer>
     <maplayer simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
       <extent>
@@ -9285,7 +9347,7 @@ def my_form_open(dialog, layer, feature):
         </symbol>
       </SingleCategoryDiagramRenderer>
       <DiagramLayerSettings yPosColumn="-1" showColumn="-1" linePlacementFlags="10" placement="0" dist="0" xPosColumn="-1" priority="0" obstacle="0" zIndex="0" showAll="1"/>
-      <annotationform>/home/ilex/Documents</annotationform>
+      <annotationform>../../../../../ilex/Documents</annotationform>
       <aliases>
         <alias field="id" index="0" name=""/>
         <alias field="cls" index="1" name=""/>
@@ -9298,7 +9360,7 @@ def my_form_open(dialog, layer, feature):
       <excludeAttributesWMS/>
       <excludeAttributesWFS/>
       <attributeactions default="-1"/>
-      <attributetableconfig actionWidgetStyle="dropDown" sortExpression="" sortOrder="0">
+      <attributetableconfig actionWidgetStyle="dropDown" sortExpression="&quot;id&quot;" sortOrder="0">
         <columns>
           <column width="-1" hidden="0" type="field" name="ratio"/>
           <column width="-1" hidden="0" type="field" name="id"/>
@@ -9310,10 +9372,10 @@ def my_form_open(dialog, layer, feature):
           <column width="-1" hidden="0" type="field" name="px_area"/>
         </columns>
       </attributetableconfig>
-      <editform>/home/ilex/Documents</editform>
+      <editform>../../../../../ilex/Documents</editform>
       <editforminit/>
       <editforminitcodesource>0</editforminitcodesource>
-      <editforminitfilepath>/home/ilex/Documents</editforminitfilepath>
+      <editforminitfilepath>../../../../../ilex/Documents</editforminitfilepath>
       <editforminitcode><![CDATA[# -*- coding: utf-8 -*-
 """
 QGIS forms can have a Python function that is called when the form is
@@ -10656,6 +10718,7 @@ def my_form_open(dialog, layer, feature):
       <SingleCategoryDiagramRenderer diagramType="Histogram" sizeLegend="0" attributeLegend="1">
         <DiagramCategory penColor="#000000" labelPlacementMethod="XHeight" penWidth="0" diagramOrientation="Up" sizeScale="0,0,0,0,0,0" minimumSize="0" barWidth="5" penAlpha="255" maxScaleDenominator="1e+08" backgroundColor="#ffffff" transparency="0" width="15" scaleDependency="Area" backgroundAlpha="255" angleOffset="1440" scaleBasedVisibility="0" enabled="0" height="15" lineSizeScale="0,0,0,0,0,0" sizeType="MM" lineSizeType="MM" minScaleDenominator="inf">
           <fontProperties description="Ubuntu,11,-1,5,50,0,0,0,0,0" style=""/>
+          <attribute field="" color="#000000" label=""/>
         </DiagramCategory>
         <symbol alpha="1" clip_to_extent="1" type="marker" name="sizeSymbol">
           <layer pass="0" class="SimpleMarker" locked="0">

@@ -1,103 +1,103 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
-<qgis projectname="" version="2.18.20">
+<qgis projectname="" version="2.18.28">
   <title></title>
   <autotransaction active="0"/>
   <evaluateDefaultValues active="0"/>
   <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="">
     <customproperties/>
-    <layer-tree-group expanded="1" checked="Qt::Checked" name="boundaries">
+    <layer-tree-group expanded="0" checked="Qt::Checked" name="boundaries">
       <customproperties/>
-      <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="hexboundaries_asia20180726111526360" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/common/hexboundaries_asia.shp" name="hexboundaries_asia">
+      <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="hexboundaries_asia20180726111526360" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/common/hexboundaries_asia.shp" name="hexboundaries_asia">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="hexboundaries_africa20180726111645071" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/common/hexboundaries_africa.shp" name="hexboundaries_africa">
+      <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="hexboundaries_africa20180726111645071" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/common/hexboundaries_africa.shp" name="hexboundaries_africa">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="hexboundaries_americas20180726111554823" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/common/hexboundaries_americas.shp" name="hexboundaries_americas">
+      <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="hexboundaries_americas20180726111554823" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/common/hexboundaries_americas.shp" name="hexboundaries_americas">
         <customproperties/>
       </layer-tree-layer>
     </layer-tree-group>
-    <layer-tree-group expanded="1" checked="Qt::Checked" name="treecover absolute 5 bins">
+    <layer-tree-group expanded="0" checked="Qt::Checked" name="treecover absolute 5 bins">
       <customproperties/>
-      <layer-tree-layer expanded="0" providerKey="ogr" checked="Qt::Checked" id="asia_cover_legend_absolute_5bins20180918155732346" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/treecover/asia_cover_legend_absolute_5bins.shp" name="asia_cover_legend_absolute_5bins">
+      <layer-tree-layer expanded="0" providerKey="ogr" checked="Qt::Checked" id="asia_cover_legend_absolute_5bins20180918155732346" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/treecover/asia_cover_legend_absolute_5bins.shp" name="asia_cover_legend_absolute_5bins">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="0" providerKey="ogr" checked="Qt::Checked" id="africa_cover_legend_absolute_5bins20180918155732300" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/treecover/africa_cover_legend_absolute_5bins.shp" name="africa_cover_legend_absolute_5bins">
+      <layer-tree-layer expanded="0" providerKey="ogr" checked="Qt::Checked" id="africa_cover_legend_absolute_5bins20180918155732300" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/treecover/africa_cover_legend_absolute_5bins.shp" name="africa_cover_legend_absolute_5bins">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="0" providerKey="ogr" checked="Qt::Checked" id="americas_cover_legend_absolute_5bins20180918155732337" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/treecover/americas_cover_legend_absolute_5bins.shp" name="americas_cover_legend_absolute_5bins">
+      <layer-tree-layer expanded="0" providerKey="ogr" checked="Qt::Checked" id="americas_cover_legend_absolute_5bins20180918155732337" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/treecover/americas_cover_legend_absolute_5bins.shp" name="americas_cover_legend_absolute_5bins">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="0" providerKey="ogr" checked="Qt::Checked" id="asia_cover_absolute_scaled_5bins20180918153212954" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/treecover/asia_cover_absolute_scaled_5bins.shp" name="asia_cover_absolute_scaled_5bins">
+      <layer-tree-layer expanded="0" providerKey="ogr" checked="Qt::Checked" id="asia_cover_absolute_scaled_5bins20180918153212954" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/treecover/asia_cover_absolute_scaled_5bins.shp" name="asia_cover_absolute_scaled_5bins">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="0" providerKey="ogr" checked="Qt::Checked" id="africa_cover_absolute_scaled_5bins20180918153212524" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/treecover/africa_cover_absolute_scaled_5bins.shp" name="africa_cover_absolute_scaled_5bins">
+      <layer-tree-layer expanded="0" providerKey="ogr" checked="Qt::Checked" id="africa_cover_absolute_scaled_5bins20180918153212524" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/treecover/africa_cover_absolute_scaled_5bins.shp" name="africa_cover_absolute_scaled_5bins">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="0" providerKey="ogr" checked="Qt::Checked" id="americas_cover_absolute_scaled_5bins20180918153212792" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/treecover/americas_cover_absolute_scaled_5bins.shp" name="americas_cover_absolute_scaled_5bins">
+      <layer-tree-layer expanded="0" providerKey="ogr" checked="Qt::Checked" id="americas_cover_absolute_scaled_5bins20180918153212792" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/treecover/americas_cover_absolute_scaled_5bins.shp" name="americas_cover_absolute_scaled_5bins">
         <customproperties/>
       </layer-tree-layer>
     </layer-tree-group>
     <layer-tree-group expanded="0" checked="Qt::Unchecked" name="treecover absolute 10 bins">
       <customproperties/>
-      <layer-tree-layer expanded="0" providerKey="ogr" checked="Qt::Unchecked" id="asia_cover_legend_absolute_10bins20180918155732356" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/treecover/asia_cover_legend_absolute_10bins.shp" name="asia_cover_legend_absolute_10bins">
+      <layer-tree-layer expanded="0" providerKey="ogr" checked="Qt::Unchecked" id="asia_cover_legend_absolute_10bins20180918155732356" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/treecover/asia_cover_legend_absolute_10bins.shp" name="asia_cover_legend_absolute_10bins">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="0" providerKey="ogr" checked="Qt::Unchecked" id="africa_cover_legend_absolute_10bins20180918155732315" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/treecover/africa_cover_legend_absolute_10bins.shp" name="africa_cover_legend_absolute_10bins">
+      <layer-tree-layer expanded="0" providerKey="ogr" checked="Qt::Unchecked" id="africa_cover_legend_absolute_10bins20180918155732315" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/treecover/africa_cover_legend_absolute_10bins.shp" name="africa_cover_legend_absolute_10bins">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="0" providerKey="ogr" checked="Qt::Unchecked" id="americas_cover_legend_absolute_10bins20180918155732327" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/treecover/americas_cover_legend_absolute_10bins.shp" name="americas_cover_legend_absolute_10bins">
+      <layer-tree-layer expanded="0" providerKey="ogr" checked="Qt::Unchecked" id="americas_cover_legend_absolute_10bins20180918155732327" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/treecover/americas_cover_legend_absolute_10bins.shp" name="americas_cover_legend_absolute_10bins">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="0" providerKey="ogr" checked="Qt::Unchecked" id="asia_cover_absolute_scaled_10bins20180918153531791" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/treecover/asia_cover_absolute_scaled_10bins.shp" name="asia_cover_absolute_scaled_10bins">
+      <layer-tree-layer expanded="0" providerKey="ogr" checked="Qt::Unchecked" id="asia_cover_absolute_scaled_10bins20180918153531791" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/treecover/asia_cover_absolute_scaled_10bins.shp" name="asia_cover_absolute_scaled_10bins">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="0" providerKey="ogr" checked="Qt::Unchecked" id="africa_cover_absolute_scaled_10bins20180918153531356" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/treecover/africa_cover_absolute_scaled_10bins.shp" name="africa_cover_absolute_scaled_10bins">
+      <layer-tree-layer expanded="0" providerKey="ogr" checked="Qt::Unchecked" id="africa_cover_absolute_scaled_10bins20180918153531356" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/treecover/africa_cover_absolute_scaled_10bins.shp" name="africa_cover_absolute_scaled_10bins">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="0" providerKey="ogr" checked="Qt::Unchecked" id="americas_cover_absolute_scaled_10bins20180918153531621" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/treecover/americas_cover_absolute_scaled_10bins.shp" name="americas_cover_absolute_scaled_10bins">
+      <layer-tree-layer expanded="0" providerKey="ogr" checked="Qt::Unchecked" id="americas_cover_absolute_scaled_10bins20180918153531621" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/treecover/americas_cover_absolute_scaled_10bins.shp" name="americas_cover_absolute_scaled_10bins">
         <customproperties/>
       </layer-tree-layer>
     </layer-tree-group>
     <layer-tree-group expanded="0" checked="Qt::Unchecked" name="treecover relative 5 bins">
       <customproperties/>
-      <layer-tree-layer expanded="0" providerKey="ogr" checked="Qt::Unchecked" id="asia_cover_legend_5bins20180918152050495" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/treecover/asia_cover_legend_relative_5bins.shp" name="asia_cover_legend_5bins">
+      <layer-tree-layer expanded="0" providerKey="ogr" checked="Qt::Unchecked" id="asia_cover_legend_5bins20180918152050495" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/treecover/asia_cover_legend_relative_5bins.shp" name="asia_cover_legend_5bins">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="0" providerKey="ogr" checked="Qt::Unchecked" id="africa_cover_legend_5bins20180918152228176" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/treecover/africa_cover_legend_relative_5bins.shp" name="africa_cover_legend_5bins">
+      <layer-tree-layer expanded="0" providerKey="ogr" checked="Qt::Unchecked" id="africa_cover_legend_5bins20180918152228176" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/treecover/africa_cover_legend_relative_5bins.shp" name="africa_cover_legend_5bins">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="0" providerKey="ogr" checked="Qt::Unchecked" id="americas_cover_legend_5bins20180918152326154" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/treecover/americas_cover_legend_relative_5bins.shp" name="americas_cover_legend_5bins">
+      <layer-tree-layer expanded="0" providerKey="ogr" checked="Qt::Unchecked" id="americas_cover_legend_5bins20180918152326154" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/treecover/americas_cover_legend_relative_5bins.shp" name="americas_cover_legend_5bins">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="0" providerKey="ogr" checked="Qt::Unchecked" id="asia_cover_relative_scaled_5bins20180918141711363" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/treecover/asia_cover_relative_scaled_5bins.shp" name="asia_cover_relative_scaled_5bins">
+      <layer-tree-layer expanded="0" providerKey="ogr" checked="Qt::Unchecked" id="asia_cover_relative_scaled_5bins20180918141711363" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/treecover/asia_cover_relative_scaled_5bins.shp" name="asia_cover_relative_scaled_5bins">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="0" providerKey="ogr" checked="Qt::Unchecked" id="africa_cover_relative_scaled_5bins20180918141727195" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/treecover/africa_cover_relative_scaled_5bins.shp" name="africa_cover_relative_scaled_5bins">
+      <layer-tree-layer expanded="0" providerKey="ogr" checked="Qt::Unchecked" id="africa_cover_relative_scaled_5bins20180918141727195" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/treecover/africa_cover_relative_scaled_5bins.shp" name="africa_cover_relative_scaled_5bins">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="0" providerKey="ogr" checked="Qt::Unchecked" id="americas_cover_relative_scaled_5bins20180918141719971" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/treecover/americas_cover_relative_scaled_5bins.shp" name="americas_cover_relative_scaled_5bins">
+      <layer-tree-layer expanded="0" providerKey="ogr" checked="Qt::Unchecked" id="americas_cover_relative_scaled_5bins20180918141719971" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/treecover/americas_cover_relative_scaled_5bins.shp" name="americas_cover_relative_scaled_5bins">
         <customproperties/>
       </layer-tree-layer>
     </layer-tree-group>
     <layer-tree-group expanded="0" checked="Qt::Unchecked" name="treecover relative 10 bins ">
       <customproperties/>
-      <layer-tree-layer expanded="0" providerKey="ogr" checked="Qt::Unchecked" id="treecover_asia_legend_vertical20180905091630216" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/treecover/asia_cover_legend_relative_10bins.shp" name="treecover_asia_legend_vertical">
+      <layer-tree-layer expanded="0" providerKey="ogr" checked="Qt::Unchecked" id="treecover_asia_legend_vertical20180905091630216" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/treecover/asia_cover_legend_relative_10bins.shp" name="treecover_asia_legend_vertical">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="0" providerKey="ogr" checked="Qt::Unchecked" id="treecover_africa_legend_vertical20180905090807116" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/treecover/africa_cover_legend_relative_10bins.shp" name="treecover_africa_legend_vertical">
+      <layer-tree-layer expanded="0" providerKey="ogr" checked="Qt::Unchecked" id="treecover_africa_legend_vertical20180905090807116" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/treecover/africa_cover_legend_relative_10bins.shp" name="treecover_africa_legend_vertical">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="0" providerKey="ogr" checked="Qt::Unchecked" id="treecover_americas_legend_vertical20180905085329342" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/treecover/americas_cover_legend_relative_10bins.shp" name="treecover_americas_legend_vertical">
+      <layer-tree-layer expanded="0" providerKey="ogr" checked="Qt::Unchecked" id="treecover_americas_legend_vertical20180905085329342" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/treecover/americas_cover_legend_relative_10bins.shp" name="treecover_americas_legend_vertical">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="0" providerKey="ogr" checked="Qt::Unchecked" id="asia_cover_relative_scaled_10bins20180918140258691" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/treecover/asia_cover_relative_scaled_10bins.shp" name="asia_cover_relative_scaled_10bins">
+      <layer-tree-layer expanded="0" providerKey="ogr" checked="Qt::Unchecked" id="asia_cover_relative_scaled_10bins20180918140258691" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/treecover/asia_cover_relative_scaled_10bins.shp" name="asia_cover_relative_scaled_10bins">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="0" providerKey="ogr" checked="Qt::Unchecked" id="africa_cover_relative_scaled_10bins20180918140225588" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/treecover/africa_cover_relative_scaled_10bins.shp" name="africa_cover_relative_scaled_10bins">
+      <layer-tree-layer expanded="0" providerKey="ogr" checked="Qt::Unchecked" id="africa_cover_relative_scaled_10bins20180918140225588" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/treecover/africa_cover_relative_scaled_10bins.shp" name="africa_cover_relative_scaled_10bins">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="0" providerKey="ogr" checked="Qt::Unchecked" id="americas_cover_relative_scaled_10bins20180918140238259" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/treecover/americas_cover_relative_scaled_10bins.shp" name="americas_cover_relative_scaled_10bins">
+      <layer-tree-layer expanded="0" providerKey="ogr" checked="Qt::Unchecked" id="americas_cover_relative_scaled_10bins20180918140238259" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/treecover/americas_cover_relative_scaled_10bins.shp" name="americas_cover_relative_scaled_10bins">
         <customproperties/>
       </layer-tree-layer>
     </layer-tree-group>
@@ -106,10 +106,10 @@
   <mapcanvas>
     <units>degrees</units>
     <extent>
-      <xmin>64.2968074580596749</xmin>
-      <ymin>-15.62994975586128632</ymin>
-      <xmax>171.93647752882392865</xmax>
-      <ymax>26.45200197273566189</ymax>
+      <xmin>-106.06597890858671462</xmin>
+      <ymin>-43.82356168898843407</ymin>
+      <xmax>109.21336123294179288</xmax>
+      <ymax>40.34034176820546236</ymax>
     </extent>
     <rotation>0</rotation>
     <projections>0</projections>
@@ -160,7 +160,7 @@
     </custom-order>
   </layer-tree-canvas>
   <legend updateDrawingOrder="true">
-    <legendgroup open="true" checked="Qt::Checked" name="boundaries">
+    <legendgroup open="false" checked="Qt::Checked" name="boundaries">
       <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="hexboundaries_asia" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="hexboundaries_asia20180726111526360" visible="1"/>
@@ -177,7 +177,7 @@
         </filegroup>
       </legendlayer>
     </legendgroup>
-    <legendgroup open="true" checked="Qt::Checked" name="treecover absolute 5 bins">
+    <legendgroup open="false" checked="Qt::Checked" name="treecover absolute 5 bins">
       <legendlayer drawingOrder="-1" open="false" checked="Qt::Checked" name="asia_cover_legend_absolute_5bins" showFeatureCount="0">
         <filegroup open="false" hidden="false">
           <legendlayerfile isInOverview="0" layerid="asia_cover_legend_absolute_5bins20180918155732346" visible="1"/>
@@ -379,7 +379,7 @@
             <customproperties>
               <property key="legend/title-style" value="hidden"/>
             </customproperties>
-            <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="hexboundaries_americas20180726111554823" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/common/hexboundaries_americas.shp" name="hexboundaries_americas">
+            <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="hexboundaries_americas20180726111554823" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/common/hexboundaries_americas.shp" name="hexboundaries_americas">
               <customproperties>
                 <property key="legend/title-label" value="Country boundary"/>
               </customproperties>
@@ -389,7 +389,7 @@
             <customproperties>
               <property key="legend/title-style" value="hidden"/>
             </customproperties>
-            <layer-tree-layer expanded="0" providerKey="ogr" checked="Qt::Checked" id="americas_cover_absolute_scaled_5bins20180918153212792" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/treecover/americas_cover_absolute_scaled_5bins.shp" name="americas_cover_absolute_scaled_5bins">
+            <layer-tree-layer expanded="0" providerKey="ogr" checked="Qt::Checked" id="americas_cover_absolute_scaled_5bins20180918153212792" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/treecover/americas_cover_absolute_scaled_5bins.shp" name="americas_cover_absolute_scaled_5bins">
               <customproperties>
                 <property key="legend/title-label" value="Canopy density [%]"/>
               </customproperties>
@@ -405,18 +405,18 @@
       <ComposerMap followPreset="false" mapRotation="0" keepLayerSet="true" followPresetName="" id="0" previewMode="Cache" drawCanvasItems="true">
         <Extent ymin="-26.57177018816103242" xmin="-113.77815875348629504" ymax="28.79658673364096444" xmax="-32.86051233596082"/>
         <LayerSet>
-          <Layer provider="ogr" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/common/hexboundaries_asia.shp" name="hexboundaries_asia">hexboundaries_asia20180726111526360</Layer>
-          <Layer provider="ogr" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/common/hexboundaries_africa.shp" name="hexboundaries_africa">hexboundaries_africa20180726111645071</Layer>
-          <Layer provider="ogr" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/common/hexboundaries_americas.shp" name="hexboundaries_americas">hexboundaries_americas20180726111554823</Layer>
-          <Layer provider="ogr" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/treecover/asia_cover_legend_absolute_5bins.shp" name="asia_cover_legend_absolute_5bins">asia_cover_legend_absolute_5bins20180918155732346</Layer>
-          <Layer provider="ogr" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/treecover/africa_cover_legend_absolute_5bins.shp" name="africa_cover_legend_absolute_5bins">africa_cover_legend_absolute_5bins20180918155732300</Layer>
-          <Layer provider="ogr" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/treecover/americas_cover_legend_absolute_5bins.shp" name="americas_cover_legend_absolute_5bins">americas_cover_legend_absolute_5bins20180918155732337</Layer>
-          <Layer provider="ogr" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/treecover/asia_cover_absolute_scaled_5bins.shp" name="asia_cover_absolute_scaled_5bins">asia_cover_absolute_scaled_5bins20180918153212954</Layer>
-          <Layer provider="ogr" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/treecover/africa_cover_absolute_scaled_5bins.shp" name="africa_cover_absolute_scaled_5bins">africa_cover_absolute_scaled_5bins20180918153212524</Layer>
-          <Layer provider="ogr" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/treecover/americas_cover_absolute_scaled_5bins.shp" name="americas_cover_absolute_scaled_5bins">americas_cover_absolute_scaled_5bins20180918153212792</Layer>
+          <Layer provider="ogr" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/common/hexboundaries_asia.shp" name="hexboundaries_asia">hexboundaries_asia20180726111526360</Layer>
+          <Layer provider="ogr" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/common/hexboundaries_africa.shp" name="hexboundaries_africa">hexboundaries_africa20180726111645071</Layer>
+          <Layer provider="ogr" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/common/hexboundaries_americas.shp" name="hexboundaries_americas">hexboundaries_americas20180726111554823</Layer>
+          <Layer provider="ogr" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/treecover/asia_cover_legend_absolute_5bins.shp" name="asia_cover_legend_absolute_5bins">asia_cover_legend_absolute_5bins20180918155732346</Layer>
+          <Layer provider="ogr" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/treecover/africa_cover_legend_absolute_5bins.shp" name="africa_cover_legend_absolute_5bins">africa_cover_legend_absolute_5bins20180918155732300</Layer>
+          <Layer provider="ogr" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/treecover/americas_cover_legend_absolute_5bins.shp" name="americas_cover_legend_absolute_5bins">americas_cover_legend_absolute_5bins20180918155732337</Layer>
+          <Layer provider="ogr" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/treecover/asia_cover_absolute_scaled_5bins.shp" name="asia_cover_absolute_scaled_5bins">asia_cover_absolute_scaled_5bins20180918153212954</Layer>
+          <Layer provider="ogr" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/treecover/africa_cover_absolute_scaled_5bins.shp" name="africa_cover_absolute_scaled_5bins">africa_cover_absolute_scaled_5bins20180918153212524</Layer>
+          <Layer provider="ogr" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/treecover/americas_cover_absolute_scaled_5bins.shp" name="americas_cover_absolute_scaled_5bins">americas_cover_absolute_scaled_5bins20180918153212792</Layer>
         </LayerSet>
         <LayerStyles>
-          <LayerStyle provider="ogr" layerid="africa_cover_absolute_scaled_5bins20180918153212524" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/treecover/africa_cover_absolute_scaled_5bins.shp" name="africa_cover_absolute_scaled_5bins">
+          <LayerStyle provider="ogr" layerid="africa_cover_absolute_scaled_5bins20180918153212524" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/treecover/africa_cover_absolute_scaled_5bins.shp" name="africa_cover_absolute_scaled_5bins">
             <qgis version="2.18.20" simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="count">
@@ -889,7 +889,7 @@ def my_form_open(dialog, layer, feature):
               <layerGeometryType>2</layerGeometryType>
             </qgis>
           </LayerStyle>
-          <LayerStyle provider="ogr" layerid="africa_cover_legend_absolute_5bins20180918155732300" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/treecover/africa_cover_legend_absolute_5bins.shp" name="africa_cover_legend_absolute_5bins">
+          <LayerStyle provider="ogr" layerid="africa_cover_legend_absolute_5bins20180918155732300" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/treecover/africa_cover_legend_absolute_5bins.shp" name="africa_cover_legend_absolute_5bins">
             <qgis version="2.18.20" simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="scale">
@@ -1208,7 +1208,7 @@ def my_form_open(dialog, layer, feature):
               <layerGeometryType>2</layerGeometryType>
             </qgis>
           </LayerStyle>
-          <LayerStyle provider="ogr" layerid="americas_cover_absolute_scaled_5bins20180918153212792" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/treecover/americas_cover_absolute_scaled_5bins.shp" name="americas_cover_absolute_scaled_5bins">
+          <LayerStyle provider="ogr" layerid="americas_cover_absolute_scaled_5bins20180918153212792" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/treecover/americas_cover_absolute_scaled_5bins.shp" name="americas_cover_absolute_scaled_5bins">
             <qgis version="2.18.20" simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="count">
@@ -1611,7 +1611,7 @@ def my_form_open(dialog, layer, feature):
               <layerGeometryType>2</layerGeometryType>
             </qgis>
           </LayerStyle>
-          <LayerStyle provider="ogr" layerid="americas_cover_legend_absolute_5bins20180918155732337" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/treecover/americas_cover_legend_absolute_5bins.shp" name="americas_cover_legend_absolute_5bins">
+          <LayerStyle provider="ogr" layerid="americas_cover_legend_absolute_5bins20180918155732337" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/treecover/americas_cover_legend_absolute_5bins.shp" name="americas_cover_legend_absolute_5bins">
             <qgis version="2.18.20" simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="scale">
@@ -1930,7 +1930,7 @@ def my_form_open(dialog, layer, feature):
               <layerGeometryType>2</layerGeometryType>
             </qgis>
           </LayerStyle>
-          <LayerStyle provider="ogr" layerid="asia_cover_absolute_scaled_5bins20180918153212954" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/treecover/asia_cover_absolute_scaled_5bins.shp" name="asia_cover_absolute_scaled_5bins">
+          <LayerStyle provider="ogr" layerid="asia_cover_absolute_scaled_5bins20180918153212954" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/treecover/asia_cover_absolute_scaled_5bins.shp" name="asia_cover_absolute_scaled_5bins">
             <qgis version="2.18.20" simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="count">
@@ -2398,7 +2398,7 @@ def my_form_open(dialog, layer, feature):
               <layerGeometryType>2</layerGeometryType>
             </qgis>
           </LayerStyle>
-          <LayerStyle provider="ogr" layerid="asia_cover_legend_absolute_5bins20180918155732346" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/treecover/asia_cover_legend_absolute_5bins.shp" name="asia_cover_legend_absolute_5bins">
+          <LayerStyle provider="ogr" layerid="asia_cover_legend_absolute_5bins20180918155732346" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/treecover/asia_cover_legend_absolute_5bins.shp" name="asia_cover_legend_absolute_5bins">
             <qgis version="2.18.20" simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="scale">
@@ -2717,7 +2717,7 @@ def my_form_open(dialog, layer, feature):
               <layerGeometryType>2</layerGeometryType>
             </qgis>
           </LayerStyle>
-          <LayerStyle provider="ogr" layerid="hexboundaries_africa20180726111645071" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/common/hexboundaries_africa.shp" name="hexboundaries_africa">
+          <LayerStyle provider="ogr" layerid="hexboundaries_africa20180726111645071" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/common/hexboundaries_africa.shp" name="hexboundaries_africa">
             <qgis version="2.18.20" simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="country">
@@ -2801,7 +2801,7 @@ def my_form_open(dialog, layer, feature):
               <layerGeometryType>2</layerGeometryType>
             </qgis>
           </LayerStyle>
-          <LayerStyle provider="ogr" layerid="hexboundaries_americas20180726111554823" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/common/hexboundaries_americas.shp" name="hexboundaries_americas">
+          <LayerStyle provider="ogr" layerid="hexboundaries_americas20180726111554823" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/common/hexboundaries_americas.shp" name="hexboundaries_americas">
             <qgis version="2.18.20" simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
@@ -3081,7 +3081,7 @@ def my_form_open(dialog, layer, feature):
               <layerGeometryType>2</layerGeometryType>
             </qgis>
           </LayerStyle>
-          <LayerStyle provider="ogr" layerid="hexboundaries_asia20180726111526360" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/common/hexboundaries_asia.shp" name="hexboundaries_asia">
+          <LayerStyle provider="ogr" layerid="hexboundaries_asia20180726111526360" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/common/hexboundaries_asia.shp" name="hexboundaries_asia">
             <qgis version="2.18.20" simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="country">
@@ -3304,7 +3304,7 @@ def my_form_open(dialog, layer, feature):
             <customproperties>
               <property key="legend/title-style" value="hidden"/>
             </customproperties>
-            <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="hexboundaries_africa20180726111645071" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/common/hexboundaries_africa.shp" name="hexboundaries_africa">
+            <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="hexboundaries_africa20180726111645071" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/common/hexboundaries_africa.shp" name="hexboundaries_africa">
               <customproperties>
                 <property key="legend/title-label" value="Country boundary"/>
               </customproperties>
@@ -3314,7 +3314,7 @@ def my_form_open(dialog, layer, feature):
             <customproperties>
               <property key="legend/title-style" value="hidden"/>
             </customproperties>
-            <layer-tree-layer expanded="0" providerKey="ogr" checked="Qt::Checked" id="africa_cover_absolute_scaled_5bins20180918153212524" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/treecover/africa_cover_absolute_scaled_5bins.shp" name="africa_cover_absolute_scaled_5bins">
+            <layer-tree-layer expanded="0" providerKey="ogr" checked="Qt::Checked" id="africa_cover_absolute_scaled_5bins20180918153212524" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/treecover/africa_cover_absolute_scaled_5bins.shp" name="africa_cover_absolute_scaled_5bins">
               <customproperties>
                 <property key="legend/title-label" value="Canopy density [%]"/>
               </customproperties>
@@ -3330,18 +3330,18 @@ def my_form_open(dialog, layer, feature):
       <ComposerMap followPreset="false" mapRotation="0" keepLayerSet="true" followPresetName="" id="0" previewMode="Cache" drawCanvasItems="true">
         <Extent ymin="-27.20523027662333249" xmin="-24.6714396431230405" ymax="28.16312664517867148" xmax="56.24620677440244521"/>
         <LayerSet>
-          <Layer provider="ogr" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/common/hexboundaries_asia.shp" name="hexboundaries_asia">hexboundaries_asia20180726111526360</Layer>
-          <Layer provider="ogr" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/common/hexboundaries_africa.shp" name="hexboundaries_africa">hexboundaries_africa20180726111645071</Layer>
-          <Layer provider="ogr" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/common/hexboundaries_americas.shp" name="hexboundaries_americas">hexboundaries_americas20180726111554823</Layer>
-          <Layer provider="ogr" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/treecover/asia_cover_legend_absolute_5bins.shp" name="asia_cover_legend_absolute_5bins">asia_cover_legend_absolute_5bins20180918155732346</Layer>
-          <Layer provider="ogr" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/treecover/africa_cover_legend_absolute_5bins.shp" name="africa_cover_legend_absolute_5bins">africa_cover_legend_absolute_5bins20180918155732300</Layer>
-          <Layer provider="ogr" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/treecover/americas_cover_legend_absolute_5bins.shp" name="americas_cover_legend_absolute_5bins">americas_cover_legend_absolute_5bins20180918155732337</Layer>
-          <Layer provider="ogr" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/treecover/asia_cover_absolute_scaled_5bins.shp" name="asia_cover_absolute_scaled_5bins">asia_cover_absolute_scaled_5bins20180918153212954</Layer>
-          <Layer provider="ogr" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/treecover/africa_cover_absolute_scaled_5bins.shp" name="africa_cover_absolute_scaled_5bins">africa_cover_absolute_scaled_5bins20180918153212524</Layer>
-          <Layer provider="ogr" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/treecover/americas_cover_absolute_scaled_5bins.shp" name="americas_cover_absolute_scaled_5bins">americas_cover_absolute_scaled_5bins20180918153212792</Layer>
+          <Layer provider="ogr" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/common/hexboundaries_asia.shp" name="hexboundaries_asia">hexboundaries_asia20180726111526360</Layer>
+          <Layer provider="ogr" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/common/hexboundaries_africa.shp" name="hexboundaries_africa">hexboundaries_africa20180726111645071</Layer>
+          <Layer provider="ogr" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/common/hexboundaries_americas.shp" name="hexboundaries_americas">hexboundaries_americas20180726111554823</Layer>
+          <Layer provider="ogr" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/treecover/asia_cover_legend_absolute_5bins.shp" name="asia_cover_legend_absolute_5bins">asia_cover_legend_absolute_5bins20180918155732346</Layer>
+          <Layer provider="ogr" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/treecover/africa_cover_legend_absolute_5bins.shp" name="africa_cover_legend_absolute_5bins">africa_cover_legend_absolute_5bins20180918155732300</Layer>
+          <Layer provider="ogr" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/treecover/americas_cover_legend_absolute_5bins.shp" name="americas_cover_legend_absolute_5bins">americas_cover_legend_absolute_5bins20180918155732337</Layer>
+          <Layer provider="ogr" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/treecover/asia_cover_absolute_scaled_5bins.shp" name="asia_cover_absolute_scaled_5bins">asia_cover_absolute_scaled_5bins20180918153212954</Layer>
+          <Layer provider="ogr" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/treecover/africa_cover_absolute_scaled_5bins.shp" name="africa_cover_absolute_scaled_5bins">africa_cover_absolute_scaled_5bins20180918153212524</Layer>
+          <Layer provider="ogr" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/treecover/americas_cover_absolute_scaled_5bins.shp" name="americas_cover_absolute_scaled_5bins">americas_cover_absolute_scaled_5bins20180918153212792</Layer>
         </LayerSet>
         <LayerStyles>
-          <LayerStyle provider="ogr" layerid="africa_cover_absolute_scaled_5bins20180918153212524" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/treecover/africa_cover_absolute_scaled_5bins.shp" name="africa_cover_absolute_scaled_5bins">
+          <LayerStyle provider="ogr" layerid="africa_cover_absolute_scaled_5bins20180918153212524" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/treecover/africa_cover_absolute_scaled_5bins.shp" name="africa_cover_absolute_scaled_5bins">
             <qgis version="2.18.20" simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="count">
@@ -3750,7 +3750,7 @@ def my_form_open(dialog, layer, feature):
               <layerGeometryType>2</layerGeometryType>
             </qgis>
           </LayerStyle>
-          <LayerStyle provider="ogr" layerid="africa_cover_legend_absolute_5bins20180918155732300" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/treecover/africa_cover_legend_absolute_5bins.shp" name="africa_cover_legend_absolute_5bins">
+          <LayerStyle provider="ogr" layerid="africa_cover_legend_absolute_5bins20180918155732300" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/treecover/africa_cover_legend_absolute_5bins.shp" name="africa_cover_legend_absolute_5bins">
             <qgis version="2.18.20" simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="scale">
@@ -4069,7 +4069,7 @@ def my_form_open(dialog, layer, feature):
               <layerGeometryType>2</layerGeometryType>
             </qgis>
           </LayerStyle>
-          <LayerStyle provider="ogr" layerid="americas_cover_absolute_scaled_5bins20180918153212792" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/treecover/americas_cover_absolute_scaled_5bins.shp" name="americas_cover_absolute_scaled_5bins">
+          <LayerStyle provider="ogr" layerid="americas_cover_absolute_scaled_5bins20180918153212792" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/treecover/americas_cover_absolute_scaled_5bins.shp" name="americas_cover_absolute_scaled_5bins">
             <qgis version="2.18.20" simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="count">
@@ -4472,7 +4472,7 @@ def my_form_open(dialog, layer, feature):
               <layerGeometryType>2</layerGeometryType>
             </qgis>
           </LayerStyle>
-          <LayerStyle provider="ogr" layerid="americas_cover_legend_absolute_5bins20180918155732337" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/treecover/americas_cover_legend_absolute_5bins.shp" name="americas_cover_legend_absolute_5bins">
+          <LayerStyle provider="ogr" layerid="americas_cover_legend_absolute_5bins20180918155732337" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/treecover/americas_cover_legend_absolute_5bins.shp" name="americas_cover_legend_absolute_5bins">
             <qgis version="2.18.20" simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="scale">
@@ -4791,7 +4791,7 @@ def my_form_open(dialog, layer, feature):
               <layerGeometryType>2</layerGeometryType>
             </qgis>
           </LayerStyle>
-          <LayerStyle provider="ogr" layerid="asia_cover_absolute_scaled_5bins20180918153212954" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/treecover/asia_cover_absolute_scaled_5bins.shp" name="asia_cover_absolute_scaled_5bins">
+          <LayerStyle provider="ogr" layerid="asia_cover_absolute_scaled_5bins20180918153212954" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/treecover/asia_cover_absolute_scaled_5bins.shp" name="asia_cover_absolute_scaled_5bins">
             <qgis version="2.18.20" simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="count">
@@ -5259,7 +5259,7 @@ def my_form_open(dialog, layer, feature):
               <layerGeometryType>2</layerGeometryType>
             </qgis>
           </LayerStyle>
-          <LayerStyle provider="ogr" layerid="asia_cover_legend_absolute_5bins20180918155732346" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/treecover/asia_cover_legend_absolute_5bins.shp" name="asia_cover_legend_absolute_5bins">
+          <LayerStyle provider="ogr" layerid="asia_cover_legend_absolute_5bins20180918155732346" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/treecover/asia_cover_legend_absolute_5bins.shp" name="asia_cover_legend_absolute_5bins">
             <qgis version="2.18.20" simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="scale">
@@ -5578,7 +5578,7 @@ def my_form_open(dialog, layer, feature):
               <layerGeometryType>2</layerGeometryType>
             </qgis>
           </LayerStyle>
-          <LayerStyle provider="ogr" layerid="hexboundaries_africa20180726111645071" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/common/hexboundaries_africa.shp" name="hexboundaries_africa">
+          <LayerStyle provider="ogr" layerid="hexboundaries_africa20180726111645071" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/common/hexboundaries_africa.shp" name="hexboundaries_africa">
             <qgis version="2.18.20" simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="country">
@@ -5662,7 +5662,7 @@ def my_form_open(dialog, layer, feature):
               <layerGeometryType>2</layerGeometryType>
             </qgis>
           </LayerStyle>
-          <LayerStyle provider="ogr" layerid="hexboundaries_americas20180726111554823" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/common/hexboundaries_americas.shp" name="hexboundaries_americas">
+          <LayerStyle provider="ogr" layerid="hexboundaries_americas20180726111554823" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/common/hexboundaries_americas.shp" name="hexboundaries_americas">
             <qgis version="2.18.20" simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
@@ -5942,7 +5942,7 @@ def my_form_open(dialog, layer, feature):
               <layerGeometryType>2</layerGeometryType>
             </qgis>
           </LayerStyle>
-          <LayerStyle provider="ogr" layerid="hexboundaries_asia20180726111526360" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/common/hexboundaries_asia.shp" name="hexboundaries_asia">
+          <LayerStyle provider="ogr" layerid="hexboundaries_asia20180726111526360" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/common/hexboundaries_asia.shp" name="hexboundaries_asia">
             <qgis version="2.18.20" simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="country">
@@ -6145,18 +6145,18 @@ def my_form_open(dialog, layer, feature):
       <ComposerMap followPreset="false" mapRotation="0" keepLayerSet="true" followPresetName="" id="0" previewMode="Cache" drawCanvasItems="true">
         <Extent ymin="-19.34129634258010455" xmin="63.92876897228439503" ymax="28.26466280944530141" xmax="171.34277935736565723"/>
         <LayerSet>
-          <Layer provider="ogr" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/common/hexboundaries_asia.shp" name="hexboundaries_asia">hexboundaries_asia20180726111526360</Layer>
-          <Layer provider="ogr" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/common/hexboundaries_africa.shp" name="hexboundaries_africa">hexboundaries_africa20180726111645071</Layer>
-          <Layer provider="ogr" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/common/hexboundaries_americas.shp" name="hexboundaries_americas">hexboundaries_americas20180726111554823</Layer>
-          <Layer provider="ogr" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/treecover/asia_cover_legend_absolute_5bins.shp" name="asia_cover_legend_absolute_5bins">asia_cover_legend_absolute_5bins20180918155732346</Layer>
-          <Layer provider="ogr" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/treecover/africa_cover_legend_absolute_5bins.shp" name="africa_cover_legend_absolute_5bins">africa_cover_legend_absolute_5bins20180918155732300</Layer>
-          <Layer provider="ogr" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/treecover/americas_cover_legend_absolute_5bins.shp" name="americas_cover_legend_absolute_5bins">americas_cover_legend_absolute_5bins20180918155732337</Layer>
-          <Layer provider="ogr" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/treecover/asia_cover_absolute_scaled_5bins.shp" name="asia_cover_absolute_scaled_5bins">asia_cover_absolute_scaled_5bins20180918153212954</Layer>
-          <Layer provider="ogr" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/treecover/africa_cover_absolute_scaled_5bins.shp" name="africa_cover_absolute_scaled_5bins">africa_cover_absolute_scaled_5bins20180918153212524</Layer>
-          <Layer provider="ogr" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/treecover/americas_cover_absolute_scaled_5bins.shp" name="americas_cover_absolute_scaled_5bins">americas_cover_absolute_scaled_5bins20180918153212792</Layer>
+          <Layer provider="ogr" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/common/hexboundaries_asia.shp" name="hexboundaries_asia">hexboundaries_asia20180726111526360</Layer>
+          <Layer provider="ogr" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/common/hexboundaries_africa.shp" name="hexboundaries_africa">hexboundaries_africa20180726111645071</Layer>
+          <Layer provider="ogr" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/common/hexboundaries_americas.shp" name="hexboundaries_americas">hexboundaries_americas20180726111554823</Layer>
+          <Layer provider="ogr" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/treecover/asia_cover_legend_absolute_5bins.shp" name="asia_cover_legend_absolute_5bins">asia_cover_legend_absolute_5bins20180918155732346</Layer>
+          <Layer provider="ogr" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/treecover/africa_cover_legend_absolute_5bins.shp" name="africa_cover_legend_absolute_5bins">africa_cover_legend_absolute_5bins20180918155732300</Layer>
+          <Layer provider="ogr" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/treecover/americas_cover_legend_absolute_5bins.shp" name="americas_cover_legend_absolute_5bins">americas_cover_legend_absolute_5bins20180918155732337</Layer>
+          <Layer provider="ogr" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/treecover/asia_cover_absolute_scaled_5bins.shp" name="asia_cover_absolute_scaled_5bins">asia_cover_absolute_scaled_5bins20180918153212954</Layer>
+          <Layer provider="ogr" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/treecover/africa_cover_absolute_scaled_5bins.shp" name="africa_cover_absolute_scaled_5bins">africa_cover_absolute_scaled_5bins20180918153212524</Layer>
+          <Layer provider="ogr" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/treecover/americas_cover_absolute_scaled_5bins.shp" name="americas_cover_absolute_scaled_5bins">americas_cover_absolute_scaled_5bins20180918153212792</Layer>
         </LayerSet>
         <LayerStyles>
-          <LayerStyle provider="ogr" layerid="africa_cover_absolute_scaled_5bins20180918153212524" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/treecover/africa_cover_absolute_scaled_5bins.shp" name="africa_cover_absolute_scaled_5bins">
+          <LayerStyle provider="ogr" layerid="africa_cover_absolute_scaled_5bins20180918153212524" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/treecover/africa_cover_absolute_scaled_5bins.shp" name="africa_cover_absolute_scaled_5bins">
             <qgis version="2.18.20" simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="count">
@@ -6565,7 +6565,7 @@ def my_form_open(dialog, layer, feature):
               <layerGeometryType>2</layerGeometryType>
             </qgis>
           </LayerStyle>
-          <LayerStyle provider="ogr" layerid="africa_cover_legend_absolute_5bins20180918155732300" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/treecover/africa_cover_legend_absolute_5bins.shp" name="africa_cover_legend_absolute_5bins">
+          <LayerStyle provider="ogr" layerid="africa_cover_legend_absolute_5bins20180918155732300" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/treecover/africa_cover_legend_absolute_5bins.shp" name="africa_cover_legend_absolute_5bins">
             <qgis version="2.18.20" simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="scale">
@@ -6884,7 +6884,7 @@ def my_form_open(dialog, layer, feature):
               <layerGeometryType>2</layerGeometryType>
             </qgis>
           </LayerStyle>
-          <LayerStyle provider="ogr" layerid="americas_cover_absolute_scaled_5bins20180918153212792" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/treecover/americas_cover_absolute_scaled_5bins.shp" name="americas_cover_absolute_scaled_5bins">
+          <LayerStyle provider="ogr" layerid="americas_cover_absolute_scaled_5bins20180918153212792" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/treecover/americas_cover_absolute_scaled_5bins.shp" name="americas_cover_absolute_scaled_5bins">
             <qgis version="2.18.20" simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="count">
@@ -7287,7 +7287,7 @@ def my_form_open(dialog, layer, feature):
               <layerGeometryType>2</layerGeometryType>
             </qgis>
           </LayerStyle>
-          <LayerStyle provider="ogr" layerid="americas_cover_legend_absolute_5bins20180918155732337" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/treecover/americas_cover_legend_absolute_5bins.shp" name="americas_cover_legend_absolute_5bins">
+          <LayerStyle provider="ogr" layerid="americas_cover_legend_absolute_5bins20180918155732337" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/treecover/americas_cover_legend_absolute_5bins.shp" name="americas_cover_legend_absolute_5bins">
             <qgis version="2.18.20" simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="scale">
@@ -7606,7 +7606,7 @@ def my_form_open(dialog, layer, feature):
               <layerGeometryType>2</layerGeometryType>
             </qgis>
           </LayerStyle>
-          <LayerStyle provider="ogr" layerid="asia_cover_absolute_scaled_5bins20180918153212954" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/treecover/asia_cover_absolute_scaled_5bins.shp" name="asia_cover_absolute_scaled_5bins">
+          <LayerStyle provider="ogr" layerid="asia_cover_absolute_scaled_5bins20180918153212954" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/treecover/asia_cover_absolute_scaled_5bins.shp" name="asia_cover_absolute_scaled_5bins">
             <qgis version="2.18.20" simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="count">
@@ -8009,7 +8009,7 @@ def my_form_open(dialog, layer, feature):
               <layerGeometryType>2</layerGeometryType>
             </qgis>
           </LayerStyle>
-          <LayerStyle provider="ogr" layerid="asia_cover_legend_absolute_5bins20180918155732346" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/treecover/asia_cover_legend_absolute_5bins.shp" name="asia_cover_legend_absolute_5bins">
+          <LayerStyle provider="ogr" layerid="asia_cover_legend_absolute_5bins20180918155732346" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/treecover/asia_cover_legend_absolute_5bins.shp" name="asia_cover_legend_absolute_5bins">
             <qgis version="2.18.20" simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="scale">
@@ -8328,7 +8328,7 @@ def my_form_open(dialog, layer, feature):
               <layerGeometryType>2</layerGeometryType>
             </qgis>
           </LayerStyle>
-          <LayerStyle provider="ogr" layerid="hexboundaries_africa20180726111645071" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/common/hexboundaries_africa.shp" name="hexboundaries_africa">
+          <LayerStyle provider="ogr" layerid="hexboundaries_africa20180726111645071" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/common/hexboundaries_africa.shp" name="hexboundaries_africa">
             <qgis version="2.18.20" simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="country">
@@ -8412,7 +8412,7 @@ def my_form_open(dialog, layer, feature):
               <layerGeometryType>2</layerGeometryType>
             </qgis>
           </LayerStyle>
-          <LayerStyle provider="ogr" layerid="hexboundaries_americas20180726111554823" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/common/hexboundaries_americas.shp" name="hexboundaries_americas">
+          <LayerStyle provider="ogr" layerid="hexboundaries_americas20180726111554823" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/common/hexboundaries_americas.shp" name="hexboundaries_americas">
             <qgis version="2.18.20" simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
@@ -8692,7 +8692,7 @@ def my_form_open(dialog, layer, feature):
               <layerGeometryType>2</layerGeometryType>
             </qgis>
           </LayerStyle>
-          <LayerStyle provider="ogr" layerid="hexboundaries_asia20180726111526360" source="/home/tobi/Documents/Master/code/python/Master/data/proc/agg/vector/common/hexboundaries_asia.shp" name="hexboundaries_asia">
+          <LayerStyle provider="ogr" layerid="hexboundaries_asia20180726111526360" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/common/hexboundaries_asia.shp" name="hexboundaries_asia">
             <qgis version="2.18.20" simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="country">
