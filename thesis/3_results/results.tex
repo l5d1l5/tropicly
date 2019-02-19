@@ -80,20 +80,19 @@
 
 		\subsection{Tree cover and deforestation}
 		\label{subsec:results_tree_cover_and_deforestation}
-		%TODO images of loss and canopy
-			\note{Goal (review):} This section is intended to show the distribution of tree cover within our study extent as well to present at which places the loss of tree cover has is main impacts in the tropical zone. The tree cover map is derived from the \ac{GFC} tree cover 2000 dataset while we selected only forest within our canopy density interval $(10,100]$. To present the tree cover we use our hexagonal binning approach. We compute the total area covered by trees within a hexagon and divide by the total area a hexagon occupies to get the scaling. Additionally we determine the mean canopy density per hexagon. To arrange the loss maps we use our proximate deforestation driver predictions. We compute for each hexagon the area which is lost by deforestation drivers classified as antrophogenic. We divide this by the total area a hexagons covers to determine the scaling. This map should be interpreted as additionally information to our predictions and as a example how large data can be visualized by an easy reproduceable approach.
+			This section is intended to present a comprehensive insight in the tropical tree cover distribution within our study extent at 2000 over the tree continental regions. Further, we highlight at which sites the tree cover loss peaked between 2000 and 2010. The tree cover maps are derived from the \ac{GFC} tree cover 2000 layer while we selected only pixels within our forest definition which refers to the canopy density interval $(10,100]$. For an appropriate visualization of multivariate spatial data on a large extent we selected our hexagonal binning approach. For the tree cover maps we computed the total area covered by trees within a polygon and divide by the total area of the hexagon to determine the scaling. Additionally we aggregate the canopy density within a hexagon by applying the arithmetic mean. To arrange the tree cover loss maps we used our \ac{PDD} products. We computed the loss area for within each hexagon fro the following \ac{PDD} classes: cultivated land (10), regrowth (25), grassland (30), shrubland (40), artificial surfaces (80), and bareland (90). To determine the polygon scaling we divided the per hexagon loss area by the highest observed loss within a continental region. Forest cover, losses, and hexagon areas are computed by applying the Haversine equation. A hexagon in unscaled shape covers an area of 0.5 decimal degrees. This maps should be interpreted as precursor to our \ac{PDD} predictions and as an example how large multivariate spatial data can be visualized and evaluated by a more advanced aggregation approach.
 
-			\note{Americas:}
+			The map in figure \ref{fig:americas_tree_cover} shows the tree cover and canopy density distribution within our study extent for South Americas at 2000. The center of the map is covered by the core tropical rain forest characterized by high tree cover per hexagon between approximately 39 and 49 thousand km$^2$ and a mean canopy density between 82 and 100 \%. The core zone is distributed over 9 South American countries, namely: Colombia, Venezuela, Guiana, Suriname, French Guiana, Brazil, Bolivia, Peru, and Ecuador. In Brazil, within the tropical core zone two hexagons are smaller scaled which highlights a tree cover between 29 and 39 thousand km$^2$ at a canopy density between 82 and 100 \%. These two hexagons comprising floodplain forest at the borders of the Amazon river located in the state Par\'{a}. This river basin enclosed by the three cities Santar\'{e}m, Almeirim, and \'{O}bidos suffered severe deforestation since the 16th century \citep{Reno2011}. \citeauthor{Reno2011} suggests that major forest losses toke place between 1950 and 1975 followed by lower annual deforestation till 2008. Located in the lower left part of the map crossing the borders of Bolivia, Paraguay, and Argentina is the Gran Chaco a hot semi-arid wooded grassland characterized by tree cover between approximately 29 and 49 thousand km$^2$ and canopy densities between 28 and 46 \% \citep{Caldas2013}. The figure \ref{fig:americas_loss} shows the distribution of tree cover losses over South America within the time frame of 2000 till 2010. We could identify for several countries deforestation hot-spots where the deforested area is between approximately 2.7 and 9 thousand km$^2$ as the map suggests. Tropical countries with deforestation hot-spots are: Paraguay, Argentina, Bolivia, Brazil, Colombia, Peru, and Guatemala. In Brazil the hot-spots of tree cover loss are known as arc of deforestation and cover the states of Acre, Rond\^{o}nia, Mato Grosso, and Par\'{a} while the deforestation starts to move into the state of Amazonas \citep{Wood2002}. The tree cover loss within this arc develops along the highway network in this regions \citet{Alves2002,Mueller2016}. Several paved highways like BR-163, BR-219, BR-230 etc. foster the agricultural and infrastructural development and lead to high deforestation rates. Deforestation hot-spots in Paraguay and Argentina are located in the Gran Chaco region which was one of the least disturbed forests worldwide and is exposed to high deforestation rates since 1969 \citep{Caldas2013,Zak2004}. In Bolivia the deforestation hot-spot is located in the department of Santa Cruz. Bolivia had till the 1960s relative low deforestation rates which increased moderately after and increased sharply during the 1990s and remain high as the map suggests \citep{Pacheco2002,DavidKaimowitz2002}. Peru the states Ucayali, Huanuco, and San Martin. Colombia the states  
 			\begin{figure}[ht]
 				\centering
 				\includegraphics[scale=1]{img/americas_treecover_frameless}
-				\caption[]{}
+				\caption[Tree cover and canopy density in South America at 2000]{\textbf{Tree cover and canopy density in South America at 2000:} This maps shows the tree cover and mean canopy density distribution within our study extent at 2000. An unscaled hexagon covers an area of 0.5 decimal degrees which translates to approximately 49 thousand km$^2$ at the equator.}
 				\label{fig:americas_tree_cover}
 			\end{figure}
 			\begin{figure}[ht]
 				\centering
 				\includegraphics[scale=1]{img/americas_loss_frameless}
-				\caption[]{}
+				\caption[Tree cover loss in South America between 2000 and 2010]{\textbf{Tree cover loss in South America between 2000 and 2010:} This map shows the tree cover loss within our study extent between 2000 and 2010. An unscaled hexagon covers an area of 0.5 decimal degrees which translates to approximately 49 thousand km$^2$ at the equator.}
 				\label{fig:americas_loss}
 			\end{figure}
 
@@ -101,13 +100,13 @@
 			\begin{figure}[ht]
 				\centering
 				\includegraphics[scale=1]{img/asia_treecover_frameless}
-				\caption[Ecosystem service values]{}
+				\caption[Tree cover and canopy density in Asia/Australia at 2000]{\textbf{Tree cover and canopy density in Asia/Australia at 2000:} This maps shows the tree cover and mean canopy density distribution within our study extent at 2000. An unscaled hexagon covers an area of 0.5 decimal degrees which translates to approximately 49 thousand km$^2$ at the equator.}
 				\label{fig:asia_tree_cover}
 			\end{figure}
 			\begin{figure}[ht]
 				\centering
 				\includegraphics[scale=1]{img/asia_loss_frameless}
-				\caption[Ecosystem service values]{}
+				\caption[Tree cover loss in Asia/Australia between 2000 and 2010]{\textbf{Tree cover loss in Asia/Australia between 2000 and 2010:} This map shows the tree cover loss within our study extent between 2000 and 2010. An unscaled hexagon covers an area of 0.5 decimal degrees which translates to approximately 49 thousand km$^2$ at the equator.}
 				\label{fig:asia_loss}
 			\end{figure}
 
@@ -115,13 +114,13 @@
 			\begin{figure}[ht]
 				\centering
 				\includegraphics[scale=1]{img/africa_treecover_frameless}
-				\caption[Ecosystem service values]{}
+				\caption[Tree cover and canopy density in Africa at 2000]{\textbf{Tree cover and canopy density in Africa at 2000:} This maps shows the tree cover and mean canopy density distribution within our study extent at 2000. An unscaled hexagon covers an area of 0.5 decimal degrees which translates to approximately 49 thousand km$^2$ at the equator.}
 				\label{fig:africa_tree_cover}
 			\end{figure}
 			\begin{figure}[ht]
 				\centering
 				\includegraphics[scale=1]{img/africa_loss_frameless}
-				\caption[Ecosystem service values]{}
+				\caption[Tree cover loss in Africa between 2000 and 2010]{\textbf{Tree cover loss in Africa between 2000 and 2010:} This map shows the tree cover loss within our study extent between 2000 and 2010. An unscaled hexagon covers an area of 0.5 decimal degrees which translates to approximately 49 thousand km$^2$ at the equator.}
 				\label{fig:africa_loss}
 			\end{figure}
 

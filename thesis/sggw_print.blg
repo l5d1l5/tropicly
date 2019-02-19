@@ -3,44 +3,49 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: sggw_print.aux
 The style file: tobinat.bst
 Database file #1: literature.bib
-You've used 35 entries,
+Warning--can't use both author and editor fields in Alves2002
+Warning--can't use both author and editor fields in DavidKaimowitz2002
+Warning--can't use both author and editor fields in Pacheco2002
+Warning--can't use both author and editor fields in Wood2002
+You've used 43 entries,
             2773 wiz_defined-function locations,
-            864 strings with 13452 characters,
-and the built_in function-call counts, 20198 in all, are:
-= -- 1722
-> -- 1703
-< -- 13
-+ -- 576
-- -- 540
-* -- 1924
-:= -- 3306
-add.period$ -- 136
-call.type$ -- 35
-change.case$ -- 288
-chr.to.int$ -- 34
-cite$ -- 70
-duplicate$ -- 675
-empty$ -- 1233
-format.name$ -- 579
-if$ -- 4016
+            921 strings with 15170 characters,
+and the built_in function-call counts, 24339 in all, are:
+= -- 2094
+> -- 1910
+< -- 25
++ -- 647
+- -- 603
+* -- 2282
+:= -- 3915
+add.period$ -- 164
+call.type$ -- 43
+change.case$ -- 329
+chr.to.int$ -- 42
+cite$ -- 90
+duplicate$ -- 873
+empty$ -- 1580
+format.name$ -- 652
+if$ -- 4897
 int.to.chr$ -- 2
 int.to.str$ -- 1
-missing$ -- 27
-newline$ -- 214
-num.names$ -- 140
-pop$ -- 500
+missing$ -- 39
+newline$ -- 258
+num.names$ -- 172
+pop$ -- 601
 preamble$ -- 1
-purify$ -- 250
+purify$ -- 287
 quote$ -- 0
-skip$ -- 566
+skip$ -- 702
 stack$ -- 0
-substring$ -- 546
-swap$ -- 57
-text.length$ -- 0
+substring$ -- 747
+swap$ -- 103
+text.length$ -- 8
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 380
-warning$ -- 0
-while$ -- 146
+type$ -- 448
+warning$ -- 4
+while$ -- 190
 width$ -- 0
-write$ -- 518
+write$ -- 630
+(There were 4 warnings)

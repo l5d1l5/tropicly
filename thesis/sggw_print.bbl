@@ -1,9 +1,16 @@
-\begin{thebibliography}{35}
+\begin{thebibliography}{43}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Alves(2002)]{Alves2002}
+Alves D.~S.
+\newblock \emph{Deforestation and land use in the {A}mazon}, chapter An
+  Analysis of the Geographical Patterns of Deforestation in the Brazilian
+  Amazon in the Period 1991–1996, pages 95--107.
+\newblock University Press of Florida, 2002.
 
 \bibitem[Arsanjani et~al.(2016{\natexlab{a}})Arsanjani, See, and
   Tayyebi]{Arsanjani2016a}
@@ -53,6 +60,14 @@ Baccini A., Walker W., Carvalho L., Farina M., Sulla-Menashe D., and Houghton
 \newblock \emph{Science}, 358\penalty0 (6360):\penalty0 230--234, September
   2017.
 \newblock \doi{10.1126/science.aam5962}.
+
+\bibitem[Caldas et~al.(2013)Caldas, Goodin, Sherwood, Krauer, and
+  Wisely]{Caldas2013}
+Caldas M.~M., Goodin D., Sherwood S., Krauer J. M.~C., and Wisely S.~M.
+\newblock Land-cover change in the {P}araguayan {C}haco: 2000-2011.
+\newblock \emph{Journal of Land Use Science}, 10\penalty0 (1):\penalty0 1--18,
+  July 2013.
+\newblock \doi{10.1080/1747423x.2013.807314}.
 
 \bibitem[Cao et~al.(2016)Cao, Li, Lei, Lei, Tan, Zhang, Yan, Xie, Zhang, and
   Yang]{Cao2016}
@@ -125,6 +140,12 @@ Costanza R., Groot R., de, Sutton P., Ploeg S., van~der, Anderson S.~J.,
 \newblock Changes in the global value of ecosystem services.
 \newblock \emph{Global Environmental Change}, 26:\penalty0 152--158, May 2014.
 \newblock \doi{10.1016/j.gloenvcha.2014.04.002}.
+
+\bibitem[David~Kaimowitz and Vanclay(2002)]{DavidKaimowitz2002}
+David~Kaimowitz, Patricia~Mendez A.~P. and Vanclay J.
+\newblock \emph{Deforestation and land use in the {A}mazon}, chapter Spatial
+  Regression Analysis of Deforestation in Santa Cruz, Bolivia, pages 41--65.
+\newblock University Press of Florida, 2002.
 
 \bibitem[de~Groot et~al.(2012)de~Groot, Brander, van~der Ploeg, Costanza,
   Bernard, Braat, Christie, Crossman, Ghermandi, Hein, Hussain, Kumar,
@@ -231,6 +252,21 @@ McKinney W.
 \newblock Data structures for statistical computing in {P}ython.
 \newblock \emph{Proceedings of the 9th Python in Science Conference}, 2010.
 
+\bibitem[Müller et~al.(2016)Müller, Griffiths, and Hostert]{Mueller2016}
+Müller H., Griffiths P., and Hostert P.
+\newblock Long-term deforestation dynamics in the {B}razilian {A}mazon-
+  {U}ncovering historic frontier development along the
+  {C}uiab{\'{a}}-{S}antar{\'{e}}m highway.
+\newblock \emph{International Journal of Applied Earth Observation and
+  Geoinformation}, 44:\penalty0 61--69, feb 2016.
+\newblock \doi{10.1016/j.jag.2015.07.005}.
+
+\bibitem[Pacheco(2002)]{Pacheco2002}
+Pacheco P.
+\newblock \emph{Deforestation and land use in the {A}mazon}, chapter
+  Deforestation and Forest Degradation in Lowland Bolivia, pages 66--94.
+\newblock University Press of Florida, 2002.
+
 \bibitem[Potapov et~al.(2017)Potapov, Hansen, Laestadius, Turubanova,
   Yaroshenko, Thies, Smith, Zhuravleva, Komarova, Minnemeyer, and
   Esipova]{Potapov2017}
@@ -241,6 +277,16 @@ Potapov P., Hansen M.~C., Laestadius L., Turubanova S., Yaroshenko A., Thies
 \newblock \emph{Science Advances}, 3\penalty0 (1), January 2017.
 \newblock \doi{10.1126/sciadv.1600821}.
 \newblock URL \url{http://www.intactforests.org/}.
+
+\bibitem[Ren{\'{o}} et~al.(2011)Ren{\'{o}}, Novo, Suemitsu, Renn{\'{o}}, and
+  Silva]{Reno2011}
+Ren{\'{o}} V.~F., Novo E. M. L.~M., Suemitsu C., Renn{\'{o}} C.~D., and Silva
+  T. S.~F.
+\newblock Assessment of deforestation in the {L}ower {A}mazon floodplain using
+  historical {L}andsat {MSS}/{TM} imagery.
+\newblock \emph{Remote Sensing of Environment}, 115\penalty0 (12):\penalty0
+  3446--3456, December 2011.
+\newblock \doi{10.1016/j.rse.2011.08.008}.
 
 \bibitem[Sampat et~al.(2009)Sampat, Wang, Gupta, Bovik, and Markey]{Sampat2009}
 Sampat M.~P., Wang Z., Gupta S., Bovik A.~C., and Markey M.~K.
@@ -283,11 +329,25 @@ Wilcoxon F.
 \newblock \emph{Biometrics Bulletin}, 1\penalty0 (6):\penalty0 80--83, December
   1945.
 
+\bibitem[Wood(2002)]{Wood2002}
+Wood C.~H.
+\newblock \emph{Deforestation and land use in the {A}mazon}, chapter
+  Introduction - Deforestation and land use in the {A}mazon, pages 1--38.
+\newblock University Press of Florida, 2002.
+
 \bibitem[Yang et~al.(2017)Yang, Xiao, Feng, and Li]{Yang2017}
 Yang Y., Xiao P., Feng X., and Li H.
 \newblock Accuracy assessment of seven global land cover datasets over {C}hina.
 \newblock \emph{ISPRS Journal of Photogrammetry and Remote Sensing},
   125:\penalty0 156--173, March 2017.
 \newblock \doi{10.1016/j.isprsjprs.2017.01.016}.
+
+\bibitem[Zak et~al.(2004)Zak, Cabido, and Hodgson]{Zak2004}
+Zak M.~R., Cabido M., and Hodgson J.~G.
+\newblock Do subtropical seasonal forests in the {G}ran {C}haco, {A}rgentina,
+  have a future?
+\newblock \emph{Biological Conservation}, 120\penalty0 (4):\penalty0 589--598,
+  dec 2004.
+\newblock \doi{10.1016/j.biocon.2004.03.034}.
 
 \end{thebibliography}
