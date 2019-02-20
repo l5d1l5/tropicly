@@ -1,4 +1,4 @@
-\begin{thebibliography}{43}
+\begin{thebibliography}{45}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -60,6 +60,14 @@ Baccini A., Walker W., Carvalho L., Farina M., Sulla-Menashe D., and Houghton
 \newblock \emph{Science}, 358\penalty0 (6360):\penalty0 230--234, September
   2017.
 \newblock \doi{10.1126/science.aam5962}.
+
+\bibitem[Beach(1998)]{Beach1998}
+Beach T.
+\newblock Soil catenas, tropical deforestation, and ancient and contemporary
+  soil erosion in the {P}et{\'{e}}n, {G}uatemala.
+\newblock \emph{Physical Geography}, 19\penalty0 (5):\penalty0 378--405, sep
+  1998.
+\newblock \doi{10.1080/02723646.1998.10642657}.
 
 \bibitem[Caldas et~al.(2013)Caldas, Goodin, Sherwood, Krauer, and
   Wisely]{Caldas2013}
@@ -252,6 +260,14 @@ McKinney W.
 \newblock Data structures for statistical computing in {P}ython.
 \newblock \emph{Proceedings of the 9th Python in Science Conference}, 2010.
 
+\bibitem[McSweeney et~al.(2014)McSweeney, Nielsen, Taylor, Wrathall, Pearson,
+  Wang, and Plumb]{McSweeney2014}
+McSweeney K., Nielsen E.~A., Taylor M.~J., Wrathall D.~J., Pearson Z., Wang O.,
+  and Plumb S.~T.
+\newblock Drug policy as conservation policy: narco-deforestation.
+\newblock \emph{Science}, 343\penalty0 (6170):\penalty0 489--490, jan 2014.
+\newblock \doi{10.1126/science.1244082}.
+
 \bibitem[Müller et~al.(2016)Müller, Griffiths, and Hostert]{Mueller2016}
 Müller H., Griffiths P., and Hostert P.
 \newblock Long-term deforestation dynamics in the {B}razilian {A}mazon-
@@ -264,7 +280,7 @@ Müller H., Griffiths P., and Hostert P.
 \bibitem[Pacheco(2002)]{Pacheco2002}
 Pacheco P.
 \newblock \emph{Deforestation and land use in the {A}mazon}, chapter
-  Deforestation and Forest Degradation in Lowland Bolivia, pages 66--94.
+  Deforestation and Forest Degradation in Lowland Bolivia, page~6.
 \newblock University Press of Florida, 2002.
 
 \bibitem[Potapov et~al.(2017)Potapov, Hansen, Laestadius, Turubanova,

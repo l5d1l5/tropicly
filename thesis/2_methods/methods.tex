@@ -348,6 +348,7 @@
 		We aggregated our results for \ac{ESV} loss, \ac{ESV} gain, and \ac{ESV} balance on three spatially different levels with the following extent: global tropical zone and continental region (Americas, Asia, and Africa).
 
 	\subsection{Binning analysis and visualization}
+	%TODO image hexagon countries
 	%TODO image needs D
 	%TODO image change y_2 to y_1
 	%TODO image change equations to explain
@@ -461,6 +462,8 @@
 
 		Treecover: Count tree cover pixels within hexagon in canopy interval (10,100], count total pixels within hexagon, compute pixel area with haversine, divide tree covered area by total area, 5 ratio bins 0.2 0.4 0.6 0.8 1.0 for scaling, store the area for interval, mean canopy density over occupied pixels, use mean canopy density for choropleth map
 
+		Loss: count frequency of pdd recognized as deforestation 
+
 		PDD: count frequencies within a hexagon, compute frequency ratios, segement hexagons by the ratio of pdd driver, order the drivers in decreasing order, most common is first, tried with scaling but not feasible cause few big sized and many small sized, just scale them a bit down cause visual appeal,
 
-		Loss: count frequency of pdd recognized as deforestation 
+		Hexagonal Country-boundaries: Hexagon grid over the continent aggregate cells which cover a country, vastly made by hand
