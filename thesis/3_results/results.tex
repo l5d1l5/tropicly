@@ -80,8 +80,9 @@
 
 		\subsection{Tree cover and deforestation}
 		\label{subsec:results_tree_cover_and_deforestation}
-		%TODO deforestation references for Peru, Colombia, and Guatemala
-			This section is intended to present a comprehensive insight in the tropical tree cover distribution within our study extent at 2000 over the tree continental regions. Further, we highlight at which sites the tree cover loss peaked between 2000 and 2010. The tree cover maps are derived from the \ac{GFC} tree cover 2000 layer while we selected only pixels within our forest definition which refers to the canopy density interval $(10,100]$. For an appropriate visualization of multivariate spatial data on a large extent we selected our hexagonal binning approach. For the tree cover maps we computed the total area covered by trees within a polygon and divide by the total area of the hexagon to determine the scaling. Additionally we aggregate the canopy density within a hexagon by applying the arithmetic mean. To arrange the tree cover loss maps we used our \ac{PDD} products. We computed the loss area for within each hexagon fro the following \ac{PDD} classes: cultivated land (10), regrowth (25), grassland (30), shrubland (40), artificial surfaces (80), and bareland (90). To determine the polygon scaling we divided the per hexagon loss area by the highest observed loss within a continental region. Forest cover, losses, and hexagon areas are computed by applying the Haversine equation. A hexagon in unscaled shape covers an area of 0.5 decimal degrees. This maps should be interpreted as precursor to our \ac{PDD} predictions and as an example how large multivariate spatial data can be visualized and evaluated by a more advanced aggregation approach.
+		%TODO deforestation references for Peru and Colombia
+		%TODO add tree cover loss values to text
+			This section is intended to present a comprehensive insight in the tropical tree cover distribution within our study extent at 2000 over the tree continental regions. Further, we highlight at which sites the tree cover loss peaked between 2000 and 2010. The tree cover maps are derived from the \ac{GFC} tree cover 2000 layer while we selected only pixels within our forest definition which refers to the canopy density interval $(10,100]$. For an appropriate visualization of multivariate spatial data on a large extent we selected our hexagonal binning approach. For the tree cover maps we computed the total area covered by trees within a polygon and divide by the total area of the hexagon to determine the scaling. Additionally we aggregate the canopy density within a hexagon by applying the arithmetic mean. To arrange the tree cover loss maps we used our \ac{PDD} products. We computed the loss area within each hexagon for the following \ac{PDD} classes: cultivated land (10), regrowth (25), grassland (30), shrubland (40), artificial surfaces (80), and bareland (90). To determine the polygon scaling we divided the per hexagon loss area by the highest observed loss within a continental region. Forest cover, losses, and hexagon areas are computed by applying the Haversine equation. A hexagon in unscaled shape covers an area of 0.5 decimal degrees. This maps should be interpreted as precursor to our \ac{PDD} predictions and as an example how large multivariate spatial data can be visualized and evaluated by a more advanced aggregation approach.
 
 			The map in figure \ref{fig:americas_tree_cover} shows the tree cover and canopy density distribution within our study extent for South Americas at 2000. The center of the map is covered by the core tropical rain forest characterized by high tree cover per hexagon between approximately 39 and 49 thousand km$^2$ and a mean canopy density between 82 and 100 \%. The core rain forest zone is distributed over 9 South American countries, namely: Colombia, Venezuela, Guiana, Suriname, French Guiana, Brazil, Bolivia, Peru, and Ecuador. In Brazil, within the tropical core zone two hexagons are smaller scaled which highlights a tree cover between 29 and 39 thousand km$^2$ at a canopy density between 82 and 100 \%. These two hexagons comprising floodplain forest at the borders of the Amazon river located in the state Par\'{a}. This river basin enclosed by the three cities Santar\'{e}m, Almeirim, and \'{O}bidos suffered severe deforestation since the 16th century \citep{Reno2011}. \citeauthor{Reno2011} suggests that major forest losses toke place between 1950 and 1975 followed by lower annual deforestation till 2008. Located in the lower left part of the map crossing the borders of Bolivia, Paraguay, and Argentina is the Gran Chaco a hot semi-arid wooded grassland also known as tropical dry forest characterized by tree cover between approximately 29 and 49 thousand km$^2$ and canopy densities between 28 and 46 \% \citep{Caldas2013}. The tropical rain forest is surrounded by tropical moist forest characterized by tree cover up to approximately 49 thousand km$^2$ per hexagon while the canopy density is between 10 and 82 \%. The figure \ref{fig:americas_loss} shows the distribution of tree cover losses over South America within the time frame of 2000 till 2010. We could identify for several countries deforestation hot-spots where the deforested area is between approximately 2.7 and 9 thousand km$^2$ as the map suggests. Tropical countries with deforestation hot-spots are: Paraguay, Argentina, Bolivia, Brazil, Colombia, Peru, and Guatemala. In Brazil the hot-spots of tree cover loss are known as arc of deforestation and cover the states of Acre, Rond\^{o}nia, Mato Grosso, and Par\'{a} while the deforestation starts to move into the state of Amazonas \citep{Wood2002}. The tree cover loss within this arc develops along the highway network in this regions \citep{Alves2002,Mueller2016}. Several paved highways like BR-163, BR-219, BR-230 etc. foster the agricultural and infrastructural development and lead to high deforestation rates. Deforestation hot-spots in Paraguay and Argentina are located in the Gran Chaco region which was one of the least disturbed forests worldwide and is exposed to high deforestation rates since 1969 \citep{Caldas2013,Zak2004}. In Bolivia the deforestation hot-spot is located in the department of Santa Cruz. Bolivia had till the 1960s relative low deforestation rates which increased moderately after and increased sharply during the 1990s and remain high as the map suggests \citep{Pacheco2002,DavidKaimowitz2002}. \note{In Peru the states Ucayali, Huanuco, and San Martin contain hot-spots of deforestion while in Colombia the departments of Caqueta and Guaviare Dept. This need to proved by references and maybe a example why it is in this departments. And anothe sentence to control flow} The department of Pet\'{e}n in Guatemala is committed to deforestation since the 1980s \citep{Beach1998}. Since 2000 the deforestation rates in Guatemala are among the highest in South America and after 2005 the rates increased further \citep{McSweeney2014}. \citeauthor{McSweeney2014} highlights that deforestation hot-spots often spatially overlap with drug trafficking nodes. Especially in the department of Pet\'{e}n where large ranches are owned by narco-traffickers.
 			\begin{figure}[ht]
@@ -97,9 +98,9 @@
 				\label{fig:americas_loss}
 			\end{figure}
 
-			The map in figure \ref{fig:asia_tree_cover} shows the tree cover and canopy density distribution for Asia/Australia. In Asia the tropical rain forest is distributed over several islands like the Indonesian islands Sumatra, Borneo, Java, Papau etc., the Philippines, and Malaysia. Generally the rain forest is characterized by high tree covers comparable to South America but in our map most of the islands are smaller than a single hexagon. Therefore, by our method to compute the hexagon scaling the size of the polygons don't reflect the tree cover as share of the landmass and most of them appear smaller than they are. 
+			The map in figure \ref{fig:asia_tree_cover} shows the tree cover and canopy density distribution for Asia/Australia. In Asia the tropical rain forest is distributed over several southeast Asian islands like the Indonesian islands Sumatra, Borneo, Java, Papau etc., the Philippines, Malaysia, and Papua New Guinea. Generally the rain forest is characterized by high tree covers comparable to South America but in our map most of the islands are smaller than a single hexagon. Therefore, by our method to compute the hexagon scaling the size of the polygons don't reflect the tree cover as share of the landmass and most of them appear smaller than they are. The mean canopy density of tropical rain forest is between 82 and 100 \% and the tree cover is above approximately 9.9 km$^2$. Tropical moist and dry forest are distributed over the continental Asia covering the countries India, Vietnam, Cambodia, Laos etcetera. These forests are characterized lower tree cover among 9.9 km$^2$ and canopy densities between 10 and 82 \% while the lower tree cover indicates that in southeast Asia deforestation occurs since the 1950s \cite{Kummer1994}. 
 
-			 Hot-spots in Asia/Australia are Indonesia islands of Borneo and Sumatra. Malaysia mainland and insular part. Vietnam, Cambodia, and Laos 
+			Hot-spots are Indonesia, Malaysia, Vietnam, Cambodia, and Laos
 			\begin{figure}[ht]
 				\centering
 				\includegraphics[scale=1]{img/asia_treecover_frameless}
@@ -130,6 +131,30 @@
 		\subsection{Proximate deforestation driver}
 		\label{subsec:results_proxy_deforestation_driver}
 			\note{Goal (review):} Goal is to estimate the distribution of proximate deforestation drivers on global, continental, and regional scale for the tropics between 2001 and 2010. We used a approach by superimposing the gfc annual loss and the gl30 land cover map from 2010. We carefully selected the target canopy density by analyzing the tree cover agreement between both layers at 2000. We filtered the gfc data by applying the canopy density interval within $(10,100]$. By filtering is meant that we used only annual loss which occur in this interval. Also we selected only gain data from gfc which is connected to a previous loss. We applied a reclassification after superimposing both layers to handle the great share of pixels classified as forest. We used clustering to aggregate these pixels and applied a square sized buffer of 500 meter. We determined the most frequent class within this buffer and assigned it to the cluster.
+
+
+			\begin{figure}[ht]
+				\centering
+				\includegraphics[scale=1]{img/americas_driver_frameless}
+				\caption[Map of proximate deforestation driver in South America]{}
+				\label{fig:americas_driver}
+			\end{figure}
+
+
+			\begin{figure}[ht]
+				\centering
+				\includegraphics[scale=1]{img/asia_driver_frameless}
+				\caption[Map of proximate deforestation driver in Asia/Australia]{}
+				\label{fig:asia_driver}
+			\end{figure}
+
+
+			\begin{figure}[ht]
+				\centering
+				\includegraphics[scale=1]{img/africa_driver_frameless}
+				\caption[Map of proximate deforestion driver in Africa]{}
+				\label{fig:africa_driver}
+			\end{figure}
 
 		\subsection{Accuracy assessment}
 		\label{subsec:results_accuracy_assessment}
@@ -177,7 +202,7 @@
 			\label{tab:esv_results}
 			\begin{tabular}{lrrrr}
 				\hline
-				Dataset & Global & Americas & Asia/Australia & Africa \\
+				Dataset & Global & South America & Asia/Australia & Africa \\
 				\hline
 				Co$_{loss}$ & 414.1 & 208.3 & 111.6 & 94.2\\
 				Co$_{gain}$ & 350.6 & 161.0 & 109.1 & 80.6\\
@@ -200,33 +225,8 @@
 
 		\note{Global (review):} At the global tropical scale between 2000 and 2010 are approximately 772 thousand km2 of tree cover are lost by pdd. This translates to an esv loss of 414.1, 405.2, and 101.1 billion dollar for co, dg, and wb, respectively. By applying the coefficient for tropical forest from costanca the esv loss by transitions to cropland account for 95.3 billion dollar while transitions to pastures account for 128 billion dollar. The transitions to artificial surfaces and plantations account for 2.3 and 124 billion dollar. If we consider the tropcial forest valuie from siikamaki cropland and pastures account for 23.2 and 46.7 billion dollar respectively. While artificial and plantation transitions account for 0.5 and 30.2 billion dollar. By applying constancas monetary values to estimate the gain from land cover transitions cropland and grassland account for 98.5 and 120.6 billion dollar while artificial surfaces and regrowth account for 2.4 an 124.1 billion dollar, respectively. If we consider degroots values for esv gain grassland and regrowth account for 83 and 121 billion dollar. Siikamki estimates a gain of 31 billion dollar for the transition to plantatitions. The net balance is greatest with -196 billion dollar for the estimates from degroot because it defines only values for two pdd classes. The smallest net loss can be observed for costanca with -63.5 billion dollar follwed by siikamaki with -70.1 billion dollar. 
 
+
 %%%%%%% TABLE AND FIGURES
-% LATIN AMERICA
-%			\begin{figure}[ht]
-%				\centering
-%				\includegraphics[scale=1]{img/americas_driver_frameless}
-%				\caption[Ecosystem service values]{}
-%				\label{fig:americasdriver}
-%			\end{figure}
-
-% ASIA
-%			\begin{figure}[ht]
-%				\centering
-%				\includegraphics[scale=1]{img/asia_driver_frameless}
-%				\caption[Ecosystem service values]{}
-%				\label{fig:asiadriver}
-%			\end{figure}
-
-% AFRICA
-%			\begin{figure}[ht]
-%				\centering
-%				\includegraphics[scale=1]{img/africa_driver_frameless}
-%				\caption[Ecosystem service values]{}
-%				\label{fig:africadriver}
-%			\end{figure}
-
-
-% EMISSIONS
 %		\begin{figure}[ht]
 %			\centering
 %			\includegraphics[scale=1]{img/agbe}
