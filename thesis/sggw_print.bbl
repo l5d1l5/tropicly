@@ -1,4 +1,4 @@
-\begin{thebibliography}{45}
+\begin{thebibliography}{51}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -29,6 +29,13 @@ Arsanjani J.~J., Tayyebi A., and Vaz E.
 \newblock \emph{Habitat International}, 55:\penalty0 1--7, July
   2016{\natexlab{b}}.
 \newblock \doi{10.1016/j.habitatint.2016.02.003}.
+
+\bibitem[Austin et~al.(2019)Austin, Schwantes, Gu, and Kasibhatla]{Austin2019}
+Austin K.~G., Schwantes A., Gu Y., and Kasibhatla P.~S.
+\newblock What causes deforestation in {I}ndonesia?
+\newblock \emph{Environmental Research Letters}, 14\penalty0 (2):\penalty0
+  024007, feb 2019.
+\newblock \doi{10.1088/1748-9326/aaf6db}.
 
 \bibitem[Baccini et~al.(2012)Baccini, Goetz, Walker, Laporte, Sun,
   Sulla-Menashe, Hackler, Beck, Dubayah, Friedl, Samanta, and
@@ -106,6 +113,13 @@ Carr D.~B., Olsen A.~R., and White D.
 \newblock \emph{Cartography and Geographic Information Systems}, 19\penalty0
   (4):\penalty0 228--236, January 1992.
 \newblock \doi{10.1559/152304092783721231}.
+
+\bibitem[Chazdon(2008)]{Chazdon2008}
+Chazdon R.~L.
+\newblock Beyond deforestation: restoring forests and ecosystem services on
+  degraded lands.
+\newblock \emph{Science}, 320\penalty0 (5882):\penalty0 1458--1460, June 2008.
+\newblock \doi{10.1126/science.1155365}.
 
 \bibitem[Chen et~al.(2014)Chen, Chen, Liao, Cao, Chen, Chen, He, Han, Peng, Lu,
   Zhang, Tong, and Mills]{Chen2014}
@@ -216,6 +230,11 @@ Hijmans R., Garcia N., Kapoor J., Rala A., Maunahan A., and Wieczorek J.
 \newblock URL \url{https://www.gadm.org}.
 \newblock Version 3.6.
 
+\bibitem[Hirsch(2000)]{Hirsch2000}
+Hirsch P.
+\newblock Underlying causes of deforestation in the {M}ekong region.
+\newblock resreport, Australian Mekong Resource Centre, Sydney, 2000.
+
 \bibitem[Hoshen(1998)]{Hoshen1998}
 Hoshen J.
 \newblock On the application of the enhanced {H}oshen-{K}opelman algorithm for
@@ -238,6 +257,11 @@ Jacobson A., Dhanota J., Godfrey J., Jacobson H., Rossman Z., Stanish A.,
 \newblock \emph{Environmental Modelling {\&} Software}, 72:\penalty0 1--9,
   October 2015.
 \newblock \doi{10.1016/j.envsoft.2015.06.011}.
+
+\bibitem[Kummer and Turner(1994)]{Kummer1994}
+Kummer D.~M. and Turner B.~L.
+\newblock The human causes of deforestation in {S}outheast {A}sia.
+\newblock \emph{BioScience}, 44\penalty0 (5):\penalty0 323--328, May 1994.
 
 \bibitem[Li et~al.(2017)Li, Sulla-Menashe, Motesharrei, Song, Kalnay, Ying, Li,
   and Ma]{Li2017}
@@ -268,6 +292,14 @@ McSweeney K., Nielsen E.~A., Taylor M.~J., Wrathall D.~J., Pearson Z., Wang O.,
 \newblock \emph{Science}, 343\penalty0 (6170):\penalty0 489--490, jan 2014.
 \newblock \doi{10.1126/science.1244082}.
 
+\bibitem[Meyfroidt et~al.(2013)Meyfroidt, Vu, and Hoang]{Meyfroidt2013}
+Meyfroidt P., Vu T.~P., and Hoang V.~A.
+\newblock Trajectories of deforestation, coffee expansion and displacement of
+  shifting cultivation in the {C}entral {H}ighlands of {V}ietnam.
+\newblock \emph{Global Environmental Change}, 23\penalty0 (5):\penalty0
+  1187--1198, October 2013.
+\newblock \doi{10.1016/j.gloenvcha.2013.04.005}.
+
 \bibitem[Müller et~al.(2016)Müller, Griffiths, and Hostert]{Mueller2016}
 Müller H., Griffiths P., and Hostert P.
 \newblock Long-term deforestation dynamics in the {B}razilian {A}mazon-
@@ -276,6 +308,12 @@ Müller H., Griffiths P., and Hostert P.
 \newblock \emph{International Journal of Applied Earth Observation and
   Geoinformation}, 44:\penalty0 61--69, feb 2016.
 \newblock \doi{10.1016/j.jag.2015.07.005}.
+
+\bibitem[Nawir and Rumboko(2007)]{Nawir2007}
+Nawir A.~A. and Rumboko L.
+\newblock \emph{Forest rehabilitation in {I}ndonesia}, chapter History and
+  state of deforestation and land degradation, pages 11--33.
+\newblock Center for International Forestry Research, 2007.
 
 \bibitem[Pacheco(2002)]{Pacheco2002}
 Pacheco P.

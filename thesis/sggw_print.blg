@@ -1,46 +1,46 @@
-This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
-Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+This is BibTeX, Version 0.99d (TeX Live 2017/Debian)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: sggw_print.aux
 The style file: tobinat.bst
 Database file #1: literature.bib
-You've used 45 entries,
+You've used 51 entries,
             2773 wiz_defined-function locations,
-            935 strings with 15566 characters,
-and the built_in function-call counts, 25347 in all, are:
-= -- 2181
-> -- 1986
-< -- 26
-+ -- 673
-- -- 627
-* -- 2373
-:= -- 4084
-add.period$ -- 172
-call.type$ -- 45
-change.case$ -- 343
-chr.to.int$ -- 44
-cite$ -- 90
-duplicate$ -- 910
-empty$ -- 1653
-format.name$ -- 678
-if$ -- 5100
+            981 strings with 16668 characters,
+and the built_in function-call counts, 28116 in all, are:
+= -- 2440
+> -- 2117
+< -- 32
++ -- 718
+- -- 666
+* -- 2607
+:= -- 4506
+add.period$ -- 193
+call.type$ -- 51
+change.case$ -- 374
+chr.to.int$ -- 50
+cite$ -- 102
+duplicate$ -- 1036
+empty$ -- 1888
+format.name$ -- 727
+if$ -- 5681
 int.to.chr$ -- 2
 int.to.str$ -- 1
-missing$ -- 41
-newline$ -- 270
-num.names$ -- 180
-pop$ -- 629
+missing$ -- 47
+newline$ -- 303
+num.names$ -- 204
+pop$ -- 685
 preamble$ -- 1
-purify$ -- 299
+purify$ -- 324
 quote$ -- 0
-skip$ -- 725
+skip$ -- 814
 stack$ -- 0
-substring$ -- 779
-swap$ -- 99
-text.length$ -- 8
+substring$ -- 920
+swap$ -- 116
+text.length$ -- 10
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 470
+type$ -- 531
 warning$ -- 0
-while$ -- 198
+while$ -- 226
 width$ -- 0
-write$ -- 660
+write$ -- 744
