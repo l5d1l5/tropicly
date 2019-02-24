@@ -1,4 +1,4 @@
-\begin{thebibliography}{51}
+\begin{thebibliography}{58}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -34,7 +34,7 @@ Arsanjani J.~J., Tayyebi A., and Vaz E.
 Austin K.~G., Schwantes A., Gu Y., and Kasibhatla P.~S.
 \newblock What causes deforestation in {I}ndonesia?
 \newblock \emph{Environmental Research Letters}, 14\penalty0 (2):\penalty0
-  024007, feb 2019.
+  024007, February 2019.
 \newblock \doi{10.1088/1748-9326/aaf6db}.
 
 \bibitem[Baccini et~al.(2012)Baccini, Goetz, Walker, Laporte, Sun,
@@ -68,6 +68,16 @@ Baccini A., Walker W., Carvalho L., Farina M., Sulla-Menashe D., and Houghton
   2017.
 \newblock \doi{10.1126/science.aam5962}.
 
+\bibitem[Barima et~al.(2016)Barima, Kouakou, Bamba, Sangne, Godron, Andrieu,
+  and Bogaert]{Barima2016}
+Barima Y. S.~S., Kouakou A. T.~M., Bamba I., Sangne Y.~C., Godron M., Andrieu
+  J., and Bogaert J.
+\newblock Cocoa crops are destroying the forest reserves of the classified
+  forest of {H}aut-{S}assandra ({I}vory {C}oast).
+\newblock \emph{Global Ecology and Conservation}, 8:\penalty0 85--98, October
+  2016.
+\newblock \doi{10.1016/j.gecco.2016.08.009}.
+
 \bibitem[Beach(1998)]{Beach1998}
 Beach T.
 \newblock Soil catenas, tropical deforestation, and ancient and contemporary
@@ -75,6 +85,14 @@ Beach T.
 \newblock \emph{Physical Geography}, 19\penalty0 (5):\penalty0 378--405, sep
   1998.
 \newblock \doi{10.1080/02723646.1998.10642657}.
+
+\bibitem[Cabral et~al.(2011)Cabral, Vasconcelos, Oom, and Sardinha]{Cabral2011}
+Cabral A. I.~R., Vasconcelos M.~J., Oom D., and Sardinha R.
+\newblock Spatial dynamics and quantification of deforestation in the
+  central-plateau woodlands of {A}ngola (1990-2009).
+\newblock \emph{Applied Geography}, 31\penalty0 (3):\penalty0 1185--1193, July
+  2011.
+\newblock \doi{10.1016/j.apgeog.2010.09.003}.
 
 \bibitem[Caldas et~al.(2013)Caldas, Goodin, Sherwood, Krauer, and
   Wisely]{Caldas2013}
@@ -113,6 +131,13 @@ Carr D.~B., Olsen A.~R., and White D.
 \newblock \emph{Cartography and Geographic Information Systems}, 19\penalty0
   (4):\penalty0 228--236, January 1992.
 \newblock \doi{10.1559/152304092783721231}.
+
+\bibitem[Chatelain et~al.(1996)Chatelain, Gautier, and
+  Spichiger]{Chatelain1996}
+Chatelain C., Gautier L., and Spichiger R.
+\newblock A recent history of forest fragmentation in southwestern {I}vory
+  {C}oast.
+\newblock \emph{Biodiversity and Conservation}, 5:\penalty0 37--53, 1996.
 
 \bibitem[Chazdon(2008)]{Chazdon2008}
 Chazdon R.~L.
@@ -208,6 +233,14 @@ Foody G.~M.
   185--201, April 2002.
 \newblock \doi{10.1016/s0034-4257(01)00295-4}.
 
+\bibitem[Goetze et~al.(2006)Goetze, Horsch, and Porembski]{Goetze2006}
+Goetze D., Horsch B., and Porembski S.
+\newblock Dynamics of forest-savanna mosaics in north-eastern {I}vory {C}oast
+  from 1954 to 2002.
+\newblock \emph{Journal of Biogeography}, 33\penalty0 (4):\penalty0 653--664,
+  apr 2006.
+\newblock \doi{10.1111/j.1365-2699.2005.01312.x}.
+
 \bibitem[Hansen et~al.(2013)Hansen, Potapov, Moore, Hancher, Turubanova,
   Tyukavina, Thau, Stehman, Goetz, Loveland, Kommareddy, Egorov, Chini,
   Justice, and Townshend]{Hansen2013}
@@ -242,6 +275,13 @@ Hoshen J.
 \newblock \emph{Pattern Recognition Letters}, 19\penalty0 (7):\penalty0
   575--584, May 1998.
 \newblock \doi{10.1016/s0167-8655(98)00018-x}.
+
+\bibitem[Ickowitz et~al.(2015)Ickowitz, Slayback, Asanzi, and
+  Nasi]{Ickowitz2015}
+Ickowitz A., Slayback D., Asanzi P., and Nasi R.~A.
+\newblock Agriculture and deforestation in the {D}emocratic {R}epublic of the
+  {C}ongo: a synthesis of the current state of knowledge.
+\newblock resreport, CIFOR, 2015.
 
 \bibitem[Jaccard(1912)]{Jaccard1912}
 Jaccard P.
@@ -349,6 +389,14 @@ Sampat M.~P., Wang Z., Gupta S., Bovik A.~C., and Markey M.~K.
   (11):\penalty0 2385--2401, November 2009.
 \newblock \doi{10.1109/tip.2009.2025923}.
 
+\bibitem[Schneibel et~al.(2017)Schneibel, Frantz, Röder, Stellmes, Fischer,
+  and Hill]{Schneibel2017}
+Schneibel A., Frantz D., Röder A., Stellmes M., Fischer K., and Hill J.
+\newblock Using annual landsat time series for the detection of dry forest
+  degradation processes in south-central {A}ngola.
+\newblock \emph{Remote Sensing}, 9\penalty0 (9):\penalty0 905, aug 2017.
+\newblock \doi{10.3390/rs9090905}.
+
 \bibitem[Seydewitz(2017)]{Seydewitz2017}
 Seydewitz T.
 \newblock Applicability of {G}lobe{L}and30 and {G}lobal {F}orest {C}hange data
@@ -369,6 +417,12 @@ Shi G.~R.
 Siikamaki J., Santiago-Avila F.~J., and Vail P.
 \newblock Global assessment of non-wood forest ecosystem services.
 \newblock resreport, Program on Forests (PROFOR), 2015.
+
+\bibitem[Sitoe et~al.(2012)Sitoe, Salomao, and Wertz-Kanounnikoff]{Sitoe2012}
+Sitoe A., Salomao A., and Wertz-Kanounnikoff S.
+\newblock The context of {REDD+} in {M}ozambique: drivers, agents and
+  institutions.
+\newblock resreport, CIFOR, 2012.
 
 \bibitem[van Rossum and Development(2018)]{Rossum2018}
 Rossum G., van and Development T.

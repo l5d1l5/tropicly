@@ -38,7 +38,7 @@
 \contentsline {section}{\numberline {3.4}Ecosystem service values}{58}{section.3.4}
 \contentsline {section}{\numberline {3.5}Binning analysis and visualization}{58}{section.3.5}
 \contentsline {chapter}{Bibliography}{I}{section.3.5}
-\contentsline {chapter}{\nonumberline List of Figures}{V}{chapter*.51}
-\contentsline {chapter}{\nonumberline List of Tables}{VI}{chapter*.52}
-\contentsline {chapter}{List of Abbreviations}{VII}{chapter*.53}
-\contentsline {chapter}{Appendix}{IX}{chapter*.54}
+\contentsline {chapter}{\nonumberline List of Figures}{VI}{chapter*.51}
+\contentsline {chapter}{\nonumberline List of Tables}{VII}{chapter*.52}
+\contentsline {chapter}{List of Abbreviations}{VIII}{chapter*.53}
+\contentsline {chapter}{Appendix}{X}{chapter*.54}
