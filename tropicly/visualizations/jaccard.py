@@ -7,9 +7,9 @@ from tropicly.utils import get_data_dir
 
 DIRS = cache_directories(get_data_dir())
 
-src = pd.read_csv(DIRS.ana / 'harmonization_americas.csv')
-src = src.append(pd.read_csv(DIRS.ana / 'harmonization_africa.csv'), ignore_index=True)
-src = src.append(pd.read_csv(DIRS.ana / 'harmonization_asia.csv'), ignore_index=True)
+src = pd.read_csv(DIRS.textual / 'harmonization_americas.csv')
+src = src.append(pd.read_csv(DIRS.textual / 'harmonization_africa.csv'), ignore_index=True)
+src = src.append(pd.read_csv(DIRS.textual / 'harmonization_asia.csv'), ignore_index=True)
 
 # initial data clean up
 zeros = src[src['JC00'] == 0]
@@ -20,8 +20,8 @@ fig.subplots_adjust(wspace=0.1)
 
 groups = src.groupby(by='region', sort=True)
 
-for ax, region in zip(axes, ['Americas', 'Asia', 'Africa']):
-    df = groups.get_group(region)
+for ax, selection, region in zip(axes, ['Americas', 'Asia', 'Africa'], ['South America', 'Asia/Australia', 'Africa']):
+    df = groups.get_group(selection)
 
     boxes = ax.boxplot(
         [row for row in df.values.T[0:4]],
@@ -47,7 +47,7 @@ boxes = axes[-1].boxplot(
 )
 
 axes[-1].set_xticklabels(['JI$_0$', 'JI$_1$', 'JI$_2$', 'JI$_3$'], fontsize=10, fontname='Times new roman')
-axes[-1].set_title('All regions', fontsize=12, fontname='Times new roman')
+axes[-1].set_title('Global', fontsize=12, fontname='Times new roman')
 for box, med, mean in zip(boxes['boxes'], boxes['medians'], boxes['means']):
     box.set_facecolor('white')
     med.set_color('black')

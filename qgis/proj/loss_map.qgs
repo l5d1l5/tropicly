@@ -37,10 +37,10 @@
   <mapcanvas>
     <units>degrees</units>
     <extent>
-      <xmin>-63.20543565212004467</xmin>
-      <ymin>-35.64096675511909496</ymin>
-      <xmax>113.26043855194212995</xmax>
-      <ymax>66.76279194047596377</ymax>
+      <xmin>-28.36687846830020732</xmin>
+      <ymin>-8.69472993297696206</ymin>
+      <xmax>59.86605863373087999</xmax>
+      <ymax>42.5071494148205673</ymax>
     </extent>
     <rotation>0</rotation>
     <projections>0</projections>
@@ -2653,7 +2653,7 @@ def my_form_open(dialog, layer, feature):
         </ComposerItem>
       </ComposerLegend>
       <ComposerMap followPreset="false" mapRotation="0" keepLayerSet="true" followPresetName="" id="0" previewMode="Cache" drawCanvasItems="true">
-        <Extent ymin="-27.40618269168597365" xmin="-27.62527096527653114" ymax="27.81259277102297389" xmax="59.57986790875268923"/>
+        <Extent ymin="-27.40618269168597365" xmin="-27.62527096527653114" ymax="27.8123706020087802" xmax="59.57986790875268923"/>
         <LayerSet>
           <Layer provider="ogr" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/common/hexboundaries_americas.shp" name="hexboundaries_americas">hexboundaries_americas20190225110256777</Layer>
           <Layer provider="ogr" source="/home/tobi/Documents/tropicly/data/proc/agg/vector/common/hexboundaries_africa.shp" name="hexboundaries_africa">hexboundaries_africa20190225110256768</Layer>
@@ -6435,7 +6435,7 @@ def my_form_open(dialog, layer, feature):
           <column width="-1" hidden="0" type="field" name="loss"/>
           <column width="-1" hidden="0" type="field" name="px_area"/>
           <column width="-1" hidden="0" type="field" name="covered"/>
-          <column width="-1" hidden="0" type="field" name="area"/>
+          <column width="161" hidden="0" type="field" name="area"/>
           <column width="-1" hidden="0" type="field" name="scale"/>
           <column width="-1" hidden="1" type="actions"/>
         </columns>

@@ -1,4 +1,4 @@
-\begin{thebibliography}{58}
+\begin{thebibliography}{60}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -7,10 +7,12 @@
 
 \bibitem[Alves(2002)]{Alves2002}
 Alves D.~S.
-\newblock \emph{Deforestation and land use in the {A}mazon}, chapter An
-  Analysis of the Geographical Patterns of Deforestation in the Brazilian
-  Amazon in the Period 1991–1996, pages 95--107.
-\newblock University Press of Florida, 2002.
+\newblock An analysis of the geographical patterns of deforestation in the
+  {B}razilian {A}mazon in the period 1991-1996.
+\newblock In \emph{Deforestation and land use in the {A}mazon}, chapter An
+  analysis of the geographical patterns of deforestation in the {B}razilian
+  {A}mazon in the period 1991-1996, pages 95--107. University Press of Florida,
+  2002.
 
 \bibitem[Arsanjani et~al.(2016{\natexlab{a}})Arsanjani, See, and
   Tayyebi]{Arsanjani2016a}
@@ -82,8 +84,8 @@ Barima Y. S.~S., Kouakou A. T.~M., Bamba I., Sangne Y.~C., Godron M., Andrieu
 Beach T.
 \newblock Soil catenas, tropical deforestation, and ancient and contemporary
   soil erosion in the {P}et{\'{e}}n, {G}uatemala.
-\newblock \emph{Physical Geography}, 19\penalty0 (5):\penalty0 378--405, sep
-  1998.
+\newblock \emph{Physical Geography}, 19\penalty0 (5):\penalty0 378--405,
+  September 1998.
 \newblock \doi{10.1080/02723646.1998.10642657}.
 
 \bibitem[Cabral et~al.(2011)Cabral, Vasconcelos, Oom, and Sardinha]{Cabral2011}
@@ -190,9 +192,10 @@ Costanza R., Groot R., de, Sutton P., Ploeg S., van~der, Anderson S.~J.,
 
 \bibitem[David~Kaimowitz and Vanclay(2002)]{DavidKaimowitz2002}
 David~Kaimowitz, Patricia~Mendez A.~P. and Vanclay J.
-\newblock \emph{Deforestation and land use in the {A}mazon}, chapter Spatial
-  Regression Analysis of Deforestation in Santa Cruz, Bolivia, pages 41--65.
-\newblock University Press of Florida, 2002.
+\newblock Spatial regression analysis of deforestation in {S}anta {C}ruz,
+  {B}olivia.
+\newblock In \emph{Deforestation and land use in the {A}mazon}, pages 41--65.
+  University Press of Florida, 2002.
 
 \bibitem[de~Groot et~al.(2012)de~Groot, Brander, van~der Ploeg, Costanza,
   Bernard, Braat, Christie, Crossman, Ghermandi, Hein, Hussain, Kumar,
@@ -238,7 +241,7 @@ Goetze D., Horsch B., and Porembski S.
 \newblock Dynamics of forest-savanna mosaics in north-eastern {I}vory {C}oast
   from 1954 to 2002.
 \newblock \emph{Journal of Biogeography}, 33\penalty0 (4):\penalty0 653--664,
-  apr 2006.
+  April 2006.
 \newblock \doi{10.1111/j.1365-2699.2005.01312.x}.
 
 \bibitem[Hansen et~al.(2013)Hansen, Potapov, Moore, Hancher, Turubanova,
@@ -254,6 +257,14 @@ Hansen M.~C., Potapov P.~V., Moore R., Hancher M., Turubanova S.~A., Tyukavina
 \newblock \doi{10.1126/science.1244693}.
 \newblock URL
   \url{https://earthenginepartners.appspot.com/science-2013-global-forest/download_v1.0.html}.
+
+\bibitem[Harper et~al.(2007)Harper, Steininger, Tucker, Juhn, and
+  Hawkins]{Harper2007}
+Harper G.~J., Steininger M.~K., Tucker C.~J., Juhn D., and Hawkins F.
+\newblock Fifty years of deforestation and forest fragmentation in
+  {M}adagascar.
+\newblock \emph{Environmental Conservation}, 34\penalty0 (04), December 2007.
+\newblock \doi{10.1017/s0376892907004262}.
 
 \bibitem[Hijmans et~al.(2018)Hijmans, Garcia, Kapoor, Rala, Maunahan, and
   Wieczorek]{Hijmans2018}
@@ -298,6 +309,14 @@ Jacobson A., Dhanota J., Godfrey J., Jacobson H., Rossman Z., Stanish A.,
   October 2015.
 \newblock \doi{10.1016/j.envsoft.2015.06.011}.
 
+\bibitem[Kideghesho(2015)]{Kideghesho2015}
+Kideghesho J.~R.
+\newblock Realities on deforestation in {T}anzania-trends, drivers,
+  implications and the way forward.
+\newblock In \emph{Precious Forests - Precious Earth}. {InTech}, September
+  2015.
+\newblock \doi{10.5772/61002}.
+
 \bibitem[Kummer and Turner(1994)]{Kummer1994}
 Kummer D.~M. and Turner B.~L.
 \newblock The human causes of deforestation in {S}outheast {A}sia.
@@ -329,7 +348,7 @@ McKinney W.
 McSweeney K., Nielsen E.~A., Taylor M.~J., Wrathall D.~J., Pearson Z., Wang O.,
   and Plumb S.~T.
 \newblock Drug policy as conservation policy: narco-deforestation.
-\newblock \emph{Science}, 343\penalty0 (6170):\penalty0 489--490, jan 2014.
+\newblock \emph{Science}, 343\penalty0 (6170):\penalty0 489--490, January 2014.
 \newblock \doi{10.1126/science.1244082}.
 
 \bibitem[Meyfroidt et~al.(2013)Meyfroidt, Vu, and Hoang]{Meyfroidt2013}
@@ -340,26 +359,27 @@ Meyfroidt P., Vu T.~P., and Hoang V.~A.
   1187--1198, October 2013.
 \newblock \doi{10.1016/j.gloenvcha.2013.04.005}.
 
-\bibitem[Müller et~al.(2016)Müller, Griffiths, and Hostert]{Mueller2016}
-Müller H., Griffiths P., and Hostert P.
+\bibitem[M{\"{u}}ller et~al.(2016)M{\"{u}}ller, Griffiths, and
+  Hostert]{Mueller2016}
+M{\"{u}}ller H., Griffiths P., and Hostert P.
 \newblock Long-term deforestation dynamics in the {B}razilian {A}mazon-
   {U}ncovering historic frontier development along the
   {C}uiab{\'{a}}-{S}antar{\'{e}}m highway.
 \newblock \emph{International Journal of Applied Earth Observation and
-  Geoinformation}, 44:\penalty0 61--69, feb 2016.
+  Geoinformation}, 44:\penalty0 61--69, February 2016.
 \newblock \doi{10.1016/j.jag.2015.07.005}.
 
 \bibitem[Nawir and Rumboko(2007)]{Nawir2007}
 Nawir A.~A. and Rumboko L.
-\newblock \emph{Forest rehabilitation in {I}ndonesia}, chapter History and
-  state of deforestation and land degradation, pages 11--33.
-\newblock Center for International Forestry Research, 2007.
+\newblock History and state of deforestation and land degradation.
+\newblock In \emph{Forest rehabilitation in {I}ndonesia}, pages 11--33. Center
+  for International Forestry Research, 2007.
 
 \bibitem[Pacheco(2002)]{Pacheco2002}
 Pacheco P.
-\newblock \emph{Deforestation and land use in the {A}mazon}, chapter
-  Deforestation and Forest Degradation in Lowland Bolivia, page~6.
-\newblock University Press of Florida, 2002.
+\newblock Deforestation and forest degradation in lowland {B}olivia.
+\newblock In \emph{Deforestation and land use in the {A}mazon}, pages 66--95.
+  University Press of Florida, 2002.
 
 \bibitem[Potapov et~al.(2017)Potapov, Hansen, Laestadius, Turubanova,
   Yaroshenko, Thies, Smith, Zhuravleva, Komarova, Minnemeyer, and
@@ -389,12 +409,12 @@ Sampat M.~P., Wang Z., Gupta S., Bovik A.~C., and Markey M.~K.
   (11):\penalty0 2385--2401, November 2009.
 \newblock \doi{10.1109/tip.2009.2025923}.
 
-\bibitem[Schneibel et~al.(2017)Schneibel, Frantz, Röder, Stellmes, Fischer,
-  and Hill]{Schneibel2017}
-Schneibel A., Frantz D., Röder A., Stellmes M., Fischer K., and Hill J.
+\bibitem[Schneibel et~al.(2017)Schneibel, Frantz, R{\"{o}}der, Stellmes,
+  Fischer, and Hill]{Schneibel2017}
+Schneibel A., Frantz D., R{\"{o}}der A., Stellmes M., Fischer K., and Hill J.
 \newblock Using annual landsat time series for the detection of dry forest
   degradation processes in south-central {A}ngola.
-\newblock \emph{Remote Sensing}, 9\penalty0 (9):\penalty0 905, aug 2017.
+\newblock \emph{Remote Sensing}, 9\penalty0 (9):\penalty0 905, August 2017.
 \newblock \doi{10.3390/rs9090905}.
 
 \bibitem[Seydewitz(2017)]{Seydewitz2017}
@@ -439,9 +459,9 @@ Wilcoxon F.
 
 \bibitem[Wood(2002)]{Wood2002}
 Wood C.~H.
-\newblock \emph{Deforestation and land use in the {A}mazon}, chapter
-  Introduction - Deforestation and land use in the {A}mazon, pages 1--38.
-\newblock University Press of Florida, 2002.
+\newblock Introduction - deforestation and land use in the {A}mazon.
+\newblock In \emph{Deforestation and land use in the {A}mazon}, pages 1--38.
+  University Press of Florida, 2002.
 
 \bibitem[Yang et~al.(2017)Yang, Xiao, Feng, and Li]{Yang2017}
 Yang Y., Xiao P., Feng X., and Li H.
@@ -455,7 +475,7 @@ Zak M.~R., Cabido M., and Hodgson J.~G.
 \newblock Do subtropical seasonal forests in the {G}ran {C}haco, {A}rgentina,
   have a future?
 \newblock \emph{Biological Conservation}, 120\penalty0 (4):\penalty0 589--598,
-  dec 2004.
+  December 2004.
 \newblock \doi{10.1016/j.biocon.2004.03.034}.
 
 \end{thebibliography}
