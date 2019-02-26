@@ -1,22 +1,21 @@
 \chapter*{Appendix}
 \label{chap:appendix}
 \addcontentsline{toc}{chapter}{Appendix}
-%TODO holm correction: both tables
 %TODO images and tables: captions
 
 	\begin{table}[ht]
 		\centering
-		\caption[Comparison of tree cover agreement between regions]{\textbf{Comparison of tree cover agreement between regions:} This table shows, a comparison of tree cover agreement between regions. The classes $JI_0$, $JI_1$, $JI_2$, and $JI_3$ as row and column headings account for the canopy density classes (0,100], (10,100], (20,100], and (30,100], respectively. The test hypothesis is H$_0$: $X_1=X_2$ where $X_1$ is the column $JI_n$ class and $X_2$ the row $JI_n$ class. The significance is indicated by $p^{*}<0.05$, $p^{**}<0.02$, and $p^{***}<0.01$.}
+		\caption[Comparison of tree cover agreement between regions]{\textbf{Comparison of tree cover agreement between regions:} This table shows, a comparison of tree cover agreement between regions. The classes $JI_0$, $JI_1$, $JI_2$, and $JI_3$ as row and column headings account for the canopy density classes (0,100], (10,100], (20,100], and (30,100], respectively. The test hypothesis is H$_0$: $X_1=X_2$ where $X_1$ is the column $JI_n$ class and $X_2$ the row $JI_n$ class. The significance is indicated by $p^{*}<0.05$, $p^{**}<0.02$, and $p^{***}<0.01$. We applied a Benjamini and Hochberg correction for multiple-pairwise testing.}
 		\label{tab:wilcoxononesided_comparison}
 		\begin{tabular}{llllllllll}
 			\hline
 			& & \multicolumn{4}{|c}{Americas} & \multicolumn{4}{|c|}{Asia} \\
 			& Cls & JI$_0$ & JI$_1$ & JI$_2$ & JI$_3$ & JI$_0$ & JI$_1$ & JI$_2$ & JI$_3$ \\\hline
 			\multirow{4}{*}{\STAB{\rotatebox[origin=c]{90}{Asia}}}
-			& JI$_0$ & .02$^*$ & - & - & - & - & - & - & - \\
-			& JI$_1$ & - & .02$^*$ & - & - & - & - & - & - \\
-			& JI$_2$ & - & - & .03$^*$ & - & - & - & - & - \\
-			& JI$_3$ & - & - & - & .05$^*$ & - & - & - & - \\\cline{1-1}
+			& JI$_0$ & .04$^{*}$ & - & - & - & - & - & - & - \\
+			& JI$_1$ & - & .04$^{*}$ & - & - & - & - & - & - \\
+			& JI$_2$ & - & - & .05$^{*}$ & - & - & - & - & - \\
+			& JI$_3$ & - & - & - & .07 & - & - & - & - \\\cline{1-1}
 			\multirow{4}{*}{\STAB{\rotatebox[origin=c]{90}{Africa}}} 
 			& JI$_0$ & .00$^{***}$ & - & - & - & .00$^{***}$ & - & - & - \\
 			& JI$_1$ & - & .00$^{***}$ & - & - & - & .00$^{***}$ & - & - \\
@@ -24,20 +23,19 @@
 			& JI$_3$ & - & - & - & .00$^{***}$ & - & - & - & .00$^{***}$ \\\hline
 		\end{tabular}
 	\end{table}
-	
 	\begin{table}[ht]
 		\centering
-		\caption[Comparison of tree cover agreement between regions]{\textbf{Comparison of tree cover agreement between regions:} This table shows, a comparison of tree cover agreement between regions and the direction of differences. The classes $JI_0$, $JI_1$, $JI_2$, and $JI_3$ as row and column headings account for the canopy density classes (0,100], (10,100], (20,100], and (30,100], respectively. The test hypothesis is H$_0$: $X_1\leq X_2$ where $X_1$ is the column $JI_n$ class and $X_2$ the row $JI_n$ class. The significance is indicated by $p^{*}<0.05$, $p^{**}<0.025$, $p^{***}<0.01$, and $p^{\dagger}<0.005$.}
+		\caption[Comparison of tree cover agreement between regions]{\textbf{Comparison of tree cover agreement between regions:} This table shows, a comparison of tree cover agreement between regions and the direction of differences. The classes $JI_0$, $JI_1$, $JI_2$, and $JI_3$ as row and column headings account for the canopy density classes (0,100], (10,100], (20,100], and (30,100], respectively. The test hypothesis is H$_0$: $X_1\leq X_2$ where $X_1$ is the column $JI_n$ class and $X_2$ the row $JI_n$ class. The significance is indicated by $p^{*}<0.05$, $p^{**}<0.025$, $p^{***}<0.01$, and $p^{\dagger}<0.005$. We applied a Benjamini and Hochberg correction for multiple-pairwise testing.}
 		\label{tab:wilcoxontwosided_comparison}
 		\begin{tabular}{llllllllll}
 			\hline
 			& & \multicolumn{4}{|c}{Americas} & \multicolumn{4}{|c|}{Asia} \\
 			& Cls & JI$_0$ & JI$_1$ & JI$_2$ & JI$_3$ & JI$_0$ & JI$_1$ & JI$_2$ & JI$_3$ \\\hline
 			\multirow{4}{*}{\STAB{\rotatebox[origin=c]{90}{Asia}}}
-			& JI$_0$ & .99 & - & - & - & - & - & - & - \\
-			& JI$_1$ & - & .99 & - & - & - & - & - & - \\
-			& JI$_2$ & - & - & .99 & - & - & - & - & - \\
-			& JI$_3$ & - & - & - & .99 & - & - & - & - \\\cline{1-1}
+			& JI$_0$ & 1. & - & - & - & - & - & - & - \\
+			& JI$_1$ & - & 1. & - & - & - & - & - & - \\
+			& JI$_2$ & - & - & 1. & - & - & - & - & - \\
+			& JI$_3$ & - & - & - & 1. & - & - & - & - \\\cline{1-1}
 			\multirow{4}{*}{\STAB{\rotatebox[origin=c]{90}{Africa}}} 
 			& JI$_0$ & .00$^{\dagger}$ & - & - & - & .00$^{\dagger}$ & - & - & - \\
 			& JI$_1$ & - & .00$^{\dagger}$ & - & - & - & .00$^{\dagger}$ & - & - \\
