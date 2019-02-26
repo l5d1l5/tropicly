@@ -51,8 +51,21 @@ plot(x_range, africa$JC30, axes=FALSE, pch=3, xlab='', ylab='')
 par(new=FALSE)
 dev.off()
 
+# americas, asia, africa, global
+vec_for_pairwise = c(all_regions$JC00, all_regions$JC10, all_regions$JC20, all_regions$JC30)
+labels = rep(c('JI0', 'JI1', 'JI2', 'JI3'), each=length(all_regions$JC00))
+pairwise.wilcox.test(vec_for_pairwise, labels, p.adjust.method="holm", paired = TRUE, alternative='greater')
 
-test = c(americas$JC00, americas$JC10, americas$JC20, americas$JC30)
-labels = rep(c('JI0', 'JI1', 'JI2', 'JI3'), each=length(americas$JC00))
+# regional comparison
+vec_for_pairwise = c(americas$JC00, americas$JC10, americas$JC20, americas$JC30,
+                     asia$JC00, asia$JC10, asia$JC20, asia$JC30, 
+                     africa$JC00, africa$JC10, africa$JC20, africa$JC30)
 
-pairwise.wilcox.test(test, labels, p.adjust.method="holm", paired = TRUE, alternative='less')
+labels_americas = rep(c('Americas_JI0', 'Americas_JI1', 'Americas_JI2', 'Americas_JI3'), each=length(americas$JC00))
+labels_asia = rep(c('Asia_JI0', 'Asia_JI1', 'Asia_JI2', 'Asia_JI3'), each=length(asia$JC00))
+labels_africa = rep(c('Africa_JI0', 'Africa_JI1', 'Africa_JI2', 'Africa_JI3'), each=length(africa$JC00))
+
+labels = append(labels_americas, labels_asia)
+labels = append(labels, labels_africa)
+
+pairwise.wilcox.test(vec_for_pairwise, labels, p.adjust.method="BH", alternative='greater')
