@@ -1,4 +1,4 @@
-\begin{thebibliography}{60}
+\begin{thebibliography}{63}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -190,6 +190,14 @@ Costanza R., Groot R., de, Sutton P., Ploeg S., van~der, Anderson S.~J.,
 \newblock \emph{Global Environmental Change}, 26:\penalty0 152--158, May 2014.
 \newblock \doi{10.1016/j.gloenvcha.2014.04.002}.
 
+\bibitem[Curtis et~al.(2018)Curtis, Slay, Harris, Tyukavina, and
+  Hansen]{Curtis2018}
+Curtis P.~G., Slay C.~M., Harris N.~L., Tyukavina A., and Hansen M.~C.
+\newblock Classifying drivers of global forest loss.
+\newblock \emph{Science}, 361\penalty0 (6407):\penalty0 1108--1111, September
+  2018.
+\newblock \doi{10.1126/science.aau3445}.
+
 \bibitem[David~Kaimowitz and Vanclay(2002)]{DavidKaimowitz2002}
 David~Kaimowitz, Patricia~Mendez A.~P. and Vanclay J.
 \newblock Spatial regression analysis of deforestation in {S}anta {C}ruz,
@@ -286,6 +294,16 @@ Hoshen J.
 \newblock \emph{Pattern Recognition Letters}, 19\penalty0 (7):\penalty0
   575--584, May 1998.
 \newblock \doi{10.1016/s0167-8655(98)00018-x}.
+
+\bibitem[Hosonuma et~al.(2012)Hosonuma, Herold, Sy, Fries, Brockhaus, Verchot,
+  Angelsen, and Romijn]{Hosonuma2012}
+Hosonuma N., Herold M., Sy V.~D., Fries R. S.~D., Brockhaus M., Verchot L.,
+  Angelsen A., and Romijn E.
+\newblock An assessment of deforestation and forest degradation drivers in
+  developing countries.
+\newblock \emph{Environmental Research Letters}, 7\penalty0 (4):\penalty0
+  1--12, October 2012.
+\newblock \doi{10.1088/1748-9326/7/4/044009}.
 
 \bibitem[Ickowitz et~al.(2015)Ickowitz, Slayback, Asanzi, and
   Nasi]{Ickowitz2015}
@@ -443,6 +461,16 @@ Sitoe A., Salomao A., and Wertz-Kanounnikoff S.
 \newblock The context of {REDD+} in {M}ozambique: drivers, agents and
   institutions.
 \newblock resreport, CIFOR, 2012.
+
+\bibitem[Sy et~al.(2015)Sy, Herold, Achard, Beuchle, Clevers, Lindquist, and
+  Verchot]{Sy2015}
+Sy V.~D., Herold M., Achard F., Beuchle R., Clevers J. G. P.~W., Lindquist E.,
+  and Verchot L.
+\newblock Land use patterns and related carbon losses following deforestation
+  in {S}outh {A}merica.
+\newblock \emph{Environmental Research Letters}, 10\penalty0 (12):\penalty0
+  124004, November 2015.
+\newblock \doi{10.1088/1748-9326/10/12/124004}.
 
 \bibitem[van Rossum and Development(2018)]{Rossum2018}
 Rossum G., van and Development T.

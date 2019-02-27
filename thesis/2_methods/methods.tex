@@ -1,14 +1,14 @@
 %TODO one idea per paragraph
 \chapter{Data and methods}
 \label{ch:data_methods}
-	In this chapter, we describe our approach to answer the scientific questions stated during the introduction. The first section of this chapter introduces the datasets used during this study the underlying causes of using it. For each dataset, we shortly describe by which approach it is derived and what are the fundamental meta-data properties. Additionally, if possible we try to give for each dataset an accuracy assessment ideally prepared by other scientists or by the research group itself. Finally, we describe our idea behind using the data and how we acquired and filtered it. The second and last section of this chapter is focused on the applied methodology to prepare our analysis and results. For each processing step we give a short description of the methodical background and describe the core functionality of our processing algorithms as well we describe the required steps to achieve the results. For implementing our processing algorithms and visualizing our results we selected individually the technology which fulfills best the requirements. These approaches are encapsulated in a reusable software design to easily reproduce, alter or reuse our algorithms and findings.
+	In this chapter we describe our approach to answer the scientific questions stated during the introduction. The first section of this chapter introduces the datasets used during this study and the underlying causes for using them. For each dataset, we shortly describe by which approach it is derived and what are the fundamental meta-data properties. Additionally, if possible we try to give for each dataset an accuracy assessment, ideally provided by other research groups if available. Finally, we describe our idea behind using the data and how we acquired and filtered it. The second and last section of this chapter is focused on the applied methodology to prepare our analysis and results. For each processing step we give a short description of the methodical background and describe the core functionality of our processing algorithms. For implementing our processing algorithms and visualizing our results we selected individually the programming language or software which fulfills best the requirements. These approaches are encapsulated in a reusable software design to easily reproduce, alter or reuse our algorithms and findings.
 
 \section{Data}
 \label{sec:data}
 %TODO first paragraph/sentence "SO WHAT" why we used the dataset
 	\begin{table}[ht]
 		\centering
-		\caption[Datasets used during this study]{\textbf{Datasets used during this study:} The source column contains a reference to the corresponding dataset launch publication. If the data is provided as a download the bibliographic reference contains the download URL.}
+		\caption[Datasets used in this study]{\textbf{Datasets used in this study}}
 		\label{tab:datasets}
 		\begin{tabular}{lll}
 			\hline
@@ -16,7 +16,7 @@
 			Global Forest Change & spatial & \citet{Hansen2013}\\
 			GlobeLand30 & spatial & \citet{Chen2015}\\
 			Intact Forest Landscape & spatial & \citet{Potapov2017}\\
-			Aboveground Woddy Biomass & spatial & \citet{Baccini2015}\\
+			Aboveground Woody Biomass & spatial & \citet{Baccini2015}\\
 			Global Soil Organic Carbon Content & spatial & \citet{FAO2018}\\
 			Global Administrative Areas & spatial & \citet{Hijmans2018}\\
 			Soil Organic Carbon Change & empirical & \citet{Don2010}\\
@@ -25,10 +25,10 @@
 			&& \citet{Siikamaki2015}\\\hline
 		\end{tabular}
 	\end{table}
-	Table \ref{tab:datasets} shows a comprehensive overview of the applied datasets for this study. Spatial datasets comprises vector as well raster data and empirical data is extracted from the cited publications. The subsequent sections describe detailed each dataset following the order of appearance in the table.  
+	The table \ref{tab:datasets} shows a comprehensive overview of the applied datasets for this study. Spatial datasets comprises vector as well raster data, while empirical data is extracted from the cited publications. The subsequent sections describe each dataset in further detail.
 
 	\subsection{Global Forest Change}
-		\ac{GFC} 2000-2012 Version 1.0 is the first high-resolution dataset that provides a comprehensive view of the annual global forest cover change between 2000 and 2012 \citep{Hansen2013,Li2017}. The initial \ac{GFC} dataset released by \citeauthor{Hansen2013} is extended by recent releases which encompass the annual forest cover changes between 2000-2013, 2000-2014, 2000-2015 and 2000-2016, respectively. All versions of this dataset have in common, that they are derived from growing season imagery captured by the remote sensing satellite Landsat 7 \ac{ETM+} enhanced by band metrics of other sensors like Quickbird imagery, existing percent tree cover layers from Landsat data, and global \ac{MODIS} percent tree cover \citep{Hansen2013}. On the satellite imagery, a time-series spectral metrics analysis is applied to gather the global forest extent at 2000 as well as the annual forest loss and the accumulated gain for the period 2001 till 2012. Hence, \ac{GFC} comprises three independent data layers tree cover, annually forest loss and forest gain divided into 10x10 degree tiles by the geodetic coordinate system \ac{WGS84} (EPSG:4326) with a spatial resolution of 1 arc-second per pixel (approximately 900 Km$^2$ or 30x30 m). Furthermore, across the provided \ac{GTiff} layers the pixel data is coded in unsigned 8-bit integers. Hansen et al. defined trees as all vegetation taller than 5 meters for their study. For each pixel covered by trees, a canopy density ranging from 0 t0 100 \% is computed. Forest loss is defined as a stand displacement disturbance leading from a forest state to a non-forest state (e.g. canopy density >50 \% to 0). Therefore the underlying cause of forest loss ranges from anthropogenic impacts to natural causes. Tree cover gain is defined as the inverse of loss where the canopy density must exceed 50 \% to get recognized.
+		\ac{GFC} 2000-2012 Version 1.0 is the first high-resolution dataset that provides a comprehensive view of the annual global forest cover change between 2000 and 2012 \citep{Hansen2013,Li2017}. The initial \ac{GFC} dataset released by \citeauthor{Hansen2013} has been extended by recent releases, which encompass the annual forest cover changes between 2000-2013, 2000-2014, 2000-2015 and 2000-2016, respectively. All versions of this dataset have in common, that they are derived from growing season imagery captured by the remote sensing satellite Landsat 7 \ac{ETM+} enhanced by band metrics of other sensors like Quickbird imagery, existing percent tree cover layers from Landsat data, and global \ac{MODIS} percent tree cover \citep{Hansen2013}. On the satellite imagery, a time-series spectral metrics analysis is applied to gather the global forest extent at 2000 as well as the annual forest loss and the accumulated gain for the period 2001 till 2012. Hence, \ac{GFC} comprises three independent data layers tree cover, annually forest loss and forest gain divided into 10x10 degree tiles by the geodetic coordinate system \ac{WGS84} (EPSG:4326) with a spatial resolution of 1 arc-second per pixel (approximately 900 Km$^2$ or 30x30 m). Furthermore, across the provided \ac{GTiff} layers the pixel data is coded in unsigned 8-bit integers. Hansen et al. defined trees as all vegetation taller than 5 meters for their study. For each pixel covered by trees, a canopy density ranging from 0 t0 100 \% is computed. Forest loss is defined as a stand displacement disturbance leading from a forest state to a non-forest state (e.g. canopy density >50 \% to 0). Therefore the underlying cause of forest loss ranges from anthropogenic impacts to natural causes. Tree cover gain is defined as the inverse of loss where the canopy density must exceed 50 \% to get recognized.
 
 		\citeauthor{Hansen2013} reports as an accuracy assessment of tree cover loss a producers accuracy of approximately 83 \% for the tropical region. The mapped tree cover gain is probably an underestimation of the true gain with a producers accuracy of 48 \% and a user's accuracy of 81 \%. 
 
@@ -53,16 +53,16 @@
 			\begin{tabular}{rlp{10.3cm}}
 				\hline
 				Code & Type & Definition \\\hline
-				10 & Cultivated land & used for agriculture, horticulture and gardens, including paddy fields, irrigated and dry farmland, vegetable and fruit gardens, etc. \\
-				20 & Forest & covered by trees, vegetation covers over 30 \%, including deciduous and coniferous forest, and sparse woodland with cover 10-30 \%, etc. \\
-				30 & Grassland & covered by natural grass with cover over 10 \%, etc.\\
-				40 & Shrubland & covered by shrubs with cover over 30 \%, including deciduous and evergreen shrubs, and desert steppe with cover over 10 \%, etc.\\
-				50 & Wetland & covered by wetland plants and water bodies, including inland marsh, lake marsh, river floodplain wetland, forest/shrub wetland, peat bogs, mangrove and salt marsh, etc.\\
-				60 & Water bodies & in land area, including river, lake, reservoir, fish pond, etc.\\
-				70 & Tundra & covered by lichen, moss, hardy perennial herb and shrubs in the polar regions, including shrub-, herbaceous-, wet- and barren-tundra, etc.\\
-				80 & Artificial surfaces & modified by anthropogenic influence, including all kinds of habitation, industrial and mining area, transportation facilities, and interior urban green zones and water bodies, etc.\\
-				90 & Bareland & with vegetation cover lower 10 \%, including desert, sandy fields, Gobi, bare rocks, saline and alkaline land, etc.\\
-				100 & Snow and ice & covered by permanent snow, glacier and icecap\\\hline
+				10 & Cultivated land & Used for agriculture, horticulture and gardens, including paddy fields, irrigated and dry farmland, vegetable and fruit gardens, etc. \\
+				20 & Forest & Covered by trees, vegetation covers over 30\%, including deciduous and coniferous forest, and sparse woodland with cover 10-30\%, etc. \\
+				30 & Grassland & Covered by natural grass with cover over 10\%, etc.\\
+				40 & Shrubland & Covered by shrubs with cover over 30\%, including deciduous and evergreen shrubs, and desert steppe with cover over 10\%, etc.\\
+				50 & Wetland & Covered by wetland plants and water bodies, including inland marsh, lake marsh, river floodplain wetland, forest/shrub wetland, peat bogs, mangrove and salt marsh, etc.\\
+				60 & Water bodies & In land area, including river, lake, reservoir, fish pond, etc.\\
+				70 & Tundra & Covered by lichen, moss, hardy perennial herb and shrubs in the polar regions, including shrub-, herbaceous-, wet- and barren-tundra, etc.\\
+				80 & Artificial surfaces & Modified by anthropogenic influence, including all kinds of habitation, industrial and mining area, transportation facilities, and interior urban green zones and water bodies, etc.\\
+				90 & Bareland & With vegetation cover lower 10\%, including desert, sandy fields, Gobi, bare rocks, saline and alkaline land, etc.\\
+				100 & Snow and ice & Covered by permanent snow, glacier and icecap\\\hline
 			\end{tabular}
 	\end{table}
 
@@ -181,9 +181,9 @@
 			To optimize the overall tree cover similarity between both datasets we must test which canopy density class yields the highest agreement over our study extent. To test the significance of the difference between two correlated samples, we decided to apply the non-parametric Wilcoxon signed-rank test \citep{Wilcoxon1945}. This test requires paired data from the same population, at least an ordinal scale of measurement, each sample pair is independent, and the dependent variable can be expressed as a continuous probability \citep{Lowry2019}. Further, an advantage of this test is that we don't have to assume a normal distribution for our sample population. Our sample population fulfills these requirements.  The test procedure is implemented in R because this language is mainly intended for this kind of statistical analysis. We exported the computed \ac{JI} from our Python environment and applied a cross-testing in R. In our case, cross testing is defined as the test of all possible \ac{JI} combinations. Further, we applied a two- and one-sided Wilcoxon test because we want to examine if there is a significant difference and which direction has the similarity distribution. To address the higher probability of family-wise error in multiple comparisons we used a Holm correction. Before we applied the examination of the distribution we separated our population into three independent regions, namely South America, Asia/Australia, and Africa highlighted by the vertical blue lines in figure \ref{fig:dataset_tiles}. South America, Asia/Australia, and Africa comprised 82, 86, and 101 image tiles, respectively. Additionally, we excluded from the analysis all samples where JI$_0$ is zero because this tiles from our \ac{AISM} did not contain any pixels covered by trees. In South America, Asia/Australia, and Africa we excluded 6, 13, and 15 tiles. We tested continental differences in tree cover agreement to inspect regional dependencies and global differences. The results from the global testing are used to determine our definition of tree cover. Further, we compared differences of tree cover agreement between the continental regions by applying a Wilcoxon rank-sum test also known as Mann-Whitney U test. We applied a Benjamini and Hochberg correction to the test results.
  
 		\subsubsection{Proximate deforestation driver}
+		\label{subsubsec:methods_proximate_deforestation_driver}
 		%TODO flowchart add reclassification
 		%TODO how aggreagted: hexagonal, natural earth for countries (low resolution from R)
-		%TODO how visualisation
 		%TODO mention your definition of ppd classes, goes after haversine equation
 			Based on our forest definition developed in the previous section we want to classify all the tropical deforestation within a canopy density of $(10,100]$ percent between 2001 till 2010. Additionally, we must consider the mean miss-classification rate of 52 \% by previous findings of \citeauthor{Seydewitz2017} \citep{Seydewitz2017}. Therefore we have to develop a feasible method to resolve this issue.
 
@@ -344,6 +344,7 @@
 		We aggregated our results for \ac{ESV} loss, \ac{ESV} gain, and \ac{ESV} balance on three spatially different levels with the following extent: global tropical zone and continental region (Americas, Asia, and Africa).
 
 	\subsection{Binning analysis and visualization}
+	\label{subsec:methods_binning}
 	%TODO image hexagon countries
 	%TODO image needs D
 	%TODO image change y_2 to y_1

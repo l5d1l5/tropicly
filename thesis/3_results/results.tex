@@ -133,36 +133,52 @@
 				\label{fig:africa_loss}
 			\end{figure}
 
-		\subsection{Proximate deforestation driver}
-		\label{subsec:results_proxy_deforestation_driver}
-			\note{Goal (review):} Goal is to estimate the distribution of proximate deforestation drivers on global, continental, and regional scale for the tropics between 2001 and 2010. We used a approach by superimposing the gfc annual loss and the gl30 land cover map from 2010. We carefully selected the target canopy density by analyzing the tree cover agreement between both layers at 2000. We filtered the gfc data by applying the canopy density interval within $(10,100]$. By filtering is meant that we used only annual loss which occur in this interval. Also we selected only gain data from gfc which is connected to a previous loss. We applied a reclassification after superimposing both layers to handle the great share of pixels classified as forest. We used clustering to aggregate these pixels and applied a square sized buffer of 500 meter. We determined the most frequent class within this buffer and assigned it to the cluster.
+		\subsection{Proximate deforestation drivers}
+		\label{subsec:results_proxy_deforestation_drivers}
+			Our goal is to estimate the distribution of \acp{PDD} over the tropical zone, the continental range, and at a country scale for the time frame of 2000 till 2010. We achieved this estimate by superimposing the annual tree cover losses and aggregated gains of the \ac{GFC} datasets and the \ac{GL30} land cover map from 2000. We carefully selected our global definition of tree cover in the canopy density interval $(10,100]$ by applying the Jaccard Index and statistical testing detailed in section \ref{subsec:results_forest_definition}. By using this canopy density interval we filtered the \ac{GFC} annual losses and we considered tree cover gains only within previously lost tree cover. After superimposing we applied a reclassification of tree cover losses still classified as forest by the \ac{GL30} layer. We aggregated this structures by clustering and applied a square sized buffer of 500 meter side length. Next, we reclassified the structure by determining the highest frequent \ac{LC} class within the buffer. For further details on the \ac{PDD} prediction refer to section \ref{subsubsec:methods_proximate_deforestation_driver}. The \ac{PDD} distribution choropleth-maps for South America, Asia/Australia, and Africa we derived by applying our hexagonal-binning approach in combination with a hexagon-pie-chart. A hexagon in unscaled shape covers an area of 0.5 decimal degrees. Section \ref{subsec:methods_binning} describes detailed how we derived these cartograms. In the following paragraphs we will describe our results for South America, Asia/Australia, and Africa on continental and regional scale and close this section by discussing our results on global scale.
 
-			\note{South America:}
-			continental dynamics, comparison with hosonuma and curtis, than mention Paraguay, Argentina, Bolivia, Brazil, Colombia, Peru, and Guatemala proxy
+			The map in figure \ref{fig:americas_driver} shows the distribution of \acp{PDD} over South America. The table \ref{tab:proximate_driver} in the appendix lists the absolute and relative distribution of \acp{PDD} among South America and its countries. In South America the transition of tree cover to cropland and pastures account for 21.3\% (95929.6 km$^2$) and 40.8\% (183841.4 km$^2$), respectively. Therefore, approximately 62\% of the tree cover were cleared for agricultural purposes in South America. 
+
+			\citep{Sy2015,Curtis2018,Hosonuma2012}
+			Brazil:
+			Paraguay:
+			Argentina:
+			Bolivia:
+			Guatemala:
+			Peru:
+			Colombia:
+
 			\begin{figure}[ht]
 				\centering
 				\includegraphics[scale=1]{img/americas_driver_frameless}
-				\caption[Map of proximate deforestation driver in South America]{}
+				\caption[Map of proximate deforestation drivers in South America]{\textbf{Map of proximate deforestation drivers in South America:} }
 				\label{fig:americas_driver}
 			\end{figure}
 
-			\note{Asia/Australia:}
-			continental dynamics, comparison with hosonuma and curtis, than mention Indonesia, Malaysia, Vietnam, Laos
+			The map in figure \ref{fig:asia_driver} shows an overview of the \acp{PDD} distribution in Asia/Australia, while the table \ref{tab:proximate_driver} in the appendix lists the absolute and relative estimates for the countries and the region as well. For Asia/Australia cultivated and grassland account for 16\% () and 7.1\% () of the tree cover loss, respectively.
+
+			Indonesia:
+			Malaysia:
+			Vietnam: 
+			Laos:
 			\begin{figure}[ht]
 				\centering
 				\includegraphics[scale=1]{img/asia_driver_frameless}
-				\caption[Map of proximate deforestation driver in Asia/Australia]{}
+				\caption[Map of proximate deforestation drivers in Asia/Australia]{\textbf{Map of proximate deforestation drivers in Asia/Australia:} }
 				\label{fig:asia_driver}
 			\end{figure}
 
-			\note{Africa:}
-			continental dynamics, comparison with hosonuma and curtis, than mention Ivory coast, DR Congo, Angola, Mozambique, Tanzania, Madagascar
+			The figure \ref{fig:africa_driver} shows the distribution of \acp{PDD} over Africa. The table \ref{tab:proximate_driver} in the appendix lists the absolute and relative distribution of \acp{PDD} for Africa and its corresponding countries. 
+
+			Ivory coast, DR Congo, Angola, Mozambique, Tanzania, Madagascar
 			\begin{figure}[ht]
 				\centering
 				\includegraphics[scale=1]{img/africa_driver_frameless}
-				\caption[Map of proximate deforestion driver in Africa]{}
+				\caption[Map of proximate deforestion drivers in Africa]{\textbf{Map of proximate deforestation drivers in Africa:} }
 				\label{fig:africa_driver}
 			\end{figure}
+
+			The table \ref{tab:proximate_driver} in the appendix shows the absolute and relative distribution of \acp{PDD} for the entire tropical zone. 
 
 \clearpage
 

@@ -1,19 +1,19 @@
 \select@language {english}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {1.1}{\ignorespaces Datasets used during this study}}{11}{table.1.1}
+\contentsline {table}{\numberline {1.1}{\ignorespaces Datasets used in this study}}{11}{table.1.1}
 \contentsline {table}{\numberline {1.2}{\ignorespaces Classification schema of the GlobeLand30 product}}{15}{table.1.2}
-\contentsline {table}{\numberline {1.3}{\ignorespaces Relative soil organic carbon change for certain land-use change types}}{19}{table.1.3}
+\contentsline {table}{\numberline {1.3}{\ignorespaces Relative soil organic carbon change for certain land-use change types}}{18}{table.1.3}
 \contentsline {table}{\numberline {1.4}{\ignorespaces Selection of Ecosystem Service Values (ESV) used in this study}}{19}{table.1.4}
 \contentsline {table}{\numberline {1.5}{\ignorespaces Jaccard Index coefficient matrix}}{23}{table.1.5}
 \contentsline {table}{\numberline {1.6}{\ignorespaces A general model of a confusion matrix}}{26}{table.1.6}
-\contentsline {table}{\numberline {1.7}{\ignorespaces Scenario one mapping of soil organic carbon change to porixmate driver}}{30}{table.1.7}
+\contentsline {table}{\numberline {1.7}{\ignorespaces Scenario one mapping of soil organic carbon change to porixmate driver}}{29}{table.1.7}
 \contentsline {table}{\numberline {1.8}{\ignorespaces Scenario two mapping of soil organic carbon change to porixmate driver}}{30}{table.1.8}
 \contentsline {table}{\numberline {1.9}{\ignorespaces ESV biome types mapped to PDD classes}}{31}{table.1.9}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {2.1}{\ignorespaces Continental experiment group comparison}}{39}{table.2.1}
-\contentsline {table}{\numberline {2.2}{\ignorespaces Continental experiment group directional comparison}}{40}{table.2.2}
-\contentsline {table}{\numberline {2.3}{\ignorespaces Global experiment group comparison}}{42}{table.2.3}
-\contentsline {table}{\numberline {2.4}{\ignorespaces Global experiment group directional comparison}}{42}{table.2.4}
+\contentsline {table}{\numberline {2.1}{\ignorespaces Continental experiment group comparison}}{38}{table.2.1}
+\contentsline {table}{\numberline {2.2}{\ignorespaces Continental experiment group directional comparison}}{39}{table.2.2}
+\contentsline {table}{\numberline {2.3}{\ignorespaces Global experiment group comparison}}{41}{table.2.3}
+\contentsline {table}{\numberline {2.4}{\ignorespaces Global experiment group directional comparison}}{41}{table.2.4}
 \contentsline {table}{\numberline {2.5}{\ignorespaces Confussion matrix}}{53}{table.2.5}
 \contentsline {table}{\numberline {2.6}{\ignorespaces Ecosystem service value balance}}{55}{table.2.6}
 \addvspace {10\p@ }
