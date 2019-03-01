@@ -1,4 +1,4 @@
-\begin{thebibliography}{63}
+\begin{thebibliography}{64}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -251,6 +251,15 @@ Goetze D., Horsch B., and Porembski S.
 \newblock \emph{Journal of Biogeography}, 33\penalty0 (4):\penalty0 653--664,
   April 2006.
 \newblock \doi{10.1111/j.1365-2699.2005.01312.x}.
+
+\bibitem[Graesser et~al.(2015)Graesser, Aide, Grau, and
+  Ramankutty]{Graesser2015}
+Graesser J., Aide T.~M., Grau H.~R., and Ramankutty N.
+\newblock Cropland/pastureland dynamics and the slowdown of deforestation in
+  {L}atin {A}merica.
+\newblock \emph{Environmental Research Letters}, 10\penalty0 (3):\penalty0
+  034017, March 2015.
+\newblock \doi{10.1088/1748-9326/10/3/034017}.
 
 \bibitem[Hansen et~al.(2013)Hansen, Potapov, Moore, Hancher, Turubanova,
   Tyukavina, Thau, Stehman, Goetz, Loveland, Kommareddy, Egorov, Chini,

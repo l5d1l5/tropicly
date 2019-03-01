@@ -38,7 +38,7 @@
 \contentsline {section}{\numberline {3.4}Binning analysis and visualization}{60}{section.3.4}
 \contentsline {chapter}{\numberline {4}Conclusion}{61}{chapter.4}
 \contentsline {chapter}{Bibliography}{I}{chapter.4}
-\contentsline {chapter}{\nonumberline List of Figures}{VI}{chapter*.51}
-\contentsline {chapter}{\nonumberline List of Tables}{VII}{chapter*.52}
-\contentsline {chapter}{List of Abbreviations}{VIII}{chapter*.53}
-\contentsline {chapter}{Appendix}{X}{chapter*.54}
+\contentsline {chapter}{\nonumberline List of Figures}{VI}{chapter*.52}
+\contentsline {chapter}{\nonumberline List of Tables}{VII}{chapter*.53}
+\contentsline {chapter}{List of Abbreviations}{VIII}{chapter*.54}
+\contentsline {chapter}{Appendix}{X}{chapter*.55}
