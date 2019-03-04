@@ -1,4 +1,4 @@
-\begin{thebibliography}{64}
+\begin{thebibliography}{67}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -181,6 +181,17 @@ Congalton R.~G.
 \newblock \emph{Remote Sensing of Environment}, 37\penalty0 (1):\penalty0
   35--46, July 1991.
 \newblock \doi{10.1016/0034-4257(91)90048-b}.
+
+\bibitem[Costanza et~al.(1997)Costanza, d{\textquotesingle}Arge, de~Groot,
+  Farber, Grasso, Hannon, Limburg, Naeem, O{\textquotesingle}Neill, Paruelo,
+  Raskin, Sutton, and van~den Belt]{Costanza1997}
+Costanza R., d{\textquotesingle}Arge R., Groot R., de, Farber S., Grasso M.,
+  Hannon B., Limburg K., Naeem S., O{\textquotesingle}Neill R.~V., Paruelo J.,
+  Raskin R.~G., Sutton P., and Belt M., van~den.
+\newblock The value of the world{\textquotesingle}s ecosystem services and
+  natural capital.
+\newblock \emph{Nature}, 387\penalty0 (6630):\penalty0 253--260, May 1997.
+\newblock \doi{10.1038/387253a0}.
 
 \bibitem[Costanza et~al.(2014)Costanza, de~Groot, Sutton, van~der Ploeg,
   Anderson, Kubiszewski, Farber, and Turner]{Costanza2014}
@@ -436,6 +447,14 @@ Sampat M.~P., Wang Z., Gupta S., Bovik A.~C., and Markey M.~K.
   (11):\penalty0 2385--2401, November 2009.
 \newblock \doi{10.1109/tip.2009.2025923}.
 
+\bibitem[Sannier et~al.(2016)Sannier, McRoberts, and Fichet]{Sannier2016}
+Sannier C., McRoberts R.~E., and Fichet L.-V.
+\newblock Suitability of global forest change data to report forest cover
+  estimates at national level in {G}abon.
+\newblock \emph{Remote Sensing of Environment}, 173:\penalty0 326--338,
+  February 2016.
+\newblock \doi{10.1016/j.rse.2015.10.032}.
+
 \bibitem[Schneibel et~al.(2017)Schneibel, Frantz, R{\"{o}}der, Stellmes,
   Fischer, and Hill]{Schneibel2017}
 Schneibel A., Frantz D., R{\"{o}}der A., Stellmes M., Fischer K., and Hill J.
@@ -470,6 +489,13 @@ Sitoe A., Salomao A., and Wertz-Kanounnikoff S.
 \newblock The context of {REDD+} in {M}ozambique: drivers, agents and
   institutions.
 \newblock resreport, CIFOR, 2012.
+
+\bibitem[Song(2018)]{Song2018}
+Song X.-P.
+\newblock Global estimates of ecosystem service value and change: taking into
+  account uncertainties in satellite-based land cover data.
+\newblock \emph{Ecological Economics}, 143:\penalty0 227--235, January 2018.
+\newblock \doi{10.1016/j.ecolecon.2017.07.019}.
 
 \bibitem[Sy et~al.(2015)Sy, Herold, Achard, Beuchle, Clevers, Lindquist, and
   Verchot]{Sy2015}
