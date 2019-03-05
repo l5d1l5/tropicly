@@ -106,16 +106,17 @@
 %\Huge 24.88pt
 
 \begin{document}
-	%\nocite{*} % cite all no matter if used in text
+
+%\nocite{*} % cite all no matter if used in text
 	\bibliographystyle{tobinat}
 
 	\hypersetup{pageanchor=false}
 
-		% title page
+% title page
 		\input{cover/sggw_cover.tex}
 	\BlankPage
 
-		% declarations
+% declarations
 %		\input{declarations/promoter.tex}
 %	\BlankPage
 %		\input{declarations/author.tex}
@@ -140,17 +141,16 @@
 	\setcounter{page}{9}
 
 
-	% table of contents
-	%TODO toc-depth 3 in print
+% table of contents
+%TODO toc-depth 3 in print
 	\setcounter{secnumdepth}{3} 
 	\setcounter{tocdepth}{3}
 	\tableofcontents
 	\newpage
 
-%TODO conclusion
-	% content
-%		\input{1_introduction/introduction.tex}
-%	\newpage
+% content
+		\input{1_introduction/introduction.tex}
+	\newpage
 		\input{2_methods/methods.tex}
 	\newpage
 		\input{3_results/results.tex}
@@ -161,21 +161,21 @@
 	\newpage
 %		\input{acknowledgements/acknowledge.tex}
 %	\newpage
-		% references
 		\input{references/references.tex}
 	\newpage
 
 	\pagenumbering{Roman}
 	\setcounter{page}{1}
 
-		% lists
+% lists
 		\input{lists/lists.tex}
 	\newpage
 
-		% appendix
+% appendix
 		\input{appendix/appendix.tex}
 	\newpage
 
-%		% share approval
+% share approval
 %		\input{share/sggw_share.tex}
+
 \end{document}

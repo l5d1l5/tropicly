@@ -1,4 +1,4 @@
-\begin{thebibliography}{67}
+\begin{thebibliography}{72}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -13,6 +13,16 @@ Alves D.~S.
   analysis of the geographical patterns of deforestation in the {B}razilian
   {A}mazon in the period 1991-1996, pages 95--107. University Press of Florida,
   2002.
+
+\bibitem[Arjasakusuma et~al.(2018)Arjasakusuma, Kamal, Hafizt, and
+  Forestriko]{Arjasakusuma2018}
+Arjasakusuma S., Kamal M., Hafizt M., and Forestriko H.~F.
+\newblock Local-scale accuracy assessment of vegetation cover change maps
+  derived from {G}lobal {F}orest {C}hange data, {ClasLite}, and supervised
+  classifications: case study at part of {R}iau province, {I}ndonesia.
+\newblock \emph{Applied Geomatics}, 10\penalty0 (3):\penalty0 205--217, may
+  2018.
+\newblock \doi{10.1007/s12518-018-0226-2}.
 
 \bibitem[Arsanjani et~al.(2016{\natexlab{a}})Arsanjani, See, and
   Tayyebi]{Arsanjani2016a}
@@ -133,6 +143,16 @@ Carr D.~B., Olsen A.~R., and White D.
 \newblock \emph{Cartography and Geographic Information Systems}, 19\penalty0
   (4):\penalty0 228--236, January 1992.
 \newblock \doi{10.1559/152304092783721231}.
+
+\bibitem[Carter et~al.(2018)Carter, Herold, Avitabile, de~Bruin, Sy, Kooistra,
+  and Rufino]{Carter2018}
+Carter S., Herold M., Avitabile V., Bruin S., de, Sy V.~D., Kooistra L., and
+  Rufino M.~C.
+\newblock Agricultural-driven deforestation in the tropics from 1990-2015:
+  emissions, trends and uncertainties.
+\newblock \emph{Environmental Research Letters}, 13\penalty0 (1):\penalty0
+  014002, December 2018.
+\newblock \doi{10.1088/1748-9326/aa9ea4}.
 
 \bibitem[Chatelain et~al.(1996)Chatelain, Gautier, and
   Spichiger]{Chatelain1996}
@@ -381,6 +401,16 @@ McKinney W.
 \newblock Data structures for statistical computing in {P}ython.
 \newblock \emph{Proceedings of the 9th Python in Science Conference}, 2010.
 
+\bibitem[McRoberts et~al.(2016)McRoberts, Vibrans, Sannier, N{\ae}sset, Hansen,
+  Walters, and Lingner]{McRoberts2016}
+McRoberts R.~E., Vibrans A.~C., Sannier C., N{\ae}sset E., Hansen M.~C.,
+  Walters B.~F., and Lingner D.~V.
+\newblock Methods for evaluating the utilities of local and global maps for
+  increasing the precision of estimates of subtropical forest area.
+\newblock \emph{Canadian Journal of Forest Research}, 46\penalty0 (7):\penalty0
+  924--932, July 2016.
+\newblock \doi{10.1139/cjfr-2016-0064}.
+
 \bibitem[McSweeney et~al.(2014)McSweeney, Nielsen, Taylor, Wrathall, Pearson,
   Wang, and Plumb]{McSweeney2014}
 McSweeney K., Nielsen E.~A., Taylor M.~J., Wrathall D.~J., Pearson Z., Wang O.,
@@ -449,11 +479,20 @@ Sampat M.~P., Wang Z., Gupta S., Bovik A.~C., and Markey M.~K.
 
 \bibitem[Sannier et~al.(2016)Sannier, McRoberts, and Fichet]{Sannier2016}
 Sannier C., McRoberts R.~E., and Fichet L.-V.
-\newblock Suitability of global forest change data to report forest cover
+\newblock Suitability of {G}lobal {F}orest {C}hange data to report forest cover
   estimates at national level in {G}abon.
 \newblock \emph{Remote Sensing of Environment}, 173:\penalty0 326--338,
   February 2016.
 \newblock \doi{10.1016/j.rse.2015.10.032}.
+
+\bibitem[Sannigrahi et~al.(2018)Sannigrahi, Bhatt, Rahmat, Paul, and
+  Sen]{Sannigrahi2018}
+Sannigrahi S., Bhatt S., Rahmat S., Paul S.~K., and Sen S.
+\newblock Estimatig global ecosystem service values and its response to land
+  surface dynamics during 1995-2015.
+\newblock \emph{Journal of Environmental Management}, 223:\penalty0 115--131,
+  October 2018.
+\newblock \doi{10.1016/j.jenvman.2018.05.091}.
 
 \bibitem[Schneibel et~al.(2017)Schneibel, Frantz, R{\"{o}}der, Stellmes,
   Fischer, and Hill]{Schneibel2017}
@@ -540,5 +579,14 @@ Zak M.~R., Cabido M., and Hodgson J.~G.
 \newblock \emph{Biological Conservation}, 120\penalty0 (4):\penalty0 589--598,
   December 2004.
 \newblock \doi{10.1016/j.biocon.2004.03.034}.
+
+\bibitem[Zalles et~al.(2018)Zalles, Hansen, Potapov, Stehman, Tyukavina,
+  Pickens, Song, Adusei, Okpa, Aguilar, John, and Chavez]{Zalles2018}
+Zalles V., Hansen M.~C., Potapov P.~V., Stehman S.~V., Tyukavina A., Pickens
+  A., Song X.-P., Adusei B., Okpa C., Aguilar R., John N., and Chavez S.
+\newblock Near doubling of {B}razils intensive row crop area since 2000.
+\newblock \emph{Proceedings of the National Academy of Sciences}, 116\penalty0
+  (2):\penalty0 428--435, December 2018.
+\newblock \doi{10.1073/pnas.1810301115}.
 
 \end{thebibliography}
