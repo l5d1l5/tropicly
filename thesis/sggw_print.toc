@@ -1,17 +1,17 @@
 \select@language {english}
 \contentsline {chapter}{\numberline {1}Introduction}{11}{chapter.1}
 \contentsline {section}{\numberline {1.1}Proximate deforestation driver}{11}{section.1.1}
-\contentsline {section}{\numberline {1.2}Emissions}{12}{section.1.2}
-\contentsline {section}{\numberline {1.3}Ecosystem services}{12}{section.1.3}
+\contentsline {section}{\numberline {1.2}Emissions}{11}{section.1.2}
+\contentsline {section}{\numberline {1.3}Ecosystem services}{11}{section.1.3}
 \contentsline {chapter}{\numberline {2}Data and methods}{13}{chapter.2}
 \contentsline {section}{\numberline {2.1}Data}{13}{section.2.1}
 \contentsline {subsection}{\numberline {2.1.1}Global Forest Change}{14}{subsection.2.1.1}
-\contentsline {subsection}{\numberline {2.1.2}GlobeLand30}{16}{subsection.2.1.2}
+\contentsline {subsection}{\numberline {2.1.2}GlobeLand30}{15}{subsection.2.1.2}
 \contentsline {subsection}{\numberline {2.1.3}Aboveground Woody Biomass}{17}{subsection.2.1.3}
 \contentsline {subsection}{\numberline {2.1.4}Intact Forest Landscapes}{18}{subsection.2.1.4}
 \contentsline {subsection}{\numberline {2.1.5}Global Soil Organic Carbon}{19}{subsection.2.1.5}
 \contentsline {subsection}{\numberline {2.1.6}Soil Organic Carbon}{20}{subsection.2.1.6}
-\contentsline {subsection}{\numberline {2.1.7}Ecosystem Service Values}{20}{subsection.2.1.7}
+\contentsline {subsection}{\numberline {2.1.7}Ecosystem Service Values}{21}{subsection.2.1.7}
 \contentsline {subsection}{\numberline {2.1.8}Auxiliary}{21}{subsection.2.1.8}
 \contentsline {section}{\numberline {2.2}Methods}{21}{section.2.2}
 \contentsline {subsection}{\numberline {2.2.1}Preprocessing}{22}{subsection.2.2.1}
@@ -41,9 +41,9 @@
 \contentsline {section}{\numberline {4.4}Binning analysis and visualization}{65}{section.4.4}
 \contentsline {chapter}{\numberline {5}Conclusion}{66}{chapter.5}
 \contentsline {chapter}{Bibliography}{67}{chapter.5}
-\contentsline {chapter}{\nonumberline List of Figures}{I}{chapter*.42}
-\contentsline {chapter}{\nonumberline List of Tables}{II}{chapter*.43}
-\contentsline {chapter}{List of Abbreviations}{III}{chapter*.44}
+\contentsline {chapter}{\nonumberline List of Figures}{I}{chapter*.43}
+\contentsline {chapter}{\nonumberline List of Tables}{II}{chapter*.44}
+\contentsline {chapter}{List of Abbreviations}{III}{chapter*.45}
 \contentsline {chapter}{\numberline {A}Hexagonal country boundaries}{V}{appendix.A}
 \contentsline {chapter}{\numberline {B}Forest definition}{VI}{appendix.B}
 \contentsline {chapter}{\numberline {C}Proximate deforestation drivers}{X}{appendix.C}

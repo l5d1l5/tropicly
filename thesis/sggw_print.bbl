@@ -1,4 +1,4 @@
-\begin{thebibliography}{72}
+\begin{thebibliography}{77}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -20,7 +20,7 @@ Arjasakusuma S., Kamal M., Hafizt M., and Forestriko H.~F.
 \newblock Local-scale accuracy assessment of vegetation cover change maps
   derived from {G}lobal {F}orest {C}hange data, {ClasLite}, and supervised
   classifications: case study at part of {R}iau province, {I}ndonesia.
-\newblock \emph{Applied Geomatics}, 10\penalty0 (3):\penalty0 205--217, may
+\newblock \emph{Applied Geomatics}, 10\penalty0 (3):\penalty0 205--217, May
   2018.
 \newblock \doi{10.1007/s12518-018-0226-2}.
 
@@ -97,6 +97,13 @@ Beach T.
 \newblock \emph{Physical Geography}, 19\penalty0 (5):\penalty0 378--405,
   September 1998.
 \newblock \doi{10.1080/02723646.1998.10642657}.
+
+\bibitem[Boucher et~al.(2011)Boucher, Elias, Lininger, May-Tobin, Roquemore,
+  and Saxon]{Boucher2011}
+Boucher D., Elias P., Lininger K., May-Tobin C., Roquemore S., and Saxon E.
+\newblock \emph{The root of the problem: {W}hats driving tropical deforestation
+  today?}
+\newblock Union of concerned scientists, 2011.
 
 \bibitem[Cabral et~al.(2011)Cabral, Vasconcelos, Oom, and Sardinha]{Cabral2011}
 Cabral A. I.~R., Vasconcelos M.~J., Oom D., and Sardinha R.
@@ -249,6 +256,14 @@ Groot R., de, Brander L., Ploeg S., van~der, Costanza R., Bernard F., Braat L.,
   2012.
 \newblock \doi{10.1016/j.ecoser.2012.07.005}.
 
+\bibitem[DeFries et~al.(2010)DeFries, Rudel, Uriarte, and Hansen]{DeFries2010}
+DeFries R.~S., Rudel T., Uriarte M., and Hansen M.
+\newblock Deforestation driven by urban population growth and agricultural
+  trade in the twenty-first century.
+\newblock \emph{Nature Geoscience}, 3\penalty0 (3):\penalty0 178--181, February
+  2010.
+\newblock \doi{10.1038/ngeo756}.
+
 \bibitem[Don et~al.(2010)Don, Schumacher, and Freibauer]{Don2010}
 Don A., Schumacher J., and Freibauer A.
 \newblock Impact of tropical land-use change on soil organic carbon stocks - a
@@ -374,6 +389,14 @@ Kideghesho J.~R.
 \newblock In \emph{Precious Forests - Precious Earth}. {InTech}, September
   2015.
 \newblock \doi{10.5772/61002}.
+
+\bibitem[Kreuter et~al.(2001)Kreuter, Harris, Matlock, and Lacey]{Kreuter2001}
+Kreuter U.~P., Harris H.~G., Matlock M.~D., and Lacey R.~E.
+\newblock Change in ecosystem service values in the {S}an {A}ntonio area,
+  {T}exas.
+\newblock \emph{Ecological Economics}, 39\penalty0 (3):\penalty0 333--346,
+  December 2001.
+\newblock \doi{10.1016/s0921-8009(01)00250-6}.
 
 \bibitem[Kummer and Turner(1994)]{Kummer1994}
 Kummer D.~M. and Turner B.~L.
@@ -553,6 +576,15 @@ Rossum G., van and Development T.
 \newblock URL \url{https://docs.python.org/3.5/download.html}.
 \newblock Python Software Foundation.
 
+\bibitem[Wang et~al.(2006)Wang, Zhang, Zhang, Li, Liu, Song, Li, Li, and
+  Duan]{Wang2006}
+Wang Z., Zhang B., Zhang S., Li X., Liu D., Song K., Li J., Li F., and Duan H.
+\newblock Changes of land use and of ecosystem service values in {S}anjiang
+  {P}lain, {N}ortheast {C}hina.
+\newblock \emph{Environmental Monitoring and Assessment}, 112\penalty0
+  (1-3):\penalty0 69--91, jan 2006.
+\newblock \doi{10.1007/s10661-006-0312-5}.
+
 \bibitem[Wilcoxon(1945)]{Wilcoxon1945}
 Wilcoxon F.
 \newblock Individual comparisions by ranking methods.
@@ -588,5 +620,13 @@ Zalles V., Hansen M.~C., Potapov P.~V., Stehman S.~V., Tyukavina A., Pickens
 \newblock \emph{Proceedings of the National Academy of Sciences}, 116\penalty0
   (2):\penalty0 428--435, December 2018.
 \newblock \doi{10.1073/pnas.1810301115}.
+
+\bibitem[Zhao et~al.(2004)Zhao, Kreuter, Li, Ma, Chen, and Nakagoshi]{Zhao2004}
+Zhao B., Kreuter U., Li B., Ma Z., Chen J., and Nakagoshi N.
+\newblock An ecosystem service value assessment of land-use change on
+  {C}hongming {I}sland, {C}hina.
+\newblock \emph{Land Use Policy}, 21\penalty0 (2):\penalty0 139--148, April
+  2004.
+\newblock \doi{10.1016/j.landusepol.2003.10.003}.
 
 \end{thebibliography}
