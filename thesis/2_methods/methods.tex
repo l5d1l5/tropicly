@@ -76,24 +76,23 @@
 
 		Data acquisition is pretty straight forward the \ac{IFL} dataset public accessible for download. As mentioned it is a \ac{SHP} so you must only download a single compressed archive. The download is automatized with a Python script by using the \ac{stdlib} modules urllib and threading \citep{Rossum2018}.
 
-	\subsection{Global Soil Organic Carbon}
-	%TODO references for wosis, hwsd, and other data products
-		The \ac{GSOCmap} is a joint project between \ac{GSP} and \ac{ITPS} to produce a global \ac{SOC} content map by a country-driven approach. In the year 2018, the first iteration of this map in version 1.0 was released and shortly followed by 1.1 (new country submission by Rwanda) and 1.2 (new country submissions by Chile and Colombia). As the short release cycle suggests the mapping project is intended as a long-lived dataset which will improve over time and by new country submissions. Till now 67 (approximately 63 \% of the global land mass) different countries submitted their country based \ac{SOC} estimates. To foster the national \ac{SOC} mappings the \ac{ISRIC} provides several covariate datasets like national digital elevation maps, annual spectral remote sensing data or national soil type grids. Additionally, the contributors can join a mapping training and use the \ac{GSOCmap} cookbook as guidance for their mapping efforts. As an exchange, each country shares its national \ac{GSOCmap} by compliance of several criteria e.g. reporting of the Meta-data of the \ac{SOC} sampling (sample timeline, sample depth, bulk density etc.), uncertainty assessment, and the applied methods for estimating and interpolation of the \ac{SOC} content. For interpolating the guide organizations suggest the following approaches: simple geo-matching, class-matching, multiple linear regression, random forest or support vector machines. The national maps are aggregated to the final \ac{GSOCmap} with a target resolution of 30 arc-seconds (approximately 1 Km$^2$) in the \ac{CRS} \ac{WGS84}. The dataset is one single raster image as \ac{GTiff} coded in float covering the entire globe where each pixel value is the \ac{SOC} content in Mg C ha$^{-1}$ at a soil depth of 0-30 cm \citep{FAO2018}.
+	\subsection{Global Soil Organic Carbon Map}
+		The \ac{GSOCmap} is a joint project between \ac{GSP} and \ac{ITPS} to produce a global \ac{SOC} content map by a country-driven approach. We will use this dataset to determine the \ac{SOC} content at deforested spots and to derive the \ac{SOC} emissions by tropical tree cover loss. Until now 67 (approximately 63\% of the global land mass) different countries have submitted their country-based \ac{SOC} estimates. To foster the national \ac{SOC} mappings the \ac{ISRIC} provides several covariate datasets like national digital elevation maps, annual spectral remote sensing data or national soil type grids. Additionally, the contributors can join a mapping training and use the \ac{GSOCmap} cookbook as guidance for their mapping efforts. As an exchange, each country shares its national \ac{GSOCmap} by compliance of several criteria e.g. reporting of the meta-data of the \ac{SOC} sampling (sample timeline, sample depth, bulk density etc.), uncertainty assessment, and the applied methods for the estimation and interpolation of the \ac{SOC} content. For interpolating, the leading organizations suggest the following approaches: simple geo-matching, class-matching, multiple linear regression, random forest or support vector machines. The national maps are aggregated to the final \ac{GSOCmap} with a target resolution of 30 arc-seconds (approximately 1 km$^2$) in the \ac{CRS} \ac{WGS84}. The dataset is one single raster image as \ac{GTiff} coded in float covering the entire globe, where each pixel value is the \ac{SOC} content in Mg C ha$^{-1}$ at a soil depth of 0-30 cm \citep{FAO2018}.
 
-		The product is validated by comparing the pixel level estimates with soil sampling data from various soil databases (WoSIS, HWSD, etc.). In total 312122 samples where divided into three sub-levels (<150 Mg C ha$^{-1}$, >150 Mg C ha$^{-1}$, and all samples) and subsequently computed the \ac{ME}. The \ac{ME} of the entire sample space and <150 Mg C ha$^{-1}$ suggests that the mean \ac{SOCC} estimate is an overestimate of 1.6 and 4.5 Mg C ha$^{-1}$ respectively. All samples with a \ac{SOCC} content >150 Mg C ha$^{-1}$ show an underestimate by approximately 165 Mg C ha$^{-1}$ in the mean. Additionally, an uncertainty assessment was prepared to estimate a \ac{SD} between $\pm$ 0-16 t ha$^{-1}$ for the tropical zone. Unfortunately, is this assessment pretty rough and till now not available as a product. The \ac{GSOCmap} in comparison with other global \ac{SOC} products has the lowest \ac{RMSE}. In summary, the prepared validations show evidence that the \ac{GSOCmap} is a conservative data product with a tendency to underestimate the \ac{SOCC}.
+		The product is validated by comparing the pixel level estimates with soil sampling data from various soil databases (WoSIS, HWSD, etc.). In total 312 122 samples where divided into three sub-levels (<150 Mg C ha$^{-1}$, >150 Mg C ha$^{-1}$, and the entire stratum) and the mean errors were computed . The mean error of the entire sample space and of the <150 Mg C ha$^{-1}$ suggests that the mean \ac{SOC} content value is an overestimate of 1.6 and 4.5 Mg C ha$^{-1}$, respectively. All samples with a \ac{SOCC} content >150 Mg C ha$^{-1}$ show an underestimation of approximately 165 Mg C ha$^{-1}$ in the mean. In comparison with other global \ac{SOC} products, the \ac{GSOmap} has the lowest root mean square error. In summary, the prepared validations show evidences that the \ac{GSOCmap} is a conservative data product with a tendency to underestimate the \ac{SOC} content.
 
 		The dataset is publicly available at the homepage of the \ac{FAO}. As mentioned it consists of one raster image, therefore we download it by means of a Python script without any additional steps.
 
-	\subsection{Soil Organic Carbon}
-		\citeauthor{Don2010} performed the first study of tropical \ac{SOC} change for soil depth between 0 and 30 cm. For the study, a global meta-analysis is applied by using 358 (153 published an peer-reviewed) different studies to estimate \ac{SOC} change for 12 major \ac{LUC} types. The base date is derived from 39 different tropical countries covering all continents. Unfortunately, Africa and East-Asia are under-sampled whereas South America has the best data coverage. The meta-analysis is restricted to mineral soils therefore all wet soil types are excluded from the analysis \citeauthor{Don2010}. The 12 \ac{LC} transitions encompass the following \ac{LC} types: primary forest, secondary forest, grassland, cropland, and perennial crops. Primary forest is defined as natural vegetation without human impacts which includes natural grassland and shrubland. Secondary forest is managed forests and regrown forests after partial destruction of the old stand. Grassland comprises pastures for livestock but excludes natural grasslands. Cropland comprises annual crops like maize or beans and perennial crops could be coffee or sugar cane. For our study we used only the \ac{SOC} change estimates for these \ac{LUC} types which correspond to the \ac{GL30} and \ac{IFL} classification schema. The actual values are shown in table \ref{tab:soc_factors}.
+	\subsection{Soil Organic Carbon change}
+		\citet{Don2010} performed the first study of tropical \ac{SOC} changes resulting from \ac{LU} change for a soil depth between 0 and 30 cm. We will use the empirical data to determine the cumulative \ac{SOC} emissions by \ac{LC} transitions through \acp{PDD}. For the study, a global meta-analysis is applied by using 358 (153 published an peer-reviewed) different studies to estimate \ac{SOC} change for 12 major \ac{LU} change types. The base data is derived from 39 different tropical countries covering all continents. All regions are not equally covered by the studies included in the meta-analysis: Africa and East-Asia are under-sampled, while South America has the best data coverage. The meta-analysis is restricted to mineral soils, therefore all wet soil types are excluded from the analysis. The 12 \ac{LU} transitions encompass the following \ac{LU} types: primary forest, secondary forest, grassland, cropland, and perennial crops. Primary forest is defined as natural vegetation without human impacts, which includes natural grassland and shrubland. Secondary forest represents managed forests and regrown forests after partial destruction of the old natural stand. Grassland comprises pastures for livestock but excludes natural grasslands. Cropland comprises annual crops like maize or beans, while perennial crop examples could be coffee or sugar cane. For our study we used only the \ac{SOC} change estimates for these \ac{LU} types which correspond to the \ac{GL30} and \ac{IFL} classification scheme table \ref{tab:soc_factors}.
 		\begin{table}[ht]
 			\centering
-			\caption[Relative soil organic carbon change for certain land-use change types]{\textbf{Relative soil organic carbon change for certain land-use change types:} The Land-use change columns from and to define the LUC type with the corresponding relative Soil Organic Carbon (SOC) change and the Standard Error of the Mean (SEM) \citep{Don2010}.}
+			\caption[Relative soil organic carbon change for certain land-use change types]{\textbf{Relative soil organic carbon change for certain land-use change types:} The land use change (LUC) columns from and to define the land use change type with the corresponding relative soil organic carbon (SOC) change and the standard error of the mean (SEM) \citep{Don2010}.}
 			\label{tab:soc_factors}
 			\begin{tabular}{lrr}
 				\hline
-				LUC type & \multicolumn{2}{c}{Relative SOC change} \\
-				From$\rightarrow$To & [\%] & SEM \\\hline
+				LUC type & \multicolumn{2}{c}{Relative SOC change} \\\cline{2-3}
+				From$\rightarrow$To & [\%] & SEM [\%] \\\hline
 				Primary forest$\rightarrow$Grassland & -12.1 & $\pm$2.3 \\
 				Primary forest$\rightarrow$Cropland & -25.2 & $\pm$3.3 \\
 				Primary forest$\rightarrow$Secondary forest & -8.6 & $\pm$2.0 \\
@@ -104,23 +103,18 @@
 
 	\subsection{Ecosystem Service Values}
 	\label{subsec:methods_data_esv}
-	%TODO sort table as: co, dg, wb
-	%TODO add  2007 Int'I\$ y^-1 ha^-1, Geary-Khamis Dollar
-		\note{Pending},
-		which type of ecosystem services are included in the biome types
+		\note{Pending}
 		\begin{table}[ht]
 			\centering
-			\caption[Selection of Ecosystem Service Values (ESV) used in this study]{\textbf{Selection of Ecosystem Service Values (ESV) per biome used in this study:} ESV per biome and its monetary value in Int.\$ ha$^{-1}$. Dg refers to data from \citeauthor{Groot2012}, Co from \citeauthor{Costanza2014}, and Wb from \citeauthor{Siikamaki2015}.\citep{Groot2012,Costanza2014,Siikamaki2015}}
+			\caption[Ecosystem service values (ESV) used in this study]{\textbf{Ecosystem service values (ESV) per biome used in this study:} ESV per biome and its monetary value in 2007 Int'I\$ y$^{-1}$ ha$^{-1}$ also know as Geary-Khamis Dollar. Co refers to data from \citet{Costanza2014}, Dg from \citet{Groot2012}, and Wb from \citet{Siikamaki2015}.}
 			\label{tab:esv_factors}
 			\begin{tabular}{lrrr}
 				\hline
-				Biome & Dg & Co & Wb \\\hline
-				Cropland & - & 5,567 & -\\
-				Forest tropical & 5,264 & 5,382 & 1,312\\
-				Grass/Rangelands & 2,871 & 4166 & -\\
-				Wetlands & 25,682 & 140,174 & -\\
-				Lakes/Rivers & 4,267 & 12,512 & -\\
-				Urban & - & 6,661 & -\\\hline
+				Biome & Co & Dg & Wb \\\hline
+				Cropland & 5567 & - & -\\
+				Tropical forest & 5382 & 5264 & 1312\\
+				Grass/Rangelands & 4166 & 2871 & -\\
+				Urban & 6661 & - & -\\\hline
 			\end{tabular}
 		\end{table}
 
@@ -179,7 +173,6 @@
 		\subsubsection{Proximate deforestation driver}
 		\label{subsubsec:methods_proximate_deforestation_driver}
 		%TODO flowchart add reclassification
-		%TODO how aggreagted: hexagonal, natural earth for countries (low resolution from R)
 		%TODO mention your definition of ppd classes, goes after haversine equation
 			Based on our forest definition developed in the previous section we want to classify all the tropical deforestation within a canopy density of $(10,100]$ percent between 2001 till 2010. Additionally, we must consider the mean miss-classification rate of 52 \% by previous findings of \citeauthor{Seydewitz2017} \citep{Seydewitz2017}. Therefore we have to develop a feasible method to resolve this issue.
 
@@ -200,6 +193,7 @@
 				}
 				\right)
 			\end{equation}
+			We aggregated our results on \acp{PDD} for country, continental and global scale by using the administrative bounds of the natural earth layer. To present our results as maps for the three continental regions we developed our own visualization approach that is explained in section \ref{subsec:methods_binning}.
 
 		\subsubsection{Accuracy assessment}
 		%TODO convert expressions to i,j
@@ -334,7 +328,7 @@
 		\label{eq:esv_balance}
 			ESV_{balance} = ESV_{gain} - ESV_{loss}
 		\end{equation}
-		For our study we aggregated the \ac{ESV} loss, gain, and balance dynamics on two spatial ranges with the following extent: per continental region (Latin America, Africa, and Asia/Australia) highlighted in figure \ref{fig:aligned_tiles} and on global scale.
+		For our study we aggregated the \ac{ESV} loss, gain, and net balance dynamics on two spatial ranges with the following extent: per continental region (Latin America, Africa, and Asia/Australia) highlighted in figure \ref{fig:aligned_tiles} and on global scale.
 
 	\subsection{Binning analysis and visualization}
 	\label{subsec:methods_binning}
