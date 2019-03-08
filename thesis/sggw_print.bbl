@@ -1,4 +1,4 @@
-\begin{thebibliography}{78}
+\begin{thebibliography}{80}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -289,6 +289,14 @@ Foody G.~M.
 \newblock \emph{Remote Sensing of Environment}, 80\penalty0 (1):\penalty0
   185--201, April 2002.
 \newblock \doi{10.1016/s0034-4257(01)00295-4}.
+
+\bibitem[Furumo and Aide(2017)]{Furumo2017}
+Furumo P.~R. and Aide T.~M.
+\newblock Characterizing commercial oil palm expansion in {L}atin {A}merica:
+  land use change and trade.
+\newblock \emph{Environmental Research Letters}, 12\penalty0 (2):\penalty0
+  024008, February 2017.
+\newblock \doi{10.1088/1748-9326/aa5892}.
 
 \bibitem[Goetze et~al.(2006)Goetze, Horsch, and Porembski]{Goetze2006}
 Goetze D., Horsch B., and Porembski S.
@@ -583,6 +591,14 @@ Rossum G., van and Development T.
 \newblock Online, 2018.
 \newblock URL \url{https://docs.python.org/3.5/download.html}.
 \newblock Python Software Foundation.
+
+\bibitem[Vijay et~al.(2018)Vijay, Reid, Finer, Jenkins, and Pimm]{Vijay2018}
+Vijay V., Reid C.~D., Finer M., Jenkins C.~N., and Pimm S.~L.
+\newblock Deforestation risks posed by oil palm expansion in the {P}eruvian
+  {A}mazon.
+\newblock \emph{Environmental Research Letters}, 13\penalty0 (11):\penalty0
+  114010, November 2018.
+\newblock \doi{10.1088/1748-9326/aae540}.
 
 \bibitem[Wang et~al.(2006)Wang, Zhang, Zhang, Li, Liu, Song, Li, Li, and
   Duan]{Wang2006}
