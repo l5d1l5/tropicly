@@ -1,22 +1,22 @@
 \select@language {english}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {2.1}{\ignorespaces Datasets used in this study}}{13}{table.2.1}
-\contentsline {table}{\numberline {2.2}{\ignorespaces Land cover classification of the GlobeLand30 product}}{17}{table.2.2}
-\contentsline {table}{\numberline {2.3}{\ignorespaces Relative soil organic carbon change for certain land-use change types}}{20}{table.2.3}
-\contentsline {table}{\numberline {2.4}{\ignorespaces Ecosystem service values (ESV) used in this study}}{21}{table.2.4}
-\contentsline {table}{\numberline {2.5}{\ignorespaces Jaccard Index coefficient matrix}}{25}{table.2.5}
-\contentsline {table}{\numberline {2.6}{\ignorespaces A general model of a confusion matrix}}{29}{table.2.6}
-\contentsline {table}{\numberline {2.7}{\ignorespaces Scenario one mapping of soil organic carbon change to porixmate driver}}{32}{table.2.7}
-\contentsline {table}{\numberline {2.8}{\ignorespaces Scenario two mapping of soil organic carbon change to porixmate driver}}{32}{table.2.8}
-\contentsline {table}{\numberline {2.9}{\ignorespaces Biome ESV types corresponding to PDD classes}}{34}{table.2.9}
+\contentsline {table}{\numberline {2.1}{\ignorespaces Datasets used in this study}}{15}{table.2.1}
+\contentsline {table}{\numberline {2.2}{\ignorespaces Land cover classification of the GlobeLand30 product}}{19}{table.2.2}
+\contentsline {table}{\numberline {2.3}{\ignorespaces Relative soil organic carbon change for certain land-use change types}}{22}{table.2.3}
+\contentsline {table}{\numberline {2.4}{\ignorespaces Ecosystem service values (ESV) used in this study}}{23}{table.2.4}
+\contentsline {table}{\numberline {2.5}{\ignorespaces Jaccard Index coefficient matrix}}{27}{table.2.5}
+\contentsline {table}{\numberline {2.6}{\ignorespaces A general model of a confusion matrix}}{31}{table.2.6}
+\contentsline {table}{\numberline {2.7}{\ignorespaces Scenario one mapping of soil organic carbon change to porixmate driver}}{34}{table.2.7}
+\contentsline {table}{\numberline {2.8}{\ignorespaces Scenario two mapping of soil organic carbon change to porixmate driver}}{34}{table.2.8}
+\contentsline {table}{\numberline {2.9}{\ignorespaces Biome ESV types corresponding to PDD classes}}{36}{table.2.9}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {3.1}{\ignorespaces Continental experiment group comparison}}{41}{table.3.1}
-\contentsline {table}{\numberline {3.2}{\ignorespaces Continental experiment group directional comparison}}{42}{table.3.2}
-\contentsline {table}{\numberline {3.3}{\ignorespaces Global experiment group comparison}}{44}{table.3.3}
-\contentsline {table}{\numberline {3.4}{\ignorespaces Global experiment group directional comparison}}{44}{table.3.4}
-\contentsline {table}{\numberline {3.5}{\ignorespaces Confussion matrix}}{58}{table.3.5}
-\contentsline {table}{\numberline {3.6}{\ignorespaces Ecosystem service value balance}}{60}{table.3.6}
+\contentsline {table}{\numberline {3.1}{\ignorespaces Continental experiment group comparison}}{43}{table.3.1}
+\contentsline {table}{\numberline {3.2}{\ignorespaces Continental experiment group directional comparison}}{44}{table.3.2}
+\contentsline {table}{\numberline {3.3}{\ignorespaces Global experiment group comparison}}{46}{table.3.3}
+\contentsline {table}{\numberline {3.4}{\ignorespaces Global experiment group directional comparison}}{46}{table.3.4}
+\contentsline {table}{\numberline {3.5}{\ignorespaces Confussion matrix}}{61}{table.3.5}
+\contentsline {table}{\numberline {3.6}{\ignorespaces Ecosystem service value balance}}{63}{table.3.6}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

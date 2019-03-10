@@ -1,4 +1,4 @@
-\begin{thebibliography}{80}
+\begin{thebibliography}{84}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -272,11 +272,23 @@ Don A., Schumacher J., and Freibauer A.
   November 2010.
 \newblock \doi{10.1111/j.1365-2486.2010.02336.x}.
 
+\bibitem[FAO(2010)]{FAO2010}
+FAO.
+\newblock Global forest resources assessment 2010.
+\newblock resreport, Food and Agriculture Organization of the United Nations,
+  2010.
+
 \bibitem[FAO(2012)]{FAO2012}
 FAO.
 \newblock {FRA} 2015 terms and definitions.
 \newblock resreport, Food and Agriculture Organization of the United Nations,
   2012.
+
+\bibitem[FAO(2016)]{FAO2016}
+FAO.
+\newblock Global forest resources assessment 2015.
+\newblock resreport, Food and Agriculture Organization of the United Nations,
+  2016.
 
 \bibitem[FAO and ITPS(2018)]{FAO2018}
 FAO and ITPS.
@@ -297,6 +309,11 @@ Furumo P.~R. and Aide T.~M.
 \newblock \emph{Environmental Research Letters}, 12\penalty0 (2):\penalty0
   024008, February 2017.
 \newblock \doi{10.1088/1748-9326/aa5892}.
+
+\bibitem[Geist and Lambin(2001)]{Geist2001}
+Geist H.~J. and Lambin E.~F.
+\newblock \emph{What drives tropical deforestation}.
+\newblock LUCC, 2001.
 
 \bibitem[Goetze et~al.(2006)Goetze, Horsch, and Porembski]{Goetze2006}
 Goetze D., Horsch B., and Porembski S.
@@ -620,6 +637,13 @@ Wood C.~H.
 \newblock Introduction - deforestation and land use in the {A}mazon.
 \newblock In \emph{Deforestation and land use in the {A}mazon}, pages 1--38.
   University Press of Florida, 2002.
+
+\bibitem[WWF(2016)]{WWF2016}
+WWF.
+\newblock \emph{Living {P}lanet {R}eport 2016: {R}isk and resilience in a new
+  era}.
+\newblock WWW International, 2016.
+\newblock ISBN 978-2-940529-40-7.
 
 \bibitem[Yang et~al.(2017)Yang, Xiao, Feng, and Li]{Yang2017}
 Yang Y., Xiao P., Feng X., and Li H.
