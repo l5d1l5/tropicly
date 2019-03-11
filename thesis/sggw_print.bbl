@@ -1,4 +1,4 @@
-\begin{thebibliography}{84}
+\begin{thebibliography}{85}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -208,6 +208,11 @@ Congalton R.~G.
 \newblock \emph{Remote Sensing of Environment}, 37\penalty0 (1):\penalty0
   35--46, July 1991.
 \newblock \doi{10.1016/0034-4257(91)90048-b}.
+
+\bibitem[Corley and Tinker(2016)]{Corley2016}
+Corley R. H.~V. and Tinker P.~B.
+\newblock \emph{The oil palm}.
+\newblock Wiley Blackwell, fifth edition, 2016.
 
 \bibitem[Costanza et~al.(1997)Costanza, d{\textquotesingle}Arge, de~Groot,
   Farber, Grasso, Hannon, Limburg, Naeem, O{\textquotesingle}Neill, Paruelo,
