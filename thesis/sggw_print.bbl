@@ -1,4 +1,4 @@
-\begin{thebibliography}{85}
+\begin{thebibliography}{87}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -398,6 +398,14 @@ Hosonuma N., Herold M., Sy V.~D., Fries R. S.~D., Brockhaus M., Verchot L.,
   1--12, October 2012.
 \newblock \doi{10.1088/1748-9326/7/4/044009}.
 
+\bibitem[Houghton(2012)]{Houghton2012a}
+Houghton R.~A.
+\newblock Carbon emissions and the drivers of deforestation and forest
+  degradation in the tropics.
+\newblock \emph{Current Opinion in Environmental Sustainability}, 4\penalty0
+  (6):\penalty0 597--603, dec 2012.
+\newblock \doi{10.1016/j.cosust.2012.06.006}.
+
 \bibitem[Ickowitz et~al.(2015)Ickowitz, Slayback, Asanzi, and
   Nasi]{Ickowitz2015}
 Ickowitz A., Slayback D., Asanzi P., and Nasi R.~A.
@@ -530,6 +538,14 @@ Ren{\'{o}} V.~F., Novo E. M. L.~M., Suemitsu C., Renn{\'{o}} C.~D., and Silva
 \newblock \emph{Remote Sensing of Environment}, 115\penalty0 (12):\penalty0
   3446--3456, December 2011.
 \newblock \doi{10.1016/j.rse.2011.08.008}.
+
+\bibitem[Ruf et~al.(2014)Ruf, Schroth, and Doffangui]{Ruf2014}
+Ruf F., Schroth G., and Doffangui K.
+\newblock Climate change, cocoa migrations and deforestation in {W}est
+  {A}frica: what does the past tell us about the future?
+\newblock \emph{Sustainability Science}, 10\penalty0 (1):\penalty0 101--111,
+  November 2014.
+\newblock \doi{10.1007/s11625-014-0282-4}.
 
 \bibitem[Sampat et~al.(2009)Sampat, Wang, Gupta, Bovik, and Markey]{Sampat2009}
 Sampat M.~P., Wang Z., Gupta S., Bovik A.~C., and Markey M.~K.

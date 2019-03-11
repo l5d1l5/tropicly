@@ -3,44 +3,44 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: sggw_print.aux
 The style file: tobinat.bst
 Database file #1: literature.bib
-You've used 85 entries,
+You've used 87 entries,
             2773 wiz_defined-function locations,
-            1214 strings with 24811 characters,
-and the built_in function-call counts, 47486 in all, are:
-= -- 4136
-> -- 3631
-< -- 36
-+ -- 1226
-- -- 1140
-* -- 4453
-:= -- 7619
-add.period$ -- 327
-call.type$ -- 85
-change.case$ -- 640
-chr.to.int$ -- 84
-cite$ -- 170
-duplicate$ -- 1740
-empty$ -- 3170
-format.name$ -- 1241
-if$ -- 9598
+            1228 strings with 25269 characters,
+and the built_in function-call counts, 48415 in all, are:
+= -- 4226
+> -- 3671
+< -- 37
++ -- 1240
+- -- 1152
+* -- 4538
+:= -- 7761
+add.period$ -- 335
+call.type$ -- 87
+change.case$ -- 650
+chr.to.int$ -- 86
+cite$ -- 174
+duplicate$ -- 1781
+empty$ -- 3251
+format.name$ -- 1255
+if$ -- 9790
 int.to.chr$ -- 2
 int.to.str$ -- 1
-missing$ -- 76
-newline$ -- 499
-num.names$ -- 340
-pop$ -- 1121
+missing$ -- 78
+newline$ -- 511
+num.names$ -- 348
+pop$ -- 1136
 preamble$ -- 1
-purify$ -- 550
+purify$ -- 558
 quote$ -- 0
-skip$ -- 1365
+skip$ -- 1391
 stack$ -- 0
-substring$ -- 1537
-swap$ -- 171
+substring$ -- 1591
+swap$ -- 175
 text.length$ -- 6
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 910
+type$ -- 932
 warning$ -- 0
-while$ -- 371
+while$ -- 381
 width$ -- 0
-write$ -- 1240
+write$ -- 1270
