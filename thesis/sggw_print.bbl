@@ -1,4 +1,4 @@
-\begin{thebibliography}{87}
+\begin{thebibliography}{88}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -97,13 +97,6 @@ Beach T.
 \newblock \emph{Physical Geography}, 19\penalty0 (5):\penalty0 378--405,
   September 1998.
 \newblock \doi{10.1080/02723646.1998.10642657}.
-
-\bibitem[Boucher et~al.(2011)Boucher, Elias, Lininger, May-Tobin, Roquemore,
-  and Saxon]{Boucher2011}
-Boucher D., Elias P., Lininger K., May-Tobin C., Roquemore S., and Saxon E.
-\newblock \emph{The root of the problem: {W}hats driving tropical deforestation
-  today?}
-\newblock Union of concerned scientists, 2011.
 
 \bibitem[Cabral et~al.(2011)Cabral, Vasconcelos, Oom, and Sardinha]{Cabral2011}
 Cabral A. I.~R., Vasconcelos M.~J., Oom D., and Sardinha R.
@@ -208,6 +201,15 @@ Congalton R.~G.
 \newblock \emph{Remote Sensing of Environment}, 37\penalty0 (1):\penalty0
   35--46, July 1991.
 \newblock \doi{10.1016/0034-4257(91)90048-b}.
+
+\bibitem[Connette et~al.(2016)Connette, Connette, Bernd, Phyo, Aung, Tun,
+  Thein, Horning, Leimgruber, and Songer]{Connette2016}
+Connette K.~L., Connette G., Bernd A., Phyo P., Aung K., Tun Y., Thein Z.,
+  Horning N., Leimgruber P., and Songer M.
+\newblock Assement of mining extent and expansion in {M}yanmar based on freely
+  available satellite imagery.
+\newblock \emph{Remote Sensing}, 8\penalty0 (11):\penalty0 912, November 2016.
+\newblock \doi{10.3390/rs8110912}.
 
 \bibitem[Corley and Tinker(2016)]{Corley2016}
 Corley R. H.~V. and Tinker P.~B.
@@ -319,6 +321,13 @@ Furumo P.~R. and Aide T.~M.
 Geist H.~J. and Lambin E.~F.
 \newblock \emph{What drives tropical deforestation}.
 \newblock LUCC, 2001.
+
+\bibitem[Geist and Lambin(2002)]{Geist2002}
+Geist H.~J. and Lambin E.~F.
+\newblock {P}roximate {C}auses and {U}nderlying {D}riving {F}orces of
+  {T}ropical {D}eforestation.
+\newblock \emph{Bio Science}, 52\penalty0 (2):\penalty0 143--150, February
+  2002.
 
 \bibitem[Goetze et~al.(2006)Goetze, Horsch, and Porembski]{Goetze2006}
 Goetze D., Horsch B., and Porembski S.

@@ -1,12 +1,6 @@
 \chapter{Discussion}
 \label{ch:discussion}
-%TODO Research question
-%TODO Deforestation mechanisms
-%TODO Literature - compare your work to others
-%TODO Strength - selling points
-%TODO Limitations
-%TODO Future research opportunitie
-	\section{Deforestation}
+	\section{Proximate deforestation drivers}
 	\label{sec:discussion_deforestation}
 
 		\subsection{Forest definition}
@@ -23,14 +17,14 @@
 				\item Use this jaccard method to exclude tiles where the tree cover similarity fall below a certain threshold
 			\end{itemize}
 
-		\subsection{Tree cover and deforestation}
+		\subsection{Tree cover and deforestation patterns}
 		\label{subsec:discussion_tree_cover_and_deforestation}
 			\begin{itemize}
 				\item Improved tree cover map divide tree cover within hexagon by landmass within hexagon
 				\item Improved loss map divide loss by the tree cover within a hexagon
 			\end{itemize}
 
-		\subsection{Proximate deforestation driver}
+		\subsection{Mapping of proximate deforestation driver}
 		\label{subsec:discussion_proxy_deforestation_driver}
 			\begin{itemize}
 				\item Reclassification is not a good idea cause this approach leads not to consistent results
@@ -65,8 +59,11 @@
 		\end{itemize}
 
 	\section{Binning analysis and visualization}
-		\begin{itemize}
-			\item Cut polygon by line the Scala (1992) approach explained with parametric separation function, and bezier
-			\item A approach where ratio is also ratio of the hexagon area
-		\end{itemize}
+		We build our own algorithm to aggregate raster data by hexagonal binning. We developed an approach to present multivariate raster data by hexagonal binning in connection with a hexa pie chart and choropleth mapping.
+
+		What is good:
+		We show that hexagonal binning and a appropriate scaling can highlight spatial patterns as deforestation and tree cover maps show. Further the extended version of our hexagons can even show this patterns for multivariate data with more than 2 dimensions.
+
+		Improvements:
+		For the binning we decided to shift the initial hexagon to the point of origin and then translate each grid cell to it position by affine transformation. This was a bad decision because this transformation requires more operations than creating hexagon at its required position. Just create a hexagon at point of origin and then do vector addition with required midpoint. The piechart generation by our analytic solution dont generalize really well it works only for pointy hexagons. Scala presents an approach for cutting lines by an convex window. This approach could be modified to cut convex polygons. Problem of both 10\% are not 10\% of the hexagon area because we use y range to determine relative area. Hexagon have not equal area at each point of y. A better solution is to use scaling if 20 just scale polygon 20 percent smaller.
 
