@@ -1,4 +1,4 @@
-\begin{thebibliography}{88}
+\begin{thebibliography}{92}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -437,6 +437,11 @@ Jacobson A., Dhanota J., Godfrey J., Jacobson H., Rossman Z., Stanish A.,
   October 2015.
 \newblock \doi{10.1016/j.envsoft.2015.06.011}.
 
+\bibitem[Jordan and Montagnini(2005)]{Jordan2005}
+Jordan C.~F. and Montagnini F.
+\newblock \emph{Tropical forest ecology}.
+\newblock Springer, 2005.
+
 \bibitem[Kideghesho(2015)]{Kideghesho2015}
 Kideghesho J.~R.
 \newblock Realities on deforestation in {T}anzania-trends, drivers,
@@ -520,6 +525,15 @@ Nawir A.~A. and Rumboko L.
 \newblock History and state of deforestation and land degradation.
 \newblock In \emph{Forest rehabilitation in {I}ndonesia}, pages 11--33. Center
   for International Forestry Research, 2007.
+
+\bibitem[Olofsson et~al.(2014)Olofsson, Foody, Herold, Stehman, Woodcock, and
+  Wulder]{Olofsson2014}
+Olofsson P., Foody G.~M., Herold M., Stehman S.~V., Woodcock C.~E., and Wulder
+  M.~A.
+\newblock Good practices for estimating area and assessing accuracy of land
+  change.
+\newblock \emph{Remote Sensing of Environment}, 148:\penalty0 42--57, May 2014.
+\newblock \doi{10.1016/j.rse.2014.02.015}.
 
 \bibitem[Pacheco(2002)]{Pacheco2002}
 Pacheco P.
@@ -632,6 +646,14 @@ Sy V.~D., Herold M., Achard F., Beuchle R., Clevers J. G. P.~W., Lindquist E.,
   124004, November 2015.
 \newblock \doi{10.1088/1748-9326/10/12/124004}.
 
+\bibitem[Taubert et~al.(2018)Taubert, Fischer, Groeneveld, Lehmann, M{\"u}ller,
+  R{\"o}dig, Wiegand, and Huth]{Taubert2018}
+Taubert F., Fischer R., Groeneveld J., Lehmann S., M{\"u}ller M.~S., R{\"o}dig
+  E., Wiegand T., and Huth A.
+\newblock Global patterns of tropical forest fragmentation.
+\newblock \emph{Nature}, 554\penalty0 (7693):\penalty0 519--522, February 2018.
+\newblock \doi{10.1038/nature25508}.
+
 \bibitem[van Rossum and Development(2018)]{Rossum2018}
 Rossum G., van and Development T.
 \newblock The {P}ython language reference: release 3.5.6.
@@ -667,6 +689,13 @@ Wood C.~H.
 \newblock Introduction - deforestation and land use in the {A}mazon.
 \newblock In \emph{Deforestation and land use in the {A}mazon}, pages 1--38.
   University Press of Florida, 2002.
+
+\bibitem[Wright(2005)]{Wright2005}
+Wright S.~J.
+\newblock Tropical forests in a changing environment.
+\newblock \emph{Trends in Ecology and Evolution}, 20\penalty0 (10):\penalty0
+  553--560, oct 2005.
+\newblock \doi{10.1016/j.tree.2005.07.009}.
 
 \bibitem[WWF(2016)]{WWF2016}
 WWF.

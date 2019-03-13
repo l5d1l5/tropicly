@@ -83,6 +83,7 @@
 \newcommand*\note[1]{{\color{red} #1}}
 \renewcommand*{\captionformat}{ }
 
+\vbadness=10000
 %\recalctypearea
 
 %\usepackage{tabularx}
@@ -143,37 +144,37 @@
 
 % table of contents
 %TODO toc-depth 3 in print
-	\setcounter{secnumdepth}{3} 
-	\setcounter{tocdepth}{3}
-	\tableofcontents
-	\newpage
+		\setcounter{secnumdepth}{3} 
+		\setcounter{tocdepth}{3}
+		\tableofcontents
+	\clearpage
 
 % content
 		\input{1_introduction/introduction.tex}
-	\newpage
+	\clearpage
 		\input{2_methods/methods.tex}
-	\newpage
+	\clearpage
 		\input{3_results/results.tex}
-	\newpage
+	\clearpage
 		\input{4_discussion/discussion.tex}
-	\newpage
+	\clearpage
 		\input{5_conclusion/conclusion.tex}
-	\newpage
+	\clearpage
 %		\input{acknowledgements/acknowledge.tex}
-%	\newpage
+%	\clearpage
 		\input{references/references.tex}
-	\newpage
+	\clearpage
 
 	\pagenumbering{Roman}
 	\setcounter{page}{1}
 
 % lists
 		\input{lists/lists.tex}
-	\newpage
+	\clearpage
 
 % appendix
 		\input{appendix/appendix.tex}
-	\newpage
+	\clearpage
 
 % share approval
 %		\input{share/sggw_share.tex}
