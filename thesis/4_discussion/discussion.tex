@@ -38,9 +38,17 @@
 		\subsection{Mapping of proximate deforestation driver}
 		\label{subsec:discussion_proxy_deforestation_driver}
 			\begin{itemize}
-				\item The line clipping approach described by \citep{Skala1994} could be used in a modified version to generalize our pie chart generation for the set of convex polygons.
-				\item A separation function can be used to determine if the point is above or under the split line.
+				\item We analyzed the spatial patterns and magnitude of PDDs at an regional, continental and global scale.
+				\item compare to other studies
 				\item 
+				\item To present spatial patterns we developed our own visualization approach.
+				\item This approach can present multivariate data in a comprehensive and accessible way.
+				\item There are still improvements which can be done: the split algorithm can be modified and the pie chart needs a revisit.
+				\item In case of the split algorithm the line clipping approach described by \citep{Skala1994} could be used in a modified version to generalize our pie chart generation for the set of convex polygons.
+				\item A separation function can be used to determine if the point is above or under the split line and then the intersection can be determined.
+				\item A large problem is the relative are representation. We use the y range to determine the point were we split the hexagon.
+				\item But hexagon have no equal are like squares, therefore 25\% are not 25\% of the hexagon area.
+				\item To solve this we could use a scaling representation
 			\end{itemize}
 
 		\subsection{Accuracy assessment}
@@ -55,32 +63,27 @@
 
 	\section{Ecosystem service values}
 		\begin{itemize}
-			\item We estimated the esv dynamics on a global and continental level by using 3 common esv datasets.
-
+			\item We estimated the esv dynamics on a global and continental level by using benefit transfer. 
+			\item We used three different datasets to do so.
+			\item Tropical tree cover loss account for an \ac{ESV} loss of 414.1, 405.2, and 101.1 billion dollar per year for co, dg, and wb, respectively.
+			\item \citep{Song2018} estimates that tree cover loss account for an loss 550.7 billion dollar per year by applying the unit values of costanza.
+			\item The difference can be attributed that song used the entire gfc dataset to compute the esv of forest loss.
+			\item In regards of the differences between the estimates of the three datasets.
 			\item \citep{Groot2012} unit values are from the same database as \citep{Costanza2014} only from a earlier state.
-			\item Therefore this unit values can be replaced by the values of \citep{Costanza2014}.
-			\item \citep{Costanza2014} is the dataset which covers most biomes but the global unit values must be revised.
-			\item Our analysis shows that the global unit value for cropland is to high.
-			\item Forest that is replaced entirely by cropland would have an higher esv than before.
-			\item Further the regrowth considered as tropical forest changes not the total esv value.
-			\item 
+			\item Therefore this unit values can be replaced by the values of \citep{Costanza2014} and must not considered for other studies.
+			\item \citep{Costanza2014} is the dataset which covers the most biomes.
+			\item This dataset is to favor to account esv changes for forest cover changes because a large number of change biomes can be considered by the aggregation. 
 			\item The dataset of \citep{Siikamaki2015} has the smallest unit value for forest.
-			\item This can be attributed to the small number of ecosystem services included in this dataset
-
-			\item resilience of esv loss could be achieved over optimizing total value of the new land-use
-			\item target optimization is use the clearcut by maximizing profit and minimizing the esv loss
-			\item large differences between the datasets
-			\item till now the most complete data for global estimates is \citeauthor{Costanza2014}
-			\item \citeauthor{Groot2012} global values are redundant because nearly same estimate for tropical forest and smaller number of biomes is represented by this dataset
-			\item \citeauthor{Siikamaki2015} provides forest values which consider only a small amount of ecosystem services but it provides for each country a individual value
+			\item The large difference between the global unit values can be attributed to differences in ecosystem services they consider
+			\item Therefore the estimated of co and wb are not comparable.
+			\item The net esv loss account for -47.3, -121.5, and -43.7 billion dollar per year.
+			\item As this values show is the loss of esv by magnitudes smaller if we consider the transition of forest land to other land cover types.
+			\item Due to lack of other studies performed these kind of analysis we can not compare our results.
+			\item Till know the esv are computed only for global land cover change dynamics for all land cover classes.
+			\item This reveals a fundamental problem of applying esv estimates to land cover change dynamics.
+			\item If the entire forest cover is replaced by cropland or artificial than the net balance is positive.
+			\item This means the new land cover would have a greater esv than the old forest cover.
+			\item Further problematic is the handling of secondary forest, tree crops.
+			\item If we stick to biomes they must be computed with the forest class but this is questionable.
+			\item Therefore a greater variety of esv unit values is needed for more diverse biomes. 
 		\end{itemize}
-
-	\section{Binning analysis and visualization}
-		We build our own algorithm to aggregate raster data by hexagonal binning. We developed an approach to present multivariate raster data by hexagonal binning in connection with a hexa pie chart and choropleth mapping.
-
-		What is good:
-		We show that hexagonal binning and a appropriate scaling can highlight spatial patterns as deforestation and tree cover maps show. Further the extended version of our hexagons can even show this patterns for multivariate data with more than 2 dimensions.
-
-		Improvements:
-		For the binning we decided to shift the initial hexagon to the point of origin and then translate each grid cell to it position by affine transformation. This was a bad decision because this transformation requires more operations than creating hexagon at its required position. Just create a hexagon at point of origin and then do vector addition with required midpoint. The piechart generation by our analytic solution dont generalize really well it works only for pointy hexagons. Scala presents an approach for cutting lines by an convex window. This approach could be modified to cut convex polygons. Problem of both 10\% are not 10\% of the hexagon area because we use y range to determine relative area. Hexagon have not equal area at each point of y. A better solution is to use scaling if 20 just scale polygon 20 percent smaller.
-
