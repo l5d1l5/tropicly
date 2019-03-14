@@ -6,15 +6,26 @@
 		\subsection{Forest definition}
 		\label{subsec:discussion_forest_definition}
 			\begin{itemize}
-				\item For a regional approach a better solution could be to select for each region independently the right canopy density. For America a good agreement between the tree cover could be achieved by selecting the second class. For Asia by selecting the first class and for africa the second. Even better would be to decide per tile individually which canopy density should be selected. This would eliminate regional effects of different forest densities.
-				\item discuss regions independently asia and america have large tree cover agreement
-				\item africa has the lowest agreement only core forest zones show high similarity
-				\item To improve we should apply for each tile a canopy class decision based on our analysis
-				\item This could improve the improve the similarity (accuracy) by maximizing the sample count
-				\item Extent method by analyzing the differences per clustering
-				\item Could be used for \citeauthor{Sannier2016} method as precursor to identify canopy densities which are worth for a detailed investigation
-				\item Algorithm draft for single similarity: Compute jaccard indexes for tile pair at different canopy densities, put results in a list, sort the list in decreasing order, pick the class where jaccard index is max
-				\item Use this jaccard method to exclude tiles where the tree cover similarity fall below a certain threshold
+				\item We developed an Procedure to harmonize the forest definition between two different datasets based on Jaccard Index and statistical testing.
+				\item We determined that the tree cover agreement between gfc and gl30 is at its maximum at 10\% with a median agreement of 65\% on the global level.
+				\item Whereas we did not tested if a smaller steps size could change this result or if canopy densities above 30\% yield better results.
+				\item Whereby above 30\% is not likely that the agreement increase because the gl30 data has there its upper threshold.
+				\item At an continental level the tree cover agreement between gfc and gl30 was largest in asia and americas (70 and 80 median), while africa has the smallest agreement.  
+				\item The low agreement in Africa could be attributed to the tendency of gfc to overestimate tree cover in sparse woodland \citep{Gross2017}.
+				\item Jaccard index has category focus and combines users and producers accuracy, while it omits true negatives. Therefore it puts large weight on agreement.
+				\item \citep{Li2017a} argues that the mixing of producers and users accuracy obscure information and overall accuracy which weights bot equally is to prefer as a metric.
+				\item But \citep{Li2017a} used the jaccard index for multi class problems, while we use it for binary classification.
+				\item Further, we require a metric which focuses the agreement and not consider agreement in disagreement.
+				\item As an example could show why the jaccard index is better for tree cover agreement: if tp and tn are equal and fp and fn are zero both indexes give 1, if all are equal sized overall accuracy is 0.5 and jaccard index is 0.33, if the agreement is zero and disagreement is n then overall accuracy is 1 and jaccard index is 0.
+				\item For the case if the agreement of tree cover must be highlighted this index is far better than overall accuracy.
+				\item Therefore our research could be useful for other studies which try to compare different tree cover datasets on their performance.
+				\item There are several studies which compare country data with global tree cover data \citep{Sannier2016,McRoberts2016,Gross2017}.
+				\item Because if the datasets match country definition this countries can effort better reporting of carbon emissions, monitor progress of nature conservation etc. without the effort of an own national remote sensing programm.
+				\item As example \citep{Sannier2016} tried to determine at which canopy density gfc matches the country dataset of Gabon.
+				\item They performed a accuracy assessment which different canopy densities but they relayed on visual inspection to determine which canopy density they should select.
+				\item With the our approach it could be automatized.
+				\item A algorithm proposal for smaller units or regional optimization: compute jaccard indexes for selected canopy density intervals and pick the greatest
+				\item Extent the method by carefully applied accuracy assessment of clustering of disagreement 
 			\end{itemize}
 
 		\subsection{Tree cover and deforestation patterns}
@@ -27,7 +38,9 @@
 		\subsection{Mapping of proximate deforestation driver}
 		\label{subsec:discussion_proxy_deforestation_driver}
 			\begin{itemize}
-				\item Reclassification is a good idea but not by the chosen approach because the probability is higher that it get assigned the label for the most common classes 
+				\item The line clipping approach described by \citep{Skala1994} could be used in a modified version to generalize our pie chart generation for the set of convex polygons.
+				\item A separation function can be used to determine if the point is above or under the split line.
+				\item 
 			\end{itemize}
 
 		\subsection{Accuracy assessment}
@@ -35,14 +48,25 @@
 			\begin{itemize}
 				\item Should be done by independent person was not the case
 				\item Should be improved by using approach discussed in \citep{Olofsson2014}
-				\item Do shit talk on kappa is not required
-				\item Check how many losses could be explained by the \ac{GL30} layer
+				\item This approach would add uncertainties in area estimates
 			\end{itemize}
 
 	\section{Emissions}
 
 	\section{Ecosystem service values}
 		\begin{itemize}
+			\item We estimated the esv dynamics on a global and continental level by using 3 common esv datasets.
+
+			\item \citep{Groot2012} unit values are from the same database as \citep{Costanza2014} only from a earlier state.
+			\item Therefore this unit values can be replaced by the values of \citep{Costanza2014}.
+			\item \citep{Costanza2014} is the dataset which covers most biomes but the global unit values must be revised.
+			\item Our analysis shows that the global unit value for cropland is to high.
+			\item Forest that is replaced entirely by cropland would have an higher esv than before.
+			\item Further the regrowth considered as tropical forest changes not the total esv value.
+			\item 
+			\item The dataset of \citep{Siikamaki2015} has the smallest unit value for forest.
+			\item This can be attributed to the small number of ecosystem services included in this dataset
+
 			\item resilience of esv loss could be achieved over optimizing total value of the new land-use
 			\item target optimization is use the clearcut by maximizing profit and minimizing the esv loss
 			\item large differences between the datasets

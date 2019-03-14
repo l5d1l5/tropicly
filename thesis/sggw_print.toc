@@ -25,19 +25,19 @@
 \contentsline {subsection}{\numberline {3.1.2}Tree cover and deforestation patterns}{48}{subsection.3.1.2}
 \contentsline {subsection}{\numberline {3.1.3}Mapping of proximate deforestation drivers}{55}{subsection.3.1.3}
 \contentsline {subsection}{\numberline {3.1.4}Accuracy assessment}{62}{subsection.3.1.4}
-\contentsline {section}{\numberline {3.2}Emissions}{62}{section.3.2}
+\contentsline {section}{\numberline {3.2}Emissions}{63}{section.3.2}
 \contentsline {section}{\numberline {3.3}Ecosystem service values}{63}{section.3.3}
 \contentsline {chapter}{\numberline {4}Discussion}{68}{chapter.4}
 \contentsline {section}{\numberline {4.1}Proximate deforestation drivers}{68}{section.4.1}
 \contentsline {subsection}{\numberline {4.1.1}Forest definition}{68}{subsection.4.1.1}
 \contentsline {subsection}{\numberline {4.1.2}Tree cover and deforestation patterns}{69}{subsection.4.1.2}
-\contentsline {subsection}{\numberline {4.1.3}Mapping of proximate deforestation driver}{69}{subsection.4.1.3}
-\contentsline {subsection}{\numberline {4.1.4}Accuracy assessment}{69}{subsection.4.1.4}
-\contentsline {section}{\numberline {4.2}Emissions}{69}{section.4.2}
-\contentsline {section}{\numberline {4.3}Ecosystem service values}{69}{section.4.3}
-\contentsline {section}{\numberline {4.4}Binning analysis and visualization}{70}{section.4.4}
-\contentsline {chapter}{\numberline {5}Conclusion}{71}{chapter.5}
-\contentsline {chapter}{Bibliography}{72}{chapter.5}
+\contentsline {subsection}{\numberline {4.1.3}Mapping of proximate deforestation driver}{70}{subsection.4.1.3}
+\contentsline {subsection}{\numberline {4.1.4}Accuracy assessment}{70}{subsection.4.1.4}
+\contentsline {section}{\numberline {4.2}Emissions}{70}{section.4.2}
+\contentsline {section}{\numberline {4.3}Ecosystem service values}{70}{section.4.3}
+\contentsline {section}{\numberline {4.4}Binning analysis and visualization}{71}{section.4.4}
+\contentsline {chapter}{\numberline {5}Conclusion}{72}{chapter.5}
+\contentsline {chapter}{Bibliography}{73}{chapter.5}
 \contentsline {chapter}{\nonumberline List of Figures}{I}{chapter*.38}
 \contentsline {chapter}{\nonumberline List of Tables}{II}{chapter*.39}
 \contentsline {chapter}{List of Abbreviations}{III}{chapter*.40}

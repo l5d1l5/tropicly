@@ -1,4 +1,4 @@
-\begin{thebibliography}{92}
+\begin{thebibliography}{95}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -354,6 +354,14 @@ Graesser J., Ramankutty N., and Coomes O.~T.
   084021, August 2018.
 \newblock \doi{10.1088/1748-9326/aad5bf}.
 
+\bibitem[Gross et~al.(2017)Gross, Achard, Dubois, Brink, and Prins]{Gross2017}
+Gross D., Achard F., Dubois G., Brink A., and Prins H. H.~T.
+\newblock Uncertainties in tree cover maps of {S}ub-{S}aharan {A}frica and
+  their implications for measuring progress towards {CBD} {A}ichi {T}argets.
+\newblock \emph{Remote Sensing in Ecology and Conservation}, 4\penalty0
+  (2):\penalty0 94--112, July 2017.
+\newblock \doi{10.1002/rse2.52}.
+
 \bibitem[Hansen et~al.(2013)Hansen, Potapov, Moore, Hancher, Turubanova,
   Tyukavina, Thau, Stehman, Goetz, Loveland, Kommareddy, Egorov, Chini,
   Justice, and Townshend]{Hansen2013}
@@ -463,14 +471,23 @@ Kummer D.~M. and Turner B.~L.
 \newblock The human causes of deforestation in {S}outheast {A}sia.
 \newblock \emph{BioScience}, 44\penalty0 (5):\penalty0 323--328, May 1994.
 
-\bibitem[Li et~al.(2017)Li, Sulla-Menashe, Motesharrei, Song, Kalnay, Ying, Li,
-  and Ma]{Li2017}
+\bibitem[Li et~al.(2017{\natexlab{a}})Li, Sulla-Menashe, Motesharrei, Kalnay,
+  Ying, Li, and Ma]{Li2017a}
+Li Y., Sulla-Menashe D., Motesharrei S., Kalnay X.-P.~S., Ying Q., Li S., and
+  Ma Z.
+\newblock Supplementary information for inconsistent estimates of forest cover
+  change in {C}hina between 2000 and 2013 from multiple datasets.
+\newblock \emph{Scientific reports}, 7\penalty0 (8748), August
+  2017{\natexlab{a}}.
+
+\bibitem[Li et~al.(2017{\natexlab{b}})Li, Sulla-Menashe, Motesharrei, Song,
+  Kalnay, Ying, Li, and Ma]{Li2017}
 Li Y., Sulla-Menashe D., Motesharrei S., Song X.-P., Kalnay E., Ying Q., Li S.,
   and Ma Z.
 \newblock Inconsistent estimates of forest cover change in {C}hina between 2000
   and 2013 from multiple datasets: differences in parameters, spatial
   resolution, and definitions.
-\newblock \emph{Scientific Reports}, 7\penalty0 (1), August 2017.
+\newblock \emph{Scientific Reports}, 7\penalty0 (1), August 2017{\natexlab{b}}.
 \newblock \doi{10.1038/s41598-017-07732-5}.
 
 \bibitem[Lowry(2019)]{Lowry2019}
@@ -628,6 +645,13 @@ Sitoe A., Salomao A., and Wertz-Kanounnikoff S.
 \newblock The context of {REDD+} in {M}ozambique: drivers, agents and
   institutions.
 \newblock resreport, CIFOR, 2012.
+
+\bibitem[Skala(1994)]{Skala1994}
+Skala V.
+\newblock O({$\log N$}) line clipping algorithm in {$E^2$}.
+\newblock \emph{Computers and Graphics}, 18\penalty0 (4):\penalty0 517--524,
+  July 1994.
+\newblock \doi{10.1016/0097-8493(94)90064-7}.
 
 \bibitem[Song(2018)]{Song2018}
 Song X.-P.
