@@ -6,45 +6,66 @@
 		\subsection{Forest definition}
 		\label{subsec:discussion_forest_definition}
 			\begin{itemize}
-				\item We developed an Procedure to harmonize the forest definition between two different datasets based on Jaccard Index and statistical testing.
-				\item We determined that the tree cover agreement between gfc and gl30 is at its maximum at 10\% with a median agreement of 65\% on the global level.
-				\item Whereas we did not tested if a smaller steps size could change this result or if canopy densities above 30\% yield better results.
-				\item Whereby above 30\% is not likely that the agreement increase because the gl30 data has there its upper threshold.
-				\item At an continental level the tree cover agreement between gfc and gl30 was largest in asia and americas (70 and 80 median), while africa has the smallest agreement.  
-				\item The low agreement in Africa could be attributed to the tendency of gfc to overestimate tree cover in sparse woodland \citep{Gross2017}.
-				\item Jaccard index has category focus and combines users and producers accuracy, while it omits true negatives. Therefore it puts large weight on agreement.
-				\item \citep{Li2017a} argues that the mixing of producers and users accuracy obscure information and overall accuracy which weights bot equally is to prefer as a metric.
-				\item But \citep{Li2017a} used the jaccard index for multi class problems, while we use it for binary classification.
+				\item We developed an Procedure to harmonize the forest definition between two different datasets based on \ac{JI} and statistical testing.
+				\item We determined that the tree cover agreement between \ac{GFC} and \ac{GL30} is at its maximum at 10\% canopy density with a agreement of 65\% in median on the global level.
+				\item Whereas, we did not tested if a smaller steps size could change this result or if canopy densities above 30\% yield better results.
+				\item Whereby, above 30\% it is not very likely that the agreement increase because the \ac{GL30}
+				data has there its upper threshold.
+				\item At an continental level the tree cover agreement between \ac{GFC} and \ac{GL30} is largest in Asia/Australia and Latin America (80\% and 70\% in median), while Africa has the smallest agreement in median between 30 and 40\%.  
+				\item The low tree cover agreement in Africa could be attributed to the tendency of \ac{GFC} to overestimate tree cover in sparse woodland \citep{Gross2017}.
+				\item The \ac{JI} has been criticized as metric to evaluate remotely sensed data. 
+				\item \ac{JI} has a category focus and combines users and producers accuracy, while it omits true negatives. Therefore, it puts large weight on agreement.
+				\item \citep{Li2017a} argues that the mixing of producers and users accuracy obscure information and overall accuracy, which weights bot equally is to prefer as a metric.
+				\item But \citep{Li2017a} used the \ac{JI} for multi class problems, while we use it for binary classification.
 				\item Further, we require a metric which focuses the agreement and not consider agreement in disagreement.
-				\item As an example could show why the jaccard index is better for tree cover agreement: if tp and tn are equal and fp and fn are zero both indexes give 1, if all are equal sized overall accuracy is 0.5 and jaccard index is 0.33, if the agreement is zero and disagreement is n then overall accuracy is 1 and jaccard index is 0.
+				\item As an example could show why the \ac{JI} is better for comparing tree cover agreement between to raster datasets: if tp and tn are equal and fp and fn are zero both indexes give 1, if all are equal sized overall accuracy is 0.5 and \ac{JI} is 0.33, if the agreement is zero and disagreement is n then overall accuracy is 1 and \ac{JI} is 0.
 				\item For the case if the agreement of tree cover must be highlighted this index is far better than overall accuracy.
 				\item Therefore our research could be useful for other studies which try to compare different tree cover datasets on their performance.
 				\item There are several studies which compare country data with global tree cover data \citep{Sannier2016,McRoberts2016,Gross2017}.
-				\item Because if the datasets match country definition this countries can effort better reporting of carbon emissions, monitor progress of nature conservation etc. without the effort of an own national remote sensing programm.
-				\item As example \citep{Sannier2016} tried to determine at which canopy density gfc matches the country dataset of Gabon.
+				\item Because if the datasets match country definition this countries can effort better reporting of carbon emissions, monitor progress of nature conservation etc. without the effort of an own national remote sensing program.
+				\item As example \citep{Sannier2016} tried to determine at which canopy density \ac{GFC} matches the country dataset of Gabon.
 				\item They performed a accuracy assessment which different canopy densities but they relayed on visual inspection to determine which canopy density they should select.
-				\item With the our approach it could be automatized.
-				\item A algorithm proposal for smaller units or regional optimization: compute jaccard indexes for selected canopy density intervals and pick the greatest
+				\item With our approach it could be automatized.
+				\item A algorithm proposal for smaller units or regional optimization: compute \ac{JI} for selected canopy density intervals and pick the greatest
 				\item Extent the method by carefully applied accuracy assessment of clustering of disagreement 
 			\end{itemize}
 
 		\subsection{Tree cover and deforestation patterns}
 		\label{subsec:discussion_tree_cover_and_deforestation}
 			\begin{itemize}
-				\item Improved tree cover map divide tree cover within hexagon by landmass within hexagon
-				\item Improved loss map divide loss by the tree cover within a hexagon
+				\item We analyzed the tree cover and deforestation patterns on global, continental, and regional scale between 2000 and 2010.
+				\item Between 2000 and 2010 anthropogenic deforestation account for a tree cover loss of 760314.7 km$^2$ at an global level.
 			\end{itemize}
 
 		\subsection{Mapping of proximate deforestation driver}
 		\label{subsec:discussion_proxy_deforestation_driver}
 			\begin{itemize}
-				\item We analyzed the spatial patterns and magnitude of PDDs at an regional, continental and global scale.
-				\item compare to other studies
-				\item 
+				\item We analyzed the spatial patterns and magnitude of PDDs at an regional, continental and global scale by aggregating the most recent global \ac{LC} datasets \ac{Gl30} and \ac{GFC} for the time frame 2000 till 2010.
+				\item On a global scale agricultural changes account for 79.7\% (cropland, pastures, and regrowth) of the deforestation.
+				\item Natural changes account for 1.8\% of the forest loss, while artificial changes account for 0.4\% of the forest loss. Other use causes account for 18.4\% of the forest change.
+				\item Rigorous comparing to other studies is not feasible because the methodology, period, and classification schema differs largely. 
+				\item In Latin America the dominant cause of deforestation is the expansion of pastures (40.8\%). 
+				\item This driver dominated the the forest change at the deforestation hot-spots of Brazil, Colombia, and Guatemala.
+				\item Cropland expansion is the major deforestation driver for the hot-spots in Paraguay, Argentina, and Bolivia.
+				\item In Asia/Australia the dominant proximate driver of deforestation are regrowth dynamics.
+				\item This can be attributed to the high amount of tree crops in Malaysia and Indonesia.
+				\item The deforestation hot-spots in Indonesia and Malaysia are dominated by regrowth dynamics, which could be the establishment of new tree crops and the rotational cycle as management practice.
+				\item The deforestation hot-spots in Laos and Vietnam are dominated by cropland expansion.
+				\item In Africa the dominant cause of forest loss is the expansion of pastures (46\%).
+				\item The causes of deforestation on country level show a large variation in Africa.
+				\item At the Ivory Cost the hot-spots are dominated by cropland expansion and regrowth dynamics. The causes are explained in the results section.
+				\item The deforestation hot-spots in the Democratic Republic of the Congo are dominated by pasture expansion.
+				\item In Angola the expansion of cropland is the major \ac{PDD} in the deforestation hot-spots.
+				\item In Mozambique and Tanzania causes for deforestation at the hot-spots are cropland and grassland expansion.
+				\item The deforestation hot-spots in Madagascar are dominated by regrowth dynamics which could be attributed to shifting agriculture \citep{Curtis2018}.
+
+				\item Describe why your approach is cool
+				\item Our approach can not explain complex interactions between multiple \acp{PDD} like degradation of forest cover by fuelwood collection and logging followed by a transition to cropland, which is common in Africa \citep{Geist2001,Cabral2011}.
+
 				\item To present spatial patterns we developed our own visualization approach.
 				\item This approach can present multivariate data in a comprehensive and accessible way.
 				\item There are still improvements which can be done: the split algorithm can be modified and the pie chart needs a revisit.
-				\item In case of the split algorithm the line clipping approach described by \citep{Skala1994} could be used in a modified version to generalize our pie chart generation for the set of convex polygons.
+				\item In case of the split algorithm the line clipping approach described by \citep{Skala1994} could be used in a modified version to generalize our pie chart generation for the entire set of convex polygons.
 				\item A separation function can be used to determine if the point is above or under the split line and then the intersection can be determined.
 				\item A large problem is the relative are representation. We use the y range to determine the point were we split the hexagon.
 				\item But hexagon have no equal are like squares, therefore 25\% are not 25\% of the hexagon area.
@@ -54,25 +75,29 @@
 		\subsection{Accuracy assessment}
 		\label{subsec:discussion_accuracy_assessment}
 			\begin{itemize}
-				\item Should be done by independent person was not the case
-				\item Should be improved by using approach discussed in \citep{Olofsson2014}
-				\item This approach would add uncertainties in area estimates
+				\item We performed an accuracy assessment for our \acp{PDD} mapping product derived from \ac{GL30} and \ac{GFC}.
+				\item The overall accuracy account for 75\%, while the most accurate classes in terms of producers accuracy are cropland, regrowth, grassland and shrubland (producers accuracy between 71 and 88\%).
+				\item Forest, wetland, water, artificial, and bareland have the lowest accuracy.
+				\item The accuracy assessment should be repeated by applying the approach described by \citet{Olofsson2014}.
+				\item By applying this we would gain for each \ac{PDD} class a uncertainty for the area estimate.
+				\item This would be an huge improvement, especially for the computation of derived features like the \ac{ESV} estimates or the \ac{SOC} emission estimates.
+				\item Further, it would improve the reliability of the accuracy assessment if independent experts perform it.
+				\item Both tasks independent validation and applying rigorous the approach described by \citeauthor{Olofsson2014} are future tasks. 
 			\end{itemize}
-
 	\section{Emissions}
 
 	\section{Ecosystem service values}
 		\begin{itemize}
-			\item We estimated the esv dynamics on a global and continental level by using benefit transfer. 
-			\item We used three different datasets to do so.
-			\item Tropical tree cover loss account for an \ac{ESV} loss of 414.1, 405.2, and 101.1 billion dollar per year for co, dg, and wb, respectively.
-			\item \citep{Song2018} estimates that tree cover loss account for an loss 550.7 billion dollar per year by applying the unit values of costanza.
-			\item The difference can be attributed that song used the entire gfc dataset to compute the esv of forest loss.
+			\item We estimated the \ac{ESV} dynamics on a global and continental level by using benefit transfer.
+			\item We derived the unit \ac{ESV} from the three datasets: \citet{Costanza2014,Groot2012,Siikamaki2015}.
+			\item Tropical tree cover loss account for an \ac{ESV} loss of 414.1, 405.2, and 101.1 billion dollar per year for Co, Dg, and Wb, respectively.
+			\item \citep{Song2018} estimates that tree cover loss account for an loss 550.7 billion dollar per year by applying the unit values of \citet{Costanza2014}.
+			\item The difference can be attributed that song used the entire \ac{GFC} dataset to compute the \ac{ESV} of forest loss.
 			\item In regards of the differences between the estimates of the three datasets.
 			\item \citep{Groot2012} unit values are from the same database as \citep{Costanza2014} only from a earlier state.
 			\item Therefore this unit values can be replaced by the values of \citep{Costanza2014} and must not considered for other studies.
 			\item \citep{Costanza2014} is the dataset which covers the most biomes.
-			\item This dataset is to favor to account esv changes for forest cover changes because a large number of change biomes can be considered by the aggregation. 
+			\item This dataset is to favor to account \ac{ESV} changes for forest cover changes because a large number of change biomes can be considered by the aggregation. 
 			\item The dataset of \citep{Siikamaki2015} has the smallest unit value for forest.
 			\item The large difference between the global unit values can be attributed to differences in ecosystem services they consider
 			\item Therefore the estimated of co and wb are not comparable.

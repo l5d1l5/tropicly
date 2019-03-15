@@ -4,7 +4,6 @@
 
 \section{Data}
 \label{sec:data}
-%TODO first paragraph/sentence "SO WHAT" why we used the dataset
 	\begin{table}[ht]
 		\centering
 		\caption[Datasets used in this study]{\textbf{Datasets used in this study}}
@@ -401,8 +400,7 @@
 				0 & 0 & 1
 			\end{bmatrix} \circ \mathbf{H}
 		\end{equation}
-		Goal: A pie chart within the area of a hexagon, split the hexagon in horizontal pieces which represent a ratio
-		How: Compute the y coordinate of the split line from the ratio, the distance between y1 and y2, compute from this the x coordinates
+		To create a hexagonal pie chart we must split the polygon into horizontal pieces in relation to a relative unit. To split a hexagon by a horizontal line in relation to a certain ratio we have to derive the $x$ and $y$ coordinates, which are located on the polygons convex hull. We compute the $y$ coordinates of the horizontal split line for the ratio $P$ by applying equation \ref{eq:hexagon_ratio}. 
 		\begin{equation}
 		\label{eq:hexagon_ratio}
 			y = \frac{P(y_2-y_1)}{100} + y_1

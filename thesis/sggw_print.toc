@@ -32,14 +32,14 @@
 \contentsline {subsection}{\numberline {4.1.1}Forest definition}{68}{subsection.4.1.1}
 \contentsline {subsection}{\numberline {4.1.2}Tree cover and deforestation patterns}{69}{subsection.4.1.2}
 \contentsline {subsection}{\numberline {4.1.3}Mapping of proximate deforestation driver}{70}{subsection.4.1.3}
-\contentsline {subsection}{\numberline {4.1.4}Accuracy assessment}{70}{subsection.4.1.4}
-\contentsline {section}{\numberline {4.2}Emissions}{71}{section.4.2}
-\contentsline {section}{\numberline {4.3}Ecosystem service values}{71}{section.4.3}
-\contentsline {chapter}{\numberline {5}Conclusion}{73}{chapter.5}
-\contentsline {chapter}{Bibliography}{74}{chapter.5}
-\contentsline {chapter}{\nonumberline List of Figures}{I}{chapter*.38}
-\contentsline {chapter}{\nonumberline List of Tables}{II}{chapter*.39}
-\contentsline {chapter}{List of Abbreviations}{III}{chapter*.40}
+\contentsline {subsection}{\numberline {4.1.4}Accuracy assessment}{71}{subsection.4.1.4}
+\contentsline {section}{\numberline {4.2}Emissions}{72}{section.4.2}
+\contentsline {section}{\numberline {4.3}Ecosystem service values}{72}{section.4.3}
+\contentsline {chapter}{\numberline {5}Conclusion}{74}{chapter.5}
+\contentsline {chapter}{Bibliography}{75}{chapter.5}
+\contentsline {chapter}{\nonumberline List of Figures}{I}{chapter*.39}
+\contentsline {chapter}{\nonumberline List of Tables}{II}{chapter*.40}
+\contentsline {chapter}{List of Abbreviations}{III}{chapter*.41}
 \contentsline {chapter}{\numberline {A}Hexagonal country boundaries}{V}{appendix.A}
 \contentsline {chapter}{\numberline {B}Forest definition}{VII}{appendix.B}
 \contentsline {chapter}{\numberline {C}Proximate deforestation drivers}{XI}{appendix.C}
