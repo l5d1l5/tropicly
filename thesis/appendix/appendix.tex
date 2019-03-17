@@ -1,66 +1,68 @@
 \appendix
 \chapter{Hexagonal country boundaries}
+%TODO map: country labels increase font size, sources is gadm
 \label{ch:appendix_a}
 	\begin{figure}[ht]
 		\centering
 		\includegraphics[scale=1.]{img/americas_hexagonal_boundaries}
-		\caption[Map of Latin America and its countries]{\textbf{Map of Latin America and its countries:} A}
+		\caption[Map of Latin America and its countries]{\textbf{Map of Latin America and its countries:} The map shows the hexagonal boundaries of Latin American countries, while the blue outlines highlight the administrative country boundaries in relation to the Global Administrative Areas layer.}
 		\label{fig:americas_hexagonal_appendix}
 	\end{figure}
 	\begin{figure}[ht]
 		\centering
 		\includegraphics[scale=1.]{img/asia_hexagonal_boundaries}
-		\caption[Map of Asia/Australia and its countries]{\textbf{Map of Asia/Australia and its countries:} A}
+		\caption[Map of Asia/Australia and its countries]{\textbf{Map of Asia/Australia and its countries:} The map shows the hexagonal boundaries of Asian/Australian countries, while the blue outlines highlight the administrative country boundaries in relation to the Global Administrative Areas layer.}
 		\label{fig:asia_hexagonal_appendix}
 	\end{figure}
 	\begin{figure}[t]
 		\centering
 		\includegraphics[scale=.98]{img/africa_hexagonal_boundaries}
-		\caption[Map of Africa and its countries]{\textbf{Map of Africa and its countries:} A}
+		\caption[Map of Africa and its countries]{\textbf{Map of Africa and its countries:} The map shows the hexagonal boundaries of African countries, while the blue outlines highlight the administrative country boundaries in relation to the Global Administrative Areas layer.}
 		\label{fig:africa_hexagonal_appendix}
 	\end{figure}
 
 \chapter{Forest definition}
 \label{ch:appendix_b}
-%TODO images: captions
 	\begin{table}[ht]
 		\centering
 		\caption[Comparison of tree cover agreement between regions]{\textbf{Comparison of tree cover agreement between regions:} This table shows, a comparison of tree cover agreement between regions. The classes $JI_0$, $JI_1$, $JI_2$, and $JI_3$ as row and column headings account for the canopy density classes (0,100], (10,100], (20,100], and (30,100], respectively. The test hypothesis is H$_0$: $X_1=X_2$ where $X_1$ is the column $JI_n$ class and $X_2$ the row $JI_n$ class. The significance is indicated by $p^{*}<0.05$, $p^{**}<0.02$, and $p^{***}<0.01$. We applied a Benjamini and Hochberg correction for multiple-pairwise testing.}
 		\label{tab:wilcoxononesided_comparison}
-		\begin{tabular}{llllllllll}
+		\begin{tabular}{lllllllllll}
 			\hline
-			& & \multicolumn{4}{|c}{Latin America} & \multicolumn{4}{|c|}{Asia/Australia} \\
-			& Cls & JI$_0$ & JI$_1$ & JI$_2$ & JI$_3$ & JI$_0$ & JI$_1$ & JI$_2$ & JI$_3$ \\\hline
+			& & \multicolumn{4}{c}{Latin America} && \multicolumn{4}{c}{Asia/Australia} \\\cline{3-6}\cline{8-11}
+			& Cls & JI$_0$ & JI$_1$ & JI$_2$ & JI$_3$ && JI$_0$ & JI$_1$ & JI$_2$ & JI$_3$ \\\hline
 			\multirow{4}{*}{\STAB{\rotatebox[origin=c]{90}{Asia}}}
-			& JI$_0$ & .04$^{*}$ & - & - & - & - & - & - & - \\
-			& JI$_1$ & - & .04$^{*}$ & - & - & - & - & - & - \\
-			& JI$_2$ & - & - & .05$^{*}$ & - & - & - & - & - \\
-			& JI$_3$ & - & - & - & .07 & - & - & - & - \\\cline{1-1}
+			& JI$_0$ & .04$^{*}$ & - & - & - && - & - & - & - \\
+			& JI$_1$ & - & .04$^{*}$ & - & - && - & - & - & - \\
+			& JI$_2$ & - & - & .05$^{*}$ & - && - & - & - & - \\
+			& JI$_3$ & - & - & - & .07 && - & - & - & - \\
+			&&&&&&&&&&\\
 			\multirow{4}{*}{\STAB{\rotatebox[origin=c]{90}{Africa}}} 
-			& JI$_0$ & .00$^{***}$ & - & - & - & .00$^{***}$ & - & - & - \\
-			& JI$_1$ & - & .00$^{***}$ & - & - & - & .00$^{***}$ & - & - \\
-			& JI$_2$ & - & - & .00$^{***}$ & - & - & - & .00$^{***}$ & - \\
-			& JI$_3$ & - & - & - & .00$^{***}$ & - & - & - & .00$^{***}$ \\\hline
+			& JI$_0$ & .00$^{***}$ & - & - & - && .00$^{***}$ & - & - & - \\
+			& JI$_1$ & - & .00$^{***}$ & - & - && - & .00$^{***}$ & - & - \\
+			& JI$_2$ & - & - & .00$^{***}$ & - && - & - & .00$^{***}$ & - \\
+			& JI$_3$ & - & - & - & .00$^{***}$ && - & - & - & .00$^{***}$ \\\hline
 		\end{tabular}
 	\end{table}
 	\begin{table}[ht]
 		\centering
 		\caption[Comparison of tree cover agreement between regions]{\textbf{Comparison of tree cover agreement between regions:} This table shows, a comparison of tree cover agreement between regions and the direction of differences. The classes $JI_0$, $JI_1$, $JI_2$, and $JI_3$ as row and column headings account for the canopy density classes (0,100], (10,100], (20,100], and (30,100], respectively. The test hypothesis is H$_0$: $X_1\leq X_2$ where $X_1$ is the column $JI_n$ class and $X_2$ the row $JI_n$ class. The significance is indicated by $p^{*}<0.05$, $p^{**}<0.025$, $p^{***}<0.01$, and $p^{\dagger}<0.005$. We applied a Benjamini and Hochberg correction for multiple-pairwise testing.}
 		\label{tab:wilcoxontwosided_comparison}
-		\begin{tabular}{llllllllll}
+		\begin{tabular}{lllllllllll}
 			\hline
-			& & \multicolumn{4}{|c}{Latin America} & \multicolumn{4}{|c|}{Asia/Australia} \\
-			& Cls & JI$_0$ & JI$_1$ & JI$_2$ & JI$_3$ & JI$_0$ & JI$_1$ & JI$_2$ & JI$_3$ \\\hline
-			\multirow{4}{*}{\STAB{\rotatebox[origin=c]{90}{Asia}}}
-			& JI$_0$ & 1. & - & - & - & - & - & - & - \\
-			& JI$_1$ & - & 1. & - & - & - & - & - & - \\
-			& JI$_2$ & - & - & 1. & - & - & - & - & - \\
-			& JI$_3$ & - & - & - & 1. & - & - & - & - \\\cline{1-1}
+			& & \multicolumn{4}{c}{Latin America} && \multicolumn{4}{c}{Asia/Australia} \\\cline{3-6}\cline{8-11}
+			& Cls & JI$_0$ & JI$_1$ & JI$_2$ & JI$_3$ && JI$_0$ & JI$_1$ & JI$_2$ & JI$_3$ \\\hline
+			\multirow{4}{*}{\STAB{\rotatebox[origin=c]{90}{Asia/Aust.}}}
+			& JI$_0$ & 1. & - & - & - && - & - & - & - \\
+			& JI$_1$ & - & 1. & - & - && - & - & - & - \\
+			& JI$_2$ & - & - & 1. & - && - & - & - & - \\
+			& JI$_3$ & - & - & - & 1. && - & - & - & - \\
+			&&&&&&&&&&\\
 			\multirow{4}{*}{\STAB{\rotatebox[origin=c]{90}{Africa}}} 
-			& JI$_0$ & .00$^{\dagger}$ & - & - & - & .00$^{\dagger}$ & - & - & - \\
-			& JI$_1$ & - & .00$^{\dagger}$ & - & - & - & .00$^{\dagger}$ & - & - \\
-			& JI$_2$ & - & - & .00$^{\dagger}$ & - & - & - & .00$^{\dagger}$ & - \\
-			& JI$_3$ & - & - & - & .00$^{\dagger}$ & - & - & - & .00$^{\dagger}$ \\\hline
+			& JI$_0$ & .00$^{\dagger}$ & - & - & - && .00$^{\dagger}$ & - & - & - \\
+			& JI$_1$ & - & .00$^{\dagger}$ & - & - && - & .00$^{\dagger}$ & - & - \\
+			& JI$_2$ & - & - & .00$^{\dagger}$ & - && - & - & .00$^{\dagger}$ & - \\
+			& JI$_3$ & - & - & - & .00$^{\dagger}$ && - & - & - & .00$^{\dagger}$ \\\hline
 		\end{tabular}
 	\end{table}
 
@@ -68,7 +70,7 @@
 		\begin{figure}[ht]
 				\centering
 				\includegraphics[scale=.65]{img/jaccard_tiles_americas}
-				\caption[Jaccard Indexes for Latin American raster tiles]{\textbf{Jaccard Indexes for Latin American raster tiles:} Caption}
+				\caption[Jaccard Indexes for Latin American raster tiles]{\textbf{Jaccard Indexes for Latin American raster tiles:} For Latin America, this plot shows the derived tree cover agreement (Jaccard Index on the y-axis) per raster tile (x-axis) between the GlobeLand30 and Global Forest Change tree cover dataset, while the circle symbols refer to JI$_0$ (canopy density $(0,100]$), squares to JI$_1$ (canopy density $(10,100]$), triangles to JI$_2$ (canopy density $(20,100]$), and crosses to JI$_3$ (canopy density $(30,100]$). The tiles are ordered from north to south.}
 				\label{fig:jaccard_americas_appendix}
 		\end{figure}
 	\end{landscape}
@@ -77,7 +79,7 @@
 		\begin{figure}[ht]
 			\centering
 			\includegraphics[scale=.65]{img/jaccard_tiles_asia}
-			\caption[Jaccard Indexes for Asian/Australian raster tiles]{\textbf{Jaccard Indexes for Asian/Australian raster tiles:} Caption}
+			\caption[Jaccard Indexes for Asian/Australian raster tiles]{\textbf{Jaccard Indexes for Asian/Australian raster tiles:} For Asia/Australia, this plot shows the derived tree cover agreement (Jaccard Index on the y-axis) per raster tile (x-axis) between the GlobeLand30 and Global Forest Change tree cover dataset, while the circle symbols refer to JI$_0$ (canopy density $(0,100]$), squares to JI$_1$ (canopy density $(10,100]$), triangles to JI$_2$ (canopy density $(20,100]$), and crosses to JI$_3$ (canopy density $(30,100]$). The tiles are ordered from north to south.}
 			\label{fig:jaccard_asia_appendix}
 		\end{figure}
 	\end{landscape}
@@ -86,26 +88,25 @@
 		\begin{figure}[ht]
 			\centering
 			\includegraphics[scale=.65]{img/jaccard_tiles_africa}
-			\caption[Jaccard Indexes for African raster tiles]{\textbf{Jaccard Indexes for African raster tiles:} Caption}
+			\caption[Jaccard Indexes for African raster tiles]{\textbf{Jaccard Indexes for African raster tiles:} For Africa, this plot shows the derived tree cover agreement (Jaccard Index on the y-axis) per raster tile (x-axis) between the GlobeLand30 and Global Forest Change tree cover dataset, while the circle symbols refer to JI$_0$ (canopy density $(0,100]$), squares to JI$_1$ (canopy density $(10,100]$), triangles to JI$_2$ (canopy density $(20,100]$), and crosses to JI$_3$ (canopy density $(30,100]$). The tiles are ordered from north to south.}
 			\label{fig:jaccard_africa_appendix}
 		\end{figure}
 	\end{landscape}
 
 \chapter{Proximate deforestation drivers}
 \label{ch:appendix_c}
-%TODO table: captions
 	\begin{scriptsize}
 	\begin{landscape}
 		\begin{center}
 			\begin{longtable}[ht]{lrrrrrrrrrr}
-			\caption[Proximate drivers of deforestation for countries, continents, and globally]{\textbf{Proximate drivers of deforestation for countries, continents, and globally:}} \label{tab:proximate_driver}\\
+			\caption[Proximate drivers of deforestation]{\textbf{Proximate drivers of deforestation:} Relative and absolute magnitude of proximate deforestation drivers on country, continent, and global scale. Country$^*$ refers to countries, which are not entirely covered. Absolute values are in km$^2$ followed by relative in brackets. The water class is an aggregate of wetland and water. Total is the cumulative of all classes, and Total$^{\dagger}$ is the anthropogenic deforestation as the cumulative of cropland, regrowth, grassland, shrubland, artificial, and bareland.} \label{tab:proximate_driver}\\
 
 			\hline
 			Region&Cultivated&Forest&Regrowth&Grassland&Shrubland&Water&Artificial&Bareland&Total&Total$^\dagger$\\
 			\hline
 			\endfirsthead
 
-			%\caption[]{continued}\\
+			%\caption[]{\textbf{Proximate drivers of deforestation:} continued}\\
 			\hline
 			Region&Cultivated&Forest&Regrowth&Grassland&Shrubland&Water&Artificial&Bareland&Total&Total$^\dagger$\\
 			\hline

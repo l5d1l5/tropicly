@@ -33,8 +33,8 @@
 \contentsline {subsection}{\numberline {4.1.2}Tree cover and deforestation patterns}{69}{subsection.4.1.2}
 \contentsline {subsection}{\numberline {4.1.3}Mapping of proximate deforestation driver}{70}{subsection.4.1.3}
 \contentsline {subsection}{\numberline {4.1.4}Accuracy assessment}{72}{subsection.4.1.4}
-\contentsline {section}{\numberline {4.2}Emissions}{72}{section.4.2}
-\contentsline {section}{\numberline {4.3}Ecosystem service values}{72}{section.4.3}
+\contentsline {section}{\numberline {4.2}Emissions}{73}{section.4.2}
+\contentsline {section}{\numberline {4.3}Ecosystem service values}{73}{section.4.3}
 \contentsline {chapter}{\numberline {5}Conclusion}{74}{chapter.5}
 \contentsline {chapter}{Bibliography}{75}{chapter.5}
 \contentsline {chapter}{\nonumberline List of Figures}{I}{chapter*.38}
