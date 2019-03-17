@@ -5,36 +5,36 @@ The style file: tobinat.bst
 Database file #1: literature.bib
 You've used 95 entries,
             2773 wiz_defined-function locations,
-            1286 strings with 27103 characters,
-and the built_in function-call counts, 52972 in all, are:
-= -- 4624
-> -- 4015
-< -- 41
-+ -- 1357
-- -- 1260
-* -- 4981
-:= -- 8486
+            1287 strings with 27182 characters,
+and the built_in function-call counts, 53064 in all, are:
+= -- 4630
+> -- 4035
+< -- 40
++ -- 1363
+- -- 1266
+* -- 4995
+:= -- 8502
 add.period$ -- 365
 call.type$ -- 95
-change.case$ -- 710
+change.case$ -- 712
 chr.to.int$ -- 93
 cite$ -- 190
-duplicate$ -- 1944
-empty$ -- 3558
-format.name$ -- 1375
-if$ -- 10707
+duplicate$ -- 1945
+empty$ -- 3556
+format.name$ -- 1381
+if$ -- 10724
 int.to.chr$ -- 3
 int.to.str$ -- 1
 missing$ -- 86
 newline$ -- 557
 num.names$ -- 380
-pop$ -- 1236
+pop$ -- 1239
 preamble$ -- 1
-purify$ -- 610
+purify$ -- 612
 quote$ -- 0
-skip$ -- 1517
+skip$ -- 1519
 stack$ -- 0
-substring$ -- 1757
+substring$ -- 1751
 swap$ -- 193
 text.length$ -- 6
 text.prefix$ -- 0
