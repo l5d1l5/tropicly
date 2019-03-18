@@ -1,4 +1,4 @@
-\begin{thebibliography}{95}
+\begin{thebibliography}{99}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -271,6 +271,12 @@ DeFries R.~S., Rudel T., Uriarte M., and Hansen M.
   2010.
 \newblock \doi{10.1038/ngeo756}.
 
+\bibitem[Development(2019)]{Development2019}
+Development T.
+\newblock \emph{rasterio}.
+\newblock Mapbox, 2019.
+\newblock URL \url{https://rasterio.readthedocs.io/en/latest/}.
+
 \bibitem[Don et~al.(2010)Don, Schumacher, and Freibauer]{Don2010}
 Don A., Schumacher J., and Freibauer A.
 \newblock Impact of tropical land-use change on soil organic carbon stocks - a
@@ -422,6 +428,13 @@ Hosonuma N., Herold M., Sy V.~D., Fries R. S.~D., Brockhaus M., Verchot L.,
   1--12, October 2012.
 \newblock \doi{10.1088/1748-9326/7/4/044009}.
 
+\bibitem[Hunter(2007)]{Hunter2007}
+Hunter J.~D.
+\newblock Matplotlib: a 2{D} graphics environment.
+\newblock \emph{IEEE Computing in Science and Engineering}, 9\penalty0
+  (3):\penalty0 90--95, 2007.
+\newblock \doi{10.1109/mcse.2007.55}.
+
 \bibitem[Ickowitz et~al.(2015)Ickowitz, Slayback, Asanzi, and
   Nasi]{Ickowitz2015}
 Ickowitz A., Slayback D., Asanzi P., and Nasi R.~A.
@@ -568,6 +581,12 @@ Potapov P., Hansen M.~C., Laestadius L., Turubanova S., Yaroshenko A., Thies
 \newblock \doi{10.1126/sciadv.1600821}.
 \newblock URL \url{http://www.intactforests.org/}.
 
+\bibitem[{QGIS}(2009)]{QGIS2009}
+{QGIS} D.~T.
+\newblock \emph{{QGIS} geographic information system}.
+\newblock Open Source Geospatial Foundation, 2009.
+\newblock URL \url{https://qgis.org}.
+
 \bibitem[Ren{\'{o}} et~al.(2011)Ren{\'{o}}, Novo, Suemitsu, Renn{\'{o}}, and
   Silva]{Reno2011}
 Ren{\'{o}} V.~F., Novo E. M. L.~M., Suemitsu C., Renn{\'{o}} C.~D., and Silva
@@ -676,6 +695,14 @@ Taubert F., Fischer R., Groeneveld J., Lehmann S., M{\"u}ller M.~S., R{\"o}dig
 \newblock Global patterns of tropical forest fragmentation.
 \newblock \emph{Nature}, 554\penalty0 (7693):\penalty0 519--522, February 2018.
 \newblock \doi{10.1038/nature25508}.
+
+\bibitem[van~der Walt et~al.(2011)van~der Walt, Colbert, and
+  Varoquaux]{Walt2011}
+Walt S., van~der, Colbert S.~C., and Varoquaux G.
+\newblock The {NumPy} array: a structure for efficient numerical computation.
+\newblock \emph{Computing in Science {\&} Engineering}, 13\penalty0
+  (2):\penalty0 22--30, mar 2011.
+\newblock \doi{10.1109/mcse.2011.37}.
 
 \bibitem[van Rossum and Development(2018)]{Rossum2018}
 Rossum G., van and Development T.
