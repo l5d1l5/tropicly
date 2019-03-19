@@ -3,44 +3,48 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: sggw_print.aux
 The style file: tobinat.bst
 Database file #1: literature.bib
-You've used 99 entries,
+Warning--I didn't find a database entry for "Walt2011"
+Warning--I didn't find a database entry for "Development2019"
+Warning--I didn't find a database entry for "QGIS2009"
+You've used 97 entries,
             2773 wiz_defined-function locations,
-            1313 strings with 27765 characters,
-and the built_in function-call counts, 54539 in all, are:
-= -- 4774
-> -- 4095
-< -- 43
-+ -- 1385
-- -- 1284
-* -- 5108
-:= -- 8738
-add.period$ -- 381
-call.type$ -- 99
-change.case$ -- 728
-chr.to.int$ -- 97
-cite$ -- 198
-duplicate$ -- 2020
-empty$ -- 3683
-format.name$ -- 1403
-if$ -- 11026
+            1306 strings with 27835 characters,
+and the built_in function-call counts, 54541 in all, are:
+= -- 4753
+> -- 4174
+< -- 41
++ -- 1410
+- -- 1311
+* -- 5144
+:= -- 8743
+add.period$ -- 373
+call.type$ -- 97
+change.case$ -- 733
+chr.to.int$ -- 95
+cite$ -- 194
+duplicate$ -- 1986
+empty$ -- 3637
+format.name$ -- 1428
+if$ -- 11015
 int.to.chr$ -- 3
 int.to.str$ -- 1
 missing$ -- 88
-newline$ -- 581
-num.names$ -- 396
-pop$ -- 1268
+newline$ -- 569
+num.names$ -- 388
+pop$ -- 1276
 preamble$ -- 1
-purify$ -- 626
+purify$ -- 631
 quote$ -- 0
-skip$ -- 1568
+skip$ -- 1557
 stack$ -- 0
-substring$ -- 1797
-swap$ -- 200
+substring$ -- 1805
+swap$ -- 196
 text.length$ -- 6
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 1064
+type$ -- 1042
 warning$ -- 0
-while$ -- 434
+while$ -- 428
 width$ -- 0
-write$ -- 1444
+write$ -- 1416
+(There were 3 warnings)

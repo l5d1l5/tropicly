@@ -1,9 +1,21 @@
-\begin{thebibliography}{99}
+\begin{thebibliography}{97}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Achard et~al.(2014)Achard, Beuchle, Mayaux, Stibig, Bodart, Brink,
+  Carboni, Descl{\'{e}}e, Donnay, Eva, Lupi, Ra{\v{s}}i, Seliger, and
+  Simonetti]{Achard2014}
+Achard F., Beuchle R., Mayaux P., Stibig H.-J., Bodart C., Brink A., Carboni
+  S., Descl{\'{e}}e B., Donnay F., Eva H.~D., Lupi A., Ra{\v{s}}i R., Seliger
+  R., and Simonetti D.
+\newblock Determination of tropical deforestation rates and related carbon
+  losses from 1990 to 2010.
+\newblock \emph{Global Change Biology}, 20\penalty0 (8):\penalty0 2540--2554,
+  may 2014.
+\newblock \doi{10.1111/gcb.12605}.
 
 \bibitem[Alves(2002)]{Alves2002}
 Alves D.~S.
@@ -270,12 +282,6 @@ DeFries R.~S., Rudel T., Uriarte M., and Hansen M.
 \newblock \emph{Nature Geoscience}, 3\penalty0 (3):\penalty0 178--181, February
   2010.
 \newblock \doi{10.1038/ngeo756}.
-
-\bibitem[Development(2019)]{Development2019}
-Development T.
-\newblock \emph{rasterio}.
-\newblock Mapbox, 2019.
-\newblock URL \url{https://rasterio.readthedocs.io/en/latest/}.
 
 \bibitem[Don et~al.(2010)Don, Schumacher, and Freibauer]{Don2010}
 Don A., Schumacher J., and Freibauer A.
@@ -581,12 +587,6 @@ Potapov P., Hansen M.~C., Laestadius L., Turubanova S., Yaroshenko A., Thies
 \newblock \doi{10.1126/sciadv.1600821}.
 \newblock URL \url{http://www.intactforests.org/}.
 
-\bibitem[{QGIS}(2009)]{QGIS2009}
-{QGIS} D.~T.
-\newblock \emph{{QGIS} geographic information system}.
-\newblock Open Source Geospatial Foundation, 2009.
-\newblock URL \url{https://qgis.org}.
-
 \bibitem[Ren{\'{o}} et~al.(2011)Ren{\'{o}}, Novo, Suemitsu, Renn{\'{o}}, and
   Silva]{Reno2011}
 Ren{\'{o}} V.~F., Novo E. M. L.~M., Suemitsu C., Renn{\'{o}} C.~D., and Silva
@@ -695,14 +695,6 @@ Taubert F., Fischer R., Groeneveld J., Lehmann S., M{\"u}ller M.~S., R{\"o}dig
 \newblock Global patterns of tropical forest fragmentation.
 \newblock \emph{Nature}, 554\penalty0 (7693):\penalty0 519--522, February 2018.
 \newblock \doi{10.1038/nature25508}.
-
-\bibitem[van~der Walt et~al.(2011)van~der Walt, Colbert, and
-  Varoquaux]{Walt2011}
-Walt S., van~der, Colbert S.~C., and Varoquaux G.
-\newblock The {NumPy} array: a structure for efficient numerical computation.
-\newblock \emph{Computing in Science {\&} Engineering}, 13\penalty0
-  (2):\penalty0 22--30, mar 2011.
-\newblock \doi{10.1109/mcse.2011.37}.
 
 \bibitem[van Rossum and Development(2018)]{Rossum2018}
 Rossum G., van and Development T.
