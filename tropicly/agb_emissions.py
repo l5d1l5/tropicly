@@ -5,8 +5,6 @@ from tropicly.distance import Distance
 from tropicly.utils import write
 
 
-# TODO doc
-
 def worker(pdd, agb, out_name, distance='hav'):
     """Worker function for parallel execution.
 
@@ -38,7 +36,7 @@ def worker(pdd, agb, out_name, distance='hav'):
     write(emissions, out_name, **profile)
 
 
-def agb_emissions(pdd, agb, area=900, co2=3.7, pdd_classes=(10, 25, 30, 40, 70, 80, 90)):
+def agb_emissions(pdd, agb, area=900, co2=1, pdd_classes=(10, 25, 30, 40, 70, 80, 90)):
     """Computes the emissions trough Above-ground Biomass removal.
 
     Args:
