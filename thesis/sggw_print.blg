@@ -6,45 +6,45 @@ Database file #1: literature.bib
 Warning--I didn't find a database entry for "Walt2011"
 Warning--I didn't find a database entry for "Development2019"
 Warning--I didn't find a database entry for "QGIS2009"
-You've used 97 entries,
+You've used 98 entries,
             2773 wiz_defined-function locations,
-            1306 strings with 27835 characters,
-and the built_in function-call counts, 54541 in all, are:
-= -- 4753
-> -- 4174
+            1314 strings with 28203 characters,
+and the built_in function-call counts, 55631 in all, are:
+= -- 4837
+> -- 4303
 < -- 41
-+ -- 1410
-- -- 1311
-* -- 5144
-:= -- 8743
-add.period$ -- 373
-call.type$ -- 97
-change.case$ -- 733
-chr.to.int$ -- 95
-cite$ -- 194
-duplicate$ -- 1986
-empty$ -- 3637
-format.name$ -- 1428
-if$ -- 11015
++ -- 1453
+- -- 1353
+* -- 5264
+:= -- 8924
+add.period$ -- 377
+call.type$ -- 98
+change.case$ -- 750
+chr.to.int$ -- 96
+cite$ -- 196
+duplicate$ -- 2007
+empty$ -- 3680
+format.name$ -- 1471
+if$ -- 11225
 int.to.chr$ -- 3
 int.to.str$ -- 1
-missing$ -- 88
-newline$ -- 569
-num.names$ -- 388
-pop$ -- 1276
+missing$ -- 89
+newline$ -- 575
+num.names$ -- 392
+pop$ -- 1307
 preamble$ -- 1
-purify$ -- 631
+purify$ -- 647
 quote$ -- 0
-skip$ -- 1557
+skip$ -- 1582
 stack$ -- 0
-substring$ -- 1805
-swap$ -- 196
+substring$ -- 1838
+swap$ -- 198
 text.length$ -- 6
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 1042
+type$ -- 1053
 warning$ -- 0
-while$ -- 428
+while$ -- 433
 width$ -- 0
-write$ -- 1416
+write$ -- 1431
 (There were 3 warnings)

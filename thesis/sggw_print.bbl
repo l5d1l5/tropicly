@@ -1,4 +1,4 @@
-\begin{thebibliography}{97}
+\begin{thebibliography}{98}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -14,7 +14,7 @@ Achard F., Beuchle R., Mayaux P., Stibig H.-J., Bodart C., Brink A., Carboni
 \newblock Determination of tropical deforestation rates and related carbon
   losses from 1990 to 2010.
 \newblock \emph{Global Change Biology}, 20\penalty0 (8):\penalty0 2540--2554,
-  may 2014.
+  May 2014.
 \newblock \doi{10.1111/gcb.12605}.
 
 \bibitem[Alves(2002)]{Alves2002}
@@ -605,6 +605,18 @@ Ruf F., Schroth G., and Doffangui K.
   November 2014.
 \newblock \doi{10.1007/s11625-014-0282-4}.
 
+\bibitem[Saatchi et~al.(2011)Saatchi, Harris, Brown, Lefsky, Mitchard, Salas,
+  Zutta, Buermann, Lewis, Hagen, Petrova, White, Silman, and
+  Morel]{Saatchi2011}
+Saatchi S.~S., Harris N.~L., Brown S., Lefsky M., Mitchard E. T.~A., Salas W.,
+  Zutta B.~R., Buermann W., Lewis S.~L., Hagen S., Petrova S., White L., Silman
+  M., and Morel A.
+\newblock Benchmark map of forest carbon stocks in tropical regions across
+  three continents.
+\newblock \emph{Proceedings of the National Academy of Sciences}, 108\penalty0
+  (24):\penalty0 9899--9904, May 2011.
+\newblock \doi{10.1073/pnas.1019576108}.
+
 \bibitem[Sampat et~al.(2009)Sampat, Wang, Gupta, Bovik, and Markey]{Sampat2009}
 Sampat M.~P., Wang Z., Gupta S., Bovik A.~C., and Markey M.~K.
 \newblock Complex wavelet structural similarity: a new image similarity index.
@@ -717,7 +729,7 @@ Wang Z., Zhang B., Zhang S., Li X., Liu D., Song K., Li J., Li F., and Duan H.
 \newblock Changes of land use and of ecosystem service values in {S}anjiang
   {P}lain, {N}ortheast {C}hina.
 \newblock \emph{Environmental Monitoring and Assessment}, 112\penalty0
-  (1-3):\penalty0 69--91, jan 2006.
+  (1-3):\penalty0 69--91, January 2006.
 \newblock \doi{10.1007/s10661-006-0312-5}.
 
 \bibitem[Wilcoxon(1945)]{Wilcoxon1945}
@@ -736,7 +748,7 @@ Wood C.~H.
 Wright S.~J.
 \newblock Tropical forests in a changing environment.
 \newblock \emph{Trends in Ecology and Evolution}, 20\penalty0 (10):\penalty0
-  553--560, oct 2005.
+  553--560, October 2005.
 \newblock \doi{10.1016/j.tree.2005.07.009}.
 
 \bibitem[WWF(2016)]{WWF2016}
