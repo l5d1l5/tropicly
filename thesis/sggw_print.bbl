@@ -1,4 +1,4 @@
-\begin{thebibliography}{98}
+\begin{thebibliography}{103}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -60,6 +60,15 @@ Austin K.~G., Schwantes A., Gu Y., and Kasibhatla P.~S.
 \newblock \emph{Environmental Research Letters}, 14\penalty0 (2):\penalty0
   024007, February 2019.
 \newblock \doi{10.1088/1748-9326/aaf6db}.
+
+\bibitem[Avitabile et~al.(2016)Avitabile, Schultz, Herold, de~Bruin, Pratihast,
+  Manh, Quang, and Herold]{Avitabile2016}
+Avitabile V., Schultz M., Herold N., Bruin S., de, Pratihast A.~K., Manh C.~P.,
+  Quang H.~V., and Herold M.
+\newblock Carbon emissions from land cover change in central {V}ietnam.
+\newblock \emph{Carbon Management}, 7\penalty0 (5-6):\penalty0 333--346,
+  November 2016.
+\newblock \doi{10.1080/17583004.2016.1254009}.
 
 \bibitem[Baccini et~al.(2012)Baccini, Goetz, Walker, Laporte, Sun,
   Sulla-Menashe, Hackler, Beck, Dubayah, Friedl, Samanta, and
@@ -434,6 +443,24 @@ Hosonuma N., Herold M., Sy V.~D., Fries R. S.~D., Brockhaus M., Verchot L.,
   1--12, October 2012.
 \newblock \doi{10.1088/1748-9326/7/4/044009}.
 
+\bibitem[Houghton(2012)]{Houghton2012a}
+Houghton R.~A.
+\newblock Carbon emissions and the drivers of deforestation and forest
+  degradation in the tropics.
+\newblock \emph{Current Opinion in Environmental Sustainability}, 4\penalty0
+  (6):\penalty0 597--603, December 2012.
+\newblock \doi{10.1016/j.cosust.2012.06.006}.
+
+\bibitem[Houghton et~al.(2012)Houghton, House, Pongratz, van~der Werf, DeFries,
+  Hansen, Le~Qu{\'{e}}r{\'{e}}, and Ramankutty]{Houghton2012}
+Houghton R.~A., House J.~I., Pongratz J., Werf G.~R., van~der, DeFries R.~S.,
+  Hansen M.~C., Le~Qu{\'{e}}r{\'{e}} C., and Ramankutty N.
+\newblock Carbon emissions from land use and land-cover change.
+\newblock \emph{Biogeosciences}, 9\penalty0 (12):\penalty0 5125--5142, December
+  2012.
+\newblock ISSN 1726-4189.
+\newblock \doi{10.5194/bg-9-5125-2012}.
+
 \bibitem[Hunter(2007)]{Hunter2007}
 Hunter J.~D.
 \newblock Matplotlib: a 2{D} graphics environment.
@@ -587,6 +614,16 @@ Potapov P., Hansen M.~C., Laestadius L., Turubanova S., Yaroshenko A., Thies
 \newblock \doi{10.1126/sciadv.1600821}.
 \newblock URL \url{http://www.intactforests.org/}.
 
+\bibitem[Rahman et~al.(2018)Rahman, de~Neergaard, Magid, van~de Ven, Giller,
+  and Bruun]{Rahman2018}
+Rahman N., Neergaard A., de, Magid J., Ven G. W.~J., van~de, Giller K.~E., and
+  Bruun T.~B.
+\newblock Changes in soil organic carbon stocks after conversion from forest to
+  oil palm plantations in {M}alaysian {B}orneo.
+\newblock \emph{Environmental Research Letters}, 13\penalty0 (10):\penalty0
+  105001, September 2018.
+\newblock \doi{10.1088/1748-9326/aade0f}.
+
 \bibitem[Ren{\'{o}} et~al.(2011)Ren{\'{o}}, Novo, Suemitsu, Renn{\'{o}}, and
   Silva]{Reno2011}
 Ren{\'{o}} V.~F., Novo E. M. L.~M., Suemitsu C., Renn{\'{o}} C.~D., and Silva
@@ -722,6 +759,16 @@ Vijay V., Reid C.~D., Finer M., Jenkins C.~N., and Pimm S.~L.
 \newblock \emph{Environmental Research Letters}, 13\penalty0 (11):\penalty0
   114010, November 2018.
 \newblock \doi{10.1088/1748-9326/aae540}.
+
+\bibitem[Villarino et~al.(2017)Villarino, Studdert, Baldassini, Cendoya,
+  Ciuffoli, Mastr{\'{a}}ngelo, and Pineiro]{Villarino2017}
+Villarino S.~H., Studdert G.~A., Baldassini P., Cendoya M.~G., Ciuffoli L.,
+  Mastr{\'{a}}ngelo M., and Pineiro G.
+\newblock Deforestation impacts on soil organic carbon stocks in the {S}miarid
+  {C}haco region, {A}rgentina.
+\newblock \emph{Science of The Total Environment}, 575:\penalty0 1056--1065,
+  January 2017.
+\newblock \doi{10.1016/j.scitotenv.2016.09.175}.
 
 \bibitem[Wang et~al.(2006)Wang, Zhang, Zhang, Li, Liu, Song, Li, Li, and
   Duan]{Wang2006}
