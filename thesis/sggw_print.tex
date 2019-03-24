@@ -45,7 +45,7 @@
 \setcitestyle{sort,authoryear,square,semicolon,aysep={}}
 \renewcommand{\bibfont}{\small \singlespacing}
 \KOMAoptions{
-	toc=listof,
+	%toc=listof,
 	toc=bibliography,
 	listof=flat,
 }
@@ -118,35 +118,41 @@
 	\BlankPage
 
 % declarations
-%		\input{declarations/promoter.tex}
-%	\BlankPage
-%		\input{declarations/author.tex}
-%	\BlankPage
+		\input{declarations/promoter.tex}
+	\BlankPage
+		\input{declarations/author.tex}
+	\BlankPage
 
-%	\BlankPage
-%	\BlankPage
+	\BlankPage
+	\BlankPage
 
 % abstracts
-%		\input{abstracts/streszczenie.tex}
-%	\BlankPage
+		\input{abstracts/streszczenie.tex}
+	\BlankPage
 		\input{abstracts/abstract.tex}
 	\BlankPage
 		\input{abstracts/zusammenfassung.tex}
 	\BlankPage
 
-%	\BlankPage
-%	\BlankPage
+	\BlankPage
+	\BlankPage
 
 	\hypersetup{pageanchor=true}
 	\pagenumbering{arabic}
-	\setcounter{page}{9}
+	\setcounter{page}{1}
 
 
 % table of contents
 %TODO toc-depth 3 in print
 		\setcounter{secnumdepth}{3} 
-		\setcounter{tocdepth}{3}
+		\setcounter{tocdepth}{2}
 		\tableofcontents
+	\clearpage
+
+% lists
+		\input{lists/lists.tex}
+	\clearpage
+		\input{acknowledgements/acknowledge.tex}
 	\clearpage
 
 % content
@@ -160,23 +166,17 @@
 	\clearpage
 		\input{5_conclusion/conclusion.tex}
 	\clearpage
-%		\input{acknowledgements/acknowledge.tex}
-%	\clearpage
 		\input{references/references.tex}
 	\clearpage
 
 	%\pagenumbering{Roman}
 	%\setcounter{page}{1}
 
-% lists
-		\input{lists/lists.tex}
-	\clearpage
-
 % appendix
 		\input{appendix/appendix.tex}
 	\clearpage
 
 % share approval
-%		\input{share/sggw_share.tex}
+		\input{share/sggw_share.tex}
 
 \end{document}
