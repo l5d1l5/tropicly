@@ -25,7 +25,7 @@
 \contentsline {subsection}{\numberline {3.1.2}Tree cover and deforestation patterns}{48}{subsection.3.1.2}
 \contentsline {subsection}{\numberline {3.1.3}Mapping of proximate deforestation drivers}{55}{subsection.3.1.3}
 \contentsline {subsection}{\numberline {3.1.4}Accuracy assessment}{62}{subsection.3.1.4}
-\contentsline {section}{\numberline {3.2}Carbon losses}{63}{section.3.2}
+\contentsline {section}{\numberline {3.2}Carbon losses}{64}{section.3.2}
 \contentsline {section}{\numberline {3.3}Ecosystem service values}{65}{section.3.3}
 \contentsline {chapter}{\numberline {4}Discussion}{69}{chapter.4}
 \contentsline {section}{\numberline {4.1}Proximate deforestation drivers}{69}{section.4.1}
