@@ -33,6 +33,4 @@
 \contentsline {section}{\numberline {4.3}Ecosystem service values}{70}{section.4.3}
 \contentsline {chapter}{\numberline {5}Conclusion}{72}{chapter.5}
 \contentsline {chapter}{Bibliography}{73}{chapter.5}
-\contentsline {chapter}{\numberline {A}Hexagonal country boundaries}{81}{appendix.A}
-\contentsline {chapter}{\numberline {B}Forest definition}{83}{appendix.B}
-\contentsline {chapter}{\numberline {C}Proximate deforestation drivers}{87}{appendix.C}
+\contentsline {chapter}{\numberline {A}Appendix}{81}{appendix.A}
