@@ -102,7 +102,12 @@ ENV/
 .idea/
 /data
 /tropicly/js/index.html
-thesis/sggw_print.*
-thesis/sggw_digital.*
-thesis/hnee_print.*
-thesis/hnee_digital.*
+/thesis/sggw_print.*
+/thesis/sggw_digital.*
+/thesis/hnee_print.*
+/thesis/hnee_digital.*
+
+!/thesis/sggw_print.tex
+!/thesis/sggw_digital.tex
+!/thesis/hnee_print.tex
+!/thesis/hnee_digital.tex
