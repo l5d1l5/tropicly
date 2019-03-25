@@ -28,10 +28,10 @@
   <mapcanvas>
     <units>degrees</units>
     <extent>
-      <xmin>-66.37173324324839996</xmin>
-      <ymin>12.93725586754923995</ymin>
-      <xmax>43.07321431297930303</xmax>
-      <ymax>56.58262375943772327</ymax>
+      <xmin>63.39416871532790054</xmin>
+      <ymin>-16.65981913326761088</ymin>
+      <xmax>172.83911627155566748</xmax>
+      <ymax>26.98554875862086533</ymax>
     </extent>
     <rotation>0</rotation>
     <projections>0</projections>
@@ -220,7 +220,7 @@
           <annotationFontProperties description="Ubuntu,11,-1,5,50,0,0,0,0,0" style=""/>
         </ComposerMapGrid>
         <AtlasMap scalingMode="2" atlasDriven="0" margin="0.10000000000000001"/>
-        <ComposerItem pagey="24.6074" page="1" id="asia" lastValidViewScaleFactor="4.29814" positionMode="0" positionLock="true" x="34.957" y="24.6074" visibility="1" zValue="1" background="true" transparency="0" frameJoinStyle="round" blendMode="0" width="149.912" outlineWidth="0.3" excludeFromExports="0" uuid="{20f0f009-e7e8-4517-bffe-c9230edf0353}" height="61.4518" itemRotation="0" frame="false" pagex="34.957">
+        <ComposerItem pagey="24.6074" page="1" id="asia" lastValidViewScaleFactor="2.14907" positionMode="0" positionLock="true" x="34.957" y="24.6074" visibility="1" zValue="1" background="true" transparency="0" frameJoinStyle="round" blendMode="0" width="149.912" outlineWidth="0.3" excludeFromExports="0" uuid="{20f0f009-e7e8-4517-bffe-c9230edf0353}" height="61.4518" itemRotation="0" frame="false" pagex="34.957">
           <FrameColor alpha="255" red="0" blue="0" green="0"/>
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
           <customproperties/>
@@ -235,7 +235,7 @@
       </customproperties>
     </Composition>
   </Composer>
-  <Composer title="africa" visible="0">
+  <Composer title="africa" visible="1">
     <Composition resizeToContentsMarginLeft="0" snapping="0" showPages="1" guidesVisible="1" resizeToContentsMarginTop="0" worldFileMap="{c7d0f7c4-e678-4a38-82ea-d7ab62beb61b}" alignmentSnap="1" printResolution="300" paperWidth="210" gridVisible="1" snapGridOffsetX="0" smartGuides="1" snapGridOffsetY="0" resizeToContentsMarginRight="0" snapTolerancePixels="5" printAsRaster="0" generateWorldFile="0" paperHeight="297" numPages="1" snapGridResolution="10" resizeToContentsMarginBottom="0">
       <symbol alpha="1" clip_to_extent="1" type="fill" name="">
         <layer pass="0" class="SimpleFill" locked="0">
@@ -363,7 +363,7 @@
           <annotationFontProperties description="Ubuntu,11,-1,5,50,0,0,0,0,0" style=""/>
         </ComposerMapGrid>
         <AtlasMap scalingMode="2" atlasDriven="0" margin="0.10000000000000001"/>
-        <ComposerItem pagey="24.7574" page="1" id="africa" lastValidViewScaleFactor="4.29814" positionMode="0" positionLock="false" x="34.9605" y="24.7574" visibility="1" zValue="1" background="true" transparency="0" frameJoinStyle="round" blendMode="0" width="123.113" outlineWidth="0.3" excludeFromExports="0" uuid="{c7d0f7c4-e678-4a38-82ea-d7ab62beb61b}" height="78.6894" itemRotation="0" frame="false" pagex="34.9605">
+        <ComposerItem pagey="24.7574" page="1" id="africa" lastValidViewScaleFactor="2.14907" positionMode="0" positionLock="false" x="34.9605" y="24.7574" visibility="1" zValue="1" background="true" transparency="0" frameJoinStyle="round" blendMode="0" width="123.113" outlineWidth="0.3" excludeFromExports="0" uuid="{c7d0f7c4-e678-4a38-82ea-d7ab62beb61b}" height="78.6894" itemRotation="0" frame="false" pagex="34.9605">
           <FrameColor alpha="255" red="0" blue="0" green="0"/>
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
           <customproperties/>
@@ -506,7 +506,7 @@
           <annotationFontProperties description="Ubuntu,11,-1,5,50,0,0,0,0,0" style=""/>
         </ComposerMapGrid>
         <AtlasMap scalingMode="2" atlasDriven="0" margin="0.10000000000000001"/>
-        <ComposerItem pagey="24.7574" page="1" id="americas" lastValidViewScaleFactor="8.59627" positionMode="0" positionLock="false" x="34.9605" y="24.7574" visibility="1" zValue="1" background="true" transparency="0" frameJoinStyle="round" blendMode="0" width="115" outlineWidth="0.3" excludeFromExports="0" uuid="{43d5b2a8-bb6c-42bb-b619-0bcb4405c86f}" height="78.6894" itemRotation="0" frame="false" pagex="34.9605">
+        <ComposerItem pagey="24.7574" page="1" id="americas" lastValidViewScaleFactor="4.29814" positionMode="0" positionLock="false" x="34.9605" y="24.7574" visibility="1" zValue="1" background="true" transparency="0" frameJoinStyle="round" blendMode="0" width="115" outlineWidth="0.3" excludeFromExports="0" uuid="{43d5b2a8-bb6c-42bb-b619-0bcb4405c86f}" height="78.6894" itemRotation="0" frame="false" pagex="34.9605">
           <FrameColor alpha="255" red="0" blue="0" green="0"/>
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
           <customproperties/>
@@ -925,7 +925,7 @@ def my_form_open(dialog, layer, feature):
         <property key="labeling/fontLimitPixelSize" value="false"/>
         <property key="labeling/fontMaxPixelSize" value="10000"/>
         <property key="labeling/fontMinPixelSize" value="3"/>
-        <property key="labeling/fontSize" value="4"/>
+        <property key="labeling/fontSize" value="6"/>
         <property key="labeling/fontSizeInMapUnits" value="false"/>
         <property key="labeling/fontSizeMapUnitScale" value="0,0,0,0,0,0"/>
         <property key="labeling/fontStrikeout" value="false"/>
@@ -1227,7 +1227,7 @@ def my_form_open(dialog, layer, feature):
         <property key="labeling/fontLimitPixelSize" value="false"/>
         <property key="labeling/fontMaxPixelSize" value="10000"/>
         <property key="labeling/fontMinPixelSize" value="3"/>
-        <property key="labeling/fontSize" value="4"/>
+        <property key="labeling/fontSize" value="6"/>
         <property key="labeling/fontSizeInMapUnits" value="false"/>
         <property key="labeling/fontSizeMapUnitScale" value="0,0,0,0,0,0"/>
         <property key="labeling/fontStrikeout" value="false"/>
@@ -1530,12 +1530,12 @@ def my_form_open(dialog, layer, feature):
         <property key="labeling/fontLimitPixelSize" value="false"/>
         <property key="labeling/fontMaxPixelSize" value="10000"/>
         <property key="labeling/fontMinPixelSize" value="3"/>
-        <property key="labeling/fontSize" value="4"/>
+        <property key="labeling/fontSize" value="6"/>
         <property key="labeling/fontSizeInMapUnits" value="false"/>
         <property key="labeling/fontSizeMapUnitScale" value="0,0,0,0,0,0"/>
         <property key="labeling/fontStrikeout" value="false"/>
         <property key="labeling/fontUnderline" value="false"/>
-        <property key="labeling/fontWeight" value="75"/>
+        <property key="labeling/fontWeight" value="50"/>
         <property key="labeling/fontWordSpacing" value="0"/>
         <property key="labeling/formatNumbers" value="false"/>
         <property key="labeling/isExpression" value="false"/>
@@ -1551,7 +1551,7 @@ def my_form_open(dialog, layer, feature):
         <property key="labeling/minFeatureSize" value="0"/>
         <property key="labeling/multilineAlign" value="4294967295"/>
         <property key="labeling/multilineHeight" value="1"/>
-        <property key="labeling/namedStyle" value="Bold"/>
+        <property key="labeling/namedStyle" value="Regular"/>
         <property key="labeling/obstacle" value="false"/>
         <property key="labeling/obstacleFactor" value="2"/>
         <property key="labeling/obstacleType" value="1"/>

@@ -1,4 +1,4 @@
-\documentclass[fontsize=12pt, twoside, a4paper]{scrartcl} % koma class
+\documentclass[fontsize=12pt, twoside, a4paper]{scrreprt} % koma class
 
 % paper properties
 \usepackage{geometry}
@@ -19,10 +19,15 @@
 \usepackage{mathptmx} % times new roman
 \usepackage[onehalfspacing]{setspace}
 \AfterTOCHead{\singlespacing}
-\KOMAoptions{parskip=half}
-\KOMAoptions{titlepage=true}
-\KOMAoptions{draft=true}  % COMMENT IF DOCUMENT GOES IN PRINT
+\KOMAoptions{
+	parskip=half,
+	titlepage=true,
+	draft=true  %TODO false in print
+}
 \addtokomafont{disposition}{\normalfont}
+\addtokomafont{caption}{\footnotesize}
+\setkomafont{captionlabel}{\bfseries}
+\usepackage{color}
 
 % special symbols
 \usepackage{soul}
@@ -36,40 +41,54 @@
 
 % lists
 \usepackage{acronym}
-\usepackage{natbib} % bibliography
+\usepackage{natbib}
 \setcitestyle{sort,authoryear,square,semicolon,aysep={}}
 \renewcommand{\bibfont}{\small \singlespacing}
-\KOMAoptions{toc=listof}
-\KOMAoptions{toc=bibliography}
+\KOMAoptions{
+	%toc=listof,
+	toc=bibliography,
+	listof=flat,
+}
 
 % tables
-\KOMAoptions{captions=tableheading}
+\KOMAoption{captions}{tableheading}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{pdflscape}
+
+% images
+\usepackage{graphicx}
+
+% fix hbox warn for bbl
+\usepackage{etoolbox}
+\apptocmd{\thebibliography}{\raggedright}{}{}
 
 % hyperlinks
 \usepackage[hidelinks, colorlinks=false, urlcolor=blue, linkcolor=blue, citecolor = blue]{hyperref}
-\hypersetup{pdftitle={A comprehensive study on deforestation in the tropical zone}}
+\hypersetup{pdftitle={Global assessment of deforestation drivers across the tropics: impacts on carbon stocks and ecosystem services}}
 \hypersetup{pdfauthor={Tobias Seydewitz}}
-\hypersetup{pdfsubject={Evaluating the direct deforestation drivers, estimating the carbon emissions trough deforestation and evaluating the ecosystem service value balance of land cover change in the tropical zone between 23.43N and 23.43S.}}
+\hypersetup{pdfsubject={Global assessment of deforestation drivers across the tropics: impacts on carbon stocks and ecosystem services}}
 \hypersetup{pdfcreator={Tobias Seydewitz}}
 \hypersetup{pdfproducer={Tobias Seydewitz}}
-\hypersetup{pdfkeywords={climate, emissions, soil organic carbon change, GIS, ecosystem service values, deforestation}}
+\hypersetup{pdfkeywords={deforestation, proximate driver, GHG emissions, ecosystem services, tropics}}
 \hypersetup{pdfdisplaydoctitle=true}
 
 % new commands
 \newcommand*\BlankPage{\newpage\null\thispagestyle{empty}\newpage}
 \newcommand{\leadingzero}[1]{\ifnum #1<10 0\the#1\else\the#1\fi}
 \newcommand{\todayI}{\leadingzero{\day}.\leadingzero{\month}.\the\year}
+\newcommand{\STAB}[1]{\begin{tabular}{@{}c@{}}#1\end{tabular}}
+\newcommand*\note[1]{{\color{red} #1}}
+\renewcommand*{\captionformat}{ }
 
+\vbadness=10000
 %\recalctypearea
 
 %\usepackage{tabularx}
-%\usepackage{array}
 %\usepackage{caption}
-%\usepackage{longtable}
 %\usepackage{rotating}
-%\usepackage{multirow}
-%\usepackage{multicol}
-%\usepackage{graphicx}
 %\usepackage{tcolorbox} 
 %\usepackage{color}
 %\usepackage{colortbl}
@@ -88,31 +107,33 @@
 %\Huge 24.88pt
 
 
+
 \begin{document}
-	\nocite{*}
+
+%\nocite{*} % cite all no matter if used in text
 	\bibliographystyle{tobinat}
 
 	\hypersetup{pageanchor=false}
 
-	% title page
-	\input{cover/hnee_cover.tex}
+% title page
+		\input{cover/hnee_cover.tex}
 	\BlankPage
 
-	% declarations
-	\input{declarations/promoter.tex}
+% declarations
+		\input{declarations/promoter.tex}
 	\BlankPage
-	\input{declarations/author.tex}
-	\BlankPage
-
-	\BlankPage
+		\input{declarations/author.tex}
 	\BlankPage
 
-	% abstracts
-	\input{abstracts/streszczenie.tex}
 	\BlankPage
-	\input{abstracts/abstract.tex}
 	\BlankPage
-	\input{abstracts/zusammenfassung.tex}
+
+% abstracts
+		\input{abstracts/streszczenie.tex}
+	\BlankPage
+		\input{abstracts/abstract.tex}
+	\BlankPage
+		\input{abstracts/zusammenfassung.tex}
 	\BlankPage
 
 	\BlankPage
@@ -120,43 +141,43 @@
 
 	\hypersetup{pageanchor=true}
 	\pagenumbering{arabic}
-	\setcounter{page}{9}
-
-
-	% table of contents
-	\setcounter{secnumdepth}{4} 
-	\setcounter{tocdepth}{4}
-	\tableofcontents
-	\newpage
-
-	% content
-	\input{introduction/introduction.tex}
-	\input{methods/methods.tex}
-	\input{results/results.tex}
-	\input{discussion/discussion.tex}
-	\input{conclusion/conclusion.tex}
-	\newpage
-
-	\input{acknowledgements/acknowledge.tex}
-	\newpage
-
-
-	\pagenumbering{Roman}
 	\setcounter{page}{1}
 
 
-	% references
-	\input{references/references.tex}
-	\newpage
+% table of contents
+	\setcounter{secnumdepth}{3} 
+	\setcounter{tocdepth}{2}
+		\tableofcontents
+	\clearpage
 
-	% lists
-	\input{lists/lists.tex}
-	\newpage
+% lists
+		\input{lists/lists.tex}
+	\clearpage
 
-	% appendix
-	\input{appendix/appendix.tex}
-	\newpage
+% content
+		\input{1_introduction/introduction.tex}
+	\clearpage
+		\input{2_methods/methods.tex}
+	\clearpage
+		\input{3_results/results.tex}
+	\clearpage
+		\input{4_discussion/discussion.tex}
+	\clearpage
+		\input{5_conclusion/conclusion.tex}
+	\clearpage
+		\input{acknowledgements/acknowledge.tex}
+	\clearpage
+		\input{references/references.tex}
+	\clearpage
 
-	% share approval
-	\input{share/hnee_share.tex}
+%\pagenumbering{Roman}
+%\setcounter{page}{1}
+
+% appendix
+		\input{appendix/appendix.tex}
+	\clearpage
+
+% share approval
+		\input{share/hnee_share.tex}
+
 \end{document}
