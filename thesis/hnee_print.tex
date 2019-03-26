@@ -20,7 +20,7 @@
 \usepackage[onehalfspacing]{setspace}
 \AfterTOCHead{\singlespacing}
 \KOMAoptions{
-	parskip=half,
+	%parskip=half,
 	titlepage=true,
 	draft=true  %TODO false in print
 }
@@ -109,6 +109,8 @@
 
 
 \begin{document}
+	\KOMAoptions{parskip=half}
+	\raggedbottom
 
 %\nocite{*} % cite all no matter if used in text
 	\bibliographystyle{tobinat}
@@ -143,6 +145,8 @@
 	\pagenumbering{arabic}
 	\setcounter{page}{1}
 
+	\KOMAoptions{parskip=false}
+	\raggedbottom
 
 % table of contents
 	\setcounter{secnumdepth}{3} 
@@ -176,6 +180,9 @@
 % appendix
 		\input{appendix/appendix.tex}
 	\clearpage
+
+	\KOMAoptions{parskip=half}
+	\raggedbottom
 
 % share approval
 		\input{share/hnee_share.tex}
