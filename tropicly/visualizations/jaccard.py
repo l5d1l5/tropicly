@@ -20,7 +20,7 @@ fig.subplots_adjust(wspace=0.1)
 
 groups = src.groupby(by='region', sort=True)
 
-for ax, selection, region in zip(axes, ['Americas', 'Asia', 'Africa'], ['South America', 'Asia/Australia', 'Africa']):
+for ax, selection, region in zip(axes, ['Americas', 'Asia', 'Africa'], ['Latin America', 'Asia/Australia', 'Africa']):
     df = groups.get_group(selection)
 
     boxes = ax.boxplot(
