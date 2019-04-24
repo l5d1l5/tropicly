@@ -3,10 +3,17 @@ from queue import Queue
 from threading import Event
 from threading import Thread
 
-from tropicly.observer import Signal
+from observer import Signal
 
 
-# TODO doc
+def progress(*args, **kwargs):
+    ratio = (kwargs['total'] - kwargs['pending']) / kwargs['total']
+    ratio = round(ratio*100, 2)
+    print('{} of 100 %'.format(ratio))
+
+
+def finish(*args, **kwargs):
+    print('Tasks complete')
 
 
 class TaskSheduler(Thread):
