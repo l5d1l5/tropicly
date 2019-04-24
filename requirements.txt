@@ -1,12 +1,10 @@
 gdal
 fiona
 numpy
-bokeh
 pandas
 pyproj
 affine
 shapely
-jupyter
 rasterio
 geopandas
 matplotlib

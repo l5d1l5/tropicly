@@ -101,8 +101,6 @@ ENV/
 .mypy_cache/
 .idea/
 
-/data/
-
 /tropicly/js/index.html
 /reports/thesis/sggw_print.*
 /reports/thesis/sggw_digital.*
