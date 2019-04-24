@@ -20,23 +20,6 @@ from rasterio import merge
 from rasterio import warp
 
 
-# TODO clean this mess
-#  doc
-
-
-__all__ = [
-    'LOGGER',
-    'cache_directories',
-    'execute_concurrent',
-    'download',
-    'write_binary',
-    'write',
-    'tile_index',
-    'clip_worker',
-    'download_worker',
-    'alignment_worker',
-]
-
 LOGGER = logging.getLogger(__name__)
 LOGGER.addHandler(logging.NullHandler())
 
