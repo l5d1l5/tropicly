@@ -102,6 +102,14 @@ ENV/
 .idea/
 
 *.tif
+*.pdf
+*.shp
+*.shx
+*.dbf
+*.prj
+*.cpg
+*.sbn
+*.sbx
 
 
 /reports/publication
