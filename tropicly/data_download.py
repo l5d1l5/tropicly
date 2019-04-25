@@ -116,11 +116,10 @@ def agb(sheduler, dirs, **kwargs):
         dirs (namedtuple): Namedtuple of path objects. Represents the data folder.
         **kwargs: Request headers (spoof User-Agent see global HEADERS variable)
     """
-    head_url = 'https://gis-gfw.wri.org/arcgis/rest/services/climate/MapServer/1/query?where=1%3D1&outFields=*&outSR=4326&f=json'
+    url = 'https://gis-gfw.wri.org/arcgis/rest/services/climate/MapServer/1/query?where=1%3D1&outFields=*&outSR=4326&f=json'
     path = str(dirs.biomass / 'biomass.geojson')
 
-    content = download(head_url)
-    write_binary(content, path)
+    download_worker(url, path, **kwargs)
 
     biomass_mask = gpd.read_file(path)
     stratum_urls = list(biomass_mask.download)
@@ -141,8 +140,7 @@ def soc(dirs, **kwargs):
     """
     url = 'http://54.229.242.119/GSOCmap/downloads/GSOCmapV1.2.0.tif'
 
-    content = download(url, **kwargs)
-    write_binary(content, str(dirs.soil / 'GSOCmap.tif'))
+    download_worker(url, str(dirs.soil / 'GSOCmap.tif'), **kwargs)
 
 
 def ifl(dirs, **kwargs):
@@ -158,12 +156,12 @@ def ifl(dirs, **kwargs):
         **kwargs: Request headers (spoof User-Agent see global HEADERS variable)
     """
     url = 'http://intactforests.org/shp/IFL_2000.zip'
+    path = str(dirs.ifl / url.split('/')[-1])
 
-    content = download(url, **kwargs)
-    write_binary(content, str(dirs.ifl / url.split('/')[-1]))
+    download_worker(url, path, **kwargs)
 
-    zipfile.ZipFile(str(dirs.ifl / url.split('/')[-1])).extractall(str(dirs.ifl))
-    os.remove(str(dirs.ifl / url.split('/')[-1]))
+    zipfile.ZipFile(path).extractall(str(dirs.ifl))
+    os.remove(path)
 
 
 def auxiliary(dirs, **kwargs):
@@ -181,11 +179,12 @@ def auxiliary(dirs, **kwargs):
     ]
 
     for url in urls:
-        content = download(url, **kwargs)
-        write_binary(content, str(dirs.auxiliary / url.split('/')[-1]))
+        path = str(dirs.auxiliary / url.split('/')[-1])
 
-        zipfile.ZipFile(str(dirs.auxiliary / url.split('/')[-1])).extractall(str(dirs.auxiliary))
-        os.remove(str(dirs.auxiliary / url.split('/')[-1]))
+        download_worker(url, path, **kwargs)
+
+        zipfile.ZipFile(path).extractall(str(dirs.auxiliary))
+        os.remove(path)
 
 
 def main(strata, threads):
@@ -236,5 +235,5 @@ def main(strata, threads):
 
 
 if __name__ == '__main__':
-    *_, args = argv
+    name, *args = argv
     main(*args)
