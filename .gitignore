@@ -110,6 +110,7 @@ ENV/
 *.cpg
 *.sbn
 *.sbx
+*.geojson
 
 /reports/publication
 
