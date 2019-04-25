@@ -13,7 +13,7 @@ install:
 
 ## Download the required strata
 download:
-	python3 tropicly/data_download.py ifl 2
+	python3 tropicly/data_download.py all 2
 
 ## Create strata masks
 mask:
