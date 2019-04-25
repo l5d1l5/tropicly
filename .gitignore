@@ -111,6 +111,8 @@ ENV/
 *.sbn
 *.sbx
 *.geojson
+*.README.html
+*.VERSION.txt
 
 /reports/publication
 
