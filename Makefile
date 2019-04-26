@@ -11,13 +11,17 @@
 install:
 	pip install -r requirements.txt
 
+# gfc, agb, soc, ifl, auxiliary, and all followed by any positive integer
 ## Download the required strata
 download:
 	python3 tropicly/data_download.py all 2
 
 ## Create strata masks
 mask:
-	python3 tropicly/masking.py
+	python3 tropicly/masking.py gfc
+	python3 tropicly/masking.py gl30
+	python3 tropicly/masking.py agb
+	python3 tropicly/masking.py soc
 
 ## Create Aligned Image Stack Mosaic (AISM)
 aism:

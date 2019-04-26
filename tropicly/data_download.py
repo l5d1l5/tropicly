@@ -20,8 +20,6 @@ from settings import SETTINGS
 from sheduler import TaskSheduler
 from sheduler import finish
 from sheduler import progress
-from utils import cache_directories
-from utils import get_data_dir
 from utils import orientation_to_int
 
 LOGGER = logging.getLogger('Download')
@@ -117,7 +115,9 @@ def agb(sheduler, dirs, **kwargs):
         dirs (namedtuple): Namedtuple of path objects. Represents the data folder.
         **kwargs: Request headers (spoof User-Agent see global HEADERS variable)
     """
-    url = 'https://gis-gfw.wri.org/arcgis/rest/services/climate/MapServer/1/query?where=1%3D1&outFields=*&outSR=4326&f=json'
+    head = 'https://gis-gfw.wri.org/arcgis/rest/services/climate/MapServer/1/'
+    tail = 'query?where=1%3D1&outFields=*&geometry=-180%2C-24%2C180%2C24&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&outSR=4326&f=json'
+    url = head + tail
     path = str(dirs.biomass / 'biomass.geojson')
 
     download_worker(url, path, **kwargs)
@@ -202,35 +202,33 @@ def main(strata, threads):
     sheduler.on_progress.connect(progress)
     sheduler.on_finish.connect(finish)
 
-    dirs = cache_directories(get_data_dir())
-
     LOGGER.setLevel(logging.WARNING)
-    handler = logging.FileHandler(str(dirs.log / 'download.log'), mode='a')
+    handler = logging.FileHandler(str(SETTINGS['data'].log / 'download.log'), mode='a')
     formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(name)s: %(message)s')
     handler.setFormatter(formatter)
     LOGGER.addHandler(handler)
 
     if strata == 'gfc':
-        gfc(sheduler, dirs, **SETTINGS['headers'])
+        gfc(sheduler, SETTINGS['data'], **SETTINGS['headers'])
 
     elif strata == 'agb':
-        agb(sheduler, dirs, **SETTINGS['headers'])
+        agb(sheduler, SETTINGS['data'], **SETTINGS['headers'])
 
     elif strata == 'soc':
-        soc(dirs, **SETTINGS['headers'])
+        soc(SETTINGS['data'], **SETTINGS['headers'])
 
     elif strata == 'ifl':
-        ifl(dirs, **SETTINGS['headers'])
+        ifl(SETTINGS['data'], **SETTINGS['headers'])
 
     elif strata == 'auxiliary':
-        auxiliary(dirs, **SETTINGS['headers'])
+        auxiliary(SETTINGS['data'], **SETTINGS['headers'])
 
     else:
-        gfc(sheduler, dirs, **SETTINGS['headers'])
-        agb(sheduler, dirs, **SETTINGS['headers'])
-        soc(dirs, **SETTINGS['headers'])
-        ifl(dirs, **SETTINGS['headers'])
-        auxiliary(dirs, **SETTINGS['headers'])
+        gfc(sheduler, SETTINGS['data'], **SETTINGS['headers'])
+        agb(sheduler, SETTINGS['data'], **SETTINGS['headers'])
+        soc(SETTINGS['data'], **SETTINGS['headers'])
+        ifl(SETTINGS['dirs'], **SETTINGS['headers'])
+        auxiliary(SETTINGS['data'], **SETTINGS['headers'])
 
     sheduler.quite()
 

@@ -19,7 +19,6 @@ from rasterio import coords
 from rasterio import merge
 from rasterio import warp
 
-
 LOGGER = logging.getLogger(__name__)
 LOGGER.addHandler(logging.NullHandler())
 
@@ -487,8 +486,9 @@ def polygoniz(rasters, target_crs):
     for raster in rasters:
         bounds, crs = fetch_metadata(raster, 'bounds', 'crs')
 
-        if crs != target_crs:
-            bounds = reproject_bounds(bounds, crs, target_crs)
+        with rio.Env():
+            if crs != target_crs:
+                bounds = reproject_bounds(bounds, crs, target_crs)
 
         polygon = polygon_from(bounds)
         polygons.append(polygon)
