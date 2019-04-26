@@ -16,6 +16,7 @@ from urllib import request
 
 import geopandas as gpd
 
+from settings import SETTINGS
 from sheduler import TaskSheduler
 from sheduler import finish
 from sheduler import progress
@@ -23,7 +24,6 @@ from utils import cache_directories
 from utils import get_data_dir
 from utils import orientation_to_int
 
-HEADERS = {'headers': {'User-Agent': "Mozilla/5.0 (X11; U; Linux i686) Gecko/20071127 Firefox/2.0.0.11"}}
 LOGGER = logging.getLogger('Download')
 
 
@@ -45,6 +45,7 @@ def download(url, **kwargs):
         return response.read()
 
     except Exception:
+        print('Request to URL %s failed' % url)
         LOGGER.error('Request to URL %s failed', url)
 
 
@@ -210,26 +211,26 @@ def main(strata, threads):
     LOGGER.addHandler(handler)
 
     if strata == 'gfc':
-        gfc(sheduler, dirs, **HEADERS)
+        gfc(sheduler, dirs, **SETTINGS['headers'])
 
     elif strata == 'agb':
-        agb(sheduler, dirs, **HEADERS)
+        agb(sheduler, dirs, **SETTINGS['headers'])
 
     elif strata == 'soc':
-        soc(dirs, **HEADERS)
+        soc(dirs, **SETTINGS['headers'])
 
     elif strata == 'ifl':
-        ifl(dirs, **HEADERS)
+        ifl(dirs, **SETTINGS['headers'])
 
     elif strata == 'auxiliary':
-        auxiliary(dirs, **HEADERS)
+        auxiliary(dirs, **SETTINGS['headers'])
 
     else:
-        gfc(sheduler, dirs, **HEADERS)
-        agb(sheduler, dirs, **HEADERS)
-        soc(dirs, **HEADERS)
-        ifl(dirs, **HEADERS)
-        auxiliary(dirs, **HEADERS)
+        gfc(sheduler, dirs, **SETTINGS['headers'])
+        agb(sheduler, dirs, **SETTINGS['headers'])
+        soc(dirs, **SETTINGS['headers'])
+        ifl(dirs, **SETTINGS['headers'])
+        auxiliary(dirs, **SETTINGS['headers'])
 
     sheduler.quite()
 
