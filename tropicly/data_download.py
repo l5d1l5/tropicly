@@ -130,7 +130,7 @@ def agb(sheduler, dirs, **kwargs):
         sheduler.add_task(Thread(target=download_worker, args=(url, path), kwargs=kwargs))
 
 
-def soc(dirs, **kwargs):
+def soc(sheduler, dirs, **kwargs):
     """Downloads the required Soil Organic Carbon Content (GSOCmap) stratum.
 
     Citation:
@@ -141,7 +141,7 @@ def soc(dirs, **kwargs):
     """
     url = 'http://54.229.242.119/GSOCmap/downloads/GSOCmapV1.2.0.tif'
 
-    download_worker(url, str(dirs.soil / 'GSOCmap.tif'), **kwargs)
+    sheduler.add_task(Thread(target=download_worker, args=(url, str(dirs.gsocmap/'GSOCmap.tif')), kwargs=kwargs))
 
 
 def ifl(dirs, **kwargs):
@@ -215,7 +215,7 @@ def main(strata, threads):
         agb(sheduler, SETTINGS['data'], **SETTINGS['headers'])
 
     elif strata == 'soc':
-        soc(SETTINGS['data'], **SETTINGS['headers'])
+        soc(sheduler, SETTINGS['data'], **SETTINGS['headers'])
 
     elif strata == 'ifl':
         ifl(SETTINGS['data'], **SETTINGS['headers'])
@@ -226,7 +226,7 @@ def main(strata, threads):
     else:
         gfc(sheduler, SETTINGS['data'], **SETTINGS['headers'])
         agb(sheduler, SETTINGS['data'], **SETTINGS['headers'])
-        soc(SETTINGS['data'], **SETTINGS['headers'])
+        soc(sheduler, SETTINGS['data'], **SETTINGS['headers'])
         ifl(SETTINGS['dirs'], **SETTINGS['headers'])
         auxiliary(SETTINGS['data'], **SETTINGS['headers'])
 

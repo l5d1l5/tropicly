@@ -9,29 +9,74 @@ Institution: Potsdam Institute for Climate Impact Research
 import sys
 
 import geopandas as gpd
+import pandas as pd
+from pyproj import Proj
+from pyproj import transform
+from rasterio import open
+from rasterio.coords import BoundingBox
+from rasterio.env import Env
+from shapely.geometry import Polygon
 
 from settings import SETTINGS
-import pandas as pd
 
 
-def polygoniz(rasters, target_crs):
+def polygon_from(bounds):
+    """Creates a rectangular Polygon from an BoundingBox object.
+
+    Args:
+        bounds (rasterio.coords.BoundingBox): The bounding box of a raster image.
+
+    Returns:
+        shapely.geometry.Polygon: A rectangular polygon.
     """
-    This function creates a tile index from a list of raster files.
+    x_points = ['left', 'left', 'right', 'right']
+    y_points = ['top', 'bottom', 'bottom', 'top']
 
-    :param rasters: list
-        Pending
-    :param target_crs: dict
-        If the raster files have different coordinate reference systems
-        this argument prevents a messed up dataset.
-    :return: geopandas.GeoSeries
-        Each element of the series is a polygon
-        covering the corresponding raster file.
+    polygon_bounds = [
+        (bounds.__getattribute__(x), bounds.__getattribute__(y))
+        for x, y in zip(x_points, y_points)
+    ]
+
+    return Polygon(polygon_bounds)
+
+
+def reproject_bounds(bounds, source_crs, target_crs):
+    """Reproject BoundingBox from source crs to target crs.
+
+    Args:
+        bounds (rasterio.coords.BoundingBox): The BoundingBox as object.
+        source_crs (rasterio.crs.CRS): Source crs of the BoundingBox.
+        target_crs (rasterio.crs.CRS): Target crs of the BoundingBox.
+
+    Returns:
+        rasterio.coords.BoundingBox: The reprojected BoundingBox.
+    """
+    p1 = Proj(**source_crs)
+    p2 = Proj(**target_crs)
+
+    left, bottom = transform(p1, p2, bounds.left, bounds.bottom)
+    right, top = transform(p1, p2, bounds.right, bounds.top)
+
+    return BoundingBox(left, bottom, right, top)
+
+
+def tiles(strata, target_crs):
+    """Create rectangular polygons in required crs from raster bounds.
+
+    Args:
+        strata (list of str/Path): Full qualified path to raster files.
+        target_crs (rasterio.crs.CRS): Reproject raster bounds to this crs.
+
+    Returns:
+        geopandas.GeoSeries: The convex hull of the rasters as a GeoSeries.
     """
     polygons = []
-    for raster in rasters:
-        bounds, crs = fetch_metadata(raster, 'bounds', 'crs')
+    for raster in strata:
+        with Env():
+            with open(raster) as src:
+                crs = src.crs
+                bounds = src.bounds
 
-        with rio.Env():
             if crs != target_crs:
                 bounds = reproject_bounds(bounds, crs, target_crs)
 
@@ -48,14 +93,14 @@ def tile_index(strata, crs, **kwargs):
     """
 
     Args:
-        strata ():
-        crs:
+        strata (list of str/Path): Full qualified path to raster files.:
+        crs (rasterio.crs.CRS): Reproject raster bounds to this crs.
         **kwargs:
 
     Returns:
         geopandas.GeoDataFrame: The tile index
     """
-    geometry = polygoniz(strata, crs)
+    geometry = tiles(strata, crs)
     features = pd.DataFrame(kwargs)
 
     return gpd.GeoDataFrame(features, geometry=geometry)
