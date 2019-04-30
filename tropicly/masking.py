@@ -18,6 +18,7 @@ from rasterio.env import Env
 from shapely.geometry import Polygon
 
 from settings import SETTINGS
+from sheduler import progress
 
 
 def polygon_from(bounds):
@@ -70,8 +71,10 @@ def tiles(strata, target_crs):
     Returns:
         geopandas.GeoSeries: The convex hull of the rasters as a GeoSeries.
     """
+    total = len(strata)
     polygons = []
-    for raster in strata:
+
+    for idx, raster in enumerate(strata):
         with Env():
             with open(raster) as src:
                 crs = src.crs
@@ -83,6 +86,8 @@ def tiles(strata, target_crs):
         polygon = polygon_from(bounds)
         polygons.append(polygon)
 
+        progress(pending=total-(idx+1), total=total)
+
     geometry = gpd.GeoSeries(polygons)
     geometry.crs = target_crs
 
@@ -90,15 +95,15 @@ def tiles(strata, target_crs):
 
 
 def tile_index(strata, crs, **kwargs):
-    """
+    """Creates a tile index layer (bounds of each raster strata).
 
     Args:
         strata (list of str/Path): Full qualified path to raster files.:
         crs (rasterio.crs.CRS): Reproject raster bounds to this crs.
-        **kwargs:
+        **kwargs: Attribute table of the tile index layer.
 
     Returns:
-        geopandas.GeoDataFrame: The tile index
+        geopandas.GeoDataFrame: The tile index as a GeoDataFrame.
     """
     geometry = tiles(strata, crs)
     features = pd.DataFrame(kwargs)
@@ -107,6 +112,12 @@ def tile_index(strata, crs, **kwargs):
 
 
 def gfc(dirs, crs):
+    """Create mask for Global Forest Change dataset.
+
+    Args:
+        dirs (namedtuple): Namedtuple of path objects. Represents the data folder.
+        crs (rasterio.crs.CRS): Tile index layer will use the defined crs.
+    """
     strata = sorted(dirs.gfc.glob('*.tif'))
     strata_set_length = int(len(strata) / 3)
 
@@ -117,6 +128,7 @@ def gfc(dirs, crs):
         slice(2*strata_set_length, len(strata))
     )
 
+    # attribute table
     kwargs = {
         name: [stratum.name for stratum in strata[interval]]
         for name, interval in zip(names, intervals)
@@ -127,6 +139,12 @@ def gfc(dirs, crs):
 
 
 def gl30(dirs, crs):
+    """Create mask for GlobeLand30 dataset.
+
+    Args:
+        dirs (namedtuple): Namedtuple of path objects. Represents the data folder.
+        crs (rasterio.crs.CRS): Tile index layer will use the defined crs.
+    """
     strata = sorted(dirs.gl30.glob('*.tif'), key=lambda key: (key.name[7:11], key.name[0:6]))
 
     # filter tiles located in UTM Zone 1 and 60 (crs issues with these tiles, tile bounds exceed UTM Zone bounds)
@@ -139,10 +157,12 @@ def gl30(dirs, crs):
         slice(strata_set_length, len(strata))
     )
 
+    # attribute table
     kwargs = {
         name: [stratum.name for stratum in strata[interval]]
         for name, interval in zip(names, intervals)
     }
+    kwargs['key'] = [stratum.name[:6] for stratum in strata[intervals[1]]]
 
     # we use the raster tile bounds of the gl30_2010 dataset (surprisingly 2000 and 2010 have differing bounds)
     gl30_mask = tile_index(strata[intervals[1]], crs, **kwargs)
@@ -150,6 +170,11 @@ def gl30(dirs, crs):
 
 
 def agb(dirs):
+    """Create mask for Above-ground Woody Biomass Density dataset.
+
+    Args:
+        dirs (namedtuple): Namedtuple of path objects. Represents the data folder.
+    """
     strata = gpd.read_file(str(dirs.biomass / 'biomass.geojson'))
     strata.drop(strata.columns[[0, 1, 3, 4, 5, 6]], axis=1, inplace=True)
     strata.columns = ['biomass', 'geometry']
@@ -160,8 +185,25 @@ def agb(dirs):
     strata.to_file(str(dirs.masks / 'biomass.shp'))
 
 
-def soc():
-    pass
+def soc(dirs, crs):
+    """Create mask for GSOCmap dataset.
+
+    Args:
+        dirs (namedtuple): Namedtuple of path objects. Represents the data folder.
+        crs (rasterio.crs.CRS): Tile index layer will use the defined crs.
+    """
+    strata = sorted(dirs.gsocmap.glob('*.tif'))
+
+    names = ('soc',)
+
+    # attribute table
+    kwargs = {
+        name: [stratum.name for stratum in strata]
+        for name in names
+    }
+
+    gfc_mask = tile_index(strata, crs, **kwargs)
+    gfc_mask.to_file(str(dirs.masks / 'soc.shp'))
 
 
 def aism():
@@ -181,7 +223,7 @@ def main(strata):
         agb(SETTINGS['data'])
 
     elif strata == 'soc':
-        soc()
+        soc(SETTINGS['data'], SETTINGS['wgs84'])
 
     elif strata == 'aism':
         aism()
@@ -190,7 +232,7 @@ def main(strata):
         gfc(SETTINGS['data'], SETTINGS['wgs84'])
         gl30(SETTINGS['data'], SETTINGS['wgs84'])
         agb(SETTINGS['data'])
-        soc()
+        soc(SETTINGS['data'], SETTINGS['wgs84'])
         aism()
 
 
