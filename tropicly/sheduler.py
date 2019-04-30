@@ -6,10 +6,11 @@ from threading import Thread
 from observer import Signal
 
 
-def progress(*args, **kwargs):
+def progress(msg='{} of 100 %', **kwargs):
     ratio = (kwargs['total'] - kwargs['pending']) / kwargs['total']
     ratio = round(ratio*100, 2)
-    print('{} of 100 %'.format(ratio))
+
+    print(msg.format(ratio))
 
 
 def finish(*args, **kwargs):
