@@ -6,7 +6,7 @@ Date: 26.04.19
 Mail: seydewitz@pik-potsdam.de
 Institution: Potsdam Institute for Climate Impact Research
 """
-import sys
+from sys import argv
 
 import geopandas as gpd
 import pandas as pd
@@ -237,5 +237,5 @@ def main(strata):
 
 
 if __name__ == '__main__':
-    name, *args = sys.argv
+    name, *args = argv
     main(*args)

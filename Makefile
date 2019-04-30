@@ -14,7 +14,7 @@ install:
 # gfc, agb, soc, ifl, auxiliary, and all followed by any positive integer
 ## Download the required strata
 download:
-	python3 tropicly/data_download.py all 2
+	python3 tropicly/download.py all 2
 
 ## Create strata masks
 mask:
@@ -23,7 +23,19 @@ mask:
 	python3 tropicly/masking.py agb
 	python3 tropicly/masking.py soc
 
-## Create Aligned Image Stack Mosaic (AISM)
+## Create strata intersection layer
+intersection:
+	python3 tropicly/alignment.py intersect 1
+
+## Perform strata alignment
+alignment:
+	python3 tropicly/alignment.py align 8
+
+## Create strata intersection layer and perform strata alignment
+interalgin:
+	python3 tropicly/alignment.py all 8
+
+## Create Aligned Image Stack Mosaic (AISM) mask
 aism:
 	python3 tropciyl/alginment.py
 

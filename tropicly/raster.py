@@ -13,7 +13,7 @@ from rasterio.warp import calculate_default_transform
 from rasterio.warp import reproject
 from shapely.geometry import Polygon
 
-from tropicly.distance import Distance
+from distance import Distance
 
 
 # TODO doc

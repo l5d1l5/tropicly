@@ -20,7 +20,7 @@ from settings import SETTINGS
 from sheduler import TaskSheduler
 from sheduler import finish
 from sheduler import progress
-from utils import orientation_to_int
+from raster import orient_to_int
 
 LOGGER = logging.getLogger('Download')
 
@@ -97,7 +97,7 @@ def gfc(sheduler, dirs, **kwargs):
 
     for url in stratum_urls:
         lat_lon = re.search(r'(\d{2}\w_\d{3}\w)(?=\.tif)', url).groups()[0]
-        lat = orientation_to_int(lat_lon.split('_')[0])
+        lat = orient_to_int(lat_lon.split('_')[0])
 
         if -20 <= lat <= 30:
             path = str(dirs.gfc / url.split('/')[-1])
