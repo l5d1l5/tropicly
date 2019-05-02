@@ -5,37 +5,48 @@
 # mail: seydewitz@pik-potsdam.de
 # institution: Potsdam Institute for Climate Impact Research
 
-.PHONY: download install help
+.PHONY: help install download mask interalgin intersection alignment aism
 
-## Instal Python requirements (see requirments.txt for details)
+## Instal Python requirements to "/home/username/.local/lib/python3.*/site-packages".
 install:
 	pip install -r requirements.txt
 
-# gfc, agb, soc, ifl, auxiliary, and all followed by any positive integer
-## Download the required strata
+
+### PIPELINE
+
+# rule options: [gfc, agb, soc, ifl, auxiliary, all] [integer]
+## Download the required strata, includes GFC, IFL, AGB, GSOCmap, and NaturalEarth.
+## The GL30 strata (2000 and 2010) must be added to the folder "/data/raw/gl30" manually.
 download:
 	python3 tropicly/download.py all 2
 
-## Create strata masks
+# rule options: [gfc, gl30, agb, soc, aism, all]
+## Create strata masks for GFC, GL30, AGB, and GSOCmap strata.
+## Theses masks are fundmental for the alignment process.
 mask:
 	python3 tropicly/masking.py gfc
 	python3 tropicly/masking.py gl30
 	python3 tropicly/masking.py agb
 	python3 tropicly/masking.py soc
 
-## Create strata intersection layer
+# rule options: [intersect, align, clean] [integer]
+## Create strata intersection layer from masks, perform strata alignment with intersection layer,
+## delete temporary files, and create a mask of the aligned strata.
+interalgin:
+	python3 tropicly/alignment.py intersect 8
+	python3 tropicly/alignment.py align 8
+	python3 tropicly/alignment.py clean 8
+	python3 tropicly/masking.py aism
+
+
+### ATOMIC PIPELINE STEPS
+
 intersection:
 	python3 tropicly/alignment.py intersect 1
 
-## Perform strata alignment
 alignment:
 	python3 tropicly/alignment.py align 8
 
-## Create strata intersection layer and perform strata alignment
-interalgin:
-	python3 tropicly/alignment.py all 8
-
-## Create Aligned Image Stack Mosaic (AISM) mask
 aism:
 	python3 tropciyl/alginment.py
 
