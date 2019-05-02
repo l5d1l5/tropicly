@@ -8,6 +8,8 @@ Institution: Potsdam Institute for Climate Impact Research
 """
 import logging
 from sys import argv
+import os
+import re
 from threading import Thread
 from time import time
 
@@ -141,6 +143,12 @@ def intersect(dirs):
     intersection.to_file(str(dirs.masks / 'intersection.shp'))
 
 
+def clean_temporary(dirs, sheduler):
+    for f in dirs.aism.glob('*.tif'):
+        if not re.match(r'\w+_\d{2}[NS]_\d{3}[WE]\.tif', f.name):
+            sheduler.add_task(Thread(target=os.remove, args=(str(f),)))
+
+
 def main(operation, threads):
     operation = operation.lower()
 
@@ -160,9 +168,11 @@ def main(operation, threads):
     elif operation == 'align':
         align(SETTINGS['data'], sheduler, SETTINGS['wgs84'])
 
+    elif operation == 'clean':
+        clean_temporary(SETTINGS['data'], sheduler)
+
     else:
-        intersect(SETTINGS['data'])
-        align(SETTINGS['data'], sheduler, SETTINGS['wgs84'])
+        print('Unknown operation \"%s\". Please, select one of [intersect, align, clean].' % operation)
 
     sheduler.quite()
 
