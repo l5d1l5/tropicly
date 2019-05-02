@@ -6,6 +6,8 @@ Date: 26.04.19
 Mail: seydewitz@pik-potsdam.de
 Institution: Potsdam Institute for Climate Impact Research
 """
+import re
+from collections import defaultdict
 from sys import argv
 
 import geopandas as gpd
@@ -17,6 +19,7 @@ from rasterio.coords import BoundingBox
 from rasterio.env import Env
 from shapely.geometry import Polygon
 
+from raster import orient_to_int
 from settings import SETTINGS
 from sheduler import progress
 
@@ -206,8 +209,40 @@ def soc(dirs, crs):
     gfc_mask.to_file(str(dirs.masks / 'soc.shp'))
 
 
-def aism():
-    pass
+def aism(dirs, crs):
+    strata_sets = defaultdict(dict)
+    regex = re.compile(r'(\w+)_((\d{2}[NS])_(\d{3}[WE]))\.tif')
+    strata = sorted(dirs.aism.glob('*.tif'), key=lambda f: regex.match(f.name).group(2))
+
+    for f in strata:
+        match = regex.match(f.name)
+        name, key = match.group(1), match.group(2)
+        lng, lat = orient_to_int(match.group(4), match.group(3))
+
+        strata_sets[key][name] = f.name
+        strata_sets[key]['key'] = key
+
+        if -114 <= lng <= -36:
+            strata_sets[key]['region'] = 'South America'
+
+        elif -30 <= lng <= 54:
+            strata_sets[key]['region'] = 'Africa'
+
+        elif 66 <= lng <= 168:
+            strata_sets[key]['region'] = 'Asia/Australia'
+
+        else:
+            strata_sets[key]['region'] = 'Unknown'
+
+    df = pd.DataFrame(strata_sets).T
+    df.reset_index(drop=True, inplace=True)
+
+    gdf = gpd.GeoDataFrame(
+        df,
+        geometry=tile_index([dirs.aism / f for f in df['gl30_10']], crs)['geometry']
+    )
+
+    gdf.to_file(str(dirs.masks / 'aism.shp'))
 
 
 def main(strata):
@@ -226,14 +261,10 @@ def main(strata):
         soc(SETTINGS['data'], SETTINGS['wgs84'])
 
     elif strata == 'aism':
-        aism()
+        aism(SETTINGS['data'], SETTINGS['wgs84'])
 
     else:
-        gfc(SETTINGS['data'], SETTINGS['wgs84'])
-        gl30(SETTINGS['data'], SETTINGS['wgs84'])
-        agb(SETTINGS['data'])
-        soc(SETTINGS['data'], SETTINGS['wgs84'])
-        aism()
+        print('Unknown strata \"%s\". Please, select one of [gfc, gl30, agb, soc, aism].' % strata)
 
 
 if __name__ == '__main__':

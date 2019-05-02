@@ -48,7 +48,7 @@ alignment:
 	python3 tropicly/alignment.py align 8
 
 aism:
-	python3 tropciyl/alginment.py
+	python3 tropicly/masking.py aism
 
 # Taken from cookiecutter data-science template
 # Inspired by <http://marmelab.com/blog/2016/02/29/auto-documented-makefile.html>
