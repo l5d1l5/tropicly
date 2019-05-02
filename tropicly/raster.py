@@ -211,23 +211,21 @@ def write(data, to_path, **kwargs):
     return to_path
 
 
-def int_to_orient(x, y):
-    # TODO round method ceil, floor
-    """
-    Converts a x- and y-coordinate to an integer north/south,
-    west/east string representation.
-    Example: (x=-179.3457, y=80.2222) -> 80N_179W
+def int_to_orient(lng, lat):
+    """Converts numeric longitude and latitude coordinates to string.
 
-    :param x: float
-        Longitudinal coordinate
-    :param y: float
-        Latitudinal coordinate
-    :return: str
-        Lat/Lon coordinates as a integer string with the according
-        orientation.
+    The coordinates (lng=-179.3457, lat=80.2222) would produce the following result
+    "80N_179W".
+
+    Args:
+        lng (int, float): Longitude
+        lat (int, float): Latitude
+
+    Returns:
+        str: The latitude and longitude as string.
     """
-    x = round(x)
-    y = round(y)
+    x = round(lng)
+    y = round(lat)
 
     lng, we = (-1 * x, 'W') if x < 0 else (x, 'E')
     lat, ns = (-1 * y, 'S') if y < 0 else (y, 'N')
@@ -235,15 +233,35 @@ def int_to_orient(x, y):
     return '{:02d}{}_{:03d}{}'.format(lat, ns, lng, we)
 
 
-def orient_to_int(orient):
-    # TODO thesis
-    coor, orient = re.match(r'(?P<coor>\d+)(?P<orient>[NSWE])', orient, re.I).groups()
+def orient_to_int(lng, lat):
+    """Converts textual longitude and latitude coordinates to int.
 
-    if orient.lower() in ('n', 'e'):
-        return int(coor)
+    The coordinates (lng='10E', lat='90S') would produce the following result
+    "[10, -90]"
 
-    else:
-        return -1 * int(coor)
+    Args:
+        lng (str): Longitude
+        lat (str: Latitude
+
+    Returns:
+        tuple(int, int): The latitude and longitude coordinate as a integer.
+    """
+    regex_coor = re.compile(r'\d+')
+    regex_lng = re.compile(r'[we]', re.I)
+    regex_lat = re.compile(r'[ns]', re.I)
+
+    x, y = regex_coor.search(lng).group(), regex_coor.search(lat).group()
+    x_orient, y_orient = regex_lng.search(lng).group(), regex_lat.search(lat).group()
+
+    result = []
+    for coor, orient in [(x, x_orient), (y, y_orient)]:
+        if orient.lower() in ('n', 'e'):
+            result.append(int(coor))
+
+        else:
+            result.append(-1 * int(coor))
+
+    return result
 
 
 def round_bounds(bounds):
