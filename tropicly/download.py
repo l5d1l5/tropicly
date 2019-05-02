@@ -191,6 +191,8 @@ def auxiliary(dirs, **kwargs):
 def main(strata, threads):
     """Entry point for data download.
 
+    Defaults to download all datasets if strata parameter is unknown.
+
     Args:
         strata (str): one of gfc, agb, soc, ifl, auxiliary or else. Downloads the corresponding dataset strata. Please,
         refer to the equivalent named methods for dataset details.
