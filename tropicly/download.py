@@ -72,6 +72,7 @@ def download_worker(url, to_path, **kwargs):
         write_binary(content, to_path)
 
 
+# TODO test me
 def gfc(sheduler, dirs, **kwargs):
     """Downloads the required Global Forest Change stratum.
 
@@ -96,8 +97,8 @@ def gfc(sheduler, dirs, **kwargs):
         stratum_urls += content.decode('utf-8').splitlines()
 
     for url in stratum_urls:
-        lat_lon = re.search(r'(\d{2}\w_\d{3}\w)(?=\.tif)', url).groups()[0]
-        lat = orient_to_int(lat_lon.split('_')[0])
+        lat, lng = re.search(r'(\d{2}[NS])_(\d{3}[WE])\.tif', url).groups()
+        lng, lat = orient_to_int(lng, lat)
 
         if -20 <= lat <= 30:
             path = str(dirs.gfc / url.split('/')[-1])
