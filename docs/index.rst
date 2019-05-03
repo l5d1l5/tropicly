@@ -10,6 +10,8 @@ Welcome to tropicly's documentation!
    :maxdepth: 2
    :caption: Contents:
 
+   introduction
+   quickstart
    api
 
 Indices and tables

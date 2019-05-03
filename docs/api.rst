@@ -1,21 +1,23 @@
-API
-===
+Python API Reference
+====================
 
-Proximate Deforestation Driver prediction
------------------------------------------
+tropicly package
+----------------
 
-.. automodule:: tropicly.classification
+Subpackages
+...........
+
+
+
+
+
+Modules
+........
+.. automodule:: download
     :members:
 
-
-Above-ground Biomass Emissions
-------------------------------
-
-.. automodule:: tropicly.agb_emissions
+.. automodule:: masking
     :members:
 
-Acronymsort
------------
-
-.. automodule:: tropicly.acronymsort
+.. automodule:: alignment
     :members:
