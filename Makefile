@@ -18,7 +18,7 @@ install:
 ## Download the required strata, includes GFC, IFL, AGB, GSOCmap, and NaturalEarth.
 ## The GL30 strata (2000 and 2010) must be added to the folder "/data/raw/gl30" manually.
 download:
-	python3 tropicly/download.py all 2
+	python3 tropicly/download.py all 4
 
 # rule options: [gfc, gl30, agb, soc, aism, all]
 ## Create strata masks for GFC, GL30, AGB, and GSOCmap strata.
