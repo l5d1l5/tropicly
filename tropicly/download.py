@@ -1,10 +1,10 @@
 """
-data_download
+**download.py**
 
-Author: Tobias Seydewitz
-Date: 24.04.19
-Mail: seydewitz@pik-potsdam.de
-Institution: Potsdam Institute for Climate Impact Research
+:Author: Tobias Seydewitz
+:Date: 24.04.19
+:Mail: seydewitz@pik-potsdam.de
+:Institution: `Potsdam Institute for Climate Impact Research (PIK) <https://www.pik-potsdam.de/>`_
 """
 import logging
 import os
@@ -72,16 +72,17 @@ def download_worker(url, to_path, **kwargs):
         write_binary(content, to_path)
 
 
-# TODO test me
 def gfc(sheduler, dirs, **kwargs):
     """Downloads the required Global Forest Change stratum.
 
-    Citation: Hansen, M. C., P. V. Potapov, R. Moore, M. Hancher,
+    Files are stored in the ``/data/raw/gfc`` directory.
+
+    **Citation:** *Hansen, M. C., P. V. Potapov, R. Moore, M. Hancher,
     S. A. Turubanova, A. Tyukavina, D. Thau, S. V. Stehman, S. J. Goetz,
     T. R. Loveland, A. Kommareddy, A. Egorov, L. Chini, C. O. Justice,
     and J. R. G. Townshend. 2013.
     “High-Resolution Global Maps of 21st-Century Forest Cover Change.”
-    Science 342 (15 November): 850–53.
+    Science 342 (15 November): 850–53.*
 
     Args:
         sheduler (TaskSheduler): An instance of the TaskSheduler object for parallel download.
@@ -106,10 +107,12 @@ def gfc(sheduler, dirs, **kwargs):
 
 
 def agb(sheduler, dirs, **kwargs):
-    """Downloads the required Above-ground Woody Biomass density (agb) stratum.
+    """Downloads the required Above-ground Woody Biomass density (AGB) stratum.
 
-    Citation: Woods Hole Research Center. Unpublished data. Accessed through
-    Global Forest Watch Climate on [date]. climate.globalforestwatch.org
+    Files are stored in the ``/data/raw/biomass`` directory.
+
+    **Citation:** *Woods Hole Research Center. Unpublished data. Accessed through
+    Global Forest Watch Climate on [date]. climate.globalforestwatch.org*
 
     Args:
         sheduler (TaskSheduler): An instance of the TaskSheduler object for parallel download.
@@ -134,7 +137,10 @@ def agb(sheduler, dirs, **kwargs):
 def soc(sheduler, dirs, **kwargs):
     """Downloads the required Soil Organic Carbon Content (GSOCmap) stratum.
 
-    Citation:
+    Files are stored in the ``/data/raw/gsocmap`` directory.
+
+    **Citation:** *Food and Agriculture Organization of the United Nations,
+    GSOCMap Version 1.2.0*
 
     Args:
         dirs (namedtuple): Namedtuple of path objects. Represents the data folder.
@@ -148,10 +154,12 @@ def soc(sheduler, dirs, **kwargs):
 def ifl(dirs, **kwargs):
     """Downloads the required Intact Forest Landscape (IFL) stratum.
 
-    Citation: Potapov P., Yaroshenko A., Turubanova S., Dubinin M., Laestadius L.,
+    Files are stored in the ``/data/raw/ifl`` directory.
+
+    **Citation:** *Potapov P., Yaroshenko A., Turubanova S., Dubinin M., Laestadius L.,
     Thies C., Aksenov D., Egorov A., Yesipova Y., Glushkov I., Karpachevskiy M.,
     Kostikova A., Manisha A., Tsybikova E., Zhuravleva I. 2008.
-    Mapping the World's Intact Forest Landscapes by Remote Sensing. Ecology and Society, 13 (2)
+    Mapping the World's Intact Forest Landscapes by Remote Sensing. Ecology and Society, 13 (2)*
 
     Args:
         dirs (namedtuple): Namedtuple of path objects. Represents the data folder.
@@ -169,7 +177,9 @@ def ifl(dirs, **kwargs):
 def auxiliary(dirs, **kwargs):
     """Downloads the required auxiliary strata.
 
-    Citation: Tom Patterson and Nathaniel Vaughn Kelso, Natural Earth Data
+    Files are stored in the ``/data/raw/auxiliary`` directory.
+
+    **Citation:** *Tom Patterson and Nathaniel Vaughn Kelso, Natural Earth Data*
 
     Args:
         dirs (namedtuple): Namedtuple of path objects. Represents the data folder.
@@ -192,11 +202,12 @@ def auxiliary(dirs, **kwargs):
 def main(strata, threads):
     """Entry point for data download.
 
+    Downloads the required strata. Downloaded files will be stored in the ``/data/raw`` folder.
     Defaults to download all datasets if strata parameter is unknown.
 
     Args:
         strata (str): one of gfc, agb, soc, ifl, auxiliary or else. Downloads the corresponding dataset strata. Please,
-        refer to the equivalent named methods for dataset details.
+            refer to the equivalent named methods for dataset details.
         threads (int): Number of threads to spawn for the download process.
     """
     strata = strata.lower()

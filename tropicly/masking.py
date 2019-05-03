@@ -1,10 +1,10 @@
 """
-masking.py
+**masking.py**
 
-Author: Tobias Seydewitz
-Date: 26.04.19
-Mail: seydewitz@pik-potsdam.de
-Institution: Potsdam Institute for Climate Impact Research
+:Author: Tobias Seydewitz
+:Date: 26.04.19
+:Mail: seydewitz@pik-potsdam.de
+:Institution: `Potsdam Institute for Climate Impact Research (PIK) <https://www.pik-potsdam.de/>`_
 """
 import re
 from collections import defaultdict
@@ -210,6 +210,14 @@ def soc(dirs, crs):
 
 
 def aism(dirs, crs):
+    """Create mask for Aligned Image Stack Mosaic (AISM).
+
+    The aism can be created with scripts provided in the alignment.py.
+
+    Args:
+        dirs (namedtuple): Namedtuple of path objects. Represents the data folder.
+        crs (rasterio.crs.CRS): Tile index layer will use the defined crs.
+    """
     strata_sets = defaultdict(dict)
     regex = re.compile(r'(\w+)_((\d{2}[NS])_(\d{3}[WE]))\.tif')
     strata = sorted(dirs.aism.glob('*.tif'), key=lambda f: regex.match(f.name).group(2))
@@ -246,6 +254,14 @@ def aism(dirs, crs):
 
 
 def main(strata):
+    """Entry point for strata masking.
+
+    Creates a tile mask of the selected strata. Mask will be stored as ``*.shp`` file
+    in the ``/data/interim/masks`` folder. Defaults to error message.
+
+    Args:
+        strata (str): One of gfc, gl30, agb, soc, or aism.
+    """
     strata = strata.lower()
 
     if strata == 'gfc':

@@ -1,15 +1,15 @@
 """
-alignment.py
+**alignment.py**
 
-Author: Tobias Seydewitz
-Date: 30.04.19
-Mail: seydewitz@pik-potsdam.de
-Institution: Potsdam Institute for Climate Impact Research
+:Author: Tobias Seydewitz
+:Date: 30.04.19
+:Mail: seydewitz@pik-potsdam.de
+:Institution: `Potsdam Institute for Climate Impact Research (PIK) <https://www.pik-potsdam.de/>`_
 """
 import logging
-from sys import argv
 import os
 import re
+from sys import argv
 from threading import Thread
 from time import time
 
@@ -107,6 +107,15 @@ def alignment_worker(template_stratum, strata, ifl, crs, out_path):
 
 
 def align(dirs, sheduler, crs):
+    """Creates the AISM
+
+    Requires the ``/data/interim/masks/intersection.shp``.
+
+    Args:
+        dirs (namedtuple): Namedtuple of path objects. Represents the data folder.
+        sheduler (TaskSheduler): An instance of the TaskSheduler object for parallel alignment.
+        crs: crs (rasterio.crs.CRS): Alignment will use the defined crs.
+    """
     intersection = gpd.read_file(str(dirs.masks / 'intersection.shp'))
     ifl = gpd.read_file(str(dirs.ifl / 'ifl_2000.shp'))
 
@@ -131,6 +140,14 @@ def align(dirs, sheduler, crs):
 
 
 def intersect(dirs):
+    """Creates a intersection layer of the downloaded strata.
+
+    The intersection layer is fundamental for the alignment process.
+    The intersection layer will be stored in the ``/data/interim/masks`` folder.
+
+    Args:
+        dirs (namedtuple): Namedtuple of path objects. Represents the data folder.
+    """
     soc = gpd.read_file(str(dirs.masks / 'soc.shp'))
     gfc = gpd.read_file(str(dirs.masks / 'gfc.shp'))
     gl30 = gpd.read_file(str(dirs.masks / 'gl30.shp'))
@@ -144,12 +161,28 @@ def intersect(dirs):
 
 
 def clean_temporary(dirs, sheduler):
+    """Deletes temporary files created during the alignment process.
+
+    Files are deleted from ``/data/interim/aism`` directory.
+
+    Args:
+        dirs (namedtuple): Namedtuple of path objects. Represents the data folder.
+        sheduler (TaskSheduler): An instance of the TaskSheduler object for parallel cleanup.
+    """
     for f in dirs.aism.glob('*.tif'):
         if not re.match(r'\w+_\d{2}[NS]_\d{3}[WE]\.tif', f.name):
             sheduler.add_task(Thread(target=os.remove, args=(str(f),)))
 
 
 def main(operation, threads):
+    """Entry point for strata alignment to create the Aligned Image Stack Mosaic (AISM).
+
+    Defaults to error message.
+
+    Args:
+        operation (str): One of intersect, align, or clean.
+        threads (int): umber of threads to spawn for the alignment or clean process.
+    """
     operation = operation.lower()
 
     sheduler = TaskSheduler('download', int(threads))
