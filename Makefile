@@ -9,7 +9,7 @@
 
 ## Instal Python requirements to "/home/username/.local/lib/python3.*/site-packages".
 install:
-	pip install -r requirements.txt
+	pip3 install -r requirements.txt
 
 
 ### PIPELINE
@@ -37,6 +37,12 @@ interalgin:
 	python3 tropicly/alignment.py align 8
 	python3 tropicly/alignment.py clean 8
 	python3 tropicly/masking.py aism
+
+# rule options: [str] [integer]
+## Create data for developing the forest definition by computing the jaccard index for GL30_2000 and
+## GFC treecover2000 with varying canopy densities.
+definition:
+	python3 tropicly/definition.py fordef.csv 8
 
 
 ### ATOMIC PIPELINE STEPS
