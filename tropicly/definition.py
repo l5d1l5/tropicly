@@ -142,6 +142,12 @@ def forest_definition(dirs, sheduler, cover_classes, canopy_densities, name):
 
 
 def main(name, threads):
+    """
+
+    Args:
+        name (str):
+        threads (int):
+    """
     sheduler = TaskSheduler('definition', int(threads))
     sheduler.on_progress.connect(progress)
     sheduler.on_finish.connect(finish)

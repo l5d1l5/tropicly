@@ -35,6 +35,16 @@ LOGGER = logging.getLogger(__name__)
 
 
 def raster_clip(to_clip, bounds, **kwargs):
+    """
+
+    Args:
+        to_clip:
+        bounds:
+        **kwargs:
+
+    Returns:
+
+    """
     orientation = int_to_orient(bounds.left, bounds.top)
     out = {}
 
@@ -50,6 +60,17 @@ def raster_clip(to_clip, bounds, **kwargs):
 
 
 def rasterize_vector(vector, transform, bounds, shape):
+    """
+
+    Args:
+        vector:
+        transform:
+        bounds:
+        shape:
+
+    Returns:
+
+    """
     clipper = polygon_from(bounds)
     geometries = list(vector.cx[bounds[0]:bounds[2], bounds[1]:bounds[3]].geometry)
 
@@ -63,6 +84,15 @@ def rasterize_vector(vector, transform, bounds, shape):
 
 
 def raster_alignment(strata, **kwargs):
+    """
+
+    Args:
+        strata:
+        **kwargs:
+
+    Returns:
+        dict: A dict of str
+    """
     out = {}
 
     for key, values in strata.items():
@@ -92,6 +122,15 @@ def raster_alignment(strata, **kwargs):
 
 
 def alignment_worker(template_stratum, strata, ifl, crs, out_path):
+    """
+
+    Args:
+        template_stratum:
+        strata:
+        ifl:
+        crs:
+        out_path:
+    """
     kwargs = make_warp_profile(template_stratum, crs)
     kwargs['out'] = out_path
 
@@ -109,7 +148,8 @@ def alignment_worker(template_stratum, strata, ifl, crs, out_path):
 def align(dirs, sheduler, crs):
     """Creates the AISM
 
-    Requires the ``/data/interim/masks/intersection.shp``.
+    Requires the ``/data/interim/masks/intersection.shp``. The AISM is stored in
+    the ``/data/interim/aism`` folder.
 
     Args:
         dirs (namedtuple): Namedtuple of path objects. Represents the data folder.
@@ -185,7 +225,7 @@ def main(operation, threads):
     """
     operation = operation.lower()
 
-    sheduler = TaskSheduler('download', int(threads))
+    sheduler = TaskSheduler('alignment', int(threads))
     sheduler.on_progress.connect(progress)
     sheduler.on_finish.connect(finish)
 
