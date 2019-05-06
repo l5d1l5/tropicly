@@ -110,6 +110,7 @@ ENV/
 *.cpg
 *.sbn
 *.sbx
+*.csv
 *.geojson
 *.README.html
 *.VERSION.txt
