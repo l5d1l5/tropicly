@@ -21,3 +21,6 @@ Modules
 
 .. automodule:: alignment
     :members:
+
+.. automodule:: definition
+    :members:
