@@ -1,9 +1,9 @@
-"""
-test_harmonization
+"""**test_definition**
 
-Author: Tobias Seydewitz
-Date: 05.04.18
-Mail: tobi.seyde@gmail.com
+:Author: Tobias Seydewitz
+:Date: 05.04.18
+:Mail: seydewitz@pik-potsdam.de
+:Institution: `Potsdam Institute for Climate Impact Research (PIK) <https://www.pik-potsdam.de/>`_
 """
 from unittest import TestCase
 
@@ -11,7 +11,7 @@ import numpy as np
 
 from tests.utilities import random_test_data
 from tropicly.definition import jaccard_index
-from tropicly.definition import treecover_similarity
+from tropicly.definition import treecover_agreement
 
 
 class TestHarmonization(TestCase):
@@ -19,36 +19,22 @@ class TestHarmonization(TestCase):
         gl30 = np.zeros(shape=(10, 10))
         gfc = np.zeros(shape=(5, 5))
 
-        with self.assertRaises(ValueError) as err:
-            treecover_similarity(gl30, gfc)
+        with self.assertRaises(ValueError):
+            treecover_agreement(gl30, gfc, canopy_densities=(0, 10, 20, 30), cover_classes=(10,))
 
     def test_treecover_similarity_with_zero_data(self):
         a = np.zeros(shape=(10, 10))
 
-        expected = {'SMC0': 1.0,
-                    'SMC10': 1.0,
-                    'SMC20': 1.0,
-                    'SMC30': 1.0,
-                    'JI0': 0,
-                    'JI10': 0,
-                    'JI20': 0,
-                    'JI30': 0}
-        actual = treecover_similarity(a, a, compute_smc=True)
+        expected = [0, 0, 0, 0]
+        actual = treecover_agreement(a, a, canopy_densities=(0, 10, 20, 30), cover_classes=(10,))
 
         self.assertEqual(expected, actual)
 
     def test_treecover_similarity_with_mock_data(self):
         gfc, *_, gl30, _ = random_test_data()
 
-        expected = {'SMC0': 0.8521,
-                    'SMC10': 0.9026,
-                    'SMC20': 0.9517,
-                    'SMC30': 1.0,
-                    'JI0': 0.7075,
-                    'JI10': 0.786,
-                    'JI20': 0.881,
-                    'JI30': 1.0}
-        actual = treecover_similarity(gl30, gfc, compute_smc=True)
+        expected = [0.7075, 0.786, 0.881, 1.0]
+        actual = treecover_agreement(gl30, gfc, canopy_densities=(0, 10, 20, 30), cover_classes=(20,))
 
         self.assertEqual(expected, actual)
 
