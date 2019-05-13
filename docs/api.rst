@@ -1,18 +1,12 @@
 Python API Reference
 ====================
-
 tropicly package
 ----------------
-
 Subpackages
 ...........
-
-
-
-
-
 Modules
 ........
+
 .. automodule:: settings
     :members:
 

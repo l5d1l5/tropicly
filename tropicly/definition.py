@@ -1,4 +1,6 @@
-"""**definition**
+"""
+definition
+****
 
 :Author: Tobias Seydewitz
 :Date: 06.05.19
