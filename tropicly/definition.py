@@ -1,5 +1,4 @@
-"""
-**definition.py**
+"""**definition**
 
 :Author: Tobias Seydewitz
 :Date: 06.05.19
@@ -23,8 +22,9 @@ LOGGER = logging.getLogger(__name__)
 
 
 def jaccard_index(arr1, arr2, return_matrix=False):
-    """
-    Calculates the Jaccard Index (JI) of two equal sized arrays or vectors.
+    """Computes the Jaccard Index for two binary matrices.
+
+    The function computes the Jaccard Index (JI) of two equal sized matrices or vectors.
     If return_matrix is set to true the method provides the JI and the necessary
     calculation matrix as a 2x2 array.
     Equation:
@@ -34,16 +34,13 @@ def jaccard_index(arr1, arr2, return_matrix=False):
     c := Difference, x is true and y is false
     d := Difference, x and y are false
 
-    :param arr1: numpy.ndarray, list or tuple
-    :param arr2: numpy.ndarray, list or tuple
-        Both array alike objects sized in equal n x m (dimensions).
-    :param return_matrix: boolean, optional
-        A boolean value determining the return of the calculation matrix.
-    :return: float OR (float, list)
-        Default, the method returns only the JI if, return_matrix is set to true the
-        method returns the JI and the coefficient matrix.
-        [[a, b],
-         [c, d]]
+    Args:
+        arr1 (list, ndarry): Value matrix should contain only binary values (1 and 0).
+        arr2 (list, ndarry): Value matrix should contain only binary values (1 and 0).
+        return_matrix (bool): If set to true function returns the JI and the coefficient matrix as a list.
+
+    Returns:
+        float or tuple(int, list): The JI or the JI and the coefficient matrix.
     """
     x, y = np.array(arr1, np.bool), np.array(arr2, np.bool)
 
@@ -75,23 +72,23 @@ def jaccard_index(arr1, arr2, return_matrix=False):
     return jaccard
 
 
-def treecover_similarity(gl30, gfc, cover_classes, canopy_densities):
-    """
-    Determines the tree cover agreement between a GlobaLand30 land cover and a Global Forest
-    Change tree cover raster image.
+def treecover_agreement(gl30, gfc, cover_classes, canopy_densities):
+    """ Computes the tree cover agreement between GL30 and GFC treecover strata.
 
-    :param gl30: np.ndarray
-    :param gfc: np.ndarray
-        GL30 and GFC treecover image data.
-    :param cover_classes: list or tuple of integer values
-        GL30 land cover classes to interpret as forest.
-    :param canopy_densities: list or tuple of integer values
-        GFC treecover canopy densities to consider for
-        analysis.
-    :param compute_smc: boolean
-        Compute simple matching coefficient as well. Default is false.
-    :return: dictionary
-        Computed values stored in a dictionary.
+    Computes the tree cover agreement between GL30 and GFC by applying the Jaccard Index.
+
+    Args:
+        gl30 (ndarry): GL30 strata as a numpy array.
+        gfc (ndarry): GFC tree cover strata as numpy array.
+        cover_classes (list, tuple): Values to consider as tree cover from GL30 strata.
+        canopy_densities (list, tuple): Canopy densities to consider from GFC strata. Excludes all densities
+            cd < x.
+
+    Returns:
+        list: Computed Jaccard Indexes as as list.
+
+    Raises:
+        ValueError: If the dimensionalty of GL30 and GFC strata differ.
     """
     if gl30.shape != gfc.shape:
         raise ValueError('Diverging image shapes.')
@@ -113,16 +110,42 @@ def treecover_similarity(gl30, gfc, cover_classes, canopy_densities):
 
 
 def definition_worker(gl30, gfc, key, region, cover_classes, canopy_densities, out):
+    """A simple worker function for parallelize tree cover agreement computation.
+
+    Computes Jaccard Indexes for a GL30 and GFC strata set and writes results to
+    out file.
+
+    Args:
+        gl30 (str): Path to GL30 strata.
+        gfc (str): Path to GFC strata.
+        key (str): Strata identifier.
+        region (str): Strata region.
+        cover_classes (list, tuple): Values to consider as tree cover from GL30 strata.
+        canopy_densities (list, tuple): Canopy densities to consider from GFC strata.
+        out (file): File handle to output file.
+    """
     with raster_open(gl30, 'r') as handle1, raster_open(gfc, 'r') as handle2:
         gl30 = handle1.read(1)
         gfc = handle2.read(1)
 
-    result = treecover_similarity(gl30, gfc, cover_classes, canopy_densities)
+    result = treecover_agreement(gl30, gfc, cover_classes, canopy_densities)
 
     out.write(','.join([key, region] + list(map(str, result))) + '\n')
 
 
 def forest_definition(dirs, sheduler, cover_classes, canopy_densities, name):
+    """Create the tree cover agreement analysis source data.
+
+    Loads the GL30 and GFC strata from AISM and prepares a outut file
+    for tree cover agreement output. The Jaccard Index results will be stored in ``/data/proc/fordef/``.
+
+    Args:
+        dirs (namedtuple): Namedtuple of path objects. Represents the data folder.
+        sheduler (TaskSheduler): An instance of the TaskSheduler object for parallel computation.
+        cover_classes (list, tuple): Values to consider as tree cover from GL30 strata.
+        canopy_densities (list, tuple): Canopy densities to consider from GFC strata.
+        name (str): Name of the out file.
+    """
     aism = gpd.read_file(str(dirs.masks / 'aism.shp'))
 
     # prepare out file and write csv head
@@ -142,11 +165,14 @@ def forest_definition(dirs, sheduler, cover_classes, canopy_densities, name):
 
 
 def main(name, threads):
-    """
+    """Entry point for forest definition.
+
+    Computes tree cover agreement between GL30 and GFC. Results will be stored in
+    ``/data/proc/fordef/``.
 
     Args:
-        name (str):
-        threads (int):
+        name (str): Name of the output file.
+        threads (int): Number of threads to spawn for the download process.
     """
     sheduler = TaskSheduler('definition', int(threads))
     sheduler.on_progress.connect(progress)
@@ -166,6 +192,3 @@ def main(name, threads):
 if __name__ == '__main__':
     name, *args = argv
     main(*args)
-
-
-

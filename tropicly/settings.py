@@ -1,10 +1,9 @@
-"""
-settings.py
+"""**download**
 
-Author: Tobias Seydewitz
-Date: 25.04.19
-Mail: seydewitz@pik-potsdam.de
-Institution: Potsdam Institute for Climate Impact Research
+:Author: Tobias Seydewitz
+:Date: 25.04.19
+:Mail: seydewitz@pik-potsdam.de
+:Institution: `Potsdam Institute for Climate Impact Research (PIK) <https://www.pik-potsdam.de/>`_
 """
 from enum import Enum
 
@@ -16,7 +15,8 @@ from utils import get_data_dir
 
 
 class SOCClasses(Enum):
-    """Soil organic carbon change classes. Don et al. (2011)"""
+    """Soil organic carbon change classes.
+    """
     primary_forest = 0
     secondary_forest = 1
     grassland = 2
@@ -26,7 +26,7 @@ class SOCClasses(Enum):
 
 
 class GL30Classes(Enum):
-    """GlobLand30 land cover classes. Chen et al. (2015)
+    """GlobLand30 land cover classes.
 
     The enum member values correspond to the pixel values of our
     proximate deforestation driver predictions.

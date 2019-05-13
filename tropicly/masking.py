@@ -1,5 +1,4 @@
-"""
-**masking.py**
+"""**masking**
 
 :Author: Tobias Seydewitz
 :Date: 26.04.19

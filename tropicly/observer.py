@@ -1,73 +1,58 @@
-# TODO doc
+"""**observer**
+
+:Author: Tobias Seydewitz
+:Date: 06.05.19
+:Mail: seydewitz@pik-potsdam.de
+:Institution: `Potsdam Institute for Climate Impact Research (PIK) <https://www.pik-potsdam.de/>`_
+"""
 
 
 class Signal:
-    """
-    Simple implementation of observer pattern.
+    """ A Simple implementation of observer pattern.
 
-    Example:
-        class Observable:
-            def __init__(self):
-                self.on_action = Signal('on_action')
-            def method(self):
-                self.on_action.fire(*args, **kwargs)
-
-        callback(*args, **kwargs):
-            print(*args, **kwargs)
-
-        obj = Observable()
-        obj.on_action.connect(callback)
+    Attributes:
+        name (str): Name of the signal.
     """
     def __init__(self, name=''):
-        """
-        Signal constructor.
-
-        :param name: str
-            Signal name.
-        """
         self.name = name
-        self.__handler = []
+        self._handler = []
 
     def connect(self, handler):
-        """
-        Add a new signal handler.
+        """Add a new signal handler.
 
-        :param handler: function or method
+        Args:
+            handler (func): Handler function.
         """
-        if handler not in self.__handler:
-            self.__handler.append(handler)
+        if handler not in self._handler:
+            self._handler.append(handler)
 
     def remove(self, handler):
-        """
-        Remove a signal handler.
+        """Remove a signal handler.
 
-        :param handler: function or method
+        Args:
+            handler (func): Handler to remove.
         """
-        if handler in self.__handler:
-            self.__handler.remove(handler)
+        if handler in self._handler:
+            self._handler.remove(handler)
 
     def fire(self, *args, **kwargs):
-        """
-        Execute all connected handlers.
+        """Execute all connected handlers with args and kwargs.
 
-        :param args:
-            Handler arguments.
-        :param kwargs:
-            Handler key word arguments.
+        Args:
+            args: Args passed to handlers.
+            kwargs: Kwargs passed to handlers.
         """
-        for handler in self.__handler:
+        for handler in self._handler:
             handler(*args, **kwargs)
 
     def clear_all(self):
-        """
-        Disconnect all handlers.
-        """
-        self.__handler = []
+        """Disconnect all handlers."""
+        self._handler = []
 
     def __str__(self):
-        names = [handler.__name__ for handler in self.__handler]
+        names = [handler.__name__ for handler in self._handler]
 
-        return '{}(name={}, handler={})'.format(self.__class__.__name__, self.name, names)
+        return '{}(name={}, handler={})'.format(__class__.__name__, self.name, names)
 
     def __repr__(self):
-        return '<{}(name={}) at {}>'.format(self.__class__.__name__, self.name, hex(id(self)))
+        return '<{}(name={}) at {}>'.format(__class__.__name__, self.name, hex(id(self)))

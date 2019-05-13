@@ -13,6 +13,9 @@ Subpackages
 
 Modules
 ........
+.. automodule:: settings
+    :members:
+
 .. automodule:: download
     :members:
 
@@ -23,4 +26,7 @@ Modules
     :members:
 
 .. automodule:: definition
+    :members:
+
+.. automodule:: observer
     :members:
