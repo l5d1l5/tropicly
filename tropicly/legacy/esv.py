@@ -2,9 +2,9 @@ import numpy as np
 import pandas as pd
 import rasterio as rio
 
-from tropicly.enums import GL30Classes
+from legacy.enums import GL30Classes
 from tropicly.raster import write
-from tropicly.distance import Distance
+from distance import Distance
 
 
 # TODO doc

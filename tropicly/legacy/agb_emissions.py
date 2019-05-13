@@ -1,7 +1,7 @@
 import numpy as np
 from rasterio import open
 
-from tropicly.distance import Distance
+from distance import Distance
 from tropicly.utils import write
 
 

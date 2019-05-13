@@ -1,11 +1,11 @@
 import numpy as np
 from rasterio import open
 
-from tropicly.distance import Distance
-from tropicly.enums import GL30Classes
-from tropicly.enums import SOCCCoefficients
-from tropicly.enums import SOCClasses
-from tropicly.factors import Coefficient
+from distance import Distance
+from legacy.enums import GL30Classes
+from legacy.enums import SOCCCoefficients
+from legacy.enums import SOCClasses
+from factors import Coefficient
 from tropicly.utils import write
 
 # Inject alternatives SOCAlternativeFactors, SOCCFactors

@@ -11,9 +11,9 @@ import numpy as np
 from affine import Affine
 
 from tests.utilities import random_test_data
-from tropicly.errors import TropiclySamplingError
-from tropicly.sampling import draw_sample
-from tropicly.sampling import sample_occupied
+from legacy.errors import TropiclySamplingError
+from legacy.sampling import draw_sample
+from legacy.sampling import sample_occupied
 
 
 class TestSampling(TestCase):

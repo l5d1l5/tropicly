@@ -6,8 +6,8 @@ from rasterio.features import rasterize
 from rasterio.features import shapes
 from shapely.geometry import Polygon
 
-from tropicly.distance import Distance
-from tropicly.frequency import most_common_class
+from distance import Distance
+from legacy.frequency import most_common_class
 from tropicly.raster import write
 
 # TODO doc

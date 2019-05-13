@@ -6,9 +6,9 @@ Date: 12.04.18
 Mail: tobi.seyde@gmail.com
 """
 from unittest import TestCase
-from tropicly.distance import (Distance,
-                               haversine,
-                               euclidean)
+from distance import (Distance,
+                      haversine,
+                      euclidean)
 
 
 class TestDistance(TestCase):

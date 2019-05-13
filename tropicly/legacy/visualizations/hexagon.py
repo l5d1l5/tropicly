@@ -10,8 +10,8 @@ from matplotlib.lines import Line2D
 from matplotlib.patches import Polygon
 from matplotlib.patches import Rectangle
 
-from tropicly.grid import GridPolygon
-from tropicly.grid import PolygonGrid
+from legacy.grid import GridPolygon
+from legacy.grid import PolygonGrid
 from tropicly.utils import cache_directories
 from tropicly.utils import get_data_dir
 

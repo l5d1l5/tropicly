@@ -1,6 +1,6 @@
 from unittest import TestCase
-from tropicly.enums import ESV_costanza, ESV_deGroot, ESV_worldbank
-from tropicly.esv import forest_loss, landcover_gain
+from legacy.enums import ESV_costanza, ESV_deGroot, ESV_worldbank
+from legacy.esv import forest_loss, landcover_gain
 import numpy as np
 
 

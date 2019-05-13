@@ -1,7 +1,7 @@
 import numpy as np
 from rasterio import open
 
-from tropicly.errors import TropiclySamplingError
+from legacy.errors import TropiclySamplingError
 
 # TODO doc
 

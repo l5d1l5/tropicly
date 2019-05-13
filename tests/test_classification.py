@@ -10,9 +10,9 @@ from unittest import TestCase
 import numpy as np
 
 from tests.utilities import random_test_data
-from tropicly.classification import extract_square
-from tropicly.classification import reclassify
-from tropicly.classification import superimpose
+from legacy.classification import extract_square
+from legacy.classification import reclassify
+from legacy.classification import superimpose
 
 
 class TestClassification(TestCase):

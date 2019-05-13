@@ -9,7 +9,7 @@ import pandas as pd
 from shapely.affinity import scale
 from shapely.geometry import asShape
 
-from tropicly.grid import SegmentedHexagon
+from legacy.grid import SegmentedHexagon
 
 
 # TODO doc

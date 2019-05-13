@@ -1,7 +1,7 @@
 import numpy as np
 from unittest import TestCase
-from tropicly.enums import SOCClasses
-from tropicly.soc_emissions import factor_map, soc_emissions
+from legacy.enums import SOCClasses
+from legacy.soc_emissions import factor_map, soc_emissions
 
 
 class TestSOCEmissions(TestCase):

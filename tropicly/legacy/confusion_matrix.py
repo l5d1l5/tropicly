@@ -1,8 +1,8 @@
 import numpy as np
 import pandas as pd
 
-from tropicly.errors import TropiclyConfusionMatrixError
-from tropicly.errors import TropiclyConfusionMatrixLabelError
+from legacy.errors import TropiclyConfusionMatrixError
+from legacy.errors import TropiclyConfusionMatrixLabelError
 
 
 # TODO doc

@@ -1,5 +1,5 @@
 from unittest import TestCase
-from tropicly.confusion_matrix import _NormalizedConfusionMatrix
+from legacy.confusion_matrix import _NormalizedConfusionMatrix
 import numpy as np
 
 

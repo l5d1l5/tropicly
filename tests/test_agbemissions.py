@@ -1,6 +1,6 @@
 import numpy as np
 from unittest import TestCase
-from tropicly.agb_emissions import agb_emissions
+from legacy.agb_emissions import agb_emissions
 
 
 class TestAGBEmissions(TestCase):

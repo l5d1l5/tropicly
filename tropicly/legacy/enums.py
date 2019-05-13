@@ -1,6 +1,6 @@
 from enum import Enum
 
-from tropicly.factors import Coefficient
+from factors import Coefficient
 
 
 # TODO doc

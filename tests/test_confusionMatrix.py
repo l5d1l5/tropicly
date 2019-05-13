@@ -2,9 +2,9 @@ from unittest import TestCase
 
 import numpy as np
 
-from tropicly.confusion_matrix import ConfusionMatrix
-from tropicly.confusion_matrix import TropiclyConfusionMatrixLabelError
-from tropicly.confusion_matrix import _NormalizedConfusionMatrix
+from legacy.confusion_matrix import ConfusionMatrix
+from legacy.confusion_matrix import TropiclyConfusionMatrixLabelError
+from legacy.confusion_matrix import _NormalizedConfusionMatrix
 
 
 class TestConfusionMatrix(TestCase):
