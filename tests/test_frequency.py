@@ -7,8 +7,8 @@ Mail: tobi.seyde@gmail.com
 """
 import numpy as np
 from unittest import TestCase
-from legacy.frequency import (frequency,
-                              most_common_class, )
+from frequency import (frequency,
+                       most_common_class, )
 from collections import OrderedDict
 from tests.utilities import random_test_data
 

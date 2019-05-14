@@ -285,5 +285,5 @@ def main(strata):
 
 
 if __name__ == '__main__':
-    name, *args = argv
+    _, *args = argv
     main(*args)

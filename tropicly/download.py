@@ -144,6 +144,7 @@ def soc(sheduler, dirs, **kwargs):
     GSOCMap Version 1.2.0*
 
     Args:
+        sheduler (TaskSheduler): For parallel execution.
         dirs (namedtuple): Namedtuple of path objects. Represents the data folder.
         **kwargs: Request headers (spoof User-Agent see global HEADERS variable)
     """
@@ -249,5 +250,5 @@ def main(strata, threads):
 
 
 if __name__ == '__main__':
-    name, *args = argv
+    _, *args = argv
     main(*args)

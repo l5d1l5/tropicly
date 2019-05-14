@@ -22,5 +22,8 @@ Modules
 .. automodule:: definition
     :members:
 
+.. automodule:: classification
+    :members:
+
 .. automodule:: observer
     :members:

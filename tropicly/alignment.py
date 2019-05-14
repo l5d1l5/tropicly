@@ -36,7 +36,7 @@ LOGGER = logging.getLogger(__name__)
 
 
 def raster_clip(to_clip, bounds, **kwargs):
-    """
+    """Documentation pending
 
     Args:
         to_clip:
@@ -44,7 +44,7 @@ def raster_clip(to_clip, bounds, **kwargs):
         **kwargs:
 
     Returns:
-
+        dict:
     """
     orientation = int_to_orient(bounds.left, bounds.top)
     out = {}
@@ -61,7 +61,7 @@ def raster_clip(to_clip, bounds, **kwargs):
 
 
 def rasterize_vector(vector, transform, bounds, shape):
-    """
+    """Documentation pending
 
     Args:
         vector:
@@ -85,11 +85,11 @@ def rasterize_vector(vector, transform, bounds, shape):
 
 
 def raster_alignment(strata, **kwargs):
-    """
+    """Documentation pending
 
     Args:
-        strata:
-        **kwargs:
+        strata (dict): Strata
+        **kwargs (dict): Warp profile
 
     Returns:
         dict: A dict of str
@@ -98,9 +98,11 @@ def raster_alignment(strata, **kwargs):
 
     for key, values in strata.items():
         length = len(values)
+        # create a name for intermediate stratum
         tmp_name = '{}{:x}.tif'.format(key, abs(hash(''.join(values) + str(time()))))
         tmp_name = str(kwargs['out'] / tmp_name)
 
+        # strata set just one stratum reproject with warp profile
         if length == 1:
             try:
                 out[key] = reproject_like(*values, tmp_name, **kwargs)
@@ -108,6 +110,7 @@ def raster_alignment(strata, **kwargs):
             except Exception:
                 LOGGER.error('Failed strata %s includes these files %s', key, values)
 
+        # strata set greater > 1 merge and reproject
         elif length > 1:
             try:
                 data, affine = merge_from(values, bounds=kwargs['bounds'], res=kwargs['res'])
@@ -123,26 +126,37 @@ def raster_alignment(strata, **kwargs):
 
 
 def alignment_worker(template_stratum, strata, ifl, crs, out_path):
-    """
+    """Worker function to parallelize alignment process.
+
+    First, create a warp profile for ``template_stratum`` with ``crs``. After, apply this profile to all strata sets
+    in ``strata`` (should contain a path to template stratum as well). Next, rasterize IFL stratum by applying
+    warp profile. Finally, round bounds of strata and clip them all and write the final product.
 
     Args:
-        template_stratum:
-        strata:
-        ifl:
-        crs:
-        out_path:
+        template_stratum (Path): Template raster stratum.
+        strata (dict): Strata which will be aligned with the template stratum. Dict key must be a string and value
+            should be a list of paths to strata.
+        ifl (geopandas.GeoDataFrame): The Intact Forest Landscape stratum as vector layer.
+        crs (rasterio.crs.CRS): Each stratum will be reprojected to this CRS.
+        out_path (Path): Final and intermediate layers will stored here.
     """
+    # make a warp profile for the template stratum by using the requested CRS
     kwargs = make_warp_profile(template_stratum, crs)
+    # intermediate strata will be stored in out_path
     kwargs['out'] = out_path
 
+    # align all strata by applying the warp profile
     out = raster_alignment(strata, **kwargs)
 
+    # rasterize ifl vector by applying warp profile
     data = rasterize_vector(ifl, kwargs['transform'], kwargs['bounds'], (kwargs['height'], kwargs['width']))
     name = 'ifl{:x}.tif'.format(id(data))
     out['ifl'] = write(data, str(out_path / name), **kwargs)
 
+    # round strata bounds to int degrees
     kwargs['bounds'] = round_bounds(kwargs['bounds'])
 
+    # clip strata to this bounds
     raster_clip(out, **kwargs)
 
 
@@ -162,6 +176,7 @@ def align(dirs, sheduler, crs):
 
     for key, strata in intersection.groupby(by='key', sort=False):
 
+        # key will be used as the name of the AISM stratum
         strata_mapping = {
             'gl30_00': {str(dirs.gl30 / stratum) for stratum in strata.gl30_00},
             'gl30_10': {str(dirs.gl30 / stratum) for stratum in strata.gl30_10},
@@ -252,6 +267,6 @@ def main(operation, threads):
 
 
 if __name__ == '__main__':
-    name, *args = argv
+    _, *args = argv
     main(*args)
 

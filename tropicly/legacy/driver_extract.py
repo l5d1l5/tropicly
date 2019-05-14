@@ -1,6 +1,6 @@
 import rasterio as rio
 import pandas as pd
-from legacy.frequency import frequency
+from frequency import frequency
 from distance import Distance
 from tropicly.utils import get_data_dir, cache_directories
 import re
