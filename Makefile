@@ -5,7 +5,7 @@
 # mail: seydewitz@pik-potsdam.de
 # institution: Potsdam Institute for Climate Impact Research
 
-.PHONY: help install download mask interalgin intersection alignment aism
+.PHONY: help install download mask interalgin definition classification intersection alignment aism
 
 ## Instal Python requirements to "/home/username/.local/lib/python3.*/site-packages".
 install:
@@ -43,6 +43,11 @@ interalgin:
 ## GFC treecover2000 with varying canopy densities.
 definition:
 	python3 tropicly/definition.py fordef.csv 8
+
+# rule options:  [int]
+## Perform classification of proximate deforestation driver. Requires the aism mask and the algined strata.
+classification:
+	python3 tropicly/classification.py 4
 
 
 ### ATOMIC PIPELINE STEPS
