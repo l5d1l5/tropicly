@@ -1,5 +1,5 @@
 """
-settings
+Module: settings
 ****
 
 :Author: Tobias Seydewitz
@@ -33,6 +33,7 @@ class GL30Classes(Enum):
     The enum member values correspond to the pixel values of our
     proximate deforestation driver predictions.
     """
+    zero = 0
     cropland = 10
     forest = 20
     regrowth = 25  # not in Chen et al. introduced by us to represent Hansen et al. gain
@@ -53,6 +54,11 @@ SETTINGS = {
     'data': cache_directories(get_data_dir()),
     'canopy_densities': list(range(0, 100, 5)),
     'cover_classes': [GL30Classes.forest.value],
+    'classify_years': list(range(1, 11)),
+    'canopy_density': 10,
+    'clustering': [GL30Classes.forest.value],
+    'reject': [GL30Classes.zero.value, GL30Classes.forest.value, GL30Classes.no_data.value],
+    'buffer': 500,
 }
 
 

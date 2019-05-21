@@ -1,5 +1,5 @@
 """
-alignment
+Module: alignment
 ****
 
 :Author: Tobias Seydewitz
