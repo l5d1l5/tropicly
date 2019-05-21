@@ -2,11 +2,7 @@ import copy
 import logging
 import os
 import re
-import time
-import urllib.request
 from collections import namedtuple
-from contextlib import contextmanager
-from functools import wraps
 from pathlib import Path
 
 import geopandas as gpd
@@ -57,43 +53,6 @@ def cache_directories(path):
     return Directories(**dir_structure)
 
 
-@contextmanager
-def benchmark_context():
-    """
-    Benchmark functions or else with a
-    context manager e.g.
-
-    with benchmark():
-        do()
-        foo()
-
-    >> 2
-    """
-    start = time.time()
-    try:
-        yield None
-    finally:
-        print(time.time() - start)
-
-
-def benchmark_decorator(func):
-    @wraps(func)
-    def wrapper(*args, **kwargs):
-        """
-        A decorator for benchmark methods. It prints the duration
-        the provided function needed to stdout.
-        :param args: func arguments
-        :param kwargs: func key arguments
-        :return: func result
-        """
-        start = time.time()
-        result = func(*args, **kwargs)
-        end = time.time() - start
-        print('{}: {}'.format(func.__name__, end))
-        return result
-    return wrapper
-
-
 def ratio(numerator, denominator):
     """
     Compute ratio of scaled to 100.
@@ -114,71 +73,6 @@ def default(*args):
     pass
 
 
-def execute_concurrent(to_execute, max_threads, msg='{} of 100 %', callback=default, init_len=None):
-    # TODO fix ratio compute bug
-    """
-    :param to_execute: list or iterable
-        An iterable of thread objects.
-    :param max_threads: int
-        Maximum number of threads to start respectively run.
-    :param msg: str
-        Message to emit after a set of threads finished.
-    :param callback: func
-        Function to call after a set of threads is finished.
-        Must accept a message (str) and a numeric (float) as
-        parameter. Numeric is ratio of finished threads in
-        percent.
-    :param init_len: int
-        Total number of concurrent objects to execute if not provided
-        will be derived from to_execute.
-    """
-    stack = copy.copy(to_execute)
-    current = []
-
-    if init_len is None:
-        init_len = len(to_execute)
-
-    if len(stack) % max_threads != 0:
-        reminder = len(stack) % max_threads
-        execute_concurrent(stack[-reminder:], reminder, msg=msg, callback=default, init_len=init_len)
-        stack = stack[:-reminder]
-
-    while stack:
-        thread = stack.pop()
-        thread.start()
-        current.append(thread)
-
-        if len(current) == max_threads:
-            [thread.join() for thread in current]
-            callback(msg, ratio((init_len - len(stack)), init_len))
-            current = []
-
-
-# Download
-def download(url, **kwargs):
-    # TODO thesis
-    request = urllib.request.Request(url, **kwargs)
-    response = None
-
-    try:
-        response = urllib.request.urlopen(request)
-
-    except:
-        pass  # log error -> unable to download URL
-
-    if response is not None:
-        return response.read()
-
-    return response
-
-
-def write_binary(content, to_path):
-    # TODO thesis
-    with open(to_path, 'wb') as dst:
-        dst.write(content)
-
-
-# GIS
 def read_raster(item):
     """
     Helper method to return a raster file as a opened instance of
@@ -580,14 +474,6 @@ def dispatch_name(val, key, idx):
         'reproject_1': lambda: ('gl30_00', '{}_{}.tif'.format(idx, key)),
         'reproject_2': lambda: ('soil', '{}_{}.tif'.format(idx, key)),
     }.get(val, None)()
-
-
-def download_worker(url: str, to_path: str, **kwargs) -> None:
-    # TODO thesis
-    content = download(url, **kwargs)
-
-    if content is not None:
-        write_binary(content, to_path)
 
 
 def alignment_worker(to_reproject, to_crs, to_merge_alike, out_path, generic_name):
