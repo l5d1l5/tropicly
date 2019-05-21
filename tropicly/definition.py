@@ -1,5 +1,5 @@
 """
-definition
+Module: definition
 ****
 
 :Author: Tobias Seydewitz

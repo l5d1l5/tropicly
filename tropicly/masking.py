@@ -1,5 +1,5 @@
 """
-masking
+Module: masking
 ****
 
 :Author: Tobias Seydewitz
