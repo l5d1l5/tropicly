@@ -254,6 +254,26 @@ def aism(dirs, crs):
     gdf.to_file(str(dirs.masks / 'aism.shp'))
 
 
+def driver(dirs, crs):
+    """Create mask for Proximated Deforestation Driver stratum.
+
+    Args:
+        dirs (namedtuple): Namedtuple of path objects. Represents the data folder.
+        crs (rasterio.crs.CRS): Tile index layer will use the defined crs.
+    """
+    strata = list(dirs.driver.glob('*.tif'))
+    regex = re.compile(r'\w+_(\d{2}[NS]_\d{3}[WE])\.tif')
+
+    # attribute table
+    kwargs = {
+        'driver': [regex.match(stratum.name).group(0) for stratum in strata],
+        'key': [regex.match(stratum.name).group(1) for stratum in strata]
+    }
+
+    driver_mask = tile_index(list(strata), crs, **kwargs)
+    driver_mask.to_file(str(dirs.masks / 'driver.shp'))
+
+
 def main(strata):
     """Entry point for strata masking.
 
@@ -261,7 +281,7 @@ def main(strata):
     in the ``/data/interim/masks`` folder. Defaults to error message.
 
     Args:
-        strata (str): One of gfc, gl30, agb, soc, or aism.
+        strata (str): One of gfc, gl30, agb, soc, aism, or driver.
     """
     strata = strata.lower()
 
@@ -279,6 +299,9 @@ def main(strata):
 
     elif strata == 'aism':
         aism(SETTINGS['data'], SETTINGS['wgs84'])
+
+    elif strata == 'driver':
+        driver(SETTINGS['data'], SETTINGS['wgs84'])
 
     else:
         print('Unknown strata \"%s\". Please, select one of [gfc, gl30, agb, soc, aism].' % strata)

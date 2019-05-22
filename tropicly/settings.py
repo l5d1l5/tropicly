@@ -59,6 +59,9 @@ SETTINGS = {
     'clustering': [GL30Classes.forest.value],
     'reject': [GL30Classes.zero.value, GL30Classes.forest.value, GL30Classes.no_data.value],
     'buffer': 500,
+    'deforestation': [GL30Classes.cropland.value, GL30Classes.regrowth.value, GL30Classes.grassland.value,
+                      GL30Classes.shrubland.value, GL30Classes.tundra.value, GL30Classes.artificial.value,
+                      GL30Classes.bareland.value],
 }
 
 
