@@ -5,12 +5,15 @@
 # mail: seydewitz@pik-potsdam.de
 # institution: Potsdam Institute for Climate Impact Research
 
-.PHONY: help install download mask interalgin definition classification intersection alignment aism foo
+.PHONY: help install doc download mask interalgin definition classification intersection alignment aism foo
 
 ## Instal Python requirements to "/home/username/.local/lib/python3.*/site-packages".
 install:
-	pip3 install -r requirements.txt
+	pip3 install --user -r requirements.txt
 
+## Make doc
+doc:
+	cd docs && make html
 
 ### PIPELINE
 
