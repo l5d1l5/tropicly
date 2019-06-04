@@ -17,8 +17,7 @@ from utils import get_data_dir
 
 
 class SOCClasses(Enum):
-    """Soil organic carbon change classes.
-    """
+    """Soil organic carbon change classes."""
     primary_forest = 0
     secondary_forest = 1
     grassland = 2

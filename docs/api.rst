@@ -25,5 +25,11 @@ Modules
 .. automodule:: classification
     :members:
 
+.. automodule:: emissions
+    :members:
+
 .. automodule:: observer
+    :members:
+
+.. automodule:: sheduler
     :members:

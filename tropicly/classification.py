@@ -1,6 +1,6 @@
 """
-Module: classification
-****
+classification
+**************
 
 :Author: Tobias Seydewitz
 :Date: 14.05.19

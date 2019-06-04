@@ -1,6 +1,6 @@
 """
-Module: alignment
-****
+alignment
+*********
 
 :Author: Tobias Seydewitz
 :Date: 30.04.19
