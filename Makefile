@@ -45,7 +45,7 @@ interalgin:
 ## Create data for developing the forest definition by computing the jaccard index for GL30_2000 and
 ## GFC treecover2000 with varying canopy densities.
 definition:
-	python3 tropicly/definition.py fordef.csv 8
+	python3 tropicly/definition.py fordef_one_increment.csv 8
 
 # rule options: [integer]
 ## Perform classification of proximate deforestation driver. Requires the aism mask and the algined strata.
@@ -56,9 +56,13 @@ classification:
 # rule options: [biomass soc_sc1 soc_sc2] [integer]
 ## Compute biomass and soil organic carbon emissions by proximate deforestation driver.
 emissions:
-	#python3 tropicly/emissions.py biomass 2
+	python3 tropicly/emissions.py biomass 2
 	python3 tropicly/emissions.py soc_sc1 1
 	python3 tropicly/emissions.py soc_sc2 1
+
+## Compute ecosystem service value dynamics
+esv:
+	cd
 
 ### TEST PIPELINE STEPS
 

@@ -7,8 +7,9 @@
 -[ ] doc alignment, sheduler, observer, frequency, raster, utils
 -[ ] tests
 -[ ] cleanup raster, utils
+-[ ] accuracy assessment
 -[x] finish emissions
--[ ] start esv
+-[ ] do esv
 -[ ] hexagonal boundary map
     -[ ] create regional grid
     -[ ] intersect with country mask
