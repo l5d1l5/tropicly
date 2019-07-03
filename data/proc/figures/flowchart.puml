@@ -1,0 +1,27 @@
+@startuml
+start
+:Alignment/Harmonization;
+:Forest Definition;
+note right
+    <b>Method</b>
+    ----
+    <latex>JI(GL30^{2000}_{tile},GFC^{treecover}_{tile,CD_i})=\frac{GL30 \land GFC}{GL30 \lor GFC}</latex>
+    ----
+    one- and two-sided Wilcoxon signed-rank test
+end note
+:Classification;
+note right
+    <b>Method</b>
+    ----
+    <latex>GFC^{treecover}_{tile} > 10 \land GFC^{lossyear}_{tile} \equals \{x \in \mathbb{N} | 1 \le x \le 10 \}</latex>
+    <latex>LOSSES_{tile} * GL30_{tile}</latex>
+    <latex>PDD_{tile}</latex>
+    ----
+    Cluster all = 20
+    Assign most frequent class within 500m square mask
+end note
+:Accuracy Assessment;
+:Emissions;
+:Ecosystem Service Values;
+end
+@enduml
